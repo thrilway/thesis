@@ -1,0 +1,83 @@
+%        File: proposal.tex
+%     Created: Sun Nov 22 01:00 PM 2015 E
+% Last Change: Sun Nov 22 01:00 PM 2015 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass{beamer}
+
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+    \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+    \ifuseprefix
+      {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+      {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}}}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites}
+
+\bibliography{Thesis}
+
+\title{Thesis Title}
+\date[Proposal]{Thesis Proposal}
+\author[Milway]{Dan Milway}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+\section{Background}
+\begin{frame}{Background}
+	\frametitle{Explanatory Adequacy}
+	\begin{quote}
+		Although even descriptive adequacy on a large scale is by no means easy to approach, it is crucial for the productive development of linguistic theory that much higher goals than this be pursued. 
+		To facilitate the clear formulation of deeper questions, it is useful to consider the abstract problem of constructing an “acquisition model” for language, that is, a theory of language learning or grammar construction.
+		\parencite[pp.24-25]{chomsky1965aspects}
+	\end{quote}
+\end{frame}
+\section{Timeline}
+\begin{frame}
+	\frametitle{Timeline}
+	????
+\end{frame}
+\begin{frame}{References}
+	\printbibliography
+\end{frame}
+\end{document}
+
+

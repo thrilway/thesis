@@ -1,0 +1,227 @@
+%        File: Meeting1.tex
+%     Created: Tue Feb 23 03:00 PM 2016 E
+% Last Change: Tue Feb 23 03:00 PM 2016 E
+%
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+    \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+    \ifuseprefix
+      {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+      {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}}}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par}}
+
+\bibliography{Thesis}
+
+\begin{document}
+\section{Idea 1: Directed Motion}
+\subsection{The puzzle}
+\ex. The bottle floated under the bridge.
+
+\exg. La bouteille a flott\'e sous le pont.\\
+the bottle has floated under the bridge\\
+``The bottle floated under the bridge.''
+
+\begin{itemize}
+  \item \LLast is ambiguous:
+    \begin{itemize}
+      \item = The bottle was under the bridge, floating.      (Located Motion)
+      \item = The bottle went under the bridge in a floating. (Directed Motion)
+    \end{itemize}
+  \item \Last is unambiguous:
+    \begin{itemize}
+      \item = The bottle was under the bridge, floating.           (Located Motion)
+      \item $\neq$ The bottle went under the bridge in a floating. (Directed Motion)
+    \end{itemize}
+\end{itemize}
+\ex.[\textbf{Question: }] How is the (lack of) ambiguity acquirable from PLD?
+
+\begin{itemize}
+  \item Most analyses of this variation say that English bundles \textsc{Path} and \textsc{Manner} in motion verbs, while French does not.
+  \item These analyses might be descriptively accurate, but do not explain how the variation is acquired.
+\end{itemize}
+
+\subsection{Results of my 1st GP}
+\begin{itemize}
+  \item Directed motion interpretations map to a structure isometric to adjectival resultatives.
+\end{itemize}
+\ex. 
+\begin{forest}
+  tree defaults
+  [,en
+    [DP$_i$[The bottle,triangle]]
+    [VP
+      [V\\float,align=center]
+      [resP
+	[res]
+	[,em
+	  [$\langle DP_i\rangle$]
+	  [PP[under the bridge,triangle]]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+\ex. 
+\begin{forest}
+  tree defaults
+  [,en
+    [DP$_i$[the metal,triangle]]
+    [VP
+      [V\\hammer,align=center]
+      [resP
+	[res]
+	[,em
+	  [$\langle DP_i\rangle$]
+	  [AP[flat,triangle]]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+\begin{itemize}
+  \item The DP in \LLast and \Last must move to be interpreted as the theme of \textit{float}/\textit{hammer}.
+  \item French also lacks adjectival resultatives.
+  \item My Proposal: Raising a DP out of a resP is barred in French.
+  \item Overt correlates to this ``parameter'':
+    \begin{itemize}
+      \item predicative adjectival agreement $\rightarrow$ *adjectival resultatives
+      \item P-stranding $\rightarrow$ directed motion
+    \end{itemize}
+\end{itemize}
+\begin{tabularx}{.75\textwidth}{lllll}
+    & Pred Agr & resultatives & P-Stranding & Dir Motion\\
+    \hline
+    English & -- & yes & yes & yes\\
+    German & no & yes & no\footnote{There are other peculiarities in the German P system though} & yes\\
+    Std French & yes & no & no & no\\
+    PEI French\footnote{This is on the basis of a PC citation to Yves Roberge and Ruth King in the footnote of a paper by Johan Rooryk.} & yes & no & yes & yes\\
+    \hline
+  \end{tabularx}
+
+\begin{itemize}
+  \item My task would be to argue for a causal link in these (or maybe other) correlations.
+\end{itemize}
+
+\section{``Idea'' 2:}
+\begin{itemize}
+  \item Pro-form replacement tests probe two types of knowledege:
+    \begin{itemize}
+      \item Constituency
+      \item Category
+    \end{itemize}
+\end{itemize}
+\ex. The woman in the red coat laughed.
+\a. $\not\rightarrow$ *She in the red coat laughed
+\b. $\not\rightarrow$ He laughed.
+
+\begin{itemize}
+  \item Some component of our grammar says that replacing a DP in a structure with an appropriate pronoun preserves that structure and its (un)grammaticality.
+  \item The fact that (complex) DPs are Islands, follows from this.
+\end{itemize}
+\ex. 
+\a. They hired someone who speaks a Balkan language.
+\b. The hired them.
+
+\ex.
+\a.* What Balkan language did they hire someone who speaks $t_{wh}$?
+\b.* What Balkan language did they hire them?
+
+\begin{itemize}
+  \item Replacing the complex DP in \Last[a] with \textit{them} eliminates the \textit{wh}-trace.
+  \item Part of or grammar says that eliminating an adjunct from a structure preserves that structure and its (un)grammaticality.
+  \item The Islandhood of Adjuncts follows from this.
+\end{itemize}
+\ex.
+\a. Mary met the boy after Sue saw the girl.
+\b. Mary met the boy.
+
+\ex.
+\a.* Who did Mary meet the boy after Sue saw $t_{wh}$?
+\b.* Who did Mary meet the boy?
+
+\begin{itemize}
+  \item Eliminating the adjunct eliminates the \textit{wh}-trace.
+  \item Parasitic gaps are expected to be allowed. 
+\end{itemize}
+\ex.
+\a. Who did Mary meet $t_{wh}$ after Sue saw $t_{wh}$?
+\b. Who did Mary meet $t_{wh}$?
+
+\begin{itemize}
+  \item If this logic could be extended to all (strong) islands, then explaining islands would be reduced to explaining pronoun replacement and adjunct dropping.
+\end{itemize}
+\subsection{Background: Bare Grammar (Keenan \& Stabler 2003)}
+\ex.
+\a. Sue laughed.
+\b. Mary cried.
+
+\begin{itemize}
+  \item Standard GG asks what are the structures of the sentences in \Last, and how is knowledge of those structures instantiated in the mind.
+  \item Bare Grammar asks how are the structures of the sentences in \Last related, and how is knowledge of that relation instantiated in the mind.
+  \item K\&S say that \Last[a] and \Last[b] have the same structure and our knowledge of that is based on a mapping function $h$.
+  \item $h$ maps \textit{Sue} to \textit{Mary} and \textit{laugh} to \textit{cry}
+  \item This mapping function seems to be related to our notion of lexical categories
+    \begin{itemize}
+      \item $h(\alpha) = \beta$ iff $\alpha$ and $\beta$ belong to the same lexical category
+      \item Functional items do not map to distinct items
+    \end{itemize}
+\end{itemize}
+\end{document}
+
+

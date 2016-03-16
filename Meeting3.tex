@@ -1,0 +1,167 @@
+%        File: Meeting3.tex
+%     Created: Tue Mar 15 10:00 AM 2016 E
+% Last Change: Tue Mar 15 10:00 AM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+    \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+    \ifuseprefix
+      {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+      {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}}}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par}}
+
+\bibliography{Thesis}
+\title{Conjunctivist Semantics}
+\author{Dan Milway}
+
+\begin{document}
+\section{Intro}
+\begin{itemize}
+  \item Conjuctivism is an alternative theory of compositionality. \parencite{pietroski2005events,pietroski2011minimal}
+  \item It contrasts with the standard theory: \textcite{heimkratzer1998semantics} (dubbed Functionism by Pietroski)
+\end{itemize}
+\section{Functionism}
+\begin{itemize}
+  \item Basic ingredients: Types and Function application
+\end{itemize}
+\ex. \textbf{Semantic Types} \parencite{heimkratzer1998semantics}
+\a. $e$ and $t$ are semantic types.
+\b. If $\sigma$ and $\tau$ are semantic types, then $\langle\sigma,\tau\rangle$ is a semantic type.
+\b. Nothing else is a type
+\z.
+
+\ex.\textbf{Semantic Denotation Domains} \parencite{heimkratzer1998semantics}
+\a. $D_e := D$ (The set of individuals)
+\b. $D_t := \left\{ 0,1 \right\}$ (The set of truth values)
+\c. For any semantic types $\sigma$ and $\tau$, $D_{\langle\sigma,\tau\rangle}$ is the set of all functions from $D_\sigma$ to $D_\tau$.
+\z.
+
+\ex.\textbf{Function Application} \parencite{heimkratzer1998semantics}\\
+If $\alpha$ is a branching node, $\left\{ \beta, \gamma \right\}$ is the set of $\alpha$'s daughters, and $\llbracket\beta\rrbracket$ is a function whose domain contains $\llbracket\gamma\rrbracket$, then $\llbracket\alpha\rrbracket = \llbracket\beta\rrbracket(\llbracket\gamma\rrbracket)$.
+
+\subsection{Issues}
+\begin{itemize}
+  \item The recursive definition of types generates an explosion of types.\parencite{pietroski2015semantic}
+    \begin{itemize}
+      \item 1407 types are as complex as that of determiners ($\langle\langle e,t\rangle, \langle \langle e,t\rangle, t\rangle\rangle$)
+      \item Not many are used by human language
+    \end{itemize}
+  \item No working theory of semantic composition stops at types + FA.
+    \begin{itemize}
+      \item H\&K also include Predicate modification and Predicate Abstraction
+      \item Type shifting is often required \parencite{partee1987noun}
+      \item Event Identification has also been added. \parencite{kratzer_severing_1996}
+      \item These complexities have been parameterized \parencite[\textit{e.g.,}][]{compton2012diss}
+    \end{itemize}
+  \item None of this jibes well with minimalist theorizing.
+  \item Parameterizing semantic composition is especially problematic because the parameters are likely unlearnable.
+  \item Tends to assume an externalist semantics. 
+\end{itemize}
+
+\section{Conjunctivism: A very rough sketch}
+\textbf{Caveat:} Over a century of work in logic, philosophy, math, and linguistics has assumed Functionism, while Conjunctivism is less than 20 years old.
+Conjunctivist semantics, as a result, is not fully worked out. 
+\begin{itemize}
+  \item The meaning of a linguistic expression is an instruction to fetch/build concepts. \parencite{pietroski2015semantic}
+\end{itemize}
+\ex. ``book'' $\rightarrow$ \texttt{fetch@book} $\rightarrow$ $\left\{ \textsc{Book}_{Physical}, \textsc{Book}_{Abstract}, \dots \right\}$
+
+\begin{itemize}
+  \item Two types: Monads and Dyads.
+    \begin{itemize}
+      \item Monads are 1-place predicates. Lexical items tend to be monads
+	\begin{itemize}
+	  \item $\llbracket$cup$\rrbracket = $ CUP(\_)
+	\end{itemize}
+      \item Dyads are 2-place predicates. Functional items tend to be dyads.
+	\begin{itemize}
+	  \item $\llbracket$Res$\rrbracket = $ CAUSE(\_,\_)
+	\end{itemize}
+    \end{itemize}
+  \item Two basic operations: Conjunction and $\exists$-closure
+    \begin{itemize}
+      \item $\llbracket\left\{ \alpha, \beta \right\}\rrbracket = \llbracket\alpha\rrbracket \& \llbracket\beta\rrbracket$ 
+      \item \textcite{pietroski2005events} repeatedly notes that functionist architectures make use of both conjunction and exitential closure in addition to other operations.
+    \end{itemize}
+  \item Composition can be sensitive to properties of a phrase marker other than sisterhood (\textit{e.g.}, Labelling)
+  \item We can have a rule such as ``interpret DPs in specifier position as external arguments.''
+  \item Choosing between Agent, Experiencer, and Instrument is a global process that depends on context, properties of the predicate, and properties of the argument.
+\end{itemize}
+\textbf{A Note on Pietroski's notation:} Subscript $\alpha$ marks (grammatical) arguments, $\Pi$ marks predicates.
+Val(x,y) is to be read as ``x is a value of y''.
+\ex. Jo sang. = $[ \Theta\text{-Jo}_\alpha \text{sang}_\Pi]_{\Pi\text{P}}$
+\a. 
+\a. Val(x, Jo$_\alpha$) iff x = \textbf{Jo}
+\b. Val(e, $\Theta$-Jo$_\alpha$) iff $\exists$x[Agent(e,x) \& x = \textbf{Jo}]
+\c. Val(e, sang$_\Pi$) iff Past-singing(e)\\
+\z.
+\b. 
+\a. Val(e, [$\Theta$-Jo$_\alpha$ sang$_\Pi$]$_{\Pi\text{P}}$) iff
+\b. Val(e, $\Theta$-Jo$_\alpha$) \& Val(e, sang$_\Pi$) iff 
+\b. $\exists$x [Agent(e,x) \& x = \textbf{Jo} \& Past-singing(e)]
+\z.
+\z.
+
+\printbibliography
+\end{document}
+
+

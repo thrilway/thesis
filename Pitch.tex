@@ -71,13 +71,20 @@
 
 \bibliography{Thesis}
 
+\title{\large Thesis Pitch}
+\author{Dan Milway}
 \begin{document}
+\begin{center}
+  {\Large Thesis Pitch}\\
+  {\large Dan Milway\\
+  \today}
+\end{center}
 This thesis takes as its starting point, an ambiguity that is available in English that is unavailable in French
-\ex. The bottle floated under the bridge.
+\ex.\label{ex:Eng} The bottle floated under the bridge.
 \a. The bottle was under the bridge, floating.
 \b. The bottle moved in a floating manner, ending up under the bridge.
 
-\exg. La bouteille a flott\'e sous le pont.\\
+\exg.\label{ex:Fre} La bouteille a flott\'e sous le pont.\\
 the bottle has floated under the bridge\\
 \a. The bottle was under the bridge, floating.
 \b.\# The bottle moved in a floating manner, ending up under the bridge.
@@ -93,7 +100,7 @@ In \textcite{milway2015generals} I proposed that the structure of the reading in
 			[V\\float,align=center]
 			[ResP
 				[Res]
-				[??
+				[SC
 					[$\langle$DP$_i\rangle$]
 					[PP]
 				]
@@ -102,8 +109,91 @@ In \textcite{milway2015generals} I proposed that the structure of the reading in
 	]
 \end{forest}
 
+Movement of the DP from the Small Clause to Spec VP occurs because \textit{the bottle} is interpreted as both the subject of the PP and the undergoer of \textit{float}.
+Consider a clearer example in \Next.
+\ex.
+\a. Jamie kicked the ball between the pylons.
+\b. Jamie kicked the ball.
+
+\ex.
+\a. $\exists e[\textsc{Kick}(e) \& \textsc{Agent}(e,\mathbf{J}) \& \textsc{Theme}(e,\mathbf{b}) \& \exists s[\textsc{Cause}(s,e) \& \mathbf{btw\_p}(s) \& \textsc{Holder}(s, \mathbf{b})]]$
+\b. $\exists e[\textsc{Kick}(e) \& \textsc{Agent}(e,\mathbf{J}) \& \textsc{Theme}(e,\mathbf{b})]$
+
+The sentence in \LLast[a] entails the sentence in \LLast[b], a fact which is straightforwardly captured by the neo-Davidsonian logical forms in \Last.
+The fact that \textit{the ball} is interpreted in the ResP and in the VP suggests that it moves syntactically.
+
+The specific movement proposed above, however, is problematic when considered with \posscite{baker1997thematic} strong conception of UTAH, which states that particular $\Theta$-roles are mapped to particular structural positions (\textit{e.g.} Agent $\leftrightarrow$ Spec $v$).
+Consider the proposed structures for VPs in \LLast in this light.
+\ex.
+\begin{tabular}[t]{ll}
+  a.
+  \begin{forest}
+    tree defaults
+    [VP
+      [DP$_i$[the ball,triangle]]
+      [
+	[V\\kick,align=center]
+	[ResP
+	  [Res]
+	  [SC
+	    [$\langle$DP$_i\rangle$]
+	    [PP]
+	  ]
+	]
+      ]
+    ]
+  \end{forest}
+  &
+  b.
+  \begin{forest}
+    tree defaults
+    [VP
+      [V\\kick,align=center]
+      [DP$_i$[the ball,triangle]]
+    ]
+  \end{forest}
+  \\
+\end{tabular}
+
+Despite the fact that \textit{the ball} is in distinct positions in the above structures (Spec V vs Comp V) it is assigned the same $\Theta$-role (Theme) in violation of strong UTAH.
+There are two ways of altering my proposed structures to conform with UTAH: Either (i) modify \Last[b] so that the Theme is in Spec V, or (ii) modify \Last[a] so that
+the Theme moves to Comp V.
+I will explore the strategy in (ii)\footnote{
+  \textcite{baker1997thematic} proposes (i), but this option is problematic when Bare Phrase Structure is assumed.
+  The presence of a specifier depends on the presence of a complement, so we would require a null, vacuous complement in all verbs that mark themes.
+} 
+which gives us the following structure for V+ResP
+\ex.
+\begin{forest}
+  tree defaults
+  [,en
+    [VP
+      [V\\kick,align=center]
+      [DP$_i$[the ball,triangle]]
+    ]
+    [ResP
+      [Res]
+      [SC
+	[$\langle$DP$_i\rangle$]
+	[PP]
+      ]
+    ]
+  ]
+\end{forest}
+
+While standard work in P\&P syntax assumes that such sideward movement is disallowed, others \parencite{bobaljik1997interarboreal,nunes2001sideward} that it is not ruled out by current theories.
+
+In the thesis I will do three things.
+First, I will derive the facts in \ref{ex:Eng} and \ref{ex:Fre} from a restriction on sideward movement in French \parencite[cf.][]{kratzer_building_2004}.
+Second I will explore the implications of such sideward movement structures on other argument sharing constructions (e.g., depictives, serial verb constructions, direct perception reports).
+An investigation of other constructions will allow me to test my conclusions in the first part, by showing that the same logic can rule out serial verb constructions in English, and allow for depictives and direct perception report.
+Third, I will explore the theoretical implications that this has for the syntax-semantics interface.
+Since thematic roles are semantic phenomena, choosing a strong version of UTAH will have implications about the nature of the syn-sem interface.
+In fact, UTAH can be seen as an explicit statement about the nature of the interface.
+A weaker version of UTAH requires a more powerful interface \parencite[and followers]{heimkratzer1998semantics}, while a stronger version of UTAH allows for a more minimalist interface \parencite{pietroski2005events,pietroski2011minimal}.
 
 
+\printbibliography
 \end{document}
 
 

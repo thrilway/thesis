@@ -1,0 +1,131 @@
+%        File: FivePager.tex
+%     Created: Thu Mar 24 12:00 PM 2016 E
+% Last Change: Thu Mar 24 12:00 PM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+    \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+    \ifuseprefix
+      {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+      {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}}}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par}}
+
+\bibliography{Thesis}
+
+\begin{document}
+There is a set of constructions found in natural language, which I will refer to as argument sharing constructions, in which multiple predicates in a single clause share a single syntactic argument.
+I include in this set, depictives, adjectival resultatives (ARs), directionalized locatives (DLs), and serial verb constructions(SVCs).
+\ex.
+  \a. Depictives \parencite[French,][]{legendre1997secondary}
+    \ag. J'ai connu Marie heureuse.\\
+    {I have} known Mary happy.FSg\\
+    ``I've known Mary happy''
+    \bg. Il est mort jeune.\\
+    he is died young\\
+    ``He died young.''
+    \z.
+  \b. Resultatives
+    \a. Mary hammered the metal flat.
+    \b. We drank the teapot dry.
+    \z.
+  \b. Directionalized Locatives
+    \a. The bottle floated under the bridge
+    \b. She kicked the ball between the pylons.
+    \z.
+  \b. Serial Verb Constructions \parencite[Edo,][]{bakerstewart1999double}
+    \ag. \`Oz\'o gh\'a d\`e ìy\'an r\`e.\\
+    Ozo FUT buy yam eat\\
+    ``Ozo will buy yams and eat them.''
+    \z.
+  \z.
+
+The latter three constructions are of particular interest in this thesis due to the fact that they seem to be parameterized in natural language.
+Most varieties of French, for example, lack all of these constructions. English and German have ARs and DLs but lack SVCs, while Edo has SVCs and ARs \parencite{bakerstewart1999double}.
+<++>
+
+In order to explain the parameterization of these constructions, we must first understand their underlying syntactic structure.
+The standard analysis of RLs (which \textcite{milway2015generals} extends to DLs) was proposed by \textcite{kratzer_building_2004} and is shown below in \Next.
+\ex.
+\begin{forest}
+  tree defaults
+  [VP
+    [DP$_i$[the metal,triangle]]
+    [,em
+      [V\\hammer,align=center]
+      [ResP
+        [Res]
+        [,em
+          [$\langle$DP$_i\rangle$]
+          [AP[flat,triangle]]
+        ]
+      ]
+    ]
+  ] 
+\end{forest}
+
+The DP is base-generated as the argument of the predicate \textit{flat} and raises to be interpreted as the theme of the verb \textit{hammer}.
+This is problematic if we take seriously \posscite{baker1997thematic} Absolute UTAH which states that a given thematic role is mapped to a particular structural position.
+
+\printbibliography
+\end{document}
+
+

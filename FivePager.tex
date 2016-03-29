@@ -124,6 +124,26 @@ The standard analysis of RLs (which \textcite{milway2015generals} extends to DLs
 
 The DP is base-generated as the argument of the predicate \textit{flat} and raises to be interpreted as the theme of the verb \textit{hammer}.
 This is problematic if we take seriously \posscite{baker1997thematic} Absolute UTAH which states that a given thematic role is mapped to a particular structural position.
+In the structure in \Last, \textit{the metal} is interpreted as the theme argument by virtue of it being in Spec VP, while in the simple transitive structure (\textit{hammer the metal}) it is merged in Comp V.
+To retain an absolute UTAH, I propose that argument sharing in resultative structures is the result of sideward movement as in \Next below.
+\ex.
+\begin{forest}
+  tree defaults
+  [VP
+    [VP
+      [DP$_i$[the metal,triangle]]
+      [V\\hammer,align=center]
+    ]
+    [ResP
+        [Res]
+        [,em
+          [$\langle$DP$_i\rangle$]
+          [AP[flat,triangle]]
+        ]
+      ]
+    ]
+\end{forest}
+
 
 \printbibliography
 \end{document}

@@ -9,7 +9,7 @@
 \documentclass[letterpaper]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+\usepackage[backend=biber,style=authoryear,useprefix=false]{biblatex}
 
 \usepackage{stmaryrd}
 \usepackage[]{amsmath}
@@ -71,7 +71,11 @@
 
 \bibliography{Thesis}
 
+\title{Thesis ``Proposal''}
+\author{Dan Milway}
 \begin{document}
+\maketitle
+
 There is a set of constructions found in natural language, which I will refer to as argument sharing constructions, in which multiple predicates in a single clause share a single syntactic argument.
 I include in this set, depictives, adjectival resultatives (ARs), directionalized locatives (DLs), and serial verb constructions(SVCs).
 \ex.
@@ -100,29 +104,46 @@ I include in this set, depictives, adjectival resultatives (ARs), directionalize
 
 The latter three constructions are of particular interest in this thesis due to the fact that they seem to be parameterized in natural language.
 Most varieties of French, for example, lack all of these constructions. English and German have ARs and DLs but lack SVCs, while Edo has SVCs and ARs \parencite{bakerstewart1999double}.
-<++>
 
-In order to explain the parameterization of these constructions, we must first understand their underlying syntactic structure.
-The standard analysis of RLs (which \textcite{milway2015generals} extends to DLs) was proposed by \textcite{kratzer_building_2004} and is shown below in \Next.
+First, we must ask how such argument sharing comes about.
+For the answer, I look to Theta Theory and, in particular, \posscite{baker1997thematic} UTAH, which posits that thematic relationships in a sentence are represented in structural relationships.
+The classic example of this mapping between structure and thematic relations is the hypothesis that the agent role maps to Spec VoiceP \parencite{kratzer_severing_1996}.
+Considering ARs and DLs, we can see that the direct objects of these constructions is interpreted as the internal argument of the verb and as an argument of the AdjP and PP, respectively.
+\ex.
+\a. John has hammered the metal flat.
+\a. $\implies$ John has hammered the metal.
+\b. $\implies$ The metal is/became flat.
+\z.
+\b. Mary kicked the ball between the pylons.
+\a. $\implies$ Mary kicked the ball.
+\b. $\implies$ the ball \{ended up\}/was between the pylons
+\z.
+
+Given UTAH, this means that the direct object (or some element that corefers with it) must be in a structural relationship with both the verb and the adjective/PP.
+\textcite{kratzer_building_2004} proposes the structure in \Next for ARs, to account for the argument sharing.
+The first merge of \textit{the metal} with the AP means it is interpreted as an argument of the adjective, and its remerge in the verbal projection means it is interpreted as the internal argument of the verb.\footnote{
+  \posscite{kratzer_building_2004} use of movement in her analysis violates the $\Theta$-criterion which states that each $\Theta$-role must be assigned to exactly one DP and each DP must be assigned exactly one $\Theta$-role.
+  Following \textcite{hornstein1999movement}, I dispense with the $\Theta$-criterion.
+}
 \ex.
 \begin{forest}
   tree defaults
   [VP
-    [DP$_i$[the metal,triangle]]
+    [DP$_i$[the metal,triangle,name=Spec VP]]
     [,em
       [V\\hammer,align=center]
       [ResP
         [Res]
         [,em
-          [$\langle$DP$_i\rangle$]
+          [$\langle$DP$_i\rangle$,name=Spec AP]
           [AP[flat,triangle]]
         ]
       ]
     ]
-  ] 
+  ]
+  \draw[->,thick] (Spec AP) to[out=west, in=south] (Spec VP);
 \end{forest}
 
-The DP is base-generated as the argument of the predicate \textit{flat} and raises to be interpreted as the theme of the verb \textit{hammer}.
 This is problematic if we take seriously \posscite{baker1997thematic} Absolute UTAH which states that a given thematic role is mapped to a particular structural position.
 In the structure in \Last, \textit{the metal} is interpreted as the theme argument by virtue of it being in Spec VP, while in the simple transitive structure (\textit{hammer the metal}) it is merged in Comp V.
 To retain an absolute UTAH, I propose that argument sharing in resultative structures is the result of sideward movement as in \Next below.
@@ -144,6 +165,84 @@ To retain an absolute UTAH, I propose that argument sharing in resultative struc
     ]
 \end{forest}
 
+While sideward movement is often taken to be ruled out in GB/Minimalist syntax, \textcite{bobaljikbrown1997interarboreal} and \textcite{nunes2001sideward} argue that movement operations such as the one in \Last are not ruled out by any proposed principle of grammar.
+Consider the fragment of the derivation of \Last below where L and M are derived structures and S is the selected item.
+\ex.
+\a. L = [Res [ [the metal] flat]]\\
+M = [hammer]\\
+S = [the metal]
+\b. L = [Res [ [the metal] flat]]\\
+M = [hammer [the metal]]
+\c. L = [[$_{VP}$ hammer [the metal]] [$_{ResP}$ Res [ [the metal] flat]]]
+\z.
+
+In \Last[a], \textit{the metal} has been copied from L, and then merged with M to get \Last[b].
+Finally, L and M are merged to get \Last[c].
+
+This sideward movement structure has the additional advantage of being quite similar to the structure proposed by \textcite{bakerstewart1999double} for SVCs, given below.
+This analysis differs slightly from my analysis of ARs and DLs, though, in that \textcite{bakerstewart1999double} do not propose that argument sharing occurs via movement.\footnote{
+  \posscite{bakerstewart1999double} analysis of Edo resultatives, however, differs form the one I propose.
+  They adopt a complex predicate analysis in contrast to the small clause analysis I adopt.
+}
+\ex.
+\ag. \`Oz\'o gh\'a d\`e ìy\'an r\`e.\\
+    Ozo FUT buy yam eat\\
+    ``Ozo will buy yams and eat them.''
+\b.
+\begin{forest}
+  tree defaults
+  [TP
+    [DP$_i$[Ozo,triangle,name=Spec T]]
+    [,en
+      [T\\will,align=center]
+      [VoiceP
+        [$\langle$DP$_i\rangle$,name=Spec Voice]
+        [,en
+          [Voice]
+          [vP
+            [vP
+              [v
+                [v]
+                [V\\cook,align=center,name=v1]
+              ]
+              [VP
+                [DP$_k$[food,triangle]]
+                [$\langle$V$\rangle$,name=V1]
+              ]
+            ]
+            [vP
+              [v
+                [v]
+                [V\\eat,align=center,name=v2]
+              ]
+              [VP
+                [pro$_k$]
+                [$\langle$V$\rangle$,name=V2]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  \draw[->,thick] (Spec Voice)to[out=west, in=south east] (Spec T);
+  \draw[->,thick] (V1)to[out=south, in=south] (v1);
+  \draw[->,thick] (V2)to[out=south, in=south] (v2);
+\end{forest}
+
+Given these analyses of ARs, DLs and SVCs, I am led to the questions of why English allows ARs and DLs but not SVCs and why French lacks all three.
+A recurring observation in this domain is that a lack of inflectional morphology on predicates tends to be associated with argument sharing.
+\textcite{kratzer_severing_1996} points out that French, which lacks ARs, has obligatory agreement morphology on predicative adjectives, while German, which has ARs, has bare predicative adjectives.
+\ex.
+\ag. La femme est heureuse\\
+the woman is happy.FSg\\
+``The woman is happy.''
+\bg. Die Frau ist gl\"ucklich (*-e)\\
+the woman is happy (Agr)\\
+``The woman is happy.''
+
+\textcite{bakerstewart1999double}, citing \textcite{dechaine1993diss}, say that languages with SVCs tend to lack inflectional morphology on verbs.
+They also note that the past perfective in Edo is the only tense with inflectional morphology on verbs and is incompatible with SVCs.
 
 \printbibliography
 \end{document}

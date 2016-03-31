@@ -1,0 +1,21 @@
+%        File: Biblio.tex
+%     Created: Wed Mar 30 09:00 PM 2016 E
+% Last Change: Wed Mar 30 09:00 PM 2016 E
+%
+% arara: pdflatex
+% arara: biber 
+% arara: pdflatex
+% arara: pdflatex
+
+\documentclass[letterpaper]{article}
+\usepackage[backend=biber,bibstyle=authoryear]{biblatex}
+\bibliography{Thesis}
+\begin{document}
+\nocite{*}
+\printbibliography[title=Read,keyword=read]
+\printbibliography[title=Unread,notkeyword=read,nottype=collection]
+\printbibliography[title=Theory,keyword=theory]
+\printbibliography[title=Important,keyword=important]
+\end{document}
+
+

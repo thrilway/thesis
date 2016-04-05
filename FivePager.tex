@@ -76,6 +76,7 @@
 \begin{document}
 \maketitle
 
+\section{The Phenomenon: Argument Sharing}
 There is a set of constructions found in natural language, which I will refer to as argument sharing constructions, in which multiple predicates in a single clause share a single syntactic argument.
 I include in this set, depictives, adjectival resultatives (ARs), directionalized locatives (DLs), and serial verb constructions(SVCs).
 \ex.
@@ -105,6 +106,7 @@ I include in this set, depictives, adjectival resultatives (ARs), directionalize
 The latter three constructions are of particular interest in this thesis due to the fact that they seem to be parameterized in natural language.
 Most varieties of French, for example, lack all of these constructions. English and German have ARs and DLs but lack SVCs, while Edo has SVCs and ARs \parencite{bakerstewart1999double}.
 
+\section{The Analysis: Sideward Antecedence}
 First, we must ask how such argument sharing comes about.
 For the answer, I look to Theta Theory and, in particular, \posscite{baker1997thematic} UTAH, which posits that thematic relationships in a sentence are represented in structural relationships.
 The classic example of this mapping between structure and thematic relations is the hypothesis that the agent role maps to Spec VoiceP \parencite{kratzer_severing_1996}.
@@ -230,6 +232,7 @@ This analysis differs slightly from my analysis of ARs and DLs, though, in that 
   \draw[->,thick] (V2)to[out=south, in=south] (v2);
 \end{forest}
 
+\section{Generalization: Inflection $\rightarrow$ *Argument Sharing}
 Given these analyses of ARs, DLs and SVCs, I am led to the questions of why English allows ARs and DLs but not SVCs and why French lacks all three.
 A recurring observation in this domain is that a lack of inflectional morphology on predicates tends to be associated with argument sharing.
 \textcite{kratzer_building_2004} points out that French, which lacks ARs, has obligatory agreement morphology on predicative adjectives, while German, which has ARs, has bare predicative adjectives.
@@ -245,11 +248,26 @@ the woman is happy (Agr)\\
 They also note that the past perfective in Edo is the only tense with inflectional morphology on verbs and is incompatible with SVCs.
 I propose \parencite[contrary to][]{bakerstewart1999double} that the parametric variation of argument sharing constructions is reducible to the interaction between sideward antecedence relations and overt predicate morphology.
 
-Assuming the antecedence relation is an instance of sideward movement\footnote{
+\section{The Account: Linearization?}
+Assuming the antecedence relation is an instance of sideward movement,\footnote{
   Other possible analyses include proposing that the ``trace'' is actually a null resumptive pronoun, or the suggestion that the null element has arbitrary reference which is constrained by the fact that a given event has only one theme \parencite{pietroski2005events}.
   These alternatives will have to be investigated.
-}, 
+} why is such movement allowed where it is allowed and disallowed elsewhere?
+\textcite{nunes2001sideward} argues that sideward movement is allowed only in those cases in which it forms chains that can be linearized.
+If this is correct, than I should be able to show that \Next[a] is linearizable but \Next[b] is not.
+\ex. 
+\a. Mary [hammered the metal] [flat $\langle$the metal$\rangle$]. 
+\b.* Mary cooks the food eats $\langle$the food$\rangle$
+\z.
 
+If a linearization-based account is incorrect for argument sharing, I will need to propose an alternative account that is either compatible with Nunes' (2001) proposal or able to supplant it.
+
+\section{A Problem: Directionalized Locatives}
+Accounting for directionalized locatives reperesents is another issue that will be addressed by this thesis.
+While there are good reasons to believe that DLs are isomorphic with ARs \textcite{milway2015generals}, it is not obvious how the parametric variation of DLs can be explained using the logic proposed above.
+Prepositions generally do not show inflectional morphology, yet the presence of ARs (by virtue of the lack of predicative adjective agreement) seems to predict the presence of DLs.
+
+\section{Theoretical Implications}
 This work will assume a version of \posscite{baker1997thematic} Absolute UTAH, which I take to be an empirical generalization.
 Being an empirical statement, a goal of our theory of the language faculty ought to be its explanation.
 In order to explain UTAH, we must first decide where/when in our computational system it is enforced.
@@ -257,6 +275,9 @@ Since it deals with a mapping between grammatical and thematic structure -- the 
 The current theory of semantic composition, however, is much more flexible than any version of UTAH, which is merely stipulated in the denotations of verbs and other argument introducers.
 The closest DP to the verb \textit{hit} is interpreted as a theme by virtue of the fact that the denotation of \textit{hit} includes the \textsc{Theme} predicate, but there is nothing in the theory that prevents the \textit{hit} being bundled with the \textsc{Agent} predicate.
 Furthermore, UTAH is expressed in structural terms (specifier, complement, dominance, etc.) which cannot be expressed in the standard compositional system, which only refers to sisterhood relations. 
+
+So, while our current conception of the syntax-semantics interface allows for UTAH, it also allows for virtually every other possible version of UTAH.
+A syntax-semantics interface that allowed for only the version of UTAH that describes the empirical facts would be preferable.
 
 \printbibliography
 \end{document}

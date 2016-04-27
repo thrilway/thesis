@@ -8,14 +8,18 @@
 % arara: pdflatex
 
 \documentclass[letterpaper]{article}
-\usepackage[backend=biber,bibstyle=authoryear]{biblatex}
+\usepackage[backend=biber,bibstyle=authoryear-comp,maxbibnames=100]{biblatex}
+\usepackage[margin=1in]{geometry}
+
 \bibliography{Thesis}
+
+\title{SVC Bibliography}
+\author{Dan Milway}
 \begin{document}
+\maketitle
 \nocite{*}
-\printbibliography[title=Read,keyword=read]
-\printbibliography[title=Unread,notkeyword=read,nottype=collection]
-\printbibliography[title=Theory,keyword=theory]
-\printbibliography[title=Important,keyword=important]
+\printbibliography[title=Read,keyword=read,keyword=SVC]
+\printbibliography[title=Unread,keyword=SVC,notkeyword=read]
 \end{document}
 
 

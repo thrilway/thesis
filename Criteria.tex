@@ -1,0 +1,219 @@
+%        File: Criteria.tex
+%     Created: Tue May 17 10:00 AM 2016 E
+% Last Change: Tue May 17 10:00 AM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+
+\useforestlibrary{linguistics}
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+  \ifuseprefix
+  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}
+}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}
+  }
+}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite
+}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites
+}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\bibliography{Thesis}
+
+\begin{document}
+\section{On Adjectives}
+\begin{itemize}
+  \item Much of my reading these past weeks has been about adjectives.
+    \begin{itemize}
+      \item Slightly aimless, trying to get the lay of the land.
+    \end{itemize}
+  \item Adjective literature seems to focus on attributive APs.
+  \item Discussion of predicative and SC APs are in the copula/SC literature.
+  \item A few papers seemed to have valuable insights.
+\end{itemize}
+\subsection{\textcite{bolinger1967adjectives}}
+\begin{itemize}
+  \item Two types of nominal modification: characteristic and occasional
+\end{itemize}
+\ex.
+\a. The responsible man 
+\a. $\approx$ the generally responsible man (characteristic)
+\b. $\approx$ the man who is responsible for the present situation (occasional)
+\z.
+\b. The man responsible
+\a. $\approx$ the man who is responsible for the present situation (occasional)
+\b. *characteristic
+\z.
+
+\subsection{\textcite{larson1998events}}
+\begin{itemize}
+  \item Discussing the intersective/non-intersective ambiguity
+\end{itemize}
+\ex. Olga is a beautiful dancer
+
+\begin{itemize}
+  \item Proposes that nominals (like \textit{dancer}) carry event and entity variables.
+  \item \textit{beautiful} can bind either variable.
+  \item He discusses \textcite{bolinger1967adjectives}
+    \begin{itemize}
+      \item characteristic = i-level, closer to the N
+      \item occasional = s-level, further from the N
+    \end{itemize}
+  \item \textcite{chierchia1995individual} argues that i-level predicates are inherent generics
+    \begin{itemize}
+      \item They have an event variable bound by a generic quantifier $\Gamma$
+    \end{itemize}
+  \item  Larson proposes the following structure for NPs
+\end{itemize}
+\ex. $\left[ \text{ ~~~~AP}_\text{s-level} \left[ \Gamma\text{e} \left[ \text{ ~~~~AP}_\text{i-level} \text{ ~~~~N ~~~~} \right] \right] \text{ ~~~~AP}_\text{s-level}  \right]$
+
+\section{\textcite{rizzi2015notes}}
+\begin{itemize}
+  \item In recent work, Rizzi has been concerned with ``criterial positions,'' positions that constituents must raise to and cannot raise from.
+\end{itemize}
+\ex.
+\a. I wonder which book Bill read \textit{t}.
+\b.* Which book do you wonder \textit{t} Bill read \textit{t}?
+
+\begin{itemize}
+  \item For a WhP, Spec QuesP is the criterial position.
+  \item Rizzi give a label based explanation.
+    \begin{itemize}
+      \item Label(X--YP) = X
+      \item Label(XP--YP) =  ?
+	\begin{itemize}
+	  \item If XP and YP agree for some feature F, label XP--YP as F.
+	  \item If they don't agree, move one XP or YP.
+	\end{itemize}
+    \end{itemize}
+  \item Only maximal objects (XPs) can be moved.
+  \item In \Last[b], the WhP and QuesP agree for feature Q, and the new object QP is the maximal projection of both.
+\end{itemize}
+\ex.  I wonder \dots
+\begin{forest}
+  tree defaults
+  [Q
+    [Q
+      [Q\\which,align=center]
+      [n
+	[book]
+	[n]
+      ]
+    ]
+    [Q
+      [Q]
+      [I[Bill read \textit{t},roof]]
+    ]
+  ]
+\end{forest}
+
+\begin{itemize}
+  \item For Rizzi:
+    \begin{itemize}
+      \item Complements can stay or move
+      \item Specifiers must stay in criterial position, otherwise they must move
+    \end{itemize}
+  \item SCs present a problem for this.
+\end{itemize}
+\ex. 
+\a. I consider [$_\alpha$ John intelligent].
+\b. John is considered [$_\beta$ \textit{t} intelligent].
+\c. A man who I consider [$_\beta$ \textit{t} intelligent]
+ 
+\begin{itemize}
+  \item Rizzi proposes that $\alpha \neq \beta$
+  \item In $\alpha$, Spec is criterial.
+  \item In $\beta$, Spec is not criterial.
+  \item Verbs can select either or both
+\end{itemize}
+\ex. 
+\a.* I think [$_\alpha$ John intelligent].
+\b. John is thought [$_\beta$ \textit{t} intelligent].
+\c. A man who I think [$_\beta$ \textit{t} intelligent]\hfill (Reported to Rizzi by Ian Roberts)
+
+\begin{itemize}
+  \item The two types of SCs are expected to have interpretive differences.
+  \item Rizzi points to an Italian example for evidence of this
+    \begin{itemize}
+      \item Bare plurals seem to be imcompatible with the $\alpha$-type SCs
+    \end{itemize}
+\end{itemize}
+\ex.
+\a.* Gianni considera [$_\alpha$[amici][simpatici]]\\
+``Gianni considers (some) friends nice''
+\b. Gianni frequenta amici [che considera [$_\beta$ \textit{t} [simpatici]]\\
+``Gianni sees friends that he considers nice''
+
+\section{How this is applicable}
+In my first generals paper I proposed (in different terms) that Spec SC in languages with Adjectival agreement in predicative position was criterial for resultatives.
+This was untenable because movement from Spec SC was clearly allowed for depictives and also \Last[b]; agreement doesn't seem to be enough to bar movement.
+Suppose, however, that mutual agreement is required for a criterial position, meaning [XP, YP] is criterial iff XP checks YP's F feature and YP checks XP's G feature.
+In the case of Wh-movement, the Wh-element needs its Q-feature checked and the C$_Q$ needs its Wh feature checked.
+In the case of SCs, supose, following Larson and Chierchia, that APs in Italian carry a $\Gamma$ feature, and NPs have an unvalued Quantifier/Operator feature.
+In \Last[a], the BP checks the AP's phi-features, and the AP checks the BP's Op feature, yielding a criterial configuration.
+Italian BPS, however, are only interpretable under existential quantification, rendering \Last[a] uninterpretable.
+
+\printbibliography
+\end{document}
+
+

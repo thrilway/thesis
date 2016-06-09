@@ -1,0 +1,76 @@
+%        File: CCommand.tex
+%     Created: Thu Jun 02 11:00 AM 2016 E
+% Last Change: Thu Jun 02 11:00 AM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\title{Meeting Notes}
+\author{Dan Milway}
+\bibliography{Thesis}
+\begin{document}
+\maketitle
+
+\ex. I painted $[$the wall$]_i [ t_i$ red$]]$.
+
+\ex. I kicked $[$the ball$]_i [ t_i$ into the net$]$.
+
+\ex. I saw $[$a comet$]_i [ t_i$ passing Saturn$]$.
+
+\section{Where is the ``Object''}
+\begin{itemize}
+  \item Theta considerations suggest that it is in ``Spec Pred'' and ``Comp V''
+  \item Does it raise to Object position? (Spec Agr$_o$ in \textcite{lasnik1999minimalist})
+    \begin{itemize}
+      \item does it c-command VP adjuncts?
+    \end{itemize}
+\end{itemize}
+\subsection{Condition C}
+\ex.
+\a.* I painted his$_i$ wall red without John$_i$'s permission.
+\b.* I painted his$_i$ wall without John$_i$'s permission.
+
+\subsection{Condition A}
+\ex.
+\a.? I painted the two men red with each other's paintbrushes
+\b. I painted the two men with each other's paintbrushes
+
+\subsection{NPI licensing}
+\ex.
+\a.?* I painted no wall red with any brush.
+\b.? I painted no wall with any brush.
+
+(Scope???)
+
+\section{Stray thoughts}
+\begin{itemize}
+  \item Given a sideward movement story, It's not clear where the Object is base generated
+    \begin{itemize}
+      \item (1) Build PredP, (2) Move Object to Comp V
+      \item (2) Merge(V, Object), (2) build PredP, (3) Move object to Spec Pred
+    \end{itemize}
+  \item Romance has [\textit{consider} SC] constructions, What is the position of the Accusative DP there?
+  \item Those constructions in Romance that allow argument sharing involve non-agreeing/``light''/particle-y items intervening between the shared argument and the lower predicate.
+    \begin{itemize}
+      \item Resultatives: \textit{peint les murs \textbf{en} blanc}
+      \item Pseudorelatives: \textsc{arg} C$^0$ \textsc{pred}
+    \end{itemize}
+\end{itemize}
+
+\end{document}
+
+

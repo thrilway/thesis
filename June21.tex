@@ -1,0 +1,58 @@
+%        File: June 21.tex
+%     Created: Mon Jun 20 06:00 PM 2016 E
+% Last Change: Mon Jun 20 06:00 PM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+
+\title{Meeting Notes}
+\author{Dan Milway}
+\bibliography{Thesis}
+\begin{document}
+
+\section{ECM vs ACC-ing subjects}
+\subsection{Active: Same}
+Idiom chunks and weather \textit{it} are fine as ECM and ACC-ing subjects
+
+\ex. \textbf{ECM} 
+\a. I consider the shit to have hit the fan.
+\b. I consider it to be raining.
+
+\ex. \textbf{ACC-ing}
+\a.? I saw the shit hitting the fan.
+\b. I saw it raining.
+
+\subsection{Passive: different}
+ECM idiom chunks and weather \textit{it} can be passivized.
+
+\ex. \textbf{ECM}
+\a. The shit is considered to have hit the fan.
+\b. It is considered to be raining.
+
+ACC-ing idiom chunks and weather \textit{it} cannot.
+\ex. \textbf{ACC-ing}
+\a.* The shit was seen hitting the fan.
+\b.* It was seen raining.
+
+\textcite{cinque1996pseudo}
+\textcite{cinque1996italian}
+\textcite{lasniksaito1999subject}
+\printbibliography
+\end{document}
+
+

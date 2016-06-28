@@ -1,0 +1,181 @@
+%        File: Derivations.tex
+%     Created: Mon Jun 27 12:00 PM 2016 E
+% Last Change: Mon Jun 27 12:00 PM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\useforestlibrary{linguistics}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+  \ifuseprefix
+  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}
+}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}
+  }
+}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite
+}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites
+}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\bibliography{Thesis}
+
+\begin{document}
+\section{Assumptions}
+
+\begin{itemize}
+  \item Operations operate freely.
+  \item SOs are labelled upon Transfer.
+  \item Adjuncts must be internally labelled but are invisible to external labelling. \parencite{hornstein2009theory}
+\end{itemize}
+
+\section{ACC-ing active}
+\ex. She heard Bernard running.
+
+\ex.
+\a. (Build ACC-ing SC) \hfill $W = \left[ \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\} \right]$
+\b. Select(hear) \hfill $W = \left[\text{hear}, \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\}\right]$
+\b. Merge(hear, SC) \hfill $W = \left[\left\{_\gamma \text{hear},  \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\}\right\}\right]$
+\b. Copy(hear), Select(v*) \hfill $W = \left[ \text{v*, hear, }\left\{_\gamma \text{hear},  \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\}\right\}\right]$
+\b. Merge(hear, v*) \hfill $W = \left[ \left\{\text{v*, hear}\right\}, \left\{_\gamma \text{hear},  \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\}\right\}\right]$
+\b. Merge(hear+v*, $\gamma$) \hfill $W = \left[ \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right]$
+\b. Select( [+past]) \hfill $W = \left[ \text{[+past], } \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right]$
+\b. Merge([+past], $\delta$) \hfill $W = \left[ \left\{_\varepsilon \text{[+past]}, \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right\}\right]$
+\b. Select(she) \hfill $W = \left[\text{she} \left\{_\varepsilon \text{[+past]}, \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right\}\right]$
+\b. Merge(she, $\varepsilon$) \hfill $W = \left[\left\{_\zeta \text{she} \left\{_\varepsilon \text{[+past]}, \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right\}\right\}\right]$
+\b. Select(C) \hfill $W = \left[ \text{C,} \left\{_\zeta \text{she} \left\{_\varepsilon \text{[+past]}, \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right\}\right\}\right]$
+\b. Merge(C, $\zeta$) \hfill $W = \left[\left\{ \text{C,} \left\{_\zeta \text{she} \left\{_\varepsilon \text{[+past]}, \left\{_\delta \left\{\text{v*, hear}\right\}, \left\{\text{hear}, \left\{ \text{Bernard}, \left\{ \textsc{Prog}, \text{run} \right\} \right\} \right\}\right\}\right\}\right\}\right\}\right]$
+\b. Transfer($\zeta$)
+
+\ex. 
+\begin{forest}
+  tree defaults
+  [{$\langle\varphi,\varphi\rangle$}
+    [she]
+    [T
+      [+past]
+      [v*
+	[v*+hear]
+	[{$\langle F,F\rangle$}
+	  [$\langle$hear$\rangle$]
+	[{$\langle F,F\rangle$}
+	    [Bernard]
+	    [Prog[running,roof]]
+	  ]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+\section{ACC-ing passive}
+\ex. Bernard was heard running.
+
+\ex. 
+\a. (Build ACC-ing SC) \hfill $W = \left[ \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\} \right]$
+\b. Transfer($\alpha$)
+\b. Select(hear), Copy(Bernard) \hfill $W = \left[ \text{hear, Bernard,} \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\} \right]$
+\b. Merge(hear, Bernard) \hfill $W = \left[ \left\{_\gamma  \text{hear, Bernard} \right\},  \left\{_\beta \text{Bernard}, \left\{_\alpha \textsc{Prog}, \text{run} \right\} \right\}\right]$
+\b. Merge($\gamma, \alpha$)\\
+\dots
+\b. Copy(Bernard) \hfill $W = \left[ \text{Bernard} \left\{_\delta \text{[+past]}, \left\{ \dots \gamma \right\}  \right\} \right]$
+\b. Merge(Bernard, $\delta$) \hfill $W = \left[ \left\{\text{Bernard} \left\{_\delta \text{[+past]}, \left\{ \dots \gamma \right\}  \right\} \right\} \right]$
+
+\ex.
+\begin{forest}
+  tree defaults
+  [{$\langle\varphi,\varphi\rangle$}
+    [Bernard]
+    [T
+      [was]
+      [hear+Voice
+	[hear+Voice
+	  [hear+en]
+	  [
+	    [{$\langle$hear$\rangle$}]
+	    [{$\langle$Bernard$\rangle$}]
+	  ]
+	]
+	[Prog
+	  [{$\langle$Bernard$\rangle$}]
+	  [Prog[running,roof]]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+\section{Hypotheses/observations/etc}
+\begin{itemize}
+  \item Argument ACC-ing clauses are stable ($\left\{ \text{DP, ProgP} \right\}$ is labellable), adjunct ACC-ing clauses are unstable.
+    \begin{itemize}
+      \item Label($\left\{ \text{DP,ProgP} \right\}$) = ??
+    \end{itemize}
+  \item ACC-ing adjuncts (and Pseudo-relatives \parencite{cinque1996pseudo}) are distinct from other adjuncts in that they have specifiers.
+  \item ACC-ing clauses always have a specifier (albeit sometimes a null spec) and that specifier is never externally merged (no expletives).
+\end{itemize}
+
+\end{document}
+
+

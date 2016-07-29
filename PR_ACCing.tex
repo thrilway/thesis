@@ -1,0 +1,158 @@
+%        File: PR_ACCing.tex
+%     Created: Fri Jul 29 11:00 AM 2016 E
+% Last Change: Fri Jul 29 11:00 AM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\usepackage{subscript}
+
+\useforestlibrary{linguistics}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+  \ifuseprefix
+  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}
+}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}
+  }
+}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite
+}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites
+}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\bibliography{Thesis}
+
+\begin{document}
+In this section I discuss a pair of constructions that are superficially similar to argument sharing SCs: pseudo-relatives (PRs) and ACC-ing clauses (ACs).
+The subjects of PRs and ACs show a strange pattern of extraction wherein when the clause is merged in Theme position, its subject cannot raise, but when the clause is merged as an adjunct, its subject must move.
+
+\ex.
+\a. Mary saw Bill crying.\\
+\begin{forest}
+  nice empty nodes,sn edges
+  [TP
+    [Mary]
+    [
+      [+pst]
+      [\dots
+	[,no edge]
+	[VP
+	  [see]
+	  [ProgP
+	    [Bill]
+	    [[crying,roof]]
+	  ]
+	  ]
+	]
+      ]
+    ]
+\end{forest}
+\b. Bill was seen crying.\\
+\begin{forest}
+  nice empty nodes,sn edges
+  [TP
+  [Bill,name=fin subj]
+  [
+    [was]
+    [\dots
+      [,no edge]
+      [VP
+	[VP
+	  [see]
+	  [$\langle\text{Bill}\rangle$,name=theme]
+	]
+	[ProgP
+	  [$\langle\text{Bill}\rangle$,name=prog subj]
+	  [
+	    [crying,roof]
+	  ]
+	]
+      ]
+    ]
+  ]
+]
+\draw [->] (prog subj.south) --++ (0em,-4ex) -|(fin subj);
+\draw [->] (theme.south) --++ (0em,-5ex) -|(fin subj);
+\end{forest}
+\z.
+
+First I will present the evidence for such a claim, followed by a labeling explanation for the facts.
+
+\subsection{ACC-ing Clauses}
+In this section I discuss English ACC-ing clauses, arguing that the sentences in \Next have distinct structures.
+In Transformational Grammar terms, \Next[b] is not the result of passivizing \Next[a].
+\ex.
+\a. Mary saw Bill crying.
+\b. Bill was seen crying (by Mary).
+
+In \Last[a], the AC \textit{Bill crying} is merged as the Theme of the verb, and \textit{Bill} does not move out of the AC.
+In \Last[b], the AC is adjoined to the VP, the AC subject moves sidewards to be the Theme of the verb, and raises to become subject of the sentence.
+
+I will first compare active and passive perception reports with ACs to see whether the AC subjects are interpreted as Themes of the higher verb.
+To test for this I will <++>
+
+\subsection{Labeling}
+
+\end{document}
+
+

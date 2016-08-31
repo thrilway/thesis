@@ -6,7 +6,7 @@
 % arara: biber
 % arara: pdflatex
 % arara: pdflatex
-\documentclass[letterpaper]{article}
+\documentclass[letterpaper,12pt]{article}
 
 \usepackage[margin=1in]{geometry}
 \usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
@@ -21,6 +21,8 @@
 \usepackage{centernot}
 
 
+\useforestlibrary{linguistics}
+
 \forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
 
 \forestset{en/.style={parent anchor=center, child anchor=center}}
@@ -28,6 +30,9 @@
 \forestset{el/.style={parent anchor=north, child anchor=north}}
 
 \usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
 \DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
   \ifcase\value{uniquename}%
   \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
@@ -81,12 +86,30 @@
 \bibliography{Thesis}
 
 \begin{document}
-<++>
 
+\section{Introduction}
+
+<+BigQuestion+>
+
+\subsection{Previous Answers}
+\subsubsection{Harley, Ramchand, Folli, et al.}
+\begin{itemize}
+  \item \textsc{Manner, Path, Place, Result}, \textit{etc.} features are lexicalized on different heads in different languages
+  \item Basically a reiteration of Talmy
+  \item May be true but not an account
+\end{itemize}
+\subsubsection{Snyder, Beck, Kratzer}
+\begin{itemize}
+  \item Compounding parameter determines V-framed/S-framed
+  \item Similar in spirit to what I will propose
+  \item Compounding parameter is likely unformulable in current theory
+\end{itemize}
+
+\section{Sharpening the Question}
 A more precise definition of resultatives is needed to proceed in this study.
 Resultative clauses are clauses that contain two distinct predicates (Pred1$\neq$Pred2) which share an argument, in which the primary predicate is construed as the cause of the secondary.
-Each of these properties that define resultatives (argument sharing and causativity) is quite common and neither is is sufficient for resultatives.
-Depictives, which seem to occur in all of the worlds languages, such as those seen in \Next show argument sharing without causativity.
+Each of these properties that define resultatives (argument sharing and ``causativity'') is quite common and neither is is sufficient for resultatives.
+Depictives, which seem to occur in all of the worlds languages, such as those seen in \Next show argument sharing without ``causativity''.
 \ex. \textbf{Depictives}
 \a. Mary left angry. (Mary was angry.)
 \b. Bill ate the fish raw. (The fish was raw.)
@@ -96,9 +119,173 @@ Depictives, which seem to occur in all of the worlds languages, such as those se
 
 So, the clause \textit{Mary left angry} means that the two eventualities, the event $e$ of Mary leaving and the state $s$ of Mary being angry, are stand in either an identity ($e=s$) or containment ($e\leq s$) relation rather than a causal relation.
 
-Causativity, broadly construed, is even more prevalent in language.
-Every instance of a sentence with an agent encodes causativity.
+``Causativity'', broadly construed, is even more prevalent in language.
+Every instance of a sentence with an agent encodes ``causativity''.
 For example, the clause \textit{John ironed the shirt} means that John acted in such a way as to cause the shirt to be ironed.
+
+English-type languages, then, are those which generate clauses in which a single argument is shared between two predicates which are in a ``causative'' relation.
+French-type languages, on the other hand, are those which do not generate clauses with both properties.
+This means that an explanation of the parametric split between English- and French-type languages needs three components.
+First, it requires a theory of argument sharing.
+Second, must include a theory of how relations between predicates are established.
+Finally, it must show that, for a given language, there is some component of the primary lingustic data which determines whether the two phenomena are compatible.
+
+\subsection{What is Argument Sharing}
+First, Lets consider cases of argument sharing, which, semantically speaking, is a situation in which one entity is interpreted as being a participant in multiple distinct events expressed by a single utterence.
+A familiar type of argument sharing is control sentences such as \Next, in which Alice is both the holder of the wanting attitude and the agent of the non-actual winning event.
+\ex.\label{ex:Control} Alice$_i$ wants $ec_i$ to win.
+
+Other instances of argument sharing are seen in parasitic gaps, and depictives as in \Next and \NNext, respectively.
+
+\ex. Who$_i$ did you discuss $ec_i$ without meeting $ec_i$?
+
+\ex. Monica left angry.
+
+The notion of $\Theta$-roles is the syntactic analogue to the predicate-argument relation in semantics.
+If an entity is interpreted as the argument of a predicate, then the phrase that encodes that entity is $\Theta$-marked by the head/phrase that encodes the predicate.
+Following a basic minimalist assumption -- TRAP \parencite{hornsteinetal2005understanding} -- $\Theta$-roles are assigned upon merge, and, following a more controversial assumption -- UTAH \parencite{baker1988incorporation}-- there is a mapping between $\Theta$-roles and syntactic positions.
+This means that, for example, a DP is interpreted as the Theme of a verb iff it is merged as the complement of that verb.
+
+This leads to a conception of argument sharing, according to which, DPs are shared arguments iff they are merged in two $\Theta$ positions in the course of a single derivation.
+For ordinary control sentences, this is trivial to represent.
+Consider \ref{ex:Control}, above, in which the subject \textit{Alice} bears two $\Theta$-roles: External argument of \textit{want} and external argument of \textit{win}.
+Assuming external $\Theta$-roles are assigned to DPs merged in Spec-Voice, this means that \textit{Alice} was merged in two distinct Voice projections.
+This can be attained by a derivation including only standard upward movement operations as shown below in \Next.
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [VoiceP
+    [Alice,name=wanter]
+    [
+      [Voice,name=want voice]
+      [VP
+	[want]
+	[TP
+	  [{$\langle\text{Alice}\rangle$},name=to subj]
+	  [
+	    [to]
+	    [VoiceP
+	      [{$\langle\text{Alice}\rangle$},name=winner]
+	      [
+		[Voice,name=win voice]
+		[win]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+  ]
+  \draw [->,thick] (winner) to[out=south west, in=south] (to subj);
+  \draw [->,thick] (to subj) to[out=south west, in=south] (wanter);
+  %\draw [->,dashed] (win voice) to[out=west, in=south] node[below]  {\small $\Theta$} (winner);
+\end{forest}
+
+Other instances of argument sharing, however, require movement into internal argument positions which, assuming internal $\Theta$-roles are assigned in Comp V, requires sideward movement.
+Consider the depictive sentence \textit{I ate the meat raw}, represented below in \Next.
+\ex.
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [VoiceP
+    [I]
+    [
+      [Voice]
+      [
+	[VP
+	  [eat]
+	  [DP[the meat,roof]]
+	]
+	[SC
+	  [DP,[{$\langle\text{the meat}\rangle$},roof]]
+	  [raw]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+While sideward movement is not usually assumed to be allowed in merge-based derivations, certain interpretations of minimalist syntactic theory do allow it \parencite{nunes2001sideward,hornstein2009theory}.
+I adapt these interpretations slightly to allow for the sideward movement necessary for movement to theme position.
+
+Following \textcite{hornstein2009theory,nunes2001sideward}, I assume that in addition to linguistically proprietary operations, the faculty of language also uses domain general operations, specifically, a copying operation.
+
+\ex. Deriving \Last.
+\begin{tabular}[t]{rlll}
+  & Lexical Array & Workspace & \\
+  \cline{1-3}
+  1 & $\left\{ \text{raw, eat, Voice, 1sg} \right\}$ & $\left\{ \left\{ the, meat \right\} \right\}$ & Select(raw)\\
+\end{tabular}
+
+\subsection{What is ``Causativity''}
+\begin{itemize}
+  \item Semantics of ``causativity''
+    \begin{itemize}
+      \item \textcite{pietroski2005events}: causativity without a Cause predicate
+    \end{itemize}
+  \item Syntax of ``causativity''
+    \begin{itemize}
+      \item Generally in the verbal domain $\{\text{H, XP}\} \rightarrow $Causative
+    \end{itemize}
+\end{itemize}
+
+(The above will largely be an excercise in making my assumptions explicit)
+
+\section{Enter Resultatives}
+\begin{itemize}
+  \item Structural description: \textcite{kratzer_building_2004} + Sideward movement
+\end{itemize}
+\ex. 
+\a. Kratzer\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [vP
+    [v] 
+    [
+      [DP[the metal,roof]] 
+      [VP
+	[hammer] 
+	[resP 
+	  [res] 
+	  [SC
+	    [{$\langle\text{the metal}\rangle$}]
+	    [flat]
+	  ]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+\b. Kratzer + Sideward movement\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [vP
+    [v]
+    [
+      [VP
+	[hammer]
+	[DP[the metal,roof]]
+      ]
+      [resP
+	[res]
+	[SC
+	  [DP[the metal,roof]]
+	  [flat]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+\z.
+
+\begin{itemize}
+  \item How does \Last[b] get a ``causative''  interpretation?
+  \item How is \Last[b] ruled out in French-like languages?
+\end{itemize}
+
+\section{Appendices}
+\begin{itemize}
+  \item 1st Generals Paper.
+  \item Dog Days 2016 handout.
+  \item Forum Paper? (perhaps tangientially relevent)
+\end{itemize}
 \end{document}
-
-

@@ -83,6 +83,8 @@
 }
 }
 
+\newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
+
 \bibliography{Thesis}
 
 \begin{document}
@@ -146,12 +148,54 @@ If an entity is interpreted as the argument of a predicate, then the phrase that
 Following a basic minimalist assumption -- TRAP \parencite{hornsteinetal2005understanding} -- $\Theta$-roles are assigned upon merge, and, following a more controversial assumption -- UTAH \parencite{baker1988incorporation}-- there is a mapping between $\Theta$-roles and syntactic positions.
 This means that, for example, a DP is interpreted as the Theme of a verb iff it is merged as the complement of that verb.
 
+I will be making two non-standard assumptions regarding $\Theta$-roles which, being non-standard, require justification.
+First, I assume that DPs can receive multiple $\Theta$-roles, or in other words, I do not assume the $\Theta$ criterion.
+There are two justifications for this assumption, one metatheoretical and the other theoretical.
+The metatheoretical argument is based on the method of theory building prescribed by the minimalist program.
+Theories are built by identifying virtual conceptual necessities (VCNs) and assuming those as axioms of the theory.
+Any proposed principles or theoretical constructs are admited to the theory in one of two ways.
+Either they are shown to follow logically from VCNs or they are argued to be VCNs.
+In current syntactic theory, the set of VCNs is restricted to a lexicon, a structure building operation (merge) and the interfaces with other cognitive modules (sensorymotor and conceptual-intentional).
+Since the $\Theta$-criterion is not a member of this set, its existence, rather than its nonexistence, must be argued for.
+In other words, the burden of proof is on those who would propose the $\Theta$-criterion rather than those who reject it.
+
+The $\Theta$ criterion was a constraint in GB syntax that held a D-Structure. 
+It stated that every $\Theta$-role must be assigned to exactly one argument.
+Since D-Structure has been eliminated from syntactic theory, if the $\Theta$-criterion does hold, it must hold at one of the interfaces, and since $\Theta$-roles are essentially semantic it must hold at the CI-interface.
+<+FinishThisThought+>
+
+The second non-standard assumption is in the particular version of UTAH I use.
+\textcite{bakerXXXX} argues for the following mapping of $\Theta$-roles to structural position.
+Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp V as in \Next, below.
+\begin{figure}[h]
+  \refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}\label{fig:BakerUTAH}
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [VoiceP
+    [\textsc{Agent}]
+    [
+      [Voice]
+      [VP
+	[\textsc{Theme}]
+	[
+	  [V]
+	  [\textsc{Goal}]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+\end{figure}
+
+<+FinishThisThought+>
+
 This leads to a conception of argument sharing, according to which, DPs are shared arguments iff they are merged in two $\Theta$ positions in the course of a single derivation.
 For ordinary control sentences, this is trivial to represent.
 Consider \ref{ex:Control}, above, in which the subject \textit{Alice} bears two $\Theta$-roles: External argument of \textit{want} and external argument of \textit{win}.
 Assuming external $\Theta$-roles are assigned to DPs merged in Spec-Voice, this means that \textit{Alice} was merged in two distinct Voice projections.
 This can be attained by a derivation including only standard upward movement operations as shown below in \Next.
-\ex. 
+\begin{figure}[h]
+  \figex
 \begin{forest}
   nice empty nodes,sn edges,baseline
   [VoiceP
@@ -180,17 +224,19 @@ This can be attained by a derivation including only standard upward movement ope
   \draw [->,thick] (to subj) to[out=south west, in=south] (wanter);
   %\draw [->,dashed] (win voice) to[out=west, in=south] node[below]  {\small $\Theta$} (winner);
 \end{forest}
+\end{figure}
 
 Other instances of argument sharing, however, require movement into internal argument positions which, assuming internal $\Theta$-roles are assigned in Comp V, requires sideward movement.
 Consider the depictive sentence \textit{I ate the meat raw}, represented below in \Next.
-\ex.
+\begin{figure}[h]
+  \figex
 \begin{forest}
   nice empty nodes,sn edges,baseline
   [VoiceP
     [I]
     [
       [Voice]
-      [
+      [VP
 	[VP
 	  [eat]
 	  [DP[the meat,roof]]
@@ -203,18 +249,65 @@ Consider the depictive sentence \textit{I ate the meat raw}, represented below i
     ]
   ]
 \end{forest}
-
+\end{figure}
 While sideward movement is not usually assumed to be allowed in merge-based derivations, certain interpretations of minimalist syntactic theory do allow it \parencite{nunes2001sideward,hornstein2009theory}.
 I adapt these interpretations slightly to allow for the sideward movement necessary for movement to theme position.
 
 Following \textcite{hornstein2009theory,nunes2001sideward}, I assume that in addition to linguistically proprietary operations, the faculty of language also uses domain general operations, specifically, a copying operation.
-
-\ex. Deriving \Last.
-\begin{tabular}[t]{rlll}
-  & Lexical Array & Workspace & \\
-  \cline{1-3}
-  1 & $\left\{ \text{raw, eat, Voice, 1sg} \right\}$ & $\left\{ \left\{ the, meat \right\} \right\}$ & Select(raw)\\
+A copying operation, along with the necessary assumption that subtrees are derived separately before being merged together, gives us sideward movement.
+To see how this works, consider the derivation of \Last (given in \Next, below).
+Starting with the DP \textit{the meat} preconstructed, we build the small clause (a-c).
+We then select the verb from the lexical array (c), copy the DP from the small clause (d), and merge the two to form the VP (e).
+Finally, we merge the VP and the small clause (f) and we are left with a sideward movement structure.
+\begin{table}
+  \figex \textbf{Deriving \LLast}\\
+\begin{tabular}[t]{rll}
+  & Lexical Array & Workspace\\
+  (a) & $\left\{ \textit{raw, eat, \dots} \right\}$ & $\left\{ \left\{ \textit{the, meat} \right\} \right\}$\\
+  \multicolumn{3}{l}{Select(raw)}\\
+  (b) & $\left\{ \textit{eat, \dots} \right\}$ & $\left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\}$ \\
+  \multicolumn{3}{l}{Merge(raw, $\left\{ \textit{the, meat} \right\}$)}\\
+  (c) & $\left\{  \textit{eat, \dots}\right\}$ & $\left\{ \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
+  \multicolumn{3}{l}{Select(eat)}\\
+  (d) & $\left\{ \textit{\dots} \right\}$ & $\left\{ \textit{eat}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
+  \multicolumn{3}{l}{Copy($\left\{ \textit{the, meat} \right\}$)}\\
+  (e) & $\left\{ \textit{\dots} \right\}$ &$\left\{ \textit{eat}, \left\{\textit{the, meat}\right\}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
+  \multicolumn{3}{l}{Merge(eat,  $\left\{ \textit{the, meat} \right\}$)}\\
+  (f) & $\left\{ \textit{\dots} \right\}$ &$\left\{ \left\{\textit{eat}, \left\{\textit{the, meat}\right\}\right\}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
+  \multicolumn{3}{l}{Merge($\left\{\textit{eat}, \left\{\textit{the, meat}\right\}\right\}$, $\left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\}$)}\\
+  (g) & $\left\{ \ldots \right\}$ & $\left\{  \left\{ \left\{\textit{eat}, \left\{\textit{the, meat}\right\}\right\}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}\right\}$ \\
+  \multicolumn{3}{l}{\dots}
 \end{tabular}
+\end{table}
+As discussed by \textcite{nunes2001sideward}, the derivation in \Last and the structure it derives in \LLast would lead to a crash at PF due to a failure of copy deletion.
+Assuming that, all else being equal, the higher copy of a syntactic object is pronounced and lower copies are deleted, a sideward movement structure ought to be unpronounceable.
+If sideward movement is followed by movement to a position that c-commands both copies, then the copy deletion issues evaporate, and the higher copy is pronounced.
+
+Returning to the specific example of object-oriented depictives, the preceding discussion means that the structure in \LLast cannot be the final structure of the sentence given, as such a structure is unpronounceable.
+If we assume, following \textcite{lasnik1999minimalist}, that grammatical objects raise to Spec AgrO\footnote{It seems unlikely to me that there is a specialised grammatical category whose only property is that is licenses Object DPs. As such I assume AgrO to be some meaningful category, but I take no stance on what that category might be.} for abstract Case\footnote{I take abstract Case to be a phenomenon in need of explanation, rather than an explanation for a phenomenon.} licensing, then our sideward moved DP must further raise to and the issue dissolves.
+\begin{figure}[h]
+\figex
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [AgrOP
+    [DP]
+    [
+      [AgrO]
+      [VP
+	[VP
+	  [eat]
+	  [{$\langle\text{DP}\rangle$}]
+	]
+	[SC
+	  [{$\langle\text{DP}\rangle$}]
+	  [raw]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+\end{figure}
+To summarize, argument sharing is represented in the syntax by movement from one $\Theta$ position to another
 
 \subsection{What is ``Causativity''}
 \begin{itemize}
@@ -234,8 +327,8 @@ Following \textcite{hornstein2009theory,nunes2001sideward}, I assume that in add
 \begin{itemize}
   \item Structural description: \textcite{kratzer_building_2004} + Sideward movement
 \end{itemize}
-\ex. 
-\a. Kratzer\\
+\begin{figure}[h]
+\figex Kratzer\\
 \begin{forest}
   nice empty nodes,sn edges,baseline
   [vP
@@ -255,7 +348,9 @@ Following \textcite{hornstein2009theory,nunes2001sideward}, I assume that in add
     ]
   ]
 \end{forest}
-\b. Kratzer + Sideward movement\\
+\end{figure}
+\begin{figure}[h]
+\figex Kratzer + Sideward movement\\
 \begin{forest}
   nice empty nodes,sn edges,baseline
   [vP
@@ -275,8 +370,7 @@ Following \textcite{hornstein2009theory,nunes2001sideward}, I assume that in add
     ]
   ]
 \end{forest}
-\z.
-
+\end{figure}
 \begin{itemize}
   \item How does \Last[b] get a ``causative''  interpretation?
   \item How is \Last[b] ruled out in French-like languages?

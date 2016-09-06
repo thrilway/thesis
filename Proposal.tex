@@ -8,7 +8,9 @@
 % arara: pdflatex
 \documentclass[letterpaper,12pt]{article}
 
-\usepackage[margin=1in]{geometry}
+\usepackage[
+%margin=1in
+]{geometry}
 \usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
 
 \usepackage{stmaryrd}
@@ -19,7 +21,7 @@
 \usepackage{tabularx}
 \usepackage{linguex}
 \usepackage{centernot}
-
+\usepackage{todonotes}
 
 \useforestlibrary{linguistics}
 
@@ -33,48 +35,48 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
-\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
-  \ifcase\value{uniquename}%
-  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
-  \or
-  \ifuseprefix
-  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
-  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
-  \or
-  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
-  \fi
-  \usebibmacro{name:andothers}%
-  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
-}
-
-\DeclareFieldFormat{shorthand:poss}{%
-  \ifnameundef{labelname}{#1's}{#1}
-}
-
-\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
-
-\DeclareFieldFormat{label:poss}{#1's}
-
-\newrobustcmd*{\posscitealias}{%
-  \AtNextCite{%
-    \DeclareNameAlias{labelname}{labelname:poss}%
-    \DeclareFieldAlias{shorthand}{shorthand:poss}%
-    \DeclareFieldAlias{citetitle}{citetitle:poss}%
-    \DeclareFieldAlias{label}{label:poss}
-  }
-}
-
-\newrobustcmd*{\posscite}{%
-  \posscitealias%
-  \textcite
-}
-
-\newrobustcmd*{\Posscite}{\bibsentence\posscite}
-
-\newrobustcmd*{\posscites}{%
-  \posscitealias%
-  \textcites
-}
+%\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+%  \ifcase\value{uniquename}%
+%  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+%  \or
+%  \ifuseprefix
+%  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+%  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+%  \or
+%  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+%  \fi
+%  \usebibmacro{name:andothers}%
+%  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+%}
+%
+%\DeclareFieldFormat{shorthand:poss}{%
+%  \ifnameundef{labelname}{#1's}{#1}
+%}
+%
+%\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+%
+%\DeclareFieldFormat{label:poss}{#1's}
+%
+%\newrobustcmd*{\posscitealias}{%
+%  \AtNextCite{%
+%    \DeclareNameAlias{labelname}{labelname:poss}%
+%    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+%    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+%    \DeclareFieldAlias{label}{label:poss}
+%  }
+%}
+%
+%\newrobustcmd*{\posscite}{%
+%  \posscitealias%
+%  \textcite
+%}
+%
+%\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+%
+%\newrobustcmd*{\posscites}{%
+%  \posscitealias%
+%  \textcites
+%}
 
 \newcommand\quelle[1]{{%
   \unskip\nobreak\hfil\penalty50
@@ -319,17 +321,24 @@ In other argument sharing constructions, however, sideward movement is necessary
 
 \subsection{What is ``Causativity''}
 Causativity as a phenomenon is frequently discussed using causative-inchoative verbs like \textit{burn}.
-\ex. 
-\a. Paul burned the toast.
-\b. The toast burned.
+\ex.\label{ex:caus-inch}
+\a.\label{ex:burn-tr} Paul burned the toast.
+\b.\label{ex:burn-intr} The toast burned.
 \z.
 
 
+The principal debate regarding causativity is about whether \Last[a] is, in some sense, derived from \Last[b].
+In the earliest days of this debate, those who argued for the affirmative (McCawley, Lakoff, et al.)\todo[inline]{\small I need to find and read some representative Generetive Semantics literature} proposed \Last[a] meant and was derived from \Next.
+\ex.\label{ex:cause-to-burn} Paul caused the toast to burn.
+
+\todo[inline]{Give arguments for this claim}
+
+\textcite{fodor1970three}, however, argues against this claim.
+\todo[inline]{Give Fodor's arguments}
+
+\texcite{pietroski2003small} synthesizes these two approaches and proposes that \ref{ex:burn-tr} is ``derived'' from \ref{ex:burn-intr} does not mean \ref{ex:cause-to-burn}.
+
 \begin{itemize}
-  \item Semantics of ``causativity''
-    \begin{itemize}
-      \item \textcite{pietroski2005events,pietroski2003small}: causativity without a Cause predicate
-    \end{itemize}
   \item Syntax of ``causativity''
     \begin{itemize}
       \item Generally in the verbal domain $\{\text{H, XP}\} \rightarrow $Causative

@@ -161,7 +161,7 @@ In current syntactic theory, the set of VCNs is restricted to a lexicon, a struc
 Since the $\Theta$-criterion is not a member of this set, its existence, rather than its nonexistence, must be argued for.
 In other words, the burden of proof is on those who would propose the $\Theta$-criterion rather than those who reject it.
 
-The $\Theta$ criterion was a constraint in GB syntax that held a D-Structure. 
+The $\Theta$-criterion was a constraint in GB syntax that held a D-Structure. 
 It stated that every $\Theta$-role must be assigned to exactly one argument.
 Since D-Structure has been eliminated from syntactic theory, if the $\Theta$-criterion does hold, it must hold at one of the interfaces, and since $\Theta$-roles are essentially semantic it must hold at the CI-interface.
 <+FinishThisThought+>
@@ -367,32 +367,43 @@ I will discuss resultatives using \Next as a representative example.
 
 First, consider the analysis given by \textcite{kratzer_building_2004}, according to which, the theme \textit{the metal} and the adjective \textit{flat} form a small clause, which encodes a state description.
 The small clause merges with result head, which encodes a causative relation between events, and the resulting resP is merged as the complement of the verb \textit{hammer}.
-
+The small cluse theme is then raised to Spec V where it is marked as the theme of \textit{hammer}, and from there the derivation proceeds as normal.
+The vP this generates is given in \Next.
 \begin{figure}[h]
-\figex Kratzer\\
+\figex Kratzer's Resultative Structure\\
+{\small
 \begin{forest}
   nice empty nodes,sn edges,baseline
   [vP
     [v] 
     [
-      [DP[the metal,roof]] 
+      [{the metal},name=V theme] 
       [VP
 	[hammer] 
 	[resP 
 	  [res] 
 	  [SC
-	    [{$\langle\text{the metal}\rangle$}]
+	    [{$\langle\text{the metal}\rangle$},name=sc theme]
 	    [flat]
 	  ]
 	]
       ]
     ]
   ]
-\end{forest}
+  \draw[->] (sc theme) to[out=south west, in=south] (V theme);
+\end{forest}}
 \end{figure}
+
+Semantically, this proposal depends on a standard montagovian theory \parencite[see][]{heimkratzer1998semantics} of composition and a neo-davidsonian event emantics with two novel notions: a refined definition of a \textsc{cause} predicate and a novel rule of composition.
+The \textsc{cause} predicate defines a relation between events \textit{e} and \textit{f} where \textit{e} is an event of causing \textit{f}.
+As Kratzer defines causality, the \textsc{cause} predicate is (likely) eqivalent to Pietroski's \textsc{Terminates} predicate, so no more needs to be said about it.
+
+The 
+
 \begin{figure}[h]
 \figex Kratzer + Sideward movement\\
-\begin{forest}
+{\small
+  \begin{forest}
   nice empty nodes,sn edges,baseline
   [vP
     [v]
@@ -410,7 +421,7 @@ The small clause merges with result head, which encodes a causative relation bet
       ]
     ]
   ]
-\end{forest}
+\end{forest}}
 \end{figure}
 \begin{itemize}
   \item How does \Last[b] get a ``causative''  interpretation?

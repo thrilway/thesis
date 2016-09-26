@@ -153,7 +153,7 @@ Specifically, I will argue that Chomsky's (\citeyear{chomsky2013problems,chomsky
   \item Compounding parameter is likely unformulable in current theory
 \end{itemize}
 
-\section{Sharpening the Question}
+\section{Sharpening the Question}\label{sec:result analysis}
 A more precise definition of resultatives is needed to proceed in this study.
 Resultative clauses are clauses that contain two distinct predicates (Pred1$\neq$Pred2) which share an argument, in which the primary predicate is construed as the cause of the secondary.
 Each of these properties that define resultatives (argument sharing and ``causativity'') is quite common and neither is sufficient for resultatives.
@@ -411,7 +411,7 @@ I will discuss resultatives using \Next as a representative example.
 
 First, consider the analysis given by \textcite{kratzer_building_2004}, according to which, the theme \textit{the metal} and the adjective \textit{flat} form a small clause, which encodes a state description.
 The small clause merges with result head, which encodes a causative relation between events, and the resulting resP is merged as the complement of the verb \textit{hammer}.
-The small cluse theme is then raised to Spec V where it is marked as the theme of \textit{hammer}, and from there the derivation proceeds as normal.
+The small clause theme is then raised to Spec V where it is marked as the theme of \textit{hammer}, and from there the derivation proceeds as normal.
 The vP this generates is given in \Next.
 \begin{figure}[h]
 \figex Kratzer's Resultative Structure\\
@@ -438,11 +438,16 @@ The vP this generates is given in \Next.
 \end{forest}}
 \end{figure}
 
-Semantically, this proposal depends on a standard montagovian theory \parencite[see][]{heimkratzer1998semantics} of composition and a neo-davidsonian event emantics with two novel notions: a refined definition of a \textsc{cause} predicate and a novel rule of composition.
+Semantically, this proposal depends on a standard montagovian theory \parencite[see][]{heimkratzer1998semantics} of composition and a neo-davidsonian event semantics with two novel notions: a refined definition of a \textsc{cause} predicate and a novel rule of composition.
 The \textsc{cause} predicate defines a relation between events \textit{e} and \textit{f} where \textit{e} is an event of causing \textit{f}.
 As Kratzer defines causality, the \textsc{cause} predicate is (likely) eqivalent to Pietroski's \textsc{Terminates} predicate, so no more needs to be said about it.
 
-The 
+Kratzer requires a novel rule of composition because the resP (type $\langle s, t\rangle$) is neither of the same type as, nor in the domain of the verb (type $\langle e, \langle s, t\rangle\rangle$) it combines with.
+To combine these objects, Kratzer uses the rule of \textit{event identification} \parencite{kratzer_severing_1996} as defined below in \Next.
+\ex. \textbf{Event Identification}: If $\alpha$ is a branching node with daughters $\beta$ and $\gamma$, and if $\beta$ is of type $\langle e, \langle s, t\rangle\rangle$ and $\gamma$ is of type $\langle s, t\rangle$, then $\llbracket\alpha\rrbracket = \lambda x_e \lambda e_s [\llbracket\beta\rrbracket](x)(e) \& \llbracket\gamma\rrbracket(e)]$
+
+Given the discussion above regarding argument sharing, however, I will modify Kratzer's analysis slightly.
+In the modified analysis, the theme moves sideward from the small clause to Comp V, and the ResP merges with the VP, as shown below in \Next.
 
 \begin{figure}[h]
 \figex Kratzer + Sideward movement\\

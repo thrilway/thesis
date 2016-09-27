@@ -208,7 +208,18 @@ In other words, the burden of proof is on those who would propose the $\Theta$-c
 The $\Theta$-criterion was a constraint in GB syntax that held a D-Structure. 
 It stated that every $\Theta$-role must be assigned to exactly one argument.
 Since D-Structure has been eliminated from syntactic theory, if the $\Theta$-criterion does hold, it must hold at one of the interfaces, and since $\Theta$-roles are essentially semantic it must hold at the CI-interface.
-<+FinishThisThought+>
+So we must ask how the $\Theta$-criterion would be formulated as a constraint on CI legibility.
+
+To do so, let's consider a concrete case.
+Compare the two possible structures for an instance of control in \Next.
+\ex.
+\a. Richard$_i$ wanted [PRO$_i$ to laugh].
+\b. Richard$_i$ wanted [$\langle$Richard$_i\rangle$ to laugh].
+
+The structure in \Last[a], with PRO, obeys the $\Theta$-criterion, and the one in \Last[b] violates it, but both map to the same logical form, given in \Next.
+\ex. $\exists e [\text{Wanted}(e)(\textbf{r}) \& \text{Laugh}(e) \& \textsc{Agent}(e)(\textbf{r})]$
+
+The $\Theta$-criterion would then amount to a stipulation that \LLast[a] is good and \LLast[b] is bad, and for my task here, I see no use for such a stipulation.
 
 The second non-standard assumption is in the particular version of UTAH I use.
 \textcite{bakerXXXX} argues for the following mapping of $\Theta$-roles to structural position.
@@ -220,11 +231,11 @@ Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp 
   nice empty nodes,sn edges,baseline
   [VoiceP
     [\textsc{Agent}]
-    [
+    [Voice$^\prime$
       [Voice]
       [VP
 	[\textsc{Theme}]
-	[
+	[V$^\prime$
 	  [V]
 	  [\textsc{Goal}]
 	]
@@ -448,7 +459,6 @@ To combine these objects, Kratzer uses the rule of \textit{event identification}
 
 Given the discussion above regarding argument sharing, however, I will modify Kratzer's analysis slightly.
 In the modified analysis, the theme moves sideward from the small clause to Comp V, and the ResP merges with the VP, as shown below in \Next.
-
 \begin{figure}[h]
 \figex Kratzer + Sideward movement\\
 {\small
@@ -472,11 +482,15 @@ In the modified analysis, the theme moves sideward from the small clause to Comp
   ]
 \end{forest}}
 \end{figure}
+
 \begin{itemize}
   \item How does \Last[b] get a ``causative''  interpretation?
   \item How is \Last[b] ruled out in French-like languages?
 \end{itemize}
+\section{Label Theory}
+<+IntroStuff+>
 
+Label Theory begins with two principles: (i) Merge does not assign labels to the objects it creates, and (ii) labels are required for proper interpretation at the CI interface.
 \section{Appendices}
 \begin{itemize}
   \item 1st Generals Paper.

@@ -87,6 +87,8 @@ margin=1in
 
 \newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
 
+\newcommand{\hxp}{$\left\{ \text{X, YP} \right\}$}
+\newcommand{\hh}{$\left\{ \text{X, Y} \right\}$}
 \bibliography{Thesis}
 \linespread{1.3}
 \begin{document}
@@ -489,13 +491,26 @@ In the modified analysis, the theme moves sideward from the small clause to Comp
 \end{itemize}
 \section{Label Theory}
 <+IntroStuff+>
-
 Label Theory begins with two principles: (i) Merge does not assign labels to the objects it creates, and (ii) labels are required for proper interpretation at the CI interface.
+From these principles, Chomsky proposes that labels are assigned upon transfer (\textit{i.e.}, at the phase level) to the CI interface by a labeling algorithm (LA), which is a special case of minimal search that picks out the most prominent element contained in a syntactic object and assigns it as the label.
+Given this conception of labeling, there are three relevant classes of syntactic objects: (i) Head-Phrase structures ($\left\{ \text{X, YP} \right\}$), (ii) Head-Head structures ($\left\{ \text{X, Y} \right\}$), and (iii) Phrase-Phrase structures ($\left\{ \text{XP, YP} \right\}$).\footnote{
+  Technically speaking, there is a fourth class of syntactic objects, Heads, which I will not discuss for two reasons. First, because it is not clear that heads would require labels. And second, because if it required labelling, the labeling process would be trivial
+}
+The simplest case, Head-Phrase structures, require no special discussion.
+The head is the most prominent constituent of the structure, so it becomes the label.
+\ex. Label(\hxp) = X
+
+The other structures, on the other hand are symmetric, and therefore do not necessarily have most prominent elements so the LA must use other factors to decide.
+Head-Head structures can only be labeled if only one of the heads can be the label.
+Chomsky notes that the only instances of licit (and therefore labelable) Head-Head structures are the result of merging a root with a category determining head, and proposes that this is because roots are simply unable to be labels.
+\ex. Label(\hh) = X iff Y is a root and X is not a root.
+
+The last, and most relevant to this dissertation, is the class of Phrase-Phrase structures, 
 \section{Appendices}
 \begin{itemize}
   \item 1st Generals Paper.
   \item Dog Days 2016 handout.
-  \item Forum Paper? (perhaps tangientially relevent)
+  \item Forum Paper? (perhaps tangentially relevant)
 \end{itemize}
 \printbibliography
 \end{document}

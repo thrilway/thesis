@@ -89,6 +89,7 @@ margin=1in
 
 \newcommand{\hxp}{$\left\{ \text{X, YP} \right\}$}
 \newcommand{\hh}{$\left\{ \text{X, Y} \right\}$}
+\newcommand{\xpyp}{$\left\{ \text{XP, YP} \right\}$}
 \bibliography{Thesis}
 \linespread{1.3}
 \begin{document}
@@ -505,7 +506,22 @@ Head-Head structures can only be labeled if only one of the heads can be the lab
 Chomsky notes that the only instances of licit (and therefore labelable) Head-Head structures are the result of merging a root with a category determining head, and proposes that this is because roots are simply unable to be labels.
 \ex. Label(\hh) = X iff Y is a root and X is not a root.
 
-The last, and most relevant to this dissertation, is the class of Phrase-Phrase structures, 
+The last, and most relevant to this dissertation, is the class of Phrase-Phrase structures.
+Like the Head-Head structures, these are symmetrical, so there is no single most prominent element to be found.
+Since every instance of internal merge and those instances of externally merging arguments, creates a Phrase-Phrase structure, there must be some way of labeling these structures.
+Chomsky proposes two labeling strategies: (i) Lower copies of phrases are invisible to labeling, and (ii) if the two phrases agree for some feature, that feature can act as a label.
+\ex. Label(\xpyp) = $
+\begin{cases}
+  \text{Label(YP)} & \text{iff XP is a lower copy}\\
+  \langle\text{F,F}\rangle & \text{iff XP and YP agree for F}
+\end{cases}
+$
+
+Recall that Chomsky proposes that labeling is a requirement of the CI interface.
+It should be (and has been) noted, however, that, given our current conception of the CI interface, there is no reason to think that labelling is required for semantic interpretation \parencite[see \textit{e.g.,}][]{hornstein2016arizona}.
+If a Phrase-Phrase structure has the proper semantic types, then why does it need a label?
+Our current conception of the CI interface, however, is based on questionable assumptions regarding the status of natural language as a formal language, and the role of truth-conditions and reference in natural language meaning \parencite{chomsky2000new,pietroski2005events,moravcsik1998meaning}.
+
 \section{Appendices}
 \begin{itemize}
   \item 1st Generals Paper.

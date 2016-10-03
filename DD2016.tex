@@ -1,0 +1,453 @@
+%        File: DD2016.tex
+%     Created: Mon Aug 08 11:00 AM 2016 E
+% Last Change: Mon Aug 08 11:00 AM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\usepackage{adjustbox}
+\newcommand*{\StrikeThruDistance}{0.15cm}%
+\newcommand*{\StrikeThru}{\StrikeThruDistance,\StrikeThruDistance}%
+
+\useforestlibrary{linguistics}
+
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{strike thru arrow/.style={
+    decoration={markings, mark=at position 0.5 with {
+        \draw [thick,-] 
+            ++ (-\StrikeThruDistance,-\StrikeThruDistance) 
+            -- ( \StrikeThruDistance, \StrikeThruDistance);
+	\draw [thick,-]
+	++ (-\StrikeThruDistance, \StrikeThruDistance)
+	-- (\StrikeThruDistance, -\StrikeThruDistance);
+	  }
+    },
+    postaction={decorate},
+}}
+%\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+%  \ifcase\value{uniquename}%
+%  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+%  \or
+%  \ifuseprefix
+%  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+%  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+%  \or
+%  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+%  \fi
+%  \usebibmacro{name:andothers}%
+%  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+%}
+%
+%\DeclareFieldFormat{shorthand:poss}{%
+%  \ifnameundef{labelname}{#1's}{#1}
+%}
+%
+%\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+%
+%\DeclareFieldFormat{label:poss}{#1's}
+%
+%\newrobustcmd*{\posscitealias}{%
+%  \AtNextCite{%
+%    \DeclareNameAlias{labelname}{labelname:poss}%
+%    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+%    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+%    \DeclareFieldAlias{label}{label:poss}
+%  }
+%}
+%
+%\newrobustcmd*{\posscite}{%
+%  \posscitealias%
+%  \textcite
+%}
+%
+%\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+%
+%\newrobustcmd*{\posscites}{%
+%  \posscitealias%
+%  \textcites
+%}
+%
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+\title{Subjects of Adjuncts and Labeling}
+\author{Dan Milway}
+\date{Dog Days Workshop\\17 August 2016}
+\bibliography{Thesis}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+This paper investigates a peculiar movement pattern shown by subjects ACC-ing clauses (ACs), which are non-finite clauses with accusative subjects and progressive main verbs.
+These clauses are often embedded in direct perceptions reports as shown in \Last below.
+\ex. 
+\a. They saw her proving the theorem.
+\b. She was seen proving the theorem.
+
+The subjects of ACs cannot raise to the matrix clause if the AC is an argument, but must raise if the AC is an adjunct.
+This pattern can be partially accounted for by assuming two label-based theories: (i) Labels are assigned algorithmically as a requirement of the Conceptual-Intentional (CI) interface \parencite{chomsky2013problems,chomsky2015problems}, and (ii) adjunction structures do not receive labels \parencite{chametzky1996theory,hornstein2009theory}.
+These assumptions require a rethinking of the CI interface which can allow for a full account of the pattern.
+
+This paper is structured as follows.
+The analysis of AC subject movement patterns will be justified in section \ref{sec:analysis}.
+A brief outline of label-theoretic notions will be given in \ref{sec:labels}
+\section{The phenomenon: ACC-ing (and Pseudo-relative?) subjects}\label{sec:analysis}
+\begin{itemize}
+  \item In active sentences, the perception verb doesn't $\theta$-mark the ACC-ing subject.
+  \item In passives, the perception verb does $\theta$-mark the ACC-ing subject
+\end{itemize}
+\ex.
+\a. We heard it raining last night.
+\b. We saw all hell breaking loose.
+\b. We heard Jamie being slandered.
+
+\ex.
+\a.* It was heard raining last night.
+\b.* All hell was seen breaking loose. (*idiomatic)
+\b.* Jamie was heard being slandered.
+
+\newpage
+\begin{itemize}
+  \item \textsc{theme}-marking occurs in Comp V.
+  \item In actives, the AC occupies Comp V.
+  \item In passives, the AC subject occupies Comp V.
+    \begin{itemize}
+      \item The AC is adjoined to VP.
+    \end{itemize}
+\end{itemize}
+\begin{minipage}[t]{0.5\textwidth}
+\ex. \textbf{Active/Argument ACC-ing}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [TP
+    [Mary]
+    [
+      [+pst]
+      [\dots
+	[,no edge]
+	[VP
+	  [see]
+	  [ProgP
+	    [Bill]
+	    [[crying,roof]]
+	  ]
+	  ]
+	]
+      ]
+    ]
+\end{forest}
+
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\ex. \textbf{Passive/Adjunct ACC-ing}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [TP
+  [Bill,name=fin subj]
+  [
+    [was]
+    [\dots
+      [,no edge]
+      [VP
+	[VP
+	  [see]
+	  [$\langle\text{Bill}\rangle$,name=theme]
+	]
+	[ProgP
+	  [$\langle\text{Bill}\rangle$,name=prog subj]
+	  [
+	    [crying,roof]
+	  ]
+	]
+      ]
+    ]
+  ]
+]
+\draw [->] (prog subj.south) --++ (0em,-4ex) -|(fin subj);
+\draw [->] (theme.south) --++ (0em,-5ex) -|(fin subj);
+\end{forest}
+
+\end{minipage}
+\begin{itemize}
+  \item Strange result: \textbf{The ACC-ing subject is frozen in the Argument ACC-ing, but must move from the Adjunct ACC-ing.}
+  \item cp. Raising-to-Object and Adjunct Islands
+\end{itemize}
+\begin{minipage}[t]{\textwidth}
+  \ex. \textbf{Argument AC subjects do not move}\\
+\begin{minipage}[t]{0.5\textwidth}
+\begin{forest}
+  nice empty nodes,sn edges
+  [VoiceP
+    [DP[Mary,roof]]
+    [
+      [Voice]
+      [AgrOP
+	[\textit{Obj},name=object]
+	[
+	  [AgrO]
+	  [VP
+	    [see]
+	    [ProgP
+	      [Bill,name=AC subj]
+	      [
+		[crying,roof]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+  ]
+  \draw [->,strike thru arrow] (AC subj) to[out=south west, in=south] (object);
+\end{forest}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+ \begin{forest}
+  nice empty nodes,sn edges
+  [TP
+    [\textit{Subj},name=subject]
+    [
+      [T\\was,align=center]
+      [\dots
+	[,phantom]
+	[VP
+	    [see]
+	    [ProgP
+	      [Bill,name=AC subj]
+	      [
+		[crying,roof]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw [->,strike thru arrow] (AC subj) to[out=south west, in=south] (subject);
+\end{forest}
+\end{minipage}
+
+\end{minipage}
+\begin{minipage}[t]{\textwidth}
+  \ex. \textbf{Adjunct AC subjects must move}\\
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{forest}
+      nice empty nodes,sn edges
+      [VoiceP,name=voicep
+	[DP[Mary,roof]]
+	[
+	  [Voice]
+	  [VP
+	    [VP
+	      [V\\see,align=center]
+	      [Jamie]
+	    ]
+	    [ProgP
+	      [Bill,name=AC subj]
+	      [
+		[crying,roof]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+      \node[left = 0.5cm of voicep] () {\Large *};
+    \end{forest}
+  \end{minipage}
+  
+\end{minipage}
+\section{Label theory \parencite{chomsky2013problems,chomsky2015problems}}\label{sec:labels}
+\subsection{The Theory}
+\begin{itemize}
+  \item The narrow syntax is (simplest) Merge
+    \begin{itemize}
+      \item Merge($\alpha, \beta$) = $\left\{ \alpha,\beta \right\}$
+    \end{itemize}
+  \item Since Merge doesn't specify the label of its output, and the narrow syntax is only Merge, labels must be determined at one of the interfaces.
+  \item Specifically: The CI interface.
+    \begin{itemize}
+      \item Chomsky's CI primacy conclusion 
+    \end{itemize}
+  \item Labels are assigned by a special instance of Minimal Search, the Labelling Algorithm (LA), upon Transfer at the phase level.
+  \item Unlabellable objects cause a crash.
+\end{itemize}
+But:
+\begin{itemize}
+  \item No current theory of semantics has any need for labels.
+    \begin{itemize}
+      \item For type-driven interpretation, only the content of syntactic objects is required
+      \item For a neo-Davidsonian theory, only the merge order of arguments is required
+    \end{itemize}
+  \item If our current understanding of the syntax-semantics interface is correct, the proposal above must be wrong.
+  \item $\therefore$ \textbf{If the proposal above is correct, our current understanding of the syntax semantics interface is wrong.}
+\end{itemize}
+\subsection{Labelling algorithm}
+\begin{itemize}
+  \item LA, when applied to a syntactic object SO, searches SO for its most prominent sub-object and assigns that as SO's label.
+  \item \textcite{chomsky2013problems,chomsky2013problems} discusses the three logical possibilities:
+\end{itemize}
+\ex.
+\a. $\text{LA}(\left\{ \text{X, YP} \right\}) = \text{X}$
+\b. $\text{LA}(\left\{ \text{X, Y} \right\}) = 
+	\begin{cases}
+	  \text{X} & \text{if Y is a root, and X is not a root}\\
+	  \text{Undefined} & \text{otherwise}
+	\end{cases}
+	$
+\c. $\text{LA}(\left\{ \text{XP, YP} \right\}) = 
+	\begin{cases}
+	  \langle\text{F, F}\rangle & \text{if XP and YP agree for some feature F}\\
+	  \text{LA(YP)} & \text{if XP is a lower copy in a chain}\\
+	  \text{Undefined} & \text{otherwise}
+	\end{cases}
+	$
+
+\section{Labelling explanation}
+\begin{minipage}[t]{0.35\textwidth}
+  \ex. \textbf{Argument ACs}
+  \a. $\left\{ \text{DP, ProgP} \right\}$
+  \b.* $\left\{ t, \text{ProgP} \right\}$
+  \z.
+
+\end{minipage}
+\begin{minipage}[t]{0.35\textwidth}
+  \ex. \textbf{Adjunct ACs}
+  \a.* $\left\{ \text{DP, ProgP} \right\}$
+  \b. $\left\{ t, \text{ProgP} \right\}$
+  \z.
+
+\end{minipage}
+
+\subsection{Argument ACC-ing subjects cannot move}
+\begin{itemize}
+  \item Subject of argument ACs show \textbf{Criterial freezing} (in Rizzi's terms).
+  \item \textcite{chomsky2015problems} proposes a labelling account for this type of freezing.
+    \begin{itemize}
+      \item $\left\{ \text{XP}_\text{F}, \left\{ \text{Y}_\text{F}, \text{ZP} \right\} \right\}$ is labelled $\langle\text{F,F}\rangle$.
+      \item Y is ``too weak'' to label on its own.
+      \item $\left\{ t, \left\{ \text{Y}_\text{F}, \text{ZP} \right\} \right\}$ is unlabellable so it yields a crash.
+    \end{itemize}
+  \item Replace XP with the AC subject and Y with Prog$^0$ and we have our account.
+\end{itemize}
+\ex.
+\a.* Bill$_i$ was see-en [ $t_{see}$ [ $t_i$ throwing the ball]]
+\b. 
+\begin{minipage}[t]{0.5\textwidth}
+  \textbf{Derivation}
+\begin{enumerate}
+  \item Merge(Bill, $\left\{ \text{Prog, YP} \right\}$)
+  \item Transfer+Label(YP)\footnotemark  \item Merge(see, ProgP)\\
+    \dots \\
+    (Derive the finite clause)\\
+    \dots
+  \item (Internal-)Merge(Bill, T')
+  \item Merge(C, TP)
+  \item Transfer+Label(TP)\\
+    *CRASH* \\
+    ($\left\{ t, \text{Prog} \right\}$ is unlabellable.)
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+ \begin{forest}
+  baseline,nice empty nodes,sn edges
+  [CP
+    [C]
+  [TP
+    [Bill,name=subject]
+    [
+      [T\\was,align=center]
+      [\dots
+	[,phantom,ignore edge]
+	[,l sep+=0.5cm
+	    [see]
+	    [ProgP
+	      [Bill,name=AC subj]
+		[Prog]
+	    ]
+	  ]
+	]
+      ]
+    ]
+  ]
+    \draw [->] (AC subj) to[out=south west, in=south] (subject);
+\end{forest}
+\end{minipage}
+\z.
+
+\footnotetext{Assuming Prog$^0$ is a phase head, following \textcite{harwood2015being}}
+\subsection{Adjunct ACC-ing subjects can move}
+\begin{itemize}
+  \item \textbf{Assumption:} Adjunction structures do not receive a label. \parencite{hornstein2009theory,chametzky1996theory}
+    \begin{itemize}
+	    \item If $\left\{ \text{XP, YP} \right\}$ is an adjunction structure, LA skips it, and moves on to the adjunction host.
+    \end{itemize}
+  \item The AC is an adjunct and thus, invisible the labelling algorithm.
+  \item It follows that the internal structure of the AC is also invisible to LA.
+  \item $\left\{ t, \text{Prog} \right\}$ is still unlabellable, but doesn't lead to a crash.
+\begin{itemize}
+	\item Crashes occur when LA fails
+\end{itemize}
+\end{itemize}
+\subsection{Adjunct ACC-ing subjects \textit{must} move.}
+\begin{itemize}
+  \item If labelling is required at the CI interface, it must have some semantic potency.
+  \item So $\left\{ \text{XP, YP} \right\}$ will be interpreted differently depending on its label
+    \begin{itemize}
+      \item Criterial: Label($\left\{ \text{XP, YP} \right\}$)= $\langle\text{F,F}\rangle \rightarrow$ Abstraction
+	      \begin{itemize}
+		\item Including, but not limited to, lambda abstraction \parencite[cp][]{lohndal2011interrogatives}
+	      \end{itemize}
+      \item Adjunct: Label($\left\{ \text{XP, YP} \right\}$)= $\emptyset \rightarrow$ Conjunction
+    \end{itemize}
+    \item An unlabelled $\left\{ \text{DP}, \left\{ \text{Prog, YP} \right\} \right\}$ is interpreted as the conjunction of a ProgP predicate and its subject.
+	    \begin{itemize}
+		    \item This is (likely) a deviant interpretation
+	    \end{itemize}
+    \item An unlabelled $\left\{ t, \left\{ \text{Prog, YP} \right\} \right\}$, however, does not yield a deviant interpretation.
+      \begin{itemize}
+	\item This is stipulated for now.
+      \end{itemize}
+\end{itemize}
+
+\section{``Conclusion''}
+\begin{itemize}
+	\item Chomsky proposes that for a derivation to converge at CI it must produce a labellable syntactic object.
+	\item If Chomsky is right, we need to rethink our conception of the syntax-semantics interface.\\
+	  \textbf{My Proposal:} The label of a syntactic object has consequences for that object's interpretation.
+	\item I have shown how a puzzling fact about ACC-ing subjects can be straightforwardly explained, given Chomsky's proposal (and my extension).
+	\item Several aspects require more explanation/work:
+	  \begin{itemize}
+	    \item How does the LA ``know'' to skip adjunction structures?
+	    \item How are $\left\{ t, \text{XP} \right\}$ structures interpreted?
+	    \item I predict that no adjunct phrases should have criterial specifiers.
+	  \end{itemize}
+\end{itemize}
+\printbibliography
+\end{document}

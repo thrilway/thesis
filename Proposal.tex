@@ -22,7 +22,7 @@ margin=1in
 \usepackage{linguex}
 \usepackage{centernot}
 \usepackage{todonotes}
-
+\usepackage{titling}
 \useforestlibrary{linguistics}
 
 \forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
@@ -92,12 +92,15 @@ margin=1in
 \newcommand{\xpyp}{$\left\{ \text{XP, YP} \right\}$}
 \bibliography{Thesis}
 \linespread{1.3}
+
+\title{Explaining the Resultative Parameter\\{\large Thesis Proposal}}
+\author{Dan Milway}
 \begin{document}
+\maketitle
 
 \section{Introduction}
-
 The promise of generative syntax is that, given fixed innate grammatical principles, unlearnable and seemingly deep variation can be derived from learnable surface variation.
-In current minimalist theories of syntax, the locus of variation is found in the lexicon, as expressed succinctly by \citeauthor{baker2008microparameter}'s (\citeyear{baker2008microparameter}) Chomsky-Borer Conjecture, given below in \Next.
+In current minimalist theories of syntax, the locus of variation is found in the lexicon, as expressed succinctly by \citeauthor{baker2008microparameter}'s (\citeyear{baker2008microparameter}) Borer-Chomsky Conjecture, given below in \Next.
 \ex. The Borer-Chomsky Conjecture\\
 All parameters of variation are attributable to differences in the features of particular items (e.g., the functional heads) in the lexicon. \hfill \parencite{baker2008microparameter}
 
@@ -155,6 +158,44 @@ Specifically, I will argue that Chomsky's (\citeyear{chomsky2013problems,chomsky
   \item Similar in spirit to what I will propose
   \item Compounding parameter is likely unformulable in current theory
 \end{itemize}
+
+\section{Towards an explanation of the resultative parameter}
+In order to approach an explanation of this parametric variation, this thesis will be structured as two converging lines of inquiry.
+The first line will be an attempt to formalize the surface variation associated with the resultative parameter.
+\textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compunding as the relevant surface variation, while \textcite{haider2016} identifies the (un)availability of particle verb constructions as the culprit.
+My previous investigation of particle verbs \parencite[][included as an appendix]{milway2013forum} suggests that compunding and particle verbs are related, so I will assume that the compunding parameter subsumes the particle verb parameter.
+This variation is typically formalized as parameters of the grammar, such as Snyder's Compounding Parameter below.
+\ex. \textbf{Compounding Parameter} \parencite{snyder2001nature}\\ 
+The grammar \{disallows*, allows\} formation of endocentric compounds during the syntactic derivation. [*unmarked value] 
+
+Given the theory of grammar I assume, \Last would be considered a descriptive/typological statement in need of theoretical explanation.
+
+The first step towards such an explanation is to rephrase \Last with the Borer-Chomsky Conjecture in mind.
+If we consider an I-language, L, to be the pair of a variable lexicon, Lex$_\text{L}$, and a fixed Universal Grammar, UG, then we can restate The Compounding Parameter as in \Next.
+\ex. \textbf{The Compounding Parameter} (revised):\\
+The lexicon of an I-language, L, is such that principles of UG \{disallow*, allow\} formation of endocentric compounds during a syntactic derivation in L. [*unmarked value]
+
+From this formulation, the next step is to investigate how endocentric compounds are derived syntactically and how they might be blocked.
+If this investigation is done by holding the principles of UG constant, then we will have arrived at a characterization of those properties of the lexicon that are linked to TCP.
+
+The second line of inquiry will investigate resultative structures directly, how they are derived, and how they are blocked.
+As with the first line of inquiry, The goal of this line will be to identify the lexical properties that determine whether or not a given I-language generates resultatives.
+By hypothesis, the properties identified by this line of inquiry should be identical to those identified by the first line of inquiry.
+
+
+\begin{figure}[h]
+  \figex
+  \begin{tikzpicture}[baseline]
+    \node (lex) at (0,-1) {Lexicon};
+    \node (comp) at (4,0) {\{*\}Compounding};
+    \node (res) at (4,-2) {\{*\}Resultatives};
+    \node (pld) at (8,0) {PLD};
+    \draw [<->] (lex)--(comp);
+    \draw [<->] (lex)--(res);
+    \draw [->] (pld)--(comp);
+  \end{tikzpicture}
+  \label{fig:ParameterModel}
+\end{figure}
 
 \section{Sharpening the Question}\label{sec:result analysis}
 A more precise definition of resultatives is needed to proceed in this study.
@@ -247,8 +288,30 @@ Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp 
   ]
 \end{forest}}
 \end{figure}
-
-<+FinishThisThought+>
+This analysis, however, assumed a theory of phrase structure which allows a phrase to have an empty complement but a filled specifier.
+Consider the structure expected for a simple transitive with only an agent and a theme, given below in \Next.
+\begin{figure}[h]
+  \figex\label{fig:BakerUTAH}
+  {\small
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [VoiceP
+    [\textsc{Agent}]
+    [Voice$^\prime$
+      [Voice]
+      [VP
+	[\textsc{Theme}]
+	[V$^\prime$
+	  [V]
+	]
+      ]
+    ]
+  ]
+\end{forest}}
+\end{figure}
+In a merge-based syntax, such a structure is impossible, as every instance of merge combines exactly two items, thus ruling out non-branching nodes.
+The structure we would expect would place the theme as the complement of V, which would have no specifier, thus violating Baker's UTAH.
+<+FinishThis+>
 
 This leads to a conception of argument sharing, according to which, DPs are shared arguments iff they are merged in two $\Theta$ positions in the course of a single derivation.
 For ordinary control sentences, this is trivial to represent.
@@ -348,7 +411,7 @@ Assuming that, all else being equal, the higher copy of a syntactic object is pr
 If sideward movement is followed by movement to a position that c-commands both copies, then the copy deletion issues evaporate, and the higher copy is pronounced.
 
 Returning to the specific example of object-oriented depictives, the preceding discussion means that the structure in \LLast cannot be the final structure of the sentence given, as such a structure is unpronounceable.
-If we assume, following \textcite{lasnik1999minimalist}, that grammatical objects raise to Spec AgrO\footnote{It seems unlikely to me that there is a specialised grammatical category whose only property is that is licenses Object DPs. As such I assume AgrO to be some meaningful category, but I take no stance on what that category might be.} for abstract Case\footnote{I take abstract Case to be a phenomenon in need of explanation, rather than an explanation for a phenomenon.} licensing, then our sideward moved DP must further raise to and the issue dissolves.
+If we assume, following \textcite{lasniksaito1999subject}, that grammatical objects raise to Spec AgrO\footnote{It seems unlikely to me that there is a specialised grammatical category whose only property is that is licenses Object DPs. As such I assume AgrO to be some meaningful category, but I take no stance on what that category might be.} for abstract Case\footnote{I take abstract Case to be a phenomenon in need of explanation, rather than an explanation for a phenomenon.} licensing, then our sideward moved DP must further raise to and the issue dissolves.
 \begin{figure}[h]
 \figex
 {\small
@@ -391,7 +454,7 @@ For a non-derivational theory \parencite[e.g.][]{fodor1970three}, there are two 
 I will adopt a derivational theory based on the semantic analysis of causativity developed by \textcite{pietroski2003small}.\footnote{
   This analysis may be a notational variant of the analysis given by \textcite{kratzer_building_2004}
 }
-This analysis assumes a neo-davidsonian semantics, according to which \ref{ex:inch} describes an event of burning which the toast is the theme of, as formalized below in \Next.
+This analysis assumes a Neo-Davidsonian semantics, according to which \ref{ex:inch} describes an event of burning which the toast is the theme of, as formalized below in \Next.
 \ex. $\exists e [\text{Burning}(e)\, \&\, \textsc{Theme}(e, \mathbf{the\_toast})]$
 
 The causative alternant, describes a complex event which terminates in a toast burning event and has John as an agent, as formalized below in \Next.
@@ -530,39 +593,6 @@ The observation by \textcite[][and elsewhere]{rizzi2015notes} that phrases canno
 \textcite{chomsky2015problems} presents an account of criterial freezing in terms of labeling, and thus shows that label theory offers conditions on movement \textit{from}.
 
 
-\section{Towards an explanation of the resultative parameter}
-In order to approach an explanation of this parametric variation, this thesis will be structured as two converging lines of inquiry.
-The first line will be an attempt to formalize the surface variation associated with the resultative parameter.
-\textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compunding as the relevant surface variation, while \textcite{haider2016} identifies the (un)availability of particle verb constructions as the culprit.
-This variation is typically formalized as parameters of the grammar, such as Snyder's Compounding Parameter below.
-\ex. \textbf{Compounding Parameter} \parencite{snyder2001nature}\\ 
-The grammar \{disallows*, allows\} formation of endocentric compounds during the syntactic derivation. [*unmarked value] 
-
-Given the theory of grammar I assume, \Last would be considered a descriptive/typological statement in need of theoretical explanation.
-
-The first step towards such an explanation is to rephrase \Last with the Borer-Chomsky Conjecture in mind.
-If we consider an I-language, L, to be the pair of a variable lexicon, Lex$_\text{L}$, and a fixed Universal Grammar, UG, then we can restate The Compounding Parameter as in \Next.
-\ex. \textbf{The Compounding Parameter} (revised):\\
-The lexicon of an I-language is such that principles of UG \{disallow*, allow\} formation of endocentric compounds during the syntactic derivation. [*unmarked value]
-
-<+Finish This Thought+>
-
-The second line of inquiry will investigate resultative structures directly, how they are derived, and how they are blocked.
-As with the first line of inquiry, The goal of this line will be to identify the lexical properties that determine whether or not a given I-language generates resultatives.
-
-\begin{figure}[h]
-  \figex
-  \begin{tikzpicture}[baseline]
-    \node (lex) at (0,-1) {Lexicon};
-    \node (comp) at (4,0) {\{*\}Compounding};
-    \node (res) at (4,-2) {\{*\}Resultatives};
-    \node (pld) at (8,0) {PLD};
-    \draw [<->] (lex)--(comp);
-    \draw [<->] (lex)--(res);
-    \draw [->] (pld)--(comp);
-  \end{tikzpicture}
-  \label{fig:ParameterModel}
-\end{figure}
 \section{Appendices}
 \begin{itemize}
   \item 1st Generals Paper.

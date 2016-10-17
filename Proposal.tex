@@ -146,23 +146,28 @@ Specifically, I will argue that Chomsky's (\citeyear{chomsky2013problems,chomsky
 
 
 \subsection{Previous Answers}
-\subsubsection{Harley, Ramchand, Folli, et al.}
-\begin{itemize}
-  \item \textsc{Manner, Path, Place, Result}, \textit{etc.} features are lexicalized on different heads in different languages
-  \item Basically a reiteration of Talmy
-  \item May be true but not an account
-\end{itemize}
-\subsubsection{Snyder, Beck, Kratzer}
-\begin{itemize}
-  \item Compounding parameter determines V-framed/S-framed
-  \item Similar in spirit to what I will propose
-  \item Compounding parameter is likely unformulable in current theory
-\end{itemize}
+The puzzle of the resultative parameter has been approached from two directions.
+One approach, found in the work of \textcite{harley2005how,folli2006licensing,ramchand2008verb,tungseth2008verbal}, among others, first asks how we might represent resultatives syntactically and then asks what a language's lexicon would have to look like to block the structures responsible for resultatives.
+Such an approach also tends to assume lexical verbs are decomposable into primitive conceptual features/heads (\textsc{Process}, \textsc{Manner}, \textsc{Result}, \textsc{Path}, \textit{etc.}) in the spirit of \textcite{hale1993argument}.
+In my first generals paper \parencite[][pp 30-32]{milway2015generals}, I argue that Ramchand's (\citeyear{ramchand2008verb}) particular proposal, which is perhaps the most fully realized and coherent proposals of this type, falls short of providing a syntactic analysis of the resultative parameter.
+Furthermore, none of the work in this approach addresses the question of how such variation could be acquired, rather, they implicitly stipulate that it can be acquired.
+
+The second approach to the resultative parameter, found in the work of \textcite{snyder1995language,snyder2001nature,roeper2002learnability,beck2001complex}, starts with the acquisition question.
+In his 1995 dissertation, Snyder presents evidence from child language data that the acquisition of endocentric compounding is correlated with that of resultatives, and argues that they are both effects of a single syntactic parameter, given below in \Next.
+\ex. \textbf{The Compounding Parameter} \parencite{snyder2001nature}\\ 
+The grammar \{disallows*, allows\} formation of endocentric compounds during the syntactic derivation. [*unmarked value] 
+
+While an interesting description, this work falls short of an explanation of the resultative parameter because it merely identifies a correlation between two phenomena but does not attempt to identify a causal link between them.
+\textcite{kratzer_building_2004} attempts to describe such a link, but for reasons discussed in my first generals paper \parencite[][pp 32-34]{milway2015generals}, She falls short of explanatory adequacy.
+
+My thesis will be an attempt to unify the two approaches. 
+Such a unification, however, will require significant revision of the logic used in each approach.
+I will discuss the revised logic in the following section.
 
 \section{Towards an explanation of the resultative parameter}
 In order to approach an explanation of this parametric variation, this thesis will be structured as two converging lines of inquiry.
 The first line will be an attempt to formalize the surface variation associated with the resultative parameter.
-\textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compunding as the relevant surface variation, while \textcite{haider2016} identifies the (un)availability of particle verb constructions as the culprit.
+\textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compunding as the relevant surface variation, while \textcite{haider2016predicting} identifies the (un)availability of particle verb constructions as the culprit.
 My previous investigation of particle verbs \parencite[][included as an appendix]{milway2013forum} suggests that compunding and particle verbs are related, so I will assume that the compunding parameter subsumes the particle verb parameter.
 This variation is typically formalized as parameters of the grammar, such as Snyder's Compounding Parameter below.
 \ex. \textbf{Compounding Parameter} \parencite{snyder2001nature}\\ 
@@ -266,7 +271,7 @@ The structure in \Last[a], with PRO, obeys the $\Theta$-criterion, and the one i
 The $\Theta$-criterion would then amount to a stipulation that \LLast[a] is good and \LLast[b] is bad, and for my task here, I see no use for such a stipulation.
 
 The second non-standard assumption is in the particular version of UTAH I use.
-\textcite{bakerXXXX} argues for the following mapping of $\Theta$-roles to structural position.
+\textcite{baker1988incorporation} argues for the following mapping of $\Theta$-roles to structural position.
 Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp V as in \Next, below.
 \begin{figure}[h]
   \refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}\label{fig:BakerUTAH}
@@ -416,9 +421,8 @@ Finally, we merge the VP and the small clause (f) and we are left with a sidewar
   Merge($\delta, \beta$)\\
   (g) &
   $\left\{ \ldots \right\}$ &
-  $\left\{  \left[ \left[\textit{eat}, \left[\textit{the, meat}\right]\right], \left[ \textit{raw}, \left[\textit{the, meat}\right] \right] \right]\right\}$ &
+  $\left\{  \left[ _\zeta \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right]\right\}$ &
   \\
-  \multicolumn{3}{l}{\dots}
 \end{tabular}}
 \end{table}
 As discussed by \textcite{nunes2001sideward}, the derivation in \Last and the structure it derives in \LLast would lead to a crash at PF due to a failure of copy deletion.
@@ -483,18 +487,14 @@ Pietroski defines termination as follows.
 In order to discuss how causativity might be derived syntactically, let's consider the pieces required.
 Starting with the inchoative as a basis, we need a verb and a theme argument.
 In addition to that we need something that expresses the \textsc{Terminates} and \textsc{Agent} predicates, and the agent argument.
-We further need to know how and where existential closure occurs.
 
+I will assume that the inchoative verb is formed by merging a root with a category determining head.
+This complex merges with and $\Theta$-marks the theme.
+The fact that causatives can be passivized, as demonstrated below in \Next, suggests that the \textsc{Terminates} and \textsc{Agent} predicates are not (always) bundled together in a single head.
+\ex. The toast was burned.
+\a. $\neq$ The toast burned.
+\b. $\neq$ John burned the toast.
 
-
-\begin{itemize}
-  \item Syntax of ``causativity''
-    \begin{itemize}
-      \item Generally in the verbal domain $\{\text{H, XP}\} \rightarrow $Causative
-    \end{itemize}
-\end{itemize}
-
-(The above will largely be an excercise in making my assumptions explicit)
 
 \section{Enter Resultatives}
 Given the discussion above regarding the syntax and semantics of argument sharing and causativity, I will move on to discuss how the two notions interact to generate or fail to generate resultatives.
@@ -564,6 +564,7 @@ In the modified analysis, the theme moves sideward from the small clause to Comp
 \end{forest}}
 \end{figure}
 
+
 In this thesis I will investigate the structure in \Last, asking how it might be barred in one language or another.
 I will do so by comparing resultative structures with structures such as depictives which seem to be found in all of the worlds languages.
 Given modern syntactic theory, according to which the narrow syntactic module is purely free merge, the fact that structures such as \Last are allowed or disallowed in a given language requires a refined theory of the interfaces to explain.
@@ -603,9 +604,11 @@ I, therefore, take the nature of the CI Interface to be an open question, to whi
 Label theory, then, is not a theory of the Narrow Syntax, so much as it is a theory of the CI interface.
 
 Beyond the theoretical arguments in label theory's favour, there are practical reasons to believe it will provide an explanation of the parametric variation at issue in this thesis.
-Older theories of movement, such as Last Resort, offered conditions on movement \textit{to} a given structural postion, but no conditions of movement \textit{from} a given position.\footnote{This definitely need to be fleshed out.}
+Older theories of movement, such as Last Resort, offered conditions on movement \textit{to} a given structural postion, but no conditions of movement \textit{from} a given position.\footnote{This definitely needs to be fleshed out.}
 The observation by \textcite[][and elsewhere]{rizzi2015notes} that phrases cannot move from so-called criterial positions, however, suggests that our theory of movement must include conditions on movement \textit{from}, in addition to conditions on movement \textit{to}.
 \textcite{chomsky2015problems} presents an account of criterial freezing in terms of labeling, and thus shows that label theory offers conditions on movement \textit{from}.
+
+\section{Preliminary Explanation}
 
 
 \section{Appendices}

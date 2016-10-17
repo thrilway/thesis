@@ -388,21 +388,36 @@ Finally, we merge the VP and the small clause (f) and we are left with a sidewar
 \begin{table}
   \figex \textbf{Deriving \LLast}\\
   {\small
-\begin{tabular}[t]{rll}
+\begin{tabular}[t]{rlll}
   & Lexical Array & Workspace\\
-  (a) & $\left\{ \textit{raw, eat, \dots} \right\}$ & $\left\{ \left\{ \textit{the, meat} \right\} \right\}$\\
-  \multicolumn{3}{l}{Select(raw)}\\
-  (b) & $\left\{ \textit{eat, \dots} \right\}$ & $\left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\}$ \\
-  \multicolumn{3}{l}{Merge(raw, $\left\{ \textit{the, meat} \right\}$)}\\
-  (c) & $\left\{  \textit{eat, \dots}\right\}$ & $\left\{ \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
-  \multicolumn{3}{l}{Select(eat)}\\
-  (d) & $\left\{ \textit{\dots} \right\}$ & $\left\{ \textit{eat}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
-  \multicolumn{3}{l}{Copy($\left\{ \textit{the, meat} \right\}$)}\\
-  (e) & $\left\{ \textit{\dots} \right\}$ &$\left\{ \textit{eat}, \left\{\textit{the, meat}\right\}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
-  \multicolumn{3}{l}{Merge(eat,  $\left\{ \textit{the, meat} \right\}$)}\\
-  (f) & $\left\{ \textit{\dots} \right\}$ &$\left\{ \left\{\textit{eat}, \left\{\textit{the, meat}\right\}\right\}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}$ \\
-  \multicolumn{3}{l}{Merge($\left\{\textit{eat}, \left\{\textit{the, meat}\right\}\right\}$, $\left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\}$)}\\
-  (g) & $\left\{ \ldots \right\}$ & $\left\{  \left\{ \left\{\textit{eat}, \left\{\textit{the, meat}\right\}\right\}, \left\{ \textit{raw}, \left\{\textit{the, meat}\right\} \right\} \right\}\right\}$ \\
+  (a) & 
+  $\left\{ \textit{raw, eat, \dots} \right\}$ &
+  $\left\{ \left[_\alpha \textit{the, meat} \right] \right\}$ &
+  Select(raw)\\
+  (b) &
+  $\left\{ \textit{eat, \dots} \right\}$ &
+  $\left\{ \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right\}$ &
+  Merge(raw, $\alpha$)\\
+  (c) &
+  $\left\{  \textit{eat, \dots}\right\}$ &
+  $\left\{ \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  Select(eat)\\
+  (d) &
+  $\left\{ \textit{\dots} \right\}$ &
+  $\left\{ \textit{eat}, \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  Copy($\alpha$)\\
+  (e) &
+  $\left\{ \textit{\dots} \right\}$ &
+  $\left\{ \textit{eat}, \left[_\gamma\textit{the, meat}\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  Merge(eat,  $\gamma$)\\
+  (f) &
+  $\left\{ \textit{\dots} \right\}$ &
+  $\left\{ \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  Merge($\delta, \beta$)\\
+  (g) &
+  $\left\{ \ldots \right\}$ &
+  $\left\{  \left[ \left[\textit{eat}, \left[\textit{the, meat}\right]\right], \left[ \textit{raw}, \left[\textit{the, meat}\right] \right] \right]\right\}$ &
+  \\
   \multicolumn{3}{l}{\dots}
 \end{tabular}}
 \end{table}

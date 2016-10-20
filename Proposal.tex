@@ -87,6 +87,8 @@ margin=1in
 
 \newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
 
+\newcounter{DerivStep}
+
 \newcommand{\hxp}{$\left\{ \text{X, YP} \right\}$}
 \newcommand{\hh}{$\left\{ \text{X, Y} \right\}$}
 \newcommand{\xpyp}{$\left\{ \text{XP, YP} \right\}$}
@@ -132,7 +134,14 @@ These patterns, being surface patterns, are, in principle, learnable from the pr
 
 The languages also differ regarding whether they generate adjectival resultatives.
 French (and other Romance languages) does not generate adjectival resultatives, while German (and other Germanic languages) does.
-\ex. <+ResultativeExamples+> 
+\ex.
+\a. I hammered the metal flat.
+\bg. Wir haben die teekanne leer getrunken.\\
+we have the teapot empty drink.\textsc{part}\\
+``We drank the teapot dry.''
+\b.* <+FrenchResultative+> 
+\b.* <+ItalianResultative+>
+\z.
 
 Since the variation demonstrated in \Last has to do with the meanings assigned to expressions rather than surface properties of the expressions, such variation is not, in principle, learnable from the PLD.
 
@@ -618,12 +627,44 @@ The explanation of the resultative parameter that I will pursue is similar in lo
 The basic premises of this explanation are as follows.
 (i) The VP-resP structures in question, are adjunction structures (resP adjoined to VP), (ii) specifiers of adjuncts must move, for reasons I discuss in \textcite{milway2016dogdays}, and (iii) complements of adjuncts are labeled before adjunction occurs.
 
-In a language such as German, then, resultatives are derived first by merging the theme DP with the bare adjective ([$adj^\circ$, \textsc{root}]), and then merging res$^\circ$.
-\ex. <+Derivation+>
+In a language such as German, then, resultatives are derived first by merging the theme DP with the bare adjective ([$adj^\circ_\emptyset$, \textsc{root}]), and then merging res$^\circ$.
+\begin{figure}[ht]
+	\figex
+	\begin{minipage}[t]{0.5\textwidth}
+		\begin{enumerate}
+			\item Merge($adj^\circ_\emptyset$, \textsc{root}) = $\alpha$
+			\item Merge(DP$_\varphi$, $\beta$) = $\gamma$
+			\item Merge(res$^\circ$, $\gamma$) = $\delta$
+			\setcounter{DerivStep}{\theenumi}
+		\end{enumerate}
+	\end{minipage}
+	\begin{minipage}[t]{0.5\textwidth}
+		\begin{forest}
+			baseline,nice empty nodes,sn edges
+			[$\delta$ [res] [$\gamma$ [DP$_\varphi$] [$\alpha$ [$adj^\circ_\emptyset$] [\textsc{root}]]]]
+		\end{forest}
+	\end{minipage}
+\end{figure}
+\ex. Label($\gamma$) = undefined
 
 If this object were to be adjoined to a VP at this point, the small clause would be unlabelable, and the derivation would crash.
 This is why the DP must raise to merge with the resP, which is now fully labelable.
-\ex. <+Derivation+>
+\begin{figure}[ht]
+	\figex
+	\begin{minipage}[t]{0.5\textwidth}
+		\begin{enumerate}
+			\setcounter{enumi}{\theDerivStep}
+			\item Merge(DP$_\varphi$, $\delta$) = $\zeta$
+		\end{enumerate}
+	\end{minipage}
+	\begin{minipage}[t]{0.5\textwidth}
+		\begin{forest}
+			baseline,nice empty nodes,sn edges
+			[$\zeta$ [DP$_\varphi$] [$\delta$ [res] [$\gamma$ [$\langle$DP$_\varphi\rangle$] [$\alpha$ [$adj^\circ_\emptyset$] [\textsc{root}]]]]]
+		\end{forest}
+	\end{minipage}
+\figex Label($\gamma$) = Label($\alpha$)
+\end{figure}
 
 If we adjoin the resulting object to the VP at this point, the theme DP will have to move, and the derivation will proceed from there.
 

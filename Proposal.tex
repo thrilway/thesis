@@ -139,8 +139,12 @@ French (and other Romance languages) does not generate adjectival resultatives, 
 \bg. Wir haben die teekanne leer getrunken.\\
 we have the teapot empty drink.\textsc{part}\\
 ``We drank the teapot dry.''
-\b.* <+FrenchResultative+> 
-\b.* <+ItalianResultative+>
+\bg.* Il a march\'e les jambes raides.\\
+He has walked the legs stiff\\
+``He walked his legs off.'' \parencite{washio1997resultatives}
+\bg.* Gianni ha martellato il metallo piatto. \\
+Gianni has hammered the metal flat\\
+``Gianni hammered the metal flat.'' \parencite[Napoli 1992, cited by][]{snyder2001nature}
 \z.
 
 Since the variation demonstrated in \Last has to do with the meanings assigned to expressions rather than surface properties of the expressions, such variation is not, in principle, learnable from the PLD.
@@ -196,7 +200,7 @@ The second line of inquiry will investigate resultative structures directly, how
 As with the first line of inquiry, The goal of this line will be to identify the lexical properties that determine whether or not a given I-language generates resultatives.
 By hypothesis, the properties identified by this line of inquiry should be identical to those identified by the first line of inquiry.
 
-
+The grammar I hope to describe, schematized below in \Next,  will be a single property of the lexicon which is associated in principle with both endocentric compounding (making it learnable from the PLD) and adjectival resultatives. 
 \begin{figure}[h]
   \figex
   \begin{tikzpicture}[baseline]
@@ -220,7 +224,6 @@ Depictives, which seem to occur in all of the worlds languages, such as those se
 \a. Mary left angry. (Mary was angry.)
 \b. Bill ate the fish raw. (The fish was raw.)
 \b. Jamie swam the race naked. (Jamie was naked.)
-\b. <+DepictivesInOtherLangs+>
 \z.
 
 So, the clause \textit{Mary left angry} means that the two eventualities, the event $e$ of Mary leaving and the state $s$ of Mary being angry, are stand in either an identity ($e=s$) or containment ($e\leq s$) relation rather than a causal relation.
@@ -305,7 +308,7 @@ Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp 
 This analysis, however, assumed a theory of phrase structure which allows a phrase to have an empty complement but a filled specifier.
 Consider the structure expected for a simple transitive with only an agent and a theme, given below in \Next.
 \begin{figure}[h]
-  \figex\label{fig:BakerUTAH}
+  \figex
   {\small
 \begin{forest}
   nice empty nodes,sn edges,baseline
@@ -325,7 +328,35 @@ Consider the structure expected for a simple transitive with only an agent and a
 \end{figure}
 In a merge-based syntax, such a structure is impossible, as every instance of merge combines exactly two items, thus ruling out non-branching nodes.
 The structure we would expect would place the theme as the complement of V, which would have no specifier, thus violating Baker's UTAH.
-<+FinishThis+>
+Furthermore, Baker's UTAH is problematic given the growing concensus that ``lexical heads'' are in fact decomposable into acatagorial roots and category determining heads.
+So V$^\circ$ in \ref{fig:BakerUTAH}, would actually be $v$P or $v^\prime$, which means that Baker's Goal argument would be in Spec $v$ and another functional head would be required to introduce the Theme argument as in \Next.\footnote{This assumes that Roots don't select arguments}
+\begin{figure}[ht]
+  \figex {\small
+    \begin{forest}
+      nice empty nodes,sn edges,baseline
+      [VoiceP
+	[\textsc{Agent}]
+	[Voice$^\prime$
+	  [Voice]
+	  [XP
+	    [\textsc{Theme}]
+	    [X$^\prime$
+	      [X]
+	      [\textit{v}P
+		[\textsc{Goal}]
+		[$v^\prime$
+		  [$v$]
+		  [\textsc{root}]
+		]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+      \end{forest}
+  }
+\end{figure}
+I will make the simplfying assumption that theme arguments are merged with the $v$P (Comp V as shorthand) and goals are introduced by adjunction.
 
 This leads to a conception of argument sharing, according to which, DPs are shared arguments iff they are merged in two $\Theta$ positions in the course of a single derivation.
 For ordinary control sentences, this is trivial to represent.
@@ -676,10 +707,13 @@ If the DP cannot move to Comp-V, it cannot be interpreted as the theme of the ve
 
 If the above explanation is correct, it still remains to extend it to directionalized locatives, Norwegian and Icelandic resultatives, and the non-variable status of depictives, which will likely occupy the later parts of my thesis.
 
+\nocite{napoli1992secondary}
 \printbibliography
 \section{Appendices}
 \begin{refsection}
   \nocite{milway2015generals,milway2013forum,milway2016dogdays}
   \printbibliography
 \end{refsection}
+\section{Timeline:}
+<+ToBeFiguredOut+>
 \end{document}

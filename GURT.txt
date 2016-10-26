@@ -1,3 +1,7 @@
+While all languages allow for secondary predication constructions, languages vary with as to whether those those constructions can be interpreted as resultatives.
+This is a particularly puzzling type of variation, because resultatives are superficially indistinguishable from other types of secondary predication.
+It is not obvious how this variation could be acquired directly from the primary linguistic data.
 
-Current linguistic work in the generative tradition tends to approach variation from one of two perspectives: either from a typological/acquisition, or a formal/analytical perspective.
-The typological/acquisition approach <+egSnyder+> attempts to find correlations between surface phenomena and non-surface phenomena, while 
+<+Snyder+> argues that resultatives are correlated with productive compounding but does not articulate how the two disparate properties might be related.
+A generative analysis of resultatives (<+Kratzer+>) has been able to derive adjectival resultatives but has not provided an account of their variable nature.
+Modern generative styntactic theory (<+Chomsky+>), however, offers a way to synthesize these two approaches.

@@ -1,0 +1,58 @@
+%        File: GURT.tex
+%     Created: Thu Oct 27 08:00 PM 2016 E
+% Last Change: Thu Oct 27 08:00 PM 2016 E
+%
+\documentclass[letterpaper]{article}
+
+\usepackage[
+margin=1in
+]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\usepackage{todonotes}
+
+\useforestlibrary{linguistics}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
+
+\bibliography{Thesis}
+\begin{document}
+Secondary predication (SP) displays a puzzling type of variation which this paper refers to as The Resultative Parameter.
+Depending on the setting of this parameter, certain SP constructions are able to recieve a resultative interpretation.
+For instance English allows resultative interpretations of SP, while Italian does not.
+\ex. <+Res+>
+
+Since the interpretation rather than the surface form is paramerized, it is not directly learnable from the primary linguistic data (PLD).
+
+\textcite{snyder2001nature} argues that resultative SPs are only available in languages with productive endocentric compounding.
+While this is supported by typological and acquisition evidence, it is not obvious how compounding and resultatives could be related.
+\textcite{kratzer_building_2004} proposes a structure for resultatives, reproduced in \Next, 
+\end{document}
+
+

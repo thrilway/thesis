@@ -43,24 +43,52 @@ margin=1in
 
 \bibliography{Thesis}
 \begin{document}
-Secondary predication (SP) displays a puzzling type of variation which this paper refers to as The Resultative Parameter.
-Depending on the setting of this parameter, certain SP constructions are able to recieve a resultative interpretation.
-For instance English allows resultative interpretations of SP, while Italian does not.
-\ex. <+Res+>
+\textbf{Abstract}
 
-Since the interpretation rather than the surface form is paramerized, it is not directly learnable from the primary linguistic data (PLD).
+The fact that languages vary with repect to resultative interpretation of secondary predication (SP) presents an acquisiton puzzle.
+For instance, English allows resultative SP, while Italian does not.
+\ex. 
+\a. The shirt will dry wrinkled. (depictive/resultative)
+\bg. La camicia \`e asciugato WRINKLED. {(depictive/*resultative)}\\
+the shirt \textsc{aux} dried wrinkled { }\\
+``The shirt dried wrinkled.''
 
-\textcite{snyder2001nature} argues that resultative SPs are only available in languages with productive endocentric compounding.
-While this is supported by typological and acquisition evidence, it is not obvious how compounding and resultatives could be related.
-\textcite{kratzer_building_2004} proposes a structure for resultatives, reproduced in \Next, and attempts to give an account of the parametric variation, but ultimately falls short for theoretical and empirical reasons.
-\ex. <+Kratzer+>
+Since the interpretation rather than the surface form is paramerized, it is not directly learnable from the primary linguistic data.
+This paper shows how the variation can be acquired indirectly.
+
+\textcite{snyder2001nature} gives typological and child language evidence that resultative SPs are only available in languages with productive endocentric compounding, but does not explain how the two phenomena are linked.
+\textcite{kratzer_building_2004} proposes a structure for resultatives, a modified version of which is given in \Next, and attempts to give an account of the parametric variation, but falls short for theoretical and empirical reasons.
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+    [VP
+	    [{the shirt},name=V theme] 
+	    [
+		    [dry] 
+		    [resP 
+			    [res$^\circ$] 
+			    [SC
+				    [{$\langle\text{the shirt}\rangle$},name=sc theme]
+				    [aP
+					    [a$^\circ$]
+					    [\textsc{wrinkled}]
+				    ]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (sc theme) to[out=south west, in=south] (V theme);
+\end{forest}
 
 Given these two results, the task of explaining The Resultative Parameter can be reduced to the task of showing that whatever property of a grammar that (dis)allows endocentric compounding also (dis)allows the structure in \Last.
 
-In order to show this, I adopt a Chomsky's (\citeyear{<++>}<++>) label theory, along with a suite of other theoretical assumptions \parencite{<++>}<++>, and propose that only bare categories, in the sense of \textcite{<+Lasnik+>}<++>, can participate in compounding.
-In \Last, then, the adjective is a bare aP, and as such the small clause is unlabelable unless the theme DP moves to spec resP.
-From this higher position, the theme is available for movement into the VP.
-If the aP were not bare, as in Italian, the theme and the aP would agree, and the small clause would therefore be labelable.
+Adopting Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) label theory, along with a suite of other theoretical assumptions \parencite{nunes2001sideward,chametzky1996theory,hornstein1999movement}, this paper proposes that only bare categories, in the sense of \textcite{lasnik1999verbal}, can participate in compounding.
+An SC with a bare aP (as in English) is unlabelable, which triggers movement of the theme, while one with an inflected aP (as in Italian) is labelable.
+Since the SC is labelable, the DP remains \textit{in situ} and cannot be theta-marked by the verb.
+Such an account has the additional benefit of predicting, correctly, that SP is universally allowed in all languages.
+
+\textbf{Presentation Summary}
+
 
 \end{document}
 

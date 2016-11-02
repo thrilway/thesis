@@ -17,6 +17,7 @@ margin=1in
 \usepackage[]{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{forest}
 \usepackage{tabularx}
 \usepackage{linguex}
@@ -102,14 +103,13 @@ margin=1in
 
 \section{Introduction}
 The promise of generative syntax is that, given fixed innate grammatical principles, unlearnable and seemingly deep variation can be derived from learnable surface variation.
-In current minimalist theories of syntax, the locus of variation is found in the lexicon, as expressed succinctly by \citeauthor{baker2008microparameter}'s (\citeyear{baker2008microparameter}) Borer-Chomsky Conjecture, given below in \Next.
+In current minimalist theories of syntax, the locus of variation in the lexicon, as expressed succinctly by \citeauthor{baker2008microparameter}'s (\citeyear{baker2008microparameter}) Borer-Chomsky Conjecture, given below in \Next.
 \ex. The Borer-Chomsky Conjecture\\
 All parameters of variation are attributable to differences in the features of particular items (e.g., the functional heads) in the lexicon. \hfill \parencite{baker2008microparameter}
 
-This conjecture follows from various theoretical and empirical findings throughout the history of generative grammar, but is not fully explained.
-Consider the correlation between obligatory predicative adjective agreement and the impossibility of adjectival resultatives \parencite{kratzer_building_2004}.
-Compare French and German for instance.
-In both languages, attributive adjective agree for number and gender with the nominals they modify. 
+This conjecture follows from various theoretical and empirical findings throughout the history of generative grammar, but has not yet been shown to be explanatory.
+Consider the correlation between obligatory predicative adjective agreement and the impossibility of adjectival resultatives \parencite{kratzer_building_2004}, as can be observed in the differences between French and German.
+In both languages, attributive adjectives agree for number and gender (and case, in German) with the nominals they modify. 
 The languages differ with respect to predicative agreement, however.
 German disallows agreement on predicative adjectives, while French requires it.
 \ex. French 
@@ -130,77 +130,100 @@ the woman(fem) is tall \textsc{~~agr}\\
 ``The woman is tall''
 \z.
 
-These patterns, being surface patterns, are, in principle, learnable from the primary linguistic data (PLD).
+These patterns, being observable on the surface, are in principle learnable from the primary linguistic data (PLD).
 
-The languages also differ regarding whether they generate adjectival resultatives.
-French (and other Romance languages) does not generate adjectival resultatives, while German (and other Germanic languages) does.
-\ex.
-\a. I hammered the metal flat.
-\bg. Wir haben die teekanne leer getrunken.\\
-we have the teapot empty drink.\textsc{part}\\
-``We drank the teapot dry.''
-\bg.* Il a march\'e les jambes raides.\\
-He has walked the legs stiff\\
-``He walked his legs off.'' \parencite{washio1997resultatives}
-\bg.* Gianni ha martellato il metallo piatto. \\
-Gianni has hammered the metal flat\\
-``Gianni hammered the metal flat.'' \parencite[Napoli 1992, cited by][]{snyder2001nature}
+The languages also differ in whether they allow resultative interpretations of secondary predicates (SPs).
+French (along with other Romance languages) allows only depictive SPs, while German (along with other Germanic languages) allows both depictive and resultative SPs.
+\ex.Germanic
+\a. English
+\a. I ate the fish raw. (depictive)
+\b. I hammered the metal flat. (resultative)
+\z.
+\b.German 
+\ag. Er i\ss{}t das Fleisch roh. \parencite{muller2004analysis}\\
+He eats the meat raw { }\\
+``He's eating the meat raw.'' (depictive)
+\bg. Wir haben die teekanne leer getrunken. \parencite{kratzer_building_2004}\\
+we have the teapot empty drink.\textsc{part} { }\\
+``We drank the teapot dry.''(resultative)
+\z.
 \z.
 
-Since the variation demonstrated in \Last has to do with the meanings assigned to expressions rather than surface properties of the expressions, such variation is not, in principle, learnable from the PLD.
+\ex. Romance
+\a. French
+\ag. Pierre mange la viande crue. \parencite{legendre1997secondary}\\
+Pierre eat.3sg the.fem meat raw.fem { }\\
+``Pierre ate the meat raw'' (depictive)
+\bg.* Il a march\'e les jambes raides. \parencite{washio1997resultatives}\\
+He has walked the legs stiff { }\\
+``He walked his legs off.'' (resultative)
+\z.
+\b. Italian
+\ag. l' ho mangiato crudo.\\
+3sg \textsc{aux}.1sg eaten raw\\
+``I ate it raw'' (depictive)
+\bg.* l' ho bevuto vuoto.\\
+3sg \textsc{aux}.1sg drank empty\\
+``I drank it dry'' (resultative)
+\z.
+\z.
+
+Since the variation demonstrated in \LLast and \Last has to do with the meanings assigned to expressions rather than surface properties of the expressions, such variation is not, in principle, learnable from the PLD.
 
 So, we have two types of variation (one shallow and learnable, one deep and unlearnable) which seem to be correlated with each other (predicative adjective agreement $\leftrightarrow$ *adjectival resultatives).
-Given The Borer-Chomsky Conjecture, then, it is a reasonable hypothesis that the unlearnable variation follows from the learnable variation.
-That is, the lack of predicative adjective agreement in German allows for adjectival resultatives and the presence of the former disallows the latter in French.
+Given the Borer-Chomsky Conjecture, then, it is a reasonable hypothesis that the unlearnable variation follows somehow from the learnable variation.
+That is, the lack of predicative adjective agreement makes adjectival resultatives possible in German, while its presence in French disallows them.
 
-That such disparate phenomena are linked should surprise no-one familiar with minimalist theorizing.
-How they might be linked, however, is the puzzle that this thesis occupies itself with.
-Specifically, I will argue that Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) recent label theory, taken to its logical conclusion, provides an account of how adjectival morphology and resultative constructions are linked.
+The hypothesis that such disparate phenomena might be linked should surprise no-one familiar with minimalist theorizing.
+In this thesis, I propose to explore the nature of such a link.
+Specifically, I will argue that Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) recent label theory, taken to its logical conclusion, explains the link between adjectival morphology and resultative SPs.
 
 
 \subsection{Previous Answers}
 The puzzle of the resultative parameter has been approached from two directions.
-One approach, found in the work of \textcite{harley2005how,folli2006licensing,ramchand2008verb,tungseth2008verbal}, among others, first asks how we might represent resultatives syntactically and then asks what a language's lexicon would have to look like to block the structures responsible for resultatives.
-Such an approach also tends to assume lexical verbs are decomposable into primitive conceptual features/heads (\textsc{Process}, \textsc{Manner}, \textsc{Result}, \textsc{Path}, \textit{etc.}) in the spirit of \textcite{hale1993argument}.
-In my first generals paper \parencite[][pp 30-32]{milway2015generals}, I argue that Ramchand's (\citeyear{ramchand2008verb}) particular proposal, which is perhaps the most fully realized and coherent proposals of this type, falls short of providing a syntactic analysis of the resultative parameter.
-Furthermore, none of the work in this approach addresses the question of how such variation could be acquired, rather, they implicitly stipulate that it can be acquired.
+One approach, found in the work of \textcite{harley2005how,folli2006licensing,ramchand2008verb,tungseth2008verbal}, among others, first asks how we might represent resultatives syntactically and then asks what a language's lexicon would have to look like in order to block the structures underlying resultatives.
+Such an approach also tends to assume that lexical verbs are decomposable into several heads bearing primitive conceptual features (\textsc{Process}, \textsc{Manner}, \textsc{Result}, \textsc{Path}, \textit{etc.}) in the spirit of \textcite{hale1993argument}.
+In my first generals paper \parencite[][pp 30-32]{milway2015generals}, I argue that Ramchand's (\citeyear{ramchand2008verb}) particular proposal, which is perhaps the most fully realized and coherent proposal of this type, falls short of providing a syntactic analysis of the resultative parameter.
+Furthermore, none of the work in this approach explicitly addresses the question of how such variation could be acquired, rather, they implicitly assume that it can be acquired.
 
 The second approach to the resultative parameter, found in the work of \textcite{snyder1995language,snyder2001nature,roeper2002learnability,beck2001complex}, starts with the acquisition question.
-In his 1995 dissertation, Snyder presents evidence from child language data that the acquisition of endocentric compounding is correlated with that of resultatives, and argues that they are both effects of a single syntactic parameter, given below in \Next.
+In his 1995 dissertation, Snyder presents evidence from child language data that the acquisition of endocentric compounding is correlated with that of resultatives, and argues that they both follow from a single syntactic parameter, given below in \Next.
 \ex. \textbf{The Compounding Parameter} \parencite{snyder2001nature}\\ 
 The grammar \{disallows*, allows\} formation of endocentric compounds during the syntactic derivation. [*unmarked value] 
 
-While an interesting description, this work falls short of an explanation of the resultative parameter because it merely identifies a correlation between two phenomena but does not attempt to identify a causal link between them.
-\textcite{kratzer_building_2004} attempts to describe such a link, but for reasons discussed in my first generals paper \parencite[][pp 32-34]{milway2015generals}, She falls short of explanatory adequacy.
+While an interesting description, this work also falls short of an explanation of the resultative parameter because it merely identifies a correlation between two phenomena but does not attempt to establish a causal link between them.
+\textcite{kratzer_building_2004} attempts to describe such a link, but for reasons discussed in my first generals paper \parencite[][pp 32-34]{milway2015generals}, also falls short of explanatory adequacy.
 
 My thesis will be an attempt to unify the two approaches. 
 Such a unification, however, will require significant revision of the logic used in each approach.
 I will discuss the revised logic in the following section.
 
 \section{Towards an explanation of the resultative parameter}\label{sec:outline}
-In order to approach an explanation of this parametric variation, this thesis will be structured as two converging lines of inquiry.
+
 The first line will be an attempt to formalize the surface variation associated with the resultative parameter.
-\textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compunding as the relevant surface variation, while \textcite{haider2016predicting} identifies the (un)availability of particle verb constructions as the culprit.
-My previous investigation of particle verbs \parencite[][included as an appendix]{milway2013forum} suggests that compunding and particle verbs are related, so I will assume that the compunding parameter subsumes the particle verb parameter.
-This variation is typically formalized as parameters of the grammar, such as Snyder's Compounding Parameter below.
+\textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compounding as the relevant surface variation, while \textcite{haider2016predicting} identifies the (un)availability of particle verb constructions as the culprit.
+My previous investigation of particle verbs \parencite[][included as an appendix]{milway2013forum} suggests that compounding and particle verbs are related, so I will provisionally assume that the compounding parameter subsumes the particle verb parameter.\footnote{
+  This assumption will be revised in later sections of the thesis.
+}
+This variation is typically expressed as parameters of the grammar, such as Snyder's Compounding Parameter below.
 \ex. \textbf{Compounding Parameter} \parencite{snyder2001nature}\\ 
 The grammar \{disallows*, allows\} formation of endocentric compounds during the syntactic derivation. [*unmarked value] 
 
-Given the theory of grammar I assume, \Last would be considered a descriptive/typological statement in need of theoretical explanation.
+Under standard minimalist assumptions, \Last would be considered a descriptive/typological statement in need of theoretical explanation.
 
 The first step towards such an explanation is to rephrase \Last with the Borer-Chomsky Conjecture in mind.
-If we consider an I-language, L, to be the pair of a variable lexicon, Lex$_\text{L}$, and a fixed Universal Grammar, UG, then we can restate The Compounding Parameter as in \Next.
-\ex. \textbf{The Compounding Parameter} (revised):\\
+If we consider an I-language, L, to be the pair of a variable lexicon, Lex$_\text{L}$, and a fixed Universal Grammar, UG, then we can restate the Compounding Parameter as in \Next.
+\ex. \textbf{Compounding Parameter} (revised):\\
 The lexicon of an I-language, L, is such that principles of UG \{disallow*, allow\} formation of endocentric compounds during a syntactic derivation in L. [*unmarked value]
 
-From this formulation, the next step is to investigate how endocentric compounds are derived syntactically and how they might be blocked.
-If this investigation is done by holding the principles of UG constant, then we will have arrived at a characterization of those properties of the lexicon that are linked to TCP.
+From this formulation, the next step is to investigate exactly how endocentric compounds are derived syntactically and how they might be blocked.
+If this investigation is done by holding the principles of UG constant, then we will have arrived at a characterization of those properties of the lexicon that are linked to the Compounding Parameter.
 
 The second line of inquiry will investigate resultative structures directly, how they are derived, and how they are blocked.
-As with the first line of inquiry, The goal of this line will be to identify the lexical properties that determine whether or not a given I-language generates resultatives.
-By hypothesis, the properties identified by this line of inquiry should be identical to those identified by the first line of inquiry.
+As with the first line of inquiry, the goal of this line will be to identify the lexical properties that determine whether or not a given I-language generates resultatives.
+If the correlation between compounding and resultatives is not a coincidence, the properties identified by this line of inquiry should be identical to those identified by the first line of inquiry.
 
-The grammar I hope to describe, schematized below in \Next,  will be a single property of the lexicon which is associated in principle with both endocentric compounding (making it learnable from the PLD) and adjectival resultatives. 
+The situation I hope to describe, schematized below in \Next,  will be a class of lexicons defined by a single shared property or set propertiesn which is associated in principle with both endocentric compounding (making it learnable from the PLD) and adjectival resultatives. 
 \begin{figure}[h]
   \figex
   \begin{tikzpicture}[baseline]
@@ -217,9 +240,9 @@ The grammar I hope to describe, schematized below in \Next,  will be a single pr
 
 \section{Sharpening the Question}\label{sec:result analysis}
 A more precise definition of resultatives is needed to proceed in this study.
-Resultative clauses are clauses that contain two distinct predicates (Pred1$\neq$Pred2) which share an argument, in which the primary predicate is construed as the cause of the secondary.
+Resultative clauses  contain two distinct predicates (Pred1$\neq$Pred2) which share an argument, in which the primary predicate is construed as the cause of the secondary.
 Each of these properties that define resultatives (argument sharing and ``causativity'') is quite common and neither is sufficient for resultatives.
-Depictives, which seem to occur in all of the worlds languages, such as those seen in \Next show argument sharing without ``causativity''.
+Depictives such as those in \Next, which seem to occur in all languages, show argument sharing without ``causativity''.
 \ex. \textbf{Depictives}
 \a. Mary left angry. (Mary was angry.)
 \b. Bill ate the fish raw. (The fish was raw.)
@@ -232,11 +255,11 @@ So, the clause \textit{Mary left angry} means that the two eventualities, the ev
 Every instance of a sentence with an agent encodes ``causativity''.
 For example, the clause \textit{John ironed the shirt} means that John acted in such a way as to cause the shirt to be ironed.
 
-English-type languages, then, are those which generate clauses in which a single argument is shared between two predicates which are in a ``causative'' relation.
-French-type languages, on the other hand, are those which do not generate clauses with both properties.
+English-type languages, then, generate clauses in which a single argument is shared between two predicates which are in a ``causative'' relation.
+French-type languages, on the other hand, do not generate clauses with both properties.
 This means that an explanation of the parametric split between English- and French-type languages needs three components.
 First, it requires a theory of argument sharing.
-Second, must include a theory of how relations between predicates are established.
+Second, it must include a theory of how relations between predicates are established.
 Finally, it must show that, for a given language, there is some component of the primary lingustic data which determines whether the two phenomena are compatible.
 
 \subsection{What is Argument Sharing}
@@ -250,26 +273,27 @@ Other instances of argument sharing are seen in parasitic gaps, and depictives a
 
 \ex. Monica left angry.
 
-The notion of $\Theta$-roles is the syntactic analogue to the predicate-argument relation in semantics.
-If an entity is interpreted as the argument of a predicate, then the phrase that encodes that entity is $\Theta$-marked by the head/phrase that encodes the predicate.
-Following a basic minimalist assumption -- TRAP \parencite{hornsteinetal2005understanding} -- $\Theta$-roles are assigned upon merge, and, following a more controversial assumption -- UTAH \parencite{baker1988incorporation}-- there is a mapping between $\Theta$-roles and syntactic positions.
-This means that, for example, a DP is interpreted as the Theme of a verb iff it is merged as the complement of that verb.
+$\Theta$-roles are the syntactic analogue of the semantic predicate-argument relation.
+If an entity is semantically interpreted as the argument of a predicate, then the phrase that encodes that entity is $\Theta$-marked by the head or phrase that encodes the predicate.
+Following a basic minimalist assumption -- the Theta-Role Assignment Principle (TRAP) \parencite{hornsteinetal2005understanding} -- $\Theta$-roles are assigned upon merge, and, following a more controversial assumption -- the Uniformity of Theta Assignment Hypothesis (UTAH) \parencite{baker1988incorporation}-- there is a mapping between $\Theta$-roles and syntactic positions.
+This means, for example, that a DP is interpreted as the Theme of a verb iff it is merged as the complement of that verb.
 
-I will be making two non-standard assumptions regarding $\Theta$-roles which, being non-standard, require justification.
+I will be making two non-standard assumptions about $\Theta$-roles.
 First, I assume that DPs can receive multiple $\Theta$-roles, or in other words, I do not assume the $\Theta$ criterion.
+This assumption is the basis for Hornstein's (\citeyear{hornstein1999movement,hornstein2009theory}) Movement Theory of Control, and the justifications I discuss below are adapted from Hornstein's justifications.
 There are two justifications for this assumption, one metatheoretical and the other theoretical.
-The metatheoretical argument is based on the method of theory building prescribed by the minimalist program.
-Theories are built by identifying virtual conceptual necessities (VCNs) and assuming those as axioms of the theory.
-Any proposed principles or theoretical constructs are admited to the theory in one of two ways.
-Either they are shown to follow logically from VCNs or they are argued to be VCNs.
-In current syntactic theory, the set of VCNs is restricted to a lexicon, a structure building operation (merge) and the interfaces with other cognitive modules (sensorymotor and conceptual-intentional).
+The metatheoretical argument is based on the method of theory building that characterizes the minimalist program.
+Theories are built by identifying virtual conceptual necessities (VCNs) which are taken to be axioms of the theory.
+A proposed principle or theoretical construct can be admitted to the theory in one of two ways:
+Either it is shown to follow logically from VCNs or it is argued to be a VCN.
+In current syntactic theory, the set of VCNs is restricted to a lexicon, a structure building operation (merge) and the interfaces with other cognitive modules (the sensorimotor and conceptual-intentional interfaces).
 Since the $\Theta$-criterion is not a member of this set, its existence, rather than its nonexistence, must be argued for.
 In other words, the burden of proof is on those who would propose the $\Theta$-criterion rather than those who reject it.
 
-The $\Theta$-criterion was a constraint in GB syntax that held a D-Structure. 
-It stated that every $\Theta$-role must be assigned to exactly one argument.
-Since D-Structure has been eliminated from syntactic theory, if the $\Theta$-criterion does hold, it must hold at one of the interfaces, and since $\Theta$-roles are essentially semantic it must hold at the CI-interface.
-So we must ask how the $\Theta$-criterion would be formulated as a constraint on CI legibility.
+The $\Theta$-criterion was originally proposed as a constraint in GB syntax that held at D-Structure. 
+It stated that every $\Theta$-role must be assigned to exactly one argument and every argument be assigned exactly one $\Theta$-role.
+Since D-Structure has been eliminated from the theory, then if the $\Theta$-criterion does hold, it must hold at one of the interfaces, and since $\Theta$-roles are essentially semantic it would presumably hold at the CI-interface.
+We must, tehrefore, ask how the $\Theta$-criterion would be formulated as a constraint on CI legibility.
 
 To do so, let's consider a concrete case.
 Compare the two possible structures for an instance of control in \Next.
@@ -280,9 +304,10 @@ Compare the two possible structures for an instance of control in \Next.
 The structure in \Last[a], with PRO, obeys the $\Theta$-criterion, and the one in \Last[b] violates it, but both map to the same logical form, given in \Next.
 \ex. $\exists e [\text{Wanted}(e)(\textbf{r}) \& \text{Laugh}(e) \& \textsc{Agent}(e)(\textbf{r})]$
 
-The $\Theta$-criterion would then amount to a stipulation that \LLast[a] is good and \LLast[b] is bad, and for my task here, I see no use for such a stipulation.
+The $\Theta$-criterion would then amount to a stipulation that \LLast[a] is good and \LLast[b] is bad.
+So far, I have found no need for such a stipulation.
 
-The second non-standard assumption is in the particular version of UTAH I use.
+The second non-standard assumption is the particular version of UTAH I use.
 \textcite{baker1988incorporation} argues for the following mapping of $\Theta$-roles to structural position.
 Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp V as in \Next, below.
 \begin{figure}[h]
@@ -437,27 +462,58 @@ Finally, we merge the VP and the small clause (f) and we are left with a sidewar
   & Lexical Array & Workspace\\
   (a) & 
   $\left\{ \textit{raw, eat, \dots} \right\}$ &
-  $\left\{ \left[_\alpha \textit{the, meat} \right] \right\}$ &
+  $
+  \begin{Bmatrix*}[l]
+   \left[_\alpha \textit{the, meat} \right] 
+  \end{Bmatrix*}
+  $
+   &
   Select(raw)\\
   (b) &
   $\left\{ \textit{eat, \dots} \right\}$ &
-  $\left\{ \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right\}$ &
+  $\begin{Bmatrix*}[l]
+    \textit{raw},\\
+    \left[_\alpha\textit{the, meat}\right]
+  \end{Bmatrix*}$ 
+  &
   Merge(raw, $\alpha$)\\
   (c) &
   $\left\{  \textit{eat, \dots}\right\}$ &
-  $\left\{ \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  $
+  \begin{Bmatrix*}[l]
+    \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
+  \end{Bmatrix*}
+    $ &
   Select(eat)\\
   (d) &
   $\left\{ \textit{\dots} \right\}$ &
-  $\left\{ \textit{eat}, \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  $
+  \begin{Bmatrix*}[l]
+    \textit{eat},\\ 
+    \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
+  \end{Bmatrix*}
+  $ &
   Copy($\alpha$)\\
   (e) &
   $\left\{ \textit{\dots} \right\}$ &
-  $\left\{ \textit{eat}, \left[_\gamma\textit{the, meat}\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  $
+  \begin{Bmatrix*}[l]
+    \textit{eat},\\
+    \left[_\gamma\textit{the, meat}\right],\\
+    \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
+  \end{Bmatrix*}
+  $
+    &
   Merge(eat,  $\gamma$)\\
   (f) &
   $\left\{ \textit{\dots} \right\}$ &
-  $\left\{ \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right\}$ &
+  $
+  \begin{Bmatrix*}[l]
+    \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right],\\
+    \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
+  \end{Bmatrix*}
+  $ 
+  &
   Merge($\delta, \beta$)\\
   (g) &
   $\left\{ \ldots \right\}$ &

@@ -45,7 +45,7 @@ margin=1in
 \begin{document}
 \textbf{Abstract}
 
-The fact that languages vary with repect to resultative interpretation of secondary predication (SP) presents an acquisiton puzzle.
+The fact that languages vary with respect to the availability of a resultative interpretation of secondary predication (SP) presents an acquisiton puzzle.
 For instance, English allows resultative SP, while Italian does not.
 \ex.
 \ag. l' ho mangiato crudo.\\
@@ -64,25 +64,29 @@ This paper shows how the variation can be acquired indirectly.
 \begin{forest}
   nice empty nodes,sn edges,baseline
     [VP
-	    [{the shirt},name=V theme] 
+	    [{the glass},name=V theme] 
 	    [
-		    [dry] 
-		    [resP 
+		    [drink] 
+		    [resP
+		      [{$\langle\text{the glass}\rangle$},name=res subj]
+		      [
 			    [res$^\circ$] 
 			    [SC
-				    [{$\langle\text{the shirt}\rangle$},name=sc theme]
+				    [{$\langle\text{the glass}\rangle$},name=sc theme]
 				    [aP
 					    [a$^\circ$]
-					    [\textsc{wrinkled}]
+					    [\textsc{dry}]
 				    ]
 			    ]
 		    ]
 	    ]
     ]
-    \draw[->] (sc theme) to[out=south west, in=south] (V theme);
+  ]
+    \draw[->] (sc theme) to[out=south west, in=south] (res subj);
+    \draw[->] (res subj) to[out=south west, in=south] (V theme);
 \end{forest}
 
-Given these two results, the task of explaining The Resultative Parameter can be reduced to the task of showing that whatever property of a grammar that (dis)allows endocentric compounding also (dis)allows the structure in \Last.
+Given these two results, the task of explaining the resultative parameter can be reduced to the task of showing that whatever property of a grammar that (dis)allows endocentric compounding also (dis)allows the structure in \Last.
 
 Adopting Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) label theory, along with a suite of other theoretical assumptions \parencite{nunes2001sideward,chametzky1996theory,hornstein1999movement}, this paper proposes that only bare categories, in the sense of \textcite{lasnik1999verbal}, can participate in compounding.
 An SC with a bare aP (as in English) is unlabelable, which triggers movement of the theme, while one with an inflected aP (as in Italian) is labelable.
@@ -91,7 +95,10 @@ Such an account has the additional benefit of predicting, correctly, that SP is 
 
 \textbf{Presentation Summary}
 
+This paper presents an account of how a variable semantic property (resultative secondary predication) could be acquired from a surface phenomenon (compounding).
+It does so by applying Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) label theory to previous empirical work on adjectival resultatives \parencite{snyder2001nature,kratzer_building_2004}.
 
+\printbibliography
 \end{document}
 
 

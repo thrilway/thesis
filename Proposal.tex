@@ -198,8 +198,9 @@ My thesis will be an attempt to unify the two approaches.
 Such a unification, however, will require significant revision of the logic used in each approach.
 I will discuss the revised logic in the following section.
 
-\section{Towards an explanation of the resultative parameter}\label{sec:outline}
 
+\section{Towards an explanation of the resultative parameter}\label{sec:outline}
+In order to approach an explanation of this parametric variation, the thesis will be structured as two converging lines of inquiry.
 The first line will be an attempt to formalize the surface variation associated with the resultative parameter.
 \textcite{snyder2001nature,roeper2002learnability,kratzer_building_2004} and others identify the (un)availability of productive compounding as the relevant surface variation, while \textcite{haider2016predicting} identifies the (un)availability of particle verb constructions as the culprit.
 My previous investigation of particle verbs \parencite[][included as an appendix]{milway2013forum} suggests that compounding and particle verbs are related, so I will provisionally assume that the compounding parameter subsumes the particle verb parameter.\footnote{
@@ -238,7 +239,12 @@ The situation I hope to describe, schematized below in \Next,  will be a class o
   \label{fig:ParameterModel}
 \end{figure}
 
-\section{Sharpening the Question}\label{sec:result analysis}
+In the remainder of this section, I expand on the methodology I will employ in my thesis.
+First, I discuss argument sharing and causativity which, taken together, give us resultatives.
+Next, I use the results of this discussion to present a structural analysis of resultatives.
+Finally, I introduce Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) Label Theory along with some auxiliary hypotheses which will guide my overall investigation.
+
+\subsection{Sharpening the Question}\label{sec:result analysis}
 A more precise definition of resultatives is needed to proceed in this study.
 Resultative clauses  contain two distinct predicates (Pred1$\neq$Pred2) which share an argument, in which the primary predicate is construed as the cause of the secondary.
 Each of these properties that define resultatives (argument sharing and ``causativity'') is quite common and neither is sufficient for resultatives.
@@ -260,10 +266,10 @@ French-type languages, on the other hand, do not generate clauses with both prop
 This means that an explanation of the parametric split between English- and French-type languages needs three components.
 First, it requires a theory of argument sharing.
 Second, it must include a theory of how relations between predicates are established.
-Finally, it must show that, for a given language, there is some component of the primary lingustic data which determines whether the two phenomena are compatible.
+Finally, it must show that, for a given language, there is some component of the primary linguistic data which determines whether the two phenomena are compatible.
 
-\subsection{What is Argument Sharing}
-First, Lets consider cases of argument sharing, which, semantically speaking, is a situation in which one entity is interpreted as being a participant in multiple distinct events expressed by a single utterence.
+\subsubsection{What is Argument Sharing}
+First, Lets consider cases of argument sharing, which, semantically speaking, is a situation in which one entity is interpreted as being a participant in multiple distinct events expressed by a single utterance.
 A familiar type of argument sharing is control sentences such as \Next, in which Alice is both the holder of the wanting attitude and the agent of the non-actual winning event.
 \ex.\label{ex:Control} Alice$_i$ wants $ec_i$ to win.
 
@@ -309,7 +315,7 @@ So far, I have found no need for such a stipulation.
 
 The second non-standard assumption is the particular version of UTAH I use.
 \textcite{baker1988incorporation} argues for the following mapping of $\Theta$-roles to structural position.
-Agents are asssociated with Spec Voice, Themes with Spec V, and Goals with Comp V as in \Next, below.
+Agents are associated with Spec Voice, Themes with Spec V, and Goals with Comp V as in \Next, below.
 \ex.\label{fig:BakerUTAH}
   {\small
 \begin{forest}
@@ -381,8 +387,15 @@ So V$^\circ$ in \ref{fig:BakerUTAH}, would actually be $v$P or $v^\prime$, which
 
 I will make the simplifying assumption that theme arguments are merged with the $v$P (Comp V as shorthand) and goals are introduced in an adjunct phrase.
 
-\subsubsection{Absolute vs Relative UTAH}
-In the discussion above, I have been assuming an absolute version of UTAH (AUTAH), which 
+\paragraph{Absolute vs Relative UTAH}
+In the discussion above, I have been assuming an absolute version of UTAH (AUTAH), according to which, there is a strict mapping between $\Theta$-roles and $\Theta$-marking heads.
+In other words, an argument A receives $\Theta$-role X iff it merges with (a projection) of a head B.
+A relative version of UTAH (RUTAH) has also been proposed in the literature \parencite[][\textit{inter alia}]{larson1990double}.
+According to RUTAH there is a thematic hierarchy, given in \Next, which determines an argument's $\Theta$-role relative to that of other arguments.
+\ex. \textsc{agent} $>$ \textsc{theme} $>$ \textsc{goal} $>$ \textsc{oblique} \parencite{larson1990double}
+
+According to Larson's (1990) RUTAH the thematic hierarchy corresponds to an asymmetric c-command hierarchy of arguments in a given clause.
+This means that themes cannot asymmetrically c-command agents, goals cannot asymmetrically c-command themes, etc.
 
 There is evidence for both hypotheses, which is to say that there is no empirical reason to choose one over the other.
 There are, however, theoretical reasons to privilege an AUTAH over RUTAH.
@@ -397,7 +410,7 @@ This means that when the CI interface is interpreting a [DP $v$P] structure, it 
 It is not obvious that such an ability is independently required of the CI interface, therefore RUTAH requires an unmotivated modification of the CI interface.
 Since RUTAH requires more modification of our theory than AUTAH does, it is theoretically dispreferred.
 
-\subsubsection{Sideward movement}
+\paragraph{Sideward movement}
 This leads to a conception of argument sharing, according to which DPs are shared arguments iff they are merged in two $\Theta$ positions in the course of a single derivation.
 For ordinary control sentences, this is easy to represent.
 Consider \ref{ex:Control}, above, in which the subject \textit{Alice} bears two $\Theta$-roles: External argument of \textit{want} and external argument of \textit{win}.
@@ -565,7 +578,7 @@ To summarize, argument sharing is represented in the syntax by movement from one
 In canonical control constructions, this is a trivial upward movement operation.
 In other argument sharing constructions, however, sideward movement is necessary and the result requires a further upward movement to a position that c-commands all other instances of the moved element.
 
-\subsection{What is ``Causativity''}
+\subsubsection{What is ``Causativity''}
 Consider the causative-inchoative alternation demonstrated in \Next and \NNext.
 \ex.\label{ex:inch} The toast burned.
 
@@ -588,7 +601,8 @@ The causative alternant, describes a complex event which terminates in a toast b
 Pietroski defines termination as follows.
 \begin{quote}
   [E]vent F \textit{terminates} event E, iff: E and F occur; F is a (perhaps improper) part of E; and F is an effect of every event that is a proper part of E but is not a part of F.\hfill\parencite[p190]{pietroski2003small}
-\end{quote}<++>
+\end{quote}
+
 
 In order to discuss how causativity might be derived syntactically, let's consider the pieces required.
 Starting with the inchoative as a basis, we need a verb and a theme argument.
@@ -602,7 +616,7 @@ The fact that causatives can be passivized<++>, as demonstrated below in \Next, 
 \b. $\neq$ John burned the toast.
 
 
-\section{Enter Resultatives}
+\subsection{Enter Resultatives}
 Given the discussion above regarding the syntax and semantics of argument sharing and causativity, I will move on to discuss how the two notions interact to generate or fail to generate resultatives.
 I will discuss resultatives using \Next as a representative example.
 \ex. Jennifer hammered the metal flat
@@ -671,7 +685,7 @@ I will do so by comparing resultative structures with structures such as depicti
 Given modern syntactic theory, according to which the narrow syntactic module is purely free merge, a refined theory of the interfaces is required to explain the fact that structures such as \Last are allowed or disallowed in a given language.
 In the following section, I argue that Label Theory \parencite{chomsky2013problems,chomsky2015problems} provides the framework for such a theory.
 
-\section{Label Theory}
+\subsection{Label Theory}
 I will be assuming and extending Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) Label Theory, which begins with two principles: (i) Merge does not assign labels to the objects it creates, and (ii) labels are required for proper interpretation at the CI interface.
 From these principles, Chomsky proposes that labels are assigned upon transfer (\textit{i.e.}, at the phase level) to the CI interface by a labeling algorithm (LA). The labeling algorithm is a special case of minimal search that picks out the most prominent element contained in a syntactic object and assigns it as the label.
 Given this conception of labeling, there are three relevant classes of syntactic objects: (i) Head-Phrase structures ($\left\{ \text{X, YP} \right\}$), (ii) Head-Head structures ($\left\{ \text{X, Y} \right\}$), and (iii) Phrase-Phrase structures ($\left\{ \text{XP, YP} \right\}$).\footnote{
@@ -681,19 +695,19 @@ Given this conception of labeling, there are three relevant classes of syntactic
 }
 The simplest case, Head-Phrase structures, require no special discussion.
 The head is the most prominent constituent of the structure, so it becomes the label.
-\ex. Label(\hxp) = X
+\ex.\label{ex:hxp_rule} Label(\hxp) = X
 
 The other structures are symmetric, and therefore do not necessarily have a most prominent element.
 The LA, therefore, must use other factors to decide.
 Head-Head structures can only be labeled if only one of the heads can be the label.
 Chomsky notes that the only instances of licit (and therefore labelable) Head-Head structures are the result of merging a root with a category-determining head, and proposes that this is because roots are simply unable to be labels.
-\ex. Label(\hh) = X iff Y is a root and X is not a root.
+\ex.\label{ex:hh_rule} Label(\hh) = X iff Y is a root and X is not a root.
 
 The last case, and the one most relevant to this dissertation, is the class of Phrase-Phrase structures.
 Like the Head-Head structures, these are symmetrical, so there is no single most prominent element to be found.
 Since every instance of internal merge, as well those instances of externally merging arguments, creates a Phrase-Phrase structure, there must be some way of labeling these structures.
 Chomsky proposes two labeling strategies: (i) Lower copies of phrases are invisible to labeling, and (ii) if the two phrases agree for some feature, that feature can itself act as a label.
-\ex. Label(\xpyp) = $
+\ex.\label{ex:xpyp_rule} Label(\xpyp) = $
 \begin{cases}
   \text{Label(YP)} & \text{iff XP is a lower copy}\\
   \langle\text{F,F}\rangle & \text{iff XP and YP agree for F}
@@ -716,56 +730,151 @@ For instance, \Next unacceptable because \textit{which book} cannot move from it
 
 \textcite{chomsky2015problems} presents an account of criterial freezing in terms of labeling, and thus shows that label theory offers conditions on movement \textit{from}.
 
-\section{Preliminary Explanation}
+\subsubsection{Labels, Adjuncts, and Interpretation}\label{sec:auxiliaryhyp}
+I will expand Chomsky's label theory with two auxiliary hypotheses.
+The first, which I borrow from \textcite{hornstein2009theory,chametzky1996theory}, is that adjunct-base structures are by definition unlabeled.
+That is, an \xpyp{} structure is an adjunct-base structure iff Label(\xpyp)=$\emptyset$.
+The second hypothesis is that the label of a complex syntactic object determines how it is interpreted compositionally.
+That is, an \xpyp{} structure is interpreted differently depending on whether its label is $\emptyset$, $\langle\text{F,F}\rangle$, or Label(XP).
+When the structure is unlabeled, it is interpreted as a conjunction structure.
+
+The empirical utility of these assumptions has already been demonstrated in \textcite{milway2016dogdays}, in which I use them to explain the fact that specifiers of adjuncts must move even if their position would otherwise be criterial.
+In particular I presented an investigation of the subjects of adjunct ACC-ing clauses, which is summarized below.
+
+Consider the ACC-ing clause \textit{a boy throwing the ball}, the structure of which is given in \Next, prior to being adjoined to a base.
+\ex.{\small
+\begin{forest}
+  baseline,nice empty nodes,sn edges
+  [$\alpha$
+    [DP [a boy,roof]]
+    [$\beta$
+      [Prog,align=center]
+      [$\gamma$
+	[DP[a boy,roof]]
+	[
+	  [Voice]
+	  [VP
+	    [throw]
+	    [DP[the ball,roof]]
+	  ]
+	]
+      ]
+    ]
+  ]
+\end{forest}}
+
+Since the complement of Prog, $\gamma$, receives its normal interpretation, I assume it is transferred and labelled before the ACC-ing clause is adjoined.
+This leaves $\alpha$ and $\beta$ unlabeled, and when the clause is adjoined to a VP, they remain unlabeled.
+\ex.{\small
+\begin{forest}
+  baseline,nice empty nodes,sn edges
+  [$\delta$
+    [VP]
+    [$\alpha$
+      [DP [a boy,roof]]
+      [$\beta$
+	[Prog,align=center]
+	[$\gamma$]
+      ]
+    ]
+  ]
+\end{forest}}
+
+\ex. 
+\a. Label($\delta$) = $\emptyset$
+\b. Label($\alpha$) = $\emptyset$
+
+This derivation correctly predicts that $\delta$ is interpreted as a conjunction structure, but incorrectly predicts that $\alpha$ is interpreted that way too.
+If, however, \textit{a boy} moves out of $\alpha$ before adjunction occurs, then $\alpha$ does not receive a deviant interpretation.
+
+\subsection{Summary}
+In the preceding section I have proposed a methodology for linking a surface parameter (\{*\}compounding) with an interpretive one (\{*\}resultatives) which takes the Borer-Chomsky Conjecture as a core assumption.
+I then proceeded by investigating the two necessary facets of resultatives: Argument Sharing and Causativity.
+Argument Sharing of the type required by resultatives requires a rejection of the $\Theta$-criterion and an acceptance of sideward movement.
+Causativity is a causal relation between Neo-Davidsonian events which is encoded by a functional head, res$^\circ$.
+I then put these two facets together to arrive at a structural analysis of resultatives.
+Finally, I introduced Chomsky's Label Theory and two auxiliary hypotheses regarding labeling.
+In what follows I will apply the concepts discussed above to the problem of the resultative parameter and give a sketch of how the parameter might be explained.
+
+\section{A Preliminary Explanation of the Resultative Parameter}
 I will assume that the bareness of a given category in a language determines whether that category can take part in productive compounding in that language.
 So, in English, German, Norwegian, \textit{etc.} adjectives are sometimes bare, while in French, Italian, Spanish, \textit{etc}, they always carry unvalued features.\footnote{Note that this proposal is similar to \citeauthor{lasnik1999verbal}'s (\citeyear{lasnik1999verbal}) analysis of verbal morphology in English and French.}
 The lexical property that I will identify, then, is the availability of a category-determining \textit{adj}$^\circ$ head without $\varphi$-features.
-This, I believe, will yeild an explanation of the resultative parameter.
+This, I believe, will yield an explanation of the resultative parameter.
 
 The explanation of the resultative parameter that I will pursue is similar in logic to the explanation I give for the distribution of ACC-ing subjects \parencite{milway2016dogdays}.
 The basic premises of this explanation are as follows.
 (i) The VP-resP structures in question, are adjunction structures (resP adjoined to VP), (ii) specifiers of adjuncts must move, for reasons I discuss in \textcite{milway2016dogdays}, and (iii) complements of adjuncts are labeled before adjunction occurs.
 
 In a language such as German, then, resultatives are derived first by merging the theme DP with the bare adjective ([$adj^\circ_\emptyset$, \textsc{root}]), and then merging res$^\circ$.
-\begin{figure}[ht]
-	\figex
-	\begin{minipage}[t]{0.5\textwidth}
-		\begin{enumerate}
-			\item Merge($adj^\circ_\emptyset$, \textsc{root}) = $\alpha$
-			\item Merge(DP$_\varphi$, $\beta$) = $\gamma$
-			\item Merge(res$^\circ$, $\gamma$) = $\delta$
-			\setcounter{DerivStep}{\theenumi}
-		\end{enumerate}
-	\end{minipage}
-	\begin{minipage}[t]{0.5\textwidth}
-		\begin{forest}
-			baseline,nice empty nodes,sn edges
-			[$\delta$ [res] [$\gamma$ [DP$_\varphi$] [$\alpha$ [$adj^\circ_\emptyset$] [\textsc{root}]]]]
-		\end{forest}
-	\end{minipage}
-\end{figure}
+\ex.
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{enumerate}
+    \item Merge($adj^\circ_\emptyset$, \textsc{root}) = $\alpha$
+    \item Merge(DP$_\varphi$, $\beta$) = $\gamma$
+    \item Merge(res$^\circ$, $\gamma$) = $\delta$
+      \setcounter{DerivStep}{\theenumi}
+  \end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{forest}
+    baseline,nice empty nodes,sn edges
+    [$\delta$ [res] [$\gamma$ [DP$_\varphi$] [$\alpha$ [$adj^\circ_\emptyset$] [\textsc{root}]]]]
+  \end{forest}
+\end{minipage}
+
 \ex. Label($\gamma$) = undefined
 
 If this object were to be adjoined to a VP at this point, the small clause would be unlabelable, and the derivation would crash.
-This is why the DP must raise to merge with the resP, which is now fully labelable.
-\begin{figure}[ht]
-	\figex
-	\begin{minipage}[t]{0.5\textwidth}
-		\begin{enumerate}
-			\setcounter{enumi}{\theDerivStep}
-			\item Merge(DP$_\varphi$, $\delta$) = $\zeta$
-		\end{enumerate}
-	\end{minipage}
-	\begin{minipage}[t]{0.5\textwidth}
-		\begin{forest}
-			baseline,nice empty nodes,sn edges
-			[$\zeta$ [DP$_\varphi$] [$\delta$ [res] [$\gamma$ [$\langle$DP$_\varphi\rangle$] [$\alpha$ [$adj^\circ_\emptyset$] [\textsc{root}]]]]]
-		\end{forest}
-	\end{minipage}
-\figex Label($\gamma$) = Label($\alpha$)
-\end{figure}
+This is why the DP must raise to merge with the resP, which is now fully labelable, as shown in \Next.
+\ex.
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{enumerate}
+      \setcounter{enumi}{\theDerivStep}
+    \item Merge(DP$_\varphi$, $\delta$) = $\zeta$
+      \setcounter{DerivStep}{\theenumi}
+  \end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{forest}
+    baseline,nice empty nodes,sn edges
+    [$\zeta$ [DP$_\varphi$] [$\delta$ [res] [$\gamma$ [$\langle$DP$_\varphi\rangle$] [$\alpha$ [$adj^\circ_\emptyset$] [\textsc{root}]]]]]
+  \end{forest}
+\end{minipage}
 
-If we adjoin the resulting object to the VP at this point, the theme DP will have to move, and the derivation will proceed from there.
+\ex. Label($\gamma$) = Label($\alpha$) (by labeling rule \ref{ex:xpyp_rule})
+
+If we adjoin the resulting object to the VP at this point, the theme DP, being the specifier of an adjunct, will have to move to Comp V and then to Spec AgrO.
+\ex.
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{enumerate}
+      \setcounter{enumi}{\theDerivStep}
+    \item Transfer($\gamma$)
+    \item Copy(DP$_\varphi$)
+    \item Merge(DP$_\varphi$, V) = $\eta$
+    \item Merge($\eta$, $\zeta$) = $\kappa$
+    \item Merge(AgrO, $\kappa$) = $\mu$
+    \item Merge(DP$_\varphi$, $\mu$) = $\xi$
+  \end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{forest}
+    baseline,nice empty nodes,sn edges
+    [$\xi$
+      [DP$_\varphi$]
+      [$\mu$
+	[AgrO]
+	[$\kappa$
+	  [$\eta$
+	    [$\langle$DP$_\varphi\rangle$]
+	    [V]
+	  ]
+	  [$\zeta$ [$\langle$DP$_\varphi\rangle$] [res] ]
+	]
+      ]
+    ]
+  \end{forest}
+\end{minipage}
 
 Consider how that derivation would unfold if the adjective had unvalued $\varphi$-features.
 The theme DP would merge with the adjective ([$adj^\circ_\varphi$, \textsc{root}]), triggering agreement, and res$^\circ$ would merge with the resulting small clause.
@@ -773,7 +882,31 @@ At this point, unlike in German, the resP is fully labelable by virtue of the ag
 Thus there would be no movement of the theme to merge with resP, which would mean that when the resP is adjoined to the VP, the theme DP will be trapped in an adjunct island.
 If the DP cannot move to Comp-V, it cannot be interpreted as the theme of the verb and therefore we cannot derive the resultative structure.
 
-If the above explanation is correct, it still remains to extend it to directionalized locatives, Norwegian and Icelandic resultatives, and the non-variable status of depictives, which will likely occupy the later parts of my thesis.
+\subsection{Directions to Extend}
+Assuming the explanation sketched above is correct for adjectival resultatives, three related phenomena must be specifically addressed: directionalized locatives, Norwegian and Icelandic resultatives, and depictives.
+This will likely occupy the later parts of my thesis.
+
+In my first generals paper \parencite{milway2015generals} I argue that directionalized locatives, demonstrated in \Next, are resultatives with PP secondary predicates, and should therefore be explained in the same way as adjectival resultatives.
+\ex. The ball rolled between the pylons.\\
+($\approx$ the ball rolled \textsc{to} between the pylons.)
+
+Extending my account of adjectival resultatives to directionalized locatives, however, presents two difficulties.
+First, the surface variation associated with \{*\}directionalized locatives seems to be \{*\}particle verbs.
+As such, an analysis of particle verbs must be given that crucially requires ``bareness'' of P$^\circ$.
+Second, while the directionalized locative parameter is generally linked to the resultative parameter, there seem to be cases in which the two are disassociated.
+For instance, Ruth King and Yves Roberge \parencite[p.c. to ]{rooryck1996prepositions} report that P.E.I. French allows directionalized locatives but not resultatives.
+
+Norwegian and Icelandic are problematic for the account I offer due to the fact that their resultative adjectives show agreement with the theme argument.
+\ex. <+Norwegian+>
+
+\ex. <+Icelandic+>
+
+This is problematic since my account requires \textit{adj}P's in resultatives to be bare.
+If, however, the source of the agreement morphology is res$^\circ$ rather than \textit{adj}$^\circ$, the account can be saved.
+Such a move would have to be justified, though.
+
+Finally, I will discuss depictives, which I assume have a similar structure to that of resultatives, but do not seem to show parametric variation.
+I will have show, for instance, that my account allows depictives in English and does not rule them out in French.
 
 \section{Appendices}
 \begin{refsection}

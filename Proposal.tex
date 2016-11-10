@@ -133,7 +133,7 @@ the woman(fem) is tall \textsc{~~agr}\\
 These patterns, being observable on the surface, are in principle learnable from the primary linguistic data (PLD).
 
 The languages also differ in whether they allow resultative interpretations of secondary predicates (SPs).
-French (along with other Romance languages) allows only depictive SPs, while German (along with other Germanic languages) allows both depictive and resultative SPs.
+French and Italian (along with other Romance languages) allow only depictive SPs, while English and German (along with other Germanic languages) allow both depictive and resultative SPs.
 \ex.Germanic
 \a. English
 \a. I ate the fish raw. (depictive)
@@ -590,31 +590,27 @@ For a derivational theory \parencite[e.g.][]{lakoff1976toward,hale1993argument,p
 For a non-derivational theory \parencite[e.g.][]{fodor1970three}, there are two lexical entries, \textsc{burn}$_1$ and \textsc{burn$_2$}, which are stipulated to stand in an entailment relation ($x$ \textsc{burn}$_2\: y \rightarrow y$ \textsc{burn}$_1$) and are homonymous.
 
 I will adopt a derivational theory based on the semantic analysis of causativity developed by \textcite{pietroski2003small}.\footnote{
-  This analysis may be a notational variant of the analysis given by \textcite{kratzer_building_2004}.
+  This analysis may be a notational variant of the semantic analysis given by \textcite{kratzer_building_2004}.
 }
 This analysis assumes a Neo-Davidsonian semantics, according to which \ref{ex:inch} describes an event of burning which the toast is the theme of, as formalized in \Next.
 \ex. $\exists e [\text{Burning}(e)\, \&\, \textsc{Theme}(e, \mathbf{the\_toast})]$
 
-The causative alternant, describes a complex event which terminates in a toast burning event and has John as an agent, as formalized below in \Next.
-\ex. $\exists e,f [ \textsc{Terminates}(f, e) \,\&\, \textsc{Agent}(f, \mathbf{paul}) \,\&\, \text{Burning}(e)\, \&\, \textsc{Theme}(e, \mathbf{the\_toast})]$
-
-Pietroski defines termination as follows.
+The causative alternant, describes a complex event ($f$) which terminates\footnote{
+  Pietroski defines termination as follows.
 \begin{quote}
   [E]vent F \textit{terminates} event E, iff: E and F occur; F is a (perhaps improper) part of E; and F is an effect of every event that is a proper part of E but is not a part of F.\hfill\parencite[p190]{pietroski2003small}
 \end{quote}
-
+} in a toast burning event($e$) and has John as an agent, as formalized below in \Next.
+\ex. $\exists e,f [ \textsc{Agent}(f, \mathbf{paul}) \,\&\, \textsc{Terminates-in}(f, e) \,\&\,\text{Burning}(e)\, \&\, \textsc{Theme}(e, \mathbf{the\_toast})]$
 
 In order to discuss how causativity might be derived syntactically, let's consider the pieces required.
 Starting with the inchoative as a basis, we need a verb and a theme argument.
-In addition to that we need something that expresses the \textsc{Terminates} and \textsc{Agent} predicates, and the agent argument.
+In addition to that we need something that expresses the \textsc{Terminates-in} and \textsc{Agent} predicates, and the agent argument.
 
 I will assume that the inchoative verb is formed by merging a root with a category determining head.
 This complex merges with and $\Theta$-marks the theme.
-The fact that causatives can be passivized<++>, as demonstrated below in \Next, suggests that the \textsc{Terminates} and \textsc{Agent} predicates are not (always) bundled together in a single head.
-\ex. The toast was burned.
-\a. $\neq$ The toast burned.
-\b. $\neq$ John burned the toast.
-
+I will further assume, following \textcite{pietroski2003small}, that the head which encodes \textsc{Terminates-in} combines directly with the VP.
+I remain agnostic at this time with respect to the question of whether \textsc{Agent} and \textsc{Terminates-in} are necessarily bundled on a single head.
 
 \subsection{Enter Resultatives}
 Given the discussion above regarding the syntax and semantics of argument sharing and causativity, I will move on to discuss how the two notions interact to generate or fail to generate resultatives.
@@ -654,7 +650,7 @@ As Kratzer defines causality, the \textsc{cause} predicate may be eqivalent to P
 
 Kratzer requires a novel rule of composition because the resP (type $\langle s, t\rangle$) is neither of the same type as, nor in the domain of the verb (type $\langle e, \langle s, t\rangle\rangle$) it combines with.
 To combine these objects, Kratzer uses the rule of \textit{event identification} \parencite{kratzer_severing_1996} as defined in \Next.
-\ex. \textbf{Event Identification}: If $\alpha$ is a branching node with daughters $\beta$ and $\gamma$, and if $\beta$ is of type $\langle e, \langle s, t\rangle\rangle$ and $\gamma$ is of type $\langle s, t\rangle$, then $\llbracket\alpha\rrbracket = \lambda x_e \lambda e_s [\llbracket\beta\rrbracket](x)(e) \& \llbracket\gamma\rrbracket(e)]$
+\ex. \textbf{Event Identification}: If $\alpha$ is a branching node with daughters $\beta$ and $\gamma$, and if $\beta$ is of type $\langle e, \langle s, t\rangle\rangle$ and $\gamma$ is of type $\langle s, t\rangle$, then $\llbracket\alpha\rrbracket = \lambda x_e \lambda e_s [\llbracket\beta\rrbracket(x)(e) \& \llbracket\gamma\rrbracket(e)]$
 
 Given the discussion above regarding argument sharing, however, I will modify Kratzer's syntactic analysis slightly.
 In the modified analysis, the theme moves sideward from the small clause to Comp V, and the ResP merges with the VP, as shown below in \Next.
@@ -687,7 +683,8 @@ In the following section, I argue that Label Theory \parencite{chomsky2013proble
 
 \subsection{Label Theory}
 I will be assuming and extending Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) Label Theory, which begins with two principles: (i) Merge does not assign labels to the objects it creates, and (ii) labels are required for proper interpretation at the CI interface.
-From these principles, Chomsky proposes that labels are assigned upon transfer (\textit{i.e.}, at the phase level) to the CI interface by a labeling algorithm (LA). The labeling algorithm is a special case of minimal search that picks out the most prominent element contained in a syntactic object and assigns it as the label.
+From these principles, Chomsky proposes that labels are assigned upon transfer (\textit{i.e.}, at the phase level) to the CI interface by a special case of minimal searc: the labeling algorithm (LA).
+The LA picks out the most prominent element contained in a syntactic object and assigns it as the label of that syntactic object.
 Given this conception of labeling, there are three relevant classes of syntactic objects: (i) Head-Phrase structures ($\left\{ \text{X, YP} \right\}$), (ii) Head-Head structures ($\left\{ \text{X, Y} \right\}$), and (iii) Phrase-Phrase structures ($\left\{ \text{XP, YP} \right\}$).\footnote{
   Technically speaking, there is a fourth class of syntactic objects, Heads, which I will not discuss for two reasons. 
   First, it is not clear that heads would require labels. 
@@ -722,7 +719,7 @@ I, therefore, take the nature of the CI Interface to be an open question, to whi
 Label theory, then, is not a theory of the Narrow Syntax, so much as it is a theory of the CI interface.
 
 Beyond the theoretical arguments in favour of label theory, there are practical reasons to believe that it will provide an explanation of the parametric variation to be investigated in this thesis.
-Older theories of movement, such as Last Resort, offered conditions on movement \textit{to} a given structural position, but no conditions of movement \textit{from} a given position.\footnote{This definitely needs to be fleshed out.}
+Older theories of movement, such as Last Resort, offered conditions on movement \textit{to} a given structural position, but no conditions of movement \textit{from} a given position.\footnote{This will to be fleshed out in the my thesis.}
 The observation by \textcite[][and elsewhere]{rizzi2015notes} that phrases cannot move from so-called criterial positions, however, suggests that our theory of movement must include conditions on movement \textit{from}, in addition to conditions on movement \textit{to}.
 For instance, \Next unacceptable because \textit{which book} cannot move from its criterial position in the lower Spec-Q
 \ex.* Which book $\emptyset_Q$ do you wonder $\langle$which book$\rangle$ $\emptyset_Q$ he read.
@@ -869,18 +866,56 @@ If we adjoin the resulting object to the VP at this point, the theme DP, being t
 	    [$\langle$DP$_\varphi\rangle$]
 	    [V]
 	  ]
-	  [$\zeta$ [$\langle$DP$_\varphi\rangle$] [res] ]
+	  [$\zeta$ [$\langle$DP$_\varphi\rangle$] [$\delta$ [res] [$\gamma$] ]]
 	]
       ]
     ]
   \end{forest}
 \end{minipage}
 
-Consider how that derivation would unfold if the adjective had unvalued $\varphi$-features.
-The theme DP would merge with the adjective ([$adj^\circ_\varphi$, \textsc{root}]), triggering agreement, and res$^\circ$ would merge with the resulting small clause.
-At this point, unlike in German, the resP is fully labelable by virtue of the agreeing features in the small clause.
-Thus there would be no movement of the theme to merge with resP, which would mean that when the resP is adjoined to the VP, the theme DP will be trapped in an adjunct island.
-If the DP cannot move to Comp-V, it cannot be interpreted as the theme of the verb and therefore we cannot derive the resultative structure.
+Consider the above derivation with the bare $adj_\emptyset^\circ$ replaced with a feature-bearing $adj_\varphi^\circ$.
+If when the complement of res is transferred, the small clause will not be labelable Since the DP controlling \textit{adj}P's agreement will be invisible to LA and \textit{adj} is too weak to label on its own.\footnote{
+  Compare Chomsky's (\citeyear{chomsky2015problems}) treatment of T in English
+}
+\ex.
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{enumerate}
+    \item Merge($adj^\circ_\varphi$, \textsc{root}) = $\alpha$
+    \item Merge(DP$_\varphi$, $\beta$) = $\gamma$
+    \item Merge(res$^\circ$, $\gamma$) = $\delta$
+    \item Merge(DP$_\varphi$, $\delta$) = $\zeta$
+    \item Transfer($\gamma$)\\
+      *CRASH*
+  \end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{forest}
+    baseline,nice empty nodes,sn edges
+    [$\zeta$ [DP$_\varphi$] [$\delta$ [res] [$\gamma$ [$\langle$DP$_\varphi\rangle$] [$\alpha$ [$adj^\circ_\varphi$] [\textsc{root}]]]]]
+  \end{forest}
+\end{minipage}
+
+\ex. Label($\gamma$) = Undefined
+
+If, however, the theme DP does not raise to Spec res, the small clause will be labelable, but the DP will not be able to form a chain with its copy in Spec AgrO without incurring an island violation.
+\ex.
+  \begin{forest}
+    baseline,nice empty nodes,sn edges
+    [$\xi$
+      [DP$_\varphi$,name=raised]
+      [$\mu$
+	[AgrO]
+	[$\kappa$
+	  [\dots]
+	  [$\delta$ [res] [$\gamma$  [$\langle$DP$_\varphi\rangle$,name=insitu][$\alpha$ [$adj^\circ_\varphi$] [\textsc{root}]]]]
+	]
+      ]
+    ]
+  \draw[double] ([xshift=-24pt]insitu) arc[start angle=150,end angle=120,radius=7cm];
+  \end{forest}
+
+So, there seems to be no derivation of adjectival resultatives that converges if \textit{adj}$^\circ$ bears unvalued $\varphi$-features.
+Provided my assumption regarding the link between compounding and bareness is correct, then, we have an explanation of how \{*\}compounding is linked to \{*\}resultatives.
 
 \subsection{Directions to Extend}
 Assuming the explanation sketched above is correct for adjectival resultatives, three related phenomena must be specifically addressed: directionalized locatives, Norwegian and Icelandic resultatives, and depictives.
@@ -894,12 +929,16 @@ Extending my account of adjectival resultatives to directionalized locatives, ho
 First, the surface variation associated with \{*\}directionalized locatives seems to be \{*\}particle verbs.
 As such, an analysis of particle verbs must be given that crucially requires ``bareness'' of P$^\circ$.
 Second, while the directionalized locative parameter is generally linked to the resultative parameter, there seem to be cases in which the two are disassociated.
-For instance, Ruth King and Yves Roberge \parencite[p.c. to ]{rooryck1996prepositions} report that P.E.I. French allows directionalized locatives but not resultatives.
+For instance, Ruth King and Yves Roberge \parencite[p.c. to ][]{rooryck1996prepositions} report that P.E.I. French allows directionalized locatives but not resultatives.
 
 Norwegian and Icelandic are problematic for the account I offer due to the fact that their resultative adjectives show agreement with the theme argument.
-\ex. <+Norwegian+>
+\exg. Vi vaska golvet reint {\parencite[Norwegian][]{kratzer_building_2004}}\\
+We washed the.floor(Nt) clean.Nt\\
+``We washed the floor clean.''
 
-\ex. <+Icelandic+>
+\exg. \'Eg k\'yldi l\"ogguna kalda. {\parencite[Icelandic][]{whelpton2007building}}\\
+I.\textsc{nom} punched the.cop.FemSg\textsc{acc} cold.FemSg\textsc{acc} { }\\
+``I punched the cop out cold.''
 
 This is problematic since my account requires \textit{adj}P's in resultatives to be bare.
 If, however, the source of the agreement morphology is res$^\circ$ rather than \textit{adj}$^\circ$, the account can be saved.
@@ -914,8 +953,12 @@ I will have show, for instance, that my account allows depictives in English and
   \printbibliography[heading=none]
 \end{refsection}
 \section{Timeline:}
-<+ToBeFiguredOut+>
-
+\begin{tabular}[t]{rl}
+  Early Dec 2017: & Full Draft to committee \\
+  Early Feb 2018: & Revised Draft to committee \\
+  Mid-Feb 2018: & Defense Draft to committee \\
+  Mid-Apr 2018: & Defense \\
+\end{tabular}
 \nocite{napoli1992secondary}
 \printbibliography
 \end{document}

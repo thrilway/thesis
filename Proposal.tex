@@ -232,8 +232,8 @@ The situation I hope to describe, schematized below in \Next,  will be a class o
     \node (comp) at (4,0) {\{*\}Compounding};
     \node (res) at (4,-2) {\{*\}Resultatives};
     \node (pld) at (8,0) {PLD};
-    \draw [<->] (lex)--(comp);
-    \draw [<->] (lex)--(res);
+    \draw [<->] (lex.north east) -- (comp.west);
+    \draw [<->] (lex.south east) -- (res.west);
     \draw [->] (pld)--(comp);
   \end{tikzpicture}
   \label{fig:ParameterModel}
@@ -482,7 +482,9 @@ To see how this works, consider the derivation of \Last (given in \Next, below).
 Starting with the DP \textit{the meat} preconstructed, we build the small clause (a-c).
 We then select the verb from the lexical array (c), copy the DP from the small clause (d), and merge the two to form the VP (e).
 Finally, we merge the VP and the small clause (f) and we are left with a sideward movement structure.
-  \ex. \textbf{Deriving \LLast}\\
+\ex.
+\begin{minipage}[t]{\textwidth}
+  \textbf{Deriving \LLast}\\
   {\small
 \begin{tabular}[t]{rlll}
   & Lexical Array & Workspace\\
@@ -546,6 +548,7 @@ Finally, we merge the VP and the small clause (f) and we are left with a sidewar
   $\left\{  \left[ _\zeta \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right]\right\}$ &
   \\
 \end{tabular}}
+\end{minipage}
 
 As discussed by \textcite{nunes2001sideward}, the derivation in \Last and the structure it derives in \LLast would lead to a crash at PF due to a failure of copy deletion.
 Assuming that, all else being equal, the higher copy of a syntactic object is pronounced and lower copies are deleted, a sideward movement structure ought to be unpronounceable.

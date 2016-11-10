@@ -551,8 +551,14 @@ As discussed by \textcite{nunes2001sideward}, the derivation in \Last and the st
 Assuming that, all else being equal, the higher copy of a syntactic object is pronounced and lower copies are deleted, a sideward movement structure ought to be unpronounceable.
 If sideward movement is followed by movement to a position that c-commands both copies, then the copy deletion issues evaporate, and the higher copy is pronounced.
 
-Returning to the specific example of object-oriented depictives, the preceding discussion means that the structure in \LLast cannot be the final structure of the sentence given, as such a structure is unpronounceable.
-If we assume, following \textcite{lasniksaito1999subject}, that grammatical objects raise to Spec AgrO\footnote{It seems unlikely to me that there is a specialised grammatical category whose only property is that is licenses Object DPs. As such I assume AgrO to be some meaningful category, but I take no stance at this time on what that category might be.} for abstract Case\footnote{I take abstract Case to be a phenomenon in need of explanation, rather than an explanation for a phenomenon.} licensing, then our sideward moved DP must further raise to and the issue dissolves.
+Returning to the specific example of object-oriented depictives, the preceding discussion means that the structure in \LLast cannot be the final structure of the sentence given, as such a structure is unpronounceable, as neither DP copy c-commands the other.
+If we assume, following \textcite{lasniksaito1999subject}, that grammatical objects raise to Spec AgrO\footnote{
+  It seems unlikely to me that there is a specialised grammatical category whose only property is that is licenses Object DPs.
+  As such I assume AgrO to be some meaningful category, but I take no stance at this time on what that category might be.
+} for abstract Case\footnote{
+  I take abstract Case to be a phenomenon in need of explanation, rather than an explanation for a phenomenon.
+} licensing, then our sideward moved DP must raise.
+Since Spec AgrO c-commands both lower copies of the DP, our pronunciation issue is solved.
 \ex. {\small
 \begin{forest}
   nice empty nodes,sn edges,baseline
@@ -799,7 +805,7 @@ So, in English, German, Norwegian, \textit{etc.} adjectives are sometimes bare, 
 The lexical property that I will identify, then, is the availability of a category-determining \textit{adj}$^\circ$ head without $\varphi$-features.
 This, I believe, will yield an explanation of the resultative parameter.
 
-The explanation of the resultative parameter that I will pursue is similar in logic to the explanation I give for the distribution of ACC-ing subjects \parencite{milway2016dogdays}.
+The explanation of the resultative parameter that I will pursue is similar in logic to the explanation I give for the distribution of ACC-ing subjects \parencite[as discussed above in section \ref{sec:auxiliaryhyp}]{milway2016dogdays}.
 The basic premises of this explanation are as follows.
 (i) The VP-resP structures in question, are adjunction structures (resP adjoined to VP), (ii) specifiers of adjuncts must move, for reasons I discuss in \textcite{milway2016dogdays}, and (iii) complements of adjuncts are labeled before adjunction occurs.
 
@@ -875,7 +881,7 @@ If we adjoin the resulting object to the VP at this point, the theme DP, being t
 
 Consider the above derivation with the bare $adj_\emptyset^\circ$ replaced with a feature-bearing $adj_\varphi^\circ$.
 If when the complement of res is transferred, the small clause will not be labelable Since the DP controlling \textit{adj}P's agreement will be invisible to LA and \textit{adj} is too weak to label on its own.\footnote{
-  Compare Chomsky's (\citeyear{chomsky2015problems}) treatment of T in English
+  Compare Chomsky's (\citeyear{chomsky2015problems}) treatment of T in English.
 }
 \ex.
 \begin{minipage}[t]{0.5\textwidth}
@@ -911,7 +917,8 @@ If, however, the theme DP does not raise to Spec res, the small clause will be l
 	]
       ]
     ]
-  \draw[double] ([xshift=-24pt]insitu) arc[start angle=150,end angle=120,radius=7cm];
+  \draw[double] ([xshift=-24pt, yshift=-24pt]insitu) arc[start angle=170,end angle=120,radius=5cm];
+  \draw[->] (insitu) to[out=south west, in=south] (raised);
   \end{forest}
 
 So, there seems to be no derivation of adjectival resultatives that converges if \textit{adj}$^\circ$ bears unvalued $\varphi$-features.

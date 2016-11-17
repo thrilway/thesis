@@ -24,6 +24,8 @@ margin=1in
 \usepackage{centernot}
 \usepackage{todonotes}
 \usepackage{titling}
+\usepackage{multirow}
+
 \useforestlibrary{linguistics}
 
 \forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
@@ -493,44 +495,52 @@ Finally, we merge the VP and the small clause (f) and we are left with a sidewar
 \begin{minipage}[t]{\textwidth}
   \textbf{Deriving \LLast}\\
   {\small
-    \begin{tabular}[t]{rlp{0.4\textwidth}l}
+    \begin{tabular}[t]{rlll}
   & Lexical Array & Workspace\\
   (a) & 
   $\left\{ \textit{raw, eat, \dots} \right\}$ &
+  \multirow{1}{*}{
   $
   \begin{Bmatrix*}[l]
    \left[_\alpha \textit{the, meat} \right] 
   \end{Bmatrix*}
-  $
+$}
    &
-   Select(raw)\\[1ex]
+   Select(raw)\\[1.5ex]
   (b) &
   $\left\{ \textit{eat, \dots} \right\}$ &
-  $\begin{Bmatrix*}[l]
-    \textit{raw},\\
-    \left[_\alpha\textit{the, meat}\right]
-  \end{Bmatrix*}$ 
+  \multirow{2}{*}{
+    $\begin{Bmatrix*}[l]
+      \textit{raw},\\
+      \left[_\alpha\textit{the, meat}\right]
+    \end{Bmatrix*}$
+  }
   &
   Merge(raw, $\alpha$)\\
+  & & & \\[1.5ex]
   (c) &
   $\left\{  \textit{eat, \dots}\right\}$ &
+  \multirow{1}{*}{
   $
   \begin{Bmatrix*}[l]
     \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
   \end{Bmatrix*}
-    $ &
-  Select(eat)\\
+$} &
+  Select(eat)\\[1.5ex]
   (d) &
   $\left\{ \textit{\dots} \right\}$ &
+  \multirow{2}{*}{
   $
   \begin{Bmatrix*}[l]
     \textit{eat},\\ 
     \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
   \end{Bmatrix*}
-  $ &
+  $} &
   Copy($\alpha$)\\
+  & & & \\[1.5ex]
   (e) &
   $\left\{ \textit{\dots} \right\}$ &
+  \multirow{3}{*}{
   $
   \begin{Bmatrix*}[l]
     \textit{eat},\\
@@ -538,21 +548,29 @@ Finally, we merge the VP and the small clause (f) and we are left with a sidewar
     \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
   \end{Bmatrix*}
   $
+  }
     &
   Merge(eat,  $\gamma$)\\
+  & & & \\
+  & & & \\[1.5ex]
   (f) &
   $\left\{ \textit{\dots} \right\}$ &
+  \multirow{2}{*}
+  {
   $
   \begin{Bmatrix*}[l]
     \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right],\\
     \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right]
   \end{Bmatrix*}
   $ 
+  }
   &
   Merge($\delta, \beta$)\\
+  & & & \\[1.5ex]
   (g) &
   $\left\{ \ldots \right\}$ &
-  $\left\{  \left[ _\zeta \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right]\right\}$ &
+  \multicolumn{2}{l}{
+    $\left\{  \left[ _\zeta \left[_\delta\textit{eat}, \left[_\gamma\textit{the, meat}\right]\right], \left[_\beta \textit{raw}, \left[_\alpha\textit{the, meat}\right] \right] \right]\right\}$}
   \\
 \end{tabular}}
 \end{minipage}

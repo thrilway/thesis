@@ -1,0 +1,179 @@
+%        File: 22NovMeeting.tex
+%     Created: Mon Nov 21 04:00 PM 2016 E
+% Last Change: Mon Nov 21 04:00 PM 2016 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+
+\useforestlibrary{linguistics}
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \ifcase\value{uniquename}%
+  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+  \or
+  \ifuseprefix
+  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+  \or
+  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}
+}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}
+  }
+}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite
+}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites
+}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\bibliography{Thesis}
+\title{Meeting Notes}
+\author{Dan Milway}
+\begin{document}
+\maketitle
+
+\section{The Problem}
+\ex. \textbf{Adjunct Control}
+\a. John$_i$ heard Mary without PRO$_j$ seeing her.
+\b.{\small
+\begin{forest}
+  baseline,nice empty nodes,sn edges
+  [TP
+    [John,name=Spec TP]
+    [
+      [T]
+      [
+	[vP
+	  [$\langle$John$\rangle$,name=Spec vP]
+	  [
+	    [v]
+	    [VP]
+	  ]
+	]
+	[PP
+	  [without]
+	  [ProgP
+	    [$\langle$John$\rangle$,name=Spec ProgP] 
+	      [Prog$^\prime$[seeing her,roof]]
+	  ]
+	]
+      ]
+    ]
+  ]
+  %\draw[->] (Spec ProgP) to[out=south west, in=south] (Spec vP);
+  %\draw[->] (Spec vP) to[out=south west, in=south west] (Spec TP);
+\end{forest}}
+
+\ex. \textbf{*French Resultatives}
+\a.* John hammered the metal$_i$ \textit{res}$^\circ$ PRO$_i$ flat.
+\b.{\small
+\begin{forest}
+  baseline,nice empty nodes,sn edges
+  [AgrOP
+    [metal,name=Obj]
+    [
+      [AgrO]
+      [
+	[VP
+	  [hammered]
+	  [$\langle$metal$\rangle$,name=V Theme]
+	]
+	[resP
+	  [res$^\circ$]
+	  [SC
+	    [$\langle$metal$\rangle$,name=A Theme]
+	    [flat]
+	  ]
+	]
+      ]
+    ]
+  ]
+  %\draw[->] (A Theme) to[out=south west, in=south] (V Theme);
+  %\draw[->] (V Theme) to[out=south west, in=south] (Obj);
+\end{forest}}
+
+\begin{itemize}
+  \item \LLast[b] and \Last[b] are isomorphic.
+  \item SWM from [Spec Prog] to [Spec vP] in \LLast[b] is allowed.
+  \item SWM from the SC to [Comp V] in \Last[b] is disallowed.
+  \item \textcite{hornstein2001move} argues that SWM in \LLast is okay since PP is not a ``bounding node'' (\textit{i.e.}, not a phase).
+  \item The DP only crosses one \textit{barrier} (the adjunction site).
+  \item Assuming resP is a phase, SWM in \Last crosses two \textit{barriers} (the resP phase and the adjunction site), making it an illicit move.
+\end{itemize}
+\section{P is not a phase head}
+\begin{itemize}
+  \item Abels' (\citeyear{abels2003successive}) account of adposition stranding relies heavily on the possibility of P$^\circ$ being a phase head.
+    \begin{itemize}
+      \item For Abels there is a parameter: ``P$^\circ$ is \{not\} a phase head.''
+    \end{itemize}
+  \item \textcite{chomsky2008on} argues that the choice of CP and v*P as phases due to interface requirements.
+  \item Since interfaces are fixed (\textit{i.e.}, not parameterized), the choice of phase heads must be fixed.
+  \item Phases are semantically complete (v*P is $\Theta$-complete, CP is propositionally complete)
+  \item PPs are usually predicative, and therefore not complete.
+\end{itemize}
+\subsection{Questions}
+\begin{itemize}
+  \item How do we account for the facts of P-stranding?
+  \item P-stranding $\rightarrow$ Directionalized locatives (\textit{e.g.}, English, PEI French)
+  \item Directionalized Locatives $\centernot\rightarrow$ P-stranding (\textit{e.g.}, German)
+\end{itemize}
+\section{resP is a phase}
+\begin{itemize}
+  \item resP is $\Theta$-complete
+  \item How is the resP in \Last related to \textit{flatten the metal}?
+\end{itemize}
+\end{document}
+
+

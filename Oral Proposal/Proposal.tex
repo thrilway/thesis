@@ -6,7 +6,12 @@
 \documentclass{beamer}
 \usetheme{Luebeck}
 \usecolortheme{crane}
-\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+\usepackage[
+  backend=biber,
+  style=authoryear-comp,
+  useprefix=false,
+  sorting=ynt
+]{biblatex}
 
 \usepackage{stmaryrd}
 \usepackage[]{amsmath}
@@ -19,6 +24,19 @@
 \usepackage{centernot}
 \usepackage{todonotes}
 \useforestlibrary{linguistics}
+
+\tikzset{
+    invisible/.style={opacity=0,text opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+}
+\forestset{
+  visible on/.style={
+    for current and ancestors={
+      /tikz/visible on={#1},
+      edge={/tikz/visible on={#1}}}}}
 
 \forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
 
@@ -295,17 +313,17 @@
 \begin{frame}
   \frametitle{Non-resultative Argument Sharing}
   \pause
-  \ex. Control\\
+  \ex. \textbf{Control}\\
     {\rm Alice wants to win.}\\
     Alice$_i$ wants [$ec_i$ to win]
 
   \pause
-  \ex. Parasitic Gaps\\
+\ex. \textbf{Parasitic Gaps}\\
     {\rm Who did you discuss without meeting?}\\
     Who$_i$ did you [[discuss $ec_i$] [without meeting $ec_i$]]?
     
     \pause
-  \ex. Depictives\\
+    \ex. \textbf{Depictives}\\
     {\rm Monica left angry.}\\
     Monica$_i$ left [$ec_i$ angry].
 
@@ -313,10 +331,10 @@
 \begin{frame}
   {What does Argument Sharing look like?}
   \begin{itemize}
-    \item Where are those $ec$s?
     \item What are those $ec$s?
+    \item Where are those $ec$s?
   \end{itemize}
-  <++>
+  
 \end{frame}
 \begin{frame}
   {What are the \textit{ec}s?}
@@ -325,15 +343,186 @@
     \begin{enumerate}
       \item PRO
 	\begin{itemize}
-	  \item PRO-theory \parencite{proPRO}
+	  \item PRO-theory \parencite{chomsky1993lectures,culicover2001control,landau2003movement}
 	  \item Standardly assumed
 	\end{itemize}
       \item Traces/Copies
 	\begin{itemize}
-	  \item Movement Theory of Control \parencite[and following.]{hornstein1999movement}
+	  \item Movement Theory of Control \parencite{hornstein1999movement,boeckx2003reply,boeckx2006virtues}
 	  \item Non-standard
 	\end{itemize}
     \end{enumerate}
-  \end{block}<++>
-\end{frame}<++>
+  \end{block}
+\end{frame}
+\begin{frame}
+  {Where are the \textit{ec}s?}
+  \begin{itemize}
+    \item \textbf{Short Answer:} $\Theta$-positions
+    \item But what are those positions?
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Deriving Resultatives}
+  \ex.{\rm Natalie hammered the metal flat.}
+
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{overprint}
+	\onslide<2-5>
+      \begin{block}
+	{Build the adjunct}
+	\begin{itemize}
+	  \item<2-> Build the Small Clause
+	  \item<3-> Merge(\textit{res}$^\circ$, $\alpha$)
+	  \item<4-> Copy(DP) + Merge(DP, $\beta$)
+	  \item<5-> Copy(DP)
+	\end{itemize}
+      \end{block}
+      \onslide<6->
+      \begin{block}
+	{Build the VP}
+	\begin{itemize}
+	  \item<7-> Merge({\rm hammer}, DP) 
+	  \item<8-> Merge($\delta$, $\gamma$)
+	  \item<9-> \dots
+	\end{itemize}
+      \end{block}
+    \end{overprint}
+    \only<5-7>{
+      \begin{forest}
+	[DP[{\rm the metal},roof]]
+      \end{forest}}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{overprint}
+	\onslide<2-5>
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[$\gamma$,visible on=<4-5>
+	  [DP,visible on=<4-5> [{\rm the metal},roof,visible on=<4-5>]]
+	  [$\beta$,visible on=<4-5>
+	    [\textit{res},visible on=<3-5>]
+	    [$\alpha$,visible on=<3-5>
+	      [DP [{\rm the metal},roof,visible on=<2-5>]]
+	      [{\rm flat},visible on=<2-5>]
+	    ]
+	  ]
+	]
+      \end{forest}
+    }
+    \onslide<6->
+    {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[$\zeta$,visible on=<8->
+	  [$\delta$,visible on=<8->
+	    [{\rm hammer},visible on=<7->]
+	    [DP,visible on=<7-> [{\rm the metal},visible on=<7->]]
+	  ]
+	  [$\gamma$,visible on=<8->]
+	]
+      \end{forest}
+    }
+  \end{overprint}
+    \end{column}
+  \end{columns}
+\end{frame}
+\section{Label Theory}
+\begin{frame}
+  {Label Theory}
+  {\textcite{chomsky2013problems,chomsky2015problems}}
+  \begin{itemize}
+    \item UG is reducible to simplest merge
+  \end{itemize}
+  \ex. Merge($\alpha,\beta$) = $\left\{ \alpha,\beta \right\}$
+
+  \begin{itemize}
+    \item Accounts for the fundamental properties of language (\textit{e.g.}, structure-dependence of rules, displacement)
+      \begin{itemize}
+	\item Except for Projection/Labeling
+      \end{itemize}
+    \item Chomsky's proposal: Labels are assigned at the CI interface by a Labeling Algorithm (LA)
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  {The Labeling Algorithm}
+  \begin{itemize}
+    \item LA is a special instance of Minimal Search.
+      \begin{itemize}
+	\item Picks out the most prominent item as a syntactic object's label
+      \end{itemize}
+      \pause
+    \item There are three relevant classes of syntactic objects for LA:
+  \end{itemize}
+  \begin{overprint}
+    \onslide<3>
+    \begin{block}
+      {(i) Head-Phrase Structures}
+      \begin{itemize}
+	\item Label($\left\{ \text{X, YP} \right\}$) = X
+      \end{itemize}
+    \end{block}
+    \onslide<4-5>
+    \begin{block}
+      {(ii) Head-Head Structures}
+      \begin{itemize}
+	\item<4-5> Label($\left\{ \text{X, }\textsc{root} \right\}$) = X
+	  \begin{itemize}
+	    \item<4-5> Roots cannot label
+	  \end{itemize}
+	\item<5> Undefined otherwise
+      \end{itemize}
+    \end{block}
+    \onslide<6-8>
+    \begin{block}
+      {(iii) Phrase-Phrase Structures}
+      \begin{itemize}
+	\item<6-8> Label($\left\{ \text{XP}, \langle\text{YP}\rangle \right\}$) = Label(XP)
+	  \begin{itemize}
+	    \item<6-8> Lower copies are invisible to LA.
+	  \end{itemize}
+	\item<7-8> Label($\left\{ \text{XP}_F, \text{YP}_F \right\}$)= $\langle\text{F,F}\rangle$
+	  \begin{itemize}
+	    \item<7-8> Iff XP and YP agree for some feature F
+	  \end{itemize}
+	\item <8> Undefined otherwise
+      \end{itemize}
+    \end{block}
+  \end{overprint}
+\end{frame}
+\begin{frame}
+  {My extensions to Label Theory}
+  \begin{block}
+    {Labels determine composition}
+    \begin{itemize}
+      \item<2-> If Label(SO) $\in$ SO, then SO composes by function application
+	\begin{itemize}
+	  \item<3-> $\llbracket\left\{ \text{X, YP} \right\}\rrbracket$ = X(YP)
+	\end{itemize}
+      \item<4-> If Label(SO) = $\langle\text{F,F}\rangle$, then SO is interpreted as an Operator-variable structure
+	\begin{itemize}
+	  \item<5-> $\llbracket\left\{ \text{DP}_Q, \text{CP}_Q \right\}\rrbracket$ = $(\text{Wh}x)(\dots x \dots)$
+	\end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  {My extensions to Label Theory}
+  \begin{block}
+    {Adjunction structures are unlabeled}
+    \begin{itemize}
+      \item Adjuncts are ignored by LA.
+	\begin{itemize}
+	  \item Label($\left\{ \text{XP, ZP} \right\}$) = $\emptyset$ if ZP is an adjunct
+	  \item Since ZP is ignored by LA, it is internally unlabelled. (Label(ZP)=$\emptyset$)
+	\end{itemize}
+	\pause
+      \item Unlabeled SOs compose by conjuction.
+	\begin{itemize}
+	  \item $\llbracket\left\{ \text{XP, ZP} \right\}\rrbracket$ = XP \& ZP (if $\left\{ \text{XP, ZP} \right\}$ is unlabelled)
+	\end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
 \end{document}

@@ -4,7 +4,7 @@
 % arara: pdflatex
 
 \documentclass{beamer}
-\usetheme{Luebeck}
+\usetheme{CambridgeUS}
 \usecolortheme{crane}
 \usepackage[
   backend=biber,
@@ -283,7 +283,7 @@
     \item The surface phenomena associated with \{*\}Resultatives.
       \begin{enumerate}
 	\item What learnable pattern correlates with resultatives?
-      \end{enumerate}<++>
+      \end{enumerate}
       \onslide<2>
     \item A structural analysis of resultatives.
       \onslide<3>
@@ -367,8 +367,6 @@
 
   \begin{columns}
     \begin{column}[T]{0.5\textwidth}
-      \begin{overprint}
-	\onslide<2-5>
       \begin{block}
 	{Build the adjunct}
 	\begin{itemize}
@@ -378,24 +376,12 @@
 	  \item<5-> Copy(DP)
 	\end{itemize}
       \end{block}
-      \onslide<6->
-      \begin{block}
-	{Build the VP}
-	\begin{itemize}
-	  \item<7-> Merge({\rm hammer}, DP) 
-	  \item<8-> Merge($\delta$, $\gamma$)
-	  \item<9-> \dots
-	\end{itemize}
-      \end{block}
-    \end{overprint}
-    \only<5-7>{
+    \only<5->{
       \begin{forest}
 	[DP[{\rm the metal},roof]]
       \end{forest}}
     \end{column}
     \begin{column}[T]{0.5\textwidth}
-      \begin{overprint}
-	\onslide<2-5>
       {\small
       \begin{forest}
 	nice empty nodes,sn edges,baseline
@@ -411,20 +397,41 @@
 	]
       \end{forest}
     }
-    \onslide<6->
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  \frametitle{Deriving Resultatives}
+  \ex.{\rm Natalie hammered the metal flat.}
+
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Build the VP}
+	\begin{itemize}
+	  \item<2-> Merge({\rm hammer}, DP) 
+	  \item<3-> Merge($\delta$, $\gamma$)
+	  \item<4-> \dots
+	\end{itemize}
+      \end{block}
+    \only<1>{
+      \begin{forest}
+	[DP[{\rm the metal},roof]]
+      \end{forest}}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
     {\small
       \begin{forest}
 	nice empty nodes,sn edges,baseline
-	[$\zeta$,visible on=<8->
-	  [$\delta$,visible on=<8->
-	    [{\rm hammer},visible on=<7->]
-	    [DP,visible on=<7-> [{\rm the metal},visible on=<7->]]
+	[$\zeta$,visible on=<3->
+	  [$\delta$,visible on=<3->
+	    [{\rm hammer},visible on=<2->]
+	    [DP,visible on=<2-> [{\rm the metal},visible on=<2->]]
 	  ]
-	  [$\gamma$,visible on=<8->]
+	  [$\gamma$,visible on=<3->]
 	]
       \end{forest}
     }
-  \end{overprint}
     \end{column}
   \end{columns}
 \end{frame}
@@ -525,4 +532,157 @@
     \end{itemize}
   \end{block}
 \end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{block}
+    {Subjects of ACC-ing clauses and pseudo-relatives}
+    \begin{itemize}
+      \item<2-> \textcite{cinque1996pseudo} shows that the position of an ACC-ing/pseudo-relative clause affects the behaviour of its subject.
+    \end{itemize}
+    \only<2->{
+    \ex. \textbf{Italian pseudo-relative (PR)}\\
+    {\rm Mario che correva a tutti velocit\`a}
+
+    \ex. \textbf{English ACC-ing clause (AC)}\\
+    {\rm Mario running at full speed}
+
+  }
+    \begin{itemize}
+      \item<3-> If the AC/PR is a complement of V, the subject cannot move.
+      \item<3-> If the AC/PR is a VP adjunct, the subject must move.
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+
+    \begin{columns}
+    \begin{column}[T]{0.6\textwidth}
+      {\rm *Mario$_i$ was [$_{VP}$ [seen[$t_i$ running]]]}
+      \begin{block}
+	{Complement ACs}
+	\begin{itemize}
+	  \item Subject is frozen in the AC
+	  \item Prog$^\circ$ is too weak to label $\zeta$
+	    \begin{itemize}
+	      \item Compare Chomsky's (2015) discussion of EPP
+	    \end{itemize}
+	  \item If {\rm Mario} were \textit{in situ}, Label($\zeta$) = $\langle\text{F,F}\rangle$
+	  \item Lower copies are invisible, so $\zeta$ is unabelable.
+	  \item The derivation crashes at CI
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.4\textwidth}
+	{\small
+	  \begin{forest}
+	    nice empty nodes,sn edges,baseline
+	    [$\alpha$
+	      [{\rm Mario}]
+	      [$\beta$
+		[T]
+		[$\gamma$
+		  [Voice$_{pass}$]
+		  [$\delta$
+		    [{\rm see}]
+		    [$\zeta$
+		      [$\langle${\rm Mario}$\rangle$]
+		      [Prog]
+		    ]
+		  ]
+		]
+	      ]
+	    ]
+	  \end{forest}
+	}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{columns}
+    \begin{column}[T]{0.55\textwidth}
+      {\rm *I [ [$_{VP}$ saw Bill] [Mario running]]}
+      \begin{block}
+	{Adjunct ACs}
+	\begin{itemize}
+	  \item Subjects must move to theme position
+	  \item $\eta$ is adjoined, therefore ignored by LA
+	  \item $\eta$ is interpreted as the conjunction of {\rm Mario} and {\rm running}
+	    \begin{itemize}
+	      \item This is an ill-formed interpretation
+	    \end{itemize}
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.45\textwidth}
+      {\small
+	  \begin{forest}
+	    nice empty nodes,sn edges,baseline
+	    [$\alpha$
+	      [{\rm I}]
+	      [$\beta$
+		[Voice]
+		[$\gamma$
+		  [$\zeta$
+		    [{\rm see}]
+		    [{\rm Bill}]
+		  ]
+		  [$\eta$
+		    [{\rm Mario}]
+		    [Prog]
+		  ]
+		]
+	      ]
+	    ]
+	  \end{forest}
+	}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+    
+\end{frame}
+\section{Deriving the Resultative Parameter}
+\begin{frame}
+  {Recapping Resultatives and Compounding}
+
+  {\rm Natalie hammered the metal flat.}
+  {\small
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+    [$\kappa$
+      [DP,[{\rm the metal},roof,name=obj]]
+      [$\eta$
+	[AgrO]
+	[$\zeta$,calign=fixed edge angles,calign primary angle=-30,calign secondary angle=70
+	  [$\delta$
+	    [{\rm hammer}]
+	    [$\langle$DP$\rangle$,name=theme]
+	  ]
+	  [$\gamma$,calign=fixed edge angles,calign primary angle=-30,calign secondary angle=70
+	    [$\langle$DP$\rangle$,name=spec res]
+	    [$\beta$
+	      [res]
+	      [$\alpha$
+		[$\langle$DP$\rangle$,name=SC theme]
+		[{\rm flat}]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (SC theme) to[out=west, in=south] (spec res);
+    \draw[->] (spec res) to[out=south, in=south] (theme);
+    \draw[->] (theme) to[out=south west, in=south] (obj);
+  \end{forest}}
+\end{frame}
+\begin{frame}
+  {Recapping Resultatives and Compounding}
+
+\end{frame}<++>
 \end{document}

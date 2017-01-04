@@ -683,6 +683,99 @@
 \end{frame}
 \begin{frame}
   {Recapping Resultatives and Compounding}
+  \begin{block}
+    {The Compounding Parameter}
+    \begin{itemize}
+      \item $\left\{ \text{*} \right\}$Resultatives is linked to $\left\{ \text{*} \right\}$bare-stem compounding.
+      \item Bare-stem compounding requires bare stems.
+      \item Bare stems require category heads without $\varphi$-features ($n_\emptyset$, $adj_\emptyset$, \textit{etc}).
+      \item English-type languages have $adj_\emptyset$ (and maybe $adj_\varphi$).
+      \item French-type languages have only $adj_\varphi$
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  {English-type languages: \checkmark Resultatives}
 
-\end{frame}<++>
+  {\rm hammer the metal flat}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Deriving the adjunct}
+	\begin{itemize}
+	  \item<2-> Build the Small Clause.
+	  \item<3-> Merge(res, $\beta$)
+	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
+	  \item<6-> Copy(DP)
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [$\delta$,visible on=<5->
+	    [DP$_\varphi$,visible on=<5->[{\rm the metal},roof,visible on=<5->]]
+	    [$\gamma$,visible on=<5->
+	      [res,visible on=<3->]
+	      [$\beta$,visible on=<3->
+		[DP$_\varphi$,visible on=<2->[{\rm the metal},roof,visible on=<2->]]
+		[$\alpha$,visible on=<2->
+		  [adj$_\emptyset$,visible on=<2->]
+		  [{\rm flat},visible on=<2->]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {English-type languages: \checkmark Resultatives}
+
+  {\rm hammer the metal flat}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Deriving the VP}
+	\begin{itemize}
+	  \item Transfer($\beta$)
+	  \item Merge(DP, {\rm hammer})
+	  \item Merge($\zeta$, $\delta$)
+	  \item Merge(AgrO, $\eta$)
+	  \item Copy(DP) + Merge(DP, $\kappa$)
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [$\mu$
+	    [DP$_\varphi$[{\rm the metal},roof]]
+	    [$\kappa$
+	      [AgrO]
+	      [$\eta$
+		[$\zeta$
+		  [DP$_\varphi$[{\rm the metal},roof]]
+		  [{\rm hammer}]
+		]
+		[$\delta$
+		  %[DP$_\varphi$[{\rm the metal},roof]]
+		  %[$\gamma$
+		  %  [res]
+		  %  [$\beta$]
+		  ]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \end{document}

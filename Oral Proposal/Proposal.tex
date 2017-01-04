@@ -706,20 +706,34 @@
 	  \item<2-> Build the Small Clause.
 	  \item<3-> Merge(res, $\beta$)
 	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
-	  \item<6-> Copy(DP)
+	  \item<6-> Transfer($\beta$)
+	    \begin{itemize}
+	      \item res is a phase head.
+	      \item Label($\beta$) = Label($\alpha$)
+	      \item $\beta$ converges.
+	    \end{itemize}
+	  \item<7-> Copy(DP)
 	\end{itemize}
       \end{block}
+      \only<7->{\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [DP$_\varphi$[{\rm the metal},roof]]
+	\end{forest}
+      }
     \end{column}
     \begin{column}[T]{0.5\textwidth}
       {\small
 	\begin{forest}
-	  nice empty nodes,sn edges,baseline
+	  nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+	  calign primary angle=-30,calign secondary angle=50}
 	  [$\delta$,visible on=<5->
 	    [DP$_\varphi$,visible on=<5->[{\rm the metal},roof,visible on=<5->]]
 	    [$\gamma$,visible on=<5->
 	      [res,visible on=<3->]
 	      [$\beta$,visible on=<3->
-		[DP$_\varphi$,visible on=<2->[{\rm the metal},roof,visible on=<2->]]
+		[DP$_\varphi$,visible on=<2->[{\rm the metal},name=SC DP,roof,visible on=<2->]]
 		[$\alpha$,visible on=<2->
 		  [adj$_\emptyset$,visible on=<2->]
 		  [{\rm flat},visible on=<2->]
@@ -727,6 +741,9 @@
 	      ]
 	    ]
 	  ]
+	  \only<6->{
+	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+	}
 	\end{forest}
       }
     \end{column}
@@ -741,28 +758,36 @@
       \begin{block}
 	{Deriving the VP}
 	\begin{itemize}
-	  \item Transfer($\beta$)
-	  \item Merge(DP, {\rm hammer})
-	  \item Merge($\zeta$, $\delta$)
-	  \item Merge(AgrO, $\eta$)
-	  \item Copy(DP) + Merge(DP, $\kappa$)
+	  \item<2-> Merge(DP, {\rm hammer})
+	  \item<3-> Merge($\zeta$, $\delta$)
+	  \item<4-> Merge(AgrO, $\eta$)
+	  \item<5-> Copy(DP) + Merge(DP, $\kappa$)
+	  \item<6-> \ldots
 	\end{itemize}
       \end{block}
+      \only<1>{\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [DP$_\varphi$[{\rm the metal},roof]]
+	\end{forest}
+      }
     \end{column}
     \begin{column}[T]{0.5\textwidth}
       {\small
 	\begin{forest}
-	  nice empty nodes,sn edges,baseline
-	  [$\mu$
-	    [DP$_\varphi$[{\rm the metal},roof]]
-	    [$\kappa$
-	      [AgrO]
-	      [$\eta$
-		[$\zeta$
-		  [DP$_\varphi$[{\rm the metal},roof]]
-		  [{\rm hammer}]
+	  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=50}
+	  [$\mu$,visible on=<5->
+	    [DP$_\varphi$,visible on=<5->[{\rm the metal},roof,visible on=<5->]]
+	    [$\kappa$,visible on=<5->
+	      [AgrO$_\varphi$,visible on=<4->]
+	      [$\eta$,visible on=<4->
+		[$\zeta$,visible on=<3->
+		  [DP$_\varphi$,visible on=<2->[{\rm the metal},roof,visible on=<2->]]
+		  [{\rm hammer},visible on=<2->]
 		]
-		[$\delta$
+		[$\delta$\\\ldots,align=center,visible on=<3->
 		  %[DP$_\varphi$[{\rm the metal},roof]]
 		  %[$\gamma$
 		  %  [res]
@@ -771,11 +796,63 @@
 		]
 	      ]
 	    ]
-	  ]
 	\end{forest}
       }
     \end{column}
   \end{columns}
 \end{frame}
+\begin{frame}
+  {French-type languages: *Resultatives}
+  {Derivation Attempt 1: Just like English-type}
 
+  {\rm *marcher les jambes raides}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Deriving the adjunct}
+	\begin{itemize}
+	  \item<2-> Build the Small Clause.
+	  \item<3-> Merge(res, $\beta$)
+	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
+	  \item<6-> Transfer($\beta$)
+	    \begin{itemize}
+	      \item res is a phase head.
+	      \item Lower DP copy is invisible
+	      \item adj$_\varphi$ is too weak to label without agreement
+	      \item Label($\beta$) is undefined
+	      \item $\beta$ Crashes.
+	    \end{itemize}
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+	  calign primary angle=-30,calign secondary angle=50}
+	  [$\delta$,visible on=<5->
+	    [DP$_\varphi$,visible on=<5->[{\rm les jambes},roof,visible on=<5->]]
+	    [$\gamma$,visible on=<5->
+	      [res,visible on=<3->]
+	      [$\beta$,visible on=<3->
+		[DP$_\varphi$,visible on=<2->[{\rm les jambes},name=SC DP,roof,visible on=<2->]]
+		[$\alpha$,visible on=<2->
+		  [adj$_\varphi$,visible on=<2->]
+		  [{\rm raides},visible on=<2->]
+		]
+	      ]
+	    ]
+	  ]
+	  \only<6->{
+	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+	}
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  
+\end{frame}<++>
 \end{document}

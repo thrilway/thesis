@@ -431,7 +431,7 @@ I will assume the Movement Theory of Control.
   {Methodolgical rationale}
 
   \begin{itemize}
-    \item Movement is reducible to Merge. \parencite{XXXX}
+    \item Movement is reducible to Merge. \parencite{chomsky2004beyond}
     \item Merge is well-defined and well understood.
   \end{itemize}
   \ex. Merge($\alpha, \beta$) = $\left\{ \alpha, \beta \right\}$
@@ -442,11 +442,160 @@ I will assume the Movement Theory of Control.
 \end{frame}
 \begin{frame}
   {Where are the \textit{ec}s?}
+
+  \ex. \textbf{Depictives}\\
+  Amy ate the fish$_i$ [\textit{ec}$_i$ raw].
+
   \begin{itemize}
     \item \textbf{Short Answer:} $\Theta$-positions
+      \begin{itemize}
+	\item {\rm the fish} is the theme of {\rm ate} and of {\rm raw}
+      \end{itemize}
     \item But what are those positions?
   \end{itemize}
 \end{frame}
+\begin{frame}
+  {Where are the \textit{ec}s?}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{UTAH}
+	\begin{itemize}
+	  \item \textcite{baker1988incorporation}: $\Theta$-roles are mapped to structural positions.
+	    \begin{itemize}
+	      \item Universal Theta Assignment Hypothesis
+	    \end{itemize}
+	  \item Baker proposes:
+	    \pause
+	    \begin{itemize}
+	      \item Agent $\leftrightarrow$ [Spec Voice]
+	      \item Theme $\leftrightarrow$ [Spec V]
+	      \item Goal $\leftrightarrow$ [Comp V]
+	    \end{itemize}
+	    \pause
+	  \item There are two problems with this version of UTAH \dots
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      \only<2-> {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [VoiceP
+	    [\textsc{Agent}]
+	    [Voice$^\prime$
+	      [Voice]
+	      [VP
+		[\textsc{Theme}]
+		[V$^\prime$
+		  [V]
+		  [\textsc{Goal}]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Where are the \textit{ec}s?}
+
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Problem 1}
+	\begin{itemize}
+	  \item Consider monotransitives.
+	\end{itemize}
+	\pause
+	\ex. {\rm Amy ate the fish}
+
+	\begin{itemize}
+	  \item<3-> No non-braching nodes in a merge-based syntax.
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      \only<2->
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [VoiceP
+	    [{\rm Amy}]
+	    [Voice$^\prime$
+	      [Voice]
+	      [VP
+		[{\rm the fish}]
+		[V$^\prime$
+		  [V]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Where are the \textit{ec}s?}
+
+  \begin{columns}
+    \begin{column}[T]{0.44\textwidth} 
+      \begin{block}
+	{Problem 2}
+	\begin{itemize}
+	  \item In current syntactic theory, V is actually [$v$, \textsc{root}].
+	  \item Baker UTAH would be translated to:
+	    \pause
+	    \begin{itemize}
+	      \item Agent $\leftrightarrow$ [Spec Voice]
+	      \item Goal $\leftrightarrow$ [Spec $v$]
+	      \item Theme $\leftrightarrow$ [Spec X]
+	    \end{itemize}
+	    \pause
+	  \item X would have to be justified
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.56\textwidth}
+      \only<2->
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=55}
+	  [VoiceP
+	    [\textsc{Agent}]
+	    [Voice$^\prime$
+	      [Voice]
+	      [XP
+		[\textsc{Theme}]
+		[X$^\prime$
+		  [X]
+		  [\textit{v}P
+		    [\textsc{Goal}]
+		    [$v^\prime$
+		      [$v$]
+		      [\textsc{root}]
+		    ]
+		  ]
+		]
+	      ]
+	    ]
+	  ]
+	 \end{forest}
+       }      
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Where are the \textit{ec}s?}
+  \begin{column}
+    
+  \end{column}<++>
+\end{frame}<++>
 \begin{frame}
   \frametitle{Deriving Resultatives}
   \ex.{\rm Natalie hammered the metal flat.}

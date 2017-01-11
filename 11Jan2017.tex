@@ -1,0 +1,175 @@
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[
+margin=1in
+]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\usepackage{todonotes}
+\usepackage{titling}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+\useforestlibrary{linguistics}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+%\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+%  \ifcase\value{uniquename}%
+%  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+%  \or
+%  \ifuseprefix
+%  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+%  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+%  \or
+%  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+%  \fi
+%  \usebibmacro{name:andothers}%
+%  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+%}
+%
+%\DeclareFieldFormat{shorthand:poss}{%
+%  \ifnameundef{labelname}{#1's}{#1}
+%}
+%
+%\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+%
+%\DeclareFieldFormat{label:poss}{#1's}
+%
+%\newrobustcmd*{\posscitealias}{%
+%  \AtNextCite{%
+%    \DeclareNameAlias{labelname}{labelname:poss}%
+%    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+%    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+%    \DeclareFieldAlias{label}{label:poss}
+%  }
+%}
+%
+%\newrobustcmd*{\posscite}{%
+%  \posscitealias%
+%  \textcite
+%}
+%
+%\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+%
+%\newrobustcmd*{\posscites}{%
+%  \posscitealias%
+%  \textcites
+%}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
+
+\newcounter{DerivStep}
+
+\newcommand{\hxp}{$\left\{ \text{X, YP} \right\}$}
+\newcommand{\hh}{$\left\{ \text{X, Y} \right\}$}
+\newcommand{\xpyp}{$\left\{ \text{XP, YP} \right\}$}
+\bibliography{Thesis}
+
+\title{Meeting Notes}
+\author{Dan Milway}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+  \item Specifiers of adjuncts are unstable.
+\end{itemize}
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [$\zeta$
+    [$\delta$]
+    [$\gamma$
+      [DP]
+      [ProgP]
+    ]
+  ]
+\end{forest}
+
+\begin{itemize}
+  \item If $\gamma$ is an adjunct-host structure Label($\zeta$) = $\emptyset$.
+  \item Also, Label($\gamma$) = $\emptyset$.
+  \item If Label ($\left\{ \text{XP,YP}\right\}$) = $\emptyset$, then SEM($\left\{ \text{XP,YP} \right\}$) = SEM(XP) \& SEM(YP)
+  \item Consider a real example
+\end{itemize}
+\ex.* We [$_\text{VP}$ [$_\text{VP}$ saw the boy] [$_\text{ProgP}$ the girl throwing the ball]] 
+
+\ex. SEM(ProgP) = [the\_girl($x$) \& throwing($x$) \& \dots]
+
+\begin{itemize}
+  \item DP and ProgP are co-referential/co-indexed
+  \item DP is already moved from [Spec Voice].
+\end{itemize}
+\ex. 
+\begin{forest}
+ nice empty nodes,sn edges,baseline
+ [VP
+    [VP
+      [V\\see,align=center]
+      [DP[the boy,roof]]
+    ]
+    [ProgP
+      [DP$_i$[the girl,roof]]
+      [Prog$^\prime$
+	[Prog]
+	[VoiceP
+	  [DP$_i$]
+	  [Voice$^\prime$
+	    [Voice]
+	    [VP[throw the ball,roof]]
+	  ]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+\begin{itemize}
+  \item This appears to violate the i-within-i constraint
+\end{itemize}
+\ex. *[$_\gamma$ \dots $\delta$ \dots] where $\gamma$ and $\delta$ bear the same index. \parencite[212]{chomsky1981lectures}
+
+\begin{itemize}
+  \item In an endnote, Chomsky suggests a that what \Last actually rules out is \Next
+\end{itemize}
+\ex. *[\dots$\alpha_i$\dots[$_{\beta_i}$\dots$\gamma_i$\dots]\dots$\alpha_i$\dots]
+
+\begin{itemize}
+  \item \Last is exactly the structure I need to rule out
+\end{itemize}
+\ex. *[DP$_i$ [$_{\text{ProgP}_i}$ \dots DP$_i$ \dots]]
+
+\begin{itemize}
+  \item But, the i-within-i constrain never made it out of GB
+  \item Don't know how it might be formulable
+\end{itemize}
+\end{document}

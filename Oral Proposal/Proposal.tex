@@ -278,18 +278,58 @@
 \begin{frame}
   \frametitle{Ingredients of an explanation}
   \begin{enumerate}
-  \begin{overprint}
-      \onslide<1>
+    \setcounter{enumi}{0}
     \item A structural analysis of resultatives.
-
-      \onslide<2>
+  \end{enumerate}
+  {\rm Natalie hammered the metal flat.}\\
+  {\footnotesize
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+    [AgrOP
+      [DP,[{\rm the metal},roof,name=obj]]
+      [
+	[AgrO]
+	[VP
+	  [VP,calign=center
+	    [{\rm hammer}]
+	    [$\langle$DP$\rangle$,name=theme]
+	  ]
+	  [resP
+	    [$\langle$DP$\rangle$,name=spec res]
+	    [
+	      [res]
+	      [SC
+		[$\langle$DP$\rangle$,name=SC theme]
+		[{\rm flat}]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (SC theme) to[out=west, in=south] (spec res);
+    \draw[->] (spec res) to[out=south, in=south] (theme);
+    \draw[->] (theme) to[out=south west, in=south] (obj);
+  \end{forest}}
+\end{frame}
+\begin{frame}
+  \frametitle{Ingredients of an explanation}
+  \begin{enumerate}
+    \setcounter{enumi}{1}      
     \item The surface phenomena associated with \{*\}Resultatives.
-      \begin{enumerate}
+      \begin{itemize}
 	\item What learnable pattern correlates with resultatives?
-      \end{enumerate}
-      \onslide<3>
+        \item Resultatives are strongly correlated with Productive Bare-Stem Compounding \parencite[][and following]{snyder1995language}
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Ingredients of an explanation}
+  \begin{enumerate}
+    \setcounter{enumi}{2}  
     \item A way of linking the first two ingredients.
-\end{overprint}
   \end{enumerate}
 \end{frame}
 \section{What are resultatives?}
@@ -590,12 +630,12 @@ I will assume the Movement Theory of Control.
     \end{column}
   \end{columns}
 \end{frame}
-\begin{frame}
-  {Where are the \textit{ec}s?}
-  \begin{column}
-    
-  \end{column}<++>
-\end{frame}<++>
+%\begin{frame}
+%  {Where are the \textit{ec}s?}
+%  \begin{column}
+%    
+%  \end{column}<++>
+%\end{frame}<++>
 \begin{frame}
   \frametitle{Deriving Resultatives}
   \ex.{\rm Natalie hammered the metal flat.}
@@ -670,6 +710,7 @@ I will assume the Movement Theory of Control.
     \end{column}
   \end{columns}
 \end{frame}
+
 \section{Label Theory}
 \begin{frame}
   {Label Theory}

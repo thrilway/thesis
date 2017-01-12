@@ -1,0 +1,134 @@
+
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usecolortheme{crane}
+\usepackage[
+  backend=biber,
+  style=authoryear-comp,
+  useprefix=false,
+  sorting=ynt
+]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\usepackage{todonotes}
+\useforestlibrary{linguistics}
+
+\tikzset{
+    invisible/.style={opacity=0,text opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+}
+\forestset{
+  visible on/.style={
+    for current and ancestors={
+      /tikz/visible on={#1},
+      edge={/tikz/visible on={#1}}}}}
+
+\forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
+
+\forestset{en/.style={parent anchor=center, child anchor=center}}
+\forestset{em/.style={parent anchor=north west, child anchor=north west}}
+\forestset{el/.style={parent anchor=north, child anchor=north}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+%\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+%  \ifcase\value{uniquename}%
+%  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
+%  \or
+%  \ifuseprefix
+%  {\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
+%  {\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
+%  \or
+%  \usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+%  \fi
+%  \usebibmacro{name:andothers}%
+%  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}
+%}
+%
+%\DeclareFieldFormat{shorthand:poss}{%
+%  \ifnameundef{labelname}{#1's}{#1}
+%}
+%
+%\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+%
+%\DeclareFieldFormat{label:poss}{#1's}
+%
+%\newrobustcmd*{\posscitealias}{%
+%  \AtNextCite{%
+%    \DeclareNameAlias{labelname}{labelname:poss}%
+%    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+%    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+%    \DeclareFieldAlias{label}{label:poss}
+%  }
+%}
+%
+%\newrobustcmd*{\posscite}{%
+%  \posscitealias%
+%  \textcite
+%}
+%
+%\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+%
+%\newrobustcmd*{\posscites}{%
+%  \posscitealias%
+%  \textcites
+%}
+
+\newcommand\quelle[1]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip2em\hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \par
+}
+}
+
+\newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
+
+\newcounter{DerivStep}
+
+\newcommand{\hxp}{$\left\{ \text{X, YP} \right\}$}
+\newcommand{\hh}{$\left\{ \text{X, Y} \right\}$}
+\newcommand{\xpyp}{$\left\{ \text{XP, YP} \right\}$}
+\bibliography{Thesis}
+%\AtBeginSection[]
+%{
+%  \begin{frame}
+%    \frametitle{Table of Contents}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+\begin{document}
+\begin{frame}
+  {Y-Model}
+
+  \begin{figure}[h]
+    \centering
+  {\small
+  \begin{tikzpicture}
+    \node[align=center] (DS) at (0,0){\textbf{D-Structure}\\($\Theta$-role assignment, \textit{etc.})};
+    %\node[right=of DS,align=left] (DS stuff) {};
+    \node[align=center] (SS) at (0,-2){\textbf{S-Structure}\\(Case assignment, \textit{etc.})};
+    \node (LF) at (1,-4) {\textbf{LF}};
+    \node (PF) at (-1,-4) {\textbf{PF}};
+    \draw[->] (DS) -- (SS)
+      node[midway,right] {Move-$\alpha$};
+      \draw[->] (SS) -- (LF);
+      \draw[->] (SS) -- (PF);
+  \end{tikzpicture}}
+  \end{figure}
+
+\end{frame}
+\end{document}

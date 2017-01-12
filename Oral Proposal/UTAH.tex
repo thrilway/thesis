@@ -1,0 +1,191 @@
+%        File: UTAH.tex
+%     Created: Thu Jan 12 02:00 PM 2017 E
+% Last Change: Thu Jan 12 02:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  {Where are the shared arguments?}
+
+  \ex. \textbf{Depictives}\\
+  {\rm Amy ate the fish raw.}\\
+  \pause
+  There was an eating event \textit{e}, Amy was the agent of \textit{e}, and \alert{the fish} was the theme of $e$.\\
+  \textit{e} coincides with a rawness state $s$, and \alert{the fish} was the theme of $s$.
+
+  \begin{itemize}
+    \item Universal Theta Assignment Hypothesis. (UTAH)
+      \begin{itemize}
+	\item $\Theta$-roles are mapped to structural positions. \parencite{baker1988incorporation}
+      \end{itemize}
+    \item The DP {\rm the fish}, or some coindexed anaphoric element, must be in the proper $\Theta$-domains.
+      \begin{itemize}
+	\item \textit{i.e.}, ``local'' to {\rm ate} and {\rm raw}.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  {Where are the shared arguments?}
+  \begin{block}
+    {Theme of {\rm raw}}
+    \begin{itemize}
+      \item The shared argument (SA) must be local to {\rm raw}.
+	\pause
+      \item SA and {\rm raw} form a small clause 
+    \end{itemize}
+  \end{block}
+  \ex. Amy ate [the fish]$_i$ [$_{SC} ec_i$ raw].
+
+\end{frame}
+\begin{frame}
+  {Where are the shared arguments?}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Theme of {\rm eat}}
+	\begin{itemize}
+	  \item Baker proposes:
+	    \pause
+	    \begin{itemize}
+	      \item Agent $\leftrightarrow$ [Spec Voice]
+	      \item Theme $\leftrightarrow$ [Spec V]
+	      \item Goal $\leftrightarrow$ [Comp V]
+	    \end{itemize}
+	    \pause
+	  \item There are two problems with this version of UTAH \dots
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      \only<2-> {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [VoiceP
+	    [\textsc{Agent}]
+	    [Voice$^\prime$
+	      [Voice]
+	      [VP
+		[\textsc{Theme}]
+		[V$^\prime$
+		  [V]
+		  [\textsc{Goal}]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Where are the shared arguments?}
+
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Problem 1}
+	\begin{itemize}
+	  \item Consider monotransitives.
+	\end{itemize}
+	\pause
+	\ex. {\rm Amy ate the fish}
+
+	\begin{itemize}
+	  \item<3-> No non-braching nodes in a merge-based syntax.
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      \only<2->
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [VoiceP
+	    [{\rm Amy}]
+	    [Voice$^\prime$
+	      [Voice]
+	      [VP
+		[{\rm the fish}]
+		[V$^\prime$
+		  [V]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Where are the shared arguments?}
+
+  \begin{columns}
+    \begin{column}[T]{0.44\textwidth} 
+      \begin{block}
+	{Problem 2}
+	\begin{itemize}
+	  \item In current syntactic theory, V is actually [$v$, \textsc{root}].
+	  \item Baker UTAH would be translated to:
+	    \pause
+	    \begin{itemize}
+	      \item Agent $\leftrightarrow$ [Spec Voice]
+	      \item Goal $\leftrightarrow$ [Spec $v$]
+	      \item Theme $\leftrightarrow$ [Spec X]
+	    \end{itemize}
+	    \pause
+	  \item X would have to be justified
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.56\textwidth}
+      \only<2->
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=55}
+	  [VoiceP
+	    [\textsc{Agent}]
+	    [Voice$^\prime$
+	      [Voice]
+	      [XP
+		[\textsc{Theme}]
+		[X$^\prime$
+		  [X]
+		  [\textit{v}P
+		    [\textsc{Goal}]
+		    [$v^\prime$
+		      [$v$]
+		      [\textsc{root}]
+		    ]
+		  ]
+		]
+	      ]
+	    ]
+	  ]
+	 \end{forest}
+       }      
+    \end{column}
+  \end{columns}
+\end{frame}
+%\begin{frame}
+%  {Where are the shared arguments?}
+%  \begin{columns}
+%    \begin{column}
+%      [T]{0.5\textwidth}
+%    \end{column}<++>
+%    \begin{column}
+%      [T]{0.5\textwidth}
+%    \end{column}<++>
+%
+%  \end{columns}<++>
+%\end{frame}<++>
+\end{document}
+
+

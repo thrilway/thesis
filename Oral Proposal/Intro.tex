@@ -1,0 +1,150 @@
+%        File: Intro.tex
+%     Created: Thu Jan 12 04:00 PM 2017 E
+% Last Change: Thu Jan 12 04:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  \frametitle{What is the resultative parameter?}
+  \begin{itemize}
+    \item Resultative interpretation of secondary predicates
+      \begin{itemize}
+	\item<1-|handout:1-> Some languages allow it (\textit{e.g.} Germanic languages)
+	\item<4-|handout:3-> Some disallow it (\textit{e.g.} Romance Languages)
+      \end{itemize}
+  \end{itemize}
+  \begin{overprint}
+    \onslide<2|handout:1>
+    \ex. English
+    \a. I ate the fish raw. (depictive)
+    \b. I hammered the metal flat. (resultative)
+    \z.
+
+    \onslide<3|handout:2>
+    \ex.German 
+    \ag. Er i\ss{}t das Fleisch roh.\\
+    He eats the meat raw\\
+    ``He's eating the meat raw.'' (depictive)\\
+    \parencite{muller2004analysis}
+    \bg. Wir haben die teekanne leer getrunken.\\
+    we have the teapot empty drink.\textsc{part}\\
+    ``We drank the teapot dry.''(resultative)\\
+    \parencite{kratzer_building_2004}
+    \z.
+
+    \onslide<5|handout:3>
+    \ex. French
+    \ag. Pierre mange la viande crue.\\
+    Pierre eat.3sg the.fem meat raw.fem\\
+    ``Pierre ate the meat raw'' (depictive)\\
+    \parencite{legendre1997secondary}
+    \bg.* Il a march\'e les jambes raides.\\
+    He has walked the legs stiff\\
+    ``He walked his legs off.'' (resultative)\\
+    \parencite{washio1997resultatives}
+    \z.
+
+    \onslide<6|handout:4>
+    \ex. Italian
+    \ag. l' ho mangiato crudo.\\
+    3sg \textsc{aux}.1sg eaten raw\\
+    ``I ate it raw'' (depictive)
+    \bg.* l' ho bevuto vuoto.\\
+    3sg \textsc{aux}.1sg drank empty\\
+    ``I drank it dry'' (resultative)
+    \z.
+
+  \end{overprint}
+\end{frame}
+\begin{frame}
+  \frametitle{Why does it need to be explained?}
+  \begin{itemize}
+    \item It's not directly learnable from the PLD.
+      \begin{itemize}
+	\item<3-|handout:2-> Compare this to V-to-T movement.
+      \end{itemize}
+  \end{itemize}
+  \begin{overprint}
+    \onslide<2|handout:1>
+    \ex. English-type (SP)
+    \a. \textsc{Subj} V \textsc{Obj} Adj (depictive)
+    \b. \textsc{Subj} V \textsc{Obj} Adj (resultative)
+
+    \ex. French-type (SP)
+    \a. \textsc{Subj} V \textsc{Obj} Adj (depictive)
+    \b.* \textsc{Subj} V \textsc{Obj} Adj (resultative)
+
+    \onslide<3|handout:2>
+    \ex. English-type (Y/N)
+    \a. \textsc{do Subj} V \textsc{Obj}? 
+    \b.* V \textsc{Subj} \textsc{Obj}?
+
+    \ex. German-type (Y/N)
+    \a.* \textsc{do Subj} V \textsc{Obj}? 
+    \b. V \textsc{Subj} \textsc{Obj}?
+
+    \onslide<4|handout:3>
+    \begin{figure}[h]
+      \centering
+      \begin{tikzpicture}
+	\node (param) at (0,0) {\{*\}V-to-T};
+	\node (PLD) at (4,0) {PLD};
+	\node (UG) at (0,-2) {UG};
+	\draw[->] (PLD) -- (param);
+	\draw[->] (UG) -- (param);
+      \end{tikzpicture}
+      \caption{Acquiring V-to-T}
+      \label{fig:VtoTAcq}
+    \end{figure}
+    \onslide<5|handout:4>
+    \begin{figure}[h]
+      \centering
+      \begin{tikzpicture}
+	\node (param) at (0,0) {\{*\}Resultatives};
+	\node[cloud,draw] (cloud) at (3,0) {????};
+	\node (PLD) at (5,0) {PLD};
+	\node (UG) at (1.5,-2) {UG};
+	\draw (PLD) -- (cloud);
+	\draw[->] (cloud) -- (param);
+	\draw[->] (UG) -- (param);
+	\draw[->,dashed] (UG) -- (cloud);
+      \end{tikzpicture}
+      \caption{Acquiring Resultatives}
+      \label{fig:resAcq}
+    \end{figure}
+  \end{overprint}
+\end{frame}
+\begin{frame}
+  \begin{block}
+    {My Thesis Project:}
+    \begin{itemize}
+      \item Explaining how a semantic ``parameter setting'' can be acquired from surface phenomena in the PLD.
+    \end{itemize}
+    \onslide<2>{
+      In other words:
+    \begin{itemize}
+      \item Figuring out what's behind those question marks.
+    \end{itemize}}
+  \end{block}
+  \onslide<2>{
+      \centering
+      \begin{tikzpicture}
+	\node (param) at (0,0) {\{*\}Resultatives};
+	\node[cloud,draw] (cloud) at (3,0) {????};
+	\node (PLD) at (5,0) {PLD};
+	\node (UG) at (1.5,-2) {UG};
+	\draw (PLD) -- (cloud);
+	\draw[->] (cloud) -- (param);
+	\draw[->] (UG) -- (param);
+	\draw[->,dashed] (UG) -- (cloud);
+      \end{tikzpicture}
+  }
+\end{frame}
+\end{document}
+
+

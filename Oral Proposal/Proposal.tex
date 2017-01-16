@@ -26,6 +26,7 @@
 \usepackage{linguex}
 \usepackage{centernot}
 \usepackage{todonotes}
+\usepackage[normalem]{ulem}
 \useforestlibrary{linguistics}
 
 \tikzset{
@@ -102,6 +103,11 @@
 }
 
 \newcommand{\figex}{\refstepcounter{ExNo}\theExNo\hspace{\Exlabelsep}}
+
+\renewcommand<>{\sout}[1]{
+  \only#2{\beameroriginal{\sout}{#1}}
+  \invisible#2{#1}
+}
 
 \newcounter{DerivStep}
 
@@ -253,6 +259,8 @@
 \end{frame}
 \subfile{UTAH}
 \subfile{MTC}
+\subsection{Causativity}
+\subfile{Causativity}
 \begin{frame}
   \frametitle{Deriving Resultatives}
   \ex.{\rm Natalie hammered the metal flat.}

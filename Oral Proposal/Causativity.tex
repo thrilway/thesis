@@ -1,0 +1,45 @@
+%        File: Causativity.tex
+%     Created: Mon Jan 16 01:00 PM 2017 E
+% Last Change: Mon Jan 16 01:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  {What is causativity?}
+
+  \begin{itemize}
+    \item A theory of causativity should minimally account for the fact that \NNext $\vDash$ \Next.
+  \end{itemize}
+  \ex.\label{inch} {\rm the toast burned.}
+
+  \ex.\label{caus} {\rm Paul burned the toast.}
+
+\end{frame}
+\begin{frame}
+  \ex.[\ref{inch}] {\rm the toast burned.}
+
+  \ex.[\ref{caus}] {\rm Paul burned the toast.}
+
+  \begin{block}
+    {Assumptions}
+    \begin{itemize}
+      \item Neo-Davidsonian semantics
+    \end{itemize}
+    \ex.[\ref{inch}$^\prime$] $\exists e[\text{Burning}(e) \& \textsc{Theme}(e, \textbf{the\_toast})]$
+
+    \begin{itemize}
+      \item Causality holds between events and subevents. (not between individuals and events)
+    \end{itemize}
+    \ex.[\ref{caus}$^\prime$] $\exists e,f[\textsc{Agent}(e, \textbf{paul}) \& \textsc{Cause}(e, f) \&$\\\hspace{3em}$ \text{Burning}(f) \& \textsc{Theme}(f, \textbf{the\_toast})]$
+
+  \end{block}<++>
+  
+\end{frame}<++>
+\end{document}
+
+

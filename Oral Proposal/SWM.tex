@@ -1,0 +1,164 @@
+%        File: SWM.tex
+%     Created: Tue Jan 17 01:00 PM 2017 E
+% Last Change: Tue Jan 17 01:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  {Sideward Movement}
+
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Can we move sideward?}
+	\begin{itemize}
+	  \item<1-> My current analysis of argument sharing requires sideward movement (SWM)
+	  \item<2-> Standard syntactic theory disallows SWM
+	  \item<3-> \textcite{nunes2001sideward} argues that SWM ought to be allowed.
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\rm Amy ate the fish raw}\\
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [VP
+	    [V\\{\rm eat},align=center]
+	    [DP[{\rm the fish},roof,name=v theme]]
+	  ]
+	  [SC
+	    [DP[{\rm the fish},roof,name=a theme]]
+	    [Adj\\{\rm raw},align=center]
+	  ]
+	]
+	\draw[->] (a theme) to[out=south, in=south] (v theme);
+      \end{forest}}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Sideward Movement}
+  \begin{columns}
+    \begin{column}
+      [T]{0.7\textwidth}
+      \begin{block}
+	{How do we move sideward?}
+	\begin{itemize}
+	  \item<1-> GB/Early Minimalism: Move is a primitive
+	  \item<2-> Traces must be c-commanded by their antecedent.
+	  \item<3-> $\therefore$ Movement is upward.
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.3\textwidth}
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[YP
+	  [X,name=top]
+	  [
+	    [Y]
+	    [ZP
+	      [X,name=bottom]
+	      [\dots]
+	    ]
+	  ]
+	]
+	\draw[->] (bottom) to[out=south west, in=south] (top);
+      \end{forest}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Sideward Movement}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{How do we move sideward?}
+	\begin{itemize}
+	  \item<1-> \textcite{nunes2001sideward}: 
+	    \begin{itemize}
+	      \item<1-> Move = Copy + Merge
+	    \end{itemize}
+	  \item<2-> Copy(X)
+	  \item<3-> Merge(X, Y$^\prime$)
+	\end{itemize}
+      \end{block}
+      \begin{center}
+	\onslide<2>{X}
+      \end{center}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{center}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[YP,visible on=<3->
+	  [X,name=top,visible on=<3->]
+	  [Y$^\prime$,visible on=<3->
+	    [Y,visible on=<1->]
+	    [ZP,visible on=<1->
+	      [X,name=bottom,visible on=<1->]
+	      [\dots,visible on=<1->]
+	    ]
+	  ]
+	]
+      \end{forest}}
+    \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Sideward Movement}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Deriving SWM}
+	\begin{itemize}
+	  \item<2-> Copy(DP)
+	  \item<3-> Select(V)
+	  \item<3-> Merge(DP, V)
+	  \item<5-> Merge(VP, SC)
+	\end{itemize}
+      \end{block}
+      \onslide<2-4>
+      {\small
+	\begin{forest}
+	  [DP[{\rm the fish},roof]]
+	\end{forest}
+      }
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP,visible on=<5->
+	  [VP,visible on=<5->
+	    [V\\{\rm eat},align=center,visible on=<4->]
+	    [DP[{\rm the fish},visible on=<4->,roof,name=v theme,visible on=<4->]]
+	  ]
+	  [SC,visible on=<5->
+	    [DP,visible on=<1->[{\rm the fish},roof,name=a theme,visible on=<1->]]
+	    [Adj\\{\rm raw},align=center,visible on=<1->]
+	  ]
+	]
+      \end{forest}}
+    \end{column}
+  \end{columns}
+\end{frame}
+\end{document}
+
+

@@ -143,7 +143,7 @@
     \begin{column}
       [T]{0.5\textwidth}
       {\small
-      \begin{forest}
+        \begin{forest}
 	nice empty nodes,sn edges,baseline
 	[VP,visible on=<5->
 	  [VP,visible on=<5->
@@ -156,6 +156,46 @@
 	  ]
 	]
       \end{forest}}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Sideward Movement}
+
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+        {Constraining SWM}
+        \begin{itemize}
+          \item<1-> The addition of SWM would likely overgenerate
+          \item<2-> \textcite{nunes2001sideward}: the initial result of SWM is unlinearizable
+          \item<3-> Subsequent upward movement can fix this 
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+        \begin{forest}
+	nice empty nodes,sn edges,baseline
+        [AgrOP,visible on=<3->
+          [DP,visible on=<3->[{\rm the fish},roof,visible on=<3->]]
+          [
+            [AgrO,visible on=<3->]
+            [VP,visible on=<3->
+              [VP,visible on=<2->
+                [V\\{\rm eat},align=center,visible on=<2->]
+                [DP,visible on=<2->]
+              ]
+              [SC,visible on=<2->
+                [DP,visible on=<2->]
+                [Adj\\{\rm raw},align=center,visible on=<2->]
+              ]
+            ]
+          ]
+        ]
+      \end{forest}} 
     \end{column}
   \end{columns}
 \end{frame}

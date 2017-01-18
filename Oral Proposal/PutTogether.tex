@@ -1,0 +1,362 @@
+%        File: PutTogether.tex
+%     Created: Wed Jan 18 02:00 PM 2017 E
+% Last Change: Wed Jan 18 02:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  {Recapping Resultatives and Compounding}
+
+  {\rm Natalie hammered the metal flat.}
+  {\small
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+    [$\kappa$
+      [DP,[{\rm the metal},roof,name=obj]]
+      [$\eta$
+	[AgrO]
+	[$\zeta$,calign=fixed edge angles,calign primary angle=-30,calign secondary angle=70
+	  [$\delta$
+	    [{\rm hammer}]
+	    [$\langle$DP$\rangle$,name=theme]
+	  ]
+	  [$\gamma$,calign=fixed edge angles,calign primary angle=-30,calign secondary angle=70
+	    [$\langle$DP$\rangle$,name=spec res]
+	    [$\beta$
+	      [res]
+	      [$\alpha$
+		[$\langle$DP$\rangle$,name=SC theme]
+		[{\rm flat}]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (SC theme) to[out=west, in=south] (spec res);
+    \draw[->] (spec res) to[out=south, in=south] (theme);
+    \draw[->] (theme) to[out=south west, in=south] (obj);
+  \end{forest}}
+\end{frame}
+\begin{frame}
+  {Recapping Resultatives and Compounding}
+  \begin{block}
+    {The Compounding Parameter}
+    \begin{itemize}
+      \item $\left\{ \text{*} \right\}$Resultatives is linked to $\left\{ \text{*} \right\}$bare-stem compounding.
+      \item Bare-stem compounding requires bare stems.
+      \item Bare stems require category heads without $\varphi$-features ($n_\emptyset$, $adj_\emptyset$, \textit{etc}).
+      \item English-type languages have $adj_\emptyset$ (and maybe $adj_\varphi$).
+      \item French-type languages have only $adj_\varphi$
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  So now let's show:
+  \begin{enumerate}
+    \item<2-> Resultatives can be derived with $adj_\emptyset$
+    \item<3> Resultatives cannot be derived with $adj_\varphi$
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  {English-type languages: \checkmark Resultatives}
+
+  {\rm hammer the metal flat}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Deriving the adjunct}
+	\begin{itemize}
+	  \item<2-> Build the Small Clause.
+	  \item<3-> Merge(res, $\beta$)
+	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
+	  \item<6-> Transfer($\beta$)
+	    \begin{itemize}
+	      \item res is a phase head.
+	      \item Label($\beta$) = Label($\alpha$)
+	      \item $\beta$ converges.
+	    \end{itemize}
+	  \item<7-> Copy(DP)
+	\end{itemize}
+      \end{block}
+      \onslide<4-5,7->{\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [DP$_\varphi$[{\rm the metal},roof]]
+	\end{forest}
+      }
+%      \only<4-5>{\small
+%	\begin{forest}
+%	  nice empty nodes,sn edges,baseline
+%	  [DP$_\varphi$[{\rm the metal},roof]]
+%	\end{forest}
+%      }
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+	  calign primary angle=-30,calign secondary angle=50,bottom up}
+	  [$\delta$,not before=5
+	    [DP$_\varphi$,not before=5[{\rm the metal},roof,not before=5]]
+	    [$\gamma$,not before=3
+	      [res,not before=3]
+	      [$\beta$,not before=2
+		[DP$_\varphi$,not before=2[{\rm the metal},name=SC DP,roof,not before=2]]
+		[$\alpha$,not before=2
+		  [adj$_\emptyset$,not before=2]
+		  [{\rm flat},not before=2]
+		]
+	      ]
+	    ]
+	  ]
+	  \only<6->{
+	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+	}
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {English-type languages: \checkmark Resultatives}
+
+  {\rm hammer the metal flat}
+  \begin{columns}
+    \begin{column}[T]{0.35\textwidth}
+      \begin{block}
+	{Deriving the VP}
+	\begin{itemize}
+	  \item<2-> Merge(DP, {\rm hammer})
+	  \item<3-> Merge($\zeta$, $\delta$)
+	  \item<4-> Merge(AgrO, $\eta$)
+	  \item<5-> Copy(DP) + Merge(DP, $\kappa$)
+	  \item<6-> \ldots
+	\end{itemize}
+      \end{block}
+      \onslide<1-2>{\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [DP$_\varphi$[{\rm the metal},roof]]
+	\end{forest}
+      }
+    \end{column}
+    \begin{column}[T]{0.65\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=60,
+  %s sep=10mm,
+  %inner sep=2mm,
+  %l=0,
+  bottom up}
+	  [$\mu$,not before=5
+	    [DP$_\varphi$,not before=5[{\rm the metal},roof,not before=5]]
+	    [$\kappa$,not before=4
+	      [AgrO$_\varphi$,not before=4]
+	      [$\eta$,not before=3
+		[$\zeta$,not before=2
+		  [DP$_\varphi$,not before=2[{\rm the metal},roof,not before=2]]
+		  [{\rm hammer},not before=2]
+		]
+		[$\delta$
+		  [DP$_\varphi$]
+		  [$\gamma$
+		    [res]
+		    [($\beta$]
+		  ]
+		  ]
+		]
+	      ]
+	    ]
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  So now let's show:
+  \begin{enumerate}
+    \item Resultatives can be derived with $adj_\emptyset$
+      \begin{itemize}
+	\item \alert{Shown}
+      \end{itemize}
+    \item Resultatives cannot be derived with $adj_\varphi$
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  {French-type languages: *Resultatives}
+  {Derivation Attempt 1: Just like English-type}
+
+  {\rm *marcher les jambes raides}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \begin{block}
+	{Deriving the adjunct}
+	\begin{itemize}
+	  \item<2-> Build the Small Clause.
+	  \item<3-> Merge(res, $\beta$)
+	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
+	  \item<6-> Transfer($\beta$)
+	    \begin{itemize}
+	      \item res is a phase head.
+	      \item Lower DP copy is invisible
+	      \item adj$_\varphi$ is too weak to label without agreement
+	      \item Label($\beta$) is undefined
+	      \item *CRASH*
+	    \end{itemize}
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+	  calign primary angle=-30,calign secondary angle=50,
+	  bottom up
+	}
+	  [$\delta$,not before=5
+	    [DP$_\varphi$,not before=5[{\rm les jambes},roof,not before=5]]
+	    [$\gamma$,not before=3
+	      [res,not before=3]
+	      [$\beta$,not before=2
+		[DP$_\varphi$,not before=2[{\rm les jambes},name=SC DP,roof,not before=2]]
+		[$\alpha$,not before=2
+		  [adj$_\varphi$,not before=2]
+		  [{\rm raides},not before=2]
+		]
+	      ]
+	    ]
+	  ]
+	  \only<6->{
+	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+	}
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  So now let's show:
+  \begin{enumerate}
+    \item Resultatives can be derived with $adj_\emptyset$
+      \begin{itemize}
+	\item Shown
+      \end{itemize}
+    \item Resultatives cannot be derived with $adj_\varphi$
+      \begin{itemize}
+	\item \alert{Not shown yet}
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  {French-type languages: *Resultatives}
+  {Derivation Attempt 2}
+
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      {\rm *marcher les jambes raides}
+      \begin{block}
+	{Deriving the adjunct}
+	\begin{itemize}
+	  \item <2-> Build the Small Clause.
+	  \item <3-> Merge(res, $\beta$)
+	  \item <4-> Transfer($\beta$)
+	    \begin{itemize}
+	      \item res is a phase head.
+	      \item DP and $\alpha$ agree for $\varphi$.
+	      \item Label($\beta$)= $\langle\varphi,\varphi\rangle$
+	      \item $\beta$ converges.
+	    \end{itemize}
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+	  calign primary angle=-30,calign secondary angle=50,
+	  bottom up
+	}
+	    [$\gamma$,not before=3
+	      [res,not before=3]
+	      [$\beta$,not before=2
+		[DP$_\varphi$,not before=2[{\rm les jambes},name=SC DP,roof,not before=2]]
+		[$\alpha$,not before=2
+		  [adj$_\varphi$,not before=2]
+		  [{\rm raides},not before=2]
+		]
+	      ]
+	    ]
+	  \only<4->{
+	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+	}
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {French-type languages: *Resultatives}
+  {Derivation Attempt 2}
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      {\rm *marcher les jambes raides}
+      \begin{block}
+	{Deriving the VP}
+	\begin{itemize}
+	  \item<2-> Merge({\rm march-}, DP)
+	    \begin{itemize}
+	      \item<3-> DP is unavailable
+	      \item<4->  *CRASH*
+	    \end{itemize}
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      {\small
+	\begin{forest}
+	  for tree={bottom up}
+	[*,not before=4
+	  [{\rm march-},not before=2]
+	  [DP$_\varphi$,not before=2]
+	]
+      \end{forest}
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	    [$\gamma$
+	      [res]
+	      [($\beta$]
+	    ]
+	\end{forest}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  So now let's show:
+  \begin{enumerate}
+    \item Resultatives can be derived with $adj_\emptyset$
+      \begin{itemize}
+	\item Shown
+      \end{itemize}
+    \item Resultatives cannot be derived with $adj_\varphi$
+      \begin{itemize}
+	\item \alert{Shown}\footnote{I think}
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+\end{document}
+
+

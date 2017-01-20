@@ -1,0 +1,330 @@
+%        File: Struct.tex
+%     Created: Thu Jan 19 10:00 AM 2017 E
+% Last Change: Thu Jan 19 10:00 AM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  \begin{block}
+    {Two types of analyses for SP}
+    \begin{enumerate}
+      \item<2-> \alert<2>{Small Clause} \parencite[\textit{e.g.,}][]{kratzer_building_2004}
+      \item<3-> \alert<3>{Complex Predicate} \parencite[\textit{e.g.,}][]{snyder1995language}
+    \end{enumerate}
+  \end{block}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \onslide<2->{
+      \begin{center}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the fish},roof]]
+	  [
+	    [V\\{\rm eat},align=center]
+	    [SC
+	      [$ec_i$]
+	      [Adj\\{\rm raw},align=center]
+	    ]
+	  ]
+	]
+      \end{forest}}	
+    \end{center}}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \onslide<3->{
+      \begin{center}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the fish},roof]]
+	    [V
+	      [V\\{\rm eat},align=center]
+	      [Adj\\{\rm raw},align=center]
+	    ]
+	  ]
+      \end{forest}
+      }	
+      \end{center}
+    }
+    \end{column}
+  \end{columns}
+  \onslide<4>{How does each account for the properties of resultatives?}
+\end{frame}
+\begin{frame}
+  {Small Clause}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Argument Sharing}
+	\begin{itemize}
+	  \item The shared argument is local to both predicates.
+	  \item Argument sharing happens by $\Theta$-role assignment.
+	\end{itemize}
+      \end{block}
+      \begin{block}
+	{Causativity}
+	\begin{itemize}
+	  \item A functional head merged with SC
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [
+	    [V\\{\rm hammer},align=center]
+	    [resP
+	      [res]
+	      [SC
+		  [$ec_i$]
+		  [Adj\\{\rm flat},align=center]
+		]
+	      ]
+	    ]
+	  ]
+      \end{forest}}	
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Complex Predicate}
+  {Version 1}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Argument Sharing}
+	\begin{itemize}
+	  \item A functional head merged with SP
+	\end{itemize}
+      \end{block}
+      \begin{block}
+	{Causativity}
+	\begin{itemize}
+	  \item A functional head merged with SP
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [V
+	      [V\\{\rm hammer},align=center]
+	      [
+		[res+]
+		[Adj\\{\rm flat},align=center]
+	      ]
+	    ]
+	  ]
+      \end{forest}}	
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Complex Predicate}
+  {Version 2}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Argument Sharing}
+	\begin{itemize}
+	  \item A special mode of composing V+Adj
+	\end{itemize}
+      \end{block}
+      \begin{block}
+	{Causativity}
+	\begin{itemize}
+	  \item A special mode of composing V+Adj
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [V
+	      [V\\{\rm hammer},align=center]
+	      [Adj\\{\rm flat},align=center]
+	    ]
+	  ]
+      \end{forest}}	
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  
+  \begin{itemize}
+    \item I will assume a Small Clause Structure
+    \item Its assumptions are well-founded:
+      \begin{itemize}
+	\item $\Theta$-role assignment is local.
+	\item An element like \textit{res} is needed anyway
+	  \begin{itemize}
+	    \item {\rm flat}+res $\rightarrow$ {\rm flatten}
+	  \end{itemize}
+      \end{itemize}
+    \item Complex Predicate analyses require ad-hoc stipulations
+      \begin{itemize}
+	\item $\Theta$-role assignment at a distance.
+	\item Both \textit{res+} and the special composition are too specific to resultatives.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  {\textcite{kratzer_building_2004}}
+
+  {\rm hammer the metal flat}\\
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+    [VP
+      [DP$_i$[{\rm the metal},roof]]
+      [
+	[V\\{\rm hammer},align=center]
+	[resP
+	  [res]
+	  [AdjP
+	    [$\langle\text{DP}_i\rangle$]
+	    [Adj\\{\rm flat},align=center]
+	  ]
+	]
+      ]
+    ]
+  \end{forest}
+
+\end{frame}
+\begin{frame}
+  {\textcite{kratzer_building_2004}}
+  {Modifications}
+
+  \begin{itemize}
+    \item For Kratzer resP is of type $\langle s, t\rangle$
+      \begin{itemize}
+	\item $\lambda e_s \exists s_s [ \textsc{cause}(e, s) \& \text{flat}(s) \& \textsc{theme}(s, \textbf{the\_metal})]$
+      \end{itemize}
+    \item V is of type $\langle e, \langle s,t\rangle\rangle$
+      \begin{itemize}
+	\item $\lambda x_e \lambda e_s [\text{hammering}(e) \& \textsc{theme}(e)(x)]$
+      \end{itemize}
+    \item A new composition rule is needed: 
+  \end{itemize}
+  \ex. Event Identification \parencite{kratzer_severing_1996}\\
+  \begin{tabular}[t]{cccc}
+    $f$ & $g$ & $\rightarrow$ & $h$\\
+    $\langle e, \langle s,t\rangle\rangle$ & $\langle s, t\rangle$ & & $\langle e, \langle s,t\rangle\rangle$\\
+    & & & $\lambda x_e \lambda e_s[f(x)(e) \& g(e)]$\\
+  \end{tabular}
+
+\end{frame}
+\begin{frame}
+  {\textcite{kratzer_building_2004}}
+  {Modifications}
+
+  \begin{itemize}
+    \item If resP adjoins to VP\ldots
+  \end{itemize}
+    \only<1>{
+	\begin{forest}
+      nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+      [VP
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [V\\{\rm hammer},align=center]
+	]
+	[resP
+	  [res]
+	  [AdjP
+	    [$\langle\text{DP}_i\rangle$]
+	    [Adj\\{\rm flat},align=center]
+	  ]
+	]
+      ]
+    \end{forest}
+  
+  }
+  \onslide<2->{
+    \begin{itemize}
+      \item<2-> resP and VP are both of type $\langle s,t\rangle$
+	\begin{itemize}
+	  \item<2-> $\lambda e_s \exists s_s [ \textsc{cause}(e, s) \& \text{flat}(s) \& \textsc{theme}(s, \textbf{the\_metal})]$
+	  \item<2-> $\lambda e_s [\text{hammering}(e) \& \textsc{theme}(e)(\textbf{the\_metal})]$
+	\end{itemize}
+      \item<3-> They can combine by a simple conjunction operation.
+      \item<3-> Predicate Modification in \textcite{heimkratzer1998semantics}.
+	\begin{itemize}
+	  \item<4-> $\llbracket \left[ \text{VP resP} \right]\rrbracket = \lambda e_s [\llbracket\text{VP}\rrbracket(e) \& \llbracket \text{resP}\rrbracket(e)]$
+	\end{itemize}
+      \item<5-> No need to complicate our compositional semantics.
+      \item<6-> But\ldots
+    \end{itemize}
+  }
+\end{frame}
+\begin{frame}
+  {\textcite{kratzer_building_2004}}
+  {Modifications}
+
+  \begin{itemize}
+    \item The movement proposed is sideward. 
+  \end{itemize}{\small
+	\begin{forest}
+      nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+      [VP
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [V\\{\rm hammer},align=center]
+	]
+	[resP
+	  [res]
+	  [AdjP
+	    [$\langle\text{DP}_i\rangle$]
+	    [Adj\\{\rm flat},align=center]
+	  ]
+	]
+      ]
+    \end{forest}
+  }
+  \begin{itemize}
+    \item<2-> Standard Minimalist/GB: Movement is always upward.
+      \begin{itemize}
+	\item<3-> Sideward movement (SWM) is impossible
+      \end{itemize}
+    \item<4-> \textcite{nunes2001sideward}: SWM follows from (a version of) the copy theory of movement.
+  \end{itemize}
+\end{frame}
+\subsubsection{Sideward Movement}
+\subfile{SWM}
+\subsubsection{Two further assumptions}
+\begin{frame}
+  
+\end{frame}<++>
+\end{document}
+
+

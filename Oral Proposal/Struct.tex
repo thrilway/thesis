@@ -224,7 +224,7 @@
   \begin{itemize}
     \item For Kratzer resP is of type $\langle s, t\rangle$
       \begin{itemize}
-	\item $\lambda e_s \exists s_s [ \textsc{cause}(e, s) \& \text{flat}(s) \& \textsc{theme}(s, \textbf{the\_metal})]$
+	\item $\lambda e_s \exists s_s [ \textsc{cause}(e)(s) \& \text{flat}(s) \& \textsc{theme}(s)(\textbf{the\_metal})]$
       \end{itemize}
     \item V is of type $\langle e, \langle s,t\rangle\rangle$
       \begin{itemize}
@@ -272,7 +272,7 @@
     \begin{itemize}
       \item<2-> resP and VP are both of type $\langle s,t\rangle$
 	\begin{itemize}
-	  \item<2-> $\lambda e_s \exists s_s [ \textsc{cause}(e, s) \& \text{flat}(s) \& \textsc{theme}(s, \textbf{the\_metal})]$
+	  \item<2-> $\lambda e_s \exists s_s [ \textsc{cause}(e)(s) \& \text{flat}(s) \& \textsc{theme}(s)(\textbf{the\_metal})]$
 	  \item<2-> $\lambda e_s [\text{hammering}(e) \& \textsc{theme}(e)(\textbf{the\_metal})]$
 	\end{itemize}
       \item<3-> They can combine by a simple conjunction operation.
@@ -323,8 +323,43 @@
 \subfile{SWM}
 \subsubsection{Two further assumptions}
 \begin{frame}
-  
-\end{frame}<++>
+  \frametitle{Two further assumptions}
+  \begin{enumerate}
+    \item<+-> \textit{res} is a phase head.
+      \begin{itemize}
+	\item<+-> resP, like VoiceP, is thematically complete.
+      \end{itemize}
+    \item<+-> The theme raises to [Spec res]. 
+      \begin{itemize}
+	\item<+-> Follows from resP being a phase.
+      \end{itemize}
+  \end{enumerate}
+  \pause
+  {\small
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+    [VP
+      [VP
+	[V\\{\rm hammer},align=center]
+	[DP$_i$[{\rm the metal},roof,name=v theme]]
+      ]
+      [resP
+	[$\langle\text{DP}_i\rangle$,name=spec res]
+	[
+	  [res]
+	  [AdjP
+	    [$\langle\text{DP}_i\rangle$,name=a theme]
+	    [Adj\\{\rm flat},align=center]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (a theme) to[out=south west, in=south east] (spec res);
+    \draw[->] (spec res) to[out=south, in=south] (v theme);
+  \end{forest}}
+\end{frame}
 \end{document}
 
 

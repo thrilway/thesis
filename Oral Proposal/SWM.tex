@@ -103,14 +103,14 @@
       \begin{center}
       {\small
       \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[YP,visible on=<3->
-	  [X,name=top,visible on=<3->]
-	  [Y$^\prime$,visible on=<3->
-	    [Y,visible on=<1->]
-	    [ZP,visible on=<1->
-	      [X,name=bottom,visible on=<1->]
-	      [\dots,visible on=<1->]
+	nice empty nodes,sn edges,baseline,for tree={bottom up}
+	[YP,not before=3
+	  [X,name=top,not before=3]
+	  [Y$^\prime$
+	    [Y]
+	    [ZP
+	      [X,name=bottom]
+	      [\dots]
 	    ]
 	  ]
 	]
@@ -129,7 +129,7 @@
 	\begin{itemize}
 	  \item<2-> Copy(DP)
 	  \item<3-> Select(V)
-	  \item<3-> Merge(DP, V)
+	  \item<4-> Merge(DP, V)
 	  \item<5-> Merge(VP, SC)
 	\end{itemize}
       \end{block}
@@ -144,15 +144,15 @@
       [T]{0.5\textwidth}
       {\small
         \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[VP,visible on=<5->
-	  [VP,visible on=<5->
-	    [V\\{\rm eat},align=center,visible on=<4->]
-	    [DP[{\rm the fish},visible on=<4->,roof,name=v theme,visible on=<4->]]
+	  nice empty nodes,sn edges,baseline,for tree={bottom up}
+	[VP,not before=5
+	  [VP,not before=4
+	    [V\\{\rm eat},align=center,not before=3]
+	    [DP,not before=4[{\rm the fish},roof,name=v theme,not before=4]]
 	  ]
-	  [SC,visible on=<5->
-	    [DP,visible on=<1->[{\rm the fish},roof,name=a theme,visible on=<1->]]
-	    [Adj\\{\rm raw},align=center,visible on=<1->]
+	  [SC
+	    [DP[{\rm the fish},roof,name=a theme]]
+	    [Adj\\{\rm raw},align=center]
 	  ]
 	]
       \end{forest}}
@@ -179,18 +179,18 @@
       {\small
         \begin{forest}
 	nice empty nodes,sn edges,baseline
-        [AgrOP,visible on=<3->
-          [DP,visible on=<3->[{\rm the fish},roof,visible on=<3->]]
+        [AgrOP,not before=3
+          [DP,not before=3[{\rm the fish},roof,not before=3]]
           [
-            [AgrO,visible on=<3->]
-            [VP,visible on=<3->
-              [VP,visible on=<2->
-                [V\\{\rm eat},align=center,visible on=<2->]
-                [DP,visible on=<2->]
+            [AgrO,not before=3]
+            [VP,not before=3
+              [VP,not before=2
+                [V\\{\rm eat},align=center,not before=2]
+                [DP,not before=2]
               ]
-              [SC,visible on=<2->
-                [DP,visible on=<2->]
-                [Adj\\{\rm raw},align=center,visible on=<2->]
+              [SC,not before=2
+                [DP,not before=2]
+                [Adj\\{\rm raw},align=center,not before=2]
               ]
             ]
           ]

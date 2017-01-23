@@ -68,17 +68,36 @@
   \end{overprint}
 \end{frame}
 \begin{frame}
+  {The Labeling Algorithm}
+
+  \begin{block}
+    {Not everything can label}
+    \begin{itemize}[<+->]
+      \item Some heads are ``too weak'' to label:
+	\begin{itemize}
+	  \item Roots
+	  \item Heads with only one $\varphi$-set
+	    \begin{itemize}
+	      \item English T$_\varphi$ needs a subject for labeling.
+	      \item Italian T$_{\langle \varphi,\varphi\rangle}$ does not.
+	    \end{itemize}
+	\end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
   {My extensions to Label Theory}
   \begin{block}
     {Labels determine composition}
     \begin{itemize}
-      \item<2-> If Label(SO) $\in$ SO, then SO composes by function application
+      \item The CI interface interprets pairs of SOs and their labels: $\langle \text{L, SO} \rangle$
+      \item<2-> If Label(SO) is a head, then SO composes by function application
 	\begin{itemize}
-	  \item<3-> $\llbracket\left\{ \text{X, YP} \right\}\rrbracket$ = X(YP)
+	  \item<3-> $\llbracket\langle \text{X}, \left\{ \text{X, YP} \right\}\rangle\rrbracket$ = X(YP)
 	\end{itemize}
       \item<4-> If Label(SO) = $\langle\text{F,F}\rangle$, then SO is interpreted as an Operator-variable structure
 	\begin{itemize}
-	  \item<5-> $\llbracket\left\{ \text{DP}_Q, \text{CP}_Q \right\}\rrbracket$ = $(\text{Wh}x)(\dots x \dots)$
+	  \item<5-> $\llbracket\langle \langle\text{Q,Q} \rangle, \left\{ \text{DP}_Q, \text{CP}_Q \right\}\rangle\rrbracket$ = $(\text{Wh}x)(\dots x \dots)$
 	\end{itemize}
     \end{itemize}
   \end{block}
@@ -96,7 +115,7 @@
 	\pause
       \item Unlabeled SOs compose by conjuction.
 	\begin{itemize}
-	  \item $\llbracket\left\{ \text{XP, ZP} \right\}\rrbracket$ = XP \& ZP (if $\left\{ \text{XP, ZP} \right\}$ is unlabelled)
+	  \item $\llbracket\langle \emptyset, \left\{ \text{XP, ZP} \right\}\rangle\rrbracket$ = XP \& ZP 
 	\end{itemize}
     \end{itemize}
   \end{block}
@@ -127,7 +146,7 @@
 
     \begin{columns}
     \begin{column}[T]{0.6\textwidth}
-      {\rm *Mario$_i$ was [$_{VP}$ [seen[$t_i$ running]]]}
+      {\rm *Mario$_i$ was [$_{VP}$ [heard [$t_i$ being slandered]]]}
       \begin{block}
 	{Complement ACs}
 	\begin{itemize}
@@ -153,7 +172,7 @@
 		[$\gamma$
 		  [Voice$_{pass}$]
 		  [$\delta$
-		    [{\rm see}]
+		    [{\rm hear}]
 		    [$\zeta$
 		      [$\langle${\rm Mario}$\rangle$]
 		      [Prog]
@@ -179,7 +198,8 @@
 	  \item $\eta$ is adjoined, therefore ignored by LA
 	  \item $\eta$ is interpreted as the conjunction of {\rm Mario} and {\rm running}
 	    \begin{itemize}
-	      \item This is an ill-formed interpretation
+	      \item This is an ill-formed interpretation.
+	      \item Possibly an i-within-i violation \parencite{vergnaud1974french}
 	    \end{itemize}
 	\end{itemize}
       \end{block}

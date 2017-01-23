@@ -12,7 +12,7 @@
   backend=biber,
   style=authoryear-comp,
   useprefix=false,
-  sorting=ynt
+%  sorting=ynt
 ]{biblatex}
 
 \usepackage{subfiles}
@@ -26,6 +26,7 @@
 \usepackage{linguex}
 \usepackage{centernot}
 \usepackage{todonotes}
+%\usepackage{enumitem}
 \usepackage[normalem]{ulem}
 \useforestlibrary{linguistics}
 
@@ -296,90 +297,117 @@
   \ex.\label{caus} {\rm Paul burned the toast.}
 
   \begin{itemize}
-    \item 
+    \item \ref{caus} is a causative counterpart to \ref{inch}
+    \item For \textcite{pietroski2003small}, \ref{caus} describes an eventuality initiated by some action of Paul's and terminating in the eventuality described by \ref{inch}.
+      \begin{itemize}
+	\item This is quite similar (maybe identical) to Kratzer's (\citeyear{kratzer_building_2004}) discussion of resultatives.
+      \end{itemize}
+    \item $\llbracket res \rrbracket = \lambda e_s \lambda f_s . \textsc{cause}(f)(e)$
   \end{itemize}
 \end{frame}
 \subfile{Struct}
-\subsection{Deriving Resultatives}
+%\subsection{Deriving Resultatives}
+%\begin{frame}
+%  \frametitle{Deriving Resultatives}
+%  \ex.{\rm Natalie hammered the metal flat.}
+%
+%  \begin{columns}
+%    \begin{column}[T]{0.5\textwidth}
+%      \begin{block}
+%	{Build the adjunct}
+%	\begin{itemize}
+%	  \item<2-> Build the Small Clause
+%	  \item<3-> Merge(\textit{res}$^\circ$, $\alpha$)
+%	  \item<4-> Copy(DP) + Merge(DP, $\beta$)
+%	  \item<5-> Copy(DP)
+%	\end{itemize}
+%      \end{block}
+%    \only<5->{
+%      \begin{forest}
+%	[DP[{\rm the metal},roof]]
+%      \end{forest}}
+%    \end{column}
+%    \begin{column}[T]{0.5\textwidth}
+%      {\small
+%      \begin{forest}
+%	nice empty nodes,sn edges,baseline
+%	[$\gamma$,visible on=<4-5>
+%	  [DP,visible on=<4-5> [{\rm the metal},roof,visible on=<4-5>]]
+%	  [$\beta$,visible on=<4-5>
+%	    [\textit{res},visible on=<3-5>]
+%	    [$\alpha$,visible on=<3-5>
+%	      [DP [{\rm the metal},roof,visible on=<2-5>]]
+%	      [{\rm flat},visible on=<2-5>]
+%	    ]
+%	  ]
+%	]
+%      \end{forest}
+%    }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\begin{frame}
+%  \frametitle{Deriving Resultatives}
+%  \ex.{\rm Natalie hammered the metal flat.}
+%
+%  \begin{columns}
+%    \begin{column}[T]{0.5\textwidth}
+%      \begin{block}
+%	{Build the VP}
+%	\begin{itemize}
+%	  \item<2-> Merge({\rm hammer}, DP) 
+%	  \item<3-> Merge($\delta$, $\gamma$)
+%	  \item<4-> \dots
+%	\end{itemize}
+%      \end{block}
+%    \only<1>{
+%      \begin{forest}
+%	[DP[{\rm the metal},roof]]
+%      \end{forest}}
+%    \end{column}
+%    \begin{column}[T]{0.5\textwidth}
+%    {\small
+%      \begin{forest}
+%	nice empty nodes,sn edges,baseline
+%	[$\zeta$,visible on=<3->
+%	  [$\delta$,visible on=<3->
+%	    [{\rm hammer},visible on=<2->]
+%	    [DP,visible on=<2-> [{\rm the metal},visible on=<2->]]
+%	  ]
+%	  [$\gamma$,visible on=<3->]
+%	]
+%      \end{forest}
+%    }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%
 \begin{frame}
-  \frametitle{Deriving Resultatives}
-  \ex.{\rm Natalie hammered the metal flat.}
-
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Build the adjunct}
-	\begin{itemize}
-	  \item<2-> Build the Small Clause
-	  \item<3-> Merge(\textit{res}$^\circ$, $\alpha$)
-	  \item<4-> Copy(DP) + Merge(DP, $\beta$)
-	  \item<5-> Copy(DP)
-	\end{itemize}
-      \end{block}
-    \only<5->{
-      \begin{forest}
-	[DP[{\rm the metal},roof]]
-      \end{forest}}
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      {\small
-      \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[$\gamma$,visible on=<4-5>
-	  [DP,visible on=<4-5> [{\rm the metal},roof,visible on=<4-5>]]
-	  [$\beta$,visible on=<4-5>
-	    [\textit{res},visible on=<3-5>]
-	    [$\alpha$,visible on=<3-5>
-	      [DP [{\rm the metal},roof,visible on=<2-5>]]
-	      [{\rm flat},visible on=<2-5>]
-	    ]
-	  ]
-	]
-      \end{forest}
-    }
-    \end{column}
-  \end{columns}
+  {Summary}
+  \begin{itemize}
+    \item Resultatives involve a resP adjoined to a VP.
+    \item The theme DP originates in the resP and moves into the VP.
+  \end{itemize}
 \end{frame}
-\begin{frame}
-  \frametitle{Deriving Resultatives}
-  \ex.{\rm Natalie hammered the metal flat.}
-
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Build the VP}
-	\begin{itemize}
-	  \item<2-> Merge({\rm hammer}, DP) 
-	  \item<3-> Merge($\delta$, $\gamma$)
-	  \item<4-> \dots
-	\end{itemize}
-      \end{block}
-    \only<1>{
-      \begin{forest}
-	[DP[{\rm the metal},roof]]
-      \end{forest}}
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-    {\small
-      \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[$\zeta$,visible on=<3->
-	  [$\delta$,visible on=<3->
-	    [{\rm hammer},visible on=<2->]
-	    [DP,visible on=<2-> [{\rm the metal},visible on=<2->]]
-	  ]
-	  [$\gamma$,visible on=<3->]
-	]
-      \end{forest}
-    }
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \section{Compounding and Resultatives}
 \subfile{TCP}
+\begin{frame}
+  {Summary}
+
+  \begin{itemize}
+    \item Resultatives are strongly correlated with Bare Stem Compounding
+    \item Bare Stems require $cat_\emptyset$ heads.
+    \item Only languages with $cat_\emptyset$ heads allow Resultatives
+  \end{itemize}
+\end{frame}
 \section{Label Theory}
 \subfile{Labels}
 \section{Deriving the Resultative Parameter}
 \subfile{PutTogether}
+\section{Conclusion and Next Steps}
+\subfile{Conclusion}
+\begin{frame}[t,allowframebreaks]
+  \frametitle{References}
+  \printbibliography
+\end{frame}
 \end{document}

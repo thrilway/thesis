@@ -1,0 +1,208 @@
+%        File: SP.tex
+%     Created: Tue Jan 31 02:00 PM 2017 E
+% Last Change: Tue Jan 31 02:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  \begin{block}
+    {Two types of analyses for SP}
+    \begin{enumerate}
+      \item<2-> \alert<2>{Small Clause} \parencite[\textit{e.g.,}][]{kratzer_building_2004}
+      \item<3-> \alert<3>{Complex Predicate} \parencite[\textit{e.g.,}][]{snyder1995language}
+    \end{enumerate}
+  \end{block}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \onslide<2->{
+      \begin{center}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the fish},roof]]
+	  [
+	    [V\\{\rm eat},align=center]
+	    [SC
+	      [$ec_i$]
+	      [Adj\\{\rm raw},align=center]
+	    ]
+	  ]
+	]
+      \end{forest}}	
+    \end{center}}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \onslide<3->{
+      \begin{center}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the fish},roof]]
+	    [V
+	      [V\\{\rm eat},align=center]
+	      [Adj\\{\rm raw},align=center]
+	    ]
+	  ]
+      \end{forest}
+      }	
+      \end{center}
+    }
+    \end{column}
+  \end{columns}
+  \onslide<4>{How does each account for the properties of resultatives?}
+\end{frame}
+\begin{frame}
+  {Small Clause \parencite{kratzer_building_2004}}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Argument Sharing}
+	\begin{itemize}
+	  \item The shared argument is local to both predicates.
+	  \item Argument sharing happens by $\Theta$-role assignment.
+	\end{itemize}
+      \end{block}
+      \begin{block}
+	{Causativity}
+	\begin{itemize}
+	  \item A functional head merged with SC
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [
+	    [V\\{\rm hammer},align=center]
+	    [resP
+	      [res]
+	      [SC
+		  [$ec_i$]
+		  [Adj\\{\rm flat},align=center]
+		]
+	      ]
+	    ]
+	  ]
+      \end{forest}}	
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Complex Predicate}
+  {Version 1 \parencite{irimia2012secondary}}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Argument Sharing}
+	\begin{itemize}
+	  \item A functional head merged with SP
+	\end{itemize}
+      \end{block}
+      \begin{block}
+	{Causativity}
+	\begin{itemize}
+	  \item A functional head merged with VP
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[res$_{CP}$P
+	  [res$_{CP}$]
+	  [VP
+	    [DP$_i$[{\rm the metal},roof]]
+	    [V
+		[V\\{\rm hammer},align=center]
+		[
+		  [SP]
+		  [Adj\\{\rm flat},align=center]
+		]
+	      ]
+	    ]
+	  ]
+      \end{forest}}	
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {Complex Predicate}
+  {Version 2 \parencite{snyder1995language}}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{block}
+	{Argument Sharing}
+	\begin{itemize}
+	  \item A special mode of composing V+Adj
+	\end{itemize}
+      \end{block}
+      \begin{block}
+	{Causativity}
+	\begin{itemize}
+	  \item A special mode of composing V+Adj
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline
+	[VP
+	  [DP$_i$[{\rm the metal},roof]]
+	  [V
+	      [V\\{\rm hammer},align=center]
+	      [Adj\\{\rm flat},align=center]
+	    ]
+	  ]
+      \end{forest}}	
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  
+  \begin{itemize}
+    \item I will assume a Small Clause Structure
+      \pause
+    \item Its assumptions are well-founded:
+      \pause
+      \begin{itemize}
+	\item $\Theta$-role assignment is local.
+      \pause
+	\item An element like \textit{res} is needed anyway
+	  \begin{itemize}
+	    \item {\rm flat}+res $\rightarrow$ {\rm flatten}
+	  \end{itemize}
+      \end{itemize}
+      \pause
+    \item Complex Predicate analyses require ad-hoc stipulations
+      \pause
+      \begin{itemize}
+      \pause
+	\item $\Theta$-role assignment at a distance.
+      \pause
+        \item SP and res$_{CP}$ heads and special composition are both construction-specific
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\end{document}
+
+

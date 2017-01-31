@@ -1,0 +1,123 @@
+%        File: AC.tex
+%     Created: Thu Jan 26 04:00 PM 2017 E
+% Last Change: Thu Jan 26 04:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{block}
+    {Subjects of ACC-ing clauses and pseudo-relatives}
+    \begin{itemize}
+      \item<2-> \textcite{cinque1996pseudo} shows that the position of an ACC-ing/pseudo-relative clause affects the behaviour of its subject.
+    \end{itemize}
+    \only<2->{
+    \ex. \textbf{Italian pseudo-relative (PR)}\\
+    {\rm Mario che correva a tutti velocit\`a}
+
+    \ex. \textbf{English ACC-ing clause (AC)}\\
+    {\rm Mario running at full speed}
+
+  }
+    \begin{itemize}
+      \item<3-> If the AC/PR is a complement of V, the subject cannot move.
+      \item<3-> If the AC/PR is a VP adjunct, the subject must move.
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+
+    \begin{columns}
+    \begin{column}[T]{0.6\textwidth}
+      {\rm *Mario$_i$ was [$_{VP}$ [heard [$t_i$ being slandered]]]}
+      \begin{block}
+	{Complement ACs}
+	\begin{itemize}
+	  \item Subject is frozen in the AC
+	  \item Prog$^\circ$ is too weak to label $\zeta$
+	    \begin{itemize}
+	      \item Compare Chomsky's (2015) discussion of EPP
+	    \end{itemize}
+	  \item If {\rm Mario} were \textit{in situ}, Label($\zeta$) = $\langle\text{F,F}\rangle$
+	  \item Lower copies are invisible, so $\zeta$ is unabelable.
+	  \item The derivation crashes at CI
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.4\textwidth}
+	{\small
+	  \begin{forest}
+	    nice empty nodes,sn edges,baseline
+	    [$\alpha$
+	      [{\rm Mario}]
+	      [$\beta$
+		[T]
+		[$\gamma$
+		  [Voice$_{pass}$]
+		  [$\delta$
+		    [{\rm hear}]
+		    [$\zeta$
+		      [$\langle${\rm Mario}$\rangle$]
+		      [Prog]
+		    ]
+		  ]
+		]
+	      ]
+	    ]
+	  \end{forest}
+	}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{columns}
+    \begin{column}[T]{0.55\textwidth}
+      {\rm *I [ [$_{VP}$ saw Bill] [Mario running]]}
+      \begin{block}
+	{Adjunct ACs}
+	\begin{itemize}
+	  \item Subjects must move to theme position
+	  \item $\eta$ is adjoined, therefore ignored by LA
+	  \item $\eta$ is interpreted as the conjunction of {\rm Mario} and {\rm running}
+	    \begin{itemize}
+	      \item This is an ill-formed interpretation.
+	      \item Possibly an i-within-i violation \parencite{vergnaud1974french}
+	    \end{itemize}
+	\end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.45\textwidth}
+      {\small
+	  \begin{forest}
+	    nice empty nodes,sn edges,baseline
+	    [$\alpha$
+	      [{\rm I}]
+	      [$\beta$
+		[Voice]
+		[$\gamma$
+		  [$\zeta$
+		    [{\rm see}]
+		    [{\rm Bill}]
+		  ]
+		  [$\eta$
+		    [{\rm Mario}]
+		    [Prog]
+		  ]
+		]
+	      ]
+	    ]
+	  \end{forest}
+	}
+    \end{column}
+  \end{columns}
+\end{frame}
+\end{document}
+
+

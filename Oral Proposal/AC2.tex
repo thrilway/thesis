@@ -1,0 +1,298 @@
+%        File: AC2.tex
+%     Created: Thu Jan 26 04:00 PM 2017 E
+% Last Change: Thu Jan 26 04:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{itemize}
+    \item \textcite{cinque1996pseudo}: Direct perception reports with ACC-ing clauses (ACs) are ambiguous.
+  \end{itemize}
+  \pause
+  {\rm I saw the boy running.}\\
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+  \onslide<3->{
+    Argument AC\\
+    {\small 
+      \begin{forest}
+	nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+	[VP
+	  [V\\see,align=center]
+	  [ProgP
+	    [DP[the boy,roof]]
+	    [Prog$^\prime$[running,roof]]
+	  ]
+	]
+      \end{forest}
+    }
+
+  }
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \onslide<4->{
+	Adjunct AC\\
+    {\small
+      \begin{forest}
+	nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+	calign primary angle=-30,calign secondary angle=70}
+	[VP
+	  [VP
+	    [V\\see,align=center]
+	    [DP[the boy,roof,name=theme]]
+	  ]
+	  [ProgP
+	    [DP[the boy,roof,name=ac subj]]
+	    [Prog$^\prime$[running,roof]]
+	  ]
+	]
+      \draw[->] (ac subj) to[out=south, in=south] (theme);
+      \end{forest}
+    }
+
+  }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{itemize}
+    \item Argument ACs: Subjects cannot move
+  \end{itemize}
+  {\rm *the boy was heard being slandered.}\\
+  {\tiny
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+      calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [TP,name=tp
+      [DP[the boy,roof,name=subj]]
+      [
+	[T]
+	[\ldots
+	  [,phantom]
+	  [VP
+	    [V\\hear,align=center]
+	    [ProgP
+	      [DP[the boy,roof,name=ac subj]]
+	      [Prog$^\prime$[being\\slandered,align=center,roof]]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (ac subj) to[out=south west, in=south] (subj);
+\end{forest}}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{itemize}
+    \item Argument ACs: Subjects cannot move
+  \end{itemize}
+  {\rm *the boy was heard being slandered.}\\
+  {\tiny
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+      calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [TP,tikz={\node [draw,red,inner sep=0,cross out,thick,fit to=tree]{};}name=tp
+      [DP[the boy,roof,name=subj]]
+      [
+	[T]
+	[\ldots
+	  [,phantom]
+	  [VP
+	    [V\\hear,align=center]
+	    [ProgP
+	      [DP[the boy,roof,name=ac subj]]
+	      [Prog$^\prime$[being\\slandered,align=center,roof]]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (ac subj) to[out=south west, in=south] (subj);
+\end{forest}}
+\begin{itemize}
+  \item Compare to {\rm The boy was heard to be slandered}
+\end{itemize}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{itemize}
+    \item Argument ACs: Subjects cannot move.
+  \end{itemize}
+  {\rm *the boy was heard being slandered.}\\
+  {\tiny
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+      calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [TP,name=tp
+      [DP[the boy,roof,name=subj]]
+      [
+	[T]
+	[\ldots
+	  [,phantom]
+	  [VP
+	    [VP
+	      [V\\hear,align=center]
+	      [DP[the boy,roof,name=theme]]
+	    ]
+	    [ProgP
+	      [DP[the boy,roof,name=ac subj]]
+	      [Prog$^\prime$[being\\slandered,align=center,roof]]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (ac subj) to[out=south, in=south] (theme);
+    \draw[->] (theme) to[out=south west, in=south] (subj);
+\end{forest}}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{itemize}
+    \item Adjunct ACs: Subjects must move.
+  \end{itemize}
+  \pause
+  {\rm *I saw the girl the boy running}
+  \pause
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+	  {\small
+	      \begin{forest}
+		nice empty nodes,sn edges,baseline,for tree={
+		  calign=fixed edge angles,
+		calign primary angle=-30,calign secondary angle=70}
+		[VP
+		  [VP
+		    [V\\see,align=center]
+		    [DP[the girl,roof,name=theme]]
+		  ]
+		  [ProgP
+		    [DP[the boy,roof,name=ac subj]]
+		    [Prog$^\prime$[running,roof]]
+		  ]
+		]
+	      \end{forest}
+	    }
+    \end{column}
+    \pause
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{itemize}
+	\item We just saw that Prog can license an overt subject.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{itemize}
+    \item Whether an AC ``licenses'' an overt subject depends on whether it is an argument or an adjunct.
+      \pause
+    \item Standard Minimalist syntax is ill-equipped to account for this
+      \pause
+      \begin{itemize}
+	\item If a DP is licensed at some point in a derivation, it stays licensed
+      \end{itemize}
+      \pause
+    \item In (modified) Label Theory, however \ldots  
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{itemize}
+	\item Argument ACs license subjects in order to be labelled
+	  \pause
+	  \begin{itemize}
+	      \pause
+	    \item Prog is a phase head. \parencite{harwood2015being}
+	      \pause
+	    \item It has $\varphi$-features.
+	      \pause
+	    \item Label($\beta$) = $\langle\varphi,\varphi\rangle$
+	      \pause
+	    \item $\beta$ gets an Operator-Variable intepretation
+	  \end{itemize}
+	  \pause
+	\item If DP has moved (/is invisible) Prog$_\varphi$ can't label.
+      \end{itemize}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \onslide<1->
+      {\small 
+      \begin{forest}
+	nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+	[$\gamma$
+	  [V\\see,align=center]
+	  [$\beta$
+	    [DP$_\varphi$[the boy,roof]]
+	    [$\alpha$
+	      [Prog$_\varphi$]
+	      [\ldots]
+	    ]
+	  ]
+	]
+      \end{forest}
+    }
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+  {What can this version of Label Theory get us?}
+  \begin{columns}
+    \begin{column}
+      [T]{0.5\textwidth}
+      \begin{itemize}
+	\item Adjunct ACs don't license subjects for interpretive reasons
+	  \begin{itemize}
+	    \item $\beta$ is ignored by LA.
+	    \item It gets a conjunctive interpretation.
+	    \item $\lambda x [\text{the\_boy}(x) \& \text{running}(x)]$
+	  \end{itemize}
+      \end{itemize}
+    \end{column}
+    \begin{column}
+      [T]{0.5\textwidth}
+      {\small 
+      \begin{forest}
+	nice empty nodes,sn edges,baseline,for tree={
+	  calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+	[$\delta$
+	  [VP[saw\\the girl,roof,align=center]]
+	  [$\beta$
+	    [DP$_\varphi$[the boy,roof]]
+	    [$\alpha$
+	      [Prog$_\varphi$]
+	      [\ldots]
+	    ]
+	  ]
+	]
+      \end{forest}
+    }
+    \end{column}
+  \end{columns}
+\end{frame}
+\end{document}

@@ -3,7 +3,7 @@
 % arara: pdflatex
 % arara: pdflatex
 
-\documentclass[12pt,letterpaper
+\documentclass[
   %handout
 ]{article}
 %\usetheme{CambridgeUS}
@@ -12,7 +12,7 @@
   backend=biber,
   style=authoryear-comp,
   useprefix=false,
-  sorting=ynt
+%  sorting=ynt
 ]{biblatex}
 
 \usepackage{beamerarticle}
@@ -27,6 +27,7 @@
 \usepackage{linguex}
 \usepackage{centernot}
 \usepackage{todonotes}
+%\usepackage{enumitem}
 \usepackage[normalem]{ulem}
 \useforestlibrary{linguistics}
 
@@ -37,12 +38,37 @@
       \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
     },
 }
-\forestset{
-  visible on/.style={
-    for current and ancestors={
-      /tikz/visible on={#1},
-      edge={/tikz/visible on={#1}}}}}
+%\forestset{
+%  visible on/.style={
+%    for current and ancestors={
+%      /tikz/visible on={#1},
+%      %edge={/tikz/invisible}
+%      %edge={/tikz/visible on={#1}}
+%    },
+%    for descendants={
+%      %/tikz/visible on={#1},
+%      %edge={/tikz/invisible}
+%      edge={/tikz/visible on={#1}}
+%    }
+%  }
+%  }
 
+\forestset{%
+  declare toks={no node before}{1},
+  declare toks={no edge before}{1},
+    not before/.style={
+    no node before=#1,
+    for children={
+      no edge before=#1,
+    }
+  },
+  bottom up/.style={% based on Qrrbrbirlbel's answer at http://tex.stackexchange.com/a/112895/
+      /tikz/visible on=<\forestoption{no node before}->,
+      /tikz/every label/.append style={visible on=<\forestoption{no node before}->},
+      /tikz/every edge label/.append style={visible on=<\forestoption{no edge before}->},
+      edge={/tikz/visible on=<\forestoption{no edge before}->},
+  }
+}
 \forestset{tree defaults/.style={for tree={parent anchor=south, child anchor=north},every tree node/.style={align=center,anchor=north},level/.style={sibling distance=50mm/#1},baseline}}
 
 \forestset{en/.style={parent anchor=center, child anchor=center}}
@@ -138,8 +164,11 @@
 }
 
 \begin{document}
-\section{}
 \frame[plain]{\titlepage}
+\begin{frame}[plain]
+	\frametitle{The plan for my proposal/thesis}
+	\tableofcontents
+\end{frame}
 \section[What is the Resultative Parameter?]{What is the Resultative Parameter?}
 \subfile{Intro}
 \section{How will I explain it?}
@@ -160,7 +189,9 @@
   {\rm Natalie hammered the metal flat.}\\
   {\footnotesize
   \begin{forest}
-    nice empty nodes,sn edges,baseline,
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
     [AgrOP
       [DP,[{\rm the metal},roof,name=obj]]
       [
@@ -225,7 +256,6 @@
     \item \alert<3>{Causativity}
   \end{enumerate}
 \end{frame}
-\subsection{Argument Sharing}
 \begin{frame}
   \frametitle{What is Argument Sharing?}
   When a single object/element/phrase/symbol/\textit{etc.} is an argument of multiple predicates.
@@ -248,449 +278,137 @@
     Monica$_i$ left [$ec_i$ angry].
 
 \end{frame}
+
+%\begin{frame}
+%  {What does Argument Sharing look like?}
+%  \begin{itemize}
+%    \item Where are the shared arguments?
+%    \item What are those $ec$s?
+%  \end{itemize}
+%  
+%\end{frame}
+%\subfile{UTAH}
+%\subfile{MTC}
+%\subfile{Causativity}
 \begin{frame}
-  {What does Argument Sharing look like?}
-  \begin{itemize}
-    \item Where are the shared arguments?
-    \item What are those $ec$s?
-  \end{itemize}
+  {What is causativity?}
   
+  \ex.\label{inch} {\rm the toast burned.}
+
+  \ex.\label{caus} {\rm Paul burned the toast.}
+
+  \begin{itemize}
+    \item \ref{caus} is a causative counterpart to \ref{inch}
+    \item For \textcite{pietroski2003small}, \ref{caus} describes an eventuality initiated by some action of Paul's and terminating in the eventuality described by \ref{inch}.
+      \begin{itemize}
+	\item This is quite similar (maybe identical) to Kratzer's (\citeyear{kratzer_building_2004}) discussion of resultatives.
+      \end{itemize}
+    \item $\llbracket res \rrbracket = \lambda e_s \lambda f_s . \textsc{cause}(f)(e)$
+  \end{itemize}
 \end{frame}
-\subfile{UTAH}
-\subfile{MTC}
-\subsubsection{Sideward Movement}
-\subfile{SWM}
-\subsection{Causativity}
-\subfile{Causativity}
-\subsection{Deriving Resultatives}
+\subfile{Struct}
+%\subsection{Deriving Resultatives}
+%\begin{frame}
+%  \frametitle{Deriving Resultatives}
+%  \ex.{\rm Natalie hammered the metal flat.}
+%
+%  \begin{columns}
+%    \begin{column}[T]{0.5\textwidth}
+%      \begin{block}
+%	{Build the adjunct}
+%	\begin{itemize}
+%	  \item<2-> Build the Small Clause
+%	  \item<3-> Merge(\textit{res}$^\circ$, $\alpha$)
+%	  \item<4-> Copy(DP) + Merge(DP, $\beta$)
+%	  \item<5-> Copy(DP)
+%	\end{itemize}
+%      \end{block}
+%    \only<5->{
+%      \begin{forest}
+%	[DP[{\rm the metal},roof]]
+%      \end{forest}}
+%    \end{column}
+%    \begin{column}[T]{0.5\textwidth}
+%      {\small
+%      \begin{forest}
+%	nice empty nodes,sn edges,baseline
+%	[$\gamma$,visible on=<4-5>
+%	  [DP,visible on=<4-5> [{\rm the metal},roof,visible on=<4-5>]]
+%	  [$\beta$,visible on=<4-5>
+%	    [\textit{res},visible on=<3-5>]
+%	    [$\alpha$,visible on=<3-5>
+%	      [DP [{\rm the metal},roof,visible on=<2-5>]]
+%	      [{\rm flat},visible on=<2-5>]
+%	    ]
+%	  ]
+%	]
+%      \end{forest}
+%    }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\begin{frame}
+%  \frametitle{Deriving Resultatives}
+%  \ex.{\rm Natalie hammered the metal flat.}
+%
+%  \begin{columns}
+%    \begin{column}[T]{0.5\textwidth}
+%      \begin{block}
+%	{Build the VP}
+%	\begin{itemize}
+%	  \item<2-> Merge({\rm hammer}, DP) 
+%	  \item<3-> Merge($\delta$, $\gamma$)
+%	  \item<4-> \dots
+%	\end{itemize}
+%      \end{block}
+%    \only<1>{
+%      \begin{forest}
+%	[DP[{\rm the metal},roof]]
+%      \end{forest}}
+%    \end{column}
+%    \begin{column}[T]{0.5\textwidth}
+%    {\small
+%      \begin{forest}
+%	nice empty nodes,sn edges,baseline
+%	[$\zeta$,visible on=<3->
+%	  [$\delta$,visible on=<3->
+%	    [{\rm hammer},visible on=<2->]
+%	    [DP,visible on=<2-> [{\rm the metal},visible on=<2->]]
+%	  ]
+%	  [$\gamma$,visible on=<3->]
+%	]
+%      \end{forest}
+%    }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%
 \begin{frame}
-  \frametitle{Deriving Resultatives}
-  \ex.{\rm Natalie hammered the metal flat.}
-
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Build the adjunct}
-	\begin{itemize}
-	  \item<2-> Build the Small Clause
-	  \item<3-> Merge(\textit{res}$^\circ$, $\alpha$)
-	  \item<4-> Copy(DP) + Merge(DP, $\beta$)
-	  \item<5-> Copy(DP)
-	\end{itemize}
-      \end{block}
-    \only<5->{
-      \begin{forest}
-	[DP[{\rm the metal},roof]]
-      \end{forest}}
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      {\small
-      \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[$\gamma$,visible on=<4-5>
-	  [DP,visible on=<4-5> [{\rm the metal},roof,visible on=<4-5>]]
-	  [$\beta$,visible on=<4-5>
-	    [\textit{res},visible on=<3-5>]
-	    [$\alpha$,visible on=<3-5>
-	      [DP [{\rm the metal},roof,visible on=<2-5>]]
-	      [{\rm flat},visible on=<2-5>]
-	    ]
-	  ]
-	]
-      \end{forest}
-    }
-    \end{column}
-  \end{columns}
+  {Summary}
+  \begin{itemize}
+    \item Resultatives involve a resP adjoined to a VP.
+    \item The theme DP originates in the resP and moves into the VP.
+  \end{itemize}
 \end{frame}
-\begin{frame}
-  \frametitle{Deriving Resultatives}
-  \ex.{\rm Natalie hammered the metal flat.}
-
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Build the VP}
-	\begin{itemize}
-	  \item<2-> Merge({\rm hammer}, DP) 
-	  \item<3-> Merge($\delta$, $\gamma$)
-	  \item<4-> \dots
-	\end{itemize}
-      \end{block}
-    \only<1>{
-      \begin{forest}
-	[DP[{\rm the metal},roof]]
-      \end{forest}}
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-    {\small
-      \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[$\zeta$,visible on=<3->
-	  [$\delta$,visible on=<3->
-	    [{\rm hammer},visible on=<2->]
-	    [DP,visible on=<2-> [{\rm the metal},visible on=<2->]]
-	  ]
-	  [$\gamma$,visible on=<3->]
-	]
-      \end{forest}
-    }
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \section{Compounding and Resultatives}
 \subfile{TCP}
+\begin{frame}
+  {Summary}
+
+  \begin{itemize}
+    \item Resultatives are strongly correlated with Bare Stem Compounding
+    \item Bare Stems require $cat_\emptyset$ heads.
+    \item Only languages with $cat_\emptyset$ heads allow Resultatives
+  \end{itemize}
+\end{frame}
 \section{Label Theory}
 \subfile{Labels}
 \section{Deriving the Resultative Parameter}
-\begin{frame}
-  {Recapping Resultatives and Compounding}
-
-  {\rm Natalie hammered the metal flat.}\\
-  {\small
-  \begin{forest}
-    nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-  calign primary angle=-30,calign secondary angle=70}
-    [$\kappa$
-      [DP,[{\rm the metal},roof,name=obj]]
-      [$\eta$
-	[AgrO]
-	[$\zeta$,calign=fixed edge angles,calign primary angle=-30,calign secondary angle=70
-	  [$\delta$
-	    [{\rm hammer}]
-	    [$\langle$DP$\rangle$,name=theme]
-	  ]
-	  [$\gamma$,calign=fixed edge angles,calign primary angle=-30,calign secondary angle=70
-	    [$\langle$DP$\rangle$,name=spec res]
-	    [$\beta$
-	      [res]
-	      [$\alpha$
-		[$\langle$DP$\rangle$,name=SC theme]
-		[{\rm flat}]
-	      ]
-	    ]
-	  ]
-	]
-      ]
-    ]
-    \draw[->] (SC theme) to[out=west, in=south] (spec res);
-    \draw[->] (spec res) to[out=south, in=south] (theme);
-    \draw[->] (theme) to[out=south west, in=south] (obj);
-  \end{forest}}
-\end{frame}
-\begin{frame}
-  {Recapping Resultatives and Compounding}
-  \begin{block}
-    {The Compounding Parameter}
-    \begin{itemize}
-      \item $\left\{ \text{*} \right\}$Resultatives is linked to $\left\{ \text{*} \right\}$bare-stem compounding.
-      \item Bare-stem compounding requires bare stems.
-      \item Bare stems require category heads without $\varphi$-features ($n_\emptyset$, $adj_\emptyset$, \textit{etc}).
-      \item English-type languages have $adj_\emptyset$ (and maybe $adj_\varphi$).
-      \item French-type languages have only $adj_\varphi$
-    \end{itemize}
-  \end{block}
-\end{frame}
-\begin{frame}
-  So now let's show:
-  \begin{enumerate}
-    \item<2-> Resultatives can be derived with $adj_\emptyset$
-    \item<3> Resultatives cannot be derived with $adj_\varphi$
-  \end{enumerate}
-\end{frame}
-\begin{frame}
-  {English-type languages: \checkmark Resultatives}
-
-  {\rm hammer the metal flat}
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Deriving the adjunct}
-	\begin{itemize}
-	  \item<2-> Build the Small Clause.
-	  \item<3-> Merge(res, $\beta$)
-	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
-	  \item<6-> Transfer($\beta$)
-	    \begin{itemize}
-	      \item res is a phase head.
-	      \item Label($\beta$) = Label($\alpha$)
-	      \item $\beta$ converges.
-	    \end{itemize}
-	  \item<7-> Copy(DP)
-	\end{itemize}
-      \end{block}
-      \only<7->{\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline
-	  [DP$_\varphi$[{\rm the metal},roof]]
-	\end{forest}
-      }
-      \only<4-5>{\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline
-	  [DP$_\varphi$[{\rm the metal},roof]]
-	\end{forest}
-      }
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      {\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline,for tree={
-	  calign=fixed edge angles,
-	  calign primary angle=-30,calign secondary angle=50}
-	  [$\delta$,visible on=<5->
-	    [DP$_\varphi$,visible on=<5->[{\rm the metal},roof,visible on=<5->]]
-	    [$\gamma$,visible on=<5->
-	      [res,visible on=<3->]
-	      [$\beta$,visible on=<3->
-		[DP$_\varphi$,visible on=<2->[{\rm the metal},name=SC DP,roof,visible on=<2->]]
-		[$\alpha$,visible on=<2->
-		  [adj$_\emptyset$,visible on=<2->]
-		  [{\rm flat},visible on=<2->]
-		]
-	      ]
-	    ]
-	  ]
-	  \only<6->{
-	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
-	}
-	\end{forest}
-      }
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-  {English-type languages: \checkmark Resultatives}
-
-  {\rm hammer the metal flat}
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Deriving the VP}
-	\begin{itemize}
-	  \item<2-> Merge(DP, {\rm hammer})
-	  \item<3-> Merge($\zeta$, $\delta$)
-	  \item<4-> Merge(AgrO, $\eta$)
-	  \item<5-> Copy(DP) + Merge(DP, $\kappa$)
-	  \item<6-> \ldots
-	\end{itemize}
-      \end{block}
-      \only<1-3>{\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline
-	  [$\delta$
-	    [DP$_\varphi$]
-	    [$\gamma$
-	      [res]
-	      [($\beta$]
-	    ]
-	  ]
-	\end{forest}
-      }
-      \only<1-2>{\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline
-	  [DP$_\varphi$[{\rm the metal},roof]]
-	\end{forest}
-      }
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      {\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-  calign primary angle=-30,calign secondary angle=50}
-	  [$\mu$,visible on=<5->
-	    [DP$_\varphi$,visible on=<5->[{\rm the metal},roof,visible on=<5->]]
-	    [$\kappa$,visible on=<5->
-	      [AgrO$_\varphi$,visible on=<4->]
-	      [$\eta$,visible on=<4->
-		[$\zeta$,visible on=<3->
-		  [DP$_\varphi$,visible on=<2->[{\rm the metal},roof,visible on=<2->]]
-		  [{\rm hammer},visible on=<2->]
-		]
-		[$\delta$\\\ldots,align=center,visible on=<3->
-		  %[DP$_\varphi$[{\rm the metal},roof]]
-		  %[$\gamma$
-		  %  [res]
-		  %  [$\beta$]
-		  ]
-		]
-	      ]
-	    ]
-	\end{forest}
-      }
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-  So now let's show:
-  \begin{enumerate}
-    \item Resultatives can be derived with $adj_\emptyset$
-      \begin{itemize}
-	\item \alert{Shown}
-      \end{itemize}
-    \item Resultatives cannot be derived with $adj_\varphi$
-  \end{enumerate}
-\end{frame}
-\begin{frame}
-  {French-type languages: *Resultatives}
-  {Derivation Attempt 1: Just like English-type}
-
-  {\rm *marcher les jambes raides}
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{block}
-	{Deriving the adjunct}
-	\begin{itemize}
-	  \item<2-> Build the Small Clause.
-	  \item<3-> Merge(res, $\beta$)
-	  \item<4-> Copy(DP) + Merge(DP, $\gamma$)
-	  \item<6-> Transfer($\beta$)
-	    \begin{itemize}
-	      \item res is a phase head.
-	      \item Lower DP copy is invisible
-	      \item adj$_\varphi$ is too weak to label without agreement
-	      \item Label($\beta$) is undefined
-	      \item *CRASH*
-	    \end{itemize}
-	\end{itemize}
-      \end{block}
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      {\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline,for tree={
-	  calign=fixed edge angles,
-	  calign primary angle=-30,calign secondary angle=50}
-	  [$\delta$,visible on=<5->
-	    [DP$_\varphi$,visible on=<5->[{\rm les jambes},roof,visible on=<5->]]
-	    [$\gamma$,visible on=<5->
-	      [res,visible on=<3->]
-	      [$\beta$,visible on=<3->
-		[DP$_\varphi$,visible on=<2->[{\rm les jambes},name=SC DP,roof,visible on=<2->]]
-		[$\alpha$,visible on=<2->
-		  [adj$_\varphi$,visible on=<2->]
-		  [{\rm raides},visible on=<2->]
-		]
-	      ]
-	    ]
-	  ]
-	  \only<6->{
-	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
-	}
-	\end{forest}
-      }
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-  So now let's show:
-  \begin{enumerate}
-    \item Resultatives can be derived with $adj_\emptyset$
-      \begin{itemize}
-	\item Shown
-      \end{itemize}
-    \item Resultatives cannot be derived with $adj_\varphi$
-      \begin{itemize}
-	\item \alert{Not shown yet}
-      \end{itemize}
-  \end{enumerate}
-\end{frame}
-\begin{frame}
-  {French-type languages: *Resultatives}
-  {Derivation Attempt 2}
-
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      {\rm *marcher les jambes raides}
-      \begin{block}
-	{Deriving the adjunct}
-	\begin{itemize}
-	  \item <2-> Build the Small Clause.
-	  \item <3-> Merge(res, $\beta$)
-	  \item <4-> Transfer($\beta$)
-	    \begin{itemize}
-	      \item res is a phase head.
-	      \item DP and $\alpha$ agree for $\varphi$.
-	      \item Label($\beta$)= $\langle\varphi,\varphi\rangle$
-	      \item $\beta$ converges.
-	    \end{itemize}
-	\end{itemize}
-      \end{block}
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      {\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline,for tree={
-	  calign=fixed edge angles,
-	  calign primary angle=-30,calign secondary angle=50}
-	    [$\gamma$,visible on=<3->
-	      [res,visible on=<3->]
-	      [$\beta$,visible on=<3->
-		[DP$_\varphi$,visible on=<2->[{\rm les jambes},name=SC DP,roof,visible on=<2->]]
-		[$\alpha$,visible on=<2->
-		  [adj$_\varphi$,visible on=<2->]
-		  [{\rm raides},visible on=<2->]
-		]
-	      ]
-	    ]
-	  \only<4->{
-	  \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
-	}
-	\end{forest}
-      }
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-  {French-type languages: *Resultatives}
-  {Derivation Attempt 2}
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      {\rm *marcher les jambes raides}
-      \begin{block}
-	{Deriving the VP}
-	\begin{itemize}
-	  \item<2-> Merge({\rm march-}, DP)
-	    \begin{itemize}
-	      \item<3-> DP is unavailable
-	      \item<4->  *CRASH*
-	    \end{itemize}
-	\end{itemize}
-      \end{block}
-      {\small
-	\begin{forest}
-	  nice empty nodes,sn edges,baseline
-	    [$\gamma$
-	      [res]
-	      [($\beta$]
-	    ]
-	\end{forest}
-      }
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{forest}
-	[*,visible on=<4->
-	  [{\rm march-},visible on=<2->]
-	  [DP$_\varphi$,visible on=<2->]
-	]
-      \end{forest}
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-  So now let's show:
-  \begin{enumerate}
-    \item Resultatives can be derived with $adj_\emptyset$
-      \begin{itemize}
-	\item Shown
-      \end{itemize}
-    \item Resultatives cannot be derived with $adj_\varphi$
-      \begin{itemize}
-	\item \alert{Shown}\footnote{I think}
-      \end{itemize}
-  \end{enumerate}
+\subfile{PutTogether}
+\section{Conclusion and Next Steps}
+\subfile{Conclusion}
+\begin{frame}[t,allowframebreaks]
+  \frametitle{References}
+  \printbibliography
 \end{frame}
 \end{document}

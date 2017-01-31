@@ -11,42 +11,6 @@
 \begin{document}
 \begin{frame}
   {Sideward Movement}
-
-  \begin{columns}
-    \begin{column}
-      [T]{0.5\textwidth}
-      \begin{block}
-	{Can we move sideward?}
-	\begin{itemize}
-	  \item<1-> My current analysis of argument sharing requires sideward movement (SWM)
-	  \item<2-> Standard syntactic theory disallows SWM
-	  \item<3-> \textcite{nunes2001sideward} argues that SWM ought to be allowed.
-	\end{itemize}
-      \end{block}
-    \end{column}
-    \begin{column}
-      [T]{0.5\textwidth}
-      {\rm Amy ate the fish raw}\\
-      {\small
-      \begin{forest}
-	nice empty nodes,sn edges,baseline
-	[VP
-	  [VP
-	    [V\\{\rm eat},align=center]
-	    [DP[{\rm the fish},roof,name=v theme]]
-	  ]
-	  [SC
-	    [DP[{\rm the fish},roof,name=a theme]]
-	    [Adj\\{\rm raw},align=center]
-	  ]
-	]
-	\draw[->] (a theme) to[out=south, in=south] (v theme);
-      \end{forest}}
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-  {Sideward Movement}
   \begin{columns}
     \begin{column}
       [T]{0.7\textwidth}
@@ -178,10 +142,10 @@
       [T]{0.5\textwidth}
       {\small
         \begin{forest}
-	nice empty nodes,sn edges,baseline
+	nice empty nodes,sn edges,baseline,for tree={bottom up}
         [AgrOP,not before=3
           [DP,not before=3[{\rm the fish},roof,not before=3]]
-          [
+          [,not before=3
             [AgrO,not before=3]
             [VP,not before=3
               [VP,not before=2

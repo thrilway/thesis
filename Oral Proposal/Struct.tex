@@ -66,7 +66,8 @@
   \begin{itemize}
     \item If resP adjoins to VP\ldots
   \end{itemize}
-    \only<1>{
+  \only<0|handout:1>{(Structure on next slide)}
+    \only<1|handout:0>{
 	\begin{forest}
       nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -143,35 +144,37 @@
 %\subsubsection{Two further assumptions}
 \begin{frame}
   \frametitle{Two further assumptions}
-  \begin{enumerate}
-    \item<+-> \textit{res} is a phase head.
-      \begin{itemize}
-	\item<+-> resP, like VoiceP, is thematically complete.
+  \pause
+  \begin{enumerate}[<+->]
+    \item \textit{res} is a phase head.
+      \begin{itemize}[<+->]
+	\item resP, like VoiceP, is thematically complete.
       \end{itemize}
-    \item<+-> The theme raises to [Spec res]. 
-      \begin{itemize}
-	\item<+-> Follows from resP being a phase.
+    \item The theme raises to [Spec res]. 
+      \begin{itemize}[<+->]
+	\item Follows from resP being a phase.
       \end{itemize}
   \end{enumerate}
+  \pause
   {\small
   \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
-  calign primary angle=-30,calign secondary angle=70}
+    calign primary angle=-30,calign secondary angle=70}
     [VP
       [VP
-	[V\\{\rm hammer},align=center]
-	[DP$_i$[{\rm the metal},roof,name=v theme]]
+        [V\\{\rm hammer},align=center]
+        [DP$_i$[{\rm the metal},roof,name=v theme]]
       ]
       [resP
-	[$\langle\text{DP}_i\rangle$,name=spec res]
-	[
-	  [res]
-	  [AdjP
-	    [$\langle\text{DP}_i\rangle$,name=a theme]
-	    [Adj\\{\rm flat},align=center]
-	  ]
-	]
+        [$\langle\text{DP}_i\rangle$,name=spec res]
+        [
+          [res]
+          [AdjP
+            [$\langle\text{DP}_i\rangle$,name=a theme]
+            [Adj\\{\rm flat},align=center]
+          ]
+        ]
       ]
     ]
     \draw[->] (a theme) to[out=south west, in=south east] (spec res);

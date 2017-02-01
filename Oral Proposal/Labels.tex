@@ -37,37 +37,37 @@
     \item There are three relevant classes of SOs for LA:
   \end{itemize}
   \begin{overprint}
-    \onslide<3>
+    \onslide<3|handout:1>
     \begin{block}
       {(i) Head-Phrase Structures}
-      \begin{itemize}
-	\item Label($\left\{ \text{X, YP} \right\}$) = X
+      \begin{itemize}[<+->]
+        \item Label($\left\{ \text{X, YP} \right\}$) = X
       \end{itemize}
     \end{block}
-    \onslide<4-5>
+    \onslide<4-5|handout:2>
     \begin{block}
       {(ii) Head-Head Structures}
-      \begin{itemize}
-	\item<4-5> Label($\left\{ \text{X, }\textsc{root} \right\}$) = X
-	  \begin{itemize}
-	    \item<4-5> Roots cannot label
-	  \end{itemize}
-	\item<5> Undefined otherwise
+      \begin{itemize}[<+->]
+        \item Label($\left\{ \text{X, }\textsc{root} \right\}$) = X
+          \begin{itemize}
+            \item Roots cannot label
+          \end{itemize}
+        \item Undefined otherwise
       \end{itemize}
     \end{block}
-    \onslide<6-8>
+    \onslide<6-8|handout:3>
     \begin{block}
       {(iii) Phrase-Phrase Structures}
-      \begin{itemize}
-	\item<6-8> Label($\left\{ \text{XP}, \langle\text{YP}\rangle \right\}$) = Label(XP)
-	  \begin{itemize}
-	    \item<6-8> Lower copies are invisible to LA.
-	  \end{itemize}
-	\item<7-8> Label($\left\{ \text{XP}_F, \text{YP}_F \right\}$)= $\langle\text{F,F}\rangle$
-	  \begin{itemize}
-	    \item<7-8> Iff XP and YP agree for some feature F
-	  \end{itemize}
-	\item <8> Undefined otherwise
+      \begin{itemize}[<+->]
+        \item Label($\left\{ \text{XP}, \langle\text{YP}\rangle \right\}$) = Label(XP)
+          \begin{itemize}
+            \item Lower copies are invisible to LA.
+          \end{itemize}
+        \item Label($\left\{ \text{XP}_F, \text{YP}_F \right\}$)= $\langle\text{F,F}\rangle$
+          \begin{itemize}
+            \item Iff XP and YP agree for some feature F
+          \end{itemize}
+        \item Undefined otherwise
       \end{itemize}
     \end{block}
   \end{overprint}
@@ -85,6 +85,7 @@
 	    \begin{itemize}
 	      \item English T$_\varphi$ needs a subject for labelling.
 	      \item Italian T$_{\langle \varphi,\varphi\rangle}$ does not.
+        \item T$_\emptyset$, also does not.
 	    \end{itemize}
 	\end{itemize}
     \end{itemize}

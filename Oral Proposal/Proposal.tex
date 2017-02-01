@@ -4,10 +4,18 @@
 % arara: pdflatex
 
 \documentclass[
-  %handout
+  handout
 ]{beamer}
-\usetheme{CambridgeUS}
-\usecolortheme{crane}
+%\usetheme{CambridgeUS}
+%\usetheme{Berkeley}
+%\usetheme{Hannover}
+\usetheme{Madrid}
+%\usetheme{Montpellier}
+%\usetheme{Pittsburgh}
+%\usetheme{Singapore}
+%\usecolortheme{crane}
+\usecolortheme{seagull}
+
 \usepackage[
   backend=biber,
   style=authoryear-comp,
@@ -28,7 +36,19 @@
 \usepackage{todonotes}
 %\usepackage{enumitem}
 \usepackage[normalem]{ulem}
+
+\usepackage{pgfpages}
+\pgfpagesuselayout{4 on 1}[letterpaper,landscape,
+border shrink=5mm
+]
+
+\pgfpageslogicalpageoptions{1}{border code=\pgfstroke}
+\pgfpageslogicalpageoptions{2}{border code=\pgfstroke}
+\pgfpageslogicalpageoptions{3}{border code=\pgfstroke}
+\pgfpageslogicalpageoptions{4}{border code=\pgfstroke}
+
 \useforestlibrary{linguistics}
+
 
 \tikzset{
     invisible/.style={opacity=0,text opacity=0},
@@ -247,13 +267,13 @@
   \frametitle{Interpretive properties}
   \ex.
   \a. {\rm Natalie hammered the metal flat.}
-  \b. There was a hammering event $e$, Natalie was the agent of $e$, and \alert<2>{the metal} was the theme of $e$.\\
-  $e$ \alert<3>{caused} a flatness state $s$, and \alert<2>{the metal} was the theme of $s$.
+  \b. There was a hammering event $e$, Natalie was the agent of $e$, and \alert<2|handout:0>{the metal} was the theme of $e$.\\
+  $e$ \alert<3|handout:0>{caused} a flatness state $s$, and \alert<2>{the metal} was the theme of $s$.
 
   \pause
   \begin{enumerate}
-    \item \alert<2>{Argument Sharing}
-    \item \alert<3>{Causativity}
+    \item \alert<2|handout:0>{Argument Sharing}
+    \item \alert<3|handout:0>{Causativity}
   \end{enumerate}
 \end{frame}
 \begin{frame}

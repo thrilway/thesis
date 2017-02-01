@@ -4,6 +4,7 @@
 % arara: pdflatex
 
 \documentclass[
+  12pt,letterpaper
   %handout
 ]{article}
 %\usetheme{CambridgeUS}
@@ -15,7 +16,9 @@
 %  sorting=ynt
 ]{biblatex}
 
+
 \usepackage{beamerarticle}
+\usepackage[margin=1in]{geometry}
 \usepackage{subfiles}
 \usepackage{stmaryrd}
 \usepackage[]{amsmath}
@@ -186,18 +189,19 @@
     \setcounter{enumi}{0}
     \item A structural analysis of resultatives.
   \end{enumerate}
-  {\rm Natalie hammered the metal flat.}\\
-  {\footnotesize
+  {\rm Natalie hammered the metal flat.}
+  
+  {\small
   \begin{forest}
-    nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-  calign primary angle=-30,calign secondary angle=70}
+    nice empty nodes,sn edges,baseline%,for tree={
+%    calign=fixed edge angles,
+%  calign primary angle=-30,calign secondary angle=70}
     [AgrOP
       [DP,[{\rm the metal},roof,name=obj]]
       [
 	[AgrO]
 	[VP
-	  [VP,calign=center
+	  [VP%,calign=center
 	    [{\rm hammer}]
 	    [$\langle$DP$\rangle$,name=theme]
 	  ]
@@ -247,7 +251,7 @@
   \frametitle{Interpretive properties}
   \ex.
   \a. {\rm Natalie hammered the metal flat.}
-  \b. There was a hammering event $e$, Natalie was the agent of $e$, and \alert<2>{the metal} was the theme of $e$.\\
+  \b. There was a hammering event $e$, Natalie was the agent of $e$, and \alert<2>{the metal} was the theme of $e$.\\<all>
   $e$ \alert<3>{caused} a flatness state $s$, and \alert<2>{the metal} was the theme of $s$.
 
   \pause
@@ -263,18 +267,18 @@
 \begin{frame}
   \frametitle{Non-resultative Argument Sharing}
   \pause
-  \ex. \textbf{Control}\\
-    {\rm Alice wants to win.}\\
+  \ex. \textbf{Control}\\<all>
+    {\rm Alice wants to win.}\\<all>
     Alice$_i$ wants [$ec_i$ to win]
 
   \pause
-\ex. \textbf{Parasitic Gaps}\\
-    {\rm Who did you discuss without meeting?}\\
+\ex. \textbf{Parasitic Gaps}\\<all>
+    {\rm Who did you discuss without meeting?}\\<all>
     Who$_i$ did you [[discuss $ec_i$] [without meeting $ec_i$]]?
     
     \pause
-    \ex. \textbf{Depictives}\\
-    {\rm Monica left angry.}\\
+    \ex. \textbf{Depictives}\\<all>
+    {\rm Monica left angry.}\\<all>
     Monica$_i$ left [$ec_i$ angry].
 
 \end{frame}
@@ -299,10 +303,12 @@
 
   \begin{itemize}
     \item \ref{caus} is a causative counterpart to \ref{inch}
+      \pause
     \item For \textcite{pietroski2003small}, \ref{caus} describes an eventuality initiated by some action of Paul's and terminating in the eventuality described by \ref{inch}.
       \begin{itemize}
 	\item This is quite similar (maybe identical) to Kratzer's (\citeyear{kratzer_building_2004}) discussion of resultatives.
       \end{itemize}
+      \pause
     \item $\llbracket res \rrbracket = \lambda e_s \lambda f_s . \textsc{cause}(f)(e)$
   \end{itemize}
 \end{frame}
@@ -390,7 +396,7 @@
     \item The theme DP originates in the resP and moves into the VP.
   \end{itemize}
 \end{frame}
-\section{Compounding and Resultatives}
+\section{Compounding and resultatives}
 \subfile{TCP}
 \begin{frame}
   {Summary}
@@ -405,8 +411,13 @@
 \subfile{Labels}
 \section{Deriving the Resultative Parameter}
 \subfile{PutTogether}
-\section{Conclusion and Next Steps}
+\section{Conclusion and next steps}
 \subfile{Conclusion}
+\begin{frame}[plain]
+  \begin{center}
+    {\Huge Thank you}
+  \end{center}
+\end{frame}
 \begin{frame}[t,allowframebreaks]
   \frametitle{References}
   \printbibliography

@@ -1,0 +1,268 @@
+%        File: Content.tex
+%     Created: Wed Feb 01 01:00 PM 2017 E
+% Last Change: Wed Feb 01 01:00 PM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[Proposal]{subfiles}
+
+\begin{document}
+\frame[plain]{\titlepage}
+\begin{frame}[plain]
+	\frametitle{The plan for my proposal/thesis}
+	\tableofcontents
+\end{frame}
+\section[What is the Resultative Parameter?]{What is the Resultative Parameter?}
+\subfile{Intro}
+\section{How will I explain it?}
+\begin{frame}
+  \frametitle{Ingredients of an explanation}
+  \begin{enumerate}
+    \item A structural analysis of resultatives.
+    \item The surface phenomena associated with \{*\}Resultatives.
+    \item A way of linking the first two ingredients.
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Ingredients of an explanation}
+  \begin{enumerate}
+    \setcounter{enumi}{0}
+    \item A structural analysis of resultatives.
+  \end{enumerate}
+  {\rm Natalie hammered the metal flat.}\\
+  {\footnotesize
+  \begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+    [AgrOP
+      [DP,[{\rm the metal},roof,name=obj]]
+      [
+	[AgrO]
+	[VP
+	  [VP,calign=center
+	    [{\rm hammer}]
+	    [$\langle$DP$\rangle$,name=theme]
+	  ]
+	  [resP
+	    [$\langle$DP$\rangle$,name=spec res]
+	    [
+	      [res]
+	      [SC
+		[$\langle$DP$\rangle$,name=SC theme]
+		[{\rm flat}]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+    \draw[->] (SC theme) to[out=west, in=south] (spec res);
+    \draw[->] (spec res) to[out=south, in=south] (theme);
+    \draw[->] (theme) to[out=south west, in=south] (obj);
+  \end{forest}}
+\end{frame}
+\begin{frame}
+  \frametitle{Ingredients of an explanation}
+  \begin{enumerate}
+    \setcounter{enumi}{1}      
+    \item The surface phenomena associated with \{*\}Resultatives.
+      \begin{itemize}
+	\item What learnable pattern correlates with resultatives?
+        \item Resultatives are strongly correlated with Productive Bare-Stem Compounding. \parencite[][and following]{snyder1995language}
+	\item I propose that Bare-Stem Compounding is allowed iff a language's lexicon has Bare Stems.
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Ingredients of an explanation}
+  \begin{enumerate}
+    \setcounter{enumi}{2}  
+    \item A way of linking the first two ingredients.
+      \begin{itemize}
+	\item A modified version of Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) Label Theory
+	\item Resultative SP is derivable only if the secondary predicate is instantiated by a bare stem.
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+\section{What are resultatives?}
+\begin{frame}
+  \frametitle{Interpretive properties}
+  \ex.
+  \a. {\rm Natalie hammered the metal flat.}
+  \b. There was a hammering event $e$, Natalie was the agent of $e$, and \alert<2|handout:0>{the metal} was the theme of $e$.\\
+  $e$ \alert<3|handout:0>{caused} a flatness state $s$, and \alert<2|handout:0>{the metal} was the theme of $s$.
+
+  \pause
+  \begin{enumerate}
+    \item \alert<2|handout:0>{Argument Sharing}
+    \item \alert<3|handout:0>{Causativity}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{What is Argument Sharing?}
+  When a single object/element/phrase/symbol/\textit{etc.} is an argument of multiple predicates.
+\end{frame}
+\begin{frame}
+  \frametitle{Non-resultative Argument Sharing}
+  \pause
+  \ex. \textbf{Control}\\
+    {\rm Alice wants to win.}\\
+    Alice$_i$ wants [$ec_i$ to win]
+
+  \pause
+\ex. \textbf{Parasitic Gaps}\\
+    {\rm Who did you discuss without meeting?}\\
+    Who$_i$ did you [[discuss $ec_i$] [without meeting $ec_i$]]?
+    
+    \pause
+    \ex. \textbf{Depictives}\\
+    {\rm Monica left angry.}\\
+    Monica$_i$ left [$ec_i$ angry].
+
+\end{frame}
+
+%\begin{frame}
+%  {What does Argument Sharing look like?}
+%  \begin{itemize}
+%    \item Where are the shared arguments?
+%    \item What are those $ec$s?
+%  \end{itemize}
+%  
+%\end{frame}
+%\subfile{UTAH}
+%\subfile{MTC}
+%\subfile{Causativity}
+\begin{frame}
+  {What is causativity?}
+  
+  \ex.\label{inch} {\rm the toast burned.}
+
+  \ex.\label{caus} {\rm Paul burned the toast.}
+
+  \begin{itemize}
+    \item \ref{caus} is a causative counterpart to \ref{inch}
+      \pause
+    \item For \textcite{pietroski2003small}, \ref{caus} describes an eventuality initiated by some action of Paul's and terminating in the eventuality described by \ref{inch}.
+      \begin{itemize}
+	\item This is quite similar (maybe identical) to Kratzer's (\citeyear{kratzer_building_2004}) discussion of resultatives.
+      \end{itemize}
+      \pause
+    \item $\llbracket res \rrbracket = \lambda e_s \lambda f_s . \textsc{cause}(f)(e)$
+  \end{itemize}
+\end{frame}
+\subfile{Struct}
+%\subsection{Deriving Resultatives}
+%\begin{frame}
+%  \frametitle{Deriving Resultatives}
+%  \ex.{\rm Natalie hammered the metal flat.}
+%
+%  \begin{columns}
+%    \begin{column}[T]{0.5\textwidth}
+%      \begin{block}
+%	{Build the adjunct}
+%	\begin{itemize}
+%	  \item<2-> Build the Small Clause
+%	  \item<3-> Merge(\textit{res}$^\circ$, $\alpha$)
+%	  \item<4-> Copy(DP) + Merge(DP, $\beta$)
+%	  \item<5-> Copy(DP)
+%	\end{itemize}
+%      \end{block}
+%    \only<5->{
+%      \begin{forest}
+%	[DP[{\rm the metal},roof]]
+%      \end{forest}}
+%    \end{column}
+%    \begin{column}[T]{0.5\textwidth}
+%      {\small
+%      \begin{forest}
+%	nice empty nodes,sn edges,baseline
+%	[$\gamma$,visible on=<4-5>
+%	  [DP,visible on=<4-5> [{\rm the metal},roof,visible on=<4-5>]]
+%	  [$\beta$,visible on=<4-5>
+%	    [\textit{res},visible on=<3-5>]
+%	    [$\alpha$,visible on=<3-5>
+%	      [DP [{\rm the metal},roof,visible on=<2-5>]]
+%	      [{\rm flat},visible on=<2-5>]
+%	    ]
+%	  ]
+%	]
+%      \end{forest}
+%    }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\begin{frame}
+%  \frametitle{Deriving Resultatives}
+%  \ex.{\rm Natalie hammered the metal flat.}
+%
+%  \begin{columns}
+%    \begin{column}[T]{0.5\textwidth}
+%      \begin{block}
+%	{Build the VP}
+%	\begin{itemize}
+%	  \item<2-> Merge({\rm hammer}, DP) 
+%	  \item<3-> Merge($\delta$, $\gamma$)
+%	  \item<4-> \dots
+%	\end{itemize}
+%      \end{block}
+%    \only<1>{
+%      \begin{forest}
+%	[DP[{\rm the metal},roof]]
+%      \end{forest}}
+%    \end{column}
+%    \begin{column}[T]{0.5\textwidth}
+%    {\small
+%      \begin{forest}
+%	nice empty nodes,sn edges,baseline
+%	[$\zeta$,visible on=<3->
+%	  [$\delta$,visible on=<3->
+%	    [{\rm hammer},visible on=<2->]
+%	    [DP,visible on=<2-> [{\rm the metal},visible on=<2->]]
+%	  ]
+%	  [$\gamma$,visible on=<3->]
+%	]
+%      \end{forest}
+%    }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%
+\begin{frame}
+  {Summary}
+  \begin{itemize}
+    \item Resultatives involve a resP adjoined to a VP.
+    \item The theme DP originates in the resP and moves into the VP.
+  \end{itemize}
+\end{frame}
+\section{Compounding and resultatives}
+\subfile{TCP}
+\begin{frame}
+  {Summary}
+
+  \begin{itemize}
+    \item Resultatives are strongly correlated with Bare Stem Compounding
+    \item Bare Stems require $cat_\emptyset$ heads.
+    \item Only languages with $cat_\emptyset$ heads allow Resultatives
+  \end{itemize}
+\end{frame}
+\section{Label Theory}
+\subfile{Labels}
+\section{Deriving the Resultative Parameter}
+\subfile{PutTogether}
+\section{Conclusion and next steps}
+\subfile{Conclusion}
+\begin{frame}[plain]
+  \begin{center}
+    {\Huge Thank you}
+  \end{center}
+\end{frame}
+\begin{frame}[t,allowframebreaks]
+  \frametitle{References}
+  \printbibliography
+\end{frame}
+\end{document}
+
+

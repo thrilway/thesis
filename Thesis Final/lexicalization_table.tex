@@ -1,0 +1,28 @@
+%        File: lexicalization_table.tex
+%     Created: Mon Feb 13 09:00 AM 2017 E
+% Last Change: Mon Feb 13 09:00 AM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass{standalone}
+
+\usepackage{multirow}
+\usepackage[]{amsmath}
+
+\begin{document}
+\begin{tabular}[t]{lcccc}
+  \multirow{3}{*}{\textbf{Spanish}}& 
+  \multicolumn{3}{c}{
+    $\underbrace{\textsc{Proc}\quad\textsc{Res}\quad\textsc{Pred}}_{}$
+  }&  \textsc{A}\\
+  & \multicolumn{3}{c}{\textit{hacer}} & \textit{peligroso}\\
+  & \multicolumn{3}{c}{`make'} & `dangerous'\\
+\multirow{2}*{\textbf{English}} & \textsc{Proc} & \multicolumn{2}{c}{$\underbrace{\textsc{Res}\quad\textsc{Pred}}_{}$} & \textsc{A}\\
+  & \textit{pound} & \multicolumn{2}{c}{$\emptyset$} & \textit{flat}
+\end{tabular}
+
+\end{document}
+
+

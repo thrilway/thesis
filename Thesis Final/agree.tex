@@ -28,5 +28,136 @@ The same, then, is true for Agree, which iteratively considers each substructure
 
 Because labeling is sometimes contingent on agreement, the calculation of the latter must precede that of the former.
 Assuming both Agree and Label occur after narrow syntax and before transfer to CI, this leaves us with two possibilities for ordering the two operations.
-Either (i) individual iterations of Agree and Label are ordered with respect to each other forming a single Agree+Label cycle or (ii) Agree and Label each has its own cycle, and those cycles are ordered with respect to each other  
+Either (i) individual iterations of Agree and Label are ordered with respect to each other forming a single Agree+Label cycle or (ii) Agree and Label each has its own cycle, and those cycles are ordered with respect to each other.
+To decide between these two alternatives we can consider how Agree and Label interact with other components of grammar, specifically the SM and CI interfaces.
+By hypothesis, Label feeds interpretation at CI but not at SM.
+Agree, on the other hand, feeds Label and interpretation at SM.
+This asymmetry points to the second alternative, where narrow syntax feeds an Agree cycle, which feeds SM interpretation and Label as in \ref{fig:SepCycles}.
+The first alternative, in which Agree and Label are bundled into a single cycle as shown in \ref{fig:OneCycle}, predicts that both Label and Agree feed both interfaces, which is not what we seem to see in the data. 
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \node (syn) at (1,3) {Narrow Syntax};
+    \node[draw,rounded corners] (agree) at (1,2) {Agree};
+    \node[draw,rounded corners] (label) at (1,1) {Label};
+    \node (SM) at (0,1.5) {SM};
+    \node (CI) at (1,0) {CI};
+    \path[->](syn)	edge			(agree)
+    (agree)		edge [loop right]	()
+	   (agree.south)	edge			(label)
+			  edge [bend left]	(SM)
+	  (label)		edge [loop right]	()
+			  edge			(CI);
+  \end{tikzpicture}
+  \caption{Agree and Label as separate cycles}
+  \label{fig:SepCycles}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \node (syn) at (1,3) {Narrow Syntax};
+    \node[draw,rounded corners] (agree) at (1,2) {Agree};
+    \node[draw,rounded corners] (label) at (1,1) {Label};
+    \node (SM) at (0,0.25) {SM};
+    \node (CI) at (1,0) {CI};
+    \path[->](syn)edge 		(agree)
+    (agree)	edge		(label)
+    (label.south)	edge		(CI)
+    (label.south)	edge[bend left]	(SM);
+    \draw[->] (label.east) arc(270:450:0.5cm);
+  \end{tikzpicture}
+  \caption{Agree and Label bundled in a single cycle}
+  \label{fig:OneCycle}
+\end{figure}
+
+<+FinishThisThought+>
+
+Separating Agree and Label allows us to fix an apparent undergeneration problem in the account of *resultatives in chapter \ref{sec:deriving}, above.
+Specifically, the account offered seems to predict that French disallows adjectives in predicate position as in \Next below.
+\exg. Jeanne est grand -e\\
+Joan is tall -\textsc{FSg}\\
+``Joan is tall''
+
+Indeed, without any further clarifications, the system proposed would bar \Last and similar structures.
+Assuming the simplified sructure in \Next, below, for \Last, we expect the small clause $\beta$ and the adjP $\alpha$ to be unlabelable.
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+  [$\delta$
+    [DP$_\varphi$[Jeanne,roof]]
+    [$\gamma$
+      [T$_\varphi$]
+      [$\beta$
+	[$\langle$DP$_\varphi\rangle$]
+	[$\alpha$
+	  [adj$_\varphi$]
+	  [\textsc{grand}]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+French \textit{adj} has a single $\varphi$-set, meaning it can only label if it is strengthened by an Agree operation.
+If we were to assume that Label and Agree were bundled, we might assume that, just as lower copies are invisible to Label, they are invisible to Agree.
+This would mean that movement of the DP \textit{Jeanne} would bleed agreement with \textit{adj}, thus rendering $\alpha$ and $\beta$ unlabelable.
+We could save \LLast, by hypothesizing that lower copies are visible to Agree but invisible to label, but this would predict that French generates resultatives, clearly an unwanted result.
+This means that the visibility conditions for Agree must be distinct from the visibility conditions for Label.
+In the remainder of this section I will discuss the visibility conditions for Agree and show how \LLast can be derived.
+
+To begin, let's compare the two relevant structures: the copular clause in \Next, and the resultative adjunct in \NNext.
+
+\ex. Copular clause
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+  [$\zeta$
+    [C]
+    [$\delta$
+      [DP$_\varphi$[Jeanne,roof,name=subj]]
+      [$\gamma$
+	[T$_\varphi$]
+	[$\beta$
+	  [$\langle$DP$_\varphi\rangle$]
+	  [$\alpha$
+	    [adj$_\varphi$]
+	    [\textsc{grand}]
+	  ]
+	]
+      ]
+    ]
+  ]
+  \draw[thick] ([xshift=-12pt]subj.west) arc(180:130:5cm);
+\end{forest}
+
+\ex. Resultative adjunct.
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70
+  }
+  [$\delta$
+    [DP$_\varphi$[le m\'etal,roof]]
+    [$\gamma$
+      [res]
+      [$\beta$
+	[$\langle$DP$_\varphi\rangle$,name=insitu]
+	[$\alpha$
+	  [adj]
+	  [\textsc{plat}]
+	]
+      ]
+    ]
+  ]
+  \draw[thick] (insitu.south west) arc(180:130:3cm);
+\end{forest}
+
+The most salient difference between the DP chains in \LLast and \Last are that the latter crosses a phase boundary, while the former does not.
+This fact, I propose, is relevant for Agree's visibility conditions.
+Whether or not a movement chain crosses a phase boundary can be made relevant to Agree if Agree operates not on syntactic objects but on chains.
+If this is the case, then it is reasonable to assume that Agree is only defined for complete chains, meaning that incomplete chains are invisible to Agree.
+Since the Agree cycle operates on the complement of the phase head (the SPELLEE in \citeauthor{kahnemuyipour2004diss}'s (\citeyear{kahnemuyipour2004diss}) terminology), which does not contain th head of the DP chain in \Last, the DP will be invisible to Agree. 
 \end{document}

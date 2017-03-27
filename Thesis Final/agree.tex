@@ -1,0 +1,32 @@
+%        File: agree.tex
+%     Created: Fri Mar 24 09:00 AM 2017 E
+% Last Change: Fri Mar 24 09:00 AM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+
+\begin{document}
+Crucial to both label theory in general and its application in this thesis, is syntactic agreement.
+The highest XP in a given chain must agree with its sister YP in order to converge, and a subset of functional heads must agree in order to label (\textit{e.g.}, English T$_\varphi$).
+In this chapter I will discuss the theory of agreement, as it relates to labeling and show how the version of agree required for labeling avoids an undergeneration issue apparently predicted for predicative adjectives in French-type languages.
+
+Agreement is required in label theory to account for (\textit{e.g.},) Subject-TP structures as in \Next.
+\ex. [$_\alpha$ DP$_\varphi$ [$_\beta$ T$_\varphi$ ZP]]
+
+The labels of both $\alpha$ and $\beta$ depend on agreement between the subject and T.
+Since $\alpha$ is a Phrase-Phrase structure, its label will be $\langle\varphi,\varphi\rangle$ provided DP and T agree for $\varphi$.
+This agreement also renders $\beta$ labelable, since, prior to agreement, English T$_\varphi$, with an incomplete $\varphi$-set, is too weak to label \parencite{chomsky2013problems}.
+Agreement has the effect of strengthening T such that it can label.
+
+To understand how Agree and Label interact, we must first consider what sort of operations they each are abstracting away from their actual implementations.
+Both are take syntactic objects as inputs and operate on them iteratively and locally.
+This means that labeling a structure like \Last requires labeling all of its substructures (Iterativity) and that labeling $\beta$ depends solely on the properties of $\beta$ (Locality).
+The same, then, is true for Agree, which iteratively considers each substructure and performs agreement is the conditions for agreement are met.
+
+Because labeling is sometimes contingent on agreement, the calculation of the latter must precede that of the former.
+Assuming both Agree and Label occur after narrow syntax and before transfer to CI, this leaves us with two possibilities for ordering the two operations.
+Either (i) individual iterations of Agree and Label are ordered with respect to each other forming a single Agree+Label cycle or (ii) Agree and Label each has its own cycle, and those cycles are ordered with respect to each other  
+\end{document}

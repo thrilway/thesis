@@ -61,10 +61,10 @@ The first alternative, in which Agree and Label are bundled into a single cycle 
     \node (SM) at (0,0.25) {SM};
     \node (CI) at (1,0) {CI};
     \path[->](syn)edge 		(agree)
-    (agree)	edge		(label)
     (label.south)	edge		(CI)
     (label.south)	edge[bend left]	(SM);
     \draw[->] (label.east) arc(270:450:0.5cm);
+    \draw[->] (agree.west) arc(90:270:0.5cm);
   \end{tikzpicture}
   \caption{Agree and Label bundled in a single cycle}
   \label{fig:OneCycle}
@@ -109,7 +109,7 @@ In the remainder of this section I will discuss the visibility conditions for Ag
 
 To begin, let's compare the two relevant structures: the copular clause in \Next, and the resultative adjunct in \NNext.
 
-\ex. Copular clause
+\ex. Copular clause\label{fig:cop-clause}
 \begin{forest}
   nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -133,7 +133,7 @@ To begin, let's compare the two relevant structures: the copular clause in \Next
   \draw[thick] ([xshift=-12pt]subj.west) arc(180:130:5cm);
 \end{forest}
 
-\ex. Resultative adjunct.
+\ex. Resultative adjunct \label{fig:result-adjunct}
 \begin{forest}
   nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -158,6 +158,41 @@ To begin, let's compare the two relevant structures: the copular clause in \Next
 The most salient difference between the DP chains in \LLast and \Last are that the latter crosses a phase boundary, while the former does not.
 This fact, I propose, is relevant for Agree's visibility conditions.
 Whether or not a movement chain crosses a phase boundary can be made relevant to Agree if Agree operates not on syntactic objects but on chains.
-If this is the case, then it is reasonable to assume that Agree is only defined for complete chains, meaning that incomplete chains are invisible to Agree.
-Since the Agree cycle operates on the complement of the phase head (the SPELLEE in \citeauthor{kahnemuyipour2004diss}'s (\citeyear{kahnemuyipour2004diss}) terminology), which does not contain th head of the DP chain in \Last, the DP will be invisible to Agree. 
+To see how this would work, I will consider the derivations of \LLast and \Last in turn below.
+
+The copular clause, \ref{fig:cop-clause}, is derived from a small clause ($\beta = \left[ \text{DP,} \left[ \text{adj, }\textsc{grand} \right] \right]$) which merges with a finite T$_\varphi$ to form $\gamma$.
+The DP, then, merges with $\gamma$ and C is merged triggering phase operations (Agree, Label, Transfer) on it's complement $\delta$.
+Agree takes $\delta$, which contains a full DP chain, and values $\varphi$ features on T and adj with $\varphi$ features of DP.
+This has two relevant effects: first, it strengthens T and adj such that they can label, and second it renders the lower copy of DP inactive/invisible for Label.
+Label then operates on the output of Agree and successfully sends a labelled phrase marker to CI.
+\ex. Agree(\ref{fig:cop-clause})\label{fig:agree-cop-clause}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70
+  }
+  [$\delta$
+    [DP$_\varphi$[Jeanne,roof,name=subj]]
+    [$\gamma$
+      [T$_{\langle\varphi,\varphi\rangle}$]
+      [$\beta$
+	[\sout{DP$_\varphi$}]
+	[$\alpha$
+	  [adj$_{\langle\varphi,\varphi\rangle}$]
+	  [\textsc{grand}]
+	]
+      ]
+    ]
+  ]
+\end{forest}
+
+\ex. Label(\ref{fig:agree-cop-clause})
+\a. Label($\delta$) = $\langle\varphi,\varphi\rangle$
+\b. Label($\gamma$) = T
+\b. Label($\beta$) = Label($\alpha$) = adj
+
+Thus, the derivation of a copular clause converges in French.
+
+Next, consider the resultative adjunct in \ref{fig:cop-clause} which does not converge in French.
+We start with a small clause 
 \end{document}

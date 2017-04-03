@@ -109,7 +109,7 @@ In the remainder of this section I will discuss the visibility conditions for Ag
 
 To begin, let's compare the two relevant structures: the copular clause in \Next, and the resultative adjunct in \NNext.
 
-\ex. Copular clause\label{fig:cop-clause}
+\ex. Copular clause\label{fig:cop-clause}\\
 \begin{forest}
   nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -133,7 +133,7 @@ To begin, let's compare the two relevant structures: the copular clause in \Next
   \draw[thick] ([xshift=-12pt]subj.west) arc(180:130:5cm);
 \end{forest}
 
-\ex. Resultative adjunct \label{fig:result-adjunct}
+\ex. Resultative adjunct \label{fig:result-adjunct}\\
 \begin{forest}
   nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -193,6 +193,36 @@ Label then operates on the output of Agree and successfully sends a labelled phr
 
 Thus, the derivation of a copular clause converges in French.
 
-Next, consider the resultative adjunct in \ref{fig:cop-clause} which does not converge in French.
-We start with a small clause 
+Next, consider the resultative adjunct in \ref{fig:result-adjunct} which does not converge in French.
+We start with a small clause which we merge with res, a phase head, forming $\gamma$.
+We then merge the DP with $\gamma$, and commence our phase operations on $\beta$.
+The phase complement, $\beta$, unlike that of the copular clause in \ref{fig:cop-clause}, contains only the tail of the DP chain.
+Since Agree operates only on complete chains, the DP, \textit{le m\'etal}, is invisible to it, so there is no feature transfer between D and adj, nor is there any deletion of the DP.
+The output of Agree, then, is passed to Label which fails to produce a labeled structure for CI.
+\ex. Agree(\ref{fig:result-adjunct})\label{fig:agree-result-adjunct}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70
+  }
+  [$\beta$
+    [$\langle$DP$_\varphi\rangle$,name=insitu]
+    [$\alpha$
+      [adj]
+      [\textsc{plat}]
+    ]
+  ]
+\end{forest}
+
+\ex. Label(\ref{fig:agree-result-adjunct})
+\a. Label($\beta$) = Undefined \hfill (<+Reason+>)\\
+\fcolorbox{black}{lightgray}{
+  \begin{minipage}[t]{0.8\textwidth}
+  \textbf{Note: }There are two possible explanations. Either DP is visible, and Label($\beta$) fails due to its symmetry, or DP is invisible and and adj is too weak to label.
+  Either option will require some discussion.    
+  \end{minipage}
+}
+\b. Label($\alpha$) = Undefined \hfill(adj is too weak to label)
+
+So, if we separate Agree from Label, we are able to fix the apparent undergeneration.
 \end{document}

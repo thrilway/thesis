@@ -1,0 +1,39 @@
+%        File: snydergenmod.tex
+%     Created: Wed Apr 05 09:00 AM 2017 E
+% Last Change: Wed Apr 05 09:00 AM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+
+\begin{document}
+To discuss Snyder's proposed compositional rule, let's consider the form of such rules more generally.
+Consider, as a prototype, the standard statement of Predicate Modification (PM) in \ref{def:pm}.
+\ex.\label{def:pm} \textbf{Predicate Modification} \parencite{heimkratzer1998semantics}\\
+If $\alpha$ is a branching node, $\left\{ \beta,\gamma \right\}$ is the set of $\alpha$'s daughters, and $\llbracket\beta\rrbracket$ and $\llbracket\gamma\rrbracket$ are both in D$_{\langle e,t\rangle}$, then\\
+$\llbracket\alpha\rrbracket = \lambda x \in D_e . \llbracket\beta\rrbracket(x) = \llbracket\gamma\rrbracket(x) = 1$.
+
+As with other composition rules (\textit{e.g.} Function Application \parencite{heimkratzer1998semantics} and Event Identification \parencite{kratzer1996severing}), PM  has two parts: a domain statement ($\alpha$ is a branching node whose daughters are each property-denoting), and a range statement ($\llbracket\alpha\rrbracket = \lambda x \in D_e . \llbracket\beta\rrbracket(x) = \llbracket\gamma\rrbracket(x) = 1$).
+The mapping of these parts can be evaluated both empirically and theoretically.
+Empirically, we can ask whether such a mapping of domain to range holds in natural language.
+In most cases, PM seems to be empirically accurate: the combination of two property-denoting expressions seems to be interpreted as the conjunction for those properties.
+
+Theoretically, we can first ask whether a compositional rule is formulable in our system.
+Answering such a question is rarely difficult, simply a matter of asking if it is well-formed, but often ignored.
+A more difficult theoretical question is whether a compositional rule, as stated, improves the explanatory power of the theory it is to be added to.
+This question is more difficult because, unlike well-formedness, explanatory power is a rather vague notion which resists definition.
+Considering these questions with respect to PM, we can see that it is theoretically acceptable, given the framework it is couched in.
+It is clearly well-formed, in that it uses only well-defined concepts and symbols (\textit{e.g.}, $\lambda$, branching nodes, D$_{\langle e,t\rangle}$), and uses them appropriately.
+Also, it is arguably an improvement upon a system which only has one rule of composition (Function Application).
+Although the addition of PM complicates the compositional system, it does so in order to keep the syntax simple.
+
+Considering Snyder's (\citeyear{snyder2012parameter}) Generalized Modification (GM) rule, given below in \ref{def:snydergm}, in light of the above questions, I argue that it is not an acceptable rule of composition.
+\ex. \textbf{Generalized Modification} \parencite{snyder2012parameter}\\
+If $\alpha$ and $\beta$ are syntactic sisters under the node $\gamma$, where $\alpha$ is the \uline{head} of $\gamma$, and if $\alpha$ denotes a \uline{kind}, then\\
+interpret $\gamma$ semantically as a \uline{subtype} of $\alpha$'s kind that stands in a pragmatically suitable \uline{relation} to the denotation of $\beta$. (underlining Snyder's)
+
+\end{document}
+
+

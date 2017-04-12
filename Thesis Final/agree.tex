@@ -158,7 +158,52 @@ To begin, let's compare the two relevant structures: the copular clause in \Next
 The most salient difference between the DP chains in \LLast and \Last are that the latter crosses a phase boundary, while the former does not.
 This fact, I propose, is relevant for Agree's visibility conditions.
 Whether or not a movement chain crosses a phase boundary can be made relevant to Agree if Agree operates not on syntactic objects but on chains.
-To see how this would work, I will consider the derivations of \LLast and \Last in turn below.
+To see how this would work, I will first clarify the notion of chains and then consider the derivations of \LLast and \Last in turn below.
+
+Strictly speaking, I do not take chains to be theoretical primitives, rather they are expository conveniences. 
+<+BarriersDefn+>
+Following \textcite{collins2016formalization}, I replace the chains and links with syntactic objects and occurrences defined below.
+\begin{defn}
+  X is a \textit{syntactic object} (SO) iff\\
+    X is a lexical item, or\\
+    X is a set of syntactic objects. \parencite[Modified from][]{collins2016formalization}
+  \label{def:so}
+\end{defn}
+\begin{defn}
+  The \textit{position} of \I{SO}n in \I{SO}1 is a path, a sequence of syntactic objects $\langle\text{SO}_1,\text{SO}_2,\dots,\text{SO}_n\rangle$ where for all $0 < i < n$, $\text{SO}_{i + 1} \in \text{SO}_i$. \parencite{collins2016formalization}
+  \label{def:position}
+\end{defn}
+\begin{defn}
+  B \textit{occurs} in A at position P iff P = $\langle\text{A},\dots,\text{B}\rangle$. We also say B has an occurrence in A at position P (written \I{B}P).
+  \label{def:occurrence}
+\end{defn}
+
+Consider the abstract syntactic object and its tree representation below in \Next and \NNext respectively.
+\ex. $\left\{ \text{X}, \left\{ \text{Y} \left\{ \text{X}, \text{Z} \right\} \right\} \right\}$
+
+\ex.
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70
+  }
+  [$\alpha$
+    [X]
+    [$\beta$
+      [Y]
+      [$\gamma$
+	[X]
+	[Z]
+      ]
+    ]
+  ]
+\end{forest}
+
+Based on the definitions above, we can say the following things about \LLast:
+There are six SOs represented in \LLast: three lexical items (X, Y, Z) and three sets of SOs ($\alpha$, $\beta$, $\gamma$).
+There is a single SO (X) with two occurrences in \LLast:
+At $\langle \alpha, \text{X}\rangle$, and at $\langle \alpha, \beta, \gamma, \text{X}\rangle$
+
 
 The copular clause, \ref{fig:cop-clause}, is derived from a small clause ($\beta = \left[ \text{DP,} \left[ \text{adj, }\textsc{grand} \right] \right]$) which merges with a finite T$_\varphi$ to form $\gamma$.
 The DP, then, merges with $\gamma$ and C is merged triggering phase operations (Agree, Label, Transfer) on it's complement $\delta$.
@@ -224,7 +269,7 @@ The output of Agree, then, is passed to Label which fails to produce a labeled s
 }
 \b. Label($\alpha$) = Undefined \hfill(adj is too weak to label)
 
-So, if we separate Agree from Label, we are able to fix the apparent undergeneration, providedwe assume Agree operates on chains, rather than syntactic objects.
+So, if we separate Agree from Label, we are able to fix the apparent undergeneration, provided we assume Agree operates on chains, rather than occurrences.
 
 The proposal that Agree operates on chains, rather than syntactic objects, gains support when we consider a fact about A-bar traces.
 As has been noted by several authors (????), A-bar traces block \textit{wanna}-contraction.
@@ -249,4 +294,6 @@ In \ref{ex:wanna}, however the input to contraction is the string/structure in \
 \ex. you want to visit who
 
 In this case, \textit{want} and \textit{to} are adjacent (or at least, no phonologically overt material intervenes between them), meaning contraction can occur.
+
+
 \end{document}

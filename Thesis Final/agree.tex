@@ -204,6 +204,37 @@ There are six SOs represented in \LLast: three lexical items (X, Y, Z) and three
 There is a single SO (X) with two occurrences in \LLast:
 At $\langle \alpha, \text{X}\rangle$, and at $\langle \alpha, \beta, \gamma, \text{X}\rangle$
 
+With this contrast between SOs and occurrences, we can limit the domain of Agree to complete chains without stipulating the existence of chains.
+Consider the structure in \LLast, assuming that Y is a phase head. 
+At a given stage of a derivation, it is reasonable to assume that the computation must track two sets of SOs: The set of SOs in the derivation (\textsc{Terms}$_\text{SO}$), and the set of active SOs (\textsc{Active}$_\text{SO}$).
+For \LLast, re-represented in \Next, the two sets are given in \NNext.
+\ex.
+\begin{forest}
+  nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70
+  }
+  [$\alpha$
+    [X]
+    [$\beta$
+      [Y]
+      [$\gamma$
+	[X, name=x]
+	[Z]
+      ]
+    ]
+  ]
+  \draw[thick] ([xshift=-1cm]x.west) arc(170:110:3cm);
+\end{forest}
+
+\ex.
+\a. \textsc{Terms}$_\alpha$ = $\left\{ \text{X}, \text{Y}, \text{Z}, \alpha \beta, \gamma  \right\}$
+\b. \textsc{Active}$_\alpha$ = $\left\{ \text{X}, \text{T}, \alpha, \beta \right\}$
+
+We can determine the input to Agree, then, by computing the set difference between the two sets as shown in \Next.
+\ex. $\textsc{Terms}_\alpha \setminus \textsc{Active}_\alpha = \left\{ \text{Z}, \left\{ \text{X}, \text{Z} \right\} \right\}$ 
+
+Note that X, which has moved to [Spec Y] is not a member of the input to Agree, despite the fact that there is a member of the input which has X as a member.
 
 The copular clause, \ref{fig:cop-clause}, is derived from a small clause ($\beta = \left[ \text{DP,} \left[ \text{adj, }\textsc{grand} \right] \right]$) which merges with a finite T$_\varphi$ to form $\gamma$.
 The DP, then, merges with $\gamma$ and C is merged triggering phase operations (Agree, Label, Transfer) on it's complement $\delta$.

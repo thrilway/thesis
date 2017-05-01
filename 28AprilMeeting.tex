@@ -1,0 +1,68 @@
+%        File: 28AprilMeeting.tex
+%     Created: Fri Apr 28 10:00 AM 2017 E
+% Last Change: Fri Apr 28 10:00 AM 2017 E
+%
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+\documentclass[letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear-comp,useprefix=false]{biblatex}
+
+\usepackage{stmaryrd}
+\usepackage[]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{forest}
+\usepackage{tabularx}
+\usepackage{linguex}
+\usepackage{centernot}
+\usepackage[normalem]{ulem}
+
+\addbibresource{Thesis.bib}
+\begin{document}
+\begin{itemize}
+  \item Snyder: Languages that allow Bare Stem Compounding also allow Resultatives.
+  \item In his thesis he argues for a macroparameter over a lexical parameter.
+  \item The latest iteration of his parameter is a rule of semantic composition whose availability in a given languages is parameterized.
+\end{itemize}
+\ex. Generalized Modification (GM)\\
+If $\alpha$ and $\beta$ are syntactic sisters under the node $\gamma$, where $\alpha$ is the \uline{head} of $\gamma$, and if $\alpha$ denotes a \uline{kind}, then interpret $\gamma$ semantically as a \uline{subtype} of $\alpha$'s kind that stands in a pragmatically suitable \uline{relation} to the denotation of $\beta$
+\parencite[][underlining Snyder's]{snyder2012parameter}
+
+\begin{itemize}
+  \item \textit{e.g.}, a \textit{banana box} is a subtype of the \textsc{box} kind which stands in a pragmatically suitable relation to bananas.
+  \item This is problematic:
+    \begin{enumerate}
+      \item It doesn't fully capture compounds
+      \item Parameterizing composition makes the acquisition task harder
+      \item GM is not a well-formed rule of composition
+      \item Something like GM is part of PM and FA
+    \end{enumerate}
+\end{itemize}
+\ex. \textbf{Non-kind-denoting compounds}
+\a. relationship George
+\b. weekend Michela
+\b. semantics Heather
+
+\ex. \textbf{Are Bare Stems kind-denoting?}
+\a. Dog*(-s) are fun.
+\b. *(The) dodo is extinct.
+\c. Water(*-s) is/*are essential.
+
+\ex. \textbf{PM involves something like GM}
+\a. a red dress
+\b. red hair
+\c. red clay
+\d. a red cent
+\e. a red Liberal
+
+\ex. \textbf{FA involves something like GM}
+\a. boil the water
+\b. boil a potato
+
+\end{document}
+
+

@@ -167,6 +167,56 @@ Within generative grammar, \Last[b] is commonly assumed to be in some way derive
 }
 This derivation is generally achieved by augmenting inchoative \textit{burn} with a causative functional head to form causative \textit{burn}.
 The content of that functional head is an open question, but the only relevant part is the causativity.
+Following \textcite{kratzer2004building} and \textcite{pietroski2003small}, I assume that the causativity is a relation between eventualities, such that the interpretation of \Last[b] is roughly as given below in \Next.
+\ex. $\exists e \exists f [ \textsc{Agent}(e)(\textbf{jeff}) \& \textsc{Cause}(f)(e) \& \textbf{burning}(f) \& \textsc{Theme}(f)(\textbf{the\_toast})]$
+
+So, if Jeff burned the toast, then he performed some action and that action caused the event of the toast burning.
+
+I will assume that there is a res head which encodes the \textsc{Cause} relation.
+Given our structure so far for resultatives, there are two concievable positions to place this res head: (i) Merged above the VP (c-commanding both the VP and the AdjP) or (ii) merged with the AdjP (c-commanding only the AdjP).
+\ex.
+\a. High-merged res\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [resP
+    [res]
+      [VP
+	[
+	  [hammer]
+	  [DP [the metal, roof]]
+	]
+	[AdjP
+	  [DP [the metal, roof]]
+	  [flat]
+	]
+      ]
+    ]
+  \end{forest}
+\b. Low-merged res\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [VP
+    [
+      [hammer]
+      [DP [the metal,roof]]
+    ]
+    [resP
+      [res]
+	[AdjP
+	  [DP [the metal, roof]]
+	  [flat]
+	]
+      ]
+    ]
+\end{forest}
+
+High-merged res will not be able to mediate the hammering event description and the flatness state, so I will assume the low-merged version.
+In this case, the resP is adjoined to the VP, and the interpretation of the combined structure will be the conjunction of the two.
+\ex.
+\a. $\llbracket\text{resP}\rrbracket = \lambda e \exists f [\textsc{Cause}(f)(e) \& \textbf{flat}(f) \& \textsc{Theme}(f)(\textbf{the\_metal})]$
+\b. $\llbracket\text{VP}\rrbracket = \lambda e [\textbf{hammer}(e) \& \textsc{Theme}(e)(\textbf{the\_metal})]$
+\c. $\llbracket\left[ \text{VP, resP} \right]\rrbracket = \lambda e [\llbracket\text{VP}\rrbracket(e) \& \llbracket\text{resP}\rrbracket(e)]$
+
 
 \end{document}
 

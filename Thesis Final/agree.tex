@@ -22,7 +22,7 @@ This agreement also renders $\beta$ labelable, since, prior to agreement, Englis
 Agreement has the effect of strengthening T such that it can label.
 
 To understand how Agree and Label interact, we must first consider what sort of operations they each are abstracting away from their actual implementations.
-Both are take syntactic objects as inputs and operate on them iteratively and locally.
+Both take syntactic objects as inputs and operate on them iteratively and locally.
 This means that labeling a structure like \Last requires labeling all of its substructures (Iterativity) and that labeling $\beta$ depends solely on the properties of $\beta$ (Locality).
 The same, then, is true for Agree, which iteratively considers each substructure and performs agreement is the conditions for agreement are met.
 
@@ -32,8 +32,8 @@ Either (i) individual iterations of Agree and Label are ordered with respect to 
 To decide between these two alternatives we can consider how Agree and Label interact with other components of grammar, specifically the SM and CI interfaces.
 By hypothesis, Label feeds interpretation at CI but not at SM.
 Agree, on the other hand, feeds Label and interpretation at SM.
-This asymmetry points to the second alternative, where narrow syntax feeds an Agree cycle, which feeds SM interpretation and Label as in \ref{fig:SepCycles}.
-The first alternative, in which Agree and Label are bundled into a single cycle as shown in \ref{fig:OneCycle}, predicts that both Label and Agree feed both interfaces, which is not what we seem to see in the data. 
+This asymmetry points to the second alternative, where narrow syntax feeds an Agree cycle, which feeds SM interpretation and Label as in figure \ref{fig:SepCycles}.
+The first alternative, in which Agree and Label are bundled into a single cycle as shown in figure \ref{fig:OneCycle}, predicts that both Label and Agree feed both interfaces, which is not what we seem to see in the data. 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}

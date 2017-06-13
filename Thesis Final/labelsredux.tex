@@ -27,7 +27,45 @@ It is reasonable to assume, then, that the adjunct ZP will bypass Label, meaning
 
 <+MoreHere+>
 
-The second question is why labels should be required by the CI interface at all. 
+The second question is why labels should be required by the CI interface at all.
+My proposed answer is that the label of a complex object determines how that object composes semantically.
+While this may seem \textit{ad hoc}, it is actually a quite reasonable hypothesis.
+Consider Chomsky's labelling hypothesis as phrased in \Next, and the more standard theory of the CI interface in \NNext.
+\ex. A syntactic object is a valid CI object iff it is labellable.
+
+\ex. A syntactic object is a valid CI object iff it composes semantically.
+
+At first glance, these hypotheses are incompatible, giving us three options at resolving the conflict.
+The first option would be to reject one of the conflicting hypotheses.
+There is no strong evidence, however, to reject either \LLast or \Last, so I will not choose this option.
+The second option is to conjoin the iff clauses as in \Next.
+\ex. A syntactic object is a valid CI object iff it is labellable and it composes semantically.
+
+This option is unattractive for reasons of theoretical parsimony, so I will not choose it.
+The third option is to hypothesize that labelling and composition are identical, and therefore the conflicting hypotheses are equivalent.
+
+The simplest cases are those structures labelled by heads.
+The classes of structures which get head labels are given in \Next.
+\ex. \textbf{Head-labelled structures}
+\a. $\left\{ \text{X, }\textsc{Root} \right\} \xrightarrow{Label} \left[_\text{X} \text{X, }\textsc{root}  \right]$
+\b. $\left\{ \text{X, YP} \right\} \xrightarrow{Label} \left[_\text{X} \text{X, YP} \right]$
+\c. $\left\{ t_\text{ZP}, \left\{ \text{X, YP} \right\} \right\}\xrightarrow{Label}\left[_\text{X} t_\text{ZP}, \text{XP} \right]$
+
+I propose that in these cases, the objects compose by function application, with the label being the function and the non-labelling constituent being the argument.
+So, for instance, a DP is interpreted as the function D, with NP as an argument.
+\ex. \textsc{sem}($\left[_\textit{the} \textit{the, ball} \right]$) = \textsc{sem}(\textit{the})(\textsc{sem}(\textit{ball}))
+
+The next case is that of structures labelled by feature-pairs.
+These structures, tend to be the result of internal Merge, which is generally associated with operator-variable structures.
+I hypothesize, then, that feature-pair labels signal that a complex object is to be interpreted as an operator-variable structure.
+For instance the Wh-question structure in \Next[a] is interpreted as in \Next[b].
+\ex. \textsc{sem}($\left[_{\langle Q,Q \rangle} \textit{Who}_Q, \left[ \text{C}_Q+\textit{did}, \left[ \textit{Mary see } t_{Who} \right] \right]  \right]$) = (Wh\textit{x})(\textsc{sem}(\textit{Mary saw x}))
+
+Finally, the case of unlabelled structures, which is identical to the case of Host-Adjunct structures.
+In this case, objects compose by conjunction.
+Consider the interpretation of the structure in \Next.
+\ex. \textsc{sem}($\left[_\emptyset \textit{run, swiftly} \right]$) =  $(\lambda e)(\textsc{sem}(\textit{run})(e) \& \textsc{sem}(\textit{swiftly})(e))$
+
 
 \end{document}
 

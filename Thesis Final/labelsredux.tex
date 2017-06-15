@@ -23,9 +23,8 @@ This means one of two things, either Host-Adjunct structures are not interpreted
 The first possibility seems to be contradicted by the fact that Adjuncts are interpreted at CI, so I will follow the second possibility.
 Consider, then, a structure [XP, ZP], where XP is a host and ZP is an adjunct.
 The structure as a whole will bypass Label, but the host XP will be labelled.
-It is reasonable to assume, then, that the adjunct ZP will bypass Label, meaning its internal structure will not be labelled in this cycle of Label.
-
-<+MoreHere+>
+It is reasonable to assume, then, that the adjunct ZP will bypass Label, meaning its internal structure will not be labelled in this cycle of Label.\footnote{The astute observer will likely note that this hypothesis contains a significant amount of stipulation.
+I address this stipulation in chapter \ref{sec:Conclusion}}
 
 The second question is why labels should be required by the CI interface at all.
 My proposed answer is that the label of a complex object determines how that object composes semantically.
@@ -43,6 +42,17 @@ The second option is to conjoin the iff clauses as in \Next.
 
 This option is unattractive for reasons of theoretical parsimony, so I will not choose it.
 The third option is to hypothesize that labelling and composition are identical, and therefore the conflicting hypotheses are equivalent.
+We can, then, replace our two conflicting statements with the two compatible statements in \Next and \NNext below.
+\ex. A syntactic object composes iff it is labellable.
+
+\ex. A syntactic object is a valid CI object iff it composes.
+
+This move is theoretically attractive partially due to the fact that it mirrors the logic of antisymmetry on the SM interface \parencite{kayne1994antisymmetry}.
+In the case of antisymmetry, Kayne identifies asymmetric c-command with linear order, and there is no compelling reason to think that the CI interface should be more complex than the SM interface.
+
+So, what would it mean for labelling and composition to be two sides of the same coin?
+It would have to mean that the label of a structure carries information about how it composes.
+In particular, I propose that classes of labels are associated with modes of composition.
 
 The simplest cases are those structures labelled by heads.
 The classes of structures which get head labels are given in \Next.
@@ -65,6 +75,7 @@ Finally, the case of unlabelled structures, which is identical to the case of Ho
 In this case, objects compose by conjunction.
 Consider the interpretation of the structure in \Next.
 \ex. \textsc{sem}($\left[_\emptyset \textit{run, swiftly} \right]$) =  $(\lambda e)(\textsc{sem}(\textit{run})(e) \& \textsc{sem}(\textit{swiftly})(e))$
+
 
 
 \end{document}

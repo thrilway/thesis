@@ -55,14 +55,23 @@ Again, it is helpful to consider the SM interface, where asymmetric c-command an
 We should expect a similar isomorphism to hold between composition and labels, and, in fact, there seems to be good reason to think that there is such an isomorphism.
 Consider the main modes of composition generally assumed by semanticists \parencite[\textit{e.g.}, by][]{heimkratzer1998semantics}, given schematically in \Next.
 \ex. 
-\a. \textbf{Lexical Insertion}\\
+\a. \textbf{Lexical insertion}\\
 \textsc{sem}($\alpha$) = $\alpha^\prime$
-\b. \textbf{Function Application}\\
+\b. \textbf{Function application}\\
 \textsc{sem}($\left[ \alpha, \beta \right]$) = \textsc{sem}($\alpha$)(\textsc{sem}($\beta$))
-\b. \textbf{Predicate Modification}\\
+\b. \textbf{Predicate modification}\\
 \textsc{sem}($\left[ \alpha, \beta \right]$) = \textsc{sem}$(\alpha)(x) \&$ \textsc{sem}$(\beta)(x)$
-\b. \textbf{Predicate Abstraction}\\
+\b. \textbf{Predicate abstraction}\\
 \textsc{sem}($\left[ \alpha, \beta \right]$) = (Op$x$)(\textsc{sem}($\beta$)($x$))
+
+Each of these modes of composition has a corresponding structure type as identified by label theory, including my modifications thus far.
+Lexical insertion operates on a single syntactic atom, \textit{i.e.}, a head, which label theory necessarily distinguishes from other syntactic objects.
+Predicate modification is the next most complex operation, it conjoins two (possibly complex) objects without requiring or inducing any ordering of the two, exactly isomorphic with the output of merge: unlabelled and unordered syntactic objects.
+Function application, likewise, requires two objects, but these objects are ordered.
+Unlike conjunction structures created by predicate modification, which are commutative ($X \& Y = Y \& X$), the function-argument structures created by function application are inherently asymmetric ($X(Y) \neq Y(X)$).
+This matches with head-labelled stuctures, which encode a pair of objects (the contents of the structure) and an ordering statement (the label).
+Finally, predicate abstraction, which creates operator-variable/filler-gap structures, requires the content of the two expressions, an ordering between the two, and a variable.
+Pair-labelled structures provide this information.
 
 The simplest cases are those structures labelled by heads.
 The classes of structures which get head labels are given in \Next.

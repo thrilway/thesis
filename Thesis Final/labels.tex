@@ -49,6 +49,35 @@ In these cases, the agreeing features serve as the label of the structure as in 
 \ex. LA$(\left\{ XP_F, YP_F \right\}) = \langle F,F\rangle$
 
 If either of these two situations do not obtain for a given phrase-phrase structure, it will be unlabelable and result in a crash at the CI interface.
+To see how this works, consider the raising construction in \Next and the ungrammatical version of it in \NNext.
+\ex.\label{ex:raising}
+\a. The dishes seem to be dirty.
+\b. [$_\alpha$ The dishes [ seem [$_\beta \langle\text{the dishes}\rangle$, [ to be dirty]]]]
 
+\ex.\label{ex:noraising}
+\a.* It seems the dishes to be dirty
+\b. [$_\gamma$ It [ seem [$_\delta$ the dishes, [ to be dirty]]]]
 
+The sentence in \LLast has two relevant phrase-phrase structures which are labelable.
+The first is a trace-phrase structure, given in \Next[a], which is labeled by the infinitive \textit{to}, as demonstrated in \Next[b].
+\ex.
+\a.  $\beta = \left\{ \langle\text{the dishes}\rangle, \left\{ \text{to}, \text{be dirty} \right\} \right\}$
+\b. LA$(\beta) = \text{LA}(\left\{ \text{to}, \text{be dirty} \right\}) =$ to
+
+The second is the agreement structure, given in \Next[b], which is labeled by the agreeing $\varphi$ features as in \Next[b].
+\ex.
+\a. $\alpha = \left\{ \text{the}_\varphi \text{ dishes} \left\{ T_\varphi \text{, seem} \left\{ \ldots \right\} \right\} \right\}$
+\b. LA$(\alpha) = \langle\varphi, \varphi\rangle$
+
+The derivation of \ref{ex:noraising}, however, crashes because the phrase-phrase structure, $\delta$ is unlabelable.
+The DP \textit{the dishes} has not raised, so it is visible to LA in $\delta$, and there is no $\varphi$-agreement between \textit{the}$_\varphi$ and \textit{to}$_\emptyset$.
+\ex.
+\a. $\delta = \left\{ \text{the}_\varphi \text{ dishes} \left\{ \text{to}_\emptyset \left\{ \ldots \right\}\right\} \right\}$
+\b. LA$(\delta) = $ Undefined
+
+In earlier theories of syntax <+Cite+>, DPs raised to have their Case checked.
+Label theory replaces Case as a ``driver'' of syntax.
+
+Additionally, \textcite{chomsky2015problems} suggests that not every head can provide a label.
+Generally, a functional head with an incomplete feature set cannot label without spec-head agreement.
 \end{document}

@@ -23,12 +23,12 @@ Research on the syntax of $\Theta$-roles has to this day largely been guided by 
 Identical thematic relationships between items are represented by identical structural relationships between those items at the level of D-structure. \parencite[46]{baker1988incorporation}
 
 Although UTAH, as formulated by Baker, requires clarification to be applied to specific data, it provides a good enough guideline for my discussion of the first fact about resultatives.
-If we consider the thematc relations between verbs and the bolded DPs in \Next, and adjectives and the bolded DPs in \NNext we can see that they are identical to the corresponding thematic relations in (AR).
-\ex. 
+If we consider the thematic relations between verbs and the bolded DPs in \Next, and adjectives and the bolded DPs in \NNext we can see that they are identical to the corresponding thematic relations in (AR).
+\ex.\label{ex:simple-hammer} 
 \a. Natalie hammered \textbf{the metal} for an hour.
 \b. \textbf{The metal} was hammered by Natalie.
 
-\ex. 
+\ex.\label{ex:simple-flat} 
 \a. \textbf{The metal} is flat.
 \b. Anaximander considered \textbf{the earth} flat.
 
@@ -151,9 +151,37 @@ I assume that movement from theme position to object position occurs in simple t
 
 So, the fact that the object of a resultative is interpreted as the argument of both the verb and the adjective (the first fact) can be explained if the derivation of a resultative involves sideward movement of the object from AdjP to VP and subsequent movement to [Spec AgrOP].
 This results in the structure in \Last.
+
+Furthermore, the logic of UTAH argues against a complex predicate analysis of adjectival resultatives, such as that of \textcite{snyder1995language,irimia2012secondary}.
+Consider the complex predicate analysis of (AR) given in \Next.
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [VP
+	[DP [the metal, roof]]
+	[X
+		[V\\hammer,align=center]
+		[Adj\\flat,align=center]
+	]
+  ]
+\end{forest}
+
+What does our UTAH logic say about the $\Theta$-marking of \textit{the metal}?
+If $\Theta$-marking occurs locally, we must ask what $\Theta$-marker is the DP local to.
+Depending on what type of object the complex predicate X is, the DP is either local to both V and Adj, or it is local to neither.
+If it is local to neither, then it can't be $\Theta$-marked, which rules this option out.
+If it is local to both, or, more precisely, an amalgam of the two, then it is $\Theta$-marked by both, which is the desired outcome.
+
+So, let's assume that the DP in \Last is $\Theta$-marked by an amalgam of V and Adj.
+The next question is how are V and Adj amalgamated.
+There is already very good reason to believe that heads can amalgamate, usually through head movement, for instance V-to-T movement in \textit{e.g.} French.
+The operation of head movement is poorly understood, but we can still ask if there are reasons to believe that complex predicates are formed by the same operation as French finite verbs.
+<++>
+
+
 The explanation of causativity (the second fact), given below, must be compatible with such a derivation.
 
-
+\subsection{The verb event causes the adjective event}
 The second fact raises the notion of causativity, which is a topic often linked to transitivity alternations such as the causative-inchoative alternation, demonstrated in \Next.
 \ex.
 \a. \textbf{Inchoative}\\
@@ -216,7 +244,6 @@ In this case, the resP is adjoined to the VP, and the interpretation of the comb
 \a. $\llbracket\text{resP}\rrbracket = \lambda e \exists f [\textsc{Cause}(f)(e) \& \textbf{flat}(f) \& \textsc{Theme}(f)(\textbf{the\_metal})]$
 \b. $\llbracket\text{VP}\rrbracket = \lambda e [\textbf{hammer}(e) \& \textsc{Theme}(e)(\textbf{the\_metal})]$
 \c. $\llbracket\left[ \text{VP, resP} \right]\rrbracket = \lambda e [\llbracket\text{VP}\rrbracket(e) \& \llbracket\text{resP}\rrbracket(e)]$
-
 
 \end{document}
 

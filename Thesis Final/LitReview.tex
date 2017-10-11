@@ -111,11 +111,80 @@ To understand what this means, consider the following sentence pairs:
 \a. Katie ran.
 \b. Katie ran a kilometre.
 
-\ex. \label{ex:emily-dropped}
-\a. Emily dropped her book.
-\b. Emily dropped the phone.
+The pair in \ref{ex:broke-bottle} represents a single thematic relation between \textit{broke} and \textit{the bottle}.
+UTAH says that there must be a structural relation that holds between \textit{broke} and \textit{the bottle} in both sentences.
+Similarly, in \ref{ex:katie-ran}, there is a single thematic relation between \textit{Katie} and \textit{ran}, which means there must be a single corresponding structural relation between the two.
+Any structural analysis of these sentences that violates Minimal UTAH, then, can be rejected on theoretical grounds.
 
-In the pair \ref{ex:}<++>
+Consider, for instance, three possible structural analyses of the pair in \ref{ex:broke-bottle}.
+In the first analysis, represented in \Next, \textit{the bottle} is base generated in its surface position, which is different in the two sentences.
+\ex. \textbf{The surface analysis}
+\a. \textit{Sara broke the bottle.}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [TP
+    [DP[Sara,roof]]
+    [
+      [T]
+      [VP
+        [V\\broke,align=center]
+        [DP[the bottle,roof]]
+      ]
+    ]
+  ]
+\end{forest}
+\b. \textit{The bottle broke.}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [TP
+    [DP[the bottle,roof,name=subj]]
+    [
+      [T]
+      [VP[broke,roof]]
+    ]
+  ]
+\end{forest}
+
+In this analysis, there is no single structural relations between \textit{broke} and \textit{the bottle}, corresponding to the single thematic relation.
+This analysis, then, violates Minimal UTAH, and can therefore be rejected.
+
+In the second analysis, represented in \Next, \textit{the bottle} originates in [Comp V] and moves to subject position in the intransitive situation.
+\ex. \textbf{The movement analysis}
+\a. \textit{Sara broke the bottle.}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [TP
+    [DP[Sara,roof]]
+    [
+      [T]
+      [VP
+        [V\\broke,align=center]
+        [DP[the metal,roof]]
+      ]
+    ]
+  ]
+\end{forest}
+\b. \textit{The bottle broke.}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [TP
+    [DP[the bottle,roof,name=subj]]
+    [
+      [T]
+      [VP
+        [V\\broke,align=center]
+        [DP[the bottle,roof,name=theme]]
+      ]
+    ]
+  ]
+  \draw[->] (theme) to[out=south west, in=south] (subj);
+\end{forest}
+
+In this analysis the single thematic relation between \textit{broke} and \textit{the bottle} corresponds to a single structural relation between the two, meaning it complies with Minimal UTAH.
+
+While UTAH considerations clearly lead us to prefer the movement analysis over the surface analysis, such considerations are far from decisive evidence in favour of the movement analysis, as it is not the only possible analysis that complies with UTAH.
+The third analysis, is such an analysis.
+
 \end{document}
 
 

@@ -185,6 +185,75 @@ In this analysis the single thematic relation between \textit{broke} and \textit
 While UTAH considerations clearly lead us to prefer the movement analysis over the surface analysis, such considerations are far from decisive evidence in favour of the movement analysis, as it is not the only possible analysis that complies with UTAH.
 The third analysis, is such an analysis.
 
+This analysis, which I will call the layering analysis, is represented in \Next.
+
+\ex. \textbf{The layering analysis}
+\a. \textit{Sara broke the bottle}
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [vP
+    [DP[Sara,roof]]
+    [
+      [v$_{EA}$]
+      [vP
+        [DP[the bottle,roof]]
+        [
+          [v$_{IA}$]
+	  [V\\broke,align=center]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\b. \textit{The bottle broke.}
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [vP
+    [DP[the bottle,roof]]
+    [
+      [v$_{IA}$]
+      [V\\broke,align=center]
+    ]
+  ]
+\end{forest}
+
+In this analysis, as in the movement analysis, the thematic relation between \textit{broke} and \textit{the bottle} is represented by a single structural relation between the two.
+This means that this analysis also satisfies Minimal UTAH, and therefore cannot be rejected immediately.
+
+In addition to UTAH considerations, I will evaluate whether the theory of variation attached to a given analysis is formulable in the minimalist model of grammar.
+This model of the grammar is composed of a lexicon containing the atoms from which complex expressions are built, merge, the simplest combinatorial operation for constructing complex expressions, and two interfaces, points at which a constructed expression is trasferred to language external modules for either externalization (the sensorimotor (SM) interface/module), or interpretation (the conceptual-intentional (CI) interface/module).
+In this portion I will argue that the lexicon is the only component of grammar that can be the locus of parametric syntactic variation.
+I will do so first by a positive argument -- that the lexicon is a natural place to locate variation -- then by a negative argument -- that neither merge, nor the interfaces can be parameterized.
+
+The notion that lexicons vary may seem trivial, but it is worth describing if only to separate the interesting variation from the uninteresting variation.
+The interesting/uninteresting variation dichotomy roughly seems to follow the functional/lexical distinction.
+Variation between two speakers with respect to ``vocabulary'' can be fairly profound without necessarily meaning that the speakers are speaking a different language.
+The interesting lexical variation, however, is the kind which leads to systemic differences between grammars.
+If we compare Present Day English to Old English we see that 
+
+Merge is the simplest component to eliminate from consideration of the locus of variation due to its simplicity.
+It is defined as the simplest possible operation for generating hierarchical structures: binary set formation.
+\ex. Merge$(\alpha, \beta) = \{ \alpha, \beta\}$
+
+In order to attribute any variation to merge, we would need to introduce complexity to it, and it would no longer be maximally simple.
+
+It is worth noting, however, that merge, as defined in \Last, is not \textit{the} simplest combinatory operation, but the simplest one capable of generating hierachical structures.
+\textcite{hornstein2009theory}, for instance, proposes a concatenative version of merge.
+\ex. Merge$^\prime(\alpha, \beta) = \alpha^\frown\beta$
+
+Assuming concatenation is as simple as set-formation, it is still not able to form hierachical structures without further complication.
+This is because concatenation, unlike binary set-formation, is associative.
+\ex. Merge$^\prime($ Merge$^\prime(\alpha, \beta), \gamma)$\\
+$= (\alpha^\frown\beta)^\frown\gamma$\\
+$= \alpha^\frown\beta^\frown\gamma$\\
+$= \alpha^\frown(\beta^\frown\gamma)$\\
+$= $Merge$^\prime(\alpha, $ Merge$^\prime(\beta, \gamma))$
+
+Since concatenative merge forms essentially flat structures, it is ill-suited to construct linguistic expressions which appear to be fundamentally hierachical in nature.
+So, while there are other possible combinatory operations which are as simple as merge, there don't seem to be any which are able to capture the fact that linguistic expressions are hierachically structured objects.
+Therefore, any variation in merge can only come from complicating the operation.
+
+
 \end{document}
 
 

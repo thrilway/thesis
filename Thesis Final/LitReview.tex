@@ -220,6 +220,15 @@ This analysis, which I will call the layering analysis, is represented in \Next.
 In this analysis, as in the movement analysis, the thematic relation between \textit{broke} and \textit{the bottle} is represented by a single structural relation between the two.
 This means that this analysis also satisfies Minimal UTAH, and therefore cannot be rejected immediately.
 
+UTAH is relevant to adjectival resultatives considering the follwing the thematic relations in \Next.
+\ex.
+\a. Jackie hammered the metal flat.
+\b. Jackie hammered the metal.
+\b. Jackie made the metal flat.
+
+There is a single $\Theta$ relation that holds between \textit{hammered} and \textit{the metal} in both \Last[a] and \Last[b], and there is a single $\Theta$ relation that holds between \textit{the metal} and \textit{flat} in  both \Last[a] and \Last[c]. 
+Therefore, there should be a single structural relation corresponding to each of those $\Theta$ relations, and any analysis that does not meet this criterion will be rejected.
+
 In addition to UTAH considerations, I will evaluate whether the theory of variation attached to a given analysis is formulable in the minimalist model of grammar.
 This model of the grammar is composed of a lexicon containing the atoms from which complex expressions are built, merge, the simplest combinatorial operation for constructing complex expressions, and two interfaces, points at which a constructed expression is trasferred to language external modules for either externalization (the sensorimotor (SM) interface/module), or interpretation (the conceptual-intentional (CI) interface/module).
 In this portion I will argue that the lexicon is the only component of grammar that can be the locus of parametric syntactic variation.
@@ -264,13 +273,16 @@ So, while there are other possible combinatory operations which are as simple as
 Therefore, any variation in merge can only come from complicating the operation.
 
 The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition.
-If we take a grammar to be a mapping between form (\textit{i.e.}, speech, signs, or writing) and meaning then we can represent it as a function.
-<+MoreHere+>
+If we take a grammar to be a mapping between form and meaning then we can represent it as a function.
+As a function it will have a domain (meanings), a range (forms), and an intension (the grammar).
+From these three properties we will be able to generate an extension of the function.
+The language acquisition process, then, will be a process of inferring the function from a finite and arbitrary subset of its extension.
+Such an inference 
 
 Consider the following analogy to quadratic functions.
 Suppose we model a particular I-function as the quadratic function in \Next, and the E-function it generates is it graph in \NNext.
 \ex. I-Language$_x$\\
-$y = \frac{1}{2}x^2 + 4x-1$
+$y = 2x^2 + 4x-1$
 
 \ex. E-Language$_x$\\
 \includegraphics[width=0.7\textwidth]{quadplot-axis}
@@ -296,12 +308,30 @@ What follows from this is what is known as the Borer-Chomsky conjecture.
 \ex. \textbf{The Borer-Chomsky Conjecture} \parencite{baker2008microparameter}\\
 All parameters of variation are attributable to differences in the features of particular items (e.g., the functional heads) in the lexicon.
 
+So any account of the resultative parameter must be explainable in lexical terms in order to be consistent with the Borer-Chomsky Conjecture.
+
 The two theoretical principles discussed above will allow me to evaluate the previously proposed analyses of resultatives.
 UTAH considerations will determine if a given structural analysis is tenable in miminalist syntax.
 The Borer-Chomsky conjecture, on the other hand will be used to evaluate whether a given analysis encodes variation in an acquirable way.
 
 \section{The previous analyses}
+In this section I will be addressing three previous analyses of adjectival resultatives.
+The first analysis, the complex predicate analysis \parencite{snyder1995language,irimia2012secondary}, will be rejected for violating UTAH both and the Borer-Chomsky Conjecture.
+The second, the cartographic/nanosyntactic analysis \parencite{son2008microparameters}, is theoretically sound but unlearnable.
+The third, that of \textcite{kratzer2004building}, which I will adapt for my purposes, narrowly violates UTAH.
 
+Generally speaking, a complex predicate analysis of adjectival resultatives states that, in a resultative sentence, the adjective and the verb form an amalgam which $\Theta$-marks the object, as in \Next.
+\ex.
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+	[VP
+		[DP[the metal,roof]]
+		[V/Adj
+			[V\\hammer,align=center]
+			[Adj\\flat,align=center]
+		]
+	]
+\end{forest}
 
 \end{document}
 

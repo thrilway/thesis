@@ -348,8 +348,69 @@ The complex predicate analysis, then, violates UTAH and should be rejected.
 
 Snyder, who proposes a complex predicate analysis of adjectival resultatives in his \citeyear{snyder1995language} dissertation, augments his structural analysis with a parametric analysis \parencite{snyder2012parameter}.
 According to this analysis, a language allows resultatives only if it permits Generalized Modification, a compositional operation defined in \Next.
-\ex. Generalized Modification \parencite{snyder1995language}\\
+\ex. Generalized Modification \parencite{snyder2012parameter}\\
 If $\alpha$ and $\beta$ are syntactic sisters under the node $\gamma$, where $\alpha$ is the \uline{head} of $\gamma$, and if $\alpha$ denotes a \uline{kind}, then interpret $\gamma$ semantically as a \uline{subtype} of $\alpha$'s kind that stands in a pragmatically suitable relation to the denotation of $\beta$.
+
+In order for this parameter to be instantiated, it would need to be located on the CI interface, meaning it would be a non-lexical parameter.
+Such a parameter violates the Borer-Chomsky Conjecture and, therefore, can be rejected as an account of the resultative parameter.
+
+Another structural and parametric account of resultatives, by \textcite{son2008microparameters}, follows Ramchand's (\citeyear{ramchand2008verb}) decompositional analysis of vP syntax.
+Under this account, event descriptions are decomposable into several universal features (\textit{e.g.}, \textsc{Result}, \textsc{Manner}, \textsc{Process}), and language variation results from languages lexicalizing these features differently.
+\textcite{son2008microparameters} propose that resultative languages English and German lexicalize \textsc{Result} in null heads, while non-resultative Romance languages only lexicalize \textsc{Result} in verbs.
+\ex.
+\raisebox{-.9\height}{\includegraphics{lexicalization_table}}
+
+Note that this account is consistent with the Borer-Chomsky Conjecture because the variation is lexical in nature.
+There is no positive evidence, however, that would allow a learner to determine whether or not the null \textsc{Result} head is present in their linguistic input.
+The lack of positive evidence means that this account, while theoretically tenable, predicts that the resultative parameter would be unlearnable.
+Therefore, we can reject this analysis.
+
+The final analysis I will address is that of \textcite{kratzer2004building}, which will not be fully reject, but rather adapted to form my final analysis.
+In this analysis, the resultative object (\textit{e.g.}, \textit{the metal}) and the adjective (\textit{e.g.}, \textit{flat}) form a small clause, which encodes a state description.
+The small clause merges with a \textit{res} head, which encodes a causative relation between events, and the resulting \textit{res}P is merged as the complement of the verb (\textit{e.g.}, \textit{hammer}).
+The small clause theme is then raised to Spec V where it is marked as the theme of the verb, and from there the derivation proceeds as normal.
+The vP this generates is given in \Next.
+\ex. Kratzer's Resultative Structure\\
+{\small
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+  [vP
+    [v] 
+    [VP
+      [{the metal},name=V theme] 
+      [
+	[hammer] 
+	[\textit{res}P 
+	  [\textit{res}] 
+	  [SC
+	    [{$\langle\text{the metal}\rangle$},name=sc theme]
+	    [flat]
+	  ]
+	]
+      ]
+    ]
+  ]
+  \draw[->] (sc theme) to[out=south west, in=south] (V theme);
+\end{forest}}
+
+\subsection{Salvaging parts of previous accounts}
+While Snyder's and Kratzer's analyses have been reject, they share a certain feature which I will retain in my final analysis: they are acquirable.
+Snyder's (\citeyear{snyder1995language}) proposal is that the availability of resultatives in a language is linked to the availability of a productive N-N compounding in that language.
+Kratzer adopts this link and augments it with a link to predicative adjective agreement.
+She proposes that resultatives (and N-N compounding) are available only in those languages in which predicative adjectives do not show agreement with the subject.
+\ex. \textbf{German}
+\ag. Die Teekanne leer trinken.\\
+the teapot empty drink.\\
+``to dring the teapot dry'' \parencite{kratzer2004building}
+\b. Wurmkanne\\
+``worm+can'' \parencite{snyder2001nature}
+\cg. Die Teekanne ist leer (*-e).\\
+The.\textsc{fem} teapot is empty \textsc{fem}''\\
+``The teapot is empty.''
+
+\ex. <+NonResultLang+>
+
+Both compounding and the lack of predicative adjective agreement are detectable in the primary linguistic data, and therefore can reasonably be taken to be the positive data responsible for the setting of the resultative parameter.
 
 \end{document}
 

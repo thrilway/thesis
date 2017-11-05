@@ -5,14 +5,14 @@
 \begin{tikzpicture}
 	\begin{axis}[
 		axis lines=center,
-		grid=both,
-		xmax=10,xmin=-10,
-		ymin=-10,ymax=10,
+		%grid=both,
+		xmax=5,xmin=-5,
+		ymin=-5,ymax=5,
 		xlabel=$x$,ylabel=$y$,
 		width=15cm,
 		height=15cm,
 		anchor=center,
-		domain=-10:10,
+		domain=-5:5,
 		samples=100
 	]
 	\addplot[mark=none]{2*x^2+4*x-1};

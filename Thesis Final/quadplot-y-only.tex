@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{tikz,pgfplots}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		axis lines=center,
+		%grid=both,
+		xmax=5,xmin=-5,
+		ymin=-5,ymax=5,
+		xlabel=$x$,ylabel=$y$,
+		width=15cm,
+		height=15cm,
+		anchor=center,
+		domain=-5:5,
+		samples=100,
+		xtick=\empty
+	]
+	\addplot[mark=none]{2*x^2+4*x-1};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

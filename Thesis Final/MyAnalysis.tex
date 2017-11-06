@@ -1,0 +1,143 @@
+%        File: MyAnalysis.tex
+%     Created: Mon Nov 06 10:00 AM 2017 E
+% Last Change: Mon Nov 06 10:00 AM 2017 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+\setcounter{chapter}{3}
+\begin{document}
+In the previous chapter, I discussed the failings of a number of previous analyses of adjectival resultatives.
+In this chapter I will address the positive aspects of one of those analyses, and show how it can be modified to address the concerns raised in the previous chapter.
+The analysis in question, that of \textcite{kratzer2004building}, has three features which I will retain in my final analysis: A small clause, theme raising, and a result head.
+<+MoreHere+>
+\section{Fixing the UTAH problem}
+The one issue with Kratzer's analysis is that it seems to violate UTAH.
+That is there is a single $\Theta$-relation between \textit{hammer} and \textit{the metal} in both sentneces in \Next, that is not represented by a single structural relation.
+\ex.
+\a. Joe hammered the metal flat.
+\b. Joe hammered the metal.
+
+According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{hammer} in \Last[a], but a standard analysis of \Last[b] will place \textit{the metal} as the complement of \textit{hammer}
+\ex.
+\a. hammer the metal flat \parencite[following][]{kratzer2004building}\\
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [DP[the metal,roof,name=specV]]
+	    [
+		    [hammer]
+		    [resP
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [flat]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south] (specV);
+\end{forest}
+\b.hammer the metal\\
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [hammer]
+	    [DP[the metal,roof]]
+    ]
+\end{forest}
+
+If we were to modify Kratzer's analysis, such that \textit{the metal} is the complement of \textit{hammer} then we would need to attach the result phrase in a different position.
+I propose that the result phrase is adjoined to the VP, which means the DP can be merged directly with the verb as shown in \Next.
+\ex.
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [VP
+		    [hammer]
+		    [DP[the metal,roof,name=compV]]
+	    ]
+	    [resP
+		    [$\langle$DP$\rangle$,name=specRes]
+		    [
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [flat]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south east] (specRes);
+    \draw[->] (specRes) to[out=south, in= south] (compV);
+\end{forest}
+
+The modified analysis no longer violates UTAH, but it introduces two issues new issues which I address below: Sideward movement and compositionality.
+\subsection{Sideward movement}
+In my proposed structure for resultatives, the object DP moves from [Spec res] to [Comp V].
+The movement ``chain'' this operation forms is problematic due to the fact that the head of the chain does not c-command the tail.
+Although this type of so-called sideward movement is generally barred, \textcite{nunes2001sideward} argues that our theory should allow a restricted version of sideward movement.
+Nunes argues that head movement and parasitic gaps both require a sideward movement operation, as they both create non-c-command dependencies.
+\ex.
+\a. Head Hovement\\
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [TP
+	    [DP]
+	    [
+		    [T
+			    [T]
+			    [V,name=head]
+		    ]
+		    [VP
+			    [$\langle$V$\rangle$,name=tail]
+			    [DP]
+		    ]
+	    ]
+    ]
+    \draw[->] (tail) to[out=south, in=south] (head);
+\end{forest}
+\b. Parasitic gaps\\
+What did Mary hear without seeing.\\
+\begin{forest}
+    nice empty nodes,sn edges,baseline
+    [CP
+	    [DP[What,roof,name=specCP]]
+	    [
+		    [C+T\\did,align=center]
+		    [TP
+			    [DP[Mary,roof]]
+			    [
+				    [$\langle$T$\rangle$]
+				    [VP
+					    [VP
+						    [V\\see,align=center]
+						    [$\langle$DP$\rangle$,name=CompV1]
+					    ]
+					    [PP
+						    [P\\without,align=center]
+						    [VP
+							    [V\\seeing,align=center]
+							    [$\langle$DP$\rangle$,name=CompV2]
+						    ]
+					    ]
+				    ]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (CompV2) to[out=south, in=south] (CompV1);
+    \draw[->] (CompV1) to[out=south, in=south] (specCP);
+\end{forest}
+
+\end{document}

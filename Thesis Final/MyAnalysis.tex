@@ -194,7 +194,78 @@ The Copy+Merge theory of movement allows us to derive sideward movement by holdi
 
 Note that in stage 5 of the derivation in \Last the syntactic object in the workspace is representable as \ref{tree:hammer-flat}.
 
-In order to constrain sideward movement, Nunes notes that its immediate results such as the tree in \ref{tree:hammer-flat} are unlinearizable.
-Assuming that decisions regarding linear order depend on c-command relations, 
+In order to constrain sideward movement, Nunes notes that its immediate results such as the tree in \ref{tree:hammer-flat} are unpronounceable.
+Assuming that decisions regarding linear order depend on c-command relations, and part of linearization is deciding which copy in a movement chain is to be pronounced, we would be unable to make a definitive linearization statement for the derived structure in \Last.
+In order to linearize the movement chain of \textit{the hammer}, there must be a copy which c-commands all other copies, meaning there must be a subsequent move from theme position to grammatical object position, which I represent as [Spec, AgrO] in \Next.
+\ex.
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [AgrOP
+	    [DP[the metal,roof,name=obj]]
+	    [
+		    [AgrO]
+    [VP
+	    [VP
+		    [hammer]
+		    [DP,name=compV]
+	    ]
+	    [resP
+		    [$\langle$DP$\rangle$,name=specRes]
+		    [
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [flat]
+			    ]
+		    ]
+	    ]
+    ]
+    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south east] (specRes);
+    \draw[->] (specRes) to[out=south, in= south] (compV);
+    \draw[->] (compV) to[out=south west, in=south] (obj); 
+\end{forest}
+
+Since the copy of \textit{the metal} in [Spec, AgrO] c-commands all of the other copies, it will be pronounced and the lower copies will be deleted at the SM interface.
+So, assuming some mechanism for sideward movement, we are able to modify Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives to be compatible with UTAH.
+Since we have modified Kratzer's analysis, it is worth asking if our version will still compose semantically to give us the desired interpretation.
+In the next section, I argue that not only are we able to retain the proper interpretation, but we are able to do so while assuming a simpler compositional system.
+\section{Composing resultatives}
+\textcite{kratzer2004building} adopts a neo-Davidsonian semantics for resultatives, meaning they are analyzed as descriptions of eventualities rather that merely as relations between entities.
+Her syntactic analysis is reproduced in \Next for reference.
+\ex.
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [DP[the metal,roof,name=specV]]
+	    [
+		    [hammer]
+		    [resP
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [flat]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south] (specV);
+\end{forest}
+
+According to this analysis, the small clause \textit{the metal flat} is interpreted as the state description in \Next, where the domain $D_s$ is the domain of eventualities.
+\ex. $\llbracket\text{SC}\rrbracket = \lambda s_s \left[ \textsc{state}(s) \& \textbf{flat}(\textbf{the\_metal})(s) \right]$
+
+The verb \textit{hammer} is interpreted as a predicate of events.
+\ex. $\llbracket\textit{hammer}\rrbracket = \lambda x_e \lambda e_s \left[ \textsc{event}(e) \& \textbf{hammer}(e)\right]$
+
+Note that Kratzer analyses resultative verbs as intransitives, meaning they do not take any entity arguments.
+Finally, Kratzer analyses the result head as a higher order function, which expresses a causal relation between the event expressed by the verb and the state expressed by the small clause.
+\ex. $\llbracket\textit{res}\rrbracket = \lambda P_{\langle s,t\rangle} \lambda e_s \exists s_s \left[\textsc{event}(e) \& \textsc{state}(s) \& P(s) \& \textsc{Cause}(s)(e)\right]$
+
 
 \end{document}

@@ -20,29 +20,30 @@ Before reviewing the analyses, however, I will make these desiderata explicit an
 \subsection{Desideratum 1: Learnability}
 Most of the analyses of the structure of adjectival resultatives are packaged with an account of the associated parametric variation.
 While few address directly address the acquisition of parametric variation, any analysis of variation makes implicit claims about acquistion.
-Generally, when discussing parametric variation, the claims about acquisition can justifiably be left implict, as the acquisition task is trivial.
+Frequently, when discussing parametric variation, the claims about acquisition are left implicit, as the acquisition task is assumed to be trivial.
 The nature of adjectival resultatives, however, is such that we must make those acquisition claims explicit.
 To explain why, I will be comparing the resultative parameter to the V-to-T parameter.
 
 Analyses of the V-to-T parameter do not need to address learnability because the ``parameter setting'' is directly learnable from the primary linguistic data.
-It is directly learnable because the overt forms of (\textit{e.g.}) polar questions differs depending on the parameter setting.
+It is directly learnable because the overt forms of (\textit{e.g.}) polar questions differ depending on the parameter setting.
 In a language with V-to-T movement such as German, the language learner will observe that lexical verbs undergo inversion for polar questions, while in a language without V-to-T movement such as English, the learner will observe that lexical verbs do not invert for questions.
 \ex. V-to-T movement (German)
 \ag. Trinken sie Kaffee?\\
 Drink.3plPres they Coffee\\
 ``Do they drink coffee?''
-\b.* \textsc{do} sie Kaffee trinken?
+\bg.* Tun sie Kaffee trinken?\\
+do they coffee drink\\
 
 \ex. *V-to-T Movement (English)
 \a.* Drink they coffee?
 \b. Do they drink coffee?
 
-The form of polar questions, then, can be positive evidence for a parameter setting.
+The form of polar questions, then, can be positive evidence for a particlar setting of a parameter.
 Since we can find direct positive evidence for a parameter setting, the task of the analyst/theoretician, then is merely to formalize the parameter is a way that is consistent with the broader theory.
 \textcite{chomsky1995minimalist}, for instance, formalizes the V-to-T parameter in terms of feature strength, while \textcite{lasnik1999verbal} formalizes it in terms of the presence/absence of inflectional features on lexical verbs.
-Neither, however, needs to explicitly describe how their parameter is set, but can assume that a certain setting is the default, and the other setting can be deduced from (\textit{e.g.}) the form of polar questions in the language.
+Neither, however, needs to explicitly describes how their parameter is set, but it can assumed that a certain setting is the default, and the other setting can be deduced from (\textit{e.g.}) the form of polar questions in the language.
 
-Resultatives, on the other hand, are not directly learnable for two reasons
+Resultatives, on the other hand, are not directly learnable for two reasons.
 The first reason is that, on the surface, resultatives, which are parameterized, are indistinguishable from depictives, which appear to be universal.
 The two construction types are indistinguishable in the sense that both correspond to the string template in \Next (modulo independent word order variation).
 \ex. \textsc{Subj} V \textsc{Obj} Adj.
@@ -69,26 +70,27 @@ A parent draws their child's attention to the hammering event and utters:
 \b.[\textbf{A:}] She's hammering the metal flat.
 
 Even this, however, is not fully unambiguous.
-While it certainly couldn't be interpreted as a depictive, \textit{flat} could be interpreted as a manner adverb, modifying \textit{hammering}.
-Such unavoidable ambiguity would make it difficult to employ any sort of semantic bootstrapping in the acquisition of the resultative parameter.
+While it certainly couldn't be interpreted as a depictive, \textit{flat} could plausibly be interpreted by a child as a manner adverb, modifying \textit{hammering}.
+Such unavoidable ambiguity would make it difficult to employ any sort of semantic bootstrapping in the acquisition of the resultative parameter.\footnote{
+	This line of argumentation is inspired by \textcite{gleitman1990structural,carey1985constraints,quine1960word} 
+}
 
 The second problem comes from the fact that both English-type and French-type languages can express resultative semantics periphrastically as in \Next.
-\ex. periphrastic resultatives
+\ex. \textbf{Periphrastic Resultatives}
 \ag. Elle a aplati le m\'etal en le martelant\\
 She has flattened the metal in the hammering\\
 \b. She flattened the metal by hammering.
 
+The resultative parameter, then, is a one-or-both parameter, meaning the presence of periphrastic resultatives in the PLD cannot be conclusive evidence of either setting of the resultative parameter.
+The V-to-T parameter, in contrast, is an either/or parameter, meaning \textit{e.g.} the presence of \textit{do}-support can be taken as evidence of a negative setting.
 
-The resultative parameter, then, is a one-or-both parameter, unlike other parameters which are either/or choices.
-The V-to-T parameter, in contrast, is an either/or choice which can be made on the basis of the PLD.
-
-Since there is no direct way to determine from the primary linguistic data whether a language allows or disallows resultatives, we can reject any analysis of resultatives that requires the parameter to be directly set.
-Rather the setting of the resultative parameter must be determined indirectly.
+Since there is no direct way to determine from the primary linguistic data whether a language allows or disallows resultatives, we can reject any analysis of resultatives that requires the parameter to be directly set based on primary linguistic data..
+Rather, the setting of the resultative parameter must be derived from the setting of a parameter which can be directly acquired.
 
 \subsection{Desideratum 2: Theoretical consistency}
 The second quality an analysis of resultatives should have is consistency with the broader theory of grammar.
 While this is a requirement of all analyses of grammatical phenomena, I will outline the subset of minimalist hypotheses that I will use to evaluate proposed analyses of adjectival resultatives.
-First, I will review what is called the Uniformity of Theta Hypothesis (UTAH) which gives us a baseline for our theory of $\Theta$-role assignments.
+First, I will review what is called the Uniformity of Theta Hypothesis (UTAH) which gives us a baseline for our theory of $\Theta$-role assignment.
 Second, I will look at the Borer-Chomsky Conjecture, which is the minimalist hypothesis which will guide our theory of variation.
 Each of these will be discussed with reference to a particular property of adjectival resultatives.
 
@@ -96,10 +98,10 @@ The canonical formulation of UTAH is that of \textcite{baker1988incorporation} w
 \ex. \textbf{The Uniformity of Theta Hypothesis (UTAH)}\\
 Identical thematic relationships between items are represented by identical structural relationships between those items at the level of D-structure. \parencite[46]{baker1988incorporation}
 
-While I will be assuming something of this flavour in my discussion, the reference to D-structure, which was eliminated in the minimalist program, renders Baker's hypothesis unusable as it stands.
+While I will be assuming something of this sort in my discussion, the reference to D-structure, which was eliminated in the minimalist program, renders Baker's hypothesis unusable as it stands.
 I propose the following more precise formulation of UTAH:
 \ex. \textbf{Minimal UTAH}\\
-If a thematic relation $f$ holds between items X and Y in distinct expressions S$_1$ and S$_2$, then there is a structural relation $g$ that also holds between X and Y in S$_1$ and S$_2$.
+If a thematic relation $f$ holds between items X and Y in distinct expressions S$_1$ and S$_2$, then there is a single structural relation $g$ that also holds between X and Y in both S$_1$ and S$_2$.
 
 To understand what this means, consider the following sentence pairs:
 \ex. \label{ex:broke-bottle}
@@ -144,7 +146,7 @@ In the first analysis, represented in \Next, \textit{the bottle} is base generat
   ]
 \end{forest}
 
-In this analysis, there is no single structural relations between \textit{broke} and \textit{the bottle}, corresponding to the single thematic relation.
+In this analysis, there is no single structural relation between \textit{broke} and \textit{the bottle}, corresponding to the single thematic relation.
 This analysis, then, violates Minimal UTAH, and can therefore be rejected.
 
 In the second analysis, represented in \Next, \textit{the bottle} originates in [Comp V] and moves to subject position in the intransitive situation.
@@ -158,7 +160,7 @@ In the second analysis, represented in \Next, \textit{the bottle} originates in 
       [T]
       [VP
         [V\\broke,align=center]
-        [DP[the metal,roof]]
+        [DP[the bottle,roof]]
       ]
     ]
   ]
@@ -179,12 +181,10 @@ In the second analysis, represented in \Next, \textit{the bottle} originates in 
   \draw[->] (theme) to[out=south west, in=south] (subj);
 \end{forest}
 
-In this analysis the single thematic relation between \textit{broke} and \textit{the bottle} corresponds to a single structural relation between the two, meaning it complies with Minimal UTAH.
-
+In this analysis the single thematic relation between \textit{broke} and \textit{the bottle} corresponds to a single structural relation between the two.
 While UTAH considerations clearly lead us to prefer the movement analysis over the surface analysis, such considerations are far from decisive evidence in favour of the movement analysis, as it is not the only possible analysis that complies with UTAH.
-The third analysis, is such an analysis.
 
-This analysis, which I will call the layering analysis, is represented in \Next.
+Another UTAH-compliant account, which I will call the layering analysis, is represented in \Next.
 This type of analysis is proposed by \textcite{borer2005normal,ramchand2008verb}.
 
 \ex. \textbf{The layering analysis}
@@ -220,7 +220,7 @@ This type of analysis is proposed by \textcite{borer2005normal,ramchand2008verb}
 In this analysis, as in the movement analysis, the thematic relation between \textit{broke} and \textit{the bottle} is represented by a single structural relation between the two.
 This means that this analysis also satisfies Minimal UTAH, and therefore cannot be rejected immediately.
 
-UTAH is relevant to adjectival resultatives considering the follwing the thematic relations in \Next.
+UTAH is relevant to adjectival resultatives considering the pattern of thematic relations in \Next.
 \ex.
 \a. Jackie hammered the metal flat.
 \b. Jackie hammered the metal.
@@ -230,33 +230,49 @@ There is a single $\Theta$ relation that holds between \textit{hammered} and \te
 Therefore, there should be a single structural relation corresponding to each of those $\Theta$ relations, and any analysis that does not meet this criterion will be rejected.
 
 In addition to UTAH considerations, I will evaluate whether the theory of variation attached to a given analysis is formulable in the minimalist model of grammar.
-This model of the grammar is composed of a lexicon containing the atoms from which complex expressions are built, merge, the simplest combinatorial operation for constructing complex expressions, and two interfaces, points at which a constructed expression is trasferred to language external modules for either externalization (the sensorimotor (SM) interface/module), or interpretation (the conceptual-intentional (CI) interface/module).
-In this portion I will argue that the lexicon is the only component of grammar that can be the locus of parametric syntactic variation.
+This model of the grammar is composed of four parts:
+	a lexicon containing the atoms from which complex expressions are built;
+	merge, the simplest combinatorial operation for constructing complex expressions; 
+	and two interfaces, points at which a constructed expression is trasferred to language external modules for either externalization (the sensorimotor (SM) interface/module), or interpretation (the conceptual-intentional (CI) interface/module).
+In this portion I will argue for what is known as the Lexical Parameterization Hypothesis (LPH) that the lexicon is the only component of grammar that can be the locus of parametric syntactic variation.\footnote{ 
+	The earliest version of this hypothesis, formulated by Hagit Borer in the following way:
+	\begin{quote}
+		In this study we will propose a model of parameters which restricts the availability of variation to the possibilities which are offered by one single component: the inflectional component. \parencite[3]{borer1984parametric}
+	\end{quote}
+	Borer, however defines \textit{inflectional} in such a way that later work reformulates her proposal as restricting variation to the lexicon.
+	See, for instance, an early version of the hypothesis by \textcite{manzini1987parameters} in ($i$) which they attribute to \textcite{borer1984parametric}
+	\ex.[($i$)]
+	\begin{minipage}[t]{\textwidth - 4em}
+		\textbf{Lexical Parameterization Hypothesis}\\
+		Values of a parameter are associated not with particular grammars but with particular lexical items. \parencite[424]{manzini1987parameters}
+	\end{minipage}
+
+} 
 I will do so first by a positive argument -- that the lexicon is a natural place to locate variation -- then by a negative argument -- that neither merge, nor the interfaces can be parameterized.
 
-The notion that lexicons vary may seem trivial, but it is worth describing if only to separate the interesting variation from the uninteresting variation.
-The interesting/uninteresting variation dichotomy roughly seems to follow the functional/lexical distinction.
-Variation between two speakers with respect to ``vocabulary'' can be fairly profound without necessarily meaning that the speakers are speaking a different language.
-The interesting lexical variation, however, is the kind which leads to systemic differences between grammars.
+The notion that lexicons vary may seem trivial, but it is worth describing if only to distinguish the grammatically relevant variation from the grammatically irrelevant variation.
+This dichotomy roughly seems to follow the functional/lexical distinction.
+Variation between two speakers with respect to lexical vocabulary can be fairly profound without necessarily meaning that the speakers are speaking a different language.
+The variation relevant to this thesis, however, is the kind which leads to systemic differences between grammars.
 For instance, consider the link between verbal agreement and pro-drop.
 Synthesizing a broad set of empirical studies, \textcite{huang1984distribution} observes that only those languages with rich agreement morphology (\textit{e.g.}, Italian and Spanish) or no agreement morphology (\textit{e.g.}, Mandarin and Japanese) allow subject pro-drop.
 If we take the richness of agreement to be a lexical parameter, then we have evidence that lexical variation can lead to systemic variation between grammars, and it is reasonable to consider agreement to be a lexical property.
 
 The English verbal system provides us with good reason to consider richness of agreement to be lexical.
-In English, main verbs and modals differ with respect to their agreement with main verbs showing impoverished agreement and modals showing no agreement.
+In English, main verbs and modals differ with respect to their agreement, with main verbs showing impoverished agreement and modals showing no agreement.
 Regardless of the details of the analysis of this variation, there must be some lexical property that determines whether or not a verbal element surfaces with agreement morphology.
 Since agreement morphology can be a variable lexical property within a language, it is reasonable to assume that it can be a variable lexical property accross languages.
 Following this line of reasoning, and assuming that the pro-drop parameter is correlated with agreement morphology, the pro-drop parameter can be reduced to a lexical parameter.
 
-Having shown that there can be significant grammatical effects from lexical variation, I will now argue that the remaining components of the grammar (merge, the two interfaces) are ill-suited to variation 
+Having shown that there can be significant grammatical effects from lexical variation, I will now argue that the remaining components of the grammar (merge, the two interfaces) are ill-suited to variation.
 
 Merge is the simplest component to eliminate from consideration of the locus of variation due to its simplicity.
-It is defined as the simplest possible operation for generating hierarchical structures: binary set formation.
+As defined in \Next, it iss the simplest possible operation for generating hierarchical structures: binary set formation.
 \ex. Merge$(\alpha, \beta) = \{ \alpha, \beta\}$
 
-In order to attribute any variation to merge, we would need to introduce complexity to it, and it would no longer be maximally simple.
+In order to attribute crosslinguistic variation to merge, we would need to introduce complexity to it, and it would no longer be maximally simple.
 
-It is worth noting, however, that merge, as defined in \Last, is not \textit{the} simplest combinatory operation, but the simplest one capable of generating hierachical structures.
+It is worth noting, however, that merge, as defined in \Last, is not \textit{the} simplest possible combinatory operation, but the simplest one capable of generating hierachical structures.
 \textcite{hornstein2009theory}, for instance, proposes a concatenative version of merge.
 \ex. Merge$^\prime(\alpha, \beta) = \alpha^\frown\beta$
 
@@ -369,17 +385,17 @@ Therefore, we can reject this analysis.
 The final analysis I will address is that of \textcite{kratzer2004building}, which will not be fully reject, but rather adapted to form my final analysis.
 In this analysis, the resultative object (\textit{e.g.}, \textit{the metal}) and the adjective (\textit{e.g.}, \textit{flat}) form a small clause, which encodes a state description.
 The small clause merges with a \textit{res} head, which encodes a causative relation between events, and the resulting \textit{res}P is merged as the complement of the verb (\textit{e.g.}, \textit{hammer}).
-The small clause theme is then raised to Spec V where it is marked as the theme of the verb, and from there the derivation proceeds as normal.
-The vP this generates is given in \Next.
+The small clause theme is then raised to check accusative Case, and from there the derivation proceeds as normal.
+The structure this generates is given in \Next.
 \ex. Kratzer's Resultative Structure\\
 {\small
 \begin{forest}
   nice empty nodes,sn edges,baseline
-  [vP
-    [v] 
+  [AgrOP
+  [{the metal},name=V theme]
+  [
+	  [AgrO]
     [VP
-      [{the metal},name=V theme] 
-      [
 	[hammer] 
 	[\textit{res}P 
 	  [\textit{res}] 
@@ -393,6 +409,27 @@ The vP this generates is given in \Next.
   ]
   \draw[->] (sc theme) to[out=south west, in=south] (V theme);
 \end{forest}}
+
+Under the assumption that \textit{the metal} is $\Theta$-marked by \textit{hammer}, this violates UTAH, and ought to be rejected.
+\textcite{kratzer2004building}, however, argues that the objects of resultatives are not $\Theta$-marked by their verbs.
+Her arguments against the $\Theta$-marking I assume appear to present problems for me, so I will address them below.
+
+Recall, that my rationale for assuming that the object of a resultative is $\Theta$-marked by its verb was that the entailment in \Next[a] entails \Next[b].
+\ex.
+\a. Mary hammered the metal flat.
+\b. Mary hammered the metal.
+
+In order to argue against this, Kratzer points out that the entailment pattern demonstrated in \Last does not seem to hold of all resultatives.
+Specifically, she discusses \Next.
+\exg. Die Teekanne leer trinken.\\
+The teapot empty drink\\
+``Drink the teapot dry/empty.''
+
+In German, as in English, the simple transitive counterpart of \Last is judged odd.
+\ex.
+\a.? Die Teekanne trinken.
+\b.? Drink the teapot.
+
 
 \subsection{Salvaging parts of previous accounts}
 While Snyder's and Kratzer's analyses have been reject, they share a certain feature which I will retain in my final analysis: they are acquirable.
@@ -409,7 +446,7 @@ the teapot empty drink.\\
 The.\textsc{fem} teapot is empty \textsc{fem}''\\
 ``The teapot is empty.''
 
-\ex. <+Insert examples from non-resultative language here.+>
+\ex. \textbf{Serbo-Croatian} <+Flesh Out These Examples+>
 
 Both compounding and the lack of predicative adjective agreement are detectable in the primary linguistic data, and therefore can reasonably be taken to be the positive data responsible for the setting of the resultative parameter.
 The account of the resultative parameter which I will develop in the remainder of this thesis will assume that the positive evidence that triggers the parameter setting will be related to compounding and adjectival agreement.

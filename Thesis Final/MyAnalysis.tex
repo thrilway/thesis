@@ -261,11 +261,83 @@ According to this analysis, the small clause \textit{the metal flat} is interpre
 \ex. $\llbracket\text{SC}\rrbracket = \lambda s_s \left[ \textsc{state}(s) \& \textbf{flat}(\textbf{the\_metal})(s) \right]$
 
 The verb \textit{hammer} is interpreted as a predicate of events.
-\ex. $\llbracket\textit{hammer}\rrbracket = \lambda x_e \lambda e_s \left[ \textsc{event}(e) \& \textbf{hammer}(e)\right]$
+\ex. $\llbracket\textit{hammer}\rrbracket = \lambda e_s \left[ \textsc{event}(e) \& \textbf{hammer}(e)\right]$
 
 Note that Kratzer analyses resultative verbs as intransitives, meaning they do not take any entity arguments.
 Finally, Kratzer analyses the result head as a higher order function, which expresses a causal relation between the event expressed by the verb and the state expressed by the small clause.
 \ex. $\llbracket\textit{res}\rrbracket = \lambda P_{\langle s,t\rangle} \lambda e_s \exists s_s \left[\textsc{event}(e) \& \textsc{state}(s) \& P(s) \& \textsc{Cause}(s)(e)\right]$
 
+So, for Kratzer, the typed LF of \textit{hammer the metal flat} is as in \Next.
+\ex.
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP$_{\langle s,t\rangle}$
+		    [hammer$_{\langle s,t\rangle}$]
+		    [resP$_{\langle s,t\rangle}$
+			    [res$_{\langle st, st\rangle}$]
+			    [SC$_{\langle s,t\rangle}$
+				    [DP$_e$]
+				    [flat$_{\langle e, st\rangle}$]
+			    ]
+		    ]
+	    ]
+\end{forest}
+
+Kratzer proposes that \textit{hammer} and the resP compose by an operation she calls Event Identification \parencite[cf.][]{kratzer1996severing} which, in this instance, is equivalent to Predicate Modification generalized to eventualities.
+\ex. \textbf{Predicate Modification (eventuality version)}\\
+If $\alpha$ is a branching node with daughters $\beta$ and $\gamma$, both of which are of type $\langle s,t\rangle$, the $\llbracket\alpha\rrbracket = \lambda e_s [\llbracket\beta\rrbracket(e) \& \llbracket\gamma\rrbracket(e)]$
+
+So, the interpretation of the VP in \LLast, can be derived as in \Next.
+\ex.
+\begin{enumerate}
+	\item $\llbracket$VP$\rrbracket$ = \hfill (Predicate Modification)
+	\item $\lambda e_s [\llbracket\text{hammer}\rrbracket(e) \& \llbracket\text{resP}\rrbracket(e)]$ = 
+	\item $\lambda e_s [ \textbf{hammer}(e) \& \exists s_s[\textsc{Cause}(s)(e) \& \textbf{flat}(\textbf{the\_metal})(s)]]$
+\end{enumerate}
+
+So, the hammering event is identical to the event of causing the flatness state.
+The same compositional process can be adapted to the sideward movement structure I propose, as the VP and resP in my structures are still predicted to be predicates of eventualities.
+\ex.
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP$_{\langle s,t\rangle}$
+	    [VP$_{\langle s,t\rangle}$
+		    [hammer$_{\langle e, st\rangle}$]
+		    [DP$_e$]
+	    ]
+	    [resP$_{\langle s,t\rangle}$
+		    [res$_{\langle st, st\rangle}$]
+		    [SC$_{\langle s,t\rangle}$
+			    [DP$_e$]
+			    [flat$_{\langle e, st\rangle}$]
+		    ]
+	    ]
+	    ]
+\end{forest}
+
+Thus, with my adaptations, Kratzer's analysis of resultatives can be made UTAH-compliant.
+In the remainder of this chapter, I will discuss the parametric analysis of resultatives that I will be assuming.
+
+\section{Where does the resultative parameter come from?}
+In the previous chapter, I discussed two desiderata for a parametric analysis.
+First, the parameter must be learnable, meaning there must be some variable in the primary linguistic data which the learner can detect and deduce a particular parameter setting from.
+Second, the variable must be represented in the lexicon.
+For the sake of expediency, I will refer to detectable variable as the surface variable and its lexical representation as the lexical variable.
+
+To my knowledge, there is only one proposed candidate for the surface variable in the generative literature, that is, Snyder's (\citeyear{snyder1995language,snyder2012parameter}) compounding parameter according to the latest version of which, a language allows resultatives iff it allows bare stem compounding.
+As I discussed in the previous chapter, Snyder rejects the Lexical Parameterization Hypothesis, meaning he does not propose a lexical variable.
+We can, however, propose at a lexical variable that corresponds to the (un)availability of bare stem compounding.
+
+To make such a proposal, we must make the intermediate hypothesis that a language allows bare stem compounding iff it allows bare stems, meaning there should be no languages that allow for bare stems but cannot compound them together.
+Now, a bare stem is merely an independent word with no inflectional material, and words are represented in most current theories of syntax as an acategorial root merged with a category-determining functional head <+BorerMarantzCite+>.
+Since roots are, by definition, featureless, any inflectional features on stems must be due to their category-determining heads.
+It follows from this that the lexical variable in question is the presence or absence of inflectional features on category-determining heads in the lexicon.
+
+So, if we represent inflected category-determining heads as $v_\varphi, n_\varphi, adj_\varphi, etc.$ and their bare counterparts as $v_\emptyset, n_\emptyset, adj_\emptyset, etc.$, then the compounding parameter can be represented as in \Next.
+\ex. \textsc{lex} $\left\{ \text{includes, does not include} \right\}$ $v_\emptyset, n_\emptyset, adj_\emptyset, etc.$
 
 \end{document}

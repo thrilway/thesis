@@ -56,10 +56,12 @@ According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{
 If we were to modify Kratzer's analysis, such that \textit{the metal} is the complement of \textit{hammer} then we would need to attach the result phrase in a different position.
 I propose that the result phrase is adjoined to the VP, which means the DP can be merged directly with the verb as shown in \Next.
 \ex.\label{tree:hammer-flat}
+{\small
 \begin{forest}
-    nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-    calign primary angle=-30,calign secondary angle=70}
+    nice empty nodes,sn edges,baseline,
+%    for tree={
+%    calign=fixed edge angles,
+%    calign primary angle=-30,calign secondary angle=60}
     [VP
 	    [VP
 		    [hammer]
@@ -79,6 +81,7 @@ I propose that the result phrase is adjoined to the VP, which means the DP can b
     \draw[->] (SCDP) to[out=south west, in=south east] (specRes);
     \draw[->] (specRes) to[out=south, in= south] (compV);
 \end{forest}
+}
 
 The modified analysis no longer violates UTAH, but it introduces two issues new issues which I address below: Sideward movement and compositionality.
 \subsection{Sideward movement}
@@ -198,10 +201,12 @@ In order to constrain sideward movement, Nunes notes that its immediate results 
 Assuming that decisions regarding linear order depend on c-command relations, and part of linearization is deciding which copy in a movement chain is to be pronounced, we would be unable to make a definitive linearization statement for the derived structure in \Last.
 In order to linearize the movement chain of \textit{the hammer}, there must be a copy which c-commands all other copies, meaning there must be a subsequent move from theme position to grammatical object position, which I represent as [Spec, AgrO] in \Next.
 \ex.
+{\small
 \begin{forest}
-    nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-    calign primary angle=-30,calign secondary angle=70}
+    nice empty nodes,sn edges,baseline,
+%    for tree={
+%    calign=fixed edge angles,
+%    calign primary angle=-30,calign secondary angle=65}
     [AgrOP
 	    [DP[the metal,roof,name=obj]]
 	    [
@@ -228,6 +233,7 @@ In order to linearize the movement chain of \textit{the hammer}, there must be a
     \draw[->] (specRes) to[out=south, in= south] (compV);
     \draw[->] (compV) to[out=south west, in=south] (obj); 
 \end{forest}
+}
 
 Since the copy of \textit{the metal} in [Spec, AgrO] c-commands all of the other copies, it will be pronounced and the lower copies will be deleted at the SM interface.
 So, assuming some mechanism for sideward movement, we are able to modify Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives to be compatible with UTAH.

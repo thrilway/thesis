@@ -70,7 +70,9 @@ A parent draws their child's attention to the hammering event and utters:
 \b.[\textbf{A:}] She's hammering the metal flat.
 
 Even this, however, is not fully unambiguous.
-While it certainly couldn't be interpreted as a depictive, \textit{flat} could plausibly be interpreted by a child as a manner adverb, modifying \textit{hammering}.
+Suppose the child has some notion of the link between the word \textit{flat} and the property or state of flatness.
+In this case \Last[b] certainly couldn't be interpreted as a depictive, but \textit{flat} could plausibly be interpreted by a child as a manner adverb, modifying \textit{hammering}.
+The child may have encountered the adverb \textit{flatly} and also encountered adverbs that seem to have an optional \textit{-ly} suffix (\textit{e.g.} \textit{quick}(\textit{-ly})).
 Such unavoidable ambiguity would make it difficult to employ any sort of semantic bootstrapping in the acquisition of the resultative parameter.\footnote{
 	This line of argumentation is inspired by \textcite{gleitman1990structural,carey1985constraints,quine1960word} 
 }
@@ -321,19 +323,27 @@ Since concatenative merge forms essentially flat structures, it is ill-suited to
 So, while there are other possible combinatory operations which are as simple as merge, there don't seem to be any which are able to capture the fact that linguistic expressions are hierarchically structured objects.
 Therefore, any variation in merge can only come from complicating the operation.
 
-The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition.
-If we take a grammar to be a mapping between form and meaning then we can represent it as a function.
-As a function it will have a domain (meanings), a range (forms), and an intension (the grammar).
-From these three properties we will be able to generate an extension of the function.
+The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition, which I will discuss by analogy to numerical functions below.
+At first blush, it may seem unreasonable to assume we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.
+In early generative work, \textcite{chomsky1959certain} proposes that ``[w]e can consider a grammar of [a language] L to be a function mapping the integers onto L'' and notes that his use of the term ``generate'' is due to \textcite{post1944recursively} who discusses computational procedures that generate the natural numbers.
+Suppose we take a grammar to be a function, like any other function, with a domain (meanings), a range (forms), and an intension (the grammar).\footnote{
+	Note that in order to formalize a grammar as a function, I must introduce an asymmetry between form and meaning.
+	In other words, I am considering grammar to be a function from meanings to forms and not the other way around, from forms to meanings.
+	For the purposes of this thesis, this formalization is merely an illustrative analogy, so the choice of the direction of this asymmetry can be taken as arbitrary.
+	There is good reason, however, to assume that the asymmetry I have chosen is a true asymmetry, that grammars truly are functions from meaning to form and not the other way around.
+	I address these in appendix \ref{sec:functions}
+}
+From these three properties we will be able to generate an extension of the function which is the set of meaning-form pairs of a language, that is the set of meaningful expressions of a language.
+A mature speaker-hearer of a language, then, will be one whose knows the domain, range, and intension that generates that language.
 The language acquisition process, then, will be a process of inferring the function from a finite and arbitrary subset of its extension.
-Such an inference 
+The question at the core of generative linguistics, is how much of the function is known innately and how much is inferred from experience.
 
 Consider the following analogy to quadratic functions.
-Suppose we model a particular I-function as the quadratic function in \Next, and the E-function it generates is it graph in \NNext.
-\ex. I-Language$_x$\\
+Suppose we model a particular function as the quadratic (I-)function in \Next, and the extension (\textit{i.e.} its E-function) it generates is it graph in \NNext.
+\ex. I-Function$_L$\\
 $y = 2x^2 + 4x-1$
 
-\ex. E-Language$_x$\\
+\ex. E-Function$_L$\\
 \includegraphics[width=0.7\textwidth]{quadplot-axis}
 
 The task of acquisition, then, is analogous to fitting points to a polynomial function, and the question at hand is how many aspects of the polynomial must we know in order to properly define it given its graph.
@@ -353,17 +363,16 @@ Consider the fitting task if we are given a parabola with only a y-axis as in \L
 Our task them is to determine the x-axis and the coefficients that are consistent with the parabola and y-axis, which would be an impossible task given that there would be an infinite number of consistent axis-coefficient pairs.
 
 If we accept this as a reasonable analogy for language acquisition, then we are forced to only allow a single locus of variation.
-Since I have already shown that lexical variation exists and can affect the grammar as a whole.
-The LPH, then, follows from this reasooning.
+Since I have already shown that lexical variation exists and can affect the grammar as a whole, we are led to endorse or at least seriously entertain the LPH.
 So any account of the resultative parameter must be explainable in lexical terms in order to be consistent with the LPH.
 
 The two theoretical principles discussed above will allow me to evaluate the previously proposed analyses of resultatives.
 UTAH considerations will determine if a given structural analysis is tenable in minimalist syntax.
-The Borer-Chomsky conjecture, on the other hand will be used to evaluate whether a given analysis encodes variation in an acquirable way.
+The LPH, on the other hand will be used to evaluate whether a given analysis encodes variation in an acquirable way.
 
 \section{The previous analyses}
 In this section I will be addressing three previous analyses of adjectival resultatives.
-The first analysis, the complex predicate analysis \parencite{snyder1995language,irimia2012secondary}, will be rejected for violating UTAH both and the Borer-Chomsky Conjecture.
+The first analysis, the complex predicate analysis \parencite{snyder1995language,irimia2012secondary}, will be rejected for violating UTAH both and the LPH.
 The second, the cartographic/nanosyntactic analysis \parencite{son2008microparameters}, is theoretically sound but unlearnable.
 The third, that of \textcite{kratzer2004building}, which I will adapt for my purposes, narrowly violates UTAH.
 
@@ -394,12 +403,13 @@ In the simple transitive version, \textit{the metal} and \textit{hammer} are sis
 The complex predicate analysis, then, violates UTAH and should be rejected.
 
 Snyder, who proposes a complex predicate analysis of adjectival resultatives in his \citeyear{snyder1995language} dissertation, augments his structural analysis with a parametric analysis \parencite{snyder2012parameter}.
-According to this analysis, a language allows resultatives only if it permits Generalized Modification, a compositional operation defined in \Next.
+According to this analysis, a language allows resultatives only if it permits Generalized Modification (GM), a compositional operation defined in \Next.
 \ex. Generalized Modification \parencite{snyder2012parameter}\\
 If $\alpha$ and $\beta$ are syntactic sisters under the node $\gamma$, where $\alpha$ is the \uline{head} of $\gamma$, and if $\alpha$ denotes a \uline{kind}, then interpret $\gamma$ semantically as a \uline{subtype} of $\alpha$'s kind that stands in a pragmatically suitable relation to the denotation of $\beta$.
 
-In order for this parameter to be instantiated, it would need to be located on the CI interface, meaning it would be a non-lexical parameter.
-Such a parameter violates the Borer-Chomsky Conjecture and, therefore, can be rejected as an account of the resultative parameter.
+Since GM is a compositional principle, that is a function from syntactic objects to meanings, it would be part of the CI interface.
+Therefore, if we were to parameterize GM, we would be parameterizing the CI interface.
+Such a parameter would violates the LPH and, therefore, can be rejected as an account of the resultative parameter.
 
 Another structural and parametric account of resultatives, by \textcite{son2008microparameters}, follows Ramchand's (\citeyear{ramchand2008verb}) decompositional analysis of vP syntax.
 Under this account, event descriptions are decomposable into several universal features (\textit{e.g.}, \textsc{Result}, \textsc{Manner}, \textsc{Process}), and language variation results from languages lexicalizing these features differently.
@@ -407,7 +417,7 @@ Under this account, event descriptions are decomposable into several universal f
 \ex.
 \raisebox{-.9\height}{\includegraphics{lexicalization_table}}
 
-Note that this account is consistent with the Borer-Chomsky Conjecture because the variation is lexical in nature.
+Note that this account is consistent with the LPH because the variation is lexical in nature.
 There is no positive evidence, however, that would allow a learner to determine whether or not the null \textsc{Result} head is present in their linguistic input.
 The lack of positive evidence means that this account, while theoretically tenable, predicts that the resultative parameter would be unlearnable.
 Therefore, we can reject this analysis.

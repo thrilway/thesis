@@ -35,7 +35,7 @@
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
 \usepackage{xcolor}
-
+\usepackage[]{hyperref}
 %\listfiles
 
 \usetikzlibrary{positioning,arrows}
@@ -105,6 +105,8 @@
 \begin{document}
 \begin{preliminary}
   \maketitle
+  \tableofcontents
+  %\listoffigures
 \end{preliminary}
 \chapter{Introduction}
 %\subfile{intro}
@@ -127,6 +129,9 @@
 
 \chapter{Conclusion}\label{sec:Conclusion}
 \printbibliography
+\appendix
+\chapter{Grammars as functions}\label{sec:functions}
+
 \end{document}
 
 

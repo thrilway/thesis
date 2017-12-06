@@ -21,7 +21,7 @@ So, for instance, the phrase \textit{see the girl} is stipulated to be a VP rath
 
 Chomsky proposes that labels are assigned post-syntactically by a special instance of minimal search called the Labelling Algorithm (LA).
 LA operates iteratively in a top-down manner, searching each syntactic object for a ``most prominent'' element which can serve as the label.
-In the simplest case, an atomic element (a head X) merged with a complex object (a phrase YP), the atomic element is found the most prominent element and, as such, is the label of the object.
+In the simplest case, an atomic element (a head X) merged with a complex object (a phrase YP), the atomic element is found to be the most prominent element and, as such, is the label of the object.
 \ex. LA$(\left\{ X, YP \right\}) = X$
 
 The head-phrase case in \Last is trivial due to the inherent asymmetry in the structure.
@@ -75,6 +75,10 @@ The DP \textit{the dishes} has not raised, so it is visible to LA in $\delta$, a
 \a. $\delta = \left\{ \text{the}_\varphi \text{ dishes} \left\{ \text{to}_\emptyset \left\{ \ldots \right\}\right\} \right\}$
 \b. LA$(\delta) = $ Undefined
 
+
+Also, Chomsky proposes that heads that bear only a partial set of features (\textit{e.g.} English finite T$_\varphi$) cannot label unless they agree for those features with some other head.
+This is in contrast to heads that bear full feature sets (\textit{e.g.} Italian T${\langle\varphi,\varphi\rangle}$) or lack these features altogether (\textit{e.g.} English non-finite T$_\emptyset$) which are able to label without agreement.
+
 At this point I should note an issue that arises when giving label-based explanations of syntactic derivations.
 In previous theories, movement operations were described as being ``driven'' by some need.
 For example, in Government and Binding theories DPs undergo movement in order to get abstract Case.
@@ -87,6 +91,36 @@ While these accounts were all based on an interface-based theory, they allow syn
 
 Label theory, however, assumes that all operations are free, that is, they don't require a trigger or a driver.
 This means, however, that an explanation of why an operation occurs or does not occur in a given derivation is slightly more complicated in label theory.
+The well-formedness of a structure is assessed at the interface, which means entire phases are assessed at once.
+Consider, for instance, the successive \textit{wh}-movement in \Next, and how the two types of theories would account for it.
+\ex. Who$_i$ does Mary say $t_i$ that Laura likes $t_i$?
 
+The accounts of the final movement step ([Spec, C] to [Spec, C]) would be similar, as both theories assume that the highest C needs to agree with a \textit{wh}-word, either for labelling or feature-satisfaction.
+The explanations of the first movement ([Comp, V] to [Spec, C]) however, are different.
+If movement operations must be driven, then we would likely need to posit a feature on the lower C which must be satisfied by a \textit{wh}-word.
+With free movement, however, the \textit{wh}-word must move to the lower [Spec, C] because, if it doesn't, it cannot move to the higher [Spec, C] without violating Subjacency.
+Assuming a phase-based theory of subjacency, the first movement operation in \Last follows from the proposal that C is a phase head.
 
+To summarize, a syntactic derivation in label theory proceeds as follows.
+Structures are built by iteratively applying Merge (along with Select and Copy) to syntactic objects.
+At certain points a portion of a structure (\textit{i.e.}, a phase) is transferred to the interfaces.
+At the CI interface, the labelling algorithm labels the transferred structure and all of the structures contained within the transferred structure.
+If the labelling algorithm fails to label any part of the transferred structure, the derivation crashes.
+A summary of the labelling algorithm is given below in \Next.
+\ex.
+\begin{tabular}[t]{lll}
+	\textbf{SO} & \textbf{LA(SO)} & \\
+	\hline
+	$X$ & $X$ & ($X$ is not a root, and does not have an incomplete feature set)\\
+	$\left\{ X, R \right\}$ & LA$(X)$ & ($R$ is a root, $X$ is not a root)\\
+	$\left\{ X, YP \right\}$ & LA$(X)$ & \\
+	$\left\{ \langle XP\rangle, YP \right\}$ & LA$(YP)$ & \\
+	$\left\{ XP_F, YP_F \right\}$ & $\langle F,F\rangle$ & ($XP$ and $YP$ agree for $F$)\\
+	Otherwise & Undefined &
+\end{tabular}
+
+\textcite{chomsky2015problems} demonstrates that label theory has some empirical advantage over previous theories of syntax, but leaves at least two questions unanswered.
+The first question is why labels would be required by the CI interface at all, and the second question is how are host-adjunct structures labelled.
+In the next section I will propose answers to those questions.
+Furthermore assuming a phase-based label-theoretic syntax, will require us to rethink the architecture of our grammar.
 \end{document}

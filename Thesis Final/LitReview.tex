@@ -8,9 +8,14 @@
 % arara: pdflatex: {options: "-file-line-error-style"}
 \documentclass[MilwayThesis]{subfiles}
 \setcounter{chapter}{2}
+\usepackage{atveryend}
+
+\BeforeClearDocument{
+	\printbibliography
+}
 \begin{document}
 In this chapter I will review several previous analyses of adjectival resultatives and the parametric variation associated with them.
-I will evaluate the anlyses against two desiderata.
+I will evaluate the analyses against two desiderata.
 First, I will evaluate whether the variation, as analyzed, is learnable.
 Second, I will evaluate whether the analysis comports with the theoretical principles of the minimalist program.
 Before reviewing the analyses, however, I will make these desiderata explicit and justify them.
@@ -18,15 +23,15 @@ Before reviewing the analyses, however, I will make these desiderata explicit an
 \section{Desiderata for an analysis of resultatives}
 
 \subsection{Desideratum 1: Learnability}
-Most of the analyses of the structure of adjectival resultatives are packaged with an account of the associated parametric variation, and it is a truism that any aspect of a language that varies from speaker to speaker must be acquirable from the primary linguistic data.
-While few address directly address the acquisition of parametric variation, any analysis of variation makes implicit claims about acquistion.
-Frequently, when discussing parametric variation, the claims about acquisition are left implicit, as the acquisition task is assumed to be trivial.
+Most analyses of the structure of adjectival resultatives include an account of the associated parametric variation, and it goes without saying that any aspect of a language that varies from speaker to speaker must be acquirable from the primary linguistic data.
+While few authors directly address the acquisition of parametric variation, any analysis of variation makes implicit claims about acquisition.
+Frequently, in discussions of parametric variation, the claims about acquisition are left implicit, as the acquisition task is assumed to be trivial.
 The nature of adjectival resultatives, however, is such that we must make those acquisition claims explicit.
-To explain why, I will be comparing the resultative parameter to the V-to-T parameter.
+To explain why, I will compare the resultative parameter to the V-to-T parameter.
 
 Analyses of the V-to-T parameter do not need to address learnability because the ``parameter setting'' is directly learnable from the primary linguistic data.
-It is directly learnable because the overt forms of (\textit{e.g.}) polar questions differ depending on the parameter setting.
-In a language with V-to-T movement such as German, the language learner will observe that lexical verbs undergo inversion for polar questions, while in a language without V-to-T movement such as English, the learner will observe that lexical verbs do not invert for questions.
+It is directly learnable because constructions like polar questions differ overtly depending on the parameter setting.
+In a language with V-to-T movement such as German, the language learner will observe that lexical verbs undergo inversion for polar questions as shown in \Next, while in a language without V-to-T movement such as English, the learner will observe that lexical verbs do not invert for questions.
 \ex. V-to-T movement (German)
 \ag. Trinken sie Kaffee?\\
 Drink.3plPres they Coffee\\
@@ -39,13 +44,14 @@ do they coffee drink\\
 \b. Do they drink coffee?
 
 The form of polar questions, then, can be positive evidence for a particlar setting of a parameter.
-Since we can find direct positive evidence for a parameter setting, the task of the analyst/theoretician, then is merely to formalize the parameter is a way that is consistent with the broader theory.
+Since we can find direct positive evidence for a parameter setting in data like \LLast--\Last, the task of the analyst/theoretician, then is merely to formalize the parameter is a way that is consistent with the broader theory.
 \textcite{chomsky1995minimalist}, for instance, formalizes the V-to-T parameter in terms of feature strength, while \textcite{lasnik1999verbal} formalizes it in terms of the presence/absence of inflectional features on lexical verbs.
-Neither, however, needs to explicitly describes how their parameter is set, but it can assumed that a certain setting is the default, and the other setting can be deduced from (\textit{e.g.}) the form of polar questions in the language.
+Neither, however, needs to explicitly describes how their parameter is set.
+Rather, it can assumed that a certain setting is the default, and the other setting can be deduced from (\textit{e.g.}) the form of polar questions in the language.
 
 Resultatives, on the other hand, are not directly learnable for two reasons.
 The first reason is that, on the surface, resultatives, which are parameterized, are indistinguishable from depictives, which appear to be universal.
-The two construction types are indistinguishable in the sense that both correspond to the string template in \Next (modulo independent word order variation).
+The two construction types are indistinguishable in the sense that both correspond to the string template in \Next (setting aside independent word order variation).
 \ex. \textsc{Subj} V \textsc{Obj} Adj.
 
 This indistinguishability is evident in the fact that one can construct examples which are truly ambiguous between resultative and depictive readings, as in \Next.
@@ -54,14 +60,14 @@ This indistinguishability is evident in the fact that one can construct examples
 \a. $\approx$ He fried the fish once it was dry. (\textbf{Depictive})
 \b. $\approx$ He fried the fish until it was dry. (\textbf{Resultative})
 \z.
-\b. She painted the barn red.
-\a. $\approx$ The barn is red in her painting. (\textbf{Depictive})
-\b. $\approx$ She applied a coat of red paint to the door. (\textbf{Resultative})
+\b. Grant Wood painted the house white.
+\a. $\approx$ The house is white in Grant Wood's painting. (\textbf{Depictive})
+\b. $\approx$ Grant Wood applied a coat of white paint to the house. (\textbf{Resultative})
 \z.
 
 Assuming a child acquiring either French or English encounters sentences with the form of \LLast in their PLD, there is no obvious way for the child to determine whether a given secondary predicate is to be interpreted depictively or resultatively.
 
-An empiricist might object, arguing that the ambiguous examples above are highly constructed, and would easily by disambiguated in context.
+Some might object, arguing that the ambiguous examples above are highly constructed, and would easily by disambiguated in context.
 They would insist that the learner would infer a positive setting of the resultative parameter from the use of a secondary predication construction in the presence of a resultative event.
 So, an English learner, but not a French learner, might be exposed to the context-sentence pairing in \Next.
 \ex. 
@@ -72,7 +78,7 @@ A parent draws their child's attention to the hammering event and utters:
 Even this, however, is not fully unambiguous.
 Suppose the child has some notion of the link between the word \textit{flat} and the property or state of flatness.
 In this case \Last[b] certainly couldn't be interpreted as a depictive, but \textit{flat} could plausibly be interpreted by a child as a manner adverb, modifying \textit{hammering}.
-The child may have encountered the adverb \textit{flatly} and also encountered adverbs that seem to have an optional \textit{-ly} suffix (\textit{e.g.} \textit{quick}(\textit{-ly})).
+The child may have encountered the adverb \textit{flatly} and also encountered adverbs that seem to have an optional \textit{-ly} suffix (\textit{e.g.} \textit{quick}(\textit{-ly})), or cannot be suffixed with \textit{-ly} (\textit{e.g.} \textit{fast}(*\textit{-ly})).
 Such unavoidable ambiguity would make it difficult to employ any sort of semantic bootstrapping in the acquisition of the resultative parameter.\footnote{
 	This line of argumentation is inspired by \textcite{gleitman1990structural,carey1985constraints,quine1960word} 
 }
@@ -81,26 +87,26 @@ The second problem comes from the fact that both English-type and French-type la
 \ex. \textbf{Periphrastic Resultatives}
 \ag. Elle a aplati le m\'etal en le martelant\\
 She has flattened the metal in the hammering\\
-\b. She flattened the metal by hammering.
+\b. She flattened the metal by hammering (it).
 
 The resultative parameter, then, is a one-or-both parameter, meaning the presence of periphrastic resultatives in the PLD cannot be conclusive evidence of either setting of the resultative parameter.
-The V-to-T parameter, in contrast, is an either/or parameter, meaning \textit{e.g.} the presence of \textit{do}-support can be taken as evidence of a negative setting.
+The V-to-T parameter, in contrast, is an either/or parameter, meaning, for example, that the presence of \textit{do}-support can be taken as evidence that V does not move.
 
 Since there is no direct way to determine from the primary linguistic data whether a language allows or disallows resultatives, we can reject any analysis of resultatives that requires the parameter to be directly set based on primary linguistic data..
-Rather, the setting of the resultative parameter must be derived from the setting of a parameter which can be directly acquired.
+Rather, the setting of the resultative parameter must be derived from the setting of a parameter which \textit{can} be directly acquired.
 
 \subsection{Desideratum 2: Theoretical consistency}
 The second quality an analysis of resultatives should have is consistency with the broader theory of grammar.
-While this is a requirement of all analyses of grammatical phenomena, I will outline the subset of minimalist hypotheses that I will use to evaluate proposed analyses of adjectival resultatives.
-First, I will review what is called the Uniformity of Theta Hypothesis (UTAH) which gives us a baseline for our theory of $\Theta$-role assignment.
-Second, I will look at the Lexical Parameterization Hypothesis, which is the minimalist hypothesis which will guide our theory of variation.
+While this is a requirement of all analyses of grammatical phenomena, I will outline the subset of minimalist hypotheses that I will use to evaluate existing analyses of adjectival resultatives.
+First, I will review what is called the Uniformity of Theta Hypothesis (UTAH) which gives us a baseline for our theory of $\theta$-role assignment.
+Second, I will look at the Lexical Parameterization Hypothesis, the minimalist hypothesis which will guide our theory of variation.
 Each of these will be discussed with reference to a particular property of adjectival resultatives.
 
-The canonical formulation of UTAH is that of \textcite{baker1988incorporation} working in pre-minimalist Principles and Parameters framework, given below in \Next.
+The canonical formulation of UTAH is that of \textcite{baker1988incorporation} working in a pre-minimalist Principles and Parameters framework, given below in \Next.
 \ex. \textbf{The Uniformity of Theta Hypothesis (UTAH)}\\
 Identical thematic relationships between items are represented by identical structural relationships between those items at the level of D-structure. \parencite[46]{baker1988incorporation}
 
-While I will be assuming something of this sort in my discussion, the reference to D-structure, which was eliminated in the minimalist program, renders Baker's hypothesis unusable as it stands.
+While I will be assuming something of this sort in my discussion, the reference to D-structure, which was eliminated in the minimalist program, renders Baker's hypothesis unusable in its original form.
 I propose the following more precise formulation of UTAH:
 \ex. \textbf{Minimal UTAH}\\
 If a thematic relation $f$ holds between items X and Y in distinct expressions S$_1$ and S$_2$, then there is a single structural relation $g$ that also holds between X and Y in both S$_1$ and S$_2$.
@@ -115,8 +121,8 @@ To understand what this means, consider the following sentence pairs:
 \b. Katie ran a kilometre.
 
 The pair in \ref{ex:broke-bottle} represents a single thematic relation between \textit{broke} and \textit{the bottle}.
-UTAH says that there must be a structural relation that holds between \textit{broke} and \textit{the bottle} in both sentences.
-Similarly, in \ref{ex:katie-ran}, there is a single thematic relation between \textit{Katie} and \textit{ran}, which means there must be a single corresponding structural relation between the two.
+Minimal UTAH says that there must be a single structural relation that holds between \textit{broke} and \textit{the bottle} in both sentences.
+Similarly, in \ref{ex:katie-ran}, there is a single thematic relation between \textit{Katie} and \textit{ran}, which means there must be a single corresponding structural relation between the two in both \Last[a] and \Last[b].
 Any structural analysis of these sentences that violates Minimal UTAH, then, can be rejected on theoretical grounds.
 
 Consider, for instance, three possible structural analyses of the pair in \ref{ex:broke-bottle}.
@@ -228,8 +234,8 @@ UTAH is relevant to adjectival resultatives considering the pattern of thematic 
 \b. Jackie hammered the metal.
 \b. Jackie made the metal flat.
 
-There is a single $\Theta$ relation that holds between \textit{hammered} and \textit{the metal} in both \Last[a] and \Last[b], and there is a single $\Theta$ relation that holds between \textit{the metal} and \textit{flat} in  both \Last[a] and \Last[c]. 
-Therefore, there should be a single structural relation corresponding to each of those $\Theta$ relations, and any analysis that does not meet this criterion will be rejected.
+There is a single $\theta$-relation that holds between \textit{hammered} and \textit{the metal} in both \Last[a] and \Last[b], and there is a single $\theta$-relation that holds between \textit{the metal} and \textit{flat} in  both \Last[a] and \Last[c]. 
+Therefore, there should be a single structural relation corresponding to each of those $\theta$-relations, and any analysis that does not meet this criterion will be rejected.
 
 It could be noted that while a particular entailment pattern clearly and robustly holds of \Last (\Last[a] entails both \Last[b] and \Last[c]), the same cannot be said for all versions of adjectival resultatives.
 Consider, for instance, \Next the English version of Kratzer's (\citeyear{kratzer2004building}) central example.
@@ -241,14 +247,14 @@ Consider, for instance, \Next the English version of Kratzer's (\citeyear{kratze
 
 While \Last[a] does clearly and robustly entail \Last[c], we cannot say the same about \Last[a] and \Last[b], as it is generally judged as highly coerced.
 Presented with this pattern, we might argue that UTAH considerations are only informative regarding the structural relationship between the object and the adjective of resultatives like \Last[a].
-The pattern in \Last does not, however, negate the pattern in \LLast, which suggested that the resultative object is $\Theta$-marked by its verb as well as its adjective.
+The pattern in \Last does not, however, negate the pattern in \LLast, which suggested that the resultative object is $\theta$-marked by its verb as well as its adjective.
 We could propose that there are, in fact, atleast two distinct structures for resultatives: one corresponding to cases like \LLast, and another corresponding to cases like \Last.
 To my knowledge, however, there is no corroborating evidence for any structural difference between \LLast[a] and \Last[a], and, absent any such evidence, we ought to assume they have the same structure.
 Given this, we must decide which type of resultative we take a ``prototypical''.
-If \Last[a] is our prototype, then we would assume that the resultative object is not $\Theta$-marked by its verb and we would have to explain why the object of \LLast[a] seems to be $\Theta$-marked by its verb.
-There are, in my mind, two possible ways to explain this: we could either retain a single structure for resultatives and argue that \textit{the metal} is really not $\Theta$-marked by \textit{hammer} in \textit{hammer the metal flat}, or we could propose multiple structures for resultatives depending on their $\Theta$-marking properties.
+If \Last[a] is our prototype, then we would assume that the resultative object is not $\theta$-marked by its verb and we would have to explain why the object of \LLast[a] seems to be $\theta$-marked by its verb.
+There are, in my mind, two possible ways to explain this: we could either retain a single structure for resultatives and argue that \textit{the metal} is really not $\theta$-marked by \textit{hammer} in \textit{hammer the metal flat}, or we could propose multiple structures for resultatives depending on their $\theta$-marking properties.
 
-The first line of argument means that we would need to propose at least one situation in which a thematic relation is established without explicit $\Theta$-marking, that is, extragrammatically.
+The first line of argument means that we would need to propose at least one situation in which a thematic relation is established without explicit $\theta$-marking, that is, extragrammatically.
 This means we would be proposing an exception to UTAH, meaning we would need to explain why resultatives are exceptional.
 If resultatives are not truly exceptional, then they are the norm and UTAH-compliant cases are the exceptions, meaning we would have to reject UTAH wholesale.
 Neither of these are theoretically attractive options, so I will not pursue them any further here.
@@ -259,7 +265,7 @@ This means that, while we can't reject it outright, we should hold it as a last 
 So, assuming Kratzer's example to be our prototype leads us to undesirable results.
 Assuming \textit{hammer the metal flat} to be the prototype, I argue, does not lead us to any undesirable conclusions, though it does present some puzzles.
 As in the discussion above, assuming one type of resultative to be prototypical means explaining the eccentricities in the non-prototypical version;
-that is, we must explain the apparent lack of $\Theta$-marking in Kratzer's example.
+that is, we must explain the apparent lack of $\theta$-marking in Kratzer's example.
 While I cannot offer a full explanation, I will suggest that such an explanation will depend of a fuller understanding of the complex dynamics of coercion.
 Developing such an understanding is beyond the scope of this thesis, but see \textcite{pustejovsky1998generative} for some promising proposals in this domain.
 
@@ -268,25 +274,21 @@ This model of the grammar is composed of four parts:
 	a lexicon containing the atoms from which complex expressions are built;
 	merge, the simplest combinatorial operation for constructing complex expressions; 
 	and two interfaces, points at which a constructed expression is transferred to language external modules for either externalization (the sensorimotor (SM) interface/module), or interpretation (the conceptual-intentional (CI) interface/module).
-In this portion I will argue for what is known as the Lexical Parameterization Hypothesis (LPH) that the lexicon is the only component of grammar that can be the locus of parametric syntactic variation.\footnote{ 
-	The earliest version of this hypothesis, formulated by Hagit Borer in the following way:
-	\begin{quote}
-		In this study we will propose a model of parameters which restricts the availability of variation to the possibilities which are offered by one single component: the inflectional component. \parencite[3]{borer1984parametric}
-	\end{quote}
-	Borer, however defines \textit{inflectional} in such a way that later work reformulates her proposal as restricting variation to the lexicon.
-	See, for instance, an early version of the hypothesis by \textcite{manzini1987parameters} in ($i$) which they attribute to \textcite{borer1984parametric}
-	\ex.[($i$)]
-	\begin{minipage}[t]{\textwidth - 4em}
-		\textbf{Lexical Parameterization Hypothesis}\\
-		Values of a parameter are associated not with particular grammars but with particular lexical items. \parencite[424]{manzini1987parameters}
-	\end{minipage}
+In this portion I will argue for what is known as the Lexical Parameterization Hypothesis (LPH) which was first formulated by Hagit Borer in the following way:
+\begin{quote}
+	In this study we will propose a model of parameters which restricts the availability of variation to the possibilities which are offered by one single component: the inflectional component. \parencite[3]{borer1984parametric}
+\end{quote}
+\textcite{manzini1987parameters} however reformulate this as the hypothesis that ``[v]alues of a parameter are associated not with particular grammars but with particular lexical items.'' \parencite[424]{manzini1987parameters}.
+The version of LPH that I assume is given in \Next.
+\ex. \textbf{The Lexical Parameterization Hypothesis}\\
+The lexicon is the only component of grammar that can be the locus of parametric syntactic variation.
 
-} 
+In the remainder of the section I will argue that LPH is a reasonable hypothesis.
 I will do so first by a positive argument -- that the lexicon is a natural place to locate variation -- then by a negative argument -- that neither merge, nor the interfaces can be parameterized.
 
 The notion that lexicons vary may seem trivial, but it is worth describing if only to distinguish the grammatically relevant variation from the grammatically irrelevant variation.
-This dichotomy roughly seems to follow the functional/lexical distinction.
-Variation between two speakers with respect to lexical vocabulary can be fairly profound without necessarily meaning that the speakers are speaking a different language.
+This dichotomy roughly seems to follow the distinction between functional elements and more meaningful vocabulary elements.
+Variation between two speakers with respect to vocabulary (in the non-technical sense) can be fairly profound without necessarily meaning that the speakers are speaking a different language.
 The variation relevant to this thesis, however, is the kind which leads to systemic differences between grammars.
 For instance, consider the link between verbal agreement and pro-drop.
 Synthesizing a broad set of empirical studies, \textcite{huang1984distribution} observes that only those languages with rich agreement morphology (\textit{e.g.}, Italian and Spanish) or no agreement morphology (\textit{e.g.}, Mandarin and Japanese) allow subject pro-drop.
@@ -300,30 +302,34 @@ Following this line of reasoning, and assuming that the pro-drop parameter is co
 
 Having shown that there can be significant grammatical effects from lexical variation, I will now argue that the remaining components of the grammar (merge, the two interfaces) are ill-suited to variation.
 
-Merge is the simplest component to eliminate from consideration of the locus of variation due to its simplicity.
-As defined in \Next, it iss the simplest possible operation for generating hierarchical structures: binary set formation.
+Merge is the easiest component to eliminate from consideration of the locus of variation due to its simplicity.
+As defined in \Next, it is the simplest possible operation for generating hierarchical structures: binary set formation.
 \ex. Merge$(\alpha, \beta) = \{ \alpha, \beta\}$
 
 In order to attribute crosslinguistic variation to merge, we would need to introduce complexity to it, and it would no longer be maximally simple.
 
-It is worth noting, however, that merge, as defined in \Last, is not \textit{the} simplest possible combinatory operation, but the simplest one capable of generating hierachical structures.
+It is worth noting, however, that merge, as defined in \Last, is not \textit{the} simplest possible combinatory operation, but the simplest one capable of generating hierarchical structures.
 \textcite{hornstein2009theory}, for instance, proposes a concatenative version of merge.
 \ex. Merge$^\prime(\alpha, \beta) = \alpha^\frown\beta$
 
-Assuming concatenation is as simple as set-formation, it is still not able to form hierachical structures without further complication.
-This is because concatenation, unlike binary set-formation, is associative.
-\ex. Merge$^\prime($ Merge$^\prime(\alpha, \beta), \gamma)$\\
+Assuming that concatenation is as simple as set-formation, it is still not able to form hierarchical structures without further complication.
+This is because concatenation, unlike binary set-formation, is associative meaning it obeys the law in \Next as demonstrated in \NNext.
+\ex. \textbf{Associative Law}
+$(x \centerdot y) \centerdot z = x \centerdot (y \centerdot z)$ for all $x,y,z$
+
+\ex. \textbf{Concatenative Merge is associative}
+Merge$^\prime($ Merge$^\prime(\alpha, \beta), \gamma)$\\
 $= (\alpha^\frown\beta)^\frown\gamma$\\
 $= \alpha^\frown\beta^\frown\gamma$\\
 $= \alpha^\frown(\beta^\frown\gamma)$\\
 $= $Merge$^\prime(\alpha, $ Merge$^\prime(\beta, \gamma))$
 
 Since concatenative merge forms essentially flat structures, it is ill-suited to construct linguistic expressions which appear to be fundamentally hierarchical in nature.
-So, while there are other possible combinatory operations which are as simple as merge, there don't seem to be any which are able to capture the fact that linguistic expressions are hierarchically structured objects.
+So, while there are other possible combinatory operations which are as simple as merge, there don't seem to be any which can to capture the fact that linguistic expressions are hierarchically structured.
 Therefore, any variation in merge can only come from complicating the operation.
 
 The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition, which I will discuss by analogy to numerical functions below.
-At first blush, it may seem unreasonable to assume we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.
+At first blush, it may seem unreasonable to assume that we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.
 In early generative work, \textcite{chomsky1959certain} proposes that ``[w]e can consider a grammar of [a language] L to be a function mapping the integers onto L'' and notes that his use of the term ``generate'' is due to \textcite{post1944recursively} who discusses computational procedures that generate the natural numbers.
 Suppose we take a grammar to be a function, like any other function, with a domain (meanings), a range (forms), and an intension (the grammar).\footnote{
 	Note that in order to formalize a grammar as a function, I must introduce an asymmetry between form and meaning.
@@ -333,12 +339,12 @@ Suppose we take a grammar to be a function, like any other function, with a doma
 	I address these in appendix \ref{sec:functions}
 }
 From these three properties we will be able to generate an extension of the function which is the set of meaning-form pairs of a language, that is the set of meaningful expressions of a language.
-A mature speaker-hearer of a language, then, will be one whose knows the domain, range, and intension that generates that language.
+A mature speaker-hearer of a language, then, will be one who knows the domain, range, and intension that generates that language.
 The language acquisition process, then, will be a process of inferring the function from a finite and arbitrary subset of its extension.
 The question at the core of generative linguistics, is how much of the function is known innately and how much is inferred from experience.
 
 Consider the following analogy to quadratic functions.
-Suppose we model a particular function as the quadratic (I-)function in \Next, and the extension (\textit{i.e.} its E-function) it generates is it graph in \NNext.
+Suppose we model a particular function as the quadratic (I-)function in \Next, and the extension (\textit{i.e.} its E-function) it generates as its graph in \NNext.
 \ex. I-Function$_L$\\
 $y = 2x^2 + 4x-1$
 
@@ -367,15 +373,15 @@ So any account of the resultative parameter must be explainable in lexical terms
 
 The two theoretical principles discussed above will allow me to evaluate the previously proposed analyses of resultatives.
 UTAH considerations will determine if a given structural analysis is tenable in minimalist syntax.
-The LPH, on the other hand will be used to evaluate whether a given analysis encodes variation in an acquirable way.
+The LPH, on the other hand, will be used to evaluate whether a given analysis encodes variation in an acquirable way.
 
-\section{The previous analyses}
+\section{Previous analyses of adjectival resultatives}
 In this section I will be addressing three previous analyses of adjectival resultatives.
 The first analysis, the complex predicate analysis \parencite{snyder1995language,irimia2012secondary}, will be rejected for violating UTAH both and the LPH.
 The second, the cartographic/nanosyntactic analysis \parencite{son2008microparameters}, is theoretically sound but unlearnable.
 The third, that of \textcite{kratzer2004building}, which I will adapt for my purposes, narrowly violates UTAH.
 
-Generally speaking, a complex predicate analysis of adjectival resultatives states that, in a resultative sentence, the adjective and the verb form an amalgam which $\Theta$-marks the object, as in \Next.
+Generally speaking, a complex predicate analysis of adjectival resultatives states that, in a resultative sentence, the adjective and the verb form an amalgam which $\theta$-marks the object, as in \Next.
 \ex.
 \begin{forest}
   nice empty nodes,sn edges,baseline
@@ -399,7 +405,7 @@ This analysis is inconsistent with UTAH, as the structural relation between \tex
 \end{forest}
 
 In the simple transitive version, \textit{the metal} and \textit{hammer} are sisters but not so in the resultative version.
-The complex predicate analysis, then, violates UTAH and should be rejected.
+The complex predicate analysis, then, violates UTAH and should be rejected under our assumptions.
 
 Snyder, who proposes a complex predicate analysis of adjectival resultatives in his \citeyear{snyder1995language} dissertation, augments his structural analysis with a parametric analysis \parencite{snyder2012parameter}.
 According to this analysis, a language allows resultatives only if it permits Generalized Modification (GM), a compositional operation defined in \Next.
@@ -407,8 +413,8 @@ According to this analysis, a language allows resultatives only if it permits Ge
 If $\alpha$ and $\beta$ are syntactic sisters under the node $\gamma$, where $\alpha$ is the \uline{head} of $\gamma$, and if $\alpha$ denotes a \uline{kind}, then interpret $\gamma$ semantically as a \uline{subtype} of $\alpha$'s kind that stands in a pragmatically suitable relation to the denotation of $\beta$.
 
 Since GM is a compositional principle, that is a function from syntactic objects to meanings, it would be part of the CI interface.
-Therefore, if we were to parameterize GM, we would be parameterizing the CI interface.
-Such a parameter would violates the LPH and, therefore, can be rejected as an account of the resultative parameter.
+Therefore, if this operation were parameterized, the parameter would apply, not to the lexicon but to the CI interface.
+Such a parameter would violates the LPH and must therefore be rejected as an account of the resultative parameter given our assumptions.
 
 Another structural and parametric account of resultatives, by \textcite{son2008microparameters}, follows Ramchand's (\citeyear{ramchand2008verb}) decompositional analysis of vP syntax.
 Under this account, event descriptions are decomposable into several universal features (\textit{e.g.}, \textsc{Result}, \textsc{Manner}, \textsc{Process}), and language variation results from languages lexicalizing these features differently.
@@ -420,11 +426,11 @@ Note that this account is consistent with the LPH because the variation is lexic
 It is not immediately clear, however, that this lexical parameter could be learned from the primary linguistic data.
 Since the head in question is phonologically null, there is, by definition, no direct evidence for it in (\textit{e.g.}) English. 
 Therefore, the null head would have to be acquired indirectly, but \textcite{son2008microparameters} provide no proposals for how that would be done.
-Absent any proposed method for acquiring this parameter, I conclude that it is unlearnable
-Therefore, we can reject this analysis.
+Absent any proposed method for acquiring this parameter, I will set it aside.
+This means I will also set aside the structural analysis that is associated with the parameter. 
 
 The final analysis I will address is that of \textcite{kratzer2004building}, which will not be fully rejected, but rather adapted to form my proposed structure.
-In this analysis, the resultative object (\textit{e.g.}, \textit{the metal}) and the adjective (\textit{e.g.}, \textit{flat}) form a small clause, which encodes a state description.
+In this analysis, the resultative object (\textit{e.g.}, \textit{the metal}) and the adjective (\textit{e.g.}, \textit{flat}) form a small clause, which describes a state.
 The small clause merges with a \textit{res} head, which encodes a causative relation between events, and the resulting \textit{res}P is merged as the complement of the verb (\textit{e.g.}, \textit{hammer}).
 The small clause theme is then raised to check accusative Case, and from there the derivation proceeds as normal.
 The structure this generates is given in \Next.
@@ -451,15 +457,15 @@ The structure this generates is given in \Next.
   \draw[->] (sc theme) to[out=south west, in=south] (V theme);
 \end{forest}}
 
-Under the assumption that \textit{the metal} is $\Theta$-marked by \textit{hammer}, this violates UTAH, and ought to be rejected.
+Under the assumption that \textit{the metal} is $\theta$-marked by \textit{hammer}, this violates UTAH, and ought to be rejected.
 
 \subsection{Summary}
 In this chapter, I assessed several previous structural and parametric analyses of resultatives according to criteria I developed.
 The structures proposed for resultatives were assesed in terms of UTAH, while the parameters proposed were assessed based on whether they could be learned from the primary linguistic data, and whether they were be represented as lexical parameters.
 Several analyses were considered and ultimately rejected for not meeting the criteria I proposed.
-However, Kratzer's (\citeyear{kratzer2004building}) structural analysis, and Snyder's (\citeyear{snyder1995language,snyder2012parameter}) parametric analysis appear to be promising, and will be further developed to form the analyses assumed in this thesis.
+However, Kratzer's (\citeyear{kratzer2004building}) structural analysis, and Snyder's (\citeyear{snyder1995language,snyder2012parameter}) parametric analysis appear to be promising, for reasons that I  will be further developed to form the analyses assumed in this thesis.
 
-While Snyder's and Kratzer's analyses have been rejected, they share a certain feature which I will retain in my final analysis: they are acquirable.
+While portions of Snyder's and Kratzer's analyses were rejected, they share a certain feature which I will retain in my final analysis: they are acquirable.
 Snyder's (\citeyear{snyder1995language}) proposal is that the availability of resultatives in a language is linked to the availability of a productive N-N compounding in that language.
 Kratzer adopts this link and augments it with a link to predicative adjective agreement.
 She proposes that resultatives (and N-N compounding) are available only in those languages in which predicative adjectives do not show agreement with the subject.
@@ -481,8 +487,8 @@ Dario XX painted house red\\
 ``worm+can''
 \c. <+Predicative agreement+>
 
-Both compounding and the lack of predicative adjective agreement are detectable in the primary linguistic data, and therefore can reasonably be taken to be the positive data responsible for the setting of the resultative parameter.
-The account of the resultative parameter which I will develop in the remainder of this thesis will assume that the positive evidence that triggers the parameter setting will be related to compounding and adjectival agreement.
+Both compounding and the lack of predicative adjective agreement are detectable in the primary linguistic data, and therefore could reasonably be taken to be the positive data responsible for the setting of the resultative parameter.
+The account of the resultative parameter which I will develop in the remainder of this thesis will build on the idea that the positive evidence that triggers the parameter setting will be related to compounding and adjectival agreement.
 Before developing such an account, I will modify Kratzer's analysis to make it theoretically feasible in the next chapter.
 \end{document}
 

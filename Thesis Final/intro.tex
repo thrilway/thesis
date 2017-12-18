@@ -8,8 +8,12 @@
 % arara: pdflatex: {options: "-file-line-error-style"}
 \documentclass[MilwayThesis]{subfiles}
 
-\addbibresource{../Thesis.bib}
+\usepackage{atveryend}
 
+\BeforeClearDocument{
+	\printbibliography
+}
+\addbibresource{../Thesis.bib}
 \begin{document}
 What follows would likely be placed by contemporary linguists under the broad umbrella of theoretical syntax for what seem to me to be purely negative reasons.
 This thesis does not contain novel data gathered from fieldwork, laboratory techniques, or corpora, and, since it does not fit into any of those categories, it is considered ``theoretical.''
@@ -31,7 +35,17 @@ This negative definition of theoretical linguistics, however, does not properly 
 \end{quotation}
 I adopt this trichotomy along with Chametzky's caveat that no actual work in linguistics fits neatly into any one of these categories.
 Metatheory and theory bleed into each other as do theory and analysis.
-I add a further caveat that, since Chametzky's definitions are all relative to ``the domain,'' the application of those definitions will depend on what we construe to be our empirical domain.
+I add a further caveat that, since Chametzky's definitions are all relative to a domain the the phenomena of that domain, the application of those definitions will depend on what we construe to be our empirical domain.
+<+MoreHere+>
+
+Generative theories of linguistics are and have always been computational theories, meaning the mental procedures they hypothesize are local and syntactic.
+Since the terms \textit{computational}, \textit{local}, and \textit{syntactic}, are all quite ambiguous and none seem to have retained their original primary interpretations, it is worth defining them.
+\ex. A procedure $P$ is local/syntactic/computational iff\\
+for every object $X$ in the domain of $P$,\\
+the value of $P(X)$ depends solely on properties of $X$.
+
+This means that certain aspects of language will not be amenable to a generative theory.
+For instance, many aspects of language use are very context-dependent and therefore are likely to be excluded from the domain of generative theories of linguistics.
 \end{document}
 
 

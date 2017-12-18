@@ -8,14 +8,19 @@
 % arara: pdflatex: {options: "-file-line-error-style"}
 \documentclass[MilwayThesis]{subfiles}
 \setcounter{chapter}{3}
+\usepackage{atveryend}
+
+\BeforeClearDocument{
+	\printbibliography
+}
 \begin{document}
-In the previous chapter, I discussed the failings of a number of previous analyses of adjectival resultatives.
-In this chapter I will address two of those analyses--one structural, and one parametric--and show how they can be modified to address the concerns raised in the previous chapter.
-The structural analysis in question, that of \textcite{kratzer2004building}, was rejected because it did not comply with UTAH, but has three features which I will retain in my final analysis: A small clause, theme raising, and a result head.
+In the previous chapter, I discussed the failings of several previous analyses of adjectival resultatives.
+In this chapter I will address two of those analyses -- one structural, and one parametric -- and show how they can be modified to address the concerns raised in the previous chapter.
+The structural analysis, that of \textcite{kratzer2004building}, was rejected because it did not comply with UTAH, but has three features which I will retain: a small clause structure, theme raising, and a result head.
 The parametric analysis, that of \textcite{snyder1995language,snyder2012parameter}, was rejected because it did not comply with the Lexical Parameterization Hypothesis, but was based on a learnable pattern and so I will be adopting a modified version of it.
 \section{Fixing the UTAH problem}
 The one issue with Kratzer's analysis is that it seems to violate UTAH.
-That is there is a single $\Theta$-relation between \textit{hammer} and \textit{the metal} in both sentneces in \Next, that is not represented by a single structural relation.
+That is, there is a single $\theta$-relation between \textit{hammer} and \textit{the metal} in both sentences in \Next, that is not represented by a single structural relation.
 \ex.
 \a. Joe hammered the metal flat.
 \b. Joe hammered the metal.

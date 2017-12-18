@@ -1,0 +1,15 @@
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+\setcounter{chapter}{3}
+\usepackage{atveryend}
+
+\BeforeClearDocument{
+	\printbibliography
+}
+
+\begin{document}
+
+\end{document}

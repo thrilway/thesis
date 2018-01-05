@@ -328,49 +328,52 @@ Since concatenative merge forms essentially flat structures, it is ill-suited to
 So, while there are other possible combinatory operations which are as simple as merge, there don't seem to be any which can to capture the fact that linguistic expressions are hierarchically structured.
 Therefore, any variation in merge can only come from complicating the operation.
 
-The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition, which I will discuss by analogy to numerical functions below.
-At first blush, it may seem unreasonable to assume that we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.
-In early generative work, \textcite{chomsky1959certain} proposes that ``[w]e can consider a grammar of [a language] L to be a function mapping the integers onto L'' and notes that his use of the term ``generate'' is due to \textcite{post1944recursively} who discusses computational procedures that generate the natural numbers.
-Suppose we take a grammar to be a function, like any other function, with a domain (meanings), a range (forms), and an intension (the grammar).\footnote{
-	Note that in order to formalize a grammar as a function, I must introduce an asymmetry between form and meaning.
-	In other words, I am considering grammar to be a function from meanings to forms and not the other way around, from forms to meanings.
-	For the purposes of this thesis, this formalization is merely an illustrative analogy, so the choice of the direction of this asymmetry can be taken as arbitrary.
-	There is good reason, however, to assume that the asymmetry I have chosen is a true asymmetry, that grammars truly are functions from meaning to form and not the other way around.
-	I address these in appendix \ref{sec:functions}
-}
-From these three properties we will be able to generate an extension of the function which is the set of meaning-form pairs of a language, that is the set of meaningful expressions of a language.
-A mature speaker-hearer of a language, then, will be one who knows the domain, range, and intension that generates that language.
-The language acquisition process, then, will be a process of inferring the function from a finite and arbitrary subset of its extension.
-The question at the core of generative linguistics, is how much of the function is known innately and how much is inferred from experience.
-
-Consider the following analogy to quadratic functions.
-Suppose we model a particular function as the quadratic (I-)function in \Next, and the extension (\textit{i.e.} its E-function) it generates as its graph in \NNext.
-\ex. I-Function$_L$\\
-$y = 2x^2 + 4x-1$
-
-\ex. E-Function$_L$\\
-\includegraphics[width=0.7\textwidth]{quadplot-axis}
-
-The task of acquisition, then, is analogous to fitting points to a polynomial function, and the question at hand is how many aspects of the polynomial must we know in order to properly define it given its graph.
-Supposing we are not given the coefficients but rather merely a general quadratic function as in \Next and the graph in \Last.
-\ex. $y = ax^2 + bx + c$
-
-It would be trivial to compute the values of the coefficients from the information given.
-Similarly, if we are given the fully specified function and its graph with an unspecified x-axis as in \Next
-\ex. E-language$_x$\\ 
-\includegraphics[width=0.7\textwidth]{quadplot-y-only}
-
-We would be able to find the x-axis that makes the graph correspond to the function, and similar logic would follow if only the y-axis were missing.
-
-It seems, then, that any single aspect of the function is missing, we would be able to reconstruct it based on the remaining information.
-However, if we remove any two aspects, we will be unable to reconstruct either of them. 
-Consider the fitting task if we are given a parabola with only a y-axis as in \Last.
-Our task them is to determine the x-axis and the coefficients that are consistent with the parabola and y-axis, which would be an impossible task given that there would be an infinite number of consistent axis-coefficient pairs.
-
-If we accept this as a reasonable analogy for language acquisition, then we are forced to only allow a single locus of variation.
-Since I have already shown that lexical variation exists and can affect the grammar as a whole, we are led to endorse or at least seriously entertain the LPH.
-So any account of the resultative parameter must be explainable in lexical terms in order to be consistent with the LPH.
-
+Being a hypothesis, the LPH need not be derived deductively, but rather, it should be justified by showing that it is a sufficiently strong possible hypothesis which has yet to be falsified empirically.
+To define the strength of a hypothesis, I will adopt Popper's (\citeyear{popper1959logic,popper2014conjectures}) notion of \textit{empirical content}.
+For Popper, the empirical content of a theory, or statement $a$ is the ``the class of all basic statements which contradict $a$'' \parencite[315]{popper2014conjectures}, where a \textit{basic statement} is an observable fact.
+%The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition, which I will discuss by analogy to numerical functions below.
+%At first blush, it may seem unreasonable to assume that we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.
+%In early generative work, \textcite{chomsky1959certain} proposes that ``[w]e can consider a grammar of [a language] L to be a function mapping the integers onto L'' and notes that his use of the term ``generate'' is due to \textcite{post1944recursively} who discusses computational procedures that generate the natural numbers.
+%Suppose we take a grammar to be a function, like any other function, with a domain (meanings), a range (forms), and an intension (the grammar).\footnote{
+%	Note that in order to formalize a grammar as a function, I must introduce an asymmetry between form and meaning.
+%	In other words, I am considering grammar to be a function from meanings to forms and not the other way around, from forms to meanings.
+%	For the purposes of this thesis, this formalization is merely an illustrative analogy, so the choice of the direction of this asymmetry can be taken as arbitrary.
+%	There is good reason, however, to assume that the asymmetry I have chosen is a true asymmetry, that grammars truly are functions from meaning to form and not the other way around.
+%	I address these in appendix \ref{sec:functions}
+%}
+%From these three properties we will be able to generate an extension of the function which is the set of meaning-form pairs of a language, that is the set of meaningful expressions of a language.
+%A mature speaker-hearer of a language, then, will be one who knows the domain, range, and intension that generates that language.
+%The language acquisition process, then, will be a process of inferring the function from a finite and arbitrary subset of its extension.
+%The question at the core of generative linguistics, is how much of the function is known innately and how much is inferred from experience.
+%
+%Consider the following analogy to quadratic functions.
+%Suppose we model a particular function as the quadratic (I-)function in \Next, and the extension (\textit{i.e.} its E-function) it generates as its graph in \NNext.
+%\ex. I-Function$_L$\\
+%$y = 2x^2 + 4x-1$
+%
+%\ex. E-Function$_L$\\
+%\includegraphics[width=0.7\textwidth]{quadplot-axis}
+%
+%The task of acquisition, then, is analogous to fitting points to a polynomial function, and the question at hand is how many aspects of the polynomial must we know in order to properly define it given its graph.
+%Supposing we are not given the coefficients but rather merely a general quadratic function as in \Next and the graph in \Last.
+%\ex. $y = ax^2 + bx + c$
+%
+%It would be trivial to compute the values of the coefficients from the information given.
+%Similarly, if we are given the fully specified function and its graph with an unspecified x-axis as in \Next
+%\ex. E-language$_x$\\ 
+%\includegraphics[width=0.7\textwidth]{quadplot-y-only}
+%
+%We would be able to find the x-axis that makes the graph correspond to the function, and similar logic would follow if only the y-axis were missing.
+%
+%It seems, then, that any single aspect of the function is missing, we would be able to reconstruct it based on the remaining information.
+%However, if we remove any two aspects, we will be unable to reconstruct either of them. 
+%Consider the fitting task if we are given a parabola with only a y-axis as in \Last.
+%Our task them is to determine the x-axis and the coefficients that are consistent with the parabola and y-axis, which would be an impossible task given that there would be an infinite number of consistent axis-coefficient pairs.
+%
+%If we accept this as a reasonable analogy for language acquisition, then we are forced to only allow a single locus of variation.
+%Since I have already shown that lexical variation exists and can affect the grammar as a whole, we are led to endorse or at least seriously entertain the LPH.
+%So any account of the resultative parameter must be explainable in lexical terms in order to be consistent with the LPH.
+%
 The two theoretical principles discussed above will allow me to evaluate the previously proposed analyses of resultatives.
 UTAH considerations will determine if a given structural analysis is tenable in minimalist syntax.
 The LPH, on the other hand, will be used to evaluate whether a given analysis encodes variation in an acquirable way.

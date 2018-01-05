@@ -328,11 +328,49 @@ Since concatenative merge forms essentially flat structures, it is ill-suited to
 So, while there are other possible combinatory operations which are as simple as merge, there don't seem to be any which can to capture the fact that linguistic expressions are hierarchically structured.
 Therefore, any variation in merge can only come from complicating the operation.
 
-Being a hypothesis, the LPH need not be derived deductively, but rather, it should be justified by showing that it is a sufficiently strong possible hypothesis which has yet to be falsified empirically.
+Being a hypothesis, the LPH need not be derived deductively, but rather, it should be justified by showing that it is a sufficiently strong non-falsified hypothesis.
 To define the strength of a hypothesis, I will adopt Popper's (\citeyear{popper1959logic,popper2014conjectures}) notion of \textit{empirical content}.
 For Popper, the empirical content of a theory, or statement $a$ is the ``the class of all basic statements which contradict $a$'' \parencite[315]{popper2014conjectures}, where a \textit{basic statement} is an observable fact.
 A hypothesis $H_1$ is stronger than another hypothesis $H_2$ if the empirical content of $H_1$ is greater than that of $H_2$.
 While there is no way to determine the absolute empirical content of a given statement, and therefore there is no way to directly compare the content of two independent statements, we can compare logically related statements.
+\textcite[295]{popper2014conjectures}, for instance, compares the content of two logically independent statements, $a$ and $b$, with that of the conjunction of the two $a\wedge b$, arguing that the empirical content of the conjunct is at least as great as that of each of the independent statements.
+\ex. $Ct(a) \leq Ct(a\wedge b) \geq Ct(b)$
+
+A hypothesis is \textit{sufficiently} strong if there are no hypotheses in the relevant domain that are demonstrably stronger.
+
+So, is LPH a sufficiently strong hypothesis?
+To answer this we must consider what the competing hypotheses are.
+The LPH belongs to a class of single source hypotheses, those that hypothesize a single source of variation which I give below in \Next.
+\ex. If $x$ is a variable property of language\ldots
+\a. then $x$ is a property of the lexicon. (= LPH)
+\b. then $x$ is a property of the SM interface.
+\b. then $x$ is a property of the CI interface.
+\b. then $x$ is a property of the computational system.
+
+We could formulate a class of multiple source hypotheses which would be the class of disjunctions of two or more of the single source hypotheses as in \Next.
+\ex.If $x$ is a variable property of language\ldots
+\a. then $x$ is a property of the lexicon or $x$ is a property of the SM interface.
+\b. then $x$ is a property of the lexicon or $x$ is a property of the CI interface. 
+\b. then $x$ is a property of the lexicon or $x$ is a property of the computational system. 
+\b. then $x$ is a property of the CI interface or $x$ is a property of the SM interface.
+\b. \textit{etc.} 
+
+Unlike conjuctions, whose empirical content equals or exceeds that of their component statements, the empirical content of disjunctions is less than or equal to that of their component statements.
+\ex. $Ct(a) \geq Ct(a\vee b) \leq Ct(b)$
+
+Since the multiple source hypotheses have less empirical content the single source hypothese, they cannot be considered sufficiently strong.
+
+There are hypotheses which might be considered stronger than any of the single source hypotheses, but these hypotheses face problems.
+For instance, a stronger hypothesis would be that there are no variable properties of language, but this hypothesis is quite easily falsified.
+A hypothesis constructed by conjoining two or more of the single source hypotheses would, on its face, seem like a stronger hypothesis, but in fact such a hypothesis would be incoherent.
+A conjoined source hypothesis would be incoherent because the very notion of modularity that our theory assumes means that a module cannot share a property.
+So, since there are no admissible hypotheses that are stronger than our single source hypotheses, then we can say that the single source hypotheses are sufficiently strong.
+Furthermore, the presence of lexical variation (\textit{e.g.}, variable richness of subject agreement) seems to falsify all of the single source hypotheses except for LPH, meaning that LPH is the only sufficiently strong non-falsified hypothesis.
+
+Before continuing, I should reiterate that the discussion above is not the deduction of the truth of the LPH but rather of its relative strength.
+To the contrary, as \textcite{popper2014conjectures} notes repeatedly, the strength of a theoretical claim is inversely proportional to the probability of its truth.
+This means that the LPH is very likely to be false, which means that if it is false, it should be relatively easy to refute it.
+Furthermore, it is a distinct possibility that we could find a stronger formulation of the LPH, but that is not the goal of this thesis.
 
 %The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition, which I will discuss by analogy to numerical functions below.
 %At first blush, it may seem unreasonable to assume that we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.
@@ -377,6 +415,7 @@ While there is no way to determine the absolute empirical content of a given sta
 %Since I have already shown that lexical variation exists and can affect the grammar as a whole, we are led to endorse or at least seriously entertain the LPH.
 %So any account of the resultative parameter must be explainable in lexical terms in order to be consistent with the LPH.
 %
+
 The two theoretical principles discussed above will allow me to evaluate the previously proposed analyses of resultatives.
 UTAH considerations will determine if a given structural analysis is tenable in minimalist syntax.
 The LPH, on the other hand, will be used to evaluate whether a given analysis encodes variation in an acquirable way.

@@ -58,8 +58,8 @@ According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{
     ]
 \end{forest}
 
-If we were to modify Kratzer's analysis, such that \textit{the metal} is the complement of \textit{hammer} then we would need to attach the result phrase in a different position.
-I propose that the result phrase is adjoined to the VP, which means the DP can be merged directly with the verb as shown in \Next.
+If we were to modify Kratzer's analysis, so that \textit{the metal} is the complement of \textit{hammer}, then we would need to attach the result phrase in a different position.
+I propose that the result phrase is adjoined to the VP, allowing the DP to merge directly with the verb as shown in \Next.
 \ex.\label{tree:hammer-flat}
 {\small
 \begin{forest}
@@ -83,16 +83,21 @@ I propose that the result phrase is adjoined to the VP, which means the DP can b
 		    ]
 	    ]
     ]
-    \draw[->] (SCDP) to[out=south, in=south east] (specRes);
-    \draw[->] (specRes) to[out=south, in= south] (compV);
+    \draw[->] (SCDP) to[out=south west, in=south] (specRes);
+    \draw[->] (specRes) to[out=south, in=south east] (compV);
 \end{forest}
 }
 
-The modified analysis no longer violates UTAH, but it introduces two issues new issues which I address below: Sideward movement and compositionality.
+The modified analysis no longer violates UTAH, but it introduces two issues new issues which I address in the proceeding sections.
+The first issue is that the movement operation between [Spec, res] and [Comp, V] does not target a c-commanding positions.
+In other words it is a sideward rather than upward movement.
+The second issue is that resP and VP are now adjoined, meaning they compose by conjunction.
+This is counterintuitive, however, since resultatives are inherently asymmetric, with the verb event causing the adjective state.
+I will address each of these in turn below.
 \subsection{Sideward movement}
-In my proposed structure for resultatives, the object DP moves from [Spec res] to [Comp V].
+In \ref{tree:hammer-flat}, the object DP moves from [Spec res] to [Comp V].
 The movement ``chain'' this operation forms is problematic due to the fact that the head of the chain does not c-command the tail.
-Although this type of so-called sideward movement is generally barred, \textcite{nunes2001sideward} argues that our theory should allow a restricted version of sideward movement.
+Although this type of so-called sideward movement is generally barred, \textcite{nunes2001sideward} argues for a restricted version of sideward movement.
 Nunes argues that head movement and parasitic gaps both require a sideward movement operation, as they both create non-c-command dependencies.
 \ex.
 \a. Head Hovement\\
@@ -150,10 +155,10 @@ What did Mary hear without seeing.\\
 
 According to the standard definition of Merge, sideward movement should be impossible.
 The facts of parasitic gaps and head movement, however, suggest that a possibly complex operation with the net effect of sideward movement must be active in the grammar.
-Since \textcite{nunes1995diss,nunes2001sideward} has developed a theory of sideward movement, I will adopt that theory, which I explain below.
+I adopt the approach developed by \textcite{nunes1995diss,nunes2001sideward} as follows.
 
 In order to explain sideward movement, Nunes hypothesizes that a movement operation is composed of a Copy operation followed by Merge.
-The operation Copy adds an object X to the workspace of a derivation provided X is contained in an already constructed syntactic object.
+The operation Copy adds an object X to the workspace of a derivation provided that X is contained in an already constructed syntactic object.
 \ex. For a workspace W and a syntactic object X, Copy(W, X) = $W\cup \{X\}$ iff there is a syntactic object Z $\in$ W and Z contains X.
 
 Merge, then is a simpler operation which replaces two members of a workspace with the set containing them. 
@@ -200,9 +205,9 @@ The Copy+Merge theory of movement allows us to derive sideward movement by holdi
 	5 & \multicolumn{2}{l}{$\left\{\text{[[hammer, [the, metal]], [[the, metal], [res [\dots]]]]}\right\}$}\\
 \end{tabular}
 
-Note that in stage 5 of the derivation in \Last the syntactic object in the workspace is representable as \ref{tree:hammer-flat}.
+Note that at stage 5 of the derivation in \Last the syntactic object in the workspace is representable as \ref{tree:hammer-flat}.
 
-In order to constrain sideward movement, Nunes notes that its immediate results such as the tree in \ref{tree:hammer-flat} are unpronounceable.
+In order to constrain sideward movement, Nunes notes that its immediate, results such as the tree in \ref{tree:hammer-flat}, are unpronounceable.
 Assuming that decisions regarding linear order depend on c-command relations, and part of linearization is deciding which copy in a movement chain is to be pronounced, we would be unable to make a definitive linearization statement for the derived structure in \Last.
 In order to linearize the movement chain of \textit{the hammer}, there must be a copy which c-commands all other copies, meaning there must be a subsequent move from theme position to grammatical object position, which I represent as [Spec, AgrO] in \Next.
 \ex.
@@ -242,6 +247,11 @@ In order to linearize the movement chain of \textit{the hammer}, there must be a
 
 Since the copy of \textit{the metal} in [Spec, AgrO] c-commands all of the other copies, it will be pronounced and the lower copies will be deleted at the SM interface.
 So, assuming some mechanism for sideward movement, we are able to modify Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives to be compatible with UTAH.
+
+Before continuing, I would like to briefly defend my use of AgrO in \Last.
+First proposed by \textcite{chomsky1995minimalist}, the AgrO phrase was proposed as a way to unify nominative and accusative Case assignment.
+Both Cases were proposed to be checked in the specifier of an AgrP.
+
 Since we have modified Kratzer's analysis, it is worth asking if our version will still compose semantically to give us the desired interpretation.
 In the next section, I argue that not only are we able to retain the proper interpretation, but we are able to do so while assuming a simpler compositional system.
 \section{Composing resultatives}

@@ -251,13 +251,14 @@ So, assuming some mechanism for sideward movement, we are able to modify Kratzer
 Before continuing, I would like to briefly defend my use of AgrO in \Last.
 First proposed by \textcite{chomsky1995minimalist}, the AgrO phrase was proposed as a way to unify nominative and accusative Case assignment.
 Both Cases were proposed to be checked in the specifier of an AgrP.
+<++>
 
 Since we have modified Kratzer's analysis, it is worth asking if our version will still compose semantically to give us the desired interpretation.
 In the next section, I argue that not only are we able to retain the proper interpretation, but we are able to do so while assuming a simpler compositional system.
 \section{Composing resultatives}
 \textcite{kratzer2004building} adopts a neo-Davidsonian semantics for resultatives, meaning they are analyzed as descriptions of eventualities rather that merely as relations between entities.
-Her syntactic analysis is reproduced in \Next for reference.
-\ex.
+Her syntactic analysis is given in \Next for reference.
+\ex. \textbf{Kratzer's (2005) structural analysis of resultatives}\\
 \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -306,7 +307,7 @@ So, for Kratzer, the typed LF of \textit{hammer the metal flat} is as in \Next.
 	    ]
 \end{forest}
 
-Kratzer proposes that \textit{hammer} and the resP compose by an operation she calls Event Identification \parencite[cf.][]{kratzer1996severing} which, in this instance, is equivalent to Predicate Modification generalized to eventualities.
+Kratzer proposes that \textit{hammer} and the resP compose by an operation she calls Event Identification \parencite{kratzer1996severing} which, in this instance, is equivalent to Predicate Modification generalized to eventualities.
 \ex. \textbf{Predicate Modification (eventuality version)}\\
 If $\alpha$ is a branching node with daughters $\beta$ and $\gamma$, both of which are of type $\langle s,t\rangle$, the $\llbracket\alpha\rrbracket = \lambda e_s [\llbracket\beta\rrbracket(e) \& \llbracket\gamma\rrbracket(e)]$
 
@@ -340,33 +341,35 @@ The same compositional process can be adapted to the sideward movement structure
 	    ]
 \end{forest}
 
-Thus, with my adaptations, Kratzer's analysis of resultatives can be made UTAH-compliant.
+Thus, with these adaptations, Kratzer's analysis of resultatives can be made UTAH-compliant.
 In the remainder of this chapter, I will discuss the parametric analysis of resultatives that I will be assuming.
 
 \section{Where does the resultative parameter come from?}
 In the previous chapter, I discussed two desiderata for a parametric analysis.
 First, the parameter must be learnable, meaning there must be some variable in the primary linguistic data which the learner can detect and deduce a particular parameter setting from.
 Second, the variable must be represented in the lexicon.
-For the sake of expediency, I will refer to detectable variable as the surface variable and its lexical representation as the lexical variable.
+For the sake of expediency, I will refer to the variable detectable in the PLD as the surface variable, and its lexical representation as the lexical variable.
 
-To my knowledge, there is only one proposed candidate for the surface variable in the generative literature, that is, Snyder's (\citeyear{snyder1995language,snyder2012parameter}) compounding parameter according to the latest version of which, a language allows resultatives iff it allows bare stem compounding.
-As I discussed in the previous chapter, Snyder rejects the Lexical Parameterization Hypothesis, meaning he does not propose a lexical variable.
-We can, however, propose at a lexical variable that corresponds to the (un)availability of bare stem compounding.
+To my knowledge, there is only one proposed candidate for the surface variable in the generative literature, that is, Snyder's (\citeyear{snyder1995language,snyder2012parameter}) compounding parameter.
+According to the latest version of this parameter, a language allows resultatives iff it allows bare stem compounding.
+As I discussed in the previous chapter, Snyder rejects the Lexical Parameterization Hypothesis, meaning he does not propose a lexical variable, instead situating the parameter in the operations of the CI interface.
+However, I will propose a lexical variable from which both the (un)availability of bare stem compounding, and the (un)availability of adjectival resultatives can be derived.
 
 To make such a proposal, we must make the intermediate hypothesis that a language allows bare stem compounding iff it allows bare stems, meaning there should be no languages that allow for bare stems but cannot compound them together.
-Now, a bare stem is merely an independent word with no inflectional material, and words are represented in most current theories of syntax as an acategorial root merged with a category-determining functional head (following Marantz \citeyear{marantz1997no}, but see also Borer \citeyear{borer2005name} for a similar proposal).
+Now, a bare stem is merely an independent word with no inflectional material.
+Words are represented in most current theories of syntax as an acategorial root merged with a category-determining functional head (following Marantz \citeyear{marantz1997no}, but see also Borer \citeyear{borer2005name} for a similar proposal).
 Since roots are, by definition, featureless, any inflectional features on stems must be due to their category-determining heads.
-It follows from this that the lexical variable in question is the presence or absence of inflectional features on category-determining heads in the lexicon.
+It follows from this that the (im)possibility of bare stems derives from the presence or absence of inflectional features on category-determining heads in the lexicon.
 
-So, if we represent inflected category-determining heads as $v_\varphi, n_\varphi, adj_\varphi, etc.$ and their bare counterparts as $v_\emptyset, n_\emptyset, adj_\emptyset, etc.$, then the compounding parameter can be represented as in \Next.
+So, if we represent inflected category-determining heads as $v_\varphi, n_\varphi, adj_\varphi, etc.$ and their bare counterparts as $v_\emptyset, n_\emptyset, adj_\emptyset, etc.$, then the lexical version of Snyder's compounding parameter can be represented as in \Next.
 \ex. \textsc{lex} $\left\{ \text{includes, does not include} \right\}$ $v_\emptyset, n_\emptyset, adj_\emptyset, etc.$
 
 Note that this is a fairly weak claim.
 A stronger claim would be that compounding languages have only uninflected category-determining heads.
-The weak claim, however, will be sufficient for my purposes, and therefore adopted.
+The weak claim, however, is sufficient for present purposes, and is therefore adopted.
 
-This form of the compounding parameter is lexical in nature, and therefore complies with the Lexical Parameterization Hypothesis.
-Furthermore it is learnable from the primary linguistic data, since its external manifestation is the presence or absence of inflectional morphology.
+This version of the compounding parameter is lexical, and therefore complies with the Lexical Parameterization Hypothesis.
+Furthermore, it is learnable from the primary linguistic data, since its external manifestation is the presence or absence of inflectional morphology.
 Since the inflectional morphology is detectable on the surface, its absence must also be detectable or at least deducible.
 This leaves us with questions regarding the initial state of the lexicon, and which parameter setting is the default, but those questions are beyond the scope of this thesis and will be set aside.
 

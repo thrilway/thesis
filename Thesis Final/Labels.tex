@@ -223,23 +223,39 @@ My proposal for the CI interface is, I believe, a step towards a passive interfa
 Although evidence for the nature of the CI module is not as readily available as it is for the nature of the SM module, the working, albeit tacit, assumption seems to be that the CI module deals in representations that are formally very similar to formulas of predicate logics.
 If we assume a predicate logic with operators ($\forall$, $\exists$, $Wh$, M,\ldots), functions/predicates ($P, Q, f, g,$\ldots), variables ($x, y, z,$\ldots), and conjunction ($\&$), then we can see how there could be an isomorphism between labelled syntactic objects and formulas of this logic.
 
-Consider the simplest case, that of unlabelled stuctures mapping to conjoined formulas.
-Conjunction is symmetric, meaning that $\varphi \& \psi = \psi \& \phi$ where $\phi$ and $\psi$ are formulas.
-Similarly, an unlabelled syntactic object is symmetric; neither of its component parts is more prominent than the other.
-So, unlabelled SOs are isomorphic with conjoined formulas.
+While it seems that SM objects are linear structures (strings), CI objects seem to be more complex, including notions of scope and variable binding.
+As such, I am not able to give a simple order-theoretic explanation of the CI interface as \textcite{kayne1994antisymmetry} gives for the SM interface.
+What I can do, however, is give a rather coarse-grained mapping between labelled SOs and expressions in predicate logic.
+The class of labelled SOs and that of complex expressions of predicate logic can each be divided into three subclasses.
+Labelled SOs can be null-labelled, head-labelled, or pair-labelled, while expressions of predicate logic can be conjoined expressions, function-argument expressions, or operator expressions.
+Furthermore these subclasses seem to map to each other as shown in \Next.
+\ex.
+\begin{tabular}[t]{ll}
+	Labelled SO & Predicate logic\\
+	\hline
+	\hline
+	Null labelled & Conjoined expression\\
+	$\left\{ \emptyset, \left\{ \text{run, quickly} \right\} \right\}$ & $\textbf{run}(e) \& \textbf{quick}(e)$\\
+	\hline
+	Head labelled & Function-argument\\
+	$\left\{ \text{in}, \left\{ \text{in, the snow} \right\} \right\}$ & $\textbf{in}(\textbf{the\_snow})$\\
+	\hline
+	Pair-labelled & Operator expressions\\
+	$\left\{ \langle Q,Q\rangle, \left\{\text{Who}_Q, \left\{\text{C}_Q, \text{fell} \right\}  \right\} \right\}$ & $\text{Wh}x(\textbf{fell}(x))$\\
+	\hline
+\end{tabular}
 
-The next case is that of the mapping between head-labelled SOs and function-argument terms.
-Like conjunction, function-argument terms are binary, but unlike conjunction, there is an asymmetry between function and argument; the function is more prominent than its argument
-A head-label of a SO is able to indicate the direction of that asymmetry, that is, if the label is a head, it indicates which component of the SO is/contains the function.
-Futhermore, a head-labelled SO is endocentric, meaning that the SO is effectively binary.
-So, head-labelled SOs and function-argument terms, both being binary and asymmetric, are isomorphic.
-
-Finally, the pair-labelled SOs are mapped to operator/quantifier structures.
-In predicate logics, quantifier structures are asymmetric and ternary, consisting of a quantifier, a variable and a formula as in \Next.
-\ex. If $Q$ is a quantifier, $x$ is a variable, and $\psi$ is a formula,\\
-then $Qx\psi$ is a formula.
-
-The pair-labelled SOs, being exocentric, can be considered ternary, consisting of the two components of the SO and the related but distinct label.
-
-
+This mapping is, of course, a first approximation of a theory of the CI interface.
+Being a first approximation, it will face empirical and theoretical challenges.
+For instance, there are likely cases where an expression's label does not seem to map to its interpretation.
+These cases, however, might be cases in which our syntactic or semantic analysis is incorrect.
+Assuming the hypothesized mapping in \Last is empirically justified, we would need to explain why that mapping and not some other mapping holds.
+This would require us to show that the mapping between, say, head-labelling and function application is as tight as the mapping between asymmetric c-command and linear precedence.
+Such a discussion, however, is beyond the scope of this thesis.
+\section{Summary}
+In this chapter I reviewed Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) label theory which says that labels are assigned algorithmically at the CI interface and are required for proper interpretation at that interface.
+I identified two questions left open in Chomsky's proposal, which I then suggest answers to.
+The first question, how would host-adjunct structures be labelled, was answered by the hypothesis that host-adjunct structures are ignored by the labelling algorithm and are null-labelled.
+The second question, why labels are required at the CI interface, has answered with the hypothesis that the label of a structure determines how it composes.
+In the next chapter, I will use this modified label theory to demonstrate that the (un)availability of resultative can be derived from the (un)availability of bare stem compounding.
 \end{document}

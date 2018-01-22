@@ -42,6 +42,9 @@
 
 \usetikzlibrary{positioning,arrows}
 \useforestlibrary{linguistics}
+
+\usepackage{epigraph}
+
 %\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
 %  \ifcase\value{uniquename}%
 %  \usebibmacro{name:last}{#1}{#3}{#5}{#7}%
@@ -143,11 +146,13 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
 \chapter{The Structure of Resultatives}
 \subfile{MyAnalysis}
 \chapter{Label Theory}
+\epigraph{``A rose by any other name would smell as sweet.''\\
+``Not if you called 'em stench blossoms.''}{The Simpsons}
 \subfile{Labels}
 %\section{The architecture of a label-theoretic grammar}
 %\subfile{agree}
 \chapter{Deriving the Resultative Parameter}\label{sec:deriving}
-
+\subfile{deriving}
 \chapter{Some additional consequences of modified label theory}
 \chapter{Conclusion}\label{sec:Conclusion}
 \printbibliography

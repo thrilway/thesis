@@ -7,9 +7,211 @@
 
 \begin{document}
 \epigraph{All happy families are alike; every unhappy family is unhappy in its own way.}{\textit{Anna Karenina}\\\textsc{Leo Tolstoy}}
+So far, I have proposed a theory of syntax, a structural analysis of resultatives, and an analysis of the resultative parameter.
+Although they share a justification in minimalism, each of these is an independant proposal, and as such their combination must be justified.
+In this chapter I show that the combination of my proposals work together.
+I do so by first showing that the structure in \Next can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then by showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
+\ex.
+{\small
+\begin{forest}
+    nice empty nodes,sn edges,baseline,
+%    for tree={
+%    calign=fixed edge angles,
+%    calign primary angle=-30,calign secondary angle=60}
+    [VP
+	    [VP
+		    [hammer]
+		    [DP[the metal,roof,name=compV]]
+	    ]
+	    [resP
+		    [$\langle$DP$\rangle$,name=specRes]
+		    [
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [
+					    [adj]
+					    [\textsc{flat}]
+				    ]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south] (specRes);
+    \draw[->] (specRes) to[out=south, in=south east] (compV);
+\end{forest}
+}
+
+In the first section, I will describe a derivation of the English resultative VP \textit{hammer the metal flat} and show that it converges at the CI interface (taking SM convergence for granted).
+In the second section, I will describe two derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash, while avoiding that crash blocks the derivation.
+
+Before describing the derivations, I will reiterate and clarify my assumptions regarding the nature of the syntactic derivation.
+I will adopt a slightly simplified version of the formal grammar developed by \textcite{collins2016formalization} which I will augment slightly based on new assumptions.
+A \textit{derivation} is defined as a finite sequence of \textit{stages}, $\langle S_1, S_2 \ldots S_n\rangle$.
+Each stage $S_i$ in a derivation is a pair $\langle LA_i, W_i\rangle$, where $LA_i$ is a set of lexical items called the \textit{lexical array} and $W_i$ is a set of syntactic objects called the \textit{workspace}.
+The computational operations (Merge, Select, Copy, Transfer) play the role that rules on inference play in deductive systems, that is, they map derivational stages onto subsequent stages.
+A given stage $S_i$ \textit{derives} a subsequent stage $S_{i+1}$ if and only if some operation, applied to $S_i$, yields $S_{i+1}$.
+
+
 \section{A successful derivation in English}
 In many ways, successful derivations, like happy families, are uninteresting, but they still must be demonstrated in order to show where the crashing derivations go wrong.
-To that end, I outline the derivation
+
+To begin with, we derive the result phrase.
+The formal derivation and resulting unlabelled structure is given in \Next.
+\ex.
+\a.
+\begin{tabular}[t]{llll}
+	\textbf{Stage} & \textbf{LA} & \textbf{Workspace} & \\
+	\cline{1-3}
+	1 & $
+	\begin{Bmatrix*}[l]
+		\sqrt{\textsc{flat}},\\
+		adj_\emptyset,\\
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\emptyset$ & Select($\sqrt{\textsc{flat}}$)\\
+	2 & $
+	\begin{Bmatrix*}[l]
+		adj_\emptyset,\\
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\left\{\sqrt{\textsc{flat}}\right\}$ & Select($adj_\emptyset$)\\
+	3 & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $
+	\begin{Bmatrix*}[l]
+		adj_\emptyset,\\
+		\sqrt{\textsc{flat}}
+	\end{Bmatrix*}$
+	& Merge($adj_\emptyset, \sqrt{\textsc{flat}}$)\\
+	4 & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\left\{ \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}$ & Select(DP)\\
+	5 & $\left\{ res \right\}$ & $
+	\begin{Bmatrix*}[l]
+		\text{DP},\\
+		\left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\}
+	\end{Bmatrix*}
+	$ & Merge(DP, $\alpha$)\\
+	6 & $\left\{ res \right\}$ & $ \left\{ \left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\} \right\}$ &
+	Select(\textit{res})\\
+	7 & $\emptyset$ & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}
+	\end{Bmatrix*}
+	$ & Merge(\textit{res}, $\beta$)\\
+	8 & $\emptyset$ & $\left\{ \left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}\right\} \right\}$
+	& Copy(DP)\\
+	9 & $\emptyset$ & $
+	\begin{Bmatrix*}[l]
+		\text{DP},\\
+		\left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}\right\}
+	\end{Bmatrix*}
+	$
+	& Merge(DP, $\gamma$)\\
+	10 & $\emptyset$ & $
+	\left\{\left\{_\delta \text{DP},\left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}\right\}\right\}\right\}
+	$
+	& Transfer($\beta$)\\
+\end{tabular}
+\b.
+{\small
+  \begin{forest}
+      nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=70}
+      [$\delta$
+        [DP$_\varphi$[{\rm the metal},roof]]
+        [$\gamma$
+          [res]
+          [$\beta$
+        [DP$_\varphi$[{\rm the metal},name=SC DP,roof]]
+        [$\alpha$
+          [adj$_\emptyset$]
+          [{\rm flat}]
+        ]
+          ]
+        ]
+      ]
+      \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+  \end{forest}
+}
+
+Assuming res is a phase head, its complement $\beta$ is trasferred and must be labelled along with the SOs contained in $\beta$.
+The small clause $\beta$ ($\left\{_\beta \langle \text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}$) is a Phrase-Phrase structure, but since one of its constituent parts, the DP, is a lower copy, that part is invisible to the labelling algorithm.
+Therefore, only the adjective ($\left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\}$) is available to provide a label.
+Assuming roots are inert for labelling, and uninflected categorizing heads are able to label, the label of $\alpha$, and therefore the label of $\beta$, is $adj_\emptyset$.
+So, $\beta$ is succesfully labelled and therefore convergent at the CI interface.
+\ex. LA($\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\} = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
+
+\begin{itemize}
+    \item Build the Small Clause.
+    \item Merge(res, $\beta$)
+    \item Copy(DP) + Merge(DP, $\gamma$)
+    \item Transfer($\beta$)
+        \begin{itemize}
+            \item res is a phase head.
+            \item Label($\alpha$) = adj
+            \item Label($\beta$) = Label($\alpha$)
+            \item $\beta$ converges.
+        \end{itemize}
+    \item Copy(DP)
+      \begin{itemize}
+	\item Generally, it seems that \textit{overt} specifiers of adjuncts are barred. (See appendix for explanation).
+      \end{itemize}
+\end{itemize}
+\textbf{Step 2: Derive the VP}\\\label{step-2-derive-the-vp}
+\begin{itemize}
+    \item Merge(DP, {\rm hammer})
+        \begin{itemize}
+            \item A copy of the DP was in ``working memory''
+        \end{itemize}
+    \item Merge($\zeta$, $\delta$)
+    \item Merge(AgrO, $\eta$)
+    \item Copy(DP) + Merge(DP, $\kappa$)
+    \item \ldots
+    \item Label($\eta$) = $\emptyset$
+    \item $\llbracket\langle\eta,\emptyset\rangle\rrbracket =$\\
+      $\llbracket\text{hammer the metal}\rrbracket(e) \& \llbracket res\text{ the metal flat}\rrbracket(e)$
+\end{itemize}
+
+  \ex.{\small
+  \begin{forest}
+nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+  calign primary angle=-30,calign secondary angle=60}
+    [$\mu$
+        [DP$_\varphi$[{\rm the metal},roof]]
+        [$\kappa$
+            [AgrO$_\varphi$]
+            [$\eta$
+                [$\zeta$
+                    [{\rm hammer}]
+                    [DP$_\varphi$[{\rm the metal},roof]]
+                ]
+                [$\delta$
+                [DP$_\varphi$]
+                    [$\gamma$
+                        [res]
+                        [($\beta$]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}}
+
+
+
 \section{Two crashing derivations in French}
 
 \subsection{Crashing Derivation \#1}

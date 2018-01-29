@@ -153,64 +153,6 @@ Assuming roots are inert for labelling, and uninflected categorizing heads are a
 So, $\beta$ is succesfully labelled and therefore convergent at the CI interface.
 \ex. LA($\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\} = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
 
-\begin{itemize}
-    \item Build the Small Clause.
-    \item Merge(res, $\beta$)
-    \item Copy(DP) + Merge(DP, $\gamma$)
-    \item Transfer($\beta$)
-        \begin{itemize}
-            \item res is a phase head.
-            \item Label($\alpha$) = adj
-            \item Label($\beta$) = Label($\alpha$)
-            \item $\beta$ converges.
-        \end{itemize}
-    \item Copy(DP)
-      \begin{itemize}
-	\item Generally, it seems that \textit{overt} specifiers of adjuncts are barred. (See appendix for explanation).
-      \end{itemize}
-\end{itemize}
-\textbf{Step 2: Derive the VP}\\\label{step-2-derive-the-vp}
-\begin{itemize}
-    \item Merge(DP, {\rm hammer})
-        \begin{itemize}
-            \item A copy of the DP was in ``working memory''
-        \end{itemize}
-    \item Merge($\zeta$, $\delta$)
-    \item Merge(AgrO, $\eta$)
-    \item Copy(DP) + Merge(DP, $\kappa$)
-    \item \ldots
-    \item Label($\eta$) = $\emptyset$
-    \item $\llbracket\langle\eta,\emptyset\rangle\rrbracket =$\\
-      $\llbracket\text{hammer the metal}\rrbracket(e) \& \llbracket res\text{ the metal flat}\rrbracket(e)$
-\end{itemize}
-
-  \ex.{\small
-  \begin{forest}
-nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-  calign primary angle=-30,calign secondary angle=60}
-    [$\mu$
-        [DP$_\varphi$[{\rm the metal},roof]]
-        [$\kappa$
-            [AgrO$_\varphi$]
-            [$\eta$
-                [$\zeta$
-                    [{\rm hammer}]
-                    [DP$_\varphi$[{\rm the metal},roof]]
-                ]
-                [$\delta$
-                [DP$_\varphi$]
-                    [$\gamma$
-                        [res]
-                        [($\beta$]
-                    ]
-                ]
-            ]
-        ]
-    ]
-\end{forest}}
-
-
 
 \section{Two crashing derivations in French}
 

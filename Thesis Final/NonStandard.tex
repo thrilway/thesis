@@ -55,9 +55,9 @@ With these assumptions, it follows that no single argument can receive more than
 Suppose there is a derivation in which a single argument X receives two $\theta$-roles $\Theta1$ and $\Theta2$.
 According to the projection principle, X must be marked with both $\Theta1$ and $\Theta2$ at D-Structure.
 Since each $\theta$-role is associated with a unique structural position, it follows that X must be in two distinct positions at D-Structure.
-The only way an argument can be in mutiple positions is if it has undergone Move-$\alpha$.
+The only way an argument can be in multiple positions is if it has undergone Move-$\alpha$.
 Move-$\alpha$, however, maps D-Structures to S-Structures.
-Therefore, an argument cannot be in two positions at D-Structure, and futhermore, cannot be multiply $\theta$-marked at D-Structure.
+Therefore, an argument cannot be in two positions at D-Structure, and furthermore, cannot be multiply $\theta$-marked at D-Structure.
 If an argument cannot be multiply $\theta$-marked at D-Structure, then it cannot be multiply $\theta$-marked at all.
 
 Thus we are able to derive the first clause of the $\theta$-criterion from other principles.
@@ -67,5 +67,32 @@ Without these levels of representation, the projection principle (as formulated 
 Therefore, I will not be assuming the first clause of the $\theta$-criterion.
 
 \section{Last Resort}
+It almost goes without saying that the goal of the minimalist program is to clean up syntactic theory by explaining unnecessary principles in terms of necessary principles.
+In nearly one fell swoop, \textcite{chomsky1995minimalist} eliminates a number of the complications built into LGB theory (S-Structure and D-Structure chief among them).
+In \textit{The Minimalist Program} (MP), however, Chomsky was not able to explain two seeming imperfections: displacement and uninterpretable features.\footnote{
+	The framework developed in MP also does not explain projection/labelling, but Chomsky does not recognize this as an imperfection until ``Problems of projection'' \parencite{chomsky2013problems}.
+	More on this in Chapter \ref{sec:labels}
+}
+Chomsky formalized displacement as the operation Move, which is more complex than Merge, and proposes that, unlike Merge, which ``comes for free,'' every instance of Move must be triggered by the the need to satisfy an uninterpretable feature.
+The simple operation Merge is preferred for economy reasons, while movement, Chomsky argues, is a ``last resort.''
+In work subsequent to MP, however, Chomsky proposes that Move is actually a subtype of Merge, called Internal Merge.
+Merge and Move are different names for the same operation, there is no reason to think that Move is more computationally complex, and therefore no reason to think that movement is a last resort.
 
+In ``Beyond Explanatory Adequacy'' \parencite[][henceforth, \textit{BEA}]{chomsky2004beyond} Chomsky makes this rejection of Last Resort explicit:
+\begin{quote}
+	[Narrow Syntax] is based on the free operation Merge.
+	[The Strong Minimalist Thesis] entails that Merge of $\alpha$, $\beta$ is unconstrained, therefore either external or internal.
+	Under external Merge, $\alpha$ and $\beta$ are separate objects; 
+	under internal Merge, one is part of the other, and Merge yields the property of ``displacement,'' which is ubiquitous in language and must be captured in some manner in any theory. 
+	It is hard to think of a simpler approach than allowing	internal Merge (a grammatical transformation), an operation that is freely available.
+	\parencite[110]{chomsky2004beyond}
+\end{quote}
+This line of reasoning bears discussion in light of the fact that Last Resort is still standardly assumed by self-described minimalist syntacticians.
+In fact, several syntacticians expand Last Resort to External Merge arguing that neither type of Merge ``comes free'' \parencite{pesetsky2006probes,wurmbrand2014merge,yokoyama2015features}.
+This proposal is understandable from a historical perspective, but ultimately misguided in my opinion.
+
+The first problem with the constrained Merge view, comes, I believe, from a misunderstanding of Chomsky's assertion that Merge ``comes free.''
+Merge comes for free in the sense that any computational theory of syntax must assume it or some equivalent combinatorial operation.
+That is not to say that an instance of Merge incurs zero computational costs, only that we need to incur that cost in order to have language.
+According to the Last Resort hypothesis, the computational cost of Move is greater than that of Merge.
 \end{document}

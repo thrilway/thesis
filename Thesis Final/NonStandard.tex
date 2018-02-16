@@ -99,6 +99,40 @@ A free Merge syntax, according to \textcite{frampton2008crash}, the derivation m
 At this point the derivation will crash due to a Case Filter violation.
 A constrained Merge syntax, however, could be able to halt as soon as the derivation becomes doomed, say, when \textit{it} is merged.
 This would save us the indefinite number steps it takes to merge a phase head, and is therefore more efficient.
+This I take to be a species of the argument that free Merge systems are inefficient because, in addition to the infinite array of convergent derivations they must generate, they also generate an infinite array of crashing derivations, whereas constrained Merge systems only generate to ``convergent'' derivations.
+However, when we investigate the nature of constrained Merge, we can see that the purported gains in efficiency in one part of the system come at the expense of another part of that same system.
+Constrained Merge theories, in effect, rob Peter to pay Paul.
+
+At minimum, each version of the syntax will have a Merge operation and a Transfer operation.
+So, the free Merge syntax will consist of a unconstrained Merge$_F$ and a constrained Transfer$_F$ as defined in \Next.
+\ex.
+\a. Merge$_F(\alpha,\beta) = \left\{ \alpha, \beta \right\}$ 
+\b. Transfer$_F(\gamma) = \langle\textsc{sem}(\gamma), \textsc{phon}(\gamma)\rangle$ iff Filter($\gamma$) = F\\
+(where $\alpha$, $\beta$, and $\gamma$ are syntactic objects.)
+
+A constrained Merge syntax, then, would be consist of a constrained Merge$_C$ and an unconstrained Transfer$_C$.
+\ex.
+\a. Merge$_C(\alpha,\beta) =$ Merge$_F(\alpha,\beta)$ iff Satisfy($\alpha,\beta$) = T
+\b. Transfer$_C(\gamma) = \langle\textsc{sem}(\gamma), \textsc{phon}(\gamma)\rangle$
+(where $\alpha$, $\beta$, and $\gamma$ are syntactic objects.)
+
+If we assume that both theories can be made descriptively adequate, then the Satisfy predicate will have the same net effect of the Filter predicate required for the free Merge system.
+So, given any pair of syntactic objects $\alpha$ and $\beta$, Satisfy must be able to evaluate if Merge($\alpha,\beta$) is allowed.
+And since there are an infinite amount of deriveable syntactic objects, even in a constrained Merge syntax, Satisfy must be able to evaluate an infinity of possible $\beta$'s against each possible $\alpha$.
+For any given syntactic object, then, there is an indefinite amount of objects which will merge with that object and an indefinite amount that will not, and the only way to know if Satisfy is true of a pair of objects is to chack.
+So, much like free Merge syntax suffers from an infinity of crashes, constrained Merge syntax suffers from an infinity of failed Merge operations.
+
+A constrained Merge theorist, might still object by saying that Satisfy is a local operation, while Filter is a global operation, and local operations are to be preferred if we care about computational complexity.
+Again, this is an intuitively attractive argument, but not obviously valid.
+Consider the following thought experiment.
+Suppose you are a TA charged with grading a quiz by your somewhat maniacal instructor.
+Part of the instructor's mania is that they require all quizzes to consist of 40 equally weighted questions and be graded out of 10 points.
+What is the most efficient procedure for assigning a grade to each quiz?
+Two types of procedure suggest themselves.
+The first, which I will call the Local Only procedure, is to assign each correct answer a value of 0.25 points and then add up all of the points.
+The second, which I will call the Local/Global procedure, it to assign each correct answer a value of 1 point, add up all of the points, and divide by 4 (perhaps with a calculator).
+Since humans are Very Good at counting by increments of 1, and calculators are Very Good at dividing by 4, while neither is Very Good at counting by increments of 0.25, the Local/Global procedure is likely to be more efficient than the Local Only procedure.
+The moral of this story: One machine's global procedure is another machine's local procedure.
 
 There is also a methodological rationale for preferring a free Merge framework which is slightly counterintuitive, so I would like to dwell on it for a moment.
 My reason for assuming a free Merge framework is that it creates, or rather, lays bare, more problems for us to solve.
@@ -128,7 +162,7 @@ How are they related to, say, $\varphi$-features?
 Do they exist independently of the narrow syntax?
 Why do they need to be satisfied first?
 And so on.
-I, for one, don't have the slightest clue how to proceed in answering or even sharpening these questions, and there don't seem to be any clues in the
+I, for one, don't have the slightest clue how to proceed in answering or even sharpening these questions, and there don't seem to be any clues in the offing from constrained Merge theorists.
 
 \section{Terminological notes}
 The subject matter of this thesis is often called the ``syntax-semantics interface,'' a term which I have discovered is ambiguous, probably due to the fact that it is constructed from three ambiguous terms.
@@ -152,6 +186,17 @@ Since both the broad and narrow senses are useful to me, I will need to make a d
 I will use the term ``Narrow Syntax'' (or NS) to refer to the narrow sense, that is, the hypothesized mental module, and ``syntax'' (and derived terms) to indicate the broad sense.
 
 Similar remarks apply to the term \textit{semantics}, which has at least three senses.
-The first sense, as in the case of \textit{syntax}, is the sociological sense
+The first sense, as in the case of \textit{syntax}, is the sociological sense: semantics is what semanticists do.
+I will not be using this sense for the same reasons as I cited above for the sociological sense of \textit{syntax}.
 
+The broad sense of \textit{semantics} is that of the study of the relation of a symbolic system to some other system.
+So, to various degrees, we can talk about the semantics of a logical system, a programming language, a natural language, etc.
+I will use this sense only informally, when discussing notions of truth and reference associated with an instance or class of natural language expression.
+
+The narrow sense of \textit{semantics} is that of the mental module (or system of modules) associated with computing the meaning of a linguistic expression.
+Chomsky often refers to this mental entity as the Conceptual-Intentional (CI) system, and stresses that we know very little about it.
+Insofar as this thesis makes claims or hypotheses about \textit{semantics}, it makes claims or hypotheses about the CI system.
+
+The final ambiguous term I will discuss is \textit{interface}.
+In recent years it has become common within generative linguistics to write papers, hold workshops, and compile books on \textit{the syntax-semantics interface}, but as I mentioned above<++>
 \end{document}

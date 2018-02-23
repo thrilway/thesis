@@ -446,7 +446,9 @@ The first analysis, the complex predicate analysis \parencite{snyder1995language
 The second, the cartographic/nanosyntactic analysis \parencite{son2008microparameters}, is theoretically sound but unlearnable.
 The third, that of \textcite{kratzer2004building}, which I will adapt for my purposes, narrowly violates UTAH.
 
-Generally speaking, a complex predicate analysis of adjectival resultatives states that, in a resultative sentence, the adjective and the verb form an amalgam which $\theta$-marks the object, as in \Next.
+Complex predicate analyses of secondary predication structures tend to be defined in opposition to small clause analyses.
+The two classes of analyses crucially differ with respect to where the shared argument originates.
+<++>
 \ex.
 \begin{forest}
   nice empty nodes,sn edges,baseline
@@ -459,7 +461,20 @@ Generally speaking, a complex predicate analysis of adjectival resultatives stat
 	]
 \end{forest}
 
-<+Words+>
+This analysis is inconsistent with UTAH, as the structural relation between \textit{the metal} and \textit{hammer} in \Last is not shared in the simple transitive version as shown in \Next.
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+	[VP
+		[DP[the metal,roof]]
+		[V\\hammer,align=center]
+	]
+\end{forest}
+
+In the simple transitive version, \textit{the metal} and \textit{hammer} are sisters but not so in the resultative version.
+The complex predicate analysis, then, violates UTAH and should be rejected under our assumptions.
+Before rejecting them outright, I will first consider the arguments in favour of complex predicate analyses.
+
 Perhaps the strongest argument in favour of the complex predicate analysis comes from the antireconstruction effects identified by \textcite[293--296]{williams1983against}.
 Reconstruction is the phenomenon of arguments being interpreted lower than their surface position.
 It is usually diagnosed using scope ambiguities as seen in \Next.
@@ -483,34 +498,25 @@ Therefore, \Last cannot be derived from a small clause structure, and since, acc
 
 At first blush, this seems to be a solid line of reasoning, and I am not in a position to dispute the evidence adduced in its service, but it hinges on a hidden hypothesis.
 The basis of this argument is the one way conditional statement that reconstruction implies movement.
-The hypothesis that Williams and others puts forth is that this conditional is, infact a biconditional.
-That is, argument reconstruct iff their surface postion is derived from movement, and it follows from this that anti-reconstruction effects imply a lack of movement.
+The hypothesis that Williams and others puts forth is that this conditional is, in fact, a biconditional.
+That is, an argument reconstructs iff their surface postion is derived from movement, and it follows from this that anti-reconstruction effects imply a lack of movement.
+This, I believe, is too strong, as there are instances of anti-reconstruction effects which are not amenable to analysis as complex predicates.
 
+The strongest evidence against this hypothesis is the fact that quantifier float blocks reconstruction.\footnote{See also \textcite{bobaljik2004anti} for another argument against this hypothesis.}
+So \Next, with an unfloated \textit{all}, shows reconstruction effects while the same sentence with a floated \textit{all} in \NNext, does not show these effects.
+\ex. \textbf{All} the students seem to be sick. ($\forall >$ seem, seem $> \forall$)
 
-The argument goes as follows:
+\ex. The students \textbf{all} seem to be sick. ($\forall >$ seem, *seem $> \forall$)
 
-\ex. 
-\a. In a small clause analysis of secondary predication, the argument shared between the primary and secondary predicates originates in a small clause with the secondary predicate, and moves to a position outside of the small clause.
-\b. If an argument is introduced in the small clause, it should be able to reconstruct there.
-\c. However, such reconstruction seems to be barred in secondary predication constructions.
-\d. Therefore, shared arguments do not originate in small clauses.
+The hypothesized biconditional would predict that \textit{seem to be sick} is a complex predicate in \Last and an ordinary non-finite clause in \LLast.
+So, in order to maintain the hypothesis, it is incumbent on the complex predicate theorist to explain how and why quantifier float an complex predication interact.
 
-This is a formally valid argument, but I would like to call into question the key premiss, \Last[b].
+Rather than reject the biconditional outright, however, I will merely weaken it to say that all else being equal, reconstruction effects are a good indication of argument movement.
+In doing so, I have taken on the burden of explaining why shared arguments of secondary predication structures do not reconstruct into their small clause positions.
+I will provide such an explanation when I present my structural analysis of resultatives in Chapter \ref{sec:analysis}.
 
-<+Words+>
+\textcite{snyder2001nature} is only tangentially interested in the syntactic analysis of resultatives, (his main interest, acquisition and variation, is discussed below) but he does adopt a complex predicate analysis, and his reasons for doing so bear scrutiny.
 
-This analysis is inconsistent with UTAH, as the structural relation between \textit{the metal} and \textit{hammer} in \Last is not shared in the simple transitive version as shown in \Next.
-\ex. 
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-	[VP
-		[DP[the metal,roof]]
-		[V\\hammer,align=center]
-	]
-\end{forest}
-
-In the simple transitive version, \textit{the metal} and \textit{hammer} are sisters but not so in the resultative version.
-The complex predicate analysis, then, violates UTAH and should be rejected under our assumptions.
 
 Snyder, who proposes a complex predicate analysis of adjectival resultatives in his \citeyear{snyder1995language} dissertation, augments his structural analysis with a parametric analysis \parencite{snyder2012parameter}.
 According to this analysis, a language allows resultatives only if it permits Generalized Modification (GM), a compositional operation defined in \Next.

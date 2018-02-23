@@ -31,7 +31,14 @@
 \usepackage{tikz}
 \usepackage{forest}
 \usepackage{tabularx}
+
 \usepackage{linguex}
+\renewcommand{\Exarabic}{\thechapter.\arabic} 
+
+% We want to reset the ExNo counter at each section
+\usepackage{chngcntr}
+\counterwithin{ExNo}{chapter}
+
 \usepackage{centernot}
 \usepackage{subfiles}
 \usepackage{multirow}

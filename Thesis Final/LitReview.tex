@@ -448,20 +448,50 @@ The third, that of \textcite{kratzer2004building}, which I will adapt for my pur
 
 Complex predicate analyses of secondary predication structures tend to be defined in opposition to small clause analyses.
 The two classes of analyses crucially differ with respect to where the shared argument originates.
-<++>
-\ex.
+According to a small clause analysis, the shared argument forms a constituent with the secondary predicate at some point in the derivation as in \Next.
+\ex. 
 \begin{forest}
   nice empty nodes,sn edges,baseline
 	[VP
-		[DP[the metal,roof]]
-		[V/Adj
+		[DP$_i$[the metal,roof,name=specVP]]
+		[
 			[V\\hammer,align=center]
-			[Adj\\flat,align=center]
+			[resP
+				[res]
+				[SC
+					[$\langle$DP$_i\rangle$,name=SCDP]
+					[Adj\\flat,align=center]
+				]
+			]
 		]
 	]
 \end{forest}
 
-This analysis is inconsistent with UTAH, as the structural relation between \textit{the metal} and \textit{hammer} in \Last is not shared in the simple transitive version as shown in \Next.
+Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives is a small clause analysis and is discussed below.
+
+According to a complex predicate analysis, however, the shared argument and the secondary predicate never form a constituent.
+Instead the verb and the secondary predicate (and perhaps additional syntactic objects) form a constituent that does not contain the shared argument.
+The shared argument (in the case of resultatives, at least) forms a constituent with this complex predicate.
+For instance, \textcite{irimia2012secondary} analyzes resultatives as in \Next.
+\ex.\label{tree:irimia}
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+	[SituationP
+		[DP[the metal,roof]]
+		[
+			[Situation]
+			[VP
+				[V\\hammer,align=center]
+				[resP
+					[res]
+					[Adj\\flat,align=center]
+				]
+			]
+		]
+	]
+\end{forest}
+
+This analysis is inconsistent with any strict version of UTAH, as the structural relation between \textit{the metal} and \textit{hammer} in \Last is not shared in the simple transitive version as shown in \Next.
 \ex. 
 \begin{forest}
   nice empty nodes,sn edges,baseline
@@ -473,7 +503,7 @@ This analysis is inconsistent with UTAH, as the structural relation between \tex
 
 In the simple transitive version, \textit{the metal} and \textit{hammer} are sisters but not so in the resultative version.
 The complex predicate analysis, then, violates UTAH and should be rejected under our assumptions.
-Before rejecting them outright, I will first consider the arguments in favour of complex predicate analyses.
+Before rejecting them outright, I will first consider the strongest argument in favour of complex predicate analyses, and an attempt to reconcile complex predicate analyses with UTAH.
 
 Perhaps the strongest argument in favour of the complex predicate analysis comes from the antireconstruction effects identified by \textcite[293--296]{williams1983against}.
 Reconstruction is the phenomenon of arguments being interpreted lower than their surface position.
@@ -515,8 +545,50 @@ Rather than reject the biconditional outright, however, I will merely weaken it 
 In doing so, I have taken on the burden of explaining why shared arguments of secondary predication structures do not reconstruct into their small clause positions.
 I will provide such an explanation when I present my structural analysis of resultatives in Chapter \ref{sec:analysis}.
 
-\textcite{snyder2001nature} is only tangentially interested in the syntactic analysis of resultatives, (his main interest, acquisition and variation, is discussed below) but he does adopt a complex predicate analysis, and his reasons for doing so bear scrutiny.
+As for the approach to $\theta$-roles, \textcite{irimia2012secondary} proposes that the shared argument receives its $\theta$-role from the Situation head which takes the complex predicate as a complement.
+From a purely formal perspective, this can be made to satisfy Minimal UTAH in the following way.
+If we assume that resultatives have the structure in \Next, and simple transitives have the structure in \NNext, then we can say that the complex predicate does not violate Minimal UTAH as the thematic relation that holds between Situation and the DP is mirrored by a grammatical relation between the two in both structures.
 
+\ex.\label{tree:irimia-theta} Repeated from \ref{tree:irimia}\\
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+	[SituationP
+		[DP[the metal,roof,name=dp]]
+		[
+			[Situation,name=situation]
+			[VP
+				[V\\hammer,align=center]
+				[resP
+					[res]
+					[Adj\\flat,align=center]
+				]
+			]
+		]
+	]
+	\draw[->] (situation) to[out=south, in=south] node[midway,below]{$\Theta$} (dp) ;
+\end{forest}
+
+\ex. 
+\begin{forest}
+  nice empty nodes,sn edges,baseline
+	[SituationP
+		[DP[the metal,roof,name=dp]]
+		[
+			[Situation,name=situation]
+			[V\\hammer,align=center]
+		]
+	]
+	\draw[->] (situation) to[out=south, in=south] node[midway,below]{$\Theta$} (dp);
+\end{forest}
+
+In both structures, \textit{the metal} receives a $\theta$-role from Situation, and it is the specifier of Situation, so Minimal UTAH holds.
+This, however, depends on a different conception of $\theta$-relations than the one I assume.
+Recall that I take thematic relations to be evident in certain types of analytic entailments such as the one expressed in \Next.
+\ex. Deem drank the cup dry. $\implies$ The cup was dry.
+
+In order to get from the structure in \ref{tree:irimia-theta} to the entailment in \Last, we would need to assume some mechanism by which the $\theta$-role of \textit{dry} is transferred to Situation.
+Such a mechanism, while perhaps possible to formulate, should be immediately suspect under minimalist assumptions.
+So, I will set aside the complex predicate analysis of resultatives.
 
 Snyder, who proposes a complex predicate analysis of adjectival resultatives in his \citeyear{snyder1995language} dissertation, augments his structural analysis with a parametric analysis \parencite{snyder2012parameter}.
 According to this analysis, a language allows resultatives only if it permits Generalized Modification (GM), a compositional operation defined in \Next.

@@ -3,6 +3,7 @@
 % arara: pdflatex: {options: "-draftmode"}
 % arara: pdflatex: {options: "-file-line-error-style"}
 \documentclass[MilwayThesis]{subfiles}
+\setcounter{chapter}{2}
 \begin{document}
 
 This dissertation rests on a number of non-standard theoretical assumptions and draws a few non-standard distinctions, which I will defend in this chapter.
@@ -198,5 +199,35 @@ Chomsky often refers to this mental entity as the Conceptual-Intentional (CI) sy
 Insofar as this thesis makes claims or hypotheses about \textit{semantics}, it makes claims or hypotheses about the CI system.
 
 The final ambiguous term I will discuss is \textit{interface}.
-In recent years it has become common within generative linguistics to write papers, hold workshops, and compile books on \textit{the syntax-semantics interface}, but as I mentioned above<++>
+In recent years it has become common within generative linguistics to write papers, hold workshops, and compile books on \textit{the syntax-semantics interface}, but as I mentioned above, the term is ambiguous.
+It largely seems to be ambiguous between a \textit{sociological} sense and a \textit{narrow} sense, with the sociological sense dominating discussion.
+
+When used in the sociological sense, the syntax-semantics interface refers to a body of literature that mixes the formalisms and methods used by syntacticians with those used by semanticists.
+That is, this type of work makes use of tree diagrams and expressions of typed lambda calculus.
+In this sense, the interface is not an object of study per se, but a sub-discipline.
+
+In the narrow sense, the syntax-semantics interface refers to the interface between the Narrow Syntax and the CI system.
+This results in very different sorts of analyses compared to the standard analyses, analyses that posit computational procedures rather than merely representing expressions in two ways.
+In many ways, however, the term \textit{interface} in its narrow sense is a misnomer, as there are likely no mental objects that we might call interfaces.
+As best we can tell, the mind consists of a set of modules and a non-modular central system \parencite{fodor1983modularity,fodor2001mind}.
+An interface, then, emerges wherever two modules interact with each other, or perhaps where a module interacts with the central system.
+Restricting ourselves to the modules, we can see why positing interfaces as mental objects won't do.
+Suppose we have two modules, M1 and M2, which seem to interact with each other.
+Being modules, each will consist in a set of computational operations (P1 and P2) defined over a class of syntactically structured (in the broad sense) objects (L1 and L2).
+Suppose we posit an interface I1, which consists in an operation P3 that converts objects of L1 into objects of L2.
+What is I1, then, but a module that has interfaces with M1 and M2?
+If I1 is a module, are its interfaces with M1 and M2 also modules?
+If so, then we seem to be stuck with an infite regress.
+If not, then interfaces are a special kind of module, but this would raise further questions with respect to their evolutionary origins.
+
+If there are no mental objects that we might call interfaces, then how are we to study them?
+The answer to this question is that, to study an interface, we must study the modules associated with that interface with the added assumption that such an interface exists.
+So, studying the syntax-semantics interface involves studying the Narrow Syntax and the CI module with the assumption that there is an interface between them.
+We will get a glimpse of how such a study would work in chapter \ref{sec:labels}.
+
+\section{Summary}
+In this chapter, I have made explicit two of my assumptions which would be considered non-standard among contemporary generative syntacticians.
+In particular, I am not assuming the $\theta$-criterion as it is commonly stated, and I am assuming a free Merge syntax.
+I have also clarified some terminology that many take for granted, specifically I clarified my use of the term \textit{syntax-semantics interface} and its constituent terms.
+Now that the reader has a sense of my theoretical idiosyncrasies, we can move on to more specific concerns in the following chapters.
 \end{document}

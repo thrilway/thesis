@@ -30,8 +30,15 @@
 
 \usepackage{tikz}
 \usepackage{forest}
-\usepackage{tabularx}
+\usepackage{tabu}
+
 \usepackage{linguex}
+\renewcommand{\Exarabic}{\thechapter.\arabic} 
+% We want to reset the ExNo counter at each section
+%\usepackage{chngcntr}
+%\counterwithin{ExNo}{chapter}
+%\usepackage{cleveref}
+%\creflabelformat{ExNo}{(#2#1#3)}
 \usepackage{centernot}
 \usepackage{subfiles}
 \usepackage{multirow}
@@ -150,7 +157,7 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
   Steer away from these rocks.
 }{``There, There''\\\textsc{Radiohead}}
 \subfile{LitReview}
-\chapter{The Structure of Resultatives}
+\chapter{The Structure of Resultatives}\label{sec:analysis}
 \epigraph{Die Welt ist eine Glocke, die einen Ri\ss{} hat: sie klappert, aber klingt nicht.}{\textsc{Johann Wolfgang von Goethe}}
 \subfile{MyAnalysis}
 \chapter{Label Theory}\label{sec:labels}

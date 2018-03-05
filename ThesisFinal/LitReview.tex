@@ -107,7 +107,8 @@ The alternative, in which resultatives are disallowed by default, seems to fare 
 
 Suppose the default state of the language faculty is one which is able to generate both resultatives and depictives.
 A child in this state, upon hearing an utterance of a secondary predication construction will hypothesize both types of structural descriptions for this utterance and converge on only the one whose interpretation is appropriate in the context of utterance.
-This requires a child to inductively 
+This requires a child to make the inductive leap from a series of non-resultative utterances to a ban on resultatives.
+
 
 Now, consider the alternative, in which the French setting is the default.
 How is an English-learner to decide that the resultative structure is an available parse for a secondary predication construction?
@@ -171,105 +172,126 @@ Similarly, in \ref{ex:katie-ran}, there is a single thematic relation between \t
 Any structural analysis of these sentences that violates Minimal UTAH, then, can be rejected on theoretical grounds.
 
 Consider, for instance, three possible structural analyses of the pair in \ref{ex:broke-bottle}.
-In the first analysis, represented in \Next, \textit{the bottle} is base generated in its surface position, which is different in the two sentences.
-\ex. \textbf{The surface analysis}
-\a. \textit{Sara broke the bottle.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[Sara,roof]]
-    [
-      [T]
-      [VP
-        [V\\broke,align=center]
-        [DP[the bottle,roof]]
-      ]
-    ]
-  ]
-\end{forest}
-\b. \textit{The bottle broke.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[the bottle,roof,name=subj]]
-    [
-      [T]
-      [VP[broke,roof]]
-    ]
-  ]
-\end{forest}
-
+In the first analysis, represented in \autoref{fig:surface}, \textit{the bottle} is base generated in its surface position, which is different in the two sentences.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{.45\textwidth}
+		\textit{Sara broke the bottle.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [TP
+		    [DP[Sara,roof]]
+		    [
+		      [T]
+		      [VP
+			[V\\broke,align=center]
+			[DP[the bottle,roof]]
+		      ]
+		    ]
+		  ]
+		\end{forest}	
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+	\textit{The bottle broke.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [TP
+		    [DP[the bottle,roof,name=subj]]
+		    [
+		      [T]
+		      [VP[broke,roof]]
+		    ]
+		  ]
+		\end{forest}	
+	\end{minipage}
+	\caption{A surface analysis of causative-inchoatives}
+	\label{fig:surface}
+\end{figure}
 In this analysis, there is no single structural relation between \textit{broke} and \textit{the bottle}, corresponding to the single thematic relation.
 This analysis, then, violates Minimal UTAH, and can therefore be rejected.
 
-In the second analysis, represented in \Next, \textit{the bottle} originates in [Comp V] and moves to subject position in the intransitive situation.
-\ex. \textbf{The movement analysis}
-\a. \textit{Sara broke the bottle.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[Sara,roof]]
-    [
-      [T]
-      [VP
-        [V\\broke,align=center]
-        [DP[the bottle,roof]]
-      ]
-    ]
-  ]
-\end{forest}
-\b. \textit{The bottle broke.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[the bottle,roof,name=subj]]
-    [
-      [T]
-      [VP
-        [V\\broke,align=center]
-        [DP[the bottle,roof,name=theme]]
-      ]
-    ]
-  ]
-  \draw[->] (theme) to[out=south west, in=south] (subj);
-\end{forest}
-
+In the second analysis, represented in \autoref{fig:movement}, \textit{the bottle} originates in [Comp V] and moves to subject position in the intransitive situation.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{.45\textwidth}
+	\textit{Sara broke the bottle.}\\
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [TP
+	    [DP[Sara,roof]]
+	    [
+	      [T]
+	      [VP
+		[V\\broke,align=center]
+		[DP[the bottle,roof]]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+		\textit{The bottle broke.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [TP
+		    [DP[the bottle,roof,name=subj]]
+		    [
+		      [T]
+		      [VP
+			[V\\broke,align=center]
+			[DP[the bottle,roof,name=theme]]
+		      ]
+		    ]
+		  ]
+		  \draw[->] (theme) to[out=south west, in=south] (subj);
+		\end{forest}
+	\end{minipage}
+	\caption{A movement analysis of causative-inchoatives}
+	\label{fig:movement}
+\end{figure}
 In this analysis the single thematic relation between \textit{broke} and \textit{the bottle} corresponds to a single structural relation between the two.
 While UTAH considerations clearly lead us to prefer the movement analysis over the surface analysis, such considerations are far from decisive evidence in favour of the movement analysis, as it is not the only possible analysis that complies with UTAH.
 
-Another UTAH-compliant account, which I will call the layering analysis, is represented in \Next.
+Another UTAH-compliant account, which I will call the layering analysis, is represented in \autoref{fig:layering}.
 This type of analysis is proposed by \textcite{borer2005normal,ramchand2008verb}.
 
-\ex. \textbf{The layering analysis}
-\a. \textit{Sara broke the bottle}
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [vP
-    [DP[Sara,roof]]
-    [
-      [v$_{EA}$]
-      [vP
-        [DP[the bottle,roof]]
-        [
-          [v$_{IA}$]
-	  [V\\broke,align=center]
-        ]
-      ]
-    ]
-  ]
-\end{forest}
-\b. \textit{The bottle broke.}
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [vP
-    [DP[the bottle,roof]]
-    [
-      [v$_{IA}$]
-      [V\\broke,align=center]
-    ]
-  ]
-\end{forest}
-
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{0.45\textwidth}
+		\textit{Sara broke the bottle}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [vP
+		    [DP[Sara,roof]]
+		    [
+		      [v$_{EA}$]
+		      [vP
+			[DP[the bottle,roof]]
+			[
+			  [v$_{IA}$]
+			  [V\\broke,align=center]
+			]
+		      ]
+		    ]
+		  ]
+		\end{forest}	
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+		\textit{The bottle broke.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [vP
+		    [DP[the bottle,roof]]
+		    [
+		      [v$_{IA}$]
+		      [V\\broke,align=center]
+		    ]
+		  ]
+		\end{forest}
+	\end{minipage}
+	\caption{A layering analysis of causative-inchoatives}
+	\label{fig:layering}
+\end{figure}
 In this analysis, as in the movement analysis, the thematic relation between \textit{broke} and \textit{the bottle} is represented by a single structural relation between the two.
 This means that this analysis also satisfies Minimal UTAH, and therefore cannot be rejected immediately.
 

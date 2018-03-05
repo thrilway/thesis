@@ -30,10 +30,11 @@ The nature of the LGB theory is such that its various hypotheses and principles 
 As a result, the first clause of the $\theta$-criterion depends on various other theoretical statements and various other theoretical statements depend on it.
 So, rather than attempting an exhaustive enumeration of the links between the $\theta$-criterion and the other theoretical statements of LGB, I will present what I consider to be the best argument in favour or the $\theta$-criterion, and argue that its premises have since been rejected within syntactic theory.
 
-The first premise is the now familiar Y- or T-model of grammar shown in \Next, which LGB theory continues from earlier theories.
+The first premise is the now familiar Y- or T-model of grammar shown in \autoref{fig:LGBYModel}, which LGB theory continues from earlier theories.
 According to this model, a syntactic derivation has four levels of representation (D-structure, S-Structure, PF, and LF), and each step in the derivation is performed by the application of a subset of the transformational rules.
 S-structures are derived by the applying of Move-$\alpha$ to D-structures, LFs are derived by applying QR (and maybe Move-$\alpha$) to S-structures, and PFs are derived by applying ``stylistic rules'' to S-structures \parencite[18]{chomsky1981lectures}.
-\ex. 
+\begin{figure}[h]
+	\centering
 \begin{tikzpicture}[baseline]
 	\node[draw,rounded corners] (DS) at (0,0) {D-Structure};
 	\node[draw,rounded corners] (SS) at (0,-2) {S-Structure};
@@ -43,7 +44,9 @@ S-structures are derived by the applying of Move-$\alpha$ to D-structures, LFs a
 	\draw[->] (SS)--(PF) node[midway,anchor=south east] {Stylistic rules};
 	\draw[->] (SS)--(LF) node[midway,anchor=south west] {QR};
 \end{tikzpicture}
-
+	\caption{The architecture of the grammar in LGB}
+	\label{fig:LGBYModel}
+\end{figure}
 The exact natures of the transformations are not important for this discussion.
 What is important, is that all syntactic displacement is the result of one of these transformations.
 

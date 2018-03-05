@@ -10,8 +10,9 @@
 So far, I have proposed a theory of syntax, a structural analysis of resultatives, and an analysis of the resultative parameter.
 Although they share a justification in minimalism, each of these is an independant proposal, and as such their combination must be justified.
 In this chapter I show that the combination of my proposals work together.
-I do so by first showing that the structure in \Next can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then by showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
-\ex.
+I do so by first showing that the structure in \autoref{fig:ResStruct} can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then by showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
+\begin{figure}[h]
+	\centering
 {\small
 \begin{forest}
     nice empty nodes,sn edges,baseline,
@@ -41,6 +42,9 @@ I do so by first showing that the structure in \Next can be derived in a languag
     \draw[->] (specRes) to[out=south, in=south east] (compV);
 \end{forest}
 }
+	\caption{The structure of a resultative}
+	\label{fig:ResStruct}
+\end{figure}
 
 In the first section, I will describe a derivation of the English resultative VP \textit{hammer the metal flat} and show that it converges at the CI interface (taking SM convergence for granted).
 In the second section, I will describe two derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash, while avoiding that crash blocks the derivation.
@@ -57,10 +61,8 @@ A given stage $S_i$ \textit{derives} a subsequent stage $S_{i+1}$ if and only if
 In many ways, successful derivations, like happy families, are uninteresting, but they still must be demonstrated in order to show where the crashing derivations go wrong.
 
 To begin with, we derive the result phrase.
-The formal derivation and resulting unlabelled structure is given in \Next.
-\ex.
-\a.
-\begin{tabular}[t]{llll}
+The formal derivation of the resP is given in \autoref{tab:EngResP} and the resulting unlabelled structure is given in \autoref{fig:EngResP}.
+	\begin{longtabu}{llll}
 	\textbf{Stage} & \textbf{LA} & \textbf{Workspace} & \\
 	\cline{1-3}
 	1 & $
@@ -122,8 +124,13 @@ The formal derivation and resulting unlabelled structure is given in \Next.
 	\left\{\left\{_\delta \text{DP},\left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}\right\}\right\}\right\}
 	$
 	& Transfer($\beta$)\\
-\end{tabular}
-\b.
+	\caption{The derivation of an English resP}
+	\label{tab:EngResP}
+\label{tab:EngResP}
+\end{longtabu}
+
+\begin{figure}[h]
+	\centering
 {\small
   \begin{forest}
       nice empty nodes,sn edges,baseline,for tree={
@@ -145,15 +152,149 @@ The formal derivation and resulting unlabelled structure is given in \Next.
       \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
   \end{forest}
 }
+	\caption{An unlabelled resP}
+\label{fig:EngResP}
+\end{figure}
 
 Assuming res is a phase head, its complement $\beta$ is trasferred and must be labelled along with the SOs contained in $\beta$.
 The small clause $\beta$ ($\left\{_\beta \langle \text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}$) is a Phrase-Phrase structure, but since one of its constituent parts, the DP, is a lower copy, that part is invisible to the labelling algorithm.
 Therefore, only the adjective ($\left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\}$) is available to provide a label.
 Assuming roots are inert for labelling, and uninflected categorizing heads are able to label, the label of $\alpha$, and therefore the label of $\beta$, is $adj_\emptyset$.
 So, $\beta$ is succesfully labelled and therefore convergent at the CI interface.
-\ex. LA($\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\} = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
+\ex. LA$(\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}) = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
 
+Since $\gamma$ and $\delta$ are not transferred along with $\beta$, we do not need to discuss their labels yet.
 
+Before deriving the verb phrase, we must first Copy \textit{the metal}, placing it and the resP $\delta$ in the new lexical array.
+We then derive the next phase as in \autoref{tab:EngVP}.
+The unlabelled structure is given in \autoref{fig:EngVP}.
+	\begin{table}
+		\centering
+	\begin{longtabu}{llll}
+		\textbf{Stage} & \textbf{LA} & \textbf{Workspace} &\\
+		\cline{1-3}
+		1 & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\text{DP},\\
+			v,\\
+			\sqrt{\textsc{hammer}},\\
+			\text{AgrO}
+		\end{Bmatrix*}
+		$ & $\left\{  \right\}$ & Select$(\sqrt{\textsc{hammer}})$\\
+		2 & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\text{DP},\\
+			v,\\
+			\text{AgrO},
+		\end{Bmatrix*}
+		$ & $\left\{ \sqrt{\textsc{hammer}} \right\}$ & Select$(v)$\\
+		3 & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\text{DP},\\
+			\text{AgrO}
+		\end{Bmatrix*}
+		$ & $ 
+		\begin{Bmatrix*}[l]
+			\sqrt{\textsc{hammer}},\\
+			v
+		\end{Bmatrix*}
+		$ & Merge$(v, \sqrt{\textsc{hammer}})$\\
+		4 & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\text{DP},\\
+			\text{AgrO}
+		\end{Bmatrix*}
+		$ & $ 
+		\left\{\left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}
+		$ & Select(DP)\\
+		5 & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\text{AgrO}
+		\end{Bmatrix*}
+		$ & $ 
+		\begin{Bmatrix*}[l]
+			\text{DP}\\
+			\left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}
+		\end{Bmatrix*}
+		$ & Merge(DP, $\alpha$)\\
+		6 & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\text{AgrO}
+		\end{Bmatrix*}
+		$ & $ \left\{\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}\right\}$ &
+		Select(resP)\\
+		7 & $\left\{ \text{AgrO} \right\}$ & $
+		\begin{Bmatrix*}[l]
+			\text{resP},\\
+			\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}
+		\end{Bmatrix*}
+		$ & Merge\footnotemark($\beta$, resP)\\
+		8 & $\left\{ \text{AgrO} \right\}$ & $
+		\left\{\left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}\right\}
+		$ & Select(AgrO)\\
+		9 & $\emptyset$ & $
+		\begin{Bmatrix*}[l]
+			\text{AgrO},\\
+			\left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}
+		\end{Bmatrix*}
+		$ & Merge(AgrO, $\zeta$)\\
+		10 & $\emptyset$ & $
+		\left\{\left\{_\eta \text{AgrO}, \left\{_\zeta \left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}\right\}\right\}$ & Copy(DP) \\
+		11 & $\emptyset$ & $
+		\begin{Bmatrix*}[l]
+			\text{DP},\\
+			\left\{_\eta \text{AgrO}, \left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}\right\}
+		\end{Bmatrix*}
+		$ & Merge(DP, $\eta$) \\
+		12 & $\emptyset$ & $
+		\left\{\left\{_\kappa
+			\text{DP},\left\{_\eta \text{AgrO}, \left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\},\text{resP}\right\}\right\}
+	\right\}\right\}$ & \dots
+	\end{longtabu}
+		\caption{The derivation of an English resultative VP}
+		\label{tab:EngVP}
+	\end{table}
+	\footnotetext{This instance of ``Merge'' is, in fact, an instance of adjunction.
+	I represent it as Merge in order to maintain the simplicity of the formal grammar.}
+
+	\begin{figure}[h]
+		\centering
+		{\small
+			\begin{forest}
+				nice empty nodes,sn edges,baseline
+				[$\kappa$
+					[DP[the metal,roof]]
+					[$\eta$
+						[AgrO]
+						[$\zeta$
+							[$\beta$
+								[$\alpha$
+									[$v$]
+									[$\sqrt{\textsc{hammer}}$]
+								]
+								[DP]
+							]
+							[$\delta$
+								[DP]
+								[$\gamma$
+									[res]
+									[flat]
+								]
+							]
+						]
+					]
+				]
+			\end{forest}
+		}
+		\caption{An unlabelled English resultative}
+		\label{fig:EngVP}
+	\end{figure}
 \section{Two crashing derivations in French}
 
 \subsection{Crashing Derivation \#1}

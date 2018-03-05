@@ -7,7 +7,7 @@
 % arara: pdflatex
 % arara: pdflatex
 \documentclass[
-	draft
+%	draft
 	]{ut-thesis}
 
 
@@ -30,6 +30,7 @@
 
 \usepackage{tikz}
 \usepackage{forest}
+\usepackage[]{longtable}
 \usepackage{tabu}
 
 \usepackage{linguex}
@@ -118,7 +119,8 @@
 \begin{preliminary}
   \maketitle
   \tableofcontents
-  %\listoffigures
+  \listoftables
+  \listoffigures
 \end{preliminary}
 \chapter{Introduction}
 %\subfile{intro}
@@ -167,7 +169,7 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
 %\section{The architecture of a label-theoretic grammar}
 %\subfile{agree}
 \chapter{Deriving the Resultative Parameter}\label{sec:deriving}
-%\subfile{deriving}
+\subfile{deriving}
 \chapter{Some additional consequences of modified label theory}
 \chapter{Conclusion}\label{sec:Conclusion}
 \printbibliography

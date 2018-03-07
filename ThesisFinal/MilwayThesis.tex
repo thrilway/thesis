@@ -7,7 +7,7 @@
 % arara: pdflatex
 % arara: pdflatex
 \documentclass[
-%	draft
+	draft
 	]{ut-thesis}
 
 
@@ -16,7 +16,7 @@
 \usepackage[]{csquotes}
 \usepackage[backend=biber,style=apa,language=british]{biblatex}
 \DeclareLanguageMapping{british}{british-apa}
-\usepackage[final]{graphicx}
+\usepackage[]{graphicx}
 
 \usepackage{stmaryrd}
 \usepackage[]{amsmath}
@@ -169,8 +169,11 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
 %\section{The architecture of a label-theoretic grammar}
 %\subfile{agree}
 \chapter{Deriving the Resultative Parameter}\label{sec:deriving}
+\epigraph{All happy families are alike; every unhappy family is unhappy in its own way.}{\textit{Anna Karenina}\\\textsc{Leo Tolstoy}}
 \subfile{deriving}
-\chapter{Some additional consequences of modified label theory}
+
+\chapter{Some additional consequences of modified label theory}\label{sec:additional}
+
 \chapter{Conclusion}\label{sec:Conclusion}
 \printbibliography
 \end{document}

@@ -7,7 +7,7 @@
 % arara: pdflatex
 % arara: pdflatex
 \documentclass[
-	%draft
+	draft
 	]{ut-thesis}
 
 
@@ -45,8 +45,9 @@
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
 \usepackage{xcolor}
-\usepackage[]{hyperref}
+\usepackage[final]{hyperref}
 %\listfiles
+\usepackage[nottoc,numbib]{tocbibind}
 
 \usetikzlibrary{positioning,arrows}
 \useforestlibrary{linguistics}
@@ -122,7 +123,7 @@
   \listoftables
   \listoffigures
 \end{preliminary}
-\part{}
+\part{Explaining Reslutatives}
 \chapter{Introduction}
 %\subfile{intro}
 
@@ -173,9 +174,10 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
 \epigraph{All happy families are alike; every unhappy family is unhappy in its own way.}{\textit{Anna Karenina}\\\textsc{Leo Tolstoy}}
 \subfile{deriving}
 
-\part{}
-\chapter{Some additional consequences of modified label theory}\label{sec:additional}
-
+\part{Dealing with the consequences}
+\chapter{Small clauses in French-like languages}\label{sec:FreSC}
+\subfile{agree}
+\chapter{Coincidence}\label{sec:coincidence}
 \chapter{Conclusion}\label{sec:Conclusion}
 \printbibliography
 \end{document}

@@ -9,6 +9,60 @@
 \documentclass[MilwayThesis]{subfiles}
 
 \begin{document}
+In order to account for the lack  of resultatives in French(-type languages), I have argued that DP movemment from a small clause is barred in these languages.
+The fact that (\textit{e.g.}) French allows copular clauses and depictives, however, means that this restriction must only hold in would-be resultative derivations.
+In other words, our grammar should generate \autoref{ex:FreCop} and \ref{ex:FreDep} but not \ref{ex:FreRes}.
+\exg. \label{ex:FreCop}Le m\'etal est plat.\\
+The.MSg metal is flat.MSg\\
+``The metal is flat.''
+
+\exg. \label{ex:FreDep}Marie mange la viande crue\\
+Marie eats the.FSg meat raw.Fsg\\
+``Marie eats meat raw''
+
+\exg.* \label{ex:FreRes}Sophie a martell\'e le m\'etal plat.\\
+Sophie \textsc{aux} hammered the.MSg metal flat.MSg\\
+``Sophie hammered the metal flat.''
+
+If we take resultatives and depictives to be minimally different, we can begin to investigate the source of the contrast in grammaticality between the two.
+Both are secondary predication constructions, consisting of an eventive VP and a stative small clause.
+The difference between the two is the semantic relation between the event and state.
+Roughly speaking, resultatives describe an event causing a state, while depictives describe an event coinciding with a state.
+I have chosen, following \textcite{kratzer2004building} and \textcite{pietroski2005events}, to assume a \textit{res} head that encodes causation, but I see no compelling reason to assume a \textit{dep} head to encode coincidence.
+So, a depictive VP has the structure represented in \autoref{fig:FreDepVP}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges,baseline
+		[AgrOP
+			[DP [la viande,roof,name=specagro]]
+			[
+				[AgrO]
+				[VP
+					[VP
+						[mange]
+						[DP,name=theme]
+					]
+					[SC
+						[DP,name=scsubj]
+						[crue]
+					]
+				]
+			]
+		]
+		\draw[->] (scsubj) to[out=south, in=south] (theme);
+		\draw[->] (theme) to[out=south west, in=south] (specagro);
+	\end{forest}
+	\caption{A depictive VP}
+	\label{fig:FreDepVP}
+\end{figure}
+As for the coincidence interpretation, I will postpone that discussion until a \autoref{sec:coincidence}.
+Since resultative structures differ from depictives crucially with respect to the presence of a \textit{res} head, we would expect the contrast in grammaticality to follow from that difference.
+I argue in this chapter that this expectation is quite reasonable, given certain assumptions regarding the architecture of the faculty of language.
+
+In \autoref{sec:nonstandard}, I stated my assumption that syntactic agreement occurs outside of the Narrow Syntax.
+Unsurprisingly, this assumption requires additional specificity.
+
 Crucial to both label theory in general and its application in this thesis, is syntactic agreement.
 The highest XP in a given chain must agree with its sister YP in order to converge, and a subset of functional heads must agree in order to label (\textit{e.g.}, English T$_\varphi$).
 In this chapter I will discuss the theory of agreement, as it relates to labeling and show how the version of agree required for labeling avoids an undergeneration issue apparently predicted for predicative adjectives in French-type languages.

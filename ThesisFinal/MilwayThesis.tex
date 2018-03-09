@@ -33,19 +33,20 @@
 \usepackage[]{longtable}
 \usepackage{tabu}
 
+\usepackage[final]{hyperref}
 \usepackage{linguex}
 \renewcommand{\Exarabic}{\thechapter.\arabic} 
 % We want to reset the ExNo counter at each section
-%\usepackage{chngcntr}
-%\counterwithin{ExNo}{chapter}
-%\usepackage{cleveref}
-%\creflabelformat{ExNo}{(#2#1#3)}
+\usepackage{chngcntr}
+\counterwithin{ExNo}{chapter}
+\usepackage{cleveref}
+\crefname{ExNo}{}{}
+\creflabelformat{ExNo}{(#2#1#3)}
 \usepackage{centernot}
 \usepackage{subfiles}
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
 \usepackage{xcolor}
-\usepackage[final]{hyperref}
 %\listfiles
 \usepackage[nottoc,numbib]{tocbibind}
 

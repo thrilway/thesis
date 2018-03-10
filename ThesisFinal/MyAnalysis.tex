@@ -26,68 +26,82 @@ That is, there is a single $\theta$-relation between \textit{hammer} and \textit
 \b. Joe hammered the metal.
 
 According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{hammer} in \Last[a], but a standard analysis of \Last[b] will place \textit{the metal} as the complement of \textit{hammer}
-\ex.
-\a. hammer the metal flat \parencite[following][]{kratzer2004building}\\
-\begin{forest}
-    nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-    calign primary angle=-30,calign secondary angle=70}
-    [VP
-	    [DP[the metal,roof,name=specV]]
-	    [
-		    [hammer]
-		    [resP
-			    [res]
-			    [SC
-				    [$\langle$DP$\rangle$,name=SCDP]
-				    [flat]
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{.55\textwidth}	
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [VP
+		    [DP[the metal,roof,name=specV]]
+		    [
+			    [hammer]
+			    [resP
+				    [res]
+				    [SC
+					    [$\langle$DP$\rangle$,name=SCDP]
+					    [flat]
+				    ]
 			    ]
 		    ]
 	    ]
-    ]
-    \draw[->] (SCDP) to[out=south west, in=south] (specV);
-\end{forest}
-\b.hammer the metal\\
-\begin{forest}
-    nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-    calign primary angle=-30,calign secondary angle=70}
-    [VP
-	    [hammer]
-	    [DP[the metal,roof]]
-    ]
-\end{forest}
-
-If we were to modify Kratzer's analysis, so that \textit{the metal} is the complement of \textit{hammer}, then we would need to attach the result phrase in a different position.
-I propose that the result phrase is adjoined to the VP, allowing the DP to merge directly with the verb as shown in \Next.
-\ex.\label{tree:hammer-flat}
-{\small
-\begin{forest}
-    nice empty nodes,sn edges,baseline,
-%    for tree={
-%    calign=fixed edge angles,
-%    calign primary angle=-30,calign secondary angle=60}
-    [VP
+	    \draw[->] (SCDP) to[out=south west, in=south] (specV);
+	\end{forest}
+	\caption{\textit{hammer the metal flat}}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
 	    [VP
 		    [hammer]
-		    [DP[the metal,roof,name=compV]]
+		    [DP[the metal,roof]]
 	    ]
-	    [resP
-		    [$\langle$DP$\rangle$,name=specRes]
-		    [
-			    [res]
-			    [SC
-				    [$\langle$DP$\rangle$,name=SCDP]
-				    [flat]
+	\end{forest}
+	\vspace{6ex}
+	\caption{\textit{hammer the metal}}
+	\end{subfigure}
+	\caption{Kratzer's (2004) analysis of resultatives}
+	\label{fig:KratzerTree}
+\end{figure}
+If we were to modify Kratzer's analysis, so that \textit{the metal} is the complement of \textit{hammer}, then we would need to attach the result phrase in a different position.
+I propose that the result phrase is adjoined to the VP, allowing the DP to merge directly with the verb as shown in \Next.
+\ex.
+\begin{figure}[h]
+	\centering
+	{\small
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,
+	    for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=60}
+	    [VP
+		    [VP
+			    [hammer]
+			    [DP[the metal,roof,name=compV]]
+		    ]
+		    [resP
+			    [$\langle$DP$\rangle$,name=specRes]
+			    [
+				    [res]
+				    [SC
+					    [$\langle$DP$\rangle$,name=SCDP]
+					    [flat]
+				    ]
 			    ]
 		    ]
 	    ]
-    ]
-    \draw[->] (SCDP) to[out=south west, in=south] (specRes);
-    \draw[->] (specRes) to[out=south, in=south] (compV);
-\end{forest}
-}
-
+	    \draw[->] (SCDP) to[out=south west, in=south] (specRes);
+	    \draw[->] (specRes) to[out=south, in=south] (compV);
+	\end{forest}
+	}
+	\caption{The Structure of resultatives}
+	\label{fig:hammer-flat}
+\end{figure}
 The modified analysis no longer violates UTAH, but it introduces two issues new issues which I address in the proceeding sections.
 The first issue is that the movement operation between [Spec, res] and [Comp, V] does not target a c-commanding positions.
 In other words it is a sideward rather than upward movement.

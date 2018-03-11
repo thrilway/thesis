@@ -127,8 +127,19 @@ More on that in \cref{sec:wanna}.
 
 If the Agree operation, in a sense, determines whether a given SO is visible to Label, what determines whether an SO is visible to Agree.
 Supposing the input to an Agree-cycle is a a phase P, I hypothesize that all and only those SO's that are \textit{contained} by P are visible to that cycle.
-This may seem like a trivial hypothesis, but given the definition of ``SO'' that I will adopt, it makes actual empirical predictions.
+This may seem like a trivial hypothesis, but given the definition of ``SO'' and ``contain'' that I will adopt, it makes actual empirical predictions.
 
+My definition will depend on making the distinction between syntactic objects and their instances.
+This type of distinction has been made throughout the development of generative syntax, but perhaps the best known iteration comes in the notion of a chain.
+In LGB, for instance, each nominal in an S-Structure was associated with a sequence of grammatical functions that represent its derivational history.
+This sequence was called a function chain.
+So, in the` passive S-structure \cref{ex:passiveSStruct}, \textit{Jennifer} is associated with the chain \cref{ex:PassiveChain}.
+\ex.\label{ex:passiveSStruct} Jennifer$_i$ was served $t_i$.
+
+\ex.\label{ex:PassiveChain} $\langle\left[\text{NP,S}\right], \left[\text{NP,VP}\right]\rangle$
+
+There is a sense in which the chain was the real grammatical object in LGB and later systems, as filters like the $\theta$-criterion and the Case filter were satisfied by chains rather than their individual links.
+So, \textit{Jennifer} in \cref{ex:passiveSStruct} has a $\theta$-role because a link in its chain ([NP, VP]) has a $\theta$-role
 Following \textcite{collins2016formalization}, I replace the chains and links with syntactic objects and occurrences defined below.
 \begin{defn}
   X is a \textit{syntactic object} (SO) iff\\
@@ -227,14 +238,6 @@ So, a depictive VP has the structure represented in \cref{fig:FreDepVP}.
 \end{figure}
 As for the coincidence interpretation, I will postpone that discussion until a \cref{sec:coincidence}.
 Since resultative structures differ from depictives crucially with respect to the presence of a \textit{res} head, we would expect the contrast in grammaticality to follow from that difference.
-I argue in this chapter that this expectation is quite reasonable, given certain assumptions regarding the architecture of the faculty of language.
-
-Separating Agree and Label allows us to fix the aforementioned undergeneration problem in the account of *resultatives in chapter \ref{sec:deriving}, above.
-To see this, consider the french copular clause in \cref{ex:FreCop}.
-<+MORE+>
-This means that the visibility conditions for Agree must be distinct from the visibility conditions for Label.
-In the remainder of this section I will discuss the visibility conditions for Agree and show how \cref{ex:FreCop} can be derived.
-
 To begin, let's compare the two relevant structures: the copular clause in \cref{fig:cop-clause}, and the resultative adjunct in \cref{fig:result-adjunct}.
 \begin{figure}[h]
 	\centering
@@ -290,15 +293,9 @@ To begin, let's compare the two relevant structures: the copular clause in \cref
 \end{figure}
 
 The most salient difference between the DP chains in \cref{fig:cop-clause} and \cref{fig:result-adjunct} are that the latter crosses a phase boundary, while the former does not.
-This fact, I propose, is relevant for Agree's visibility conditions.
-Whether or not a movement chain crosses a phase boundary can be made relevant to Agree if Agree operates not on syntactic objects but on chains.
-To see how this would work, I will first clarify the notion of chains and then consider the derivations of \cref{fig:cop-clause} and \cref{fig:result-adjunct} in turn below.
-
-Strictly speaking, I do not take chains to be theoretical primitives, rather they are expository conveniences. 
-
-The copular clause, \ref{fig:cop-clause}, is derived from a small clause ($\beta = \left[ \text{DP,} \left[ \text{adj, }\textsc{grand} \right] \right]$) which merges with a finite T$_\varphi$ to form $\gamma$.
-The DP, then, merges with $\gamma$ and C is merged triggering phase operations (Agree, Label, Transfer) on it's complement $\delta$.
-Agree takes $\delta$, which contains a full DP chain, and values $\varphi$ features on T and adj with $\varphi$ features of DP.
+This fact is relevant for Agree's visibility conditions.
+In \cref{fig:cop-clause}, both copies of the DP are contained within the phase, meaning the DP itself is contained within the phase and therefore is visible to Agree.
+So, Agree takes $\delta$, which contains a full DP chain, and values $\varphi$ features on T and adj with $\varphi$ features of DP.
 This has two relevant effects: first, it strengthens T and adj such that they can label, and second it renders the lower copy of DP inactive/invisible for Label.
 Label then operates on the output of Agree and successfully sends a labelled phrase marker to CI.
 \ex. Agree(\ref{fig:cop-clause})\label{fig:agree-cop-clause}\\
@@ -332,8 +329,8 @@ Thus, the derivation of a copular clause converges in French.
 Next, consider the resultative adjunct in \ref{fig:result-adjunct} which does not converge in French.
 We start with a small clause which we merge with res, a phase head, forming $\gamma$.
 We then merge the DP with $\gamma$, and commence our phase operations on $\beta$.
-The phase complement, $\beta$, unlike that of the copular clause in \ref{fig:cop-clause}, contains only the tail of the DP chain.
-Since Agree operates only on complete chains, the DP, \textit{le m\'etal}, is invisible to it, so there is no feature transfer between D and adj, nor is there any deletion of the DP.
+The phase complement, $\beta$, unlike that of the copular clause in \ref{fig:cop-clause}, contains only one occurence of the DP.
+Since Agree operates only on SOs, the DP, \textit{le m\'etal}, is invisible to it, so there is no feature transfer between D and adj, nor is there any deletion of the DP.
 The output of Agree, then, is passed to Label which fails to produce a labelled structure for CI.
 \ex. Agree(\ref{fig:result-adjunct})\label{fig:agree-result-adjunct}\\
 \begin{forest}

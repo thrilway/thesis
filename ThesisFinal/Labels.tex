@@ -3,7 +3,6 @@
 % arara: pdflatex: {options: "-draftmode"}
 % arara: pdflatex: {options: "-file-line-error-style"}
 \documentclass[MilwayThesis]{subfiles}
-\setcounter{chapter}{4}
 \begin{document}
 In this chapter I will discuss the most recent iteration of Chomsky's syntactic theory, which he refers to as \textit{label theory}.
 In the first section I will discuss the background and content of Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) proposal.
@@ -110,17 +109,21 @@ At certain points a portion of a structure (\textit{i.e.}, a phase) is transferr
 At the CI interface, the labelling algorithm labels the transferred structure and all of the structures contained within the transferred structure.
 If the labelling algorithm fails to label any part of the transferred structure, the derivation crashes.
 A summary of the labelling algorithm is given below in \Next.
-\ex.
-\begin{tabular}[t]{lll}
-	\textbf{SO} & \textbf{LA(SO)} & \\
-	\hline
-	$X$ & $X$ & ($X$ is not a root, and does not have an incomplete feature set)\\
-	$\left\{ X, R \right\}$ & LA$(X)$ & ($R$ is a root, $X$ is not a root)\\
-	$\left\{ X, YP \right\}$ & LA$(X)$ & \\
-	$\left\{ \langle XP\rangle, YP \right\}$ & LA$(YP)$ & \\
-	$\left\{ XP_F, YP_F \right\}$ & $\langle F,F\rangle$ & ($XP$ and $YP$ agree for $F$)\\
-	Otherwise & Undefined &
-\end{tabular}
+\begin{table}
+	\centering
+	\begin{tabular}[t]{llp{5cm}}
+		\textbf{SO} & \textbf{LA(SO)} & \\
+		\cline{1-2}
+		$X$ & $X$ & ($X$ is not a root, and does not have an incomplete feature set)\\
+		$\left\{ X, R \right\}$ & LA$(X)$ & ($R$ is a root, $X$ is not a root)\\
+		$\left\{ X, YP \right\}$ & LA$(X)$ & \\
+		$\left\{ \langle XP\rangle, YP \right\}$ & LA$(YP)$ & \\
+		$\left\{ XP_F, YP_F \right\}$ & $\langle F,F\rangle$ & ($XP$ and $YP$ agree for $F$)\\
+		Otherwise & Undefined &
+	\end{tabular}
+	\caption{A summary of the labelling algorithm}
+	\label{tab:LA-results}
+\end{table}
 
 \textcite{chomsky2015problems} demonstrates that label theory has some empirical advantage over previous theories of syntax, but leaves at least two questions unanswered.
 The first question is why labels would be required by the CI interface at all, and the second question is how are host-adjunct structures labelled.

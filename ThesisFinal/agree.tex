@@ -32,7 +32,7 @@ Marie eats the.FSg meat raw.Fsg\\
 Sophie \textsc{aux} hammered the.MSg metal flat.MSg\\
 ``Sophie hammered the metal flat.''
 
-sec:wannaConsider the case of the copular clause \cref{ex:FreCop}, whose structure is given in \cref{fig:FreCop}
+Consider the case of the copular clause \cref{ex:FreCop}, whose structure is given in \cref{fig:FreCop}
 \begin{figure}[h]
 	\centering
 \begin{forest}
@@ -133,7 +133,7 @@ My definition will depend on making the distinction between syntactic objects an
 This type of distinction has been made throughout the development of generative syntax, but perhaps the best known iteration comes in the notion of a chain.
 In LGB, for instance, each nominal in an S-Structure was associated with a sequence of grammatical functions that represent its derivational history.
 This sequence was called a function chain.
-So, in the` passive S-structure \cref{ex:passiveSStruct}, \textit{Jennifer} is associated with the chain \cref{ex:PassiveChain}.
+So, in the passive S-structure \cref{ex:passiveSStruct}, \textit{Jennifer} is associated with the chain \cref{ex:PassiveChain}.
 \ex.\label{ex:passiveSStruct} Jennifer$_i$ was served $t_i$.
 
 \ex.\label{ex:PassiveChain} $\langle\left[\text{NP,S}\right], \left[\text{NP,VP}\right]\rangle$
@@ -298,56 +298,63 @@ In \cref{fig:cop-clause}, both copies of the DP are contained within the phase, 
 So, Agree takes $\delta$, which contains a full DP chain, and values $\varphi$ features on T and adj with $\varphi$ features of DP.
 This has two relevant effects: first, it strengthens T and adj such that they can label, and second it renders the lower copy of DP inactive/invisible for Label.
 Label then operates on the output of Agree and successfully sends a labelled phrase marker to CI.
-\ex. Agree(\ref{fig:cop-clause})\label{fig:agree-cop-clause}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-    calign primary angle=-30,calign secondary angle=70
-  }
-  [$\delta$
-    [DP$_\varphi$[Jeanne,roof,name=subj]]
-    [$\gamma$
-      [T$_{\langle\varphi,\varphi\rangle}$]
-      [$\beta$
-	[\sout{DP$_\varphi$}]
-	[$\alpha$
-	  [adj$_{\langle\varphi,\varphi\rangle}$]
-	  [\textsc{grand}]
-	]
-      ]
-    ]
-  ]
-\end{forest}
-
-\ex. Label(\ref{fig:agree-cop-clause})
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70
+	  }
+	  [$\delta$
+	    [DP$_\varphi$[Jeanne,roof,name=subj]]
+	    [$\gamma$
+	      [T$_{\langle\varphi,\varphi\rangle}$]
+	      [$\beta$
+		[\sout{DP$_\varphi$}]
+		[$\alpha$
+		  [adj$_{\langle\varphi,\varphi\rangle}$]
+		  [\textsc{grand}]
+		]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+	\caption{The output of Agree for a copular clause}
+	\label{fig:agree-cop-clause}
+\end{figure}
+\ex. The result of Label for \cref{fig:agree-cop-clause} 
 \a. Label($\delta$) = $\langle\varphi,\varphi\rangle$
 \b. Label($\gamma$) = T
 \b. Label($\beta$) = Label($\alpha$) = adj
 
 Thus, the derivation of a copular clause converges in French.
 
-Next, consider the resultative adjunct in \ref{fig:result-adjunct} which does not converge in French.
+Next, consider the resultative adjunct in \cref{fig:result-adjunct} which does not converge in French.
 We start with a small clause which we merge with res, a phase head, forming $\gamma$.
 We then merge the DP with $\gamma$, and commence our phase operations on $\beta$.
-The phase complement, $\beta$, unlike that of the copular clause in \ref{fig:cop-clause}, contains only one occurence of the DP.
+The phase complement, $\beta$, unlike that of the copular clause in \cref{fig:cop-clause}, contains only one occurence of the DP.
 Since Agree operates only on SOs, the DP, \textit{le m\'etal}, is invisible to it, so there is no feature transfer between D and adj, nor is there any deletion of the DP.
 The output of Agree, then, is passed to Label which fails to produce a labelled structure for CI.
-\ex. Agree(\ref{fig:result-adjunct})\label{fig:agree-result-adjunct}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline,for tree={
-    calign=fixed edge angles,
-    calign primary angle=-30,calign secondary angle=70
-  }
-  [$\beta$
-    [$\langle$DP$_\varphi\rangle$,name=insitu]
-    [$\alpha$
-      [adj]
-      [\textsc{plat}]
-    ]
-  ]
-\end{forest}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70
+	  }
+	  [$\beta$
+	    [$\langle$DP$_\varphi\rangle$,name=insitu]
+	    [$\alpha$
+	      [adj]
+	      [\textsc{plat}]
+	    ]
+	  ]
+	\end{forest}
+	\caption{The output of Agree for a resP adjunct}
+	\label{fig:agree-result-adjunct}
+\end{figure}
 
-\ex. Label(\ref{fig:agree-result-adjunct})
+\ex. The results of Label for \cref{fig:agree-result-adjunct}
 \a. Label($\beta$) = Undefined \hfill (<+Reason+>)\\
 \fcolorbox{black}{lightgray}{
   \begin{minipage}[t]{0.8\textwidth}

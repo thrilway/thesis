@@ -54,6 +54,8 @@ Each stage $S_i$ in a derivation is a pair $\langle LA_i, W_i\rangle$, where $LA
 The computational operations (Merge, Select, Copy, Transfer) play the role that rules on inference play in deductive systems, that is, they map derivational stages onto subsequent stages.
 A given stage $S_i$ \textit{derives} a subsequent stage $S_{i+1}$ if and only if some operation, applied to $S_i$, yields $S_{i+1}$.
 
+\subsection{A note on phases, subderivations and Transfer}
+I am assuming phase theory, which states that a derivation of, say, a clause proceeds via subderivations, and the objects derived by these subderivations are called phases.
 
 \section{A successful derivation in English}\label{sec:EngDeriv}
 In many ways, successful derivations, like happy families, are uninteresting, but they still must be demonstrated in order to show where the crashing derivations go wrong.

@@ -32,18 +32,75 @@ I will perfom such an extension and show that this modified label theory can der
 
 \section{On ACC-ing clauses}
 
-\textcite{cinque1996pseudo} discusses pseudo-relatives (PRs) and ACC-ing clauses (ACs) under direct preception verbs and argues that they are three-ways ambiguous.
-\ex. 
-\a. Ho visto Mario che correva a tutta velocit\'a. (Italian) 
-\b. J'ai vu Mario qui courrait \'a tout vitesse. (French)
-\c. I saw Mario running at full speed.
+\textcite{cinque1996pseudo} discusses ACC-ing clauses (ACs) under direct preception verbs as in \cref{ex:ACCingDPR} and argues that they are ambiguous, having the two structures in \cref{ex:ACCingStructs}.\footnote{
+	The main object of Cinque's study, in fact, is pseudo relatives such as those in \cref{ex:PR}, which he argues are ambiguous between the three structures in \cref{ex:PRStructs}
+	\ex.\label{ex:PR}
+	\a. Ho visto Mario che correva a tutta velocit\'a. (Italian)
+	\b. J'ai vu Mario qui courrait \'a tout vitesse. (French)
 
-According to Cinque, \Last[a] would have three distinct structures 
-\ex.
-\a. Ho [visto [$_\text{NP}$ Mario [$_\text{CP}$] che correva \ldots ]]
-\b. Ho [visto [$_\text{CP}$ Mario [$_{\text{C}^\prime}$ che [$_\text{IP}$ correva \ldots ]]]]
-\c. Ho [[visto Mario] [$_\text{CP}$ \textit{ec} che correva \ldots]]
+	\ex.\label{ex:PRStruct}
+	\a. Ho [visto [$_\text{NP}$ Mario [$_\text{CP}$] che correva \ldots ]]
+	\b. Ho [visto [$_\text{CP}$ Mario [$_{\text{C}^\prime}$ che [$_\text{IP}$ correva \ldots ]]]]
+	\c. Ho [[visto Mario] [$_\text{CP}$ \textit{ec} che correva \ldots]]
 
+	He mentions ACC-ing clauses briefly in order to point out that his remarks and claims about pseudo relatives largely apply to ACC-ing clauses.
+	The main difference between the two constructions is that ACC-ing clauses are not analyzable as nominals, but a related form with nominal morphology serves this function.
+	\ex. [Their shouting at the top of their lungs] didn't help matters.
+
+}
+\ex. I saw Mario running at full speed. \label{ex:ACCingDPR} 
+
+\ex.\label{ex:ACCingStructs}
+\a. I [saw [$_\text{ProgP}$ Mario [$_{\text{Prog}^\prime}$ -ing [$_\text{VP}$ run \ldots]]]].
+\b. I [[saw Mario] [$_\text{ProgP}$ \textit{ec} running \ldots]].
+
+These two structure, or, rather, the fact that a single grammar can generate both of these structures, present a serious problem for standard theories of grammar.
+As such, I will discuss them in greater detail below.
+
+In one structure, represented in \cref{fig:CompACCing}, the ACC-ing clause is merged as the complement of the perception verb.
+The interpretation of this structure is one in which the running event was seen and by virtue of the meaning of \textit{run}, seeing a running event generally entail seeing the agent of that event.
+\begin{figure}[h]
+	\centering
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [V\\see,align=center]
+	    [ProgP
+		    [DP[Mario,roof]]
+		    [Prog'[running at full speed,roof]]
+	    ]
+    ]
+\end{forest}
+	\caption{Complement ACC-ing structure}
+	\label{fig:CompACCing}
+\end{figure}
+In the second structure, represented in \cref{fig:AdjunctACCing}, the ACC-ing subject is merged as the complement of the perception verb, while the ACC-ing clause (with a controlled subject) is adjoined to the VP.
+The interpretation of this structure is one in which \textit{him} is seen and the event of \textit{him} being seen coincides with an event of \textit{him} running.
+Again in this interpretation, due to the meaning for \textit{run}, seeing the agent of a running event generally entails seeing that event.
+\begin{figure}[h]
+	\centering
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [VP
+		    [V\\see,align=center]
+		    [DP$_i$[Mario,roof]]
+	    ]		    
+	    [ProgP
+		    [$\langle$DP$_i\rangle$]
+		    [Prog'[running at full speed,roof]]
+	    ]
+    ]
+\end{forest}
+	\caption{Adjunct ACC-ing structure}
+	\label{fig:AdjunctACCing}
+\end{figure}
+By the assumptions of this thesis, the argument \textit{Mario} can only be shared by the verb \textit{see} and the verb \textit{run} if it is merged with both, meaning it must move from [Spec, Prog] to [Comp, V].
+In the case of the complement ACC-ing clause in \cref{fig:CompACCing}, however, the argument \textit{Mario} seems to stay in situ in [Spec, Prog], suggesting that the movemnt operation represented in \cref{fig:AdjunctACCing} is, in fact, optional.
 \end{document}
 
 

@@ -101,6 +101,71 @@ Again in this interpretation, due to the meaning for \textit{run}, seeing the ag
 \end{figure}
 By the assumptions of this thesis, the argument \textit{Mario} can only be shared by the verb \textit{see} and the verb \textit{run} if it is merged with both, meaning it must move from [Spec, Prog] to [Comp, V].
 In the case of the complement ACC-ing clause in \cref{fig:CompACCing}, however, the argument \textit{Mario} seems to stay in situ in [Spec, Prog], suggesting that the movemnt operation represented in \cref{fig:AdjunctACCing} is, in fact, optional.
+If the movement operation is optional, however, we would expect two additional structures for \cref{ex:ACCingDPR}: one, represented in \cref{fig:CompACCingMove}, in which the ProgP is the complement of \textit{saw} and \textit{Mario} has moved from [Spec, Prog], and another, represented in \cref{fig:AdjunctACCingStay}, in which the ProgP is an adjunct, but \textit{Mario} does not move from [Spec, Prog].
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [AgrOP
+		    [DP$_i$[Mario,roof]]
+		    [
+			    [AgrO]
+			    [VP
+				    [V\\see,align=center]
+				    [ProgP
+					    [$\langle\text{DP}_i\rangle$]
+					    [Prog'[running at full speed,roof]]
+				    ]
+			    ]
+		    ]
+	    ]		
+	\end{forest}
+	\caption{Complement ACC-ing structure with object raising}
+	\label{fig:CompACCingMove}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [VP
+		    [VP
+			    [V\\see,align=center]
+		    ]		    
+		    [ProgP
+			    [DP$_i$[Mario,roof]]
+			    [Prog'[running at full speed,roof]]
+		    ]
+	    ]
+	\end{forest}
+	\caption{Adjunct ACC-ing structure without DP movement}
+	\label{fig:AdjunctACCingStay}
+\end{figure}
+If we consider the consequences of this proposed optionality, we can see that it is not true.
+
+First, consider the structure in \cref{fig:AdjunctACCingStay}, in particular the fact that \textit{see} does not have an internal argument.
+This is not \textit{per se} problematic, as verbs may be optionally transitive, but we would expect that \textit{see} could have an internal argument other than \textit{Mario}.
+That is, if \cref{fig:AdjunctACCingStay} is a possible structure for \cref{ex:ACCingDPR}, then we would expect that \cref{ex:ACCingDouble} to be a licit sentence.
+\ex.* I [$_\text{VP}$ [$_\text{VP}$ saw Sue] [$_\text{ProgP}$ Mario running at full speed]]. \label{ex:ACCingDouble}
+
+If \textit{Mario} can remain in [Spec, Prog], then we have no way to rule out \textit{Sue} merging with \textit{see} and behaving as a direct object.
+Of course, \cref{ex:ACCingDouble} is ungrammatical, suggesting that \textit{Mario} cannot remain in [Spec, Prog] if ProgP is adjoined to VP.
+Movement from [Spec, Prog], then, cannot be optional, strictly speaking.
+If it is not optional, perhaps it is obligatory.
+
+If movemnt from [Spec, Prog] is obligatory, then we must revise Cinque's analysis of complement ACC-ing clauses.
+Suppose, then, that \textit{Mario}, in the complement ACC-ing analysis of \cref{ex:ACCingDPR}, must raise to object.
+In other words, suppose \cref{fig:CompACCingMove} is a possible structure of \cref{ex:ACCingDPR} and \cref{fig:CompACCing} is not.
+Note that in \cref{fig:CompACCingMove}, \textit{Mario} is the grammatical object but not the theme of \textit{see}.
+If this is the case then we expect that \textit{Mario} can become the subject of a passive derived from \cref{fig:CompACCingMove}.
+
+Indeed, subjects of ACCing clauses can become passive subjects as in \cref{ex:ACCingPassive}, but it is not immediately obvious whether \cref{ex:ACCingPassive} is derived from an Adjunct ACC-ing structure or a Complement ACC-ing structure.
+\ex. Mario was seen running at full speed. \label{ex:ACCingPassive}
+
+If \cref{ex:ACCingPassive} had been derived from a Complement ACC-ing structure, however, then \textit{Mario} would not have been 
 \end{document}
 
 

@@ -64,7 +64,7 @@ Similar remarks apply to depictives as well.
 This line of thinking is based on the implicit premiss that lower copies are invisible to Agree as well as Label.
 We could save \cref{ex:FreCop}, by hypothesizing that lower copies are visible to Agree and invisible to Label, but this would predict that French generates resultatives, clearly an unwanted result.
 The solution to this puzzle is to say that lower copies are invisible to Agree only under certain circumstances.
-The next section will hypothesize the nature of theose ``certain circumstances.''
+The next section will hypothesize the nature of these ``certain circumstances'' by clarifying the Agree operation.
 
 \section{The nature of the Agree operation}
 
@@ -109,7 +109,6 @@ This is represented in \cref{fig:SepCycles}.
     \node (SM) at (0,1.5) {SM};
     \node (CI) at (1,0) {CI};
     \path[->](syn)	edge			(agree)
-    (agree)		edge [loop right]	()
 	   (agree.south)	edge			(label)
 			  edge [bend left]	(SM)
 	  (label)		edge [loop right]	()
@@ -353,21 +352,14 @@ The output of Agree, then, is passed to Label which fails to produce a labelled 
 	\caption{The output of Agree for a resP adjunct}
 	\label{fig:agree-result-adjunct}
 \end{figure}
-
-\ex. The results of Label for \cref{fig:agree-result-adjunct}
-\a. Label($\beta$) = Undefined \hfill (<+Reason+>)\\
-\fcolorbox{black}{lightgray}{
-  \begin{minipage}[t]{0.8\textwidth}
-  \textbf{Note: }There are two possible explanations. Either DP is visible, and Label($\beta$) fails due to its symmetry, or DP is invisible and and adj is too weak to label.
-  Either option will require some discussion.    
-  \end{minipage}
-}
-\b. Label($\alpha$) = Undefined \hfill(adj is too weak to label)
-
+Specifically, the adjective $\alpha$ cannot be labelled because its would-be labeller $adj_\varphi$ has not been strengthened to provide a label.
+Furthermore, the small clause $\beta$ cannot be labelled, as it is a phrase-phrase structure which cannot be labelled under either of its available labelling strategies.
+Since DP and $\alpha$ don't agree, $\beta$ cannot receive a feature-pair label, and if the DP is invisible by virtue of being a lower copy, then the label would be the most prominent element in $\alpha$, but, as I just mentioned, that would be the too-weak $adj_\varphi$.
+Therefore, the derivation will crash.
 So, if we separate Agree from Label, we are able to fix the apparent undergeneration, provided we assume Agree operates on chains, rather than occurrences.
 \section{On \textit{wanna}-contraction}\label{sec:wanna}
 The proposal that Agree operates on chains, rather than syntactic objects, gains support when we consider a fact about A-bar traces.
-As has been noted by several authors (????), A-bar traces block \textit{wanna}-contraction.
+As has been noted by several authors <+CITE+>, A-bar traces block \textit{wanna}-contraction.
 \ex.\label{ex:wanna-contraction}
 \a.\label{ex:wanna} Who$_i$ do you want to visit $t_i$? $\rightarrow$ Who do you wanna visit?
 \b.\label{exwant-to} Who$_i$ do you want $t_i$ to visit Emma? $\rightarrow$ *Who do you wanna visit Emma?

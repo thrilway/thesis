@@ -220,5 +220,33 @@ Such an assumption, in effect, ensures a certain monotonicity in syntactic deriv
 
 The fourth common assumption, which I already alluded to, is that a syntactic object is well-formed iff it contains no lexical items with any unsatified features.
 This will be used as a diagnostic for satisfied features.
-If a sentence, phrase, or word is well-formed, then it must contain no unsatisfied features.
+If a sentence, phrase, or word is well-formed, then it must contain no unsatisfied features, and if an expression is ill-formed, then it must contain unsatisfied features.
+
+With these assumptions in place, consider the complement AC case in \cref{ex:CompACCing}, which is well-formed meaning all of its subparts are well-formed.
+\ex. They [$_\text{VP}$ saw [$_\text{ProgP}$ the raccoon [walking across the street]]].\label{ex:CompACCing}
+
+Since the ProgP is well-formed, it must contain no unsatisfied features, and, therefore, the DP \textit{the raccoon} must contain no unsatisfied features.
+Furthemore, \textit{the raccoon} must be in [Spec, Prog], rather than it's base position in [Spec, $v$/Voice], which means that at least one of its unsatisfied features can only be satisfied in [Spec, Prog]. 
+\ex.
+\a.* They [$_\text{VP}$ saw [$_\text{ProgP}$ walking [$_\text{DP}$ the raccoon] across the street]].
+\b.* They [$_\text{VP}$ saw [$_\text{ProgP}$ [-ing [[$_\text{DP}$ the raccoon] walk across the street]]]].
+
+In other words, \textit{the raccoon} is licensed in [Spec, Prog].
+
+However, when we consider the adjunct AC in \cref{ex:AdjuACCing}, we come very quickly to a contradiction.
+\ex. They [$_\text{VP}$ [$_\text{VP}$ saw the raccoon][$_\text{ProgP}$ $t$ walking across the street]].\label{ex:AdjuACCing}
+
+The fact that a lower copy/trace occupies [Spec, Prog] indicates that \textit{the raccoon} is not licensed there.
+In fact, the data adduced above in \cref{ex:ACCingDouble} and the discussion thereof indicates this fact even more forcefully.
+If \textit{the raccoon} is not licensed in [Spec, Prog], this means it bears some feature which cannot be satisfied there.
+This is a direct contradiction of the conclusion I came to above, and yet this contradiction arises from an analysis of facts based on an axiom set.
+The conclusion I draw from this contradiction is that the axiom set (a.k.a. the feature-satisfaction theory of syntax) is fundamentally flawed.
+
+In order to pinpoint this flaw, we should consider how the facts could be generalized.
+I believe a proper expression of the generalization is given in \cref{ex:AdjunctACCingGen} and \cref{ex:CompACCingGen}.
+\ex. A syntactic object X (= $\left\{ t, \left\{ \text{Prog, YP}  \right\} \right\}$) is well-formed only if X is an adjunct.\label{ex:AdjunctACCingGen}
+
+\ex. A syntactic object X (= $\left\{ \text{DP}, \left\{ \text{Prog, YP}  \right\} \right\}$) is well-formed only if X is an argument.\label{ex:CompACCingGen}
+
+This is a problem for the feature-satisfaction theory because implicit in the theory is the claim that the well-formedness of an object depends solely on its internal structure.
 \end{document}

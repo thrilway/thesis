@@ -180,7 +180,7 @@ Consider the abstract syntactic object and its tree representation below in \cre
 	\label{fig:AbstractTree}
 \end{figure}
 
-Based on the definitions above, we can say the following things about \LLast:
+Based on the definitions above, we can say the following things about \cref{ex:AbstractSO}:
 There are six SOs represented in \cref{ex:AbstractSO}: three lexical items (X, Y, Z) and three sets of SOs ($\alpha$, $\beta$, $\gamma$).
 There is a single SO, X, with two occurrences in \cref{ex:AbstractSO}:
 At $\langle \alpha, \text{X}\rangle$, and at $\langle \alpha, \beta, \gamma, \text{X}\rangle$
@@ -190,7 +190,7 @@ Consider the structure in \cref{ex:AbstractSO}, assuming that Y is a phase head.
 At a given stage of a derivation, it is reasonable to assume that the computation must track two sets of SOs: The set of SOs in the derivation (\textsc{Terms}$_\text{SO}$), and the set of active SOs (\textsc{Active}$_\text{SO}$).
 For \cref{ex:AbstractSO}, the two sets are given in \cref{ex:AbstractTermsActive}.
 \ex. \label{ex:AbstractTermsActive}
-\a. \textsc{Terms}$_\alpha$ = $\left\{ \text{X}, \text{Y}, \text{Z}, \alpha \beta, \gamma  \right\}$
+\a. \textsc{Terms}$_\alpha$ = $\left\{ \text{X}, \text{Y}, \text{Z}, \alpha, \beta, \gamma  \right\}$
 \b. \textsc{Active}$_\alpha$ = $\left\{ \text{X}, \text{Y}, \alpha, \beta \right\}$
 
 We can determine the input to Agree, then, by computing the set difference between the two sets as shown in \Next.
@@ -279,7 +279,7 @@ To begin, let's compare the two relevant structures: the copular clause in \cref
 	      [$\beta$
 		[$\langle$DP$_\varphi\rangle$,name=insitu]
 		[$\alpha$
-		  [adj]
+		  [adj$_\varphi$]
 		  [\textsc{plat}]
 		]
 	      ]

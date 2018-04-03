@@ -1,0 +1,27 @@
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+\begin{document}
+To understand how adjuncts behave re labelling, let's consider their basic properties: optionality, iterativity, and freedom of order.
+These can be demonstrated in the series of sentences in \Next.
+\ex. 
+\a. The protester was brought to the police station.
+\b. The protester was brought to the police station, against her will.
+\b. The protester was brought to the police station, against her will, following the demonstration.
+\b. The protester was brought to the police station following the demonstration, against her will.
+\z.
+
+If we assume that the adjuncts in \Last are adjoined to TP, then the TPs in each of the sentences in \Last, are, in some sense, grammatically indistinguishable.
+If we take this much for granted, then we can view the task of developing a theory of adjuncts to be the task of making explicit the sense in which the sentences in \Last are indistinguishable.
+Since we are assuming label theory, we can make a fairly trivial explication of the indistinguishability of these sentences: the TPs in \Last are indistinguishable in the sense that they are labelled identically.
+So, supposing the sentences in \Last are constructed purely by Merge (and Select, and Copy), then they have the structures in \Next.
+\ex.
+\a. [$_\alpha$ The protester was brought to the police station].
+\b. [$_{\beta} [_{\alpha}$The protester was brought to the police station], [against her will]].
+\b. $[_{\gamma}[_{\beta}[_{\alpha}$The protester was brought to the police station], [against her will]], [following the demonstration]].
+\b. $[_{\eta} [_{\delta} [_{\alpha}$The protester was brought to the police station] [following the demonstration]], [against her will]].
+\z.
+
+\end{document}

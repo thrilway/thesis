@@ -24,4 +24,100 @@ So, supposing the sentences in \Last are constructed purely by Merge (and Select
 \b. $[_{\eta} [_{\delta} [_{\alpha}$The protester was brought to the police station] [following the demonstration]], [against her will]].
 \z.
 
+If we take $\alpha$ to be the TP without adjuncts, then its label will be the basis for the label of the modified TPs $\beta, \gamma, \delta$ and $\eta$.
+Since $\alpha$ is a finite TP with a subject, its label will be $\langle\varphi,\varphi\rangle$, and therefore, the label of the modified TPs will be $\langle\varphi,\varphi\rangle$.
+If this is the case, then the adjoined phrases contribute nothing to the labelling algorithm, or, in other words, they are invisible to LA.
+The invisibility of adjuncts cannot, however, be the same phenomenon as the invisibility of lower copies, as the latter obtains by virtue of a movement operation, and there is no reason to think that adjunct phrases as a class undergo movement.
+Furthermore, even if adjuncts moved, this would only explain why lower copies are invisible; we would still need to explain why upper copies are invisible.
+
+If the invisibility of adjuncts cannot be derived syntactically, perhaps it is inherent.
+That is, perhaps the set of adjuncts is a natural class of objects which are invisible to LA.
+This suggestion, however, runs into problems almost immediately due to the fact that there are phrases which can be both arguments and adjuncts as in \crefrange{ex:Adjective}{ex:ProgP}.
+\ex. \label{ex:Adjective}
+\a. The green room
+\b. The room is green.
+
+\ex. \label{ex:PP} 
+\a. 
+
+\ex. \label{ex:ProgP}
+
+It seems that, absent a significant amount of stipulation, this is not a promising approach, so I will not pursue this further.
+
+Adjunction, then, cannot be reduced to simplest Merge.
+This leaves two broad options for assimilating it into our theory.
+The first is to propose a new operation in NS that generates adjunction structures.
+\textcite{chomsky2004beyond} proposes an operation of pair-Merge, which, given a host object $\beta$ and an adjunct $\alpha$, creates the object $\langle\alpha,\beta\rangle$ ($\alpha$ adjoined to $\beta$).
+The new object $\langle\alpha,\beta\rangle$, however, has all of the syntactic properties (c-command relations, $\theta$-roles, selectional properties, etc) of the previously generated object $\beta$.
+So, as far as NS is concerned, $\langle\alpha,\beta\rangle$ is equivalent to $\beta$.
+There are two issues with this proposal which I address in turn in the following paragraphs.
+
+The first issue with proposing an operation of pair-Merge arises from the question of whether that proposal violates SMT.
+Recall that SMT states that the language faculty is an optimal solution to interface problems, meaning that a minimalist theory of grammar should only admit complications if they are required due to interface conditions.
+So, is pair-Merge required by one of the interfaces?
+The fact that the information expressed by pair-Merge can be expressed periphrastically, as shown in \cref{ex:Periphrasis} suggests that pair-Merge is extraneous.
+\ex.\label{ex:Periphrasis}
+\a. I'd like a cold bottle of beer.\label{ex:succinct}
+\b. I'd like a beer. I'd like it to be in a bottle. I'd like that bottle to be cold.\label{ex:verbose}
+
+The series of sentences in \cref{ex:verbose} express the same proposition as the single sentence in \cref{ex:succinct} and they would do so without any instances of pair-Merge.
+The same cannot be said about structures formed by set-Merge; an expression constructed by set-Merge cannot be paraphrased without set-Merge.
+Since it is not required by the interfaces, the addition of pair-Merge to NS would constitute a violation of SMT.
+
+The second issue with pair-Merge arises from economy of derivation concerns.
+There are two facts about pair-Merge that are relevant to this issue.
+First, pair-Merge is a more complex operation than set-Merge, and second, when we adjoin an object to a host by pair-Merge, the resulting object is equivalent to the host without the adjoined object.
+Consider the two subderivations in \cref{ex:pmerge-deriv} and \cref{ex:smerge-deriv}.
+The derivations have equivalent results but the first is more complex than the second.
+\ex.\label{ex:pmerge-deriv} pMerge(X, Y) = $\langle\text{X, Y}\rangle$\\
+Merge(Z$, \langle\text{X, Y}\rangle$) = $\left\{ \text{Z}, \langle\text{X, Y}\rangle \right\}$
+
+\ex.\label{ex:smerge-deriv} Merge(Z, Y) = $\left\{ \text{Z, Y} \right\}$
+
+From the view of NS, then, pair-Merge does a lot of work to no effect, and therefore, for every derivation D that uses pair-Merge there is a simpler derivation D$^\prime$ such that the result of D is equivalent to that of D$^\prime$.
+This is exactly the type of situation that derivational economy rules out.
+
+So, if, as I argue above, adjunction does not occur in NS, then it must occur after NS.
+If, however, we make the standard minimalist assumption that NS is the only module capable of recursively combining expressions to form larger expressions, then there can be no recursive combinatory operation outside of NS.
+Therefore, adjunction -- being outside of NS -- cannot be a recursive combinatory operation. 
+That is, adjunction does not create new syntactic objects.
+This means that our way of representing adjunction structures is misleading.
+
+Consider, for instance, the modified VoiceP in \cref{ex:WithGusto} as represented in \cref{fig:WithGusto}.
+\ex. Mary sang the song with gusto.
+
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,
+%	    for tree={
+%	    calign=fixed edge angles,
+%	    calign primary angle=-30,calign secondary angle=70}
+	    [$\beta$
+		    [$\alpha$
+			    [DP[Mary,roof]]
+			    [
+				    [Voice]
+				    [VP[sing the song,roof]]
+			    ]
+		    ]
+		    [PP[with gusto,roof]]
+	    ]
+	\end{forest}
+	\caption{A standard representation of a modified VoiceP}
+	\label{fig:WithGusto}
+\end{figure}
+The object $\beta$ is usually taken to be created by adjoining the PP \textit{with gusto} to $\alpha$, but, as I argued above, adjunction cannot create new objects.
+Therefore, there is no object $\beta$.
+This is, no doubt, a surprising conclusion, yet it follows from the basic facts of adjunction and SMT, so it behooves us to entertain the possibility of its truth (or at least its verisimilitude).
+
+This conclusion, in fact, does resolve the immediate question of how Host-Adjunct structures are labeled, not by answering it but by dissolving it.
+If LA is a function from unlabelled SOs to labelled SOs and Host-Adjunct structures are not SOs, then they are outside the domain of LA.
+There are a few caveats that bear mentioning, so I do so below.
+The first is that, while Host-Adjunct structures are not properly SOs, the same cannot be said for the adjuncts \textit{per se}.
+So, to consider a concrete case, $\beta$ in \cref{fig:WithGusto} is not an SO, but the PP \textit{with gusto} is an SO, meaning it was derived in NS and labelled by LA.
+The second caveat is that not everything that looks like a Host-Adjunct structure is one.
+For instance the topicalized PP in \cref{ex:WithSorrow} is likely an argument of, say, a functional projection Topic.
+\ex.\label{ex:WithSorrow} With sorrow in her heart, Mary sang the song.
+
 \end{document}

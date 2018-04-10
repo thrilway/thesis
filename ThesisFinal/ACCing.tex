@@ -380,4 +380,52 @@ These cases, however, might be cases in which our syntactic or semantic analysis
 Assuming the hypothesized mapping in \Last is empirically justified, we would need to explain why that mapping and not some other mapping holds.
 This would require us to show that the mapping between, say, head-labelling and function application is as tight as the mapping between asymmetric c-command and linear precedence.
 Such a discussion, however, is beyond the scope of this thesis.
+\section{Explaining ACC-ing clause subjects}
+With these modifications of label theory in place, we can consider how to account for the distribution of ACC-ing clause subjects.
+First, I will explain the fact that, in the case of complement ACs, the subject DP cannot move.
+This explanation will essentially be the same as the explanation of ECP effects given in \cite{chomsky2015problems}.
+I will then explain the adjunct AC case, in which the subject DP must move.
+This explanation will require the modified version of label theory and will suggest the general restriction in \cref{ex:AdjunctGen}.
+
+As in Chomsky's (\citeyear{chomsky2015problems}) analysis of \textit{that}-trace effects and my explanation of the non-generation of resultatives in French-like languages, a DP can be blocked from moving out of a phrase $\left\{ \text{DP, XP} \right\}$ if the following conditions hold.
+First, the head X of XP bears features which must be valued by a DP in order to label XP.
+That is, X must bear an incomplete set of, say, $\varphi$-features.
+Second, movement of DP would occur before DP and XP agree for the features in question.
+In other words since agreement feeds labelling, if a movement operation bleeds agreement, then that movement operation will be ruled out.
+Applying this logic to the complement AC, I hypothesize that the English Prog head has an incomplete $\varphi$-set which must be strengthened by Agree in order to provide a label.
+If this is the case, then we can explain the restriction on movement from complement ACs if such a movement would bleed agreement.
+Thus we have an explanation for complement ACs.
+
+The case of adjunct ACs, however, requires a more complicated explanation.
+The explanation will be split into two subsections: \Cref{sec:DPCanMove} will show that a DP can move out of an adjunct AC without problem, and \cref{sec:DPMustMove} will argue that an in situ DP in an adjunct AC runs into problems.
+
+\subsection{DPs can move from adjunct ACC-ing clauses}\label{sec:DPCanMove}
+In order to show that movement from an adjunct AC is permitted, I will demonstate, in some detail, how an adjunct AC structure is derived and interpreted.
+First, let's consider how the AC in \cref{ex:JoannaTeaching} is derived.
+\ex.\label{ex:JoannaTeaching} Joanna teaching her students.
+
+Since the ``contentful'' portion of the AC -- the portion that encodes lexical information and thematic structure -- is almost entirely independent of the larger AC structure, I will assume its derivation is uncomplicated.
+That is, I will take for granted that, if the complement of Prog is a VoiceP, that that VoiceP is derived and labelled as it would be in a grammatical finite clause.
+Further support for this assumption comes from \textcite{harwood2015being} who argues that Prog is a phase head, and therefore its introduction triggers the transfer of its complement, although not before the ACC-ing subject raises and merges with ProgP.
+So, the AC which is to be adjoined to the host VP has the structure in \cref{fig:ProgPStruct}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges,baseline
+		[$\beta$
+			[DP$_{i}$[Joanna,roof]]
+			[$\alpha$
+				[Prog]
+				[VoiceP
+					[$t_{i}$ teach her students,roof]
+				]
+			]
+		]
+	\end{forest}
+	\caption{The structure of a ProgP}
+	\label{fig:ProgPStruct}
+\end{figure}
+
+\subsection{DPs must move from adjunct ACC-ing clauses}\label{sec:DPMustMove}
+
 \end{document}

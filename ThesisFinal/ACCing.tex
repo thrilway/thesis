@@ -425,7 +425,41 @@ So, the AC which is to be adjoined to the host VP has the structure in \cref{fig
 	\caption{The structure of a ProgP}
 	\label{fig:ProgPStruct}
 \end{figure}
+The next stages of the derivation requires the DP \textit{Joanna} to move out of the AC, leaving us with an unlabellable structure as per the discussion above.
+However, a derivation doesn't necessarily crash if it's derived structure is unlabellable, but rather it crashes when LA tries to label an unlabellable structure.
+Since the AC in this case is adjoined to VP, and, by hypothesis, LA operates only on the host of a host-adjunct structure, then the AC is not processed by LA.
+If the AC is not processed by LA, then it doesn't matter whether the AC is labellable or unlabellable.
+The content of an adjunct does not matter in determining the labelling of the host.
 
 \subsection{DPs must move from adjunct ACC-ing clauses}\label{sec:DPMustMove}
-
+Thus far, I have argued that the labellability of an adjunct is immaterial, which suggests that DP movement from an adjunct AC would be optional.
+The facts of ACs, however, suggest that DPs must move from adjunct ACs.
+In order to explain why the movement operation in question is obligatory, we must consider how adjunct ACs are interpreted.
+Consider the illicit adjunct AC structure in \cref{fig:IllicitAdjunctAC}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [$\eta$
+		    [$\beta$
+			    [$\alpha$
+				    [$v$]
+				    [$\sqrt{see}$]
+			    ]
+			    [DP[Mario,roof]]
+		    ]
+		    [$\delta$
+			    [DP$_i$[Joanna,roof]]
+			    [$\gamma$
+				    [Prog]
+				    [VoiceP[$t_{i}$ teach her students,roof]]
+			    ]
+		    ]
+	    ]
+	\end{forest}
+	\caption{An illicit adjunct AC structure}
+	\label{fig:IllicitAdjunctAC}
+\end{figure}
 \end{document}

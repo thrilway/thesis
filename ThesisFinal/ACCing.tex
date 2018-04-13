@@ -24,7 +24,7 @@ Also, as I will argue in this chapter, certain so-called ACC-ing clauses in dire
 
 Furthermore, I will argue that this obligatory sideward movement is, in fact, a property of adjoined phrases.
 Specifically, the generalization in \cref{ex:AdjunctGen} seems to hold.
-\ex. <++>\label{ex:AdjunctGen}
+\ex.\label{ex:AdjunctGen} Internally merged specifiers of adjoined phrases must move to the host phrase.
 
 Such a generalization, I argue cannot be accounted for in theory of grammar based on feature satisfaction.
 Label theory, however, is able in principle to derive this generalization, but in order to do so, it must be modified and extended.
@@ -435,14 +435,33 @@ The content of an adjunct does not matter in determining the labelling of the ho
 Thus far, I have argued that the labellability of an adjunct is immaterial, which suggests that DP movement from an adjunct AC would be optional.
 The facts of ACs, however, suggest that DPs must move from adjunct ACs.
 In order to explain why the movement operation in question is obligatory, we must consider how adjunct ACs are interpreted.
-Consider the illicit adjunct AC structure in \cref{fig:IllicitAdjunctAC}
+Consider the illicit adjunct AC structure in \cref{fig:IllicitAdjunctAC}.
 \begin{figure}[h]
 	\centering
-	\begin{forest}
-	    nice empty nodes,sn edges,baseline,for tree={
+\[\sbox0{$\begin{array}[]{ccc}
+		\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+	    for tree={
 	    calign=fixed edge angles,
 	    calign primary angle=-30,calign secondary angle=70}
-	    [$\eta$
+		    [$\delta$
+			    [DP$_i$[the woman,roof]]
+			    [$\gamma$
+				    [Prog]
+				    [VoiceP[$t_{i}$ teach her students,roof]]
+			    ]
+		    ] 
+	\end{forest}			
+	&
+	\tikz[baseline=10ex,scale=1] \node[inner sep=0] at (0,-1) {\large,\,};
+	&
+	\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+		for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
 		    [$\beta$
 			    [$\alpha$
 				    [$v$]
@@ -450,16 +469,44 @@ Consider the illicit adjunct AC structure in \cref{fig:IllicitAdjunctAC}
 			    ]
 			    [DP[Mario,roof]]
 		    ]
-		    [$\delta$
-			    [DP$_i$[Joanna,roof]]
-			    [$\gamma$
-				    [Prog]
-				    [VoiceP[$t_{i}$ teach her students,roof]]
-			    ]
-		    ]
-	    ]
-	\end{forest}
+	    \end{forest}
+		\end{array}$}
+\mathopen{\resizebox{1.2\width}{\ht0}{$\Bigg\langle$}}
+\usebox{0}
+\mathclose{\resizebox{1.2\width}{\ht0}{$\Bigg\rangle$}}
+\]
 	\caption{An illicit adjunct AC structure}
 	\label{fig:IllicitAdjunctAC}
 \end{figure}
+When the host-adjunct structure is finally transferred as part of a larger phase, only the host $\beta$ will be labelled.
+Neither the pair $\langle\delta,\beta\rangle$, representing the host-adjunct structure, nor the adjunct $\delta$ itself will undergo labelling at this stage.
+As such, both of these objects will be null-labelled at CI, and therefore, interpreted conjunctively.
+This is expected for host-adjunct structures, but when we consider the interpretation of $\delta$, we can see in issue with the structure in \cref{fig:IllicitAdjunctAC}.
+
+The adjunct $\delta$ will be null-labelled, as represented in \cref{ex:AdjunctCI}, and therefore interpreted conjuctively as shown in \cref{ex:AdjunctSEM}.
+\ex.\label{ex:AdjunctCI} [$_{\emptyset}$ [the woman]$_i$, [$_{\emptyset}$ Prog, [$_\text{VoiceP}$ the woman$_i$ teach her students]]]
+
+\ex.\label{ex:AdjunctSEM} $\textsc{sem}(\delta) = \textsc{sem}(\text{the woman})(e) \& \textsc{sem}(\text{Prog})(e) \& \textsc{sem}(\text{VoiceP})(e)$
+
+So, DP \textit{the woman} and the VoiceP \textit{the woman teach her students} are predicated of the same extramental entity $e$.
+In other words, there is some entity $e$ which is both \textit{the woman} and an event of the woman teaching her students.
+Notice, however, that the two instances of \textit{the woman} in $\delta$ are not distinct SOs but occurrences of a single SO.
+Despite the fact that these two expressions are identical, they are interpreted as being predicated of two disctint entities.
+The upper copy is predicated of some event $e$, while the lower copy is predicated of some entity $x$ which participates in the event of teaching students.
+If these copies are supposed to be identical, it seems like a contradiction to say that they are predicated of distinct entities.
+This contradiction, I propose, is the reason that DPs must move from specifiers of adjunct ACs.
+\subsection{Generalizing the ACC-ing results}
+In the previous section, I offered an explanation for the fact that, if an AC is adjoined to a VP, then its subject must move out of the AC.
+No part of the explanation, however, depended on any inherent property of the AC, but rather on the fact that the AC is adjoined, and the fact that the subject DP was internally merged in subject position. 
+So, this leads us to the generalization in \cref{ex:AdjunctGen}, which I restate schamatically in \cref{ex:AdjunctGenSchema}.
+\ex.* $\langle \left\{ \text{DP}_{i} \left\{ \dots t_i \dots \right\} \right\}, \text{XP}\rangle$\label{ex:AdjunctGenSchema}\\
+($^\textsc{ok}\langle \left\{ t_{i} \left\{ \dots t_i \dots \right\} \right\}, \text{XP}\rangle$)
+
+Note that this seems to be violated by sentences like \cref{ex:AbsoluteClause}, where the modifier AC has its subject in situ.
+\ex. Her order having arrived late, Kinza was in a sour mood.\label{ex:AbsoluteClause}
+
+The AC in this sentnece however, is a sort of topic, and, by hypothesis, topical expressions are merged in a Topic projection rather than adjoined.
+So, the restriction in question does not apply to \cref{ex:AbsoluteClause}.
+
+Turning back to resultatives, we can see that the proposed structure, in
 \end{document}

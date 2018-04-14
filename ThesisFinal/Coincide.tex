@@ -1,0 +1,58 @@
+%        File: Coincide.tex
+%     Created: Sat Apr 14 12:00 PM 2018 E
+% Last Change: Sat Apr 14 12:00 PM 2018 E
+%
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+\begin{document}
+In this thesis I have made liberal use of a novel class of sideward movement structure which I schematize below in \cref{fig:SidewardSchema}.
+\begin{figure}[h]
+	\centering
+\[\sbox0{$\begin{array}[]{ccc}
+		\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+	    for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [YP
+		    [DP$_i$]
+		    [
+			    [Y]
+			    [ZP]
+		    ]
+	    ]
+	\end{forest}			
+	&
+	\tikz[baseline=10ex,scale=1] \node[inner sep=0] at (0,-1) {\large,\,};
+	&
+	\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+		for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [VP
+		    [V]
+		    [DP$_i$]
+	    ]
+	    \end{forest}
+		\end{array}$}
+\mathopen{\resizebox{1.2\width}{\ht0}{$\Bigg\langle$}}
+\usebox{0}
+\mathclose{\resizebox{1.2\width}{\ht0}{$\Bigg\rangle$}}
+\]
+	\caption{A schema of the sideward movement structure}
+	\label{fig:SidewardSchema}
+\end{figure}
+This structure was used as an analysis of adjectival resultatives, depictives, and one available structure for direct perception reports with ACC-ing clauses.
+The distinction between these constructions is due to the choice of head Y.
+For resultatives, Y is instantiated by res, while for precetion reports, it is instatntiated by Prog.
+As for depictives, the adjoined phrase YP is a small clause, so Y is either absent or instantiated by a Pred head.
+Note that, while the complement of Y, ZP, also varies between the constructions, this variation can be derived from the selectional requirements of Y.
+\end{document}
+
+

@@ -14,9 +14,9 @@
 %\usepackage[margin=1in]{geometry}
 \usepackage[british]{babel}
 \usepackage[]{csquotes}
-\usepackage[backend=biber,style=apa,language=british]{biblatex}
+\usepackage[backend=biber,style=authoryear,language=british,dashed=true]{biblatex}
 \DeclareLanguageMapping{british}{british-apa}
-\usepackage[final]{graphicx}
+\usepackage[]{graphicx}
 
 \usepackage{stmaryrd}
 \usepackage[]{amsmath}
@@ -30,21 +30,29 @@
 
 \usepackage{tikz}
 \usepackage{forest}
+\usepackage[]{longtable}
 \usepackage{tabu}
+\usepackage{subcaption}
 
+\usepackage[final]{hyperref}
 \usepackage{linguex}
 \renewcommand{\Exarabic}{\thechapter.\arabic} 
 % We want to reset the ExNo counter at each section
-%\usepackage{chngcntr}
-%\counterwithin{ExNo}{chapter}
-%\usepackage{cleveref}
-%\creflabelformat{ExNo}{(#2#1#3)}
+\usepackage{chngcntr}
+\counterwithin{ExNo}{chapter}
+\usepackage{cleveref}
+\crefname{ExNo}{}{}
+\creflabelformat{ExNo}{(#2#1#3)}
+\crefname{SubExNo}{}{}
+
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+
 \usepackage{centernot}
 \usepackage{subfiles}
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
 \usepackage{xcolor}
-\usepackage[]{hyperref}
 %\listfiles
 
 \usetikzlibrary{positioning,arrows}
@@ -118,8 +126,10 @@
 \begin{preliminary}
   \maketitle
   \tableofcontents
-  %\listoffigures
+  \listoftables
+  \listoffigures
 \end{preliminary}
+\part{Explaining Reslutatives}\label{sec:part1}
 \chapter{Introduction}
 %\subfile{intro}
 
@@ -167,10 +177,18 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
 %\section{The architecture of a label-theoretic grammar}
 %\subfile{agree}
 \chapter{Deriving the Resultative Parameter}\label{sec:deriving}
-%\subfile{deriving}
-\chapter{Some additional consequences of modified label theory}
+\epigraph{All happy families are alike; every unhappy family is unhappy in its own way.}{\textit{Anna Karenina}\\\textsc{Leo Tolstoy}}
+\subfile{deriving}
+
+\part{Dealing with the consequences}\label{sec:part2}
+\chapter{Small clauses in French-like languages}\label{sec:FreSC}
+\subfile{agree}
+\chapter{Movement from Specifier of resP}\label{sec:ACCing}
+\subfile{ACCing}
+\chapter{Coincidence}\label{sec:coincidence}
+
 \chapter{Conclusion}\label{sec:Conclusion}
-\printbibliography
+\printbibliography[heading=bibintoc]
 \end{document}
 
 

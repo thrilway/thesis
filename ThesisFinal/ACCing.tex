@@ -9,18 +9,504 @@
 \documentclass[MilwayThesis]{subfiles}
 
 \begin{document}
-\textcite{cinque1996pseudo} discusses pseudo-relatives (PRs) and ACC-ing clauses (ACs) under direct preception verbs and argues that they are three-ways ambiguous.
-\ex. 
-\a. Ho visto Mario che correva a tutta velocit\'a. (Italian) 
-\b. J'ai vu Mario qui courrait \'a tout vitesse. (French)
-\c. I saw Mario running at full speed.
+Another issue with my account has to do with the sideward movement operation.
+Recall that in order to derive an adjectival resultative, a DP must move sideward from the resP adjunct to the VP as in \cref{fig:ResStruct}.
+Note also that that sideward movement operation seems to be obligatory, that is, the DP that originates in the resP must also appear as the theme of the VP.
+This obligatoriness can be seen in the fact that \cref{ex:double-theme-res} is ungrammatical.
+\ex.*  Sam [$_{VP}$ hammered the nail] [$_{resP}$ the planks together].\label{ex:double-theme-res}\\
+($\approx$ Sam hammered the nail and, as a result, the planks were fastened together)
 
-According to Cinque, \Last[a] would have three distinct structures 
+An easy way of accounting for this would be to hypothesize that it is due to some property of the res head, and if this obligatory sideward movement were particular to resultatives, then, indeed, this would likely be the best way to proceed.
+However, sideward wovement seems to be obligatory in other cases.
+First, there is the case of depictives, which differ from resultatives only in the fact that they lack a res head.
+Also, as I will argue in this chapter, certain so-called ACC-ing clauses in direct perception reports such as the embedded clause in \cref{ex:ACCing1} 
+\ex. We heard [them shouting at the top of their lungs].\label{ex:ACCing1}
+
+Furthermore, I will argue that this obligatory sideward movement is, in fact, a property of adjoined phrases.
+Specifically, the generalization in \cref{ex:AdjunctGen} seems to hold.
+\ex.\label{ex:AdjunctGen} Internally merged specifiers of adjoined phrases must move to the host phrase.
+
+Such a generalization, I argue cannot be accounted for in theory of grammar based on feature satisfaction.
+Label theory, however, is able in principle to derive this generalization, but in order to do so, it must be modified and extended.
+I will perfom such an extension and show that this modified label theory can derive \cref{ex:AdjunctGen}.
+
+\section{On ACC-ing clauses}
+
+\textcite{cinque1996pseudo} discusses ACC-ing clauses (ACs) under direct preception verbs as in \cref{ex:ACCingDPR} and argues that they are ambiguous, having the two structures in \cref{ex:ACCingStructs}.\footnote{
+	The main object of Cinque's study, in fact, is pseudo relatives such as those in \cref{ex:PR}, which he argues are ambiguous between the three structures in \cref{ex:PRStructs}
+	\ex.\label{ex:PR}
+	\a. Ho visto Mario che correva a tutta velocit\'a. (Italian)
+	\b. J'ai vu Mario qui courrait \'a tout vitesse. (French)
+
+	\ex.\label{ex:PRStruct}
+	\a. Ho [visto [$_\text{NP}$ Mario [$_\text{CP}$] che correva \ldots ]]
+	\b. Ho [visto [$_\text{CP}$ Mario [$_{\text{C}^\prime}$ che [$_\text{IP}$ correva \ldots ]]]]
+	\c. Ho [[visto Mario] [$_\text{CP}$ \textit{ec} che correva \ldots]]
+
+	He mentions ACs briefly in order to point out that his remarks and claims about pseudo relatives largely apply to ACs.
+	The main difference between the two constructions is that ACs are not analyzable as nominals, but a related form with nominal morphology serves this function.
+	\ex. [Their shouting at the top of their lungs] didn't help matters.
+
+}
+\ex. I saw Mario running at full speed. \label{ex:ACCingDPR} 
+
+\ex.\label{ex:ACCingStructs}
+\a. I [saw [$_\text{ProgP}$ Mario [$_{\text{Prog}^\prime}$ -ing [$_\text{VP}$ run \ldots]]]].
+\b. I [[saw Mario] [$_\text{ProgP}$ \textit{ec} running \ldots]].
+
+These two structure, or, rather, the fact that a single grammar can generate both of these structures, present a serious problem for standard theories of grammar.
+As such, I will discuss them in greater detail below.
+
+In one structure, represented in \cref{fig:CompACCing}, the AC is merged as the complement of the perception verb.
+The interpretation of this structure is one in which the running event was seen and by virtue of the meaning of \textit{run}, seeing a running event generally entail seeing the agent of that event.
+\begin{figure}[h]
+	\centering
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [V\\see,align=center]
+	    [ProgP
+		    [DP[Mario,roof]]
+		    [Prog'[running at full speed,roof]]
+	    ]
+    ]
+\end{forest}
+	\caption{Complement ACC-ing structure}
+	\label{fig:CompACCing}
+\end{figure}
+In the second structure, represented in \cref{fig:AdjunctACCing}, the ACC-ing subject is merged as the complement of the perception verb, while the AC (with a controlled subject) is adjoined to the VP.
+The interpretation of this structure is one in which \textit{him} is seen and the event of \textit{him} being seen coincides with an event of \textit{him} running.
+Again in this interpretation, due to the meaning for \textit{run}, seeing the agent of a running event generally entails seeing that event.
+\begin{figure}[h]
+	\centering
+\begin{forest}
+    nice empty nodes,sn edges,baseline,for tree={
+    calign=fixed edge angles,
+    calign primary angle=-30,calign secondary angle=70}
+    [VP
+	    [VP
+		    [V\\see,align=center]
+		    [DP$_i$[Mario,roof]]
+	    ]		    
+	    [ProgP
+		    [$\langle$DP$_i\rangle$]
+		    [Prog'[running at full speed,roof]]
+	    ]
+    ]
+\end{forest}
+	\caption{Adjunct ACC-ing structure}
+	\label{fig:AdjunctACCing}
+\end{figure}
+By the assumptions of this thesis, the argument \textit{Mario} can only be shared by the verb \textit{see} and the verb \textit{run} if it is merged with both, meaning it must move from [Spec, Prog] to [Comp, V].
+In the case of the complement AC in \cref{fig:CompACCing}, however, the argument \textit{Mario} seems to stay in situ in [Spec, Prog], suggesting that the movemnt operation represented in \cref{fig:AdjunctACCing} is, in fact, optional.
+If the movement operation is optional, however, we would expect two additional structures for \cref{ex:ACCingDPR}: one, represented in \cref{fig:CompACCingMove}, in which the ProgP is the complement of \textit{saw} and \textit{Mario} has moved from [Spec, Prog], and another, represented in \cref{fig:AdjunctACCingStay}, in which the ProgP is an adjunct, but \textit{Mario} does not move from [Spec, Prog].
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [AgrOP
+		    [DP$_i$[Mario,roof]]
+		    [
+			    [AgrO]
+			    [VP
+				    [V\\see,align=center]
+				    [ProgP
+					    [$\langle\text{DP}_i\rangle$]
+					    [Prog'[running at full speed,roof]]
+				    ]
+			    ]
+		    ]
+	    ]		
+	\end{forest}
+	\caption{Complement ACC-ing structure with object raising}
+	\label{fig:CompACCingMove}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,sn edges,baseline,for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [VP
+		    [VP
+			    [V\\see,align=center]
+		    ]		    
+		    [ProgP
+			    [DP$_i$[Mario,roof]]
+			    [Prog'[running at full speed,roof]]
+		    ]
+	    ]
+	\end{forest}
+	\caption{Adjunct ACC-ing structure without DP movement}
+	\label{fig:AdjunctACCingStay}
+\end{figure}
+If we consider the consequences of this proposed optionality, we can see that it is not true.
+
+First, consider the structure in \cref{fig:AdjunctACCingStay}, in particular the fact that \textit{see} does not have an internal argument.
+This is not \textit{per se} problematic, as verbs may be optionally transitive, but we would expect that \textit{see} could have an internal argument other than \textit{Mario}.
+That is, if \cref{fig:AdjunctACCingStay} is a possible structure for \cref{ex:ACCingDPR}, then we would expect that \cref{ex:ACCingDouble} to be a licit sentence.
+\ex.* I [$_\text{VP}$ [$_\text{VP}$ saw Sue] [$_\text{ProgP}$ Mario running at full speed]]. \label{ex:ACCingDouble}
+
+If \textit{Mario} can remain in [Spec, Prog], then we have no way to rule out \textit{Sue} merging with \textit{see} and behaving as a direct object.
+Of course, \cref{ex:ACCingDouble} is ungrammatical, suggesting that \textit{Mario} cannot remain in [Spec, Prog] if ProgP is adjoined to VP.
+Movement from [Spec, Prog], then, cannot be optional, strictly speaking.
+If it is not optional, perhaps it is obligatory.
+
+If movemnt from [Spec, Prog] is obligatory, then we must revise Cinque's analysis of complement ACs.
+Suppose, then, that \textit{Mario}, in the complement ACC-ing analysis of \cref{ex:ACCingDPR}, must raise to object.
+In other words, suppose \cref{fig:CompACCingMove} is a possible structure of \cref{ex:ACCingDPR} and \cref{fig:CompACCing} is not.
+Note that in \cref{fig:CompACCingMove}, \textit{Mario} is the grammatical object but not the theme of \textit{see}.
+If this is the case then we expect that \textit{Mario} can become the subject of a passive derived from \cref{fig:CompACCingMove}.
+
+Indeed, subjects of ACs can become passive subjects as in \cref{ex:ACCingPassive}, but it is not immediately obvious whether \cref{ex:ACCingPassive} is derived from an Adjunct AC structure or a Complement AC structure.
+\ex. Mario was seen running at full speed. \label{ex:ACCingPassive}
+
+If \cref{ex:ACCingPassive} had been derived from a Complement ACC-ing structure, however, then \textit{Mario} would not have been $\theta$-marked by \textit{see}.
+So, in order to test whether passives like \cref{ex:ACCingPassive} can be generated in which the subject is not interpreted as the theme of the verb, that is, we need a clause of the form in \cref{ex:ACCingPassiveTempl} where the event of V-ing was perceived without the individual X being perceived.
+\ex. X was $\left\{ \text{seen/heard/felt} \right\}$ V-ing \ldots
+s
+There are certain classes of predicate which we can use as diagnostics due to a non-canonical event/argument structure.
+Consider the ACC-ing versions of weather reports and clausal idioms, for instance, as given in \cref{ex:ACCingWeather} and \cref{ex:ACCingIdiom}
+\ex. Bill saw it snowing. $\centernot\implies$ Bill saw it. \label{ex:ACCingWeather}
+
+\ex. Bill heard all hell breaking loose. $\centernot\implies$ Bill saw all hell. \label{ex:ACCingIdiom}
+
+Consider, also, the predicates \textit{be slandered} and \textit{be parodied}.
+Events of parodying or slandering an individual $x$ generally do not include $x$ as a participant the way, for instance, events of hitting $x$ or speaking to \textit{x} do.
+This is demonstrated in \cref{ex:ACCingSlander} and \cref{ex:ACCingParody}
+\ex. We heard the writer being slandered. $\centernot\implies$ We heard the writer. \label{ex:ACCingSlander}
+
+\ex. They saw the singer being parodied. $\centernot\implies$ They saw the singer. \label{ex:ACCingParody}
+
+Unlike most direct perception reports with ACs, then, \crefrange{ex:ACCingWeather}{ex:ACCingParody} are not ambiguous.
+Rather, they have only the complement AC structures.
+Therefore, if the perception reports in \crefrange{ex:ACCingWeather}{ex:ACCingParody} can be passivized, this will be evidence for the proposal that DPs are able to move out of complement ACs.
+In fact, it seems that they cannot be passivized.
+\ex.* It was seen raining.
+
+\ex.* All hell was heard breaking loose.
+
+\ex.* The writer was heard being slandered.
+
+\ex.* The singer was seen being parodied.
+
+I can think of no principled explanation of these facts except to propose that DP movement out of a complement AC is barred.
+Absent any evidence or argument to the contrary, then, I will assume the Cinque's initial analysis of complement ACs was correct.
+
+Thus we are led to the following generalization with respect to ACs:
+If an AC is adjoined to a VP, then its subject must move, but if an AC is merged as the complement of a verb, then its subject is cannot move.
+This is an unexpected, perhaps unprecedented syntactic generalization.
+In fact, I will argue in the following section that it is predicted to be impossible by any theory that defines grammaticality solely in terms of feature satisfaction, as standard minimalist theories do.
+\section{Feature satisfaction cannot account for ACC-ing clauses}
+As I discussed in \cref{sec:nonstandard}, standard minimalist theories tend to assume that a derived syntactic object converges at the interfaces iff it contains no unsatisfied features.
+There is, of course, debate as to what it means of a feature to be unsatisfied, and what sort of operations are able to satisfy these features.
+Therefore, I will attempt to abstract away from the details of particular theories and discuss what I take to be their shared assumptions.
+
+The first common assumption (or set of assumptions) is with regards to features.
+Lexical items bear or consist of features, each of which is inherently either satisfied or unsatisfied, and each of which is also specified for the information it encodes (person, gender, tense, etc.).
+For instance, a determiner may bear a satisfied definiteness feature and an unsatisfied Case feature.
+
+The second common assumption is that some computational operation converts a token of some unsatisfied feature into a token of a satisfied feature under the influence of some other feature token.
+In order for feature F on lexical item X to satisfy feature G on lexical item Y, X an Y must stand in some structural relation to each other, and F and G must be of the same type.
+Furthermore, feature satisfaction is automatic and reflexive; if the conditions are right for F to satisfy G, then F satisfies G.
+
+The third common assumption, is that there is no operation which undoes feature satisfaction.
+This is never made explicit, but it is nonetheless assumed to be true.
+Such an assumption, in effect, ensures a certain monotonicity in syntactic derivations, in that if at some derivational stage S$_n$ feature F is satisfied, then there is no later stage S$_{n+i} (i > 0)$ at which F is unsatisfied.
+
+The fourth common assumption, which I already alluded to, is that a syntactic object is well-formed iff it contains no lexical items with any unsatified features.
+This will be used as a diagnostic for satisfied features.
+If a sentence, phrase, or word is well-formed, then it must contain no unsatisfied features, and if an expression is ill-formed, then it must contain unsatisfied features.
+
+With these assumptions in place, consider the complement AC case in \cref{ex:CompACCing}, which is well-formed meaning all of its subparts are well-formed.
+\ex. They [$_\text{VP}$ saw [$_\text{ProgP}$ the raccoon [walking across the street]]].\label{ex:CompACCing}
+
+Since the ProgP is well-formed, it must contain no unsatisfied features, and, therefore, the DP \textit{the raccoon} must contain no unsatisfied features.
+Furthemore, \textit{the raccoon} must be in [Spec, Prog], rather than it's base position in [Spec, $v$/Voice], which means that at least one of its unsatisfied features can only be satisfied in [Spec, Prog]. 
 \ex.
-\a. Ho [visto [$_\text{NP}$ Mario [$_\text{CP}$] che correva \ldots ]]
-\b. Ho [visto [$_\text{CP}$ Mario [$_{\text{C}^\prime}$ che [$_\text{IP}$ correva \ldots ]]]]
-\c. Ho [[visto Mario] [$_\text{CP}$ \textit{ec} che correva \ldots]]
+\a.* They [$_\text{VP}$ saw [$_\text{ProgP}$ walking [$_\text{DP}$ the raccoon] across the street]].
+\b.* They [$_\text{VP}$ saw [$_\text{ProgP}$ [-ing [[$_\text{DP}$ the raccoon] walk across the street]]]].
 
+In other words, \textit{the raccoon} is licensed in [Spec, Prog].
+
+However, when we consider the adjunct AC in \cref{ex:AdjuACCing}, we come very quickly to a contradiction.
+\ex. They [$_\text{VP}$ [$_\text{VP}$ saw the raccoon][$_\text{ProgP}$ $t$ walking across the street]].\label{ex:AdjuACCing}
+
+The fact that a lower copy/trace occupies [Spec, Prog] indicates that \textit{the raccoon} is not licensed there.
+In fact, the data adduced above in \cref{ex:ACCingDouble} and the discussion thereof indicates this fact even more forcefully.
+If \textit{the raccoon} is not licensed in [Spec, Prog], this means it bears some feature which cannot be satisfied there.
+This is a direct contradiction of the conclusion I came to above, and yet this contradiction arises from an analysis of facts based on an axiom set.
+The conclusion I draw from this contradiction is that the axiom set (a.k.a. the feature-satisfaction theory of syntax) is fundamentally flawed.
+
+In order to pinpoint this flaw, we should consider how the facts could be generalized.
+I believe a proper expression of the generalization is given in \cref{ex:AdjunctACCingGen} and \cref{ex:CompACCingGen}.
+\ex. A syntactic object X (= $\left\{ t, \left\{ \text{Prog, YP}  \right\} \right\}$) is well-formed only if X is an adjunct.\label{ex:AdjunctACCingGen}
+
+\ex. A syntactic object X (= $\left\{ \text{DP}, \left\{ \text{Prog, YP}  \right\} \right\}$) is well-formed only if X is an argument.\label{ex:CompACCingGen}
+
+This is a problem for the feature-satisfaction theory because implicit in the theory is the claim that the well-formedness of an object depends solely on its internal structure.
+The generalizations here, however, make reference to, not just the internal structure of an object, but also the larger structure that the object is a part of.
+This focus on internal structure, is to be expected if the grammaticality of an expression is solely determined by whether the narrow syntax operates properly.
+That is, if a given operation in the NS must be justified locally, it follows that it cannot be justified on the basis of an operation which has yet to occur.
+
+A theory, like label theory, which bases grammaticality, at least partially, on interface conditions, however, will be able to account for the generalizations in \cref{ex:AdjunctACCingGen} and \cref{ex:CompACCingGen}.
+Specifically, label theory must treat adjuncts and arguments differently and therefore, provides a good candidate for an explanatory theory of th generalization in question.
+Since host-adjunct structures are always a species of phrase-phrase structures\footnote{
+	The phrasal nature of Clausal and PP adjuncts for instance is uncontroversial, but adjectives and adverbs are also phrasal given the theory of categories assumed here.
+	An adverb, say, consists minimally of a root and an $adv$ head.
+}
+we would expect a labelling paradox as with other phrase-phrase structures.
+Unlike other phrase-phrase structures, however, there does not seem to be a ``repair strategy'' for host-adjunct structures.
+Almost by definition, adjuncts neither move, nor agree. 
+Adjuncts, it seems, simply do not enter into the labelling calculation.
+However, label theory as formulated in \cite{chomsky2013problems} and \cite{chomsky2015problems} is not quite suitable for my purposes.
+Thus I will modify it in the following section.
+
+\section{Modifications to label theory}\label{sec:modifications}
+
+In this section I will address two questions which \textcite{chomsky2013problems,chomsky2015problems} largely leaves open.
+First there is the question of how to label Host-Adjunct structures.
+\subfile{Modifications}
+
+The second question is why labels should be required by the CI interface at all.
+My proposed answer is that the label of a complex object determines how that object composes semantically.
+While this may seem \textit{ad hoc}, it is actually a quite reasonable hypothesis.
+Consider Chomsky's labelling hypothesis as phrased in \Next, and the more standard theory of the CI interface in \NNext.
+\ex. A syntactic object is a valid CI object iff it is labellable.
+
+\ex. A syntactic object is a valid CI object iff it composes semantically.
+
+At first glance, these hypotheses are incompatible, giving us three options at resolving the conflict.
+The first option would be to reject one of the conflicting hypotheses.
+There is no strong evidence, however, to reject either \LLast or \Last, so I will not choose this option.
+The second option is to conjoin the iff clauses as in \Next.
+\ex. A syntactic object is a valid CI object iff it is labellable and it composes semantically.
+
+This option is unattractive for reasons of theoretical parsimony, so I will not choose it.
+The third option is to hypothesize that labelling and composition are identical, and therefore the conflicting hypotheses are equivalent.
+We can, then, replace our two conflicting statements with the two compatible statements in \Next and \NNext below.
+\ex. A syntactic object composes iff it is labellable.
+
+\ex. A syntactic object is a valid CI object iff it composes.
+
+This move is theoretically attractive partially due to the fact that it mirrors the logic of antisymmetry on the SM interface \parencite{kayne1994antisymmetry}.
+In the case of antisymmetry, Kayne identifies asymmetric c-command with linear order, and there is no compelling reason to think that the CI interface should be more complex than the SM interface.
+
+So, what would it mean for labelling and composition to be two sides of the same coin?
+Again, it is helpful to consider the SM interface, where asymmetric c-command and linear order are associated because they are isomorphic.
+We should expect a similar isomorphism to hold between composition and labels, and, in fact, there seems to be good reason to think that there is such an isomorphism.
+Consider the main modes of composition generally assumed by semanticists \parencite[\textit{e.g.}, by][]{heimkratzer1998semantics}, given schematically in \Next.
+\ex. 
+\a. \textbf{Lexical insertion}\\
+\textsc{sem}($\alpha$) = $\alpha^\prime$
+\b. \textbf{Function application}\\
+\textsc{sem}($\left[ \alpha, \beta \right]$) = \textsc{sem}($\alpha$)(\textsc{sem}($\beta$))
+\b. \textbf{Predicate modification}\\
+\textsc{sem}($\left[ \alpha, \beta \right]$) = \textsc{sem}$(\alpha)(x) \&$ \textsc{sem}$(\beta)(x)$
+\b. \textbf{Predicate abstraction}\\
+\textsc{sem}($\left[ \alpha, \beta \right]$) = (Op$x$)(\textsc{sem}($\beta$)($x$))
+
+Each of these modes of composition has a corresponding structure type as identified by label theory, including my modifications thus far.
+Lexical insertion operates on a single syntactic atom, \textit{i.e.}, a head, which label theory necessarily distinguishes from other syntactic objects.
+Predicate modification is the next most complex operation, it conjoins two (possibly complex) objects without requiring or inducing any ordering of the two, exactly isomorphic with the output of merge: unlabelled and unordered syntactic objects.
+Function application, likewise, requires two objects, but these objects are ordered.
+Unlike conjunction structures created by predicate modification, which are commutative ($X \& Y = Y \& X$), the function-argument structures created by function application are inherently asymmetric ($X(Y) \neq Y(X)$).
+This matches with head-labelled stuctures, which encode a pair of objects (the contents of the structure) and an ordering statement (the label).
+Finally, predicate abstraction, which creates structures similar to quantifier structures, requires the content of the two expressions, an ordering between the two, and a variable.
+Pair-labelled structures provide this information.
+
+The simplest cases are those structures labelled by heads.
+The classes of structures which get head labels are given in \Next.
+\ex. \textbf{Head-labelled structures}
+\a. $\left\{ \text{X, }\textsc{Root} \right\} \xrightarrow{Label} \left[_\text{X} \text{X, }\textsc{root}  \right]$
+\b. $\left\{ \text{X, YP} \right\} \xrightarrow{Label} \left[_\text{X} \text{X, YP} \right]$
+\c. $\left\{ t_\text{ZP}, \left\{ \text{X, YP} \right\} \right\}\xrightarrow{Label}\left[_\text{X} t_\text{ZP}, \text{XP} \right]$
+
+I propose that in these cases, the objects compose by function application, with the label being the function and the non-labelling constituent being the argument.
+So, for instance, a DP is interpreted as the function D, with NP as an argument.
+\ex. \textsc{sem}($\left[_\textit{the} \textit{the, ball} \right]$) = \textsc{sem}(\textit{the})(\textsc{sem}(\textit{ball}))
+
+The next case is that of structures labelled by feature-pairs.
+These structures, tend to be the result of internal Merge, which is generally associated with operator-variable structures.
+I hypothesize, then, that feature-pair labels signal that a complex object is to be interpreted as an operator-variable structure.
+For instance the Wh-question structure in \Next[a] is interpreted as in \Next[b].
+\ex. \textsc{sem}($\left[_{\langle Q,Q \rangle} \textit{Who}_Q, \left[ \text{C}_Q+\textit{did}, \left[ \textit{Mary see } t_{Who} \right] \right]  \right]$) = (Wh\textit{x})(\textsc{sem}(\textit{Mary saw x}))
+
+Finally, the case of unlabelled structures, which is identical to the case of Host-Adjunct structures.
+In this case, objects compose by conjunction.
+Consider the interpretation of the structure in \Next.
+\ex. \textsc{sem}($\left[_\emptyset \textit{run, swiftly} \right]$) =  $(\lambda e)(\textsc{sem}(\textit{run})(e) \& \textsc{sem}(\textit{swiftly})(e))$
+
+
+I have identified Kayne's (\citeyear{kayne1994antisymmetry}) theory of the SM interface as an inspiration for my proposal, and I would like to say a little more about the similiarities between his and my hypotheses.
+Rather than positing active process, be it simple or intricate, for linearizing a hierarchical structure, Kayne suggests that linear order is the product of a passive isomorphism.
+Since asymmetric c-command \textit{is} a linear, or total, order, a hierarchical structure can be mapped to a linear string based purely on properties of that structure.
+The idea that an interface between mental modules should be passive, is in keeping with the very idea of modularity.
+If the SM module and the Narrow Syntax module are truly independant, then we would not expect there to be any specialization of one in order to interact with the other.
+My proposal for the CI interface is, I believe, a step towards a passive interface.
+Although evidence for the nature of the CI module is not as readily available as it is for the nature of the SM module, the working, albeit tacit, assumption seems to be that the CI module deals in representations that are formally very similar to formulas of predicate logics.
+If we assume a predicate logic with operators ($\forall$, $\exists$, $Wh$, M,\ldots), functions/predicates ($P, Q, f, g,$\ldots), variables ($x, y, z,$\ldots), and conjunction ($\&$), then we can see how there could be an isomorphism between labelled syntactic objects and formulas of this logic.
+
+While it seems that SM objects are linear structures (strings), CI objects seem to be more complex, including notions of scope and variable binding.
+As such, I am not able to give a simple order-theoretic explanation of the CI interface as \textcite{kayne1994antisymmetry} gives for the SM interface.
+What I can do, however, is give a rather coarse-grained mapping between labelled SOs and expressions in predicate logic.
+The class of labelled SOs and that of complex expressions of predicate logic can each be divided into three subclasses.
+Labelled SOs can be null-labelled, head-labelled, or pair-labelled, while expressions of predicate logic can be conjoined expressions, function-argument expressions, or operator expressions.
+Furthermore these subclasses seem to map to each other as shown in \Next.
+\ex.
+\begin{tabular}[t]{ll}
+	Labelled SO & Predicate logic\\
+	\hline
+	\hline
+	Null labelled & Conjoined expression\\
+	$\left\{ \emptyset, \left\{ \text{run, quickly} \right\} \right\}$ & $\textbf{run}(e) \& \textbf{quick}(e)$\\
+	\hline
+	Head labelled & Function-argument\\
+	$\left\{ \text{in}, \left\{ \text{in, the snow} \right\} \right\}$ & $\textbf{in}(\textbf{the\_snow})$\\
+	\hline
+	Pair-labelled & Operator expressions\\
+	$\left\{ \langle Q,Q\rangle, \left\{\text{Who}_Q, \left\{\text{C}_Q, \text{fell} \right\}  \right\} \right\}$ & $\text{Wh}x(\textbf{fell}(x))$\\
+	\hline
+\end{tabular}
+
+This mapping is, of course, a first approximation of a theory of the CI interface.
+Being a first approximation, it will face empirical and theoretical challenges.
+For instance, there are likely cases where an expression's label does not seem to map to its interpretation.
+These cases, however, might be cases in which our syntactic or semantic analysis is incorrect.
+Assuming the hypothesized mapping in \Last is empirically justified, we would need to explain why that mapping and not some other mapping holds.
+This would require us to show that the mapping between, say, head-labelling and function application is as tight as the mapping between asymmetric c-command and linear precedence.
+Such a discussion, however, is beyond the scope of this thesis.
+\section{Explaining ACC-ing clause subjects}
+With these modifications of label theory in place, we can consider how to account for the distribution of ACC-ing clause subjects.
+First, I will explain the fact that, in the case of complement ACs, the subject DP cannot move.
+This explanation will essentially be the same as the explanation of ECP effects given in \cite{chomsky2015problems}.
+I will then explain the adjunct AC case, in which the subject DP must move.
+This explanation will require the modified version of label theory and will suggest the general restriction in \cref{ex:AdjunctGen}.
+
+As in Chomsky's (\citeyear{chomsky2015problems}) analysis of \textit{that}-trace effects and my explanation of the non-generation of resultatives in French-like languages, a DP can be blocked from moving out of a phrase $\left\{ \text{DP, XP} \right\}$ if the following conditions hold.
+First, the head X of XP bears features which must be valued by a DP in order to label XP.
+That is, X must bear an incomplete set of, say, $\varphi$-features.
+Second, movement of DP would occur before DP and XP agree for the features in question.
+In other words since agreement feeds labelling, if a movement operation bleeds agreement, then that movement operation will be ruled out.
+Applying this logic to the complement AC, I hypothesize that the English Prog head has an incomplete $\varphi$-set which must be strengthened by Agree in order to provide a label.
+If this is the case, then we can explain the restriction on movement from complement ACs if such a movement would bleed agreement.
+Thus we have an explanation for complement ACs.
+
+The case of adjunct ACs, however, requires a more complicated explanation.
+The explanation will be split into two subsections: \Cref{sec:DPCanMove} will show that a DP can move out of an adjunct AC without problem, and \cref{sec:DPMustMove} will argue that an in situ DP in an adjunct AC runs into problems.
+
+\subsection{DPs can move from adjunct ACC-ing clauses}\label{sec:DPCanMove}
+In order to show that movement from an adjunct AC is permitted, I will demonstate, in some detail, how an adjunct AC structure is derived and interpreted.
+First, let's consider how the AC in \cref{ex:JoannaTeaching} is derived.
+\ex.\label{ex:JoannaTeaching} Joanna teaching her students.
+
+Since the ``contentful'' portion of the AC -- the portion that encodes lexical information and thematic structure -- is almost entirely independent of the larger AC structure, I will assume its derivation is uncomplicated.
+That is, I will take for granted that, if the complement of Prog is a VoiceP, that that VoiceP is derived and labelled as it would be in a grammatical finite clause.
+Further support for this assumption comes from \textcite{harwood2015being} who argues that Prog is a phase head, and therefore its introduction triggers the transfer of its complement, although not before the ACC-ing subject raises and merges with ProgP.
+So, the AC which is to be adjoined to the host VP has the structure in \cref{fig:ProgPStruct}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges,baseline
+		[$\beta$
+			[DP$_{i}$[Joanna,roof]]
+			[$\alpha$
+				[Prog]
+				[VoiceP
+					[$t_{i}$ teach her students,roof]
+				]
+			]
+		]
+	\end{forest}
+	\caption{The structure of a ProgP}
+	\label{fig:ProgPStruct}
+\end{figure}
+The next stages of the derivation requires the DP \textit{Joanna} to move out of the AC, leaving us with an unlabellable structure as per the discussion above.
+However, a derivation doesn't necessarily crash if it's derived structure is unlabellable, but rather it crashes when LA tries to label an unlabellable structure.
+Since the AC in this case is adjoined to VP, and, by hypothesis, LA operates only on the host of a host-adjunct structure, then the AC is not processed by LA.
+If the AC is not processed by LA, then it doesn't matter whether the AC is labellable or unlabellable.
+The content of an adjunct does not matter in determining the labelling of the host.
+
+\subsection{DPs must move from adjunct ACC-ing clauses}\label{sec:DPMustMove}
+Thus far, I have argued that the labellability of an adjunct is immaterial, which suggests that DP movement from an adjunct AC would be optional.
+The facts of ACs, however, suggest that DPs must move from adjunct ACs.
+In order to explain why the movement operation in question is obligatory, we must consider how adjunct ACs are interpreted.
+Consider the illicit adjunct AC structure in \cref{fig:IllicitAdjunctAC}.
+\begin{figure}[h]
+	\centering
+\[\sbox0{$\begin{array}[]{ccc}
+		\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+	    for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+		    [$\delta$
+			    [DP$_i$[the woman,roof]]
+			    [$\gamma$
+				    [Prog]
+				    [VoiceP[$t_{i}$ teach her students,roof]]
+			    ]
+		    ] 
+	\end{forest}			
+	&
+	\tikz[baseline=10ex,scale=1] \node[inner sep=0] at (0,-1) {\large,\,};
+	&
+	\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+		for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+		    [$\beta$
+			    [$\alpha$
+				    [$v$]
+				    [$\sqrt{see}$]
+			    ]
+			    [DP[Mario,roof]]
+		    ]
+	    \end{forest}
+		\end{array}$}
+\mathopen{\resizebox{1.2\width}{\ht0}{$\Bigg\langle$}}
+\usebox{0}
+\mathclose{\resizebox{1.2\width}{\ht0}{$\Bigg\rangle$}}
+\]
+	\caption{An illicit adjunct AC structure}
+	\label{fig:IllicitAdjunctAC}
+\end{figure}
+When the host-adjunct structure is finally transferred as part of a larger phase, only the host $\beta$ will be labelled.
+Neither the pair $\langle\delta,\beta\rangle$, representing the host-adjunct structure, nor the adjunct $\delta$ itself will undergo labelling at this stage.
+As such, both of these objects will be null-labelled at CI, and therefore, interpreted conjunctively.
+This is expected for host-adjunct structures, but when we consider the interpretation of $\delta$, we can see in issue with the structure in \cref{fig:IllicitAdjunctAC}.
+
+The adjunct $\delta$ will be null-labelled, as represented in \cref{ex:AdjunctCI}, and therefore interpreted conjuctively as shown in \cref{ex:AdjunctSEM}.
+\ex.\label{ex:AdjunctCI} [$_{\emptyset}$ [the woman]$_i$, [$_{\emptyset}$ Prog, [$_\text{VoiceP}$ the woman$_i$ teach her students]]]
+
+\ex.\label{ex:AdjunctSEM} $\textsc{sem}(\delta) = \textsc{sem}(\text{the woman})(e) \& \textsc{sem}(\text{Prog})(e) \& \textsc{sem}(\text{VoiceP})(e)$
+
+So, DP \textit{the woman} and the VoiceP \textit{the woman teach her students} are predicated of the same extramental entity $e$.
+In other words, there is some entity $e$ which is both \textit{the woman} and an event of the woman teaching her students.
+Notice, however, that the two instances of \textit{the woman} in $\delta$ are not distinct SOs but occurrences of a single SO.
+Despite the fact that these two expressions are identical, they are interpreted as being predicated of two disctint entities.
+The upper copy is predicated of some event $e$, while the lower copy is predicated of some entity $x$ which participates in the event of teaching students.
+If these copies are supposed to be identical, it seems like a contradiction to say that they are predicated of distinct entities.
+This contradiction, I propose, is the reason that DPs must move from specifiers of adjunct ACs.
+\subsection{Generalizing the ACC-ing results}
+In the previous section, I offered an explanation for the fact that, if an AC is adjoined to a VP, then its subject must move out of the AC.
+No part of the explanation, however, depended on any inherent property of the AC, but rather on the fact that the AC is adjoined, and the fact that the subject DP was internally merged in subject position. 
+So, this leads us to the generalization in \cref{ex:AdjunctGen}, which I restate schamatically in \cref{ex:AdjunctGenSchema}.
+\ex.* $\langle \left\{ \text{DP}_{i} \left\{ \dots t_i \dots \right\} \right\}, \text{XP}\rangle$\label{ex:AdjunctGenSchema}\\
+($^\textsc{ok}\langle \left\{ t_{i} \left\{ \dots t_i \dots \right\} \right\}, \text{XP}\rangle$)
+
+Note that this seems to be violated by sentences like \cref{ex:AbsoluteClause}, where the modifier AC has its subject in situ.
+\ex. Her order having arrived late, Kinza was in a sour mood.\label{ex:AbsoluteClause}
+
+The AC in this sentnece however, is a sort of topic, and, by hypothesis, topical expressions are merged in a Topic projection rather than adjoined.
+So, the restriction in question does not apply to \cref{ex:AbsoluteClause}.
+
+Turning back to resultatives, we can see that the proposed structure, in
 \end{document}
-
-

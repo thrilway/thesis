@@ -30,10 +30,11 @@ The nature of the LGB theory is such that its various hypotheses and principles 
 As a result, the first clause of the $\theta$-criterion depends on various other theoretical statements and various other theoretical statements depend on it.
 So, rather than attempting an exhaustive enumeration of the links between the $\theta$-criterion and the other theoretical statements of LGB, I will present what I consider to be the best argument in favour or the $\theta$-criterion, and argue that its premises have since been rejected within syntactic theory.
 
-The first premise is the now familiar Y- or T-model of grammar shown in \Next, which LGB theory continues from earlier theories.
+The first premise is the now familiar Y- or T-model of grammar shown in \autoref{fig:LGBYModel}, which LGB theory continues from earlier theories.
 According to this model, a syntactic derivation has four levels of representation (D-structure, S-Structure, PF, and LF), and each step in the derivation is performed by the application of a subset of the transformational rules.
 S-structures are derived by the applying of Move-$\alpha$ to D-structures, LFs are derived by applying QR (and maybe Move-$\alpha$) to S-structures, and PFs are derived by applying ``stylistic rules'' to S-structures \parencite[18]{chomsky1981lectures}.
-\ex. 
+\begin{figure}[h]
+	\centering
 \begin{tikzpicture}[baseline]
 	\node[draw,rounded corners] (DS) at (0,0) {D-Structure};
 	\node[draw,rounded corners] (SS) at (0,-2) {S-Structure};
@@ -43,7 +44,9 @@ S-structures are derived by the applying of Move-$\alpha$ to D-structures, LFs a
 	\draw[->] (SS)--(PF) node[midway,anchor=south east] {Stylistic rules};
 	\draw[->] (SS)--(LF) node[midway,anchor=south west] {QR};
 \end{tikzpicture}
-
+	\caption{The architecture of the grammar in LGB}
+	\label{fig:LGBYModel}
+\end{figure}
 The exact natures of the transformations are not important for this discussion.
 What is important, is that all syntactic displacement is the result of one of these transformations.
 
@@ -164,7 +167,55 @@ Do they exist independently of the narrow syntax?
 Why do they need to be satisfied first?
 And so on.
 I, for one, don't have the slightest clue how to proceed in answering or even sharpening these questions, and there don't seem to be any clues in the offing from constrained Merge theorists.
+\section{Long Distance Agree}
+Strongly associated with, but distinct from Last Resort is the notion of an Agree operation.
+\textcite[101]{chomsky2000minimalist} introduces Agree as an operation ``which establishes a relation (agreement, Case checking) between an LI $\alpha$ and a feature F in some restricted search space (its \textit{domain})'', and virtually every syntactician who identifies as a minimalist assumes that such an operation is part of the syntactic computation.
+In fact there is an ongoing debate as to the exact nature of Agree \parencite{zeijlstra2012there,preminger2013thats,bjorkman2014upward}, but within there is a broad consensus with respect to the general properties of Agree.
+All of the versions of Agree have three components which I will call Probe, Match and Satisfy.
+If we take Agree to operate on a head H and a feature F, then Agree states that F Satisfies H iff H Probes and Matches F.
+Probe is a predicate that evaluates to true iff H and F stand if a structural relation R holds between H and F.
+In virtually all versions of Agree, R is some combination of c-command and (relativized) minimality.
+The versions tend to differ on the directionality of R, that is, whether H c-commands F or vice-versa.
+Match is a predicate that evaluates to true iff H bears some \textit{active} feature of the same type as F.
+So, a head bearing unsatisfied $\varphi$-features will Match $\varphi$-features.
+If Probe and Match succeed, then F can Satisfy H, where satisfaction is generally taken to be feature valuation.
+So, a copula bears unvalued $\varphi$-features which are valued by the inherent $\varphi$-features of a DP.
 
+The prototypical evidence for this conception of Agree comes from morphological agreement in existential constructions like \cref{ex:ExistAgr}, where the verb agrees with a DP in its c-command domain rather than the expletive \textit{there} in its specifier.
+\ex.\label{ex:ExistAgr} There are three plates in the sink.
+
+As I see it, though, the main reason for keeping long distance Agree in the Narrow syntax is that it seems to save Last Resort theories of movement from a rather vicious lookahead problem.
+As I discussed in the previous section, the earliest version of Last Resort held that a movement operation proceeds only if it satisfies some uninterpretable feature.
+Under this theory, however, feature satisfaction occurs only as a result of movement, which means that in order to know if a movement operation satisfies a feature, we need to perform that movement.
+This has the effect of saying that Move($\alpha$) is defined iff Move($\alpha$) is defined.
+If instead, Move is preconditioned on Agree, then we no longer have an infinite regress
+
+Within the group of minimalist syntacticians, there is a somewhat disparate minority that rejects the orthodoxy of Long Distance Agree for a number of reasons.
+In the remainder of this section I will discuss the main theoretical\footnote{
+	\textcite{bobaljik2008wheres,arregi2013contextual} present empirical arguments in favour of a postsyntactic conceptions of Agree, but their data and analyses are too involved to do justice in this section. 
+} argument against a narrow syntactic notion of Agree, which is that this notion of Agree introduces a redundancy into the language faculty which violates the scientific principle of parsimony.
+
+\textcite{hornstein2009theory} argues that Agree is redundant with Merge and should therefore be rejected as an operation of the Narrow Syntax.
+Once Move is unified with Merge in the form of Internal Merge, then Merge becomes an operation capable of creating non-local dependencies.
+Since the creation of non-local dependencies is the sole purpose of Agree, the standard minimalist model of grammar has two operations which create non-local dependencies.
+This would not be an issue, however, if the types of dependencies created by Merge were distinct from those created by Agree, but they seem to be nearly identical.
+As I discussed above, each instance of Agree is restricted to the c-command domain of some head, with an added (relativized) minimality restriction.
+Therefore, the dependencies created by Agree are restricted to those that obey c-command and (relativized) minimality.
+Dependencies created by Merge have the exact same restrictions:
+C-command is definable in terms of Merge, and minimality is traditionally a restriction on movement.
+The only difference between Agree dependencies and I-Merge dependencies is that Agree dependencies don't appear to show displacement, while I-Merge ones do.
+\textcite{hornstein2009theory} argues that this is not enough of a difference to justify an entirely distinct operation.
+Rather than assuming a novel operation, we can just take Agree to be a variety of movement (and therefore a variety of Merge) in which the lower copy is pronounced.
+Doing this would eliminate a redundancy, and push our study of agreement to the interfaces, A result I believe to be theoretically attractive.
+
+Of course, theoretical attractiveness is not enough to justify an assertion as true.
+Only accordance with the facts can justify a theoretical claim.
+This is difficult for a negative claim such as the rejection of Long Distance Agree since no amount of observation or exploration can definitively justify it.
+Rather, the task of the minimalist, given theory T which accounts for the set of facts C, is to show that a simpler theory T$^\prime$ can also account for C,\footnote{
+As \textcite{chomsky1965aspects} notes, however, the notion of simplicity is not quite empirical, so any debate over whether T$^\prime$ is simpler than T will be philosophical rather than scientific.
+I will take for granted that a theory of syntactic derivations without Long Distance Agree is simpler than one with it.}
+ and the only way to demonstrate this is to assume the simpler theory and show how it is able to explain the facts in question.
+That will be my strategy in this thesis: I will simply assume that there is no Long Distance Agree in the Narrow Syntax, and go about explaining the facts in question with the simplified theory.
 \section{Terminological notes}
 The subject matter of this thesis is often called the ``syntax-semantics interface,'' a term which I have discovered is ambiguous, probably due to the fact that it is constructed from three ambiguous terms.
 

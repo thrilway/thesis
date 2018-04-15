@@ -99,27 +99,36 @@ The resultative parameter, then, is a one-or-both parameter, meaning the presenc
 The V-to-T parameter, in contrast, is an either/or parameter, meaning, for example, that the presence of \textit{do}-support can be taken as evidence that V does not move.
 
 \paragraph{Setting the parameter}
-The second argument against direct learning of resultatives is that even if children could distinguish between depictives and resultatives, there would be no way to rule out resultatives on the basis of PLD.
-To make this argument, I will assume a reasonable and, I believe, quite commonly assumed model of parameter setting according to which learners begin with a default parameter setting which they change only in the face of evidence in the PLD. 
-I will consider the two logically possible instantiations of this model with respect to the resultative parameter.
-The first instantiation, which is doomed to failure, is the one in which resultatives are allowed by default.
-The alternative, in which resultatives are disallowed by default, seems to fare better, but I will argue that, in fact, this alternatives faces the same problems that doomed the first alternative.
+There is, in fact, a stronger argument against direct learnability of the resultative parameter, which I will make in this section.
+The basic structure of the argument is along the lines of \citeauthor{fodor1975language}'s (\citeyear{fodor1975language}) argument against the possibility of concept learning.
+To begin with, let's assume that a child has all the ingredients for resultatives regardless of whether or not she is acquiring a language with resultatives.
+This either means the lexical items required for an adjectival resultative are innate or that they are acquired prior to the possible acquisition of adjectival resultatives.
+Also, let's assume that a child has acquired resultatives iff her grammar is able to generate them, and further that she can mentally represent a resultative iff her grammar is able to generate them.
 
-Suppose the default state of the language faculty is one which is able to generate both resultatives and depictives.
-A child in this state, upon hearing an utterance of a secondary predication construction will hypothesize both types of structural descriptions for this utterance and converge on only the one whose interpretation is appropriate in the context of utterance.
-This requires a child to inductively 
+Now, consider the classic ``switchboard'' model of parameter setting where each parameter comes with a default setting which is only altered in the face of PLD which is incompatible with the default.
+So, if we assume that there is a resultative parameter we must then determine what its default setting is.
+Either it is set to generate resultatives by default, or it is set to not generate resultatives by default.
+I will call these possibilities English-default and French-default, respectively.
+As we shall see, the English-default option is faulty on its face.
+The French-default option, on the other hand, seems to fare better, but I will argue that it faces the exact same issues as the English-default option.
+Since these two options exhaust the logical possibilities of parameter defaults, I will conclude that the acquisition of resultatives in this manner is impossible.
 
-Now, consider the alternative, in which the French setting is the default.
-How is an English-learner to decide that the resultative structure is an available parse for a secondary predication construction?
-Presumably, such a leap will take place if the child hears a secondary predication utterance in a context that only supports a resultative interpretation.
-This would activate some sort of fail-safe, which adds resultatives to the grammar.
-If this is the case, then the child had resultatives in her grammar all along.
-Perhaps resultatives were a dispreferred option, but an option nonetheless, and if this option is available to all children is it still available to adult speakers of a non-resultative language?
-If it is available, then why can a French-speaker not acquire resultatives?
-If it is no longer available then we have the same question that led us to reject the first alternative: What evidence is needed to reject the resultative option?
+First, consider the English-default option.
+According to this option, when a child encounters a secondary predication construction, she will entertain two possible parses: a depictive parse and a resultative pare, and choose the one whose interpretation is appropriate for the context.
+If the child is acquiring English, then the context will sometimes prefer the resultative parse, and other times prefer the depictive parse.
+If the child is acquiring French, then the context will always prefer the the depictive parse.
+However, in order to change the default setting, the child must make an inductive leap from a series of particular utterances to a generalization across all possible utterances, and such an inductive step is problematic to say the least.
+In fact, it is generally assumed in generative grammar that language acquisition cannot be an inductive process.
+Therefore, the English-default option is to be rejected.
 
-Since there is no direct way to determine from the primary linguistic data whether a language allows or disallows resultatives, we can reject any analysis of resultatives that requires the parameter to be directly set based on primary linguistic data.
-Rather, the setting of the resultative parameter must be derived from the setting of a parameter which \textit{can} be directly acquired.
+Suppose instead that we choose the French-default option.
+According to this option, when a child encounters a secondary predication construction, she will only entertain a depictive parse by default.
+If the child is acquiring French, then there will be no issue:
+Every parse will be appropriate for the context.
+If the child is acquiring English, then a portion of the parses will be inappropiate for the context.
+These inappropriate parses, then, would be taken as positive evidence for the alteration of the default setting.
+This means, however, that the French-acquiring child is able to entertain resultative parses, even though they are dispreferred by default.
+If the French-acquiring child is able to entertain resultative parses, then she is able to mentally represent resultatives, and if she is able to mentally represent them, then she is able to generate them.
 
 \subsection{Desideratum 2: Theoretical consistency}
 The second quality an analysis of resultatives should have is consistency with the broader theory of grammar.
@@ -171,105 +180,126 @@ Similarly, in \ref{ex:katie-ran}, there is a single thematic relation between \t
 Any structural analysis of these sentences that violates Minimal UTAH, then, can be rejected on theoretical grounds.
 
 Consider, for instance, three possible structural analyses of the pair in \ref{ex:broke-bottle}.
-In the first analysis, represented in \Next, \textit{the bottle} is base generated in its surface position, which is different in the two sentences.
-\ex. \textbf{The surface analysis}
-\a. \textit{Sara broke the bottle.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[Sara,roof]]
-    [
-      [T]
-      [VP
-        [V\\broke,align=center]
-        [DP[the bottle,roof]]
-      ]
-    ]
-  ]
-\end{forest}
-\b. \textit{The bottle broke.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[the bottle,roof,name=subj]]
-    [
-      [T]
-      [VP[broke,roof]]
-    ]
-  ]
-\end{forest}
-
+In the first analysis, represented in \autoref{fig:surface}, \textit{the bottle} is base generated in its surface position, which is different in the two sentences.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{.45\textwidth}
+		\textit{Sara broke the bottle.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [TP
+		    [DP[Sara,roof]]
+		    [
+		      [T]
+		      [VP
+			[V\\broke,align=center]
+			[DP[the bottle,roof]]
+		      ]
+		    ]
+		  ]
+		\end{forest}	
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+	\textit{The bottle broke.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [TP
+		    [DP[the bottle,roof,name=subj]]
+		    [
+		      [T]
+		      [VP[broke,roof]]
+		    ]
+		  ]
+		\end{forest}	
+	\end{minipage}
+	\caption{A surface analysis of causative-inchoatives}
+	\label{fig:surface}
+\end{figure}
 In this analysis, there is no single structural relation between \textit{broke} and \textit{the bottle}, corresponding to the single thematic relation.
 This analysis, then, violates Minimal UTAH, and can therefore be rejected.
 
-In the second analysis, represented in \Next, \textit{the bottle} originates in [Comp V] and moves to subject position in the intransitive situation.
-\ex. \textbf{The movement analysis}
-\a. \textit{Sara broke the bottle.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[Sara,roof]]
-    [
-      [T]
-      [VP
-        [V\\broke,align=center]
-        [DP[the bottle,roof]]
-      ]
-    ]
-  ]
-\end{forest}
-\b. \textit{The bottle broke.}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [TP
-    [DP[the bottle,roof,name=subj]]
-    [
-      [T]
-      [VP
-        [V\\broke,align=center]
-        [DP[the bottle,roof,name=theme]]
-      ]
-    ]
-  ]
-  \draw[->] (theme) to[out=south west, in=south] (subj);
-\end{forest}
-
+In the second analysis, represented in \autoref{fig:movement}, \textit{the bottle} originates in [Comp V] and moves to subject position in the intransitive situation.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{.45\textwidth}
+	\textit{Sara broke the bottle.}\\
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [TP
+	    [DP[Sara,roof]]
+	    [
+	      [T]
+	      [VP
+		[V\\broke,align=center]
+		[DP[the bottle,roof]]
+	      ]
+	    ]
+	  ]
+	\end{forest}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+		\textit{The bottle broke.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [TP
+		    [DP[the bottle,roof,name=subj]]
+		    [
+		      [T]
+		      [VP
+			[V\\broke,align=center]
+			[DP[the bottle,roof,name=theme]]
+		      ]
+		    ]
+		  ]
+		  \draw[->] (theme) to[out=south west, in=south] (subj);
+		\end{forest}
+	\end{minipage}
+	\caption{A movement analysis of causative-inchoatives}
+	\label{fig:movement}
+\end{figure}
 In this analysis the single thematic relation between \textit{broke} and \textit{the bottle} corresponds to a single structural relation between the two.
 While UTAH considerations clearly lead us to prefer the movement analysis over the surface analysis, such considerations are far from decisive evidence in favour of the movement analysis, as it is not the only possible analysis that complies with UTAH.
 
-Another UTAH-compliant account, which I will call the layering analysis, is represented in \Next.
+Another UTAH-compliant account, which I will call the layering analysis, is represented in \autoref{fig:layering}.
 This type of analysis is proposed by \textcite{borer2005normal,ramchand2008verb}.
 
-\ex. \textbf{The layering analysis}
-\a. \textit{Sara broke the bottle}
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [vP
-    [DP[Sara,roof]]
-    [
-      [v$_{EA}$]
-      [vP
-        [DP[the bottle,roof]]
-        [
-          [v$_{IA}$]
-	  [V\\broke,align=center]
-        ]
-      ]
-    ]
-  ]
-\end{forest}
-\b. \textit{The bottle broke.}
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [vP
-    [DP[the bottle,roof]]
-    [
-      [v$_{IA}$]
-      [V\\broke,align=center]
-    ]
-  ]
-\end{forest}
-
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{0.45\textwidth}
+		\textit{Sara broke the bottle}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [vP
+		    [DP[Sara,roof]]
+		    [
+		      [v$_{EA}$]
+		      [vP
+			[DP[the bottle,roof]]
+			[
+			  [v$_{IA}$]
+			  [V\\broke,align=center]
+			]
+		      ]
+		    ]
+		  ]
+		\end{forest}	
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+		\textit{The bottle broke.}\\
+		\begin{forest}
+		  nice empty nodes,sn edges,baseline
+		  [vP
+		    [DP[the bottle,roof]]
+		    [
+		      [v$_{IA}$]
+		      [V\\broke,align=center]
+		    ]
+		  ]
+		\end{forest}
+	\end{minipage}
+	\caption{A layering analysis of causative-inchoatives}
+	\label{fig:layering}
+\end{figure}
 In this analysis, as in the movement analysis, the thematic relation between \textit{broke} and \textit{the bottle} is represented by a single structural relation between the two.
 This means that this analysis also satisfies Minimal UTAH, and therefore cannot be rejected immediately.
 
@@ -474,59 +504,68 @@ The third, that of \textcite{kratzer2004building}, which I will adapt for my pur
 
 Complex predicate analyses of secondary predication structures tend to be defined in opposition to small clause analyses.
 The two classes of analyses crucially differ with respect to where the shared argument originates.
-According to a small clause analysis, the shared argument forms a constituent with the secondary predicate at some point in the derivation as in \Next.
-\ex. 
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-	[VP
-		[DP$_i$[the metal,roof,name=specVP]]
-		[
-			[V\\hammer,align=center]
-			[resP
-				[res]
-				[SC
-					[$\langle$DP$_i\rangle$,name=SCDP]
-					[Adj\\flat,align=center]
+According to a small clause analysis, the shared argument forms a constituent with the secondary predicate at some point in the derivation as in \cref{fig:SCResTree}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+		[VP
+			[DP$_i$[the metal,roof,name=specVP]]
+			[
+				[V\\hammer,align=center]
+				[resP
+					[res]
+					[SC
+						[$\langle$DP$_i\rangle$,name=SCDP]
+						[Adj\\flat,align=center]
+					]
 				]
 			]
 		]
-	]
-\end{forest}
-
+	\end{forest}
+	\caption{A small clause analysis of resultatives}
+	\label{fig:SCResTree}
+\end{figure}
 Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives is a small clause analysis and is discussed below.
 
 According to a complex predicate analysis, however, the shared argument and the secondary predicate never form a constituent.
 Instead the verb and the secondary predicate (and perhaps additional syntactic objects) form a constituent that does not contain the shared argument.
 The shared argument (in the case of resultatives, at least) forms a constituent with this complex predicate.
-For instance, \textcite{irimia2012secondary} analyzes resultatives as in \Next.
-\ex.\label{irimia}
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-	[SituationP
-		[DP[the metal,roof]]
-		[
-			[Situation]
-			[VP
-				[V\\hammer,align=center]
-				[resP
-					[res]
-					[Adj\\flat,align=center]
+For instance, \textcite{irimia2012secondary} analyzes resultatives as in \cref{fig:IrimiaTree}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+		[SituationP
+			[DP[the metal,roof]]
+			[
+				[Situation]
+				[VP
+					[V\\hammer,align=center]
+					[resP
+						[res]
+						[Adj\\flat,align=center]
+					]
 				]
 			]
 		]
-	]
-\end{forest}
-
-This analysis is inconsistent with any strict version of UTAH, as the structural relation between \textit{the metal} and \textit{hammer} in \Last is not shared in the simple transitive version as shown in \Next.
-\ex. 
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-	[VP
-		[DP[the metal,roof]]
-		[V\\hammer,align=center]
-	]
-\end{forest}
-
+	\end{forest}
+	\caption{Irimia's analysis of resultatives}
+	\label{fig:IrimiaTree}
+\end{figure}
+This analysis is inconsistent with any strict version of UTAH, as the structural relation between \textit{the metal} and \textit{hammer} in \cref{fig:IrimiaTree} is not shared in the simple transitive version as shown in \cref{fig:SimpleTransitive}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+		[VP
+			[DP[the metal,roof]]
+			[V\\hammer,align=center]
+		]
+	\end{forest}
+	\caption{A simple transitive VP}
+	\label{fig:SimpleTransitive}
+\end{figure}
 In the simple transitive version, \textit{the metal} and \textit{hammer} are sisters but not so in the resultative version.
 The complex predicate analysis, then, violates UTAH and should be rejected under our assumptions.
 Before rejecting them outright, I will first consider the strongest argument in favour of complex predicate analyses, and an attempt to reconcile complex predicate analyses with UTAH.
@@ -573,46 +612,55 @@ I will provide such an explanation when I present my structural analysis of resu
 
 As for the approach to $\theta$-roles, \textcite{irimia2012secondary} proposes that the shared argument receives its $\theta$-role from the Situation head which takes the complex predicate as a complement.
 From a purely formal perspective, this can be made to satisfy Minimal UTAH in the following way.
-If we assume that resultatives have the structure in \Next, and simple transitives have the structure in \NNext, then we can say that the complex predicate does not violate Minimal UTAH as the thematic relation that holds between Situation and the DP is mirrored by a grammatical relation between the two in both structures.
-
-\ex.\label{irimia-theta} Repeated from \ref{irimia}\\
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-	[SituationP
-		[DP[the metal,roof,name=dp]]
-		[
-			[Situation,name=situation]
-			[VP
-				[V\\hammer,align=center]
-				[resP
-					[res]
-					[Adj\\flat,align=center]
+If we assume that resultatives have the structure in \cref{fig:irimia-theta-cplx}, and simple transitives have the structure in \cref{fig:irimia-theta-simple}, then we can say that the complex predicate does not violate Minimal UTAH as the thematic relation that holds between Situation and the DP is mirrored by a grammatical relation between the two in both structures.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+		[SituationP
+			[DP[the metal,roof,name=dp]]
+			[
+				[Situation,name=situation]
+				[VP
+					[V\\hammer,align=center]
+					[resP
+						[res]
+						[Adj\\flat,align=center]
+					]
 				]
 			]
 		]
-	]
-	\draw[->] (situation) to[out=south, in=south] node[midway,below]{$\Theta$} (dp) ;
-\end{forest}
-
-\ex. 
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-	[SituationP
-		[DP[the metal,roof,name=dp]]
-		[
-			[Situation,name=situation]
-			[V\\hammer,align=center]
+		\draw[->] (situation) to[out=south, in=south] node[midway,below]{$\Theta$} (dp);
+	\end{forest}
+	\caption{\textit{hammer the metal flat}}
+	\label{fig:irimia-theta-cplx}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\textwidth}
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+		[SituationP
+			[DP[the metal,roof,name=dp]]
+			[
+				[Situation,name=situation]
+				[V\\hammer,align=center]
+			]
 		]
-	]
-	\draw[->] (situation) to[out=south, in=south] node[midway,below]{$\Theta$} (dp);
-\end{forest}
-
+		\draw[->] (situation) to[out=south, in=south] node[midway,below]{$\Theta$} (dp);
+	\end{forest}
+	\vspace{4ex}
+	\caption{\textit{hammer the metal}}
+	\label{fig:irimia-theta-simple}
+	\end{subfigure}
+	\caption{$\Theta$-marking according to \textcite{irimia2012secondary}}
+	\label{fig:irimia-theta}
+\end{figure}
 In both structures, \textit{the metal} receives a $\theta$-role from Situation, and it is the specifier of Situation, so Minimal UTAH holds.
 This, however, depends on a different conception of $\theta$-relations than the one I assume.
 Recall that I take thematic relations to be evident in certain types of analytic entailments such as the one expressed in \Next.
 \ex. Deem drank the cup dry. $\implies$ The cup was dry.
 
-In order to get from the structure in \ref{irimia-theta} to the entailment in \Last, we would need to assume some mechanism by which the $\theta$-role of \textit{dry} is transferred to Situation.
+In order to get from the structures in \cref{fig:irimia-theta} to the entailment in \Last, we would need to assume some mechanism by which the $\theta$-role of \textit{dry} is transferred to Situation.
 Such a mechanism, while perhaps possible to formulate, should be immediately suspect under minimalist assumptions.
 So, I will set aside the complex predicate analysis of resultatives.
 
@@ -706,30 +754,32 @@ The final analysis I will address is that of \textcite{kratzer2004building}, whi
 In this analysis, the resultative object (\textit{e.g.}, \textit{the metal}) and the adjective (\textit{e.g.}, \textit{flat}) form a small clause, which describes a state.
 The small clause merges with a \textit{res} head, which encodes a causative relation between events, and the resulting \textit{res}P is merged as the complement of the verb (\textit{e.g.}, \textit{hammer}).
 The small clause theme is then raised to check accusative Case, and from there the derivation proceeds as normal.
-The structure this generates is given in \Next.
-\ex. Kratzer's Resultative Structure\\
-{\small
-\begin{forest}
-  nice empty nodes,sn edges,baseline
-  [AgrOP
-  [{the metal},name=V theme]
-  [
-	  [AgrO]
-    [VP
-	[hammer] 
-	[\textit{res}P 
-	  [\textit{res}] 
-	  [SC
-	    [{$\langle\text{the metal}\rangle$},name=sc theme]
-	    [flat]
+The structure this generates is given in \cref{fig:kratzer-res}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	  nice empty nodes,sn edges,baseline
+	  [AgrOP
+	  [{the metal},name=V theme]
+	  [
+		  [AgrO]
+	    [VP
+		[hammer] 
+		[\textit{res}P 
+		  [\textit{res}] 
+		  [SC
+		    [{$\langle\text{the metal}\rangle$},name=sc theme]
+		    [flat]
+		  ]
+		]
+	      ]
+	    ]
 	  ]
-	]
-      ]
-    ]
-  ]
-  \draw[->] (sc theme) to[out=south west, in=south] (V theme);
-\end{forest}}
-
+	  \draw[->] (sc theme) to[out=south west, in=south] (V theme);
+	\end{forest}
+	\caption{Kratzer's Resultative Structured}
+	\label{fig:kratzer-res}
+\end{figure}
 Under the assumption that \textit{the metal} is $\theta$-marked by \textit{hammer}, this violates UTAH, and ought to be rejected.
 
 \subsection{Summary}

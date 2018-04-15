@@ -3,15 +3,14 @@
 % arara: pdflatex: {options: "-draftmode"}
 % arara: pdflatex: {options: "-file-line-error-style"}
 \documentclass[MilwayThesis]{subfiles}
-\setcounter{chapter}{5}
 
 \begin{document}
-\epigraph{All happy families are alike; every unhappy family is unhappy in its own way.}{\textit{Anna Karenina}\\\textsc{Leo Tolstoy}}
 So far, I have proposed a theory of syntax, a structural analysis of resultatives, and an analysis of the resultative parameter.
 Although they share a justification in minimalism, each of these is an independant proposal, and as such their combination must be justified.
 In this chapter I show that the combination of my proposals work together.
-I do so by first showing that the structure in \Next can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then by showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
-\ex.
+I do so by first showing that the structure in \autoref{fig:ResStruct} can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then by showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
+\begin{figure}[h]
+	\centering
 {\small
 \begin{forest}
     nice empty nodes,sn edges,baseline,
@@ -41,6 +40,9 @@ I do so by first showing that the structure in \Next can be derived in a languag
     \draw[->] (specRes) to[out=south, in=south east] (compV);
 \end{forest}
 }
+	\caption{The structure of a resultative}
+	\label{fig:ResStruct}
+\end{figure}
 
 In the first section, I will describe a derivation of the English resultative VP \textit{hammer the metal flat} and show that it converges at the CI interface (taking SM convergence for granted).
 In the second section, I will describe two derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash, while avoiding that crash blocks the derivation.
@@ -52,15 +54,15 @@ Each stage $S_i$ in a derivation is a pair $\langle LA_i, W_i\rangle$, where $LA
 The computational operations (Merge, Select, Copy, Transfer) play the role that rules on inference play in deductive systems, that is, they map derivational stages onto subsequent stages.
 A given stage $S_i$ \textit{derives} a subsequent stage $S_{i+1}$ if and only if some operation, applied to $S_i$, yields $S_{i+1}$.
 
+\subsection{A note on phases, subderivations and Transfer}
+I am assuming phase theory, which states that a derivation of, say, a clause proceeds via subderivations, and the objects derived by these subderivations are called phases.
 
-\section{A successful derivation in English}
+\section{A successful derivation in English}\label{sec:EngDeriv}
 In many ways, successful derivations, like happy families, are uninteresting, but they still must be demonstrated in order to show where the crashing derivations go wrong.
 
 To begin with, we derive the result phrase.
-The formal derivation and resulting unlabelled structure is given in \Next.
-\ex.
-\a.
-\begin{tabular}[t]{llll}
+The formal derivation of the resP is given in \autoref{tab:EngResP} and the resulting unlabelled structure is given in \autoref{fig:EngResP}.
+	\begin{longtabu}{llll}
 	\textbf{Stage} & \textbf{LA} & \textbf{Workspace} & \\
 	\cline{1-3}
 	1 & $
@@ -122,8 +124,12 @@ The formal derivation and resulting unlabelled structure is given in \Next.
 	\left\{\left\{_\delta \text{DP},\left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}\right\}\right\}\right\}
 	$
 	& Transfer($\beta$)\\
-\end{tabular}
-\b.
+	\caption{The derivation of an English resP}
+	\label{tab:EngResP}
+\end{longtabu}
+
+\begin{figure}[h]
+	\centering
 {\small
   \begin{forest}
       nice empty nodes,sn edges,baseline,for tree={
@@ -145,19 +151,372 @@ The formal derivation and resulting unlabelled structure is given in \Next.
       \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
   \end{forest}
 }
+	\caption{An unlabelled resP}
+\label{fig:EngResP}
+\end{figure}
 
 Assuming res is a phase head, its complement $\beta$ is trasferred and must be labelled along with the SOs contained in $\beta$.
 The small clause $\beta$ ($\left\{_\beta \langle \text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}$) is a Phrase-Phrase structure, but since one of its constituent parts, the DP, is a lower copy, that part is invisible to the labelling algorithm.
 Therefore, only the adjective ($\left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\}$) is available to provide a label.
 Assuming roots are inert for labelling, and uninflected categorizing heads are able to label, the label of $\alpha$, and therefore the label of $\beta$, is $adj_\emptyset$.
 So, $\beta$ is succesfully labelled and therefore convergent at the CI interface.
-\ex. LA($\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\} = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
+\ex. LA$(\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}) = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
 
+Since $\gamma$ and $\delta$ are not transferred along with $\beta$, we do not need to discuss their labels yet.
+
+Before deriving the verb phrase, we must first Copy \textit{the metal}, placing it and the resP $\delta$ in the new lexical array.
+We then derive the next phase as in \autoref{tab:EngVP}.
+The unlabelled structure is given in \autoref{fig:EngVP}.
+\begin{longtabu}{llll}
+\textbf{Stage} & \textbf{LA} & \textbf{Workspace} &\\
+\cline{1-3}
+1 & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\text{DP},\\
+	v,\\
+	\sqrt{\textsc{hammer}},\\
+	\text{AgrO}
+\end{Bmatrix*}
+$ & $\left\{  \right\}$ & Select$(\sqrt{\textsc{hammer}})$\\
+2 & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\text{DP},\\
+	v,\\
+	\text{AgrO},
+\end{Bmatrix*}
+$ & $\left\{ \sqrt{\textsc{hammer}} \right\}$ & Select$(v)$\\
+3 & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\text{DP},\\
+	\text{AgrO}
+\end{Bmatrix*}
+$ & $ 
+\begin{Bmatrix*}[l]
+	\sqrt{\textsc{hammer}},\\
+	v
+\end{Bmatrix*}
+$ & Merge$(v, \sqrt{\textsc{hammer}})$\\
+4 & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\text{DP},\\
+	\text{AgrO}
+\end{Bmatrix*}
+$ & $ 
+\left\{\left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}
+$ & Select(DP)\\
+5 & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\text{AgrO}
+\end{Bmatrix*}
+$ & $ 
+\begin{Bmatrix*}[l]
+	\text{DP}\\
+	\left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}
+\end{Bmatrix*}
+$ & Merge(DP, $\alpha$)\\
+6 & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\text{AgrO}
+\end{Bmatrix*}
+$ & $ \left\{\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}\right\}$ &
+Select(resP)\\
+7 & $\left\{ \text{AgrO} \right\}$ & $
+\begin{Bmatrix*}[l]
+	\text{resP},\\
+	\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}
+\end{Bmatrix*}
+$ & Merge\footnotemark($\beta$, resP)\\
+8 & $\left\{ \text{AgrO} \right\}$ & $
+\left\{\left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}\right\}
+$ & Select(AgrO)\\
+9 & $\emptyset$ & $
+\begin{Bmatrix*}[l]
+	\text{AgrO},\\
+	\left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}
+\end{Bmatrix*}
+$ & Merge(AgrO, $\zeta$)\\
+10 & $\emptyset$ & $
+\left\{\left\{_\eta \text{AgrO}, \left\{_\zeta \left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}\right\}\right\}$ & Copy(DP) \\
+11 & $\emptyset$ & $
+\begin{Bmatrix*}[l]
+	\text{DP},\\
+	\left\{_\eta \text{AgrO}, \left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\}, \text{resP}\right\}\right\}
+\end{Bmatrix*}
+$ & Merge(DP, $\eta$) \\
+12 & $\emptyset$ & $
+\left\{\left\{_\kappa
+	\text{DP},\left\{_\eta \text{AgrO}, \left\{_\zeta\left\{_\beta\text{DP}, \left\{_\alpha v, \sqrt{\textsc{hammer}}\right\}\right\},\text{resP}\right\}\right\}
+\right\}\right\}$ & \dots\\
+\caption{The derivation of an English resultative VP}
+\label{tab:EngVP}
+\end{longtabu}
+\footnotetext{This instance of ``Merge'' is, in fact, an instance of adjunction.
+I represent it as Merge in order to maintain the simplicity of the formal grammar.}
+
+\begin{figure}[h]
+\centering
+{\small
+	\begin{forest}
+		nice empty nodes,sn edges,baseline
+		[$\kappa$
+			[DP$_\varphi$[the metal,roof]]
+			[$\eta$
+				[AgrO$_\varphi$]
+				[$\zeta$
+					[$\beta$
+						[$\alpha$
+							[$v$]
+							[$\sqrt{\textsc{hammer}}$]
+						]
+						[DP]
+					]
+					[$\delta$
+						[DP]
+						[$\gamma$
+							[res]
+							[flat]
+						]
+					]
+				]
+			]
+		]
+	\end{forest}
+}
+\caption{An unlabelled English resultative}
+\label{fig:EngVP}
+\end{figure}
+When this is transferred, triggered, presumably, by the merging Voice, it is labelled just as any transitive VP would be.
+The largest object $\kappa$ is a phrase-phrase structure with agreeing features, so it will be receive a $\langle\varphi,\varphi\rangle$ label.
+The remaining objects will receive head-labels, with the exception of the host-adjunct structure $\zeta$.
+
+As in previous theories of grammar, host-adjunct structures are problematic in label theory.
+Structures like $\zeta$ are phrase-phrase structures, meaning they can only be labelled if the constituent parts agree for some feature, or one of the constituent parts is somehow inert.
+Since, almost by definition, adjuncts are not selected by their hosts\footnote{
+	Cartographic approaches to syntax \parencite[][and references therein]{cinque2009cartography}, however, assume that adjectives and adverbs are selected by functional heads.
+	This assumption does not, to my knowledge, extend to phrase- or clause-sized modifiers though.
+} suggesting that it is unlikely that there is agreement between adjuncts and their hosts.
+If there is no agreement, then the only way for $\zeta$ to be labellable is if one of its parts is inert.
+Since host-adjunct structures, again almost by definition, have the properties of the host and not those of the adjunct, it is reasonable to think that the host is active and the adjunct inert.
+As such, I will assume that the host $\beta$ provides the label for $\zeta$, and $\delta$ is inert.
+This assumption will have consequences which I discuss in \autoref{sec:additional}. 
+
+So, in this section we have seen how a convergent resultative is derived in English.
+The next section, however, is truly where the rubber meets the road.
+In the next section I will show that the same grammar that generates resultatives in English will fail to generate them in French.
+As we will see, the crucial operation, the one which will be blocked in French, is the movement of DP from the Small Clause.
 
 \section{Two crashing derivations in French}
+By hypothesis, the only relevant difference between English and French is that the lexicon of French contains only inflected category heads (specifically $adj_\emptyset \centernot\in \textsc{lex}$ and $adj_\varphi \in \textsc{lex}$).
+In this section I will attempt to derive a resultative with an $adj_\varphi$ and show that those attempts inevitably either crash due to failure to label or simply do not derive resultatives.
+The first attempt will reproduce an English derivation and crash, while the second will avoid that crash but fail to move the object DP into the VP, and thus will be unable to derive the proper structure.
 
-\subsection{Crashing Derivation \#1}
+\subsection{Crashing Derivation}\label{sec:crash}
+Consider the derivation described in \autoref{sec:EngDeriv} with $adj_\varphi$ replacing $adj_\emptyset$.
+The resP will be derived in the same fashion as shown in \autoref{tab:FreResP1}.
+\begin{longtabu}{llll}
+	\textbf{Stage} & \textbf{LA} & \textbf{Workspace} & \\
+	\cline{1-3}
+	1 & $
+	\begin{Bmatrix*}[l]
+		\sqrt{\textsc{plat-}},\\
+		adj_\varphi,\\
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\emptyset$ & Select($\sqrt{\textsc{plat-}}$)\\
+	2 & $
+	\begin{Bmatrix*}[l]
+		adj_\varphi,\\
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\left\{\sqrt{\textsc{plat-}}\right\}$ & Select($adj_\varphi$)\\
+	3 & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $
+	\begin{Bmatrix*}[l]
+		adj_\varphi,\\
+		\sqrt{\textsc{plat-}}
+	\end{Bmatrix*}$
+	& Merge($adj_\varphi, \sqrt{\textsc{plat-}}$)\\
+	4 & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\left\{ \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}$ & Select(DP)\\
+	5 & $\left\{ res \right\}$ & $
+	\begin{Bmatrix*}[l]
+		\text{DP},\\
+		\left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\}
+	\end{Bmatrix*}
+	$ & Merge(DP, $\alpha$)\\
+	6 & $\left\{ res \right\}$ & $ \left\{ \left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\} \right\}$ &
+	Select(\textit{res})\\
+	7 & $\emptyset$ & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}
+	\end{Bmatrix*}
+	$ & Merge(\textit{res}, $\beta$)\\
+	8 & $\emptyset$ & $\left\{ \left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}\right\} \right\}$
+	& Copy(DP)\\
+	9 & $\emptyset$ & $
+	\begin{Bmatrix*}[l]
+		\text{DP},\\
+		\left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}\right\}
+	\end{Bmatrix*}
+	$
+	& Merge(DP, $\gamma$)\\
+	10 & $\emptyset$ & $
+	\left\{\left\{_\delta \text{DP},\left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}\right\}\right\}\right\}
+	$
+	& Transfer($\beta$)\\
+	\caption{The derivation of a French resP}
+	\label{tab:FreResP1}
+\end{longtabu}
+\begin{figure}[h]
+	\centering
+{\small
+  \begin{forest}
+      	nice empty nodes,sn edges,baseline,for tree={
+    	calign=fixed edge angles,
+	calign primary angle=-30,calign secondary angle=70}
+      [$\delta$
+        [DP$_\varphi$[{\rm le m\'etal},roof]]
+        [$\gamma$
+          [res]
+          [$\beta$
+        [DP$_\varphi$[{\rm le m\'etal},name=SC DP,roof]]
+        [$\alpha$
+          [adj$_\varphi$]
+          [{\rm plat-}]
+        ]
+          ]
+        ]
+      ]
+      \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+  \end{forest}
+}
+	\caption{An unlabelled resP}
+\label{fig:FreResP}
+\end{figure}
+Upon Transfer, $\beta$ must be labeled and since the DP has been moved, it is invisible to the labelling algorithm.
+The label of $\beta$, then will be the label of $\alpha$ ($\left\{ adj_\varphi, \sqrt{\textsc{plat-}} \right\}$).
+In the English case, $adj_\emptyset$ was able to provide a label, but the French $adj_\varphi$ is too weak to label without being strengthened by $\varphi$-agreement.
+The DP which is merged with $\alpha$ would agree with $adj_\varphi$, but since it is a lower copy, it is inert, and therefore cannot take part in agreement.
+Since $adj_\varphi$ has not been agreed with, it remains too weak to label $\alpha$ and, by extension, too weak to label $\beta$.
+The derivation, then, crashes due to a failure to label.
 
-\subsection{Crashing Derivation \#2}
+So, attempting to derive a resultative in French as we did in English yields a crash at the interfaces.
+Perhaps, though, there is another way to derive resultatives without yielding a crash.
+In the next section I attempt such an alternative derivation, but ultimately this attempt, while it doesn't yield a crash, will not derive a resultative.
+\subsection{Failed Derivation}\label{sec:fail}
+The mistake we made in the previous derivation was to move the DP from the small clause before it could agree with $adj_\varphi$.
+Consider the following derivation of \autoref{fig:FreResP2} given in \autoref{tab:FreResP2}.
+\begin{longtabu}{llll}
+	\textbf{Stage} & \textbf{LA} & \textbf{Workspace} & \\
+	\cline{1-3}
+	1 & $
+	\begin{Bmatrix*}[l]
+		\sqrt{\textsc{plat-}},\\
+		adj_\varphi,\\
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\emptyset$ & Select($\sqrt{\textsc{plat-}}$)\\
+	2 & $
+	\begin{Bmatrix*}[l]
+		adj_\varphi,\\
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\left\{\sqrt{\textsc{plat-}}\right\}$ & Select($adj_\varphi$)\\
+	3 & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $
+	\begin{Bmatrix*}[l]
+		adj_\varphi,\\
+		\sqrt{\textsc{plat-}}
+	\end{Bmatrix*}$
+	& Merge($adj_\varphi, \sqrt{\textsc{plat-}}$)\\
+	4 & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\text{DP}
+	\end{Bmatrix*}
+	$ & $\left\{ \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}$ & Select(DP)\\
+	5 & $\left\{ res \right\}$ & $
+	\begin{Bmatrix*}[l]
+		\text{DP},\\
+		\left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\}
+	\end{Bmatrix*}
+	$ & Merge(DP, $\alpha$)\\
+	6 & $\left\{ res \right\}$ & $ \left\{ \left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\} \right\}$ &
+	Select(\textit{res})\\
+	7 & $\emptyset$ & $
+	\begin{Bmatrix*}[l]
+		res,\\
+		\left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}
+	\end{Bmatrix*}
+	$ & Merge(\textit{res}, $\beta$)\\
+	8 & $\emptyset$ & $\left\{ \left\{_\gamma res, \left\{_\beta \text{DP}, \left\{_\alpha adj_\varphi, \sqrt{\textsc{plat-}} \right\} \right\}\right\} \right\}$
+	& Transfer($\beta$)\\
+	\caption{The derivation of a French resP with an \textit{in situ} DP}
+	\label{tab:FreResP2}
+\end{longtabu}
+\begin{figure}[h]
+	\centering
+{\small
+  \begin{forest}
+      	nice empty nodes,sn edges,baseline,for tree={
+    	calign=fixed edge angles,
+	calign primary angle=-30,calign secondary angle=70}
+        [$\gamma$
+          [res]
+          [$\beta$
+        [DP$_\varphi$[{\rm le m\'etal},name=SC DP,roof]]
+        [$\alpha$
+          [adj$_\varphi$]
+          [{\rm plat-}]
+        ]
+          ]
+        ]
+      \draw[thick] ([xshift=-36pt, yshift=-24pt]SC DP) arc[start angle=170,end angle=130,radius=7.5cm];
+  \end{forest}
+}
+\caption{An unlabelled French resP with an \textit{in situ} DP}
+\label{fig:FreResP2}
+\end{figure}
+Unlike the case in \autoref{sec:crash}, the transferred object $\beta$ will be labellable.
+The \textit{in situ} DP will $\varphi$-agree with $adj_\varphi$, and therefore $\beta$ will be labelled with the pair $\langle\varphi,\varphi\rangle$.
+Furthermore, since $adj_\varphi$ has been strengthened by agreement, it will be able to label $\alpha$.
+This, the transferred object is labelled as in \ref{ex:FreresPlabel}.
+\ex. LA$(\beta) = \left[_{\langle\varphi,\varphi\rangle} \text{DP} \left[_{adj} adj, \sqrt{\textsc{plat}}  \right]  \right]$
 
+Our resP can be derived without a crash, but this will turn out to be something of a Pyrrhic victory.
+The French small clause is labellable due to the fact that the DP remains \textit{in situ}, but this same fact means that the DP is now inaccessible to further operations such as Copy and Merge.
+If we cannot copy and remerge the DP, we will unable to continue the derivation.
+We can't merge a DP with a verb if that DP is inaccessible to Merge.
+Thus, our attempt to avert a crash has, in fact, doomed our derivation.
+\section{Summary}
+In this chapter, I have shown that resultatives are, in fact, derivable in a label theoretic grammar, provided the resultative adjective is categorized by an uninflected head $adj_\emptyset$.
+I then demonstrated that the same derivation runs into difficulties if the resultative adjective is categorized by an inflected head $adj_\varphi$.
+Note that I do not claim to have demonstrated the impossibility of deriving resultatives with $adj_\varphi$ (such a demonstration may be impossible), I've merely pointed out two ways not to derive resultatives.
+That disclaimer being made, these demonstrations taken with the hypothesis in \Next determines whether or not that language allows BSC and resultatives, constitutes an explanation of how reslutatives are acquired, parameterized, and generated.
+\ex. \textsc{lex} $\left\{ \text{includes, does not include} \right\}$ $v_\emptyset, n_\emptyset, adj_\emptyset, etc.$
+
+Such an explanation was the stated goal of this thesis, but the hypotheses made in its service open up a number of questions which I will address in the next chapter.
 \end{document}

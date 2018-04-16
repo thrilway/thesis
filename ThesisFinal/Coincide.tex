@@ -59,10 +59,29 @@ That is, in \cref{fig:SidewardSchema} the VP and YP are each interpreted as a pr
 
 In the case of depictives, the interpretation is mostly straightforward, though not without come complications.
 Consider \cref{ex:Depictive}, which an eventuality in which Natasha eats the fish while that fish is raw.
-\ex. Natasha ate the fish raw.
+\ex. Natasha ate the fish raw.\label{ex:Depictive}
 
 According to our analysis, this interpretation would be derived from the fact that the eating event and the rawness state are taken to to be identical.
-That is the VP in \cref{ex:Depictive} has a logical form in \cref{ex:DepictiveLF}
-\ex. $\textbf{eating}(e) \& \textbf{raw}(e) \& \textbf{the\_fish}(x) \textsc{Theme}(x)(e)$
+That is the VP in \cref{ex:Depictive} has a logical form  as derived in \cref{ex:DepictiveLF}
+\ex. \textsc{sem}(\textit{eat the fish raw}) =\\
+$\lambda e [\textsc{sem}(\textit{eat the fish})(e) \, \&\, \textsc{sem}(\textit{the fish raw})(e)] =$\\
+$\lambda e [\textbf{eating}(e)\, \&\, \textbf{raw}(e)\, \&\, \textsc{Theme}(\textbf{the\_fish})(e)]$\label{ex:DepictiveLF}
 
+One might object that this LF is incoherent, as eating is an event, while rawness is a state, and an eventuality cannot be both an event and a state.
+This objection, however, does not hold up under scrutiny.
+Suppose we take the externalist perspective, according to which, the entities that natural language expressions are predicated of are mind-external and -independant entities, and the predicates and concepts of natural language correspond to natural kinds.
+From this perspective, eventualities are regions of space-time, some of which are events, while others are states.
+So, for instance to utter \cref{ex:EventDesc} truthfully is to refer to a particular region of space-time.
+\ex.\label{ex:EventDesc} The officer ticketed the car.
+
+Now, according to the objection at hand, the region of space-time referred to by \cref{ex:EventDesc} is an event, and, therefore, not a state.
+However, it is entirely reasonable to assume we could truthfully utter \cref{ex:StateDesc}, a state description, referring to the same space-time region.
+\ex.\label{ex:StateDesc} The car was parked illegally.
+
+It seems, then, that, if there is an event/state contrast, it does not originate in the extramental world, or else \cref{ex:EventDesc} and \cref{ex:StateDesc} could not possibly refer to the same region of space-time.
+
+If the event/state contrast is not drawn from nature, then perhaps it comes from the mind.
+<++>
+
+The case of adjunct ACC-ing clauses is slightly more challenging.
 \end{document}

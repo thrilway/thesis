@@ -83,5 +83,95 @@ It seems, then, that, if there is an event/state contrast, it does not originate
 If the event/state contrast is not drawn from nature, then perhaps it comes from the mind.
 <++>
 
-The case of adjunct ACC-ing clauses is slightly more challenging.
+The case of adjunct ACC-ing clauses is slightly more challenging, due to a subtlety in their meanings which I will discuss below.
+Ultimately, however, their meaning can be explained from their structure, given in \cref{fig:ACCingPair}, and an assumption about the nature of eventualities.
+\begin{figure}[h]
+	\centering
+\[\sbox0{$\begin{array}[]{ccc}
+		\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+	    for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [ProgP
+		    [DP$_i$]
+		    [
+			    [Prog]
+			    [VoiceP[DP$_i$ run,roof]]
+		    ]
+	    ]
+	\end{forest}			
+	&
+	\tikz[baseline=10ex,scale=1] \node[inner sep=0] at (0,-1) {\large,\,};
+	&
+	\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline,
+		for tree={
+	    calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+	    [VP
+		    [saw]
+		    [DP$_i$[the dog,roof]]
+	    ]
+	    \end{forest}
+		\end{array}$}
+\mathopen{\resizebox{1.2\width}{\ht0}{$\Bigg\langle$}}
+\usebox{0}
+\mathclose{\resizebox{1.2\width}{\ht0}{$\Bigg\rangle$}}
+\]
+	\caption{An adjunct ACC-ing structure}
+	\label{fig:ACCingPair}
+\end{figure}
+As a first pass, we can say that the interpretation of the structure in \cref{fig:ACCingPair} is a description of an event of the dog being seen and an event of the dog running.
+This alone is not sufficient, as an English speaker's intuition regarding the \cref{ex:ACC-ing} is that the $we$ referent saw both the dog and the event of the dog running.
+\ex. We saw the dog running.\label{ex:ACC-ing}
+
+This intuition seems to be inescapable; English speakers cannot seem to entertain an interpretation of \cref{ex:ACC-ing} in which \textit{we} saw the dog but not the running event, or the event but not the dog.
+This suggests that both complement ACC-ing and adjunct ACC-ing versions of \cref{ex:ACC-ing} are interpreted as both the individual and the event being seen.
+The strong version of UTAH that I assume in this thesis, however, predicts that the interpretation \textit{x was seen} can only be encoded if the expression denoting $x$ is merged as the complement of the verb \textit{see}.
+In adjunct ACC-ing analysis of \cref{ex:ACC-ing}, as shown in \cref{fig:ACCingPair}, the event denoting expression, ProgP, is adjoined to VP, yet we interpret it as meaning that the event was seen.
+Since this interpretation is not directly encoded, we must infer it from what is directly encoded.
+
+To see how we would infer the perception of the event, consider what is directly encoded.
+First, the VP is interpreted as a description of a seeing event which the dog is the theme of.
+\ex.\label{ex:VPSEM} \textsc{sem}(VP) = $\lambda e [\textbf{see}(e)\,\&\,\textsc{theme}(\textbf{the\_dog})(e)]$
+
+The interpretation of the ProgP, represented in \cref{ex:ProgPStruct}, however, is more complicated.
+\ex.\label{ex:ProgPStruct} [$\langle$the dog$\rangle$, [Prog [$_\text{VoiceP} \langle\text{the dog}\rangle$ run]]]
+
+I will make the simplifying assumption that the copy of \textit{the dog} in [Spec, Prog] is semantically vacuous\footnote{
+	At this stage, this is purely stipulative.
+	I suspect some version of this assumption is true, but a full investigation and justification of it is beyond the scope ot this thesis.
+} and discuss the Prog-VoiceP structure.
+The VoiceP is unremarkable, so I assume its meaning is the complete but tenseless event description in \cref{ex:VoicePSEM}.
+\ex.\label{ex:VoicePSEM} \textsc{sem}(VoiceP) = $\lambda e [\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
+
+Prog, then, takes this description as an argument, and ascribes progressive aspect to it.
+The standard, though perhaps na\"ive analysis of progressive aspect is that Prog takes a description of event $e$ as an argument, introduces a topic time $t$, and asserts that $t$ is included in the run-time of $e$.
+This predicts that ProgP encodes the predicate of times in \cref{ex:ProgPSEM1}
+\ex.\label{ex:ProgPSEM1} \textsc{SEM}(ProgP) =  $\lambda t \exists e [t \subseteq \textsc{time}(e)\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$ (first pass)
+
+However, since ProgP adjoins to VP and the resulting structure is interpreted as a conjunction, ProgP must be interpreted as a predicate of events.
+Therefore, I will modify the semantic analysis of Prog such that it introduces an event $e^{\prime}$ and asserts that $e^{\prime}$ is included in $e$.
+The final interpretation of the ProgP, is given in \cref{ex:ProgPSEM2}.
+\ex.\label{ex:ProgPSEM2} \textsc{sem}(ProgP) =  $\lambda e^{\prime} \exists e [e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$ (second pass)
+
+This interpretation will properly compose with \cref{ex:VPSEM} to yield the interpretation of the host-adjunct structure in \cref{ex:VPProgPSEM}
+\ex.\label{ex:VPProgPSEM} \textsc{sem}($\langle$ProgP, VP$\rangle$) = $\lambda e^{\prime} \exists e [ \textbf{see}(e^{\prime})\,\&\,\textsc{theme}(\textbf{the\_dog})(e^{\prime})\,\&\,e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
+
+So, the event of seeing the dog is included in the event of the dog running, meaning that the seeing occurred in the same space-time region as the running and therefore.
+This denotation along with the very nature of seeing and running allows us to infer from \cref{ex:VPProgPSEM} that we saw the running event.
+
+One could argue that this analysis is implausible as it requires that the seeing event is a part of the seemingly independant running event.
+On its face, this seems to imply an interdependecy between the two events, and, while it seems reasonable to say that the perception event depends on the perceived event, it is far from obvious that the perceived event depends on the perception event.
+This line of argumentation, I believe, confuses the issue at hand.
+
+Saying that the perception of an event is a subpart of that event, does imply that the event is dependent on it being percieved, but it does so in a very weak way.
+It is perhaps a truism of set theory and mereology to say that two complex objects are identical only if they consist of the same parts.
+So, if $x$ is a part of $e$ but not a part of $e^{\prime}$, the $e \neq e^{\prime}$.
+Similarly, a particular running event which is seen by some individual $x$, cannot be identical to a running event which is not seen by $x$.
+Note that this does not mean that the unseen running event is not a running event, only that it is a not a seen running event.
+
 \end{document}

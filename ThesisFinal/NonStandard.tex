@@ -10,6 +10,7 @@ This dissertation rests on a number of non-standard theoretical assumptions and 
 My defense of the assumptions, however, will not be an argument that they are true, as the truth of any theoretical statement ultimately depends on the empirical facts.
 Rather, my defense will actually be an offense; I will argue that the standard assumption is, in fact, ill-founded.
 So, in a sense, I will be rejecting standard assumptions rather than making non-standard ones.
+So, I will identify issues with the standard assumptions, and present non-standard ones which do not face those issues.
 The distinctions I draw, in contrast, will not be defended, but rather explained and clarified.
 
 \section{The $\Theta$-Criterion}
@@ -47,13 +48,13 @@ S-structures are derived by the applying of Move-$\alpha$ to D-structures, LFs a
 	\caption{The architecture of the grammar in LGB}
 	\label{fig:LGBYModel}
 \end{figure}
-The exact natures of the transformations are not important for this discussion.
+The exact formal properties of the transformations are not important for this discussion.
 What is important, is that all syntactic displacement is the result of one of these transformations.
 
 The second premise is the projection principle, which states that lexical properties must be represented at all levels of syntax.
 Since $\theta$-roles are lexical properties of (at least) verbs, they must be represented at all levels of syntax.
 Consider the verb \textit{hit}, whose lexical entry specifies that it needs a patient argument.
-The projection principle requires that at D-Structure and S-Structure \textit{hit} must have assigned a patient $\theta$-role to an argument and therefore, assuming the patient $\theta$-role is assigned to Comp,V, there must be a DP in the complement position of \textit{hit} at both D-Structure and S-Structure.
+The projection principle requires that at D-Structure and S-Structure \textit{hit} must have assigned a patient $\theta$-role to an argument and therefore, assuming the patient $\theta$-role is assigned to Comp,V, there must be a nominal in the complement position of \textit{hit} at both D-Structure and S-Structure.
 
 With these assumptions, it follows that no single argument can receive more than one $\theta$-role.
 Suppose there is a derivation in which a single argument X receives two $\theta$-roles $\Theta1$ and $\Theta2$.
@@ -67,11 +68,14 @@ If an argument cannot be multiply $\theta$-marked at D-Structure, then it cannot
 Thus we are able to derive the first clause of the $\theta$-criterion from other principles.
 These principles, however, have either been rejected or problematized since their statement in LGB.
 Since \textit{The Minimalist Program} \parencite{chomsky1995minimalist}, generative theories have largely dispensed with D-Structure and S-Structure.
-Without these levels of representation, the projection principle (as formulated in LGB) is effectively meaningless, and without the projection principle, there is no more basis for the first clause of the $\theta$-criterion.
+Without these levels of representation, the projection principle (as formulated in LGB) is effectively meaningless, and without the projection principle, there is no more basis for the first clause of the $\theta$-criterion.\footnote{
+	Note that this is far from a knock-down argument against the first clause of the $\theta$-criterion.
+	In fact, the $\theta$-criterion, as it is expressed in LGB may still hold, but in order to show this, we need empirical arguments.
+}
 Therefore, I will not be assuming the first clause of the $\theta$-criterion.
 
 \section{Last Resort}
-It almost goes without saying that the goal of the minimalist program is to clean up syntactic theory by explaining unnecessary principles in terms of necessary principles.
+The goal of the minimalist program is to clean up syntactic theory by explaining unnecessary principles in terms of necessary principles.
 In nearly one fell swoop, \textcite{chomsky1995minimalist} eliminates a number of the complications built into LGB theory (S-Structure and D-Structure chief among them).
 In \textit{The Minimalist Program} (MP), however, Chomsky was not able to explain two seeming imperfections: displacement and uninterpretable features.\footnote{
 	The framework developed in MP also does not explain projection/labelling, but Chomsky does not recognize this as an imperfection until ``Problems of projection'' \parencite{chomsky2013problems}.
@@ -96,34 +100,34 @@ In fact, several syntacticians expand Last Resort to External Merge arguing that
 This proposal is understandable from a historical perspective, but ultimately misguided in my opinion.
 
 Perhaps the most attractive aspect of a constrained Merge syntax is the purported gains in computational efficiency.
-To illustrate this, \textcite{frampton2008crash} consider the incomplete product of a doomed derivation in \Next
+To illustrate this, \textcite{frampton2008crash} consider the incomplete product of a doomed derivation in \Next.
 \ex. it to be believed Max to be happy
 
-A free Merge syntax, according to \textcite{frampton2008crash}, the derivation must continue for an indefinite time until a phase head is merged.
+In a free Merge syntax, according to \textcite{frampton2008crash}, the derivation must continue for an indefinite time until a phase head is merged.
 At this point the derivation will crash due to a Case Filter violation.
-A constrained Merge syntax, however, could be able to halt as soon as the derivation becomes doomed, say, when \textit{it} is merged.
-This would save us the indefinite number steps it takes to merge a phase head, and is therefore more efficient.
+A constrained Merge syntax, however, could halt as soon as the derivation becomes doomed, say, when \textit{it} is merged.
+This would save us the indefinite number of steps it takes to merge a phase head, and is therefore more efficient.
 This I take to be a species of the argument that free Merge systems are inefficient because, in addition to the infinite array of convergent derivations they must generate, they also generate an infinite array of crashing derivations, whereas constrained Merge systems only generate to ``convergent'' derivations.
-However, when we investigate the nature of constrained Merge, we can see that the purported gains in efficiency in one part of the system come at the expense of another part of that same system.
+However, as I show below, when we investigate the nature of constrained Merge, the purported gains in efficiency in one part of the system come at the expense of another part of that same system.
 Constrained Merge theories, in effect, rob Peter to pay Paul.
 
-At minimum, each version of the syntax will have a Merge operation and a Transfer operation.
+At minimum, abstracting away from Agree operations, each version of the syntax will have a Merge operation and a Transfer operation.
 So, the free Merge syntax will consist of a unconstrained Merge$_F$ and a constrained Transfer$_F$ as defined in \Next.
 \ex.
 \a. Merge$_F(\alpha,\beta) = \left\{ \alpha, \beta \right\}$ 
 \b. Transfer$_F(\gamma) = \langle\textsc{sem}(\gamma), \textsc{phon}(\gamma)\rangle$ iff Filter($\gamma$) = F\\
 (where $\alpha$, $\beta$, and $\gamma$ are syntactic objects.)
 
-A constrained Merge syntax, then, would be consist of a constrained Merge$_C$ and an unconstrained Transfer$_C$.
+A constrained Merge syntax, then, would consist of a constrained Merge$_C$ and an unconstrained Transfer$_C$.
 \ex.
 \a. Merge$_C(\alpha,\beta) =$ Merge$_F(\alpha,\beta)$ iff Satisfy($\alpha,\beta$) = T
-\b. Transfer$_C(\gamma) = \langle\textsc{sem}(\gamma), \textsc{phon}(\gamma)\rangle$
+\b. Transfer$_C(\gamma) = \langle\textsc{sem}(\gamma), \textsc{phon}(\gamma)\rangle$\\
 (where $\alpha$, $\beta$, and $\gamma$ are syntactic objects.)
 
-If we assume that both theories can be made descriptively adequate, then the Satisfy predicate will have the same net effect of the Filter predicate required for the free Merge system.
+If we assume that both theories can be made descriptively adequate, then the Satisfy predicate will have the same net effect as the Filter predicate required for the free Merge system.
 So, given any pair of syntactic objects $\alpha$ and $\beta$, Satisfy must be able to evaluate if Merge($\alpha,\beta$) is allowed.
-And since there are an infinite amount of deriveable syntactic objects, even in a constrained Merge syntax, Satisfy must be able to evaluate an infinity of possible $\beta$'s against each possible $\alpha$.
-For any given syntactic object, then, there is an indefinite amount of objects which will merge with that object and an indefinite amount that will not, and the only way to know if Satisfy is true of a pair of objects is to chack.
+And since there are an infinite number of deriveable syntactic objects, even in a constrained Merge syntax, Satisfy must be able to evaluate an infinity of possible $\beta$'s against each possible $\alpha$.
+For any given syntactic object, then, there is an indefinite number of objects which will merge with that object and an indefinite number that will not, and the only way to know if Satisfy is true of a pair of objects is to check.
 So, much like free Merge syntax suffers from an infinity of crashes, constrained Merge syntax suffers from an infinity of failed Merge operations.
 
 A constrained Merge theorist, might still object by saying that Satisfy is a local operation, while Filter is a global operation, and local operations are to be preferred if we care about computational complexity.
@@ -135,12 +139,12 @@ What is the most efficient procedure for assigning a grade to each quiz?
 Two types of procedure suggest themselves.
 The first, which I will call the Local Only procedure, is to assign each correct answer a value of 0.25 points and then add up all of the points.
 The second, which I will call the Local/Global procedure, it to assign each correct answer a value of 1 point, add up all of the points, and divide by 4 (perhaps with a calculator).
-Since humans are Very Good at counting by increments of 1, and calculators are Very Good at dividing by 4, while neither is Very Good at counting by increments of 0.25, the Local/Global procedure is likely to be more efficient than the Local Only procedure.
+Since humans are very good at counting by increments of 1, and calculators are very good at dividing by 4, while neither is very good at counting by increments of 0.25, the Local/Global procedure is likely to be more efficient than the Local Only procedure.
 The moral of this story: One machine's global procedure is another machine's local procedure.
 
 There is also a methodological rationale for preferring a free Merge framework which is slightly counterintuitive, so I would like to dwell on it for a moment.
 My reason for assuming a free Merge framework is that it creates, or rather, lays bare, more problems for us to solve.
-So, why is this preferrable?
+So, why is this preferable?
 Shouldn't we prefer the theory with fewer problems?
 Inuitively, we should prefer the less problematic theory, but this all depends on how we count a theory's problems.
 I would like to argue that, while free Merge theories pose a greater number of problems than constrained Merge theories, the sheer weight of the problems posed by each type of theory is equal to that of the other.
@@ -154,10 +158,10 @@ So-called ``filters'' are not attempts at explanation, but descriptions of gener
 Take, for instance, the remaining clause of the $\theta$-criterion, given in \Next.
 \ex. [E]ach $\theta$-role is assigned to one and only one argument. \parencite[36]{chomsky1981lectures}
 
-To propose a $\theta$-filter, then would be to say that those derivations which violate \Last crash at an interface, presumably the CI interface.
+To propose a $\theta$-filter, then, would be to say that those derivations which violate \Last crash at an interface, presumably the CI interface.
 For a theorist, this filter is actually a question or series of questions: Why is it that only those derived structures which satisfy \Last are valid CI objects?
 That question may not be empirical, but it invites hypotheses which may lead to empirical questions which we don't currently know how to ask.
-Very likely, due to the interface-nature of the questions, their answers will not be narrowly linguistic.
+Very likely, due to the interface nature of the questions, their answers will not be narrowly linguistic.
 
 Now, consider the situation constrained Merge puts the theorist in.
 For \textcite{frampton2008crash}, the $\theta$-criterion is expressed by ``selectional features'' on heads which must be satisfied immediately.
@@ -227,7 +231,7 @@ This sense would be useful if this dissertation were an intellectual history of 
 
 The second sense, which I will call the broad sense, is that \textit{syntax} is the study (or description) of the form and arrangement of symbolic representations.
 Under this sense, the study of syntax would be a part of the study of logic, programming languages, arithmetic, etc.
-Furthermore,\textcite[174]{chomsky2000new}, discussing this sense, argues that most of what we call \textit{semantics} and \textit{phonology} would be classified as syntax under this sense.\footnote{Based on my discussion of this sense with phonologists and semanticists, this may be the most controversial claim Chomsky has ever made.}
+Furthermore, \textcite[174]{chomsky2000new}, discussing this sense, argues that most of what we call \textit{semantics} and \textit{phonology} would be classified as syntax under this sense.\footnote{Based on my discussion of this sense with phonologists and semanticists, this may be the most controversial claim Chomsky has ever made.}
 This sense will prove useful in this dissertation, so I will retain it.
 
 The third sense, which I will call the narrow sense, is that \textit{syntax} is a mental module characterized by a computational procedure that generates an unbounded array of structured form\footnote{I use the term \textit{form} here to refer to all possible expressive modalities of language}-meaning pairs.
@@ -258,7 +262,7 @@ That is, this type of work makes use of tree diagrams and expressions of typed l
 In this sense, the interface is not an object of study per se, but a sub-discipline.
 
 In the narrow sense, the syntax-semantics interface refers to the interface between the Narrow Syntax and the CI system.
-This results in very different sorts of analyses compared to the standard analyses, analyses that posit computational procedures rather than merely representing expressions in two ways.
+Assuming this sense results in very different sorts of analyses compared to the standard analyses, analyses that posit computational procedures rather than merely representing expressions in two ways.
 In many ways, however, the term \textit{interface} in its narrow sense is a misnomer, as there are likely no mental objects that we might call interfaces.
 As best we can tell, the mind consists of a set of modules and a non-modular central system \parencite{fodor1983modularity,fodor2001mind}.
 An interface, then, emerges wherever two modules interact with each other, or perhaps where a module interacts with the central system.
@@ -268,7 +272,7 @@ Being modules, each will consist in a set of computational operations (P1 and P2
 Suppose we posit an interface I1, which consists in an operation P3 that converts objects of L1 into objects of L2.
 What is I1, then, but a module that has interfaces with M1 and M2?
 If I1 is a module, are its interfaces with M1 and M2 also modules?
-If so, then we seem to be stuck with an infite regress.
+If so, then we seem to be stuck with an infinite regress.
 If not, then interfaces are a special kind of module, but this would raise further questions with respect to their evolutionary origins.
 
 If there are no mental objects that we might call interfaces, then how are we to study them?

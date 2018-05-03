@@ -103,7 +103,7 @@ The second issue is that resP and VP are now adjoined, meaning they compose by c
 This is counterintuitive, however, since resultatives are inherently asymmetric, with the verb event causing the adjective state.
 I will address each of these in turn below.
 \subsection{Sideward movement}
-In \ref{tree:hammer-flat}, the object DP moves from [Spec res] to [Comp V].
+In \cref{fig:hammer-flat}, the object DP moves from [Spec res] to [Comp V].
 The movement ``chain'' this operation forms is problematic due to the fact that the head of the chain does not c-command the tail.
 Although this type of so-called sideward movement is generally barred, \textcite{nunes2001sideward} argues for a restricted version of sideward movement.
 Nunes argues that head movement and parasitic gaps both require a sideward movement operation, as they both create non-c-command dependencies.
@@ -142,7 +142,7 @@ What did Mary hear without seeing.\\
 				    [$\langle$T$\rangle$]
 				    [VP
 					    [VP
-						    [V\\see,align=center]
+						    [V\\hear,align=center]
 						    [$\langle$DP$\rangle$,name=CompV1]
 					    ]
 					    [PP
@@ -157,8 +157,8 @@ What did Mary hear without seeing.\\
 		    ]
 	    ]
     ]
-    \draw[->] (CompV2) to[out=south west, in=south] (CompV1);
-    \draw[->] (CompV1) to[out=south, in=south] (specCP);
+    \draw[->] (CompV2) .. controls +(south:1cm) and +(south:5cm) .. (CompV1);
+    \draw[->] (CompV1) .. controls +(south west:4.5cm) and +(south:2cm) ..  (specCP);
 \end{forest}
 
 According to the standard definition of Merge, sideward movement should be impossible.
@@ -185,7 +185,7 @@ To see how a Copy+Merge theory of movement works, consider the derivation of pas
 	3 & $\{$[[the, boy], [T, [ \textsc{Voice}$_{pass}$ [see, [the, boy]]]]]$\}$ &\\
 \end{tabular}
 
-The Copy+Merge theory of movement allows us to derive sideward movement by holding the copied object in the workspace while another tree is built as in the derivation of \ref{tree:hammer-flat} in \Next.
+The Copy+Merge theory of movement allows us to derive sideward movement by holding the copied object in the workspace while another tree is built as in the derivation of \cref{fig:hammer-flat} in \Next.
 \ex.
 \begin{tabular}[t]{lll}
 	\textbf{Stage} & \textbf{Workspace} & \\
@@ -213,9 +213,9 @@ The Copy+Merge theory of movement allows us to derive sideward movement by holdi
 	5 & \multicolumn{2}{l}{$\left\{\text{[[hammer, [the, metal]], [[the, metal], [res [\dots]]]]}\right\}$}\\
 \end{tabular}
 
-Note that at stage 5 of the derivation in \Last the syntactic object in the workspace is representable as \ref{tree:hammer-flat}.
+Note that at stage 5 of the derivation in \Last the syntactic object in the workspace is representable as \cref{fig:hammer-flat}.
 
-In order to constrain sideward movement, Nunes notes that its immediate, results such as the tree in \ref{tree:hammer-flat}, are unpronounceable.
+In order to constrain sideward movement, Nunes notes that its immediate, results such as the tree in \cref{fig:hammer-flat}, are unpronounceable.
 Assuming that decisions regarding linear order depend on c-command relations, and part of linearization is deciding which copy in a movement chain is to be pronounced, we would be unable to make a definitive linearization statement for the derived structure in \Last.
 In order to linearize the movement chain of \textit{the hammer}, there must be a copy which c-commands all other copies, meaning there must be a subsequent move from theme position to grammatical object position, which I represent as [Spec, AgrO]\footnote{
 	The choice to include AgrO in my structures does not indicate a particular commitment on my part to the existence of such a head, but rather to the fact that Object position seems to be distinct from internal argument position, and higher than VP.

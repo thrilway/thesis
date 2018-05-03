@@ -63,8 +63,7 @@ According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{
 	\label{fig:KratzerTree}
 \end{figure}
 If we were to modify Kratzer's analysis, so that \textit{the metal} is the complement of \textit{hammer}, then we would need to attach the result phrase in a different position.
-I propose that the result phrase is adjoined to the VP, allowing the DP to merge directly with the verb as shown in \Next.
-\ex.
+I propose that the result phrase is adjoined to the VP, allowing the DP to merge directly with the verb as shown in \cref{fig:hammer-flat}.
 \begin{figure}[h]
 	\centering
 	{\small
@@ -170,9 +169,8 @@ The operation Copy adds an object X to the workspace of a derivation provided th
 \ex. For a workspace W and a syntactic object X, Copy(W, X) = $W\cup \{X\}$ iff there is a syntactic object Z $\in$ W and Z contains X.
 
 Merge, then is a simpler operation which replaces two members of a workspace with the set containing them. 
-To see how a Copy+Merge theory of movement works, consider the derivation of passivization in \Next.
-\ex. 
-\begin{tabular}[t]{lll}
+To see how a Copy+Merge theory of movement works, consider the derivation of passivization in \cref{tab:EngPass}.
+\begin{longtabu}[t]{lll}
 	\textbf{Stage} & \textbf{Workspace} & \\
 	\cline{1-2}
 	1 & $\{$[T, [ \textsc{Voice}$_{pass}$ [see, [the, boy]]]]$\}$ & Copy([the, boy])\\
@@ -183,11 +181,12 @@ To see how a Copy+Merge theory of movement works, consider the derivation of pas
 		\end{Bmatrix*}
 		$ & Merge([the, boy], [T \ldots])\\
 	3 & $\{$[[the, boy], [T, [ \textsc{Voice}$_{pass}$ [see, [the, boy]]]]]$\}$ &\\
-\end{tabular}
+	\caption{The derivation of an English Passive}
+	\label{tab:EngPass}
+\end{longtabu}
 
-The Copy+Merge theory of movement allows us to derive sideward movement by holding the copied object in the workspace while another tree is built as in the derivation of \cref{fig:hammer-flat} in \Next.
-\ex.
-\begin{tabular}[t]{lll}
+The Copy+Merge theory of movement allows us to derive sideward movement by holding the copied object in the workspace while another tree is built as in the derivation of \cref{fig:hammer-flat} in \cref{tab:hammer-flat}.
+\begin{longtabu}[t]{lll}
 	\textbf{Stage} & \textbf{Workspace} & \\
 	\cline{1-2}
 	1 & $\left\{ \text{[[the, metal], [res, [\dots]]]} \right\}$ & Copy([the, metal])\\
@@ -211,7 +210,9 @@ The Copy+Merge theory of movement allows us to derive sideward movement by holdi
 	\end{Bmatrix*}
 	$ & Merge$\begin{pmatrix*}[l]\text{[hammer, [the, metal]]},\\ \text{[[the, metal], [res [\dots]]]}\end{pmatrix*}$\\
 	5 & \multicolumn{2}{l}{$\left\{\text{[[hammer, [the, metal]], [[the, metal], [res [\dots]]]]}\right\}$}\\
-\end{tabular}
+	\caption{The derivation of an English resultative VP}
+	\label{tab:hammer-flat}
+\end{longtabu}
 
 Note that at stage 5 of the derivation in \Last the syntactic object in the workspace is representable as \cref{fig:hammer-flat}.
 
@@ -221,8 +222,9 @@ In order to linearize the movement chain of \textit{the hammer}, there must be a
 	The choice to include AgrO in my structures does not indicate a particular commitment on my part to the existence of such a head, but rather to the fact that Object position seems to be distinct from internal argument position, and higher than VP.
 	Further, I assume that either the movement to object position is covert, or there is head raising of the verb, such that it precedes the object.
 }
-in \Next.
-\ex.
+in \cref{fig:HammerFlatAgrO}.
+\begin{figure}[h]
+	\centering
 {\small
 \begin{forest}
     nice empty nodes,sn edges,baseline,
@@ -256,6 +258,9 @@ in \Next.
     \draw[->] (compV) to[out=south west, in=south] (obj); 
 \end{forest}
 }
+	\caption{An English resultative AgrOP}
+	\label{fig:HammerFlatAgrO}
+\end{figure}
 
 Since the copy of \textit{the metal} in [Spec, AgrO] c-commands all of the other copies, it will be pronounced and the lower copies will be deleted at the SM interface.
 So, assuming some mechanism for sideward movement, we are able to modify Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives to be compatible with UTAH.
@@ -264,8 +269,9 @@ Since we have modified Kratzer's analysis, it is worth asking if our version wil
 In the next section, I argue that not only are we able to retain the proper interpretation, but we are able to do so while assuming a simpler compositional system.
 \section{Composing resultatives}
 \textcite{kratzer2004building} adopts a neo-Davidsonian semantics for resultatives, meaning they are analyzed as descriptions of eventualities rather that merely as relations between entities.
-Her syntactic analysis is given in \Next for reference.
-\ex. \textbf{Kratzer's (2005) structural analysis of resultatives}\\
+Her syntactic analysis is repeated in \cref{fig:KratzerTreeRedux} for reference.
+\begin{figure}[h]
+	\centering
 \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -285,7 +291,9 @@ Her syntactic analysis is given in \Next for reference.
     ]
     \draw[->] (SCDP) to[out=south west, in=south] (specV);
 \end{forest}
-
+	\caption{Kratzer's (2005) structural analysis of resultatives}
+	\label{fig:KratzerTreeRedux}
+\end{figure}
 According to this analysis, the small clause \textit{the metal flat} is interpreted as the state description in \Next, where the domain $D_s$ is the domain of eventualities.
 \ex. $\llbracket\text{SC}\rrbracket = \lambda s_s \left[ \textsc{state}(s) \& \textbf{flat}(\textbf{the\_metal})(s) \right]$
 
@@ -296,8 +304,9 @@ Note that Kratzer analyses resultative verbs as intransitives, meaning they do n
 Finally, Kratzer analyses the result head as a higher order function, which expresses a causal relation between the event expressed by the verb and the state expressed by the small clause.
 \ex. $\llbracket\textit{res}\rrbracket = \lambda P_{\langle s,t\rangle} \lambda e_s \exists s_s \left[\textsc{event}(e) \& \textsc{state}(s) \& P(s) \& \textsc{Cause}(s)(e)\right]$
 
-So, for Kratzer, the typed LF of \textit{hammer the metal flat} is as in \Next.
-\ex.
+So, for Kratzer, the typed LF of \textit{hammer the metal flat} is as in \cref{fig:TypedLFKratzer}, and, according to her, \textit{hammer} and the resP compose by an operation she calls Event Identification \parencite{kratzer1996severing} which, in this instance, is equivalent to Predicate Modification generalized to eventualities.
+\begin{figure}[h]
+	\centering
 \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -313,8 +322,9 @@ So, for Kratzer, the typed LF of \textit{hammer the metal flat} is as in \Next.
 		    ]
 	    ]
 \end{forest}
-
-Kratzer proposes that \textit{hammer} and the resP compose by an operation she calls Event Identification \parencite{kratzer1996severing} which, in this instance, is equivalent to Predicate Modification generalized to eventualities.
+	\caption{The LF of Kratzer's resultatives}
+	\label{fig:TypedLFKratzer}
+\end{figure}
 \ex. \textbf{Predicate Modification (eventuality version)}\\
 If $\alpha$ is a branching node with daughters $\beta$ and $\gamma$, both of which are of type $\langle s,t\rangle$, the $\llbracket\alpha\rrbracket = \lambda e_s [\llbracket\beta\rrbracket(e) \& \llbracket\gamma\rrbracket(e)]$
 
@@ -328,7 +338,8 @@ So, the interpretation of the VP in \LLast, can be derived as in \Next.
 
 So, the hammering event is identical to the event of causing the flatness state.
 The same compositional process can be adapted to the sideward movement structure I propose, as the VP and resP in my structures are still predicted to be predicates of eventualities.
-\ex.
+\begin{figure}[h]
+	\centering
 \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -347,6 +358,9 @@ The same compositional process can be adapted to the sideward movement structure
 	    ]
 	    ]
 \end{forest}
+	\caption{The LF of a resultative with sideward movement}
+	\label{fig:TypedLFSideward}
+\end{figure}
 
 Thus, with these adaptations, Kratzer's analysis of resultatives can be made UTAH-compliant.
 In the remainder of this chapter, I will discuss the parametric analysis of resultatives that I will be assuming.

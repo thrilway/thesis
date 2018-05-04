@@ -5,9 +5,10 @@
 \documentclass[MilwayThesis]{subfiles}
 
 \begin{document}
-So far, I have proposed a theory of syntax, a structural analysis of resultatives, and an analysis of the resultative parameter.
+So far, I have clarified and developed my theoretical assumptions, and proposed a structural analysis of resultatives and an analysis of the resultative parameter.
 Although they share a justification in minimalism, each of these is an independant proposal, and as such their combination must be justified.
-In this chapter I show that the combination of my proposals work together.
+That is, I have argued that each component is plausible on its own, but it is altogether possible that they are not consistent with each other, or they are not able to give the correct empirical results.
+In this chapter I argue that they are consistent with each other, and that, together, they can provide an explanation of the resultative parameter.
 I do so by first showing that the structure in \autoref{fig:ResStruct} can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then by showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
 \begin{figure}[h]
 	\centering
@@ -44,14 +45,14 @@ I do so by first showing that the structure in \autoref{fig:ResStruct} can be de
 	\label{fig:ResStruct}
 \end{figure}
 
-In the first section, I will describe a derivation of the English resultative VP \textit{hammer the metal flat} and show that it converges at the CI interface (taking SM convergence for granted).
-In the second section, I will describe two derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash, while avoiding that crash blocks the derivation.
+In the first section, I will give a derivation of the English resultative VP \textit{hammer the metal flat} and show that it converges at the CI interface (taking SM convergence for granted).
+In the second section, I will give two possible derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash, while avoiding that crash blocks the derivation.
 
 Before describing the derivations, I will reiterate and clarify my assumptions regarding the nature of the syntactic derivation.
 I will adopt a slightly simplified version of the formal grammar developed by \textcite{collins2016formalization} which I will augment slightly based on new assumptions.
 A \textit{derivation} is defined as a finite sequence of \textit{stages}, $\langle S_1, S_2 \ldots S_n\rangle$.
 Each stage $S_i$ in a derivation is a pair $\langle LA_i, W_i\rangle$, where $LA_i$ is a set of lexical items called the \textit{lexical array} and $W_i$ is a set of syntactic objects called the \textit{workspace}.
-The computational operations (Merge, Select, Copy, Transfer) play the role that rules on inference play in deductive systems, that is, they map derivational stages onto subsequent stages.
+The computational operations (Merge, Select, Copy, Transfer) play the role that rules of inference play in deductive systems, that is, they map derivational stages onto subsequent stages.
 A given stage $S_i$ \textit{derives} a subsequent stage $S_{i+1}$ if and only if some operation, applied to $S_i$, yields $S_{i+1}$.
 
 \subsection{A note on phases, subderivations and Transfer}
@@ -155,12 +156,13 @@ The formal derivation of the resP is given in \autoref{tab:EngResP} and the resu
 \label{fig:EngResP}
 \end{figure}
 
-Assuming res is a phase head, its complement $\beta$ is trasferred and must be labelled along with the SOs contained in $\beta$.
+Assuming res is a phase head, its complement $\beta$ is trasferred and must be labelled along with the SOs it contains.
 The small clause $\beta$ ($\left\{_\beta \langle \text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}$) is a Phrase-Phrase structure, but since one of its constituent parts, the DP, is a lower copy, that part is invisible to the labelling algorithm.
 Therefore, only the adjective ($\left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\}$) is available to provide a label.
-Assuming roots are inert for labelling, and uninflected categorizing heads are able to label, the label of $\alpha$, and therefore the label of $\beta$, is $adj_\emptyset$.
+Assuming that roots are inert for labelling, and that uninflected categorizing heads can label, $adj_\emptyset$ is selected to label $\beta$.
+Since $\alpha$ is a head-root structure, it is labelled by the categorizing head $adj_\emptyset$.
 So, $\beta$ is succesfully labelled and therefore convergent at the CI interface.
-\ex. LA$(\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}) = \left[_{adj} \langle\text{DP}\rangle, \left[_{adj} adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
+\ex. LA$(\left\{_\beta \langle\text{DP}\rangle, \left\{_\alpha adj_\emptyset, \sqrt{\textsc{flat}} \right\} \right\}) = \left[_{adj}\, \langle\text{DP}\rangle, \left[_{adj}\, adj_\emptyset, \sqrt{\textsc{flat}} \right]  \right]$
 
 Since $\gamma$ and $\delta$ are not transferred along with $\beta$, we do not need to discuss their labels yet.
 
@@ -303,10 +305,44 @@ Since, almost by definition, adjuncts are not selected by their hosts\footnote{
 } suggesting that it is unlikely that there is agreement between adjuncts and their hosts.
 If there is no agreement, then the only way for $\zeta$ to be labellable is if one of its parts is inert.
 Since host-adjunct structures, again almost by definition, have the properties of the host and not those of the adjunct, it is reasonable to think that the host is active and the adjunct inert.
-As such, I will assume that the host $\beta$ provides the label for $\zeta$, and $\delta$ is inert.
-This assumption will be clarified and justified in \cref{sec:modifications}. 
+I will, therefore, provisionally assume that the host $\beta$ provides the label for $\zeta$, and $\delta$ is inert.
+This matter will be addressed in \cref{sec:modifications}.
+\begin{figure}[h]
+	\centering
+{\small
+	\begin{forest}
+		nice empty nodes,sn edges,baseline
+		[{$\langle\varphi,\varphi\rangle$}
+			[DP$_\varphi$
+				[the metal,roof]
+			]
+			[AgrO
+				[AgrO$_{\varphi}$]
+				[$v$
+					[$v$
+						[$v$
+							[$v$]
+							[$\sqrt{\textsc{hammer}}$]
+						]
+						[$\langle\text{DP}\rangle$]
+					]
+					[res
+						[$\langle\text{DP}\rangle$]
+						[$res$
+							[res]
+							[flat]
+						]
+					]
+				]
+			]
+		]
+	\end{forest}
+}
+	\caption{A labelled English resultative}
+	\label{fig:EngVPLabelled}
+\end{figure}
 
-So, in this section we have seen how a convergent resultative is derived in English.
+In this section we have seen how a convergent resultative is derived in English.
 The next section, however, is truly where the rubber meets the road.
 In the next section I will show that the same grammar that generates resultatives in English will fail to generate them in French.
 As we will see, the crucial operation, the one which will be blocked in French, is the movement of DP from the Small Clause.

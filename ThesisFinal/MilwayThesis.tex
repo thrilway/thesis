@@ -14,7 +14,13 @@
 %\usepackage[margin=1in]{geometry}
 \usepackage[british]{babel}
 \usepackage[]{csquotes}
-\usepackage[backend=biber,style=authoryear,language=british,dashed=true]{biblatex}
+\usepackage[
+	backend=biber,
+	style=authoryear,
+	citestyle=authoryear-comp,
+	language=british,
+	dashed=true
+]{biblatex}
 \DeclareLanguageMapping{british}{british-apa}
 \usepackage[]{graphicx}
 
@@ -38,6 +44,7 @@
 	\renewcommand{\thefigure}{\ref{#1}}
 	\captionsetup{list=no}
 	\caption{#2 (repeated from page \pageref{#1})}
+	\addtocounter{figure}{-1}
 }
 \usepackage[final]{hyperref}
 \usepackage{linguex}
@@ -120,6 +127,7 @@
   \z.
 }
 \setcounter{secnumdepth}{3}
+\frenchspacing
 \graphicspath{ {./img/} }
 \addbibresource{../Thesis.bib}
 \degree{Doctor of Philosophy}

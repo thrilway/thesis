@@ -55,9 +55,6 @@ Each stage $S_i$ in a derivation is a pair $\langle LA_i, W_i\rangle$, where $LA
 The computational operations (Merge, Select, Copy, Transfer) play the role that rules of inference play in deductive systems, that is, they map derivational stages onto subsequent stages.
 A given stage $S_i$ \textit{derives} a subsequent stage $S_{i+1}$ if and only if some operation, applied to $S_i$, yields $S_{i+1}$.
 
-\subsection{A note on phases, subderivations and Transfer}
-I am assuming phase theory, which states that a derivation of, say, a clause proceeds via subderivations, and the objects derived by these subderivations are called phases.
-
 \section{A successful derivation in English}\label{sec:EngDeriv}
 In many ways, successful derivations, like happy families, are uninteresting, but they still must be demonstrated in order to show where the crashing derivations go wrong.
 
@@ -166,8 +163,12 @@ So, $\beta$ is succesfully labelled and therefore convergent at the CI interface
 
 Since $\gamma$ and $\delta$ are not transferred along with $\beta$, we do not need to discuss their labels yet.
 
-Before deriving the verb phrase, we must first Copy \textit{the metal}, placing it and the resP $\delta$ in the new lexical array.
 We then derive the next phase as in \autoref{tab:EngVP}.
+Note that resP and the DP arein the initial lexical array for this derivation.
+While this stipulation is necessary to derive the next phase, a number of aspects of it are poorly understood.
+I believe that this lack of understanding is directly related to the nature of the Transfer operation, which seems to be a stand-in for the interfaces.
+Since a full understanding of the interfaces requires an entire research program, it is decidedly beyond the scope of this thesis, and I will make do with stipulation here.
+
 The unlabelled structure is given in \autoref{fig:EngVP}.
 \begin{longtabu}{llll}
 \textbf{Stage} & \textbf{LA} & \textbf{Workspace} &\\

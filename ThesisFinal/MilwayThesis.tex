@@ -33,7 +33,12 @@
 \usepackage[]{longtable}
 \usepackage{tabu}
 \usepackage{subcaption}
-
+\usepackage{caption}
+\newcommand{\repeatcaption}[2]{%
+	\renewcommand{\thefigure}{\ref{#1}}
+	\captionsetup{list=no}
+	\caption{#2 (repeated from page \pageref{#1})}
+}
 \usepackage[final]{hyperref}
 \usepackage{linguex}
 \renewcommand{\Exarabic}{\thechapter.\arabic} 

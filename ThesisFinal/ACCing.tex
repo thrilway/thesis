@@ -11,6 +11,39 @@
 \begin{document}
 Another issue with my account has to do with the sideward movement operation.
 Recall that in order to derive an adjectival resultative, a DP must move sideward from the resP adjunct to the VP as in \cref{fig:ResStruct}.
+\begin{figure}[h]
+	\centering
+	{\small
+\begin{forest}
+    nice empty nodes,sn edges,baseline,
+%    for tree={
+%    calign=fixed edge angles,
+%    calign primary angle=-30,calign secondary angle=60}
+    [VP
+	    [VP
+		    [hammer]
+		    [DP[the metal,roof,name=compV]]
+	    ]
+	    [resP
+		    [$\langle$DP$\rangle$,name=specRes]
+		    [
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [
+					    [adj]
+					    [\textsc{flat}]
+				    ]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south] (specRes);
+    \draw[->] (specRes) to[out=south, in=south east] (compV);
+\end{forest}
+}
+\repeatcaption{fig:ResStruct}{The structure of a resultative}
+\end{figure}
 Note also that that sideward movement operation seems to be obligatory, that is, the DP that originates in the resP must also appear as the theme of the VP.
 This obligatoriness can be seen in the fact that \cref{ex:double-theme-res} is ungrammatical.
 \ex.*  Sam [$_{VP}$ hammered the nail] [$_{resP}$ the planks together].\label{ex:double-theme-res}\\

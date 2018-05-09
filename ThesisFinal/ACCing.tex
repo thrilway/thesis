@@ -567,6 +567,7 @@ Assuming the hypothesized mapping in \Last is empirically justified, we would ne
 This would require us to show that the mapping between, say, head-labelling and function application is as tight as the mapping between asymmetric c-command and linear precedence.
 Such a discussion, however, is beyond the scope of this thesis.
 \section{Explaining ACC-ing clause subjects}
+\subsection{Introduction}\label{sec:ECP}
 With these modifications of label theory in place, we can consider how to account for the distribution of ACC-ing clause subjects.
 First, I will explain the fact that, in the case of complement ACs, the subject DP cannot move.
 This explanation will essentially be the same as the explanation of ECP effects given in \cite{chomsky2015problems}.
@@ -610,10 +611,10 @@ So, the AC which is to be adjoined to the host VP has the structure in \cref{fig
 	\caption{The structure of a ProgP}
 	\label{fig:ProgPStruct}
 \end{figure}
-The next stages of the derivation requires the DP \textit{Joanna} to move out of the AC, leaving us with an unlabellable structure as per the discussion above.
+The next stages of the derivation requires the DP \textit{Joanna} to move out of the AC, leaving us with an unlabellable structure as per the discussion above in \cref{sec:ECP}.
 However, a derivation doesn't necessarily crash if it's derived structure is unlabellable, but rather it crashes when LA tries to label an unlabellable structure.
-Since the AC in this case is adjoined to VP, and, by hypothesis, LA operates only on the host of a host-adjunct structure, then the AC is not processed by LA.
-If the AC is not processed by LA, then it doesn't matter whether the AC is labellable or unlabellable.
+Since the AC in this case is adjoined to VP, and, by hypothesis, the labelling algorithm operates only on the host of a host-adjunct structure, then the AC is not processed by the labelling algorithm.
+If the AC is not processed by the labelling algorithm, then it doesn't matter whether the AC is labellable or unlabellable.
 The content of an adjunct does not matter in determining the labelling of the host.
 
 \subsection{DPs must move from adjunct ACC-ing clauses}\label{sec:DPMustMove}
@@ -676,21 +677,24 @@ The adjunct $\delta$ will be null-labelled, as represented in \cref{ex:AdjunctCI
 So, DP \textit{the woman} and the VoiceP \textit{the woman teach her students} are predicated of the same extramental entity $e$.
 In other words, there is some entity $e$ which is both \textit{the woman} and an event of the woman teaching her students.
 Notice, however, that the two instances of \textit{the woman} in $\delta$ are not distinct SOs but occurrences of a single SO.
-Despite the fact that these two expressions are identical, they are interpreted as being predicated of two disctint entities.
+Despite the fact that these two expressions are identical, they are interpreted as being predicated of two distinct entities.
 The upper copy is predicated of some event $e$, while the lower copy is predicated of some entity $x$ which participates in the event of teaching students.
 If these copies are supposed to be identical, it seems like a contradiction to say that they are predicated of distinct entities.
 This contradiction, I propose, is the reason that DPs must move from specifiers of adjunct ACs.
+
+If, on the other hand the DP in [Spec, Prog] is a lower copy, then it can either be ignored by the CI system or treated as a variable.
+In either case, it will not be treated as a predicate, and therefore cannot be predicated of two distinct sorts of entities.
 \subsection{Generalizing the ACC-ing results}
 In the previous section, I offered an explanation for the fact that, if an AC is adjoined to a VP, then its subject must move out of the AC.
 No part of the explanation, however, depended on any inherent property of the AC, but rather on the fact that the AC is adjoined, and the fact that the subject DP was internally merged in subject position. 
-So, this leads us to the generalization in \cref{ex:AdjunctGen}, which I restate schamatically in \cref{ex:AdjunctGenSchema}.
+So, this leads us to the generalization in \cref{ex:AdjunctGen}, which I restate schematically in \cref{ex:AdjunctGenSchema}.
 \ex.* $\langle \left\{ \text{DP}_{i} \left\{ \dots t_i \dots \right\} \right\}, \text{XP}\rangle$\label{ex:AdjunctGenSchema}\\
 ($^\textsc{ok}\langle \left\{ t_{i} \left\{ \dots t_i \dots \right\} \right\}, \text{XP}\rangle$)
 
-Note that this seems to be violated by sentences like \cref{ex:AbsoluteClause}, where the modifier AC has its subject in situ.
+Note that this seems to be violated by sentences like \cref{ex:AbsoluteClause}, where the modifier AC has its subject \textit{in situ}.
 \ex. Her order having arrived late, Kinza was in a sour mood.\label{ex:AbsoluteClause}
 
-The AC in this sentnece however, is a sort of topic, and, by hypothesis, topical expressions are merged in a Topic projection rather than adjoined.
+The AC in this sentence however, is a sort of topic, and, by hypothesis, topical expressions are merged in a Topic projection rather than adjoined.
 So, the restriction in question does not apply to \cref{ex:AbsoluteClause}.
 
 Turning back to resultatives, we can see that the proposed structure included the adjunction of a resP to a VP.

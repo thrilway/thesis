@@ -567,7 +567,6 @@ Assuming the hypothesized mapping in \Last is empirically justified, we would ne
 This would require us to show that the mapping between, say, head-labelling and function application is as tight as the mapping between asymmetric c-command and linear precedence.
 Such a discussion, however, is beyond the scope of this thesis.
 \section{Explaining ACC-ing clause subjects}
-\subsection{Introduction}\label{sec:ECP}
 With these modifications of label theory in place, we can consider how to account for the distribution of ACC-ing clause subjects.
 First, I will explain the fact that, in the case of complement ACs, the subject DP cannot move.
 This explanation will essentially be the same as the explanation of ECP effects given in \cite{chomsky2015problems}.
@@ -611,9 +610,9 @@ So, the AC which is to be adjoined to the host VP has the structure in \cref{fig
 	\caption{The structure of a ProgP}
 	\label{fig:ProgPStruct}
 \end{figure}
-The next stages of the derivation requires the DP \textit{Joanna} to move out of the AC, leaving us with an unlabellable structure as per the discussion above in \cref{sec:ECP}.
+The next stages of the derivation requires the DP \textit{Joanna} to move out of the AC, leaving us with an unlabellable structure as per the discussion immediately preceding this subsection.
 However, a derivation doesn't necessarily crash if it's derived structure is unlabellable, but rather it crashes when LA tries to label an unlabellable structure.
-Since the AC in this case is adjoined to VP, and, by hypothesis, the labelling algorithm operates only on the host of a host-adjunct structure, then the AC is not processed by the labelling algorithm.
+Since the AC in \cref{fig:ProgPStruct} is adjoined to VP in this case, and, by hypothesis, the labelling algorithm operates only on the host of a host-adjunct structure, then the AC is not processed by the labelling algorithm.
 If the AC is not processed by the labelling algorithm, then it doesn't matter whether the AC is labellable or unlabellable.
 The content of an adjunct does not matter in determining the labelling of the host.
 
@@ -661,13 +660,13 @@ Consider the illicit adjunct AC structure in \cref{fig:IllicitAdjunctAC}.
 \usebox{0}
 \mathclose{\resizebox{1.2\width}{\ht0}{$\Bigg\rangle$}}
 \]
-\caption{An illicit adjunct AC structure ($\gamma$ adjoined to $\beta$)}
+\caption{An illicit adjunct AC structure ($\delta$ adjoined to $\beta$)}
 	\label{fig:IllicitAdjunctAC}
 \end{figure}
 When the host-adjunct structure is finally transferred as part of a larger phase, only the host $\beta$ will be labelled.
-Neither the pair $\langle\delta,\beta\rangle$, representing the host-adjunct structure, nor the adjunct $\delta$ itself will undergo labelling at this stage.
+Neither the pair $\langle\delta,\beta\rangle$, representing $\delta$ adjoined to $\beta$, nor the adjunct $\delta$ itself will undergo labelling at this stage.
 As such, both of these objects will be null-labelled at CI, and therefore, interpreted conjunctively.
-This is expected for host-adjunct structures, but when we consider the interpretation of $\delta$, we can see in issue with the structure in \cref{fig:IllicitAdjunctAC}.
+This is expected for host-adjunct structures, but when we consider the interpretation of $\delta$, we can see an issue with the structure in \cref{fig:IllicitAdjunctAC}.
 
 The adjunct $\delta$ will be null-labelled, as represented in \cref{ex:AdjunctCI}, and therefore interpreted conjuctively as shown in \cref{ex:AdjunctSEM}.
 \ex.\label{ex:AdjunctCI} [$_{\emptyset}$ [the woman]$_i$, [$_{\emptyset}$ Prog, [$_\text{VoiceP}$ the woman$_i$ teach her students]]]
@@ -695,7 +694,63 @@ Note that this seems to be violated by sentences like \cref{ex:AbsoluteClause}, 
 \ex. Her order having arrived late, Kinza was in a sour mood.\label{ex:AbsoluteClause}
 
 The AC in this sentence however, is a sort of topic, and, by hypothesis, topical expressions are merged in a Topic projection rather than adjoined.
-So, the restriction in question does not apply to \cref{ex:AbsoluteClause}.
+So, the structure of \cref{ex:AbsoluteClause} is given in \cref{fig:AbsoluteClause}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline
+	    [$\delta$
+		    [$\gamma$
+			    [DP$_{\varphi}$[Her order,roof]]
+			    [$\beta$
+				    [Prog$_{\varphi}$]
+				    [vP[be late,roof]]
+			    ]
+		    ]
+		    [$\alpha$
+			    [Topic]
+			    [TP [Kinza was in a sour mood,roof]]
+		    ]
+	    ]
+	\end{forest}
+	\caption{The unlabelled structure of \cref{ex:AbsoluteClause}}
+	\label{fig:AbsoluteClause}
+\end{figure}
+
+The DP \textit{her order} and Prog will Agree, meaning the AC $\gamma$ will be labelled $\langle\varphi,\varphi\rangle$, and its constituent $\beta$ will be labelled Prog.
+The process of labelling $\delta$ is a slightly more complicated case, though.
+Recall that the labelling algorithm is the process of finding the most prominent element in a syntactic object.
+Setting aside the cases that result in a feature-pair label, the most prominent element is the least embedded atomic object.
+So, what is the least embedded atomic object in $\delta$?
+The likely candidates are Topic, Prog, or D (\textit{her}), of which Topic is the least embedded.
+Prog is dominated by 3 nodes ($\beta,\gamma,\delta$), as is D (DP,$\gamma,\delta$).
+Topic, on the other hand, is dominated by 2 nodes ($\alpha,\delta$).
+Therefore, the label of $\delta$ is Topic, and, since \cref{ex:AbsoluteClause} is grammatical, we can safely assume that Topic is strong enough to be a label.
+It follows, then, that the label of $\beta$ (a head-phrase structure) will also be Topic.
+The end result of the labelling process, then, is represented in \cref{fig:AbsoluteClauseLabel}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+	    nice empty nodes,
+	    sn edges,baseline
+	    [Topic
+		    [{$\langle\varphi,\varphi\rangle$}
+			    [DP$_{\varphi}$[Her order,roof]]
+			    [Prog
+				    [Prog$_{\varphi}$]
+				    [vP[be late,roof]]
+			    ]
+		    ]
+		    [Topic
+			    [Topic]
+			    [TP [Kinza was in a sour mood,roof]]
+		    ]
+	    ]
+	\end{forest}
+	\caption{The labelled structure of \cref{ex:AbsoluteClause}}
+	\label{fig:AbsoluteClauseLabel}
+\end{figure}
 
 Turning back to resultatives, we can see that the proposed structure included the adjunction of a resP to a VP.
 Therefore, the restriction in \cref{ex:AdjunctGenSchema} would apply to resultatives, and the DP in [Spec, res] would be required to move.

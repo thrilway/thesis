@@ -150,13 +150,13 @@ The VoiceP is unremarkable, so I assume its meaning is the complete but tenseles
 \ex.\label{ex:VoicePSEM} \textsc{sem}(VoiceP) = $\lambda e [\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
 
 Prog, then, takes this description as an argument, and ascribes progressive aspect to it.
-The standard, though perhaps na\"ive analysis of progressive aspect is that Prog takes a description of event $e$ as an argument, introduces a topic time $t$, and asserts that $t$ is included in the run-time of $e$.
+The standard, though perhaps na\"ive analysis of progressive aspect (as proposed in \cite{klein1994time}) is that Prog takes a description of event $e$ as an argument, introduces a topic time $t$, and asserts that $t$ is included in the run-time of $e$.
 This predicts that ProgP encodes the predicate of times in \cref{ex:ProgPSEM1}
 \ex.\label{ex:ProgPSEM1} \textsc{SEM}(ProgP) =  $\lambda t \exists e [t \subseteq \textsc{time}(e)\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$ (first pass)
 
 However, since ProgP adjoins to VP and the resulting structure is interpreted as a conjunction, ProgP must be interpreted as a predicate of events.
 Therefore, I will modify the semantic analysis of Prog such that it introduces an event $e^{\prime}$ and asserts that $e^{\prime}$ is included in $e$.
-The final interpretation of the ProgP, is given in \cref{ex:ProgPSEM2}.
+The final interpretation of the ProgP, is given in \cref{ex:ProgPSEM2} \parencite[cf.][]{bjorkman2018poster}.
 \ex.\label{ex:ProgPSEM2} \textsc{sem}(ProgP) =  $\lambda e^{\prime} \exists e [e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$ (second pass)
 
 This interpretation will properly compose with \cref{ex:VPSEM} to yield the interpretation of the host-adjunct structure in \cref{ex:VPProgPSEM}

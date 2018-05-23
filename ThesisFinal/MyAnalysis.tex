@@ -22,7 +22,7 @@ That is, there is a single $\theta$-relation between \textit{hammer} and \textit
 According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{hammer} in \Last[a], but a standard analysis of \Last[b] will place \textit{the metal} as the complement of \textit{hammer}
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[b]{.55\textwidth}	
+	\begin{subfigure}[b]{.55\textwidth}
 	\begin{forest}
 	    nice empty nodes,sn edges,baseline,for tree={
 	    calign=fixed edge angles,
@@ -71,7 +71,7 @@ I propose that the result phrase is adjoined to the VP, allowing the DP to merge
 	    nice empty nodes,sn edges,baseline,
 	    for tree={
 	    calign=fixed edge angles,
-	    calign primary angle=-30,calign secondary angle=60}
+	    calign primary angle=-35,calign secondary angle=60}
 	    [VP
 		    [VP
 			    [hammer]
@@ -79,7 +79,7 @@ I propose that the result phrase is adjoined to the VP, allowing the DP to merge
 		    ]
 		    [resP
 			    [$\langle$DP$\rangle$,name=specRes]
-			    [
+			    [res$^{\prime}$
 				    [res]
 				    [SC
 					    [$\langle$DP$\rangle$,name=SCDP]
@@ -108,6 +108,7 @@ Although this type of so-called sideward movement is generally barred, \textcite
 Nunes argues that head movement and parasitic gaps both require a sideward movement operation, as they both create non-c-command dependencies.
 \ex.
 \a. Head Movement\\
+{\small
 \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
@@ -126,9 +127,10 @@ Nunes argues that head movement and parasitic gaps both require a sideward movem
 	    ]
     ]
     \draw[->] (tail) to[out=south, in=south] (head);
-\end{forest}
+\end{forest}}
 \b. Parasitic gaps\\
 What did Mary hear without seeing.\\
+{\small
 \begin{forest}
     nice empty nodes,sn edges,baseline
     [CP
@@ -158,7 +160,7 @@ What did Mary hear without seeing.\\
     ]
     \draw[->] (CompV2) .. controls +(south:1cm) and +(south:5cm) .. (CompV1);
     \draw[->] (CompV1) .. controls +(south west:4.5cm) and +(south:2cm) ..  (specCP);
-\end{forest}
+\end{forest}}
 
 According to the standard definition of Merge, sideward movement should be impossible.
 The facts of parasitic gaps and head movement, however, suggest that a possibly complex operation with the net effect of sideward movement must be active in the grammar.

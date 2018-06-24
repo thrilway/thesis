@@ -164,7 +164,7 @@ The final interpretation of the ProgP, is given in \cref{ex:ProgPSEM2} \parencit
 This interpretation will properly compose with \cref{ex:VPSEM} to yield the interpretation of the host-adjunct structure in \cref{ex:VPProgPSEM}
 \ex.\label{ex:VPProgPSEM} \textsc{sem}($\langle$ProgP, VP$\rangle$) = $\lambda e^{\prime} \exists e [ \textbf{see}(e^{\prime})\,\&\,\textsc{theme}(\textbf{the\_dog})(e^{\prime})\,\&\,e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
 
-So, the event of seeing the dog is included in the event of the dog running, meaning that the seeing occurred in the same space-time region as the running and therefore.
+So, the event of seeing the dog is included in the event of the dog running, meaning that the seeing occurred in the same space-time region as the running and therefore we can infer that the running event was seen.
 This denotation along with the very nature of seeing and running allows us to infer from \cref{ex:VPProgPSEM} that we saw the running event.
 
 One could argue that this analysis is implausible as it requires that the seeing event is a part of the seemingly independent running event.
@@ -176,5 +176,14 @@ It is perhaps a truism of set theory and mereology to say that two complex objec
 So, if $x$ is a part of $e$ but not a part of $e^{\prime}$, the $e \neq e^{\prime}$.
 Similarly, a particular running event which is seen by some individual $x$, cannot be identical to a running event which is not seen by $x$.
 Note that this does not mean that the unseen running event is not a running event, only that it is a not a seen running event.
+
+That being said, I will now entertain <+HowMany+> alternative analys<+i/e+>s and discuss <+their/its+> flaws.
+
+Suppose, for instance, that the semantics of Prog is about time rather than eventualities.
+This can be attained without the compositionality issues discussed above if we hypothesise the denotation in \cref{ex:ProgTauDenote}.
+\ex.\label{ex:ProgTauDenote} \textsc{sem}(Prog) = $\lambda P_{\langle s,t\rangle} \lambda e^{\prime} \exists e [\tau(e^{\prime}) \subseteq \tau(e) \& P(e^{\prime})]$
+
+This denotation would predict that the sentence in \cref{ex:ACC-ing}, under the adjunct ACC-ing interpretation, would mean that there was an event $e1$ of us seeing the dog, and an event $e2$ of the dog running, and that the time of $e1$ is included in the time of $e2$.
+And while one could certainly infer that if one sees a dog at the same time as the dog is running, then one sees the running, such an inference does not hold in other cases.
 
 \end{document}

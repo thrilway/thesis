@@ -177,7 +177,7 @@ So, if $x$ is a part of $e$ but not a part of $e^{\prime}$, the $e \neq e^{\prim
 Similarly, a particular running event which is seen by some individual $x$, cannot be identical to a running event which is not seen by $x$.
 Note that this does not mean that the unseen running event is not a running event, only that it is a not a seen running event.
 
-That being said, I will now entertain <+HowMany+> alternative analys<+i/e+>s and discuss <+their/its+> flaws.
+That being said, I will now entertain two alternative analyses and discuss their flaws.
 
 Suppose, for instance, that the semantics of Prog is about time rather than eventualities.
 This can be attained without the compositionality issues discussed above if we hypothesise the denotation in \cref{ex:ProgTauDenote}.
@@ -185,5 +185,41 @@ This can be attained without the compositionality issues discussed above if we h
 
 This denotation would predict that the sentence in \cref{ex:ACC-ing}, under the adjunct ACC-ing interpretation, would mean that there was an event $e1$ of us seeing the dog, and an event $e2$ of the dog running, and that the time of $e1$ is included in the time of $e2$.
 And while one could certainly infer that if one sees a dog at the same time as the dog is running, then one sees the running, such an inference does not hold in other cases.
+Consider the proposed adjunct ACC-ing interpretation of \cref{ex:PlayingSoccer}, given in \cref{ex:PlayingSoccerTimes}.
+\ex.\label{ex:PlayingSoccer} I [[$_{\text{VP}}$ saw Ronaldo$_{i}$][$_{\text{ProgP}}$ $t_{i}$ playing soccer on TV]].
+
+\ex.\label{ex:PlayingSoccerTimes} 
+$\begin{array}{rcl}
+	\textsc{sem}(\cref{ex:PlayingSoccer}) & =  & \exists e, e^{\prime} [\textsc{Exper}(e)(\textbf{speaker}) \,\&\, \textbf{see}(e) \,\&\, \textsc{theme}(e)(\textbf{R})\\
+	& & \&\, \textsc{Agent}(e^{\prime})(\textbf{R}) \,\&\, \textbf{playing\_soccer\_on\_TV}(e^{\prime})\\
+	& & \&\, \tau(e) \subseteq \tau(e^{\prime})] 
+\end{array}$
+
+While this hypothesized interpretation is consistent with the actual interpretation of \cref{ex:PlayingSoccer}, it is also consistent with some non-existent interpretations.
+For instance, \cref{ex:PlayingSoccerTimes} is consistent with a situation in which the speaker sees Ronaldo, while a replay of one of his matches plays on the TV in the other room.
+
+To be more forceful, this hypothesized interpretation of Prog predicts that the illicit sentences in \cref{ex:SlanderedPassive} and \cref{ex:ParodiedPassive}, reproduced below, should be licit.
+\ex.* The writer was heard being slandered.\label{ex:SlanderedPassive22}
+
+\ex.* The singer was seen being parodied.\label{ex:ParodiedPassive2}
+
+Since the coincidence between the perception event and the slandering/parodying event is strictly temporal, there is no reason to require that the two events occur in the same room, or even in the same hemisphere.
+So, suppose I were sitting at a caf\'e with some singer, while at the same time, ``Weird Al'' Yankovic was recording a parody of that singer in a studio across town.
+If Prog merely encodes temporal concidence, then \cref{ex:ParodiedPassive2} should be licit and true of this situation.
+These examples, however, are illicit meaning that the temporal coincidence hypothesis does not fare as well as my hypothesis.
+
+Suppose, we instead modify the semantics of perception verbs, such that in the case of adjunct ACC-ing clauses, both the referant of ACC-ing subject and that of the ACC-ing Clause are perceived.
+This new hypothesized denotation of \textit{see} is given in \cref{ex:SeeAdHoc}.
+\ex.\label{ex:SeeAdHoc}
+$
+\begin{array}[t]{rcl}
+	\textsc{sem}(\text{see}_2) & = & \lambda x_e \lambda P_{\langle s,t\rangle} \lambda e_{s} \exists e^{\prime} [\textbf{see}(e) \,\&\, \textsc{theme1}(e)(x) \\
+		& & \&\, \textsc{theme2}(e)(e^{\prime}) \,\&\, P(e^{\prime})]
+\end{array}
+$
+
+Immediately we can see a number of theoretical issues with this hypothesis.
+<++>
+
 
 \end{document}

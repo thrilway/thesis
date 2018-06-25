@@ -209,8 +209,9 @@ If Prog merely encodes temporal concidence, then \cref{ex:ParodiedPassive2} shou
 These examples, however, are illicit meaning that the temporal coincidence hypothesis does not fare as well as my hypothesis.
 
 Suppose, we instead modify the semantics of perception verbs, such that in the case of adjunct ACC-ing clauses, both the referant of ACC-ing subject and that of the ACC-ing Clause are perceived.
-This new hypothesized denotation of \textit{see} is given in \cref{ex:SeeAdHoc}.
-\ex.\label{ex:SeeAdHoc}
+This would be done by adding a second theme predicate to the denotation of \textit{see}, which identifies the event described by the ACC-ing clause as one of the themes of the seeing event.
+This new hypothesized denotation of \textit{see} is given in \cref{ex:SeeAdHoc1}.
+\ex.\label{ex:SeeAdHoc1}
 $
 \begin{array}[t]{rcl}
 	\textsc{sem}(\text{see}_2) & = & \lambda x_e \lambda P_{\langle s,t\rangle} \lambda e_{s} \exists e^{\prime} [\textbf{see}(e) \,\&\, \textsc{theme1}(e)(x) \\
@@ -218,8 +219,24 @@ $
 \end{array}
 $
 
-Immediately we can see a number of theoretical issues with this hypothesis.
-<++>
+Applying this to the verb phrase in \cref{ex:ACC-ing}, we get the logical form in \cref{ex:AdHocLF1}.
+\ex.\label{ex:AdHocLF1}
+$
+\begin{array}[t]{rcl}
+	\textsc{sem}(\text{\cref{ex:ACC-ing}}) & = & \lambda e \exists e^{\prime} [ \textbf{see}(e) \,\&\, \textsc{theme1}(e)(\textbf{the\_dog}) \,\&\, \textsc{theme2}(e)(e^{\prime})\\
+	& & \&\, \exists e^{\prime\prime}[ e^{\prime} \subseteq e^{\prime\prime} \,\&\, \textbf{run}(e^{\prime\prime}) \,\&\, \textsc{doer}(e^{\prime\prime})(\textbf{the\_dog})]]
+\end{array}
+$
 
+This seems to match the intuitive interpretation of the sentence, but it is entirely ad hoc.
+First, the introduction of a second theme predicate is highly unlikely to extend to any other verbs.
+Second, the order of the themes is completely arbitrary.
+That is, we have no real reason as to why \cref{ex:ACC-ing} is grammatical and \cref{ex:ACC-ing-Reversed} is ungrammatical.\footnote{Setting aside the possibility of heavy-NP shift.}
+\ex.* We saw running the dog.
+
+However, the biggest issue with this hypothesis is that it requires the ACC-ing clause to be an argument of the perception verb, rather than an adjunct.
+Note that the second argument of the denotation of \textit{see} is a predicate of events, which is satisfied by the ACC-ing clause.
+By hypothesis (see \cref{sec:modifications}), the ACC-ing clause can only be an argument if it is merged with, rather than adjoined to the VP.
+Recall, however that in \cref{sec:ACCing} I showed that, when an ACC-ing clause is merged as an argument, its subject must remain in situ.
 
 \end{document}

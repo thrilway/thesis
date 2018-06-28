@@ -240,7 +240,7 @@ $
 If we these expressions were conjoined by adjunction, then we would get the expression in \cref{ex:AdHocLF1}, where the seeing event has two distinct themes.
 \ex.\label{ex:AdHocLF1} $
 \begin{array}[t]{rcl}
-	\textsc{sem}(\langle \text{Prog}_{\Theta}\text{P}, \text{VP}) &=& \lambda e\exists e^{\prime},e^{\prime\prime}[\textbf{see}(e)\\
+	\textsc{sem}(\langle \text{Prog}_{\Theta}\text{P}, \text{VP}\rangle) &=& \lambda e\exists e^{\prime},e^{\prime\prime}[\textbf{see}(e)\\
 		& & \&\, \textsc{theme}(e)(\textbf{the\_dog}) \,\&\, \textsc{theme}(e)(e^{\prime})\\
 	& & \&\, e^{\prime}\subseteq e^{\prime\prime} \,\&\, \textsc{doer}(e^{\prime\prime})(\textbf{the\_dog}) \& \textbf{run}(e^{\prime\prime})]
 \end{array}
@@ -269,10 +269,37 @@ $
 \end{array}
 $
 
-The issue with this hypothesis is that it requires the ACC-ing clause to be an argument of the perception verb, rather than an adjunct.
+The issue with this hypothesis is that it requires that the ACC-ing clause not be an adjunct.
 Note that the second argument of the denotation of \textit{see}$_{\Theta}$ is a predicate of events, which is satisfied by the ACC-ing clause.
-By hypothesis (see \cref{sec:modifications}), the ACC-ing clause can only be an argument if it is merged with, rather than adjoined to the VP.
-
+However, by hypothesis (see \cref{sec:modifications}), an expression can only be an argument of a verb if it is merged with, rather than adjoined to the VP.
+Therefore, this proposal requires the ACC-ing clause to be merged with the VP, rather than adjoined to it, as in \cref{fig:AdHocTree2}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges, baseline
+		[{$v_{\Theta}$}
+			[{$v_{\Theta}$}
+				[{$v_{\Theta}$}
+					[{$v_{\Theta}$}]
+					[{$\sqrt{\textsc{see}}$}]
+				]
+				[DP$_{i}$[the dog,roof]]
+			]
+			[Prog
+				[{$\langle\text{DP}_{i}\rangle$}]
+				[Prog
+					[Prog]
+					[VoiceP[{$\langle\text{DP}_{i}\rangle$ running},roof]]
+				]
+			]
+		]
+	\end{forest}
+	\caption{The labelled structure of \cref{ex:ACC-ing} required by the \textit{see}$_{\Theta}$ proposal}
+	\label{fig:AdHocTree2}
+\end{figure}
+This structure, however, is untenable for two reasons, which I discuss below.
+<++>
 Recall, however that in \cref{sec:ACCing} I showed that, when an ACC-ing clause is merged as an argument, its subject must remain in situ.
+
 
 \end{document}

@@ -227,8 +227,8 @@ This obviously wouldn't do for the case in which the present participle is the m
 \ex.\label{ex:ProgAdHoc} $\textsc{sem}(\text{Prog}_{\Theta}) = \lambda P \lambda e \exists e^{\prime},e^{\prime\prime}[\textsc{theme}(e)(e^{\prime}) \,\&\, e^{\prime}\subseteq e^{\prime\prime} \,\&\, P(e^{\prime\prime})]$
 
 Now consider the adjunct ACC-ing interpretation of \cref{ex:ACC-ing} under this hypothesis.
-The Prog$_{\theta}$P interpretation will be \cref{ex:ProgPAdHoc}, and the host VP interpretation will be \cref{ex:VPSimple}.
-\ex.\label{ProgPAdHoc} $
+The Prog$_{\Theta}$P interpretation will be \cref{ex:ProgPAdHoc}, and the host VP interpretation will be \cref{ex:VPSimple}.
+\ex.\label{ex:ProgPAdHoc} $
 \begin{array}[t]{rcl}
 	\textsc{sem}(\text{Prog}_{\Theta}\text{P}) &=& \lambda e \exists e^{\prime},e^{\prime\prime}[\textsc{theme}(e)(e^{\prime}) \,\&\, e^{\prime}\subseteq e^{\prime\prime}\\
 	& & \&\, \textsc{doer}(e^{\prime\prime})(\textbf{the\_dog}) \& \textbf{run}(e^{\prime\prime})]
@@ -277,29 +277,109 @@ Therefore, this proposal requires the ACC-ing clause to be merged with the VP, r
 	\centering
 	\begin{forest}
 		nice empty nodes,sn edges, baseline
-		[{$v_{\Theta}$}
-			[{$v_{\Theta}$}
-				[{$v_{\Theta}$}
+		[{$\gamma$}
+			[{$\beta$}
+				[{$\alpha$}
 					[{$v_{\Theta}$}]
 					[{$\sqrt{\textsc{see}}$}]
 				]
 				[DP$_{i}$[the dog,roof]]
 			]
-			[Prog
+			[$\zeta$
 				[{$\langle\text{DP}_{i}\rangle$}]
-				[Prog
+				[$\delta$
 					[Prog]
 					[VoiceP[{$\langle\text{DP}_{i}\rangle$ running},roof]]
 				]
 			]
 		]
 	\end{forest}
-	\caption{The labelled structure of \cref{ex:ACC-ing} required by the \textit{see}$_{\Theta}$ proposal}
+	\caption{The unlabelled structure of \cref{ex:ACC-ing} required by the \textit{see}$_{\Theta}$ proposal}
 	\label{fig:AdHocTree2}
 \end{figure}
-This structure, however, is untenable for two reasons, which I discuss below.
-<++>
-Recall, however that in \cref{sec:ACCing} I showed that, when an ACC-ing clause is merged as an argument, its subject must remain in situ.
+This structure, however, is untenable without significant additional stipulation for two reasons, which I discuss below.
+First, it is unlabellable.
+Consider how we would label $\gamma$, which is a phrase-phrase structure.
+The labelling algorithm, would search $\gamma$ and find the least-embedded, still-visible, functional LIs.
+In this case, $v_{\Theta}$ and Prog are equally embedded, and thus are returned by LA.
+This can result in an unambiguous label only if we make one of two additional stipulations.
+Either (\textit{i}) $v_{\Theta}$ and Prog agree for some feature, or (\textit{ii}) the ProgP $\zeta$ undergoes movement.
+Stipulation (\textit{i}) requires at least two additional stipulations: a stipulation as to the identity of the agreeing features, and a stipulation that agreement can occur at such a structural distance.
+I strongly suspect that these sub-stipulation will require stipulations of their own, and so on, but I stop here.
+Stipulation (\textit{ii}), requires us to stipulate a landing site for the movement operation; one that ensure the proper word order.
+This new landing site implies a new functional head, whose identity will likely be stipulated.
+As with stipulation (\textit{i}), this stipulation likely begets more stipulations.\footnote{
+	A skeptical reader might point out that this is the very nature of scientific inquiry: Explaining one phenomenon invariably brings to light several phenomena in need of explanation.
+	This view might suggest that one person's stipulation is another's hypothesis.
+	I would argue, however, that these hypotheses do not raise new areas of inquiry, but rather rescue us from raising new areas of inquiry.
+	Recall that the impetus for these stipulations was to avoid a vague unease with the semantic analysis in \cref{ex:VPProgPSEM} that followed naturally from the syntactic analysis assumed in this chapter.
+	Such an unease, I believe, does not justify this level of stipulation.
+}
+The level of stipulation required in order to label the structure in \cref{fig:AdHocTree2}, I believe, renders in untenable.
 
+Even if we were to assume that the structure in \cref{fig:AdHocTree2}, or a structure derived from it, is labellable, there is another reason that this analysis cannot be maintained.
+Recall that in \cref{sec:ACCing} I showed that, when an ACC-ing clause is merged as an argument, its subject must remain in situ.
+This predicts, not only that ungrammatical sentences with two DP objects like \cref{ex:DoubleObj} should be grammatical, but also that \cref{ex:ACC-ing} should be ungrammatical.
+\ex.* We saw the dog the cat running.\label{ex:DoubleObj}
 
+In view of the issues with this proposed analysis, I will set it aside.
+
+Which brings us to our final possibility: encoding the \textsc{theme2} on a specialized functional head $\Theta$.
+Under this analysis, \cref{ex:ACC-ing} would have the structure in \cref{fig:AdHocTree3}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges, baseline
+		[$\alpha$
+			[$\Theta$P
+				[$\Theta$]
+				[{$v$P}[see the dog,roof]]
+			]
+			[ProgP[$t$ running,roof]]
+		]
+	\end{forest}
+	\caption{The structure of \cref{ex:ACC-ing} with an independent $\Theta$ head}
+	\label{fig:AdHocTree3}
+\end{figure}
+
+Assuming $\Theta$ takes $v$P as an argument, and ProgP is adjoined to the resulting $\Theta$P, lets consider a possible meaning for $\Theta$ in \cref{ex:ThetaSEM1}
+\ex. \textsc{sem}$(\Theta) = \lambda P_{\langle s,t\rangle} \lambda e \exists e^{\prime}\left[ P(e)\,\&\,\textsc{theme2}(e)(e^{\prime}) \right]$\label{ex:ThetaSEM1} (First Pass)
+
+This \textsc{sem} says that there is some event which is the secondary theme of the event described by the $v$P.
+Now, when this combines with the $v$P, it yields the predicate of events in \cref{ex:ThetaPSEM1}.
+\ex.\label{ex:ThetaPSEM1} \textsc{sem}$(\Theta\text{P}) = \lambda e \exists e^{\prime}\left[ \textbf{see}(e)\,\&\,\textsc{theme}(e)(\textbf{the\_dog})\,\&\,\textsc{theme2}(e)(e^{\prime})\right]$
+
+If this is then conjoined with the ProgP, we get the predicate of events in \cref{ex:ThetaPSEM12}.
+\ex.\label{ex:ThetaPSEM12} 
+$
+\begin{array}[t]{rcl}
+	\textsc{sem}(\alpha) & = & \lambda e \exists e^{\prime}[ \textbf{see}(e)\,\&\,\textsc{theme}(e)(\textbf{the\_dog})\,\&\,\textsc{theme2}(e)(e^{\prime})\\
+		& & \&\,e\subseteq e^{\prime} \,\&\, \textsc{doer}(e^{\prime})(\textbf{the\_dog}) \& \textbf{run}(e^{\prime})]
+\end{array}
+$
+
+This interpretation has two flaws.
+First, it asserts that the entire running event $e^{\prime}$ is the secondary theme of seeing.
+This is far too stron of an assertion; \cref{ex:ACC-ing} is compatible with only seeing a sliver of the running event.
+Second, it asserts that the seeing event $e$ is a subpart of the running event $e^{\prime}$, which is precisely the assertion we are trying to avoid.
+These issues can be avoided by swapping the variables $e$ and $e^{\prime}$ in our denotation of $\Theta$ as in \cref{ex:ThetaSEM2}.
+\ex. \textsc{sem}$(\Theta) = \lambda P_{\langle s,t\rangle} \lambda e^{\prime} \exists e\left[ P(e)\,\&\,\textsc{theme2}(e)(e^{\prime}) \right]$\label{ex:ThetaSEM2} (second Pass)
+
+The resulting denotation of the structure in \cref{fig:AdHocTree3} is given in \cref{ex:ThetaPSEM2}
+\ex.\label{ex:ThetaPSEM2} 
+$
+\begin{array}[t]{rcl}
+	\textsc{sem}(\alpha) & = & \lambda e^{\prime} \exists e [ \textbf{see}(e)\,\&\,\textsc{theme}(e)(\textbf{the\_dog})\,\&\,\textsc{theme2}(e)(e^{\prime})\\
+		& & \&\,e\subseteq e^{\prime} \,\&\, \textsc{doer}(e^{\prime})(\textbf{the\_dog}) \& \textbf{run}(e^{\prime})]
+\end{array}
+$
+
+This no longer has the flaws of the denoation in \cref{ex:ThetaPSEM12}, but it has introduced a new one.
+The denotation in \cref{ex:ThetaPSEM2} is a predicate of events, but it no longer describes a seeing event, but a running event.
+So, if we continued the derivation of \cref{ex:ACC-ing}, and introduce the external argument \textit{we}, then that argument will be construed as the experiencer/agent of the running event, not the seeing event.
+
+The independent $\Theta$ head analysis, it seems, cannot save us, and therefore, the secondary theme analysis cannot save us.
+Since our attempts to avoid the analysis in \cref{ex:VPProgPSEM} have only made things worse, I see no alternative to adopting our first analysis, despite the sense of unease it may evoke.
+Note that we are only tied to the analysis in \cref{ex:VPProgPSEM} only insofar as we adopt the admittedly simplistic semantic analysis of progressive aspect that we do adopt.
+I leave that as a task for more interested readers.
 \end{document}

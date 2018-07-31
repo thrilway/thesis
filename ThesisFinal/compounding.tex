@@ -1,0 +1,106 @@
+% arara: pdflatex: {options: "-draftmode"}
+% arara: biber
+% arara: pdflatex: {options: "-draftmode"}
+% arara: pdflatex: {options: "-file-line-error-style"}
+\documentclass[MilwayThesis]{subfiles}
+
+\begin{document}
+So far, I have hypothesized that a grammar generates bare stem compounds only if its lexicon contains categorizing heads without $\varphi$-features.
+Given my theoretical assumptions, I will propose a syntactic analysis
+
+If we restrict ourselves to endocentric bare-stem compounding like \textit{bourbon bar}, for instance, then our analysis must allow for the possibility of endocentricity, and the fact that a language's ability to generate these compounds depends on the properties of the categorizing heads in that language.
+
+I also 
+I will discuss three possibilities below:
+	one in which a compound is formed by directly merging roots together,
+	another in which two categorized roots ($\left\{ cat, \sqrt{\textsc{Root}} \right\}$, or \textit{stems}) are directly merged together,
+	and a one in which a stem merges with a root.
+As we shall see, only the third analysis will be capable accounting for endocentricity and parametric variation without major stipulation.
+\section{Root-root compounding}
+The first analysis that I will consider is on in which roots merge directly with each other as in \cref{fig:RootRoot}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		[$\beta$
+			[$n$]
+			[$\alpha$
+				[$\sqrt{\textsc{Bourbon}}$]
+				[$\sqrt{\textsc{Bar}}$]
+			]
+		]
+	]
+	\end{forest}
+	\caption{A root-root analysis of compounding}
+	\label{fig:RootRoot}
+\end{figure}
+Immediately, we can see that the symmetrical nature of merge renders endocentricity impossible; \textit{bourbon bar} would be indistinguishable from \textit{bar bourbon}.
+
+Supposing, however, that this is the correct analysis, can it account for the parametic variation?
+That is, can we show that \cref{ex:FreRootRoot} crashes, while \cref{ex:EngRootRoot} converges?
+\ex.* $[_{\beta}\, n_{F}, [_{\alpha} \sqrt{\textsc{Bourbon}}, \sqrt{\textsc{Bar}}  ]  ]$ \label{ex:FreRootRoot}
+
+\ex. $[_{\beta}\, n_{\emptyset}, [_{\alpha} \sqrt{\textsc{Bourbon}}, \sqrt{\textsc{Bar}}  ]  ]$ \label{ex:EngRootRoot}
+
+Assuming that $\beta$ in either case will be labelled by $n$ assuming it is strong enough to label.
+The French $n_{F}$ in \cref{ex:FreRootRoot}, of course will need to be strengthened by Agree, but since this is presumably the case for all nouns in French, I will assume that whether $\beta$ is labellable in \cref{ex:FreRootRoot} depends on noun-external factors.
+
+Since this analysis lacks both necessary properties for compounds, I will set it aside.
+\section{Stem-stem compounding}
+The second analysis is one in which bare-stem compounds are created by merging two stems (\textit{i.e.}, \{$n$, $\sqrt{\textsc{root}}$\}).
+Like the root-root possibility, the stem-stem possibility is symmetrical, as we can see in \cref{fig:StemStem}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		[$\gamma$
+			[$\alpha$
+				[$n$]
+				[$\sqrt{\textsc{bourbon}}$]
+			]
+			[$\beta$
+				[$n$]
+				[$\sqrt{\textsc{bar}}$]
+			]
+		]
+	\end{forest}
+	\caption{A stem-stem analysis of compounding}
+	\label{fig:StemStem}
+\end{figure}
+As is the case with the root-root option, the symmetry of this structure precludes endocentricity.
+Since it cannot capture endocentricity, we can set this analysis aside now, but for completeness' sake, let's consider how it fares with respect to parametric variation.
+<++>
+
+\section{Root-stem compounding}
+The final possibility is that compounds are formed by merging a root with a stem, as in \cref{fig:RootStem}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		[$\beta$
+			[$\sqrt{\textsc{bourbon}}$]
+			[$\alpha$
+				[$n$]
+				[$\sqrt{\textsc{bar}}$]
+			]
+		]
+	\end{forest}
+	\caption{A root-stem analysis}
+	\label{fig:RootStem}
+\end{figure}
+We can immediately see that this is an asymmetric structure, and, as such, one that is able to capture endocentricity.
+So \textit{bourbon bar} names a type of bar rather than a type of bourbon by virtue of the fact that the \textit{bar} root merges directly with the category-determining head, while \textit{bourbon} does so indirectly.
+Compare this with the case of a Saxon genitive, such as \textit{the president's men}, which names some men rather than the president.
+This encocentricity can be captured by the structure in \cref{fig:SaxonGenitive}, by virtue of the fact that \textit{men} is the complement of the head determiner, while \textit{the president} is its specifier.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		[DP
+			[DP[the president,roof]]
+			[
+				['s]
+				[$n$P[men,roof]]
+			]
+		]
+	\end{forest}
+	\caption{The Saxon genitive}
+	\label{fig:SaxonGenitive}
+\end{figure}
+\end{document}

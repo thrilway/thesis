@@ -5,22 +5,25 @@
 \documentclass[MilwayThesis]{subfiles}
 
 \begin{document}
-So far, I have hypothesized that a grammar generates bare stem compounds only if its lexicon contains categorizing heads without $\varphi$-features.
-Given my theoretical assumptions, I will propose a syntactic analysis
+So far, I have demonstrated that, given my theoretical assumptions, resultatives can only be generated if the result adjective is categorized by a featureless $adj_{\emptyset}$ head.
+I also proposed that a child acquires featureless categorizing heads if they encounter productive bare-stem compounding in their PLD.
+In this section I will propose an analysis of bare-stem compounding that is consistent with these proposals and my theoretical assumptions.
 
-If we restrict ourselves to endocentric bare-stem compounding like \textit{bourbon bar}, for instance, then our analysis must allow for the possibility of endocentricity, and the fact that a language's ability to generate these compounds depends on the properties of the categorizing heads in that language.
+If we restrict ourselves to endocentric bare-stem compounding like \textit{bourbon bar}, for instance, then our analysis must allow for the possibility of endocentricity.
+That is, a proper analysis of \textit{bourbon bar} must naturally explain why it describes a type of bar rather than a type of bourbon.
+Furthermore an analysis of BSC must allow for the fact that a language's ability to generate these compounds depends on the properties of the categorizing heads in that language.
 
-I also 
 I will discuss three possibilities below:
 	one in which a compound is formed by directly merging roots together,
 	another in which two categorized roots ($\left\{ cat, \sqrt{\textsc{Root}} \right\}$, or \textit{stems}) are directly merged together,
 	and a one in which a stem merges with a root.
 As we shall see, only the third analysis will be capable accounting for endocentricity and parametric variation without major stipulation.
-\section{Root-root compounding}
+\subsection{Root-root compounding}
 The first analysis that I will consider is on in which roots merge directly with each other as in \cref{fig:RootRoot}.
 \begin{figure}[h]
 	\centering
 	\begin{forest}
+    nice empty nodes,sn edges,baseline,
 		[$\beta$
 			[$n$]
 			[$\alpha$
@@ -45,12 +48,13 @@ Assuming that $\beta$ in either case will be labelled by $n$ assuming it is stro
 The French $n_{F}$ in \cref{ex:FreRootRoot}, of course will need to be strengthened by Agree, but since this is presumably the case for all nouns in French, I will assume that whether $\beta$ is labellable in \cref{ex:FreRootRoot} depends on noun-external factors.
 
 Since this analysis lacks both necessary properties for compounds, I will set it aside.
-\section{Stem-stem compounding}
+\subsection{Stem-stem compounding}
 The second analysis is one in which bare-stem compounds are created by merging two stems (\textit{i.e.}, \{$n$, $\sqrt{\textsc{root}}$\}).
 Like the root-root possibility, the stem-stem possibility is symmetrical, as we can see in \cref{fig:StemStem}
 \begin{figure}[h]
 	\centering
 	\begin{forest}
+    nice empty nodes,sn edges,baseline,
 		[$\gamma$
 			[$\alpha$
 				[$n$]
@@ -67,13 +71,24 @@ Like the root-root possibility, the stem-stem possibility is symmetrical, as we 
 \end{figure}
 As is the case with the root-root option, the symmetry of this structure precludes endocentricity.
 Since it cannot capture endocentricity, we can set this analysis aside now, but for completeness' sake, let's consider how it fares with respect to parametric variation.
-<++>
 
-\section{Root-stem compounding}
+If we consider the compound $\gamma$ as a whole, we can see that it is a phrase-phrase structure, and therefore labellable only in two situations.
+The first situation is if one of the constituent phrases has moved, which is not the case in a compound.
+The second situation is if there is agreement between the ``heads'' of the two constituent phrases (the two $n$ heads in this case).
+In the case of an English-type language, there is certainly no agreement between the two $n$ heads, as they have, by hypothesis, no features which are required to undergo Agree.
+So, a stem-stem analysis of compounds seems to wrongly predict that English-type grammars do not generate bare-stem compounds; another strike against them.
+French-like languages, on the other hand, have feature-bearing $n$ heads which could potentially agree, but whether they could agree with each other is not obvious.
+If they cannot agree with each other, then, just as in the case of English-type languages, we would expect the structure in \cref{fig:StemStem} to be unlabellable.
+If they can agree with each other, then $\gamma$ in \cref{fig:StemStem} should be labelled $\langle F,F\rangle$, and therefore, the structure in \cref{fig:StemStem} should be a licit compound.
+So, the stem-stem analysis of compounds may wrongly predict that French-type grammars do generate bare-stem compounds.
+
+Since a stem-stem analysis accounts for neither endocentricity nor the parametric variation with respect to bare-stem compounding, we will set it aside for now and move on to the next possible analysis.
+\subsection{Root-stem compounding}
 The final possibility is that compounds are formed by merging a root with a stem, as in \cref{fig:RootStem}.
 \begin{figure}[h]
 	\centering
 	\begin{forest}
+    nice empty nodes,sn edges,baseline,
 		[$\beta$
 			[$\sqrt{\textsc{bourbon}}$]
 			[$\alpha$
@@ -92,6 +107,7 @@ This encocentricity can be captured by the structure in \cref{fig:SaxonGenitive}
 \begin{figure}[h]
 	\centering
 	\begin{forest}
+    nice empty nodes,sn edges,baseline,
 		[DP
 			[DP[the president,roof]]
 			[
@@ -116,6 +132,7 @@ So, the French-like version of the structure in \cref{fig:RootStem}, shown in \c
 \begin{figure}[h]
 	\centering
 	\begin{forest}
+    nice empty nodes,sn edges,baseline,
 		[$\beta$
 			[$\sqrt{\textsc{bourbon}}$]
 			[$\alpha$

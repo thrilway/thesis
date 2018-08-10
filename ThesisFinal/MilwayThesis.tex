@@ -32,10 +32,10 @@
 
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsthm}
+\usepackage{amsthm,thmtools}
 \usepackage{mathtools}
 \theoremstyle{definition}
-\newtheorem{defn}{Definition}
+\newtheorem{defn}{Definition}[chapter]
 
 \usepackage{tikz}
 \usepackage{forest}
@@ -62,6 +62,9 @@
 
 \crefname{figure}{figure}{figures}
 \Crefname{figure}{Figure}{Figures}
+
+\crefname{defn}{definition}{definitions}
+\Crefname{defn}{Definition}{Definitions}
 
 \usepackage{centernot}
 \usepackage{subfiles}
@@ -129,6 +132,10 @@
   \a.[(\textbf{AR})]\label{ex:AREx} Natalie hammered the metal flat.
   \z.
 }
+
+\makeatother
+\renewcommand{\thmtformatoptarg}[1]{ -- #1}
+\renewcommand{\listtheoremname}{List of definitions}
 \setcounter{secnumdepth}{3}
 \frenchspacing
 \graphicspath{ {./img/} }
@@ -144,6 +151,7 @@
   \tableofcontents
   \listoftables
   \listoffigures
+  \listoftheorems[ignoreall,show={defn}]
 \end{preliminary}
 \part{Explaining Resultatives}\label{sec:part1}
 \chapter{Introduction}

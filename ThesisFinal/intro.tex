@@ -83,7 +83,7 @@ Syntacticians tend to focus on the grammatical question, and consider the acquis
 This leads to syntactic proposals where the acquisition question is ignored or treated as an afterthought, and acquisition studies which do not fully address how their results could be integrated into linguistic theory.
 With this thesis, I hope to avoid this pitfall.
 That is, I aim to develop a theoretical explanation of the resultative parameter that takes the acquisition question to be a crucial criterion for the success of my proposal; in other words, I assume that a grammatical theory of resultatives is adequate only if it answers the acquisition question.
-This statement is likely uncontroversial among generative syntacticans; indeed it is perhaps an unstated criterion of all generative syntax.
+This statement is likely uncontroversial among generative syntacticians; indeed it is perhaps an unstated criterion of all generative syntax.
 I make it a stated criterion here as a way of ensuring that readers can hold me to it.
 
 The answer I will argue for here is that a grammar generates resultatives only if it also generates adjectives without $\varphi$-features.
@@ -92,11 +92,62 @@ Since $\varphi$-features on adjectives manifest themselves as agreement morpholo
 The demonstration that Snyder's results can be derived from the presence or absence of $\varphi$-features on adjectives, however, is highly technical, based on a non-standard version of so-called minimalist theory.
 In \cref{sec:nonstandard}, I argue that the non-standard aspects of the theory I assume, in fact, follow from entirely standard assumptions in contemporary syntactic theory, which I discuss in detail in \cref{sec:standard}.
 With these assumptions---standard and non-standard---in place, I assess the current syntactic analyses of adjectival resultatives in \cref{sec:litreview} before synthesizing these analyses into my own analysis in \cref{sec:analysis}.
+The analysis that I settle on, shown in \cref{fig:ResStructIntro}, is modified from that of \textcite{kratzer2004building}.
+\begin{figure}[h]
+	\centering
+	{\small
+\begin{forest}
+    nice empty nodes,sn edges,baseline,
+%    for tree={
+%    calign=fixed edge angles,
+%    calign primary angle=-30,calign secondary angle=60}
+    [VP
+	    [VP
+		    [hammer]
+		    [DP[the metal,roof,name=compV]]
+	    ]
+	    [resP
+		    [$\langle$DP$\rangle$,name=specRes]
+		    [
+			    [res]
+			    [SC
+				    [$\langle$DP$\rangle$,name=SCDP]
+				    [
+					    [adj]
+					    [\textsc{flat}]
+				    ]
+			    ]
+		    ]
+	    ]
+    ]
+    \draw[->] (SCDP) to[out=south west, in=south] (specRes);
+    \draw[->] (specRes) to[out=south, in=south east] (compV);
+\end{forest}
+}
+	\caption{The structure of resultatives that I propose in this thesis}
+	\label{fig:ResStructIntro}
+\end{figure}
+Note three non-standard properties of this analysis: resP is adjoined to VP, the shared argument \textit{the metal} undergoes sideward movement, and that movement is into a $\theta$-position.
+These properties will be explained in a principled manner throughout the thesis.
+
 Before my ultimate explanation of the resultative parameter, I introduce and discuss a new modification to minimalist syntactic theory, Label Theory \parencite{chomsky2013problems,chomsky2015problems} in \cref{sec:labels}. 
 Finally, I show how the assumptions, hypotheses, and analyses that I mention above allow me to derive Snyder's (\citeyear{snyder2016compound}) correlation between resultatives and bare stem compounding in \cref{sec:deriving}.
 
-While this derivation might seem to fully explain the resultative parameter, and therefore fulfill the stated goal of my thesis, \cref{sec:deriving} is only ends \cref{sec:part1} of my thesis.
+While this derivation might seem to fully explain the resultative parameter, and therefore fulfill the stated goal of my thesis, \cref{sec:deriving} only ends \cref{sec:part1} of my thesis.
+In \cref{sec:part2}, I slow down and consider the broader implications of the account I give in \cref{sec:part1}.
+For instance, my account of the resultative parameter seems to be too strong, eliminating the possibility of expressions derived from small clauses in languages which do not have resultatives.
+That is, my account would seem to predict that a language like French would fail to generate copular clauses and depictives like the examples in \cref{ex:FreCopIntro} and \cref{ex:FreDepIntro}, respectively.
+\exg. \label{ex:FreCopIntro}Jeanne est grand -e.\\
+Jeanne is tall -FSg\\
+``Jeanne is tall.''
 
+\exg. \label{ex:FreDepIntro}Marie mange la viande crue\\
+Marie eats the.FSg meat raw.Fsg\\
+``Marie eats meat raw''
+
+In \cref{sec:FreSC}, however, I propose a refinement of the grammatical architecture that places the operation Agree outside the narrow syntax, before Label, and show that this proposal eliminates the faulty prediction made in \cref{sec:part1}.
+
+\Cref{sec:ACCing} discusses some puzzling aspects about<++>
 \section{Theoretical Context}\label{sec:standard}
 The general theory that I assume here is a variety of what is called \textit{minimalist syntax} after Chomsky's (\citeyear{chomsky1995minimalist}) \textit{The Minimalist Program}.
 Using the term \textit{minimalism} to refer to a theory of grammar, however, is perhaps incorrect, as minimalism is a metatheoretical position.

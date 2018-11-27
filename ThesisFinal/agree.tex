@@ -109,9 +109,9 @@ This is represented in \cref{fig:SepCycles}.
     \node[draw,rounded corners] (label) at (1,1) {Label};
     \node (SM) at (0,1.5) {SM};
     \node (CI) at (1,0) {CI};
-    \path[->](syn)	edge			(agree)
-	   (agree.south)	edge			(label)
-			  edge [bend left]	(SM)
+    \path[->](syn) edge	(agree)
+	   (agree.south) edge (label)
+			 edge [bend left] (SM)
 	  (label)		edge [loop right]	()
 			  edge			(CI);
   \end{tikzpicture}

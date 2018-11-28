@@ -59,6 +59,9 @@
 }
 \usepackage[final]{hyperref}
 \usepackage{linguex}
+\makeatletter
+\apptocmd{\gl@stop}{\nobreak}{}{}
+\makeatother
 \renewcommand{\Exarabic}{\thechapter.\arabic} 
 % We want to reset the ExNo counter at each section
 \usepackage{chngcntr}
@@ -150,7 +153,7 @@
 \addbibresource{../Thesis.bib}
 \degree{Doctor of Philosophy}
 \department{Linguistics}
-\gradyear{2018}
+\gradyear{2019}
 \author{Daniel A. Milway}
 \title{Explaining the Resultative Parameter}
 \begin{document}
@@ -220,6 +223,7 @@
 \chapter{Coincidence}\label{sec:coincidence}
 \subfile{Coincide}
 \chapter{Conclusion}\label{sec:Conclusion}
+\subfile{conclusion}
 \printbibliography[heading=bibintoc]
 \end{document}
 

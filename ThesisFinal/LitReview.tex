@@ -117,15 +117,17 @@ First, consider the English-default option.
 According to this option, when a child encounters a secondary predication construction, she will entertain two possible parses: a depictive parse and a resultative parse, and choose the one whose interpretation is appropriate for the context.
 If the child is acquiring English, then the context will sometimes prefer the resultative parse, and other times prefer the depictive parse.
 If the child is acquiring French, then the context will always prefer the the depictive parse.
-However, in order to change the default setting, the child must make an inductive leap from a series of particular utterances to a generalization across all possible utterances, and such an inductive step is problematic to say the least.
-In fact, it is generally assumed in generative grammar that language acquisition cannot be an inductive process.
+However, in order to change the default setting, the child must make an inductive leap from a series of particular utterances to a generalization across all possible utterances.
+Specifically, she will have to infer from the absence of data with a preferred resultative parse, that the resultative parse is categorically unavailable.
+Such an inductive step is problematic to say the least.
+In fact, it is generally assumed in generative grammar that language acquisition cannot be an inductive process.<+CITE+>
 Therefore, the English-default option is to be rejected.
 
 Suppose instead that we choose the French-default option.
 According to this option, when a child encounters a secondary predication construction, she will only entertain a depictive parse by default.
 If the child is acquiring French, then there will be no issue:
 Every parse will be appropriate for the context.
-If the child is acquiring English, then a portion of the parses will be inappropriate for the context.
+If the child is acquiring English, then a subset of the parses will be inappropriate for the context.
 These inappropriate parses, then, would be taken as positive evidence for the alteration of the default setting.
 This means, however, that the French-acquiring child is able to entertain resultative parses, even though they are dispreferred by default.
 If the French-acquiring child is able to entertain resultative parses, then she is able to mentally represent resultatives, and if she is able to mentally represent them, then she is able to generate them.
@@ -137,7 +139,7 @@ First, I will review what is called the Uniformity of Theta Hypothesis (UTAH) wh
 Second, I will look at the Lexical Parameterization Hypothesis, the minimalist hypothesis which will guide our theory of variation.
 Each of these will be discussed with reference to a particular property of adjectival resultatives.
 
-\subsubsection{The Uniformity of Theta Hypothesis}
+\subsubsection{The Uniformity of Theta Assignment Hypothesis}
 The canonical formulation of UTAH is that of \textcite{baker1988incorporation} working in a pre-minimalist Principles and Parameters framework, given below in \Next.
 \ex. \textbf{The Uniformity of Theta Assignment Hypothesis (UTAH)}\\
 Identical thematic relationships between items are represented by identical structural relationships between those items at the level of D-structure. \parencite[46]{baker1988incorporation}
@@ -147,13 +149,15 @@ I propose the following more precise formulation of UTAH:
 \ex. \textbf{Minimal UTAH}\\
 If a thematic relation $f$ holds between items X and Y in distinct expressions S$_1$ and S$_2$, then there is a single structural relation $g$ that also holds between X and Y in both S$_1$ and S$_2$.
 
-Before considering concrete cases, I would like to discuss a few ways in which my conception of UTAH differs from standard conceptions of UTAH.
-First, I do not make any commitment to the existence of thematic relations, $\theta$-roles, $\theta$-features, or the like as entities, mental, grammatical, physical, or otherwise.
+Before considering concrete cases, I would like to discuss a few points about my conception of UTAH.
+First, I do not make any commitment to the existence of thematic relations, $\theta$-roles, $\theta$-features, or the like as theoretical primitives, rather as descriptions of phenomena.
 There may be notions of \textsc{agent} or \textsc{theme} in the mind, or in the grammar, or in the world, or maybe not, I believe Minimal UTAH will be useful whatever the case may be.
 As such, I will not be particularly interested in distinguishing between $\theta$-roles (\textit{e.g.}, whether a given argument is a \textsc{theme} or a \textsc{patient}) unless such a distinction has consequences for the grammar.\footnote{
 	For instance, it has been shown that \textsc{agent} subjects have different grammatical properties than \textsc{experiencer} subjects do.
 }
+
 The first point leads to the second point, which is that Minimal UTAH, being an empirical hypothesis, is both a theoretical claim and a methodological heuristic.
+As a point of comparison, consider a hypothesis at the core of generative syntax: constituency.
 The constituency hypothesis claims that within a sufficiently complex linguistic expression (longer than 2 words, say) there are sub-parts of that expression which form linguistic expressions, and there are sub-parts that do not.
 So, for instance, in \Next, \textit{the roof} is a linguistic expression, but \textit{*hit the} is not.
 \ex. hit the roof
@@ -304,29 +308,34 @@ In this analysis, as in the movement analysis, the thematic relation between \te
 This means that this analysis also satisfies Minimal UTAH, and therefore cannot be rejected immediately.
 
 UTAH is relevant to adjectival resultatives considering the pattern of thematic relations in \Next.
-\ex.
-\a. Jackie hammered the metal flat.
-\b. Jackie hammered the metal.
-\b. Jackie made the metal flat.
+\ex.\label{ex:UTAHmetal}
+\a.\label{ex:UTAHmetalRes} Jackie hammered the metal flat.
+\b.\label{ex:UTAHmetalhammer} Jackie hammered the metal.
+\b.\label{ex:UTAHmetalmetal} Jackie made the metal flat.
 
 There is a single $\theta$-relation that holds between \textit{hammered} and \textit{the metal} in both \Last[a] and \Last[b], and there is a single $\theta$-relation that holds between \textit{the metal} and \textit{flat} in  both \Last[a] and \Last[c]. 
 Therefore, there should be a single structural relation corresponding to each of those $\theta$-relations, and any analysis that does not meet this criterion will be rejected.
 
 It could be noted that while a particular entailment pattern clearly and robustly holds of \Last (\Last[a] entails both \Last[b] and \Last[c]), the same cannot be said for all versions of adjectival resultatives.
 Consider, for instance, \Next the English version of Kratzer's (\citeyear{kratzer2004building}) central example.
-\ex. 
-\a. We drank the teapot dry.\\
+\ex.\label{ex:UTAHteapot}
+\a.\label{ex:UTAHteapotRes} We drank the teapot dry.\\
 (\textit{cf.} \textit{Wir haben die Teekanne leer getrunken})
-\b.?\# We drank the teapot.
-\b. We made the teapot dry. 
+\b.?\# \label{ex:UTAHteapotdrank} We drank the teapot.
+\b. \label{ex:UTAHteapotmade} We made the teapot dry. 
 
-While \Last[a] does clearly and robustly entail \Last[c], we cannot say the same about \Last[a] and \Last[b], as it is generally judged as highly coerced.
-Presented with this pattern, we might argue that UTAH considerations are only informative regarding the structural relationship between the object and the adjective of resultatives like \Last[a].
-The pattern in \Last does not, however, negate the pattern in \LLast, which suggested that the resultative object is $\theta$-marked by its verb as well as its adjective.
-We could propose that there are, in fact, at least two distinct structures for resultatives: one corresponding to cases like \LLast, and another corresponding to cases like \Last.
-To my knowledge, however, there is no corroborating evidence for any structural difference between \LLast[a] and \Last[a], and, absent any such evidence, we ought to assume they have the same structure.
-Given this, we must decide which type of resultative we take a ``prototypical''.
-If \Last[a] is our prototype, then we would assume that the resultative object is not $\theta$-marked by its verb and we would have to explain why the object of \LLast[a] seems to be $\theta$-marked by its verb.
+\marginnote{\small I'll need to rewrite this section -Dan}
+While \cref{ex:UTAHteapotRes} does clearly and robustly entail \cref{ex:UTAHteapotmade}, we cannot say the same about \cref{ex:UTAHteapotRes} and \cref{ex:UTAHteapotdrank}, as it is generally judged as highly coerced.
+Presented with this pattern, we might argue that UTAH considerations are only informative regarding the structural relationship between the object and the adjective of resultatives like \cref{ex:UTAHteapotRes}.
+The pattern in \cref{ex:UTAHteapot} does not, however, negate the pattern in \cref{ex:UTAHmetal}, which suggested that the resultative object is $\theta$-marked by its verb as well as its adjective.
+So how are we to deal with this inconsisented data?
+At this point, there are two lines of reasoning we could pursue: assume that \cref{ex:UTAHmetal} and \cref{ex:UTAHteapot} represent two distinct resultative structures, or assume that there is only one structure for resultatives and the inconsistency in the data comes from some other difference between the two sentences. 
+
+Following the first line of reasoning, there are at least two distinct structures for resultatives: one corresponding to cases like \cref{ex:UTAHmetal}, and another corresponding to cases like \cref{ex:UTAHteapot}.
+To my knowledge, however, there is no corroborating evidence for any structural difference between \cref{ex:UTAHmetalRes} and \cref{ex:UTAHteapotRes}, and, absent any such evidence, we ought to assume they have the same structure.
+
+If we take this second line of reasoning, we must then decide which type of resultative we take as ``prototypical'' and which one needs extra explanation.
+If \Last[a] is our prototype, then the resultative object is not prototypically $\theta$-marked by its verb and we would have to explain why the object of \LLast[a] exceptionally seems to be $\theta$-marked by its verb.
 There are, in my mind, two possible ways to explain this: we could either retain a single structure for resultatives and argue that \textit{the metal} is really not $\theta$-marked by \textit{hammer} in \textit{hammer the metal flat}, or we could propose multiple structures for resultatives depending on their $\theta$-marking properties.
 
 The first line of argument means that we would need to propose at least one situation in which a thematic relation is established without explicit $\theta$-marking, that is, extra-grammatically.
@@ -341,16 +350,16 @@ So, assuming Kratzer's example to be our prototype leads us to undesirable resul
 Assuming \textit{hammer the metal flat} to be the prototype, I argue, does not lead us to any undesirable conclusions, though it does present some puzzles.
 As in the discussion above, assuming one type of resultative to be prototypical means explaining the eccentricities in the non-prototypical version;
 that is, we must explain the apparent lack of $\theta$-marking in Kratzer's example.
-While I cannot offer a full explanation, I will suggest that such an explanation will depend of a fuller understanding of the complex dynamics of coercion.
+While I cannot offer a full explanation, I propose that such an explanation will depend of a fuller understanding of the complex dynamics of coercion.
 Developing such an understanding is beyond the scope of this thesis, but see \textcite{pustejovsky1998generative} for some promising proposals in this domain.
 
 \subsubsection{The Lexical Parameterization Hypothesis}
-In addition to UTAH considerations, I will evaluate whether the theory of variation attached to a given analysis is formulable in the minimalist model of grammar.
+In addition to UTAH considerations, I will evaluate whether the theory of parametric variation attached to a given analysis is formulable in the minimalist model of grammar.
 This model of the grammar is composed of four parts:
 	a lexicon containing the atoms from which complex expressions are built;
 	Merge, the simplest combinatorial operation for constructing complex expressions; 
-	and two interfaces, points at which a constructed expression is transferred to language-external modules for either externalization (the sensorimotor (SM) interface/module), or interpretation (the conceptual-intentional (CI) interface/module).
-In this portion I will argue for what is known as the Lexical Parameterization Hypothesis (LPH) which was first formulated by Hagit Borer in the following way:
+	and two interfaces, points at which a constructed expression is transferred to language-external modules for either externalization (the sensorimotor (SM) interface), or interpretation (the conceptual-intentional (CI) interface).
+In this section I will argue for what is known as the Lexical Parameterization Hypothesis (LPH), which was first formulated by Hagit Borer in the following way:
 \begin{quote}
 	In this study we will propose a model of parameters which restricts the availability of variation to the possibilities which are offered by one single component: the inflectional component. \parencite[3]{borer1984parametric}
 \end{quote}
@@ -362,10 +371,10 @@ The lexicon is the only component of grammar that can be the locus of parametric
 In the remainder of the section I will argue that LPH is a reasonable hypothesis.
 I will do so first by a positive argument -- that the lexicon is a natural place to locate variation -- then by a negative argument -- that neither Merge, nor the interfaces can be parameterized.
 
-The notion that lexicons vary may seem trivial, but it is worth describing if only to distinguish the grammatically relevant variation from the grammatically irrelevant variation.
-This dichotomy roughly seems to follow the distinction between functional elements and more meaningful vocabulary elements.
+The notion that lexicons vary may seem trivial, but it is worth describing if only to distinguish grammatically relevant variation from grammatically irrelevant variation.
+This dichotomy roughly seems to follow the distinction between functional elements and more meaningful elements (\textit{i.e.}, roots).
 Variation between two speakers with respect to vocabulary (in the non-technical sense) can be fairly profound without necessarily meaning that the speakers are speaking a different language.
-The variation relevant to this thesis, however, is the kind which leads to systemic differences between grammars.
+The variation relevant to this thesis, however, is the kind that leads to systemic differences between grammars.
 For instance, consider the link between verbal agreement and pro-drop.
 Synthesizing a broad set of empirical studies, \textcite{huang1984distribution} observes that only those languages with rich agreement morphology (\textit{e.g.}, Italian and Spanish) or no agreement morphology (\textit{e.g.}, Mandarin and Japanese) allow subject pro-drop.
 If we take the richness of agreement to be a lexical parameter,\footnote{
@@ -381,11 +390,11 @@ The English verbal system provides us with good reason to consider richness of a
 In English, main verbs and modals differ with respect to their agreement, with main verbs showing impoverished agreement and modals showing no agreement.
 Regardless of the details of the analysis of this variation, there must be some lexical property that determines whether or not a verbal element surfaces with agreement morphology.
 Since agreement morphology can be a variable lexical property within a language, it is reasonable to assume that it can be a variable lexical property across languages.
-Following this line of reasoning, and assuming that the pro-drop parameter is correlated with agreement morphology, the pro-drop parameter can be reduced to a lexical parameter.
+Following this line of reasoning, and assuming that the pro-drop parameter is correlated with agreement morphology, the pro-drop parameter is reducible to a lexical parameter.
 
 Having shown that there can be significant grammatical effects from lexical variation, I will now argue that the remaining components of the grammar (Merge, the two interfaces) are ill-suited to variation.
 
-Merge is the easiest component to eliminate from consideration of the locus of variation due to its simplicity.
+Merge is the easiest component to eliminate from consideration as the locus of variation due to its simplicity.
 As defined in \Next, it is the simplest possible operation for generating hierarchical structures: binary set formation.
 \ex. Merge$(\alpha, \beta) = \{ \alpha, \beta\}$
 
@@ -396,24 +405,26 @@ It is worth noting, however, that Merge, as defined in \Last, is not \textit{the
 \ex. Merge$^\prime(\alpha, \beta) = \alpha^\frown\beta$
 
 Assuming that concatenation is as simple as set-formation, it is still not able to form hierarchical structures without further complication.
-This is because concatenation, unlike binary set-formation, is associative meaning it obeys the law in \Next as demonstrated in \NNext.
-\ex. \textbf{Associative Law}
+This is because concatenation, unlike binary set-formation, is associative.
+That is, it obeys the law in \Next as demonstrated in \NNext.
+\ex. \textbf{Associative Law}\\
 $(x \centerdot y) \centerdot z = x \centerdot (y \centerdot z)$ for all $x,y,z$
 
-\ex. \textbf{Concatenative Merge is associative}
+\ex. \textbf{Concatenative Merge is associative}\\
 Merge$^\prime($ Merge$^\prime(\alpha, \beta), \gamma)$\\
 $= (\alpha^\frown\beta)^\frown\gamma$\\
 $= \alpha^\frown\beta^\frown\gamma$\\
 $= \alpha^\frown(\beta^\frown\gamma)$\\
 $= $Merge$^\prime(\alpha, $ Merge$^\prime(\beta, \gamma))$
 
-Since concatenative Merge forms essentially flat structures, it is ill-suited to construct linguistic expressions which appear to be fundamentally hierarchical in nature.
-So, while there are other possible combinatory operations which are as simple as Merge, there don't seem to be any which can capture the fact that linguistic expressions are hierarchically structured.
-Therefore, any variation in Merge can only come from complicating the operation.
+Since concatenative Merge forms essentially flat structures, it is ill-suited to construct linguistic expressions which appear to be fundamentally hierarchical.
+So, while there are other possible combinatory operations as simple as Merge, there don't seem to be any that can capture the fact that linguistic expressions are hierarchically structured.
+It therefore appears that any variation in Merge can only come from complicating the operation.
 
-Being a hypothesis, the LPH need not be derived deductively, but rather, it should be justified by showing that it is a sufficiently strong non-falsified hypothesis.
+Being a hypothesis, the LPH need not be derived deductively.
+Rather, it can be justified by showing that it is a sufficiently strong, non-falsified hypothesis.
 To define the strength of a hypothesis, I will adopt Popper's (\citeyear{popper1959logic,popper2014conjectures}) notion of \textit{empirical content}.
-For Popper, the empirical content of a theory, or statement $a$ is the ``the class of all basic statements which contradict $a$'' \parencite[315]{popper2014conjectures}, where a \textit{basic statement} is an observable fact.
+For Popper, the empirical content of a theory, or statement $a$ is the ``the class of all basic statements which contradict $a$'' \parencite[315]{popper2014conjectures}, where a \textit{basic statement} is a statement whose truth-value can be determined by mere observation of the world.
 A hypothesis $H_1$ is stronger than another hypothesis $H_2$ if the empirical content of $H_1$ is greater than that of $H_2$.
 While there is no way to determine the absolute empirical content of a given statement, and therefore there is no way to directly compare the content of two independent statements, we can compare logically related statements.
 \textcite[295]{popper2014conjectures}, for instance, compares the content of two logically independent statements, $a$ and $b$, with that of the conjunction of the two $a\wedge b$, arguing that the empirical content of the conjunct is at least as great as that of each of the independent statements.
@@ -446,14 +457,18 @@ Since the multiple source hypotheses have less empirical content the single-sour
 There are hypotheses which might be considered stronger than any of the single-source hypotheses, but these hypotheses face problems.
 For instance, a stronger hypothesis would be that there are no variable properties of language, but this hypothesis is quite easily falsified.
 A hypothesis constructed by conjoining two or more of the single-source hypotheses would, on its face, seem like a stronger hypothesis, but in fact such a hypothesis would be incoherent.
-A conjoined source hypothesis would be incoherent because the very notion of modularity that our theory assumes means that a module cannot share a property.
+A conjoined source hypothesis would be incoherent because the very notion of modularity that our theory assumes requires that modules are independent of each other.
+If two modules are independant of each other, then they can only share a property under two conditions: either they share the property by accident, or the property is a property of a modular system that contains them both.
+The former condition is merely a special case of the multiple source hypothesis, while the latter case is irrelevant here, though perhaps relevant to cognitive science more broadly.
+Therefore, I will set aside the conjoined source hypothesis.
+
 So, since there are no admissible hypotheses that are stronger than our single-source hypotheses, then we can say that the single-source hypotheses are sufficiently strong.
 Furthermore, the presence of lexical variation (\textit{e.g.}, variable richness of subject agreement) seems to falsify all of the single-source hypotheses except for LPH, meaning that LPH is the only sufficiently strong non-falsified hypothesis.
 
 Before continuing, I should reiterate that the discussion above is not the deduction of the truth of the LPH but rather of its relative strength.
 To the contrary, as \textcite{popper2014conjectures} notes repeatedly, the strength of a theoretical claim is inversely proportional to the probability of its truth.
 This means that the LPH is very likely to be false, which means that if it is false, it should be relatively easy to refute it.
-The strength of a claim, then, is a methodological question, while the truth, or truthlikeness, of that claim is ultimately an empirical question.
+The strength of a hypothesis, such as the LPH or its competitors, then, is of methodological relevence, while the truth, or verisimilitude, of that claim is ultimately an empirical question.
 
 %The interfaces cannot be parameterized for reasons having to do with the logical problem of language acquisition, which I will discuss by analogy to numerical functions below.
 %At first blush, it may seem unreasonable to assume that we can discuss grammars by analogy to numerical functions, but one of the bases for generative grammar is the proposition that language shares with the natural numbers the property of discrete infinity.

@@ -772,7 +772,7 @@ Therefore, the null head would have to be acquired indirectly, but \textcite{son
 In the absence of any proposed method for acquiring this parameter, I will set it aside.
 This means I will also set aside the structural analysis that is associated with the parameter. 
 
-The final analysis I will mention is that of \textcite{kratzer2004building}, which will not be fully rejected, but rather adapted to form my proposed structure.
+The final analysis I will mention is that of \textcite{kratzer2004building}, which I will adopt with some modifications.
 In this analysis, the resultative object (\textit{e.g.}, \textit{the metal}) and the adjective (\textit{e.g.}, \textit{flat}) form a small clause, which describes a state.
 The small clause merges with a \textit{res} head, which encodes a causative relation between events, and the resulting \textit{res}P is merged as the complement of the verb (\textit{e.g.}, \textit{hammer}).
 The small clause theme is then raised to check accusative Case, and from there the derivation proceeds as normal.
@@ -790,7 +790,7 @@ The structure this generates is given in \cref{fig:kratzer-res}.
 		[\textit{res}P 
 		  [\textit{res}] 
 		  [SC
-		    [{$\langle\text{the metal}\rangle$},name=sc theme]
+		    [the metal,name=sc theme]
 		    [flat]
 		  ]
 		]
@@ -799,16 +799,44 @@ The structure this generates is given in \cref{fig:kratzer-res}.
 	  ]
 	  \draw[->] (sc theme) to[out=south west, in=south] (V theme);
 	\end{forest}
-	\caption{Kratzer's Resultative Structured}
+	\caption{Kratzer's Resultative Structures}
 	\label{fig:kratzer-res}
 \end{figure}
-Under the assumption that \textit{the metal} is $\theta$-marked by \textit{hammer}, this violates UTAH, and ought to be rejected.
+Under the assumption that \textit{the metal} is $\theta$-marked by \textit{hammer}, this violates UTAH.
+This violation can be seen when we compare the resultative sentence that is partially represented in \cref{fig:kratzer-res} with the sentence in \cref{ex:HammerPass} and its structure, represented in \cref{fig:HammerPass}.
+\ex.\label{ex:HammerPass} The metal was hammered.
+
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges,baseline
+		[TP
+			[{the metal},name=Subj]
+			[
+				[T]
+				[VoiceP
+					[Voice$_{pass}$]
+					[VP
+						[hammer]
+						[{the metal},name=theme]
+					]
+				]
+			]
+		]
+		\draw[->] (theme) to[out=south west, in=south] (subj);
+	\end{forest}
+	\caption{The Structure of \cref{ex:HammerPass}}
+	\label{fig:HammerPass}
+\end{figure}
+The sentence in \cref{ex:HammerPass} shares a thematic relation with its resultative counterpart; in both cases \textit{the metal} is the theme of \textit{hammer}.
+According to minimal UTAH, this shared thematic relation should correspond to a shared structural relation, but no such structural relation exists under Kratzer's analysis.
+This violation of UTAH, however, is not fatal as I will show in the next chapter, when I adapt Kratzer's analysis to comply with UTAH.
 
 \subsection{Summary}
 In this chapter, I assessed several previous structural and parametric analyses of resultatives according to criteria I developed.
-The structures proposed for resultatives were assessed in terms of UTAH, while the parameters proposed were assessed based on whether they could be learned from the primary linguistic data, and whether they were be represented as lexical parameters.
+The structures proposed for resultatives were assessed in terms of UTAH, while the parameters proposed were assessed based on whether they could be learned from the primary linguistic data, and whether they could be represented as lexical parameters.
 Several analyses were considered and ultimately rejected for not meeting the criteria I proposed.
-However, Kratzer's (\citeyear{kratzer2004building}) structural analysis, and Snyder's (\citeyear{snyder1995language,snyder2012parameter}) parametric analysis appear to be promising, for reasons that will be further developed to form the analyses assumed in this thesis.
+However, Kratzer's (\citeyear{kratzer2004building}) structural analysis, and Snyder's (\citeyear{snyder1995language,snyder2012parameter}) parametric analysis appear to be promising, for reasons that will be further developed in the next chapter.
 
 While portions of Snyder's and Kratzer's analyses were rejected, they share a certain feature which I will retain in my final analysis: they are acquirable.
 Snyder's (\citeyear{snyder1995language}) proposal is that the availability of resultatives in a language is linked to the availability of a productive N-N compounding in that language.
@@ -818,9 +846,9 @@ She proposes that resultatives (and N-N compounding) are available only in those
 \ag. Die Teekanne leer trinken.\\
 the teapot empty drink.\\
 ``to drink the teapot dry'' \parencite{kratzer2004building}
-\b. Wurmkanne\\
+\b.\label{ex:WurmKanne} Wurmkanne\\
 ``worm+can'' \parencite{snyder2001nature}
-\cg. Die Teekanne ist leer (*-e).\\
+\cg.\label{ex:IstLeer} Die Teekanne ist leer (*-e).\\
 The.\textsc{fem} teapot is empty \textsc{fem}''\\
 ``The teapot is empty.''
 
@@ -834,8 +862,8 @@ Dario \textsc{cop} painted house red.\textsc{fem}\\
 house \textsc{cop} red \textsc{fem}\\
 ``The house is red.''
 
-Both compounding and the lack of predicative adjective agreement are detectable in the primary linguistic data, and therefore could reasonably be taken to be the positive data responsible for the setting of the resultative parameter.
+Both compounding, as in \cref{ex:WurmKanne}, and the lack of predicative adjective agreement, as in \cref{ex:IstLeer}, are detectable in the primary linguistic data, and therefore could reasonably be taken to be the positive data responsible for the setting of the resultative parameter.
 The account of the resultative parameter which I will develop in the remainder of this thesis will build on the idea that the positive evidence that triggers the parameter setting will be related to compounding and adjectival agreement.
-Before developing such an account, I will modify Kratzer's analysis to make it theoretically feasible in the next chapter.
+Before developing such an account, I will modify Kratzer's analysis to make it theoretically feasible.
 \end{document}
 

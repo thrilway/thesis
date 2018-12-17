@@ -9,12 +9,12 @@
 \documentclass[MilwayThesis]{subfiles}
 \begin{document}
 In the previous chapter, I discussed the failings of several previous analyses of adjectival resultatives.
-In this chapter I will address two of those analyses --- one structural and one parametric --- and show how they can be modified to address the concerns raised in the previous chapter.
-The structural analysis, that of \textcite{kratzer2004building}, was rejected because it did not comply with UTAH, but has three features which I will retain: a small clause structure, theme raising, and a result head.
-The parametric analysis, that of \textcite{snyder1995language,snyder2012parameter}, was rejected because it did not comply with the Lexical Parameterization Hypothesis, but was based on a learnable pattern and so I will be adopting a modified version of it.
+In this chapter I will discuss two of those analyses---one structural and one parametric---and show how they can be modified to address the concerns raised in the previous chapter.
+The structural analysis, that of \textcite{kratzer2004building}, was rejected as it stood because it did not comply with UTAH, but it has three features which I will retain: a small clause structure, theme raising, and a result head.
+The parametric analysis, that of \textcite{snyder1995language,snyder2012parameter}, was rejected because it did not comply with the Lexical Parameterization Hypothesis, but it was based on a learnable pattern and so I will be adopting a modified version of it.
 \section{Fixing the UTAH problem}
 The one issue with Kratzer's analysis is that it seems to violate UTAH.
-That is, there is a single $\theta$-relation between \textit{hammer} and \textit{the metal} in both sentences in \Next, that is not represented by a single structural relation.
+That is, there is a single $\theta$-relation between \textit{hammer} and \textit{the metal} in both sentences in \Next, that does not correspond to a single structural relation.
 \ex.
 \a. Joe hammered the metal flat.
 \b. Joe hammered the metal.
@@ -63,7 +63,7 @@ According to Kratzer's analysis, \textit{the metal} is the specifier of \textit{
 	\label{fig:KratzerTree}
 \end{figure}
 If we were to modify Kratzer's analysis, so that \textit{the metal} is the complement of \textit{hammer}, then we would need to attach the result phrase in a different position.
-I propose that the result phrase is adjoined to the VP, allowing the DP to merge directly with the verb as shown in \cref{fig:hammer-flat}.
+I propose that the result phrase is adjoined to the VP, as shown in \cref{fig:hammer-flat}, allowing the DP to merge directly with the verb.
 \begin{figure}[h]
 	\centering
 	{\small
@@ -95,15 +95,15 @@ I propose that the result phrase is adjoined to the VP, allowing the DP to merge
 	\caption{The Structure of resultatives}
 	\label{fig:hammer-flat}
 \end{figure}
-The modified analysis no longer violates UTAH, but it introduces two issues new issues which I address in the proceeding sections.
-The first issue is that the movement operation between [Spec, res] and [Comp, V] does not target a c-commanding positions.
-In other words it is a sideward rather than upward movement.
-The second issue is that resP and VP are now adjoined, meaning they compose by conjunction.
+The modified analysis no longer violates UTAH, but it introduces two new issues.
+First, the movement operation between [Spec, res] and [Comp, V] does not target a c-commanding position.
+In other words, it is a sideward rather than an upward movement.
+Second, resP and VP are adjoined, meaning that they compose by conjunction.
 This is counterintuitive, however, since resultatives are inherently asymmetric, with the verb event causing the adjective state.
 I will address each of these in turn below.
 \subsection{Sideward movement}
 In \cref{fig:hammer-flat}, the object DP moves from [Spec res] to [Comp V].
-The movement ``chain'' this operation forms is problematic due to the fact that the head of the chain does not c-command the tail.
+The movement ``chain'' this operation forms is problematic because the head of the chain does not c-command the tail.
 Although this type of so-called sideward movement is generally barred, \textcite{nunes2001sideward} argues for a restricted version of sideward movement.
 Nunes argues that head movement and parasitic gaps both require a sideward movement operation, as they both create non-c-command dependencies.
 \ex.
@@ -265,12 +265,12 @@ in \cref{fig:HammerFlatAgrO}.
 \end{figure}
 
 Since the copy of \textit{the metal} in [Spec, AgrO] c-commands all of the other copies, it will be pronounced and the lower copies will be deleted at the SM interface.
-So, assuming some mechanism for sideward movement, we are able to modify Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives to be compatible with UTAH.
+So, assuming some mechanism for sideward movement, we are able to modify Kratzer's (\citeyear{kratzer2004building}) analysis of resultatives so that it is compatible with UTAH.
 
 Since we have modified Kratzer's analysis, it is worth asking if our version will still compose semantically to give us the desired interpretation.
-In the next section, I argue that not only are we able to retain the proper interpretation, but we are able to do so while assuming a simpler compositional system.
+In the next section, I argue that not only can we retain the proper interpretation, but we can do so while assuming a simpler compositional system.
 \section{Composing resultatives}\label{sec:ResInterp}
-\textcite{kratzer2004building} adopts a neo-Davidsonian semantics for resultatives, meaning they are analyzed as descriptions of eventualities rather that merely as relations between entities.
+\textcite{kratzer2004building} adopts a neo-Davidsonian semantics for resultatives, meaning that they are analyzed as descriptions of eventualities rather than merely as relations between entities.
 Her syntactic analysis is repeated in \cref{fig:KratzerTreeRedux} for reference.
 \begin{figure}[h]
 	\centering
@@ -303,7 +303,7 @@ The verb \textit{hammer} is interpreted as a predicate of events.
 \ex. $\llbracket\textit{hammer}\rrbracket = \lambda e_s \left[ \textsc{event}(e) \& \textbf{hammer}(e)\right]$
 
 Note that Kratzer analyses resultative verbs as intransitives, meaning they do not take any entity arguments.
-Finally, Kratzer analyses the result head as a higher order function, which expresses a causal relation between the event expressed by the verb and the state expressed by the small clause.
+Finally, she analyses the result head as a higher order function, which expresses a causal relation between the event expressed by the verb and the state expressed by the small clause.
 \ex. $\llbracket\textit{res}\rrbracket = \lambda P_{\langle s,t\rangle} \lambda e_s \exists s_s \left[\textsc{event}(e) \& \textsc{state}(s) \& P(s) \& \textsc{Cause}(s)(e)\right]$
 
 So, for Kratzer, the typed LF of \textit{hammer the metal flat} is as in \cref{fig:TypedLFKratzer}, and, according to her, \textit{hammer} and the resP compose by an operation she calls Event Identification \parencite{kratzer1996severing} which, in this instance, is equivalent to Predicate Modification generalized to eventualities.
@@ -365,17 +365,18 @@ The same compositional process can be adapted to the sideward movement structure
 \end{figure}
 
 Thus, with these adaptations, Kratzer's analysis of resultatives can be made UTAH-compliant.
-In the remainder of this chapter, I will discuss the parametric analysis of resultatives that I will be assuming.
+In the remainder of this chapter, I will discuss my parametric analysis of resultatives.
 
 \section{Where does the resultative parameter come from?}
 In the previous chapter, I discussed two desiderata for a parametric analysis.
 First, the parameter must be learnable, meaning there must be some variable in the primary linguistic data which the learner can detect and deduce a particular parameter setting from.
 Second, the variable must be represented in the lexicon.
-For the sake of expediency, I will refer to the variable detectable in the PLD as the surface variable, and its lexical representation as the lexical variable.
+For clarity, I will refer to the variable detectable in the PLD as the surface variable, and its lexical representation as the lexical variable.
 
 To my knowledge, there is only one proposed candidate for the surface variable in the generative literature, that is, Snyder's (\citeyear{snyder1995language,snyder2012parameter}) compounding parameter.
 According to the latest version of this parameter, a language allows resultatives iff it allows bare stem compounding.
-As I discussed in the previous chapter, Snyder rejects the Lexical Parameterization Hypothesis, meaning he does not propose a lexical variable, instead situating the parameter in the operations of the CI interface.
+As discussed in the previous chapter, Snyder rejects the Lexical Parameterization Hypothesis, meaning that he does not propose a lexical variable.
+Instead, he situates the parameter in the operations of the CI interface.
 However, I will propose a lexical variable from which both the (un)availability of bare stem compounding, and the (un)availability of adjectival resultatives can be derived.
 
 To make such a proposal, we must make the intermediate hypothesis that a language allows bare stem compounding iff it allows bare stems, meaning there should be no languages that allow for bare stems but cannot compound them together.
@@ -395,6 +396,5 @@ This version of the compounding parameter is lexical, and therefore complies wit
 Furthermore, it is learnable from the primary linguistic data, since its external manifestation is the presence or absence of inflectional morphology.
 Since the inflectional morphology is detectable on the surface, its absence must also be detectable or at least deducible.
 This leaves us with questions regarding the initial state of the lexicon, and which parameter setting is the default, but those questions are beyond the scope of this thesis and will be set aside.
-
 
 \end{document}

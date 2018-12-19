@@ -48,18 +48,18 @@ In this thesis I have made liberal use of a novel class of sideward movement str
 	\caption{A schema of the sideward movement structure}
 	\label{fig:SidewardSchema}
 \end{figure}
-This structure was used as an analysis of adjectival resultatives and depictives, and for one available structure for direct perception reports with ACC-ing clauses.
+This structure was used in the analysis of adjectival resultatives and depictives, and for one available structure for direct perception reports with ACC-ing clauses.
 The distinction between these constructions is due to the choice of head Y.
 For resultatives, Y is instantiated by res, while for perception reports, it is instantiated by Prog.
-As for depictives, the adjoined phrase YP is a small clause, so Y is either absent or instantiated by a Pred head.
+In depictives, the adjoined phrase YP is a small clause, so Y is either absent or instantiated by a Pred head.
 Note that, while the complement of Y, ZP, also varies from construction to construction, this variation can be derived from the selectional requirements of Y.
 
-If we take VPs to be event descriptions, and we assume that host-adjunct structures to compose by predicate conjunction, then a VP adjunct (SC for depictives, resP for resultatives, and ProgP for DPRs) must also be event description.
+If we take VPs to be event descriptions, and we assume that host-adjunct structures compose by predicate conjunction, then a VP adjunct (SC for depictives, resP for resultatives, and ProgP for DPRs) must also be event description.
 That is, in \cref{fig:SidewardSchema} the VP and YP are both interpreted as predicates of events, and, because they combine by predicate conjunction, they both describe the same event.
 In this chapter, I discuss the interpretation of depictives and adjunct ACC-ing clauses.
-As for the interpretation of resultatives, the discussion in \cref{sec:ResInterp} remains sufficient.
+As for the interpretation of resultatives, nothing needs to be added the discussion in \cref{sec:ResInterp}.
 
-In the case of depictives, the interpretation is mostly straightforward, though not without some complications.
+In the case of depictives, the interpretation is mostly straightforward, though not entirely without complications.
 Consider \cref{ex:Depictive}, which describes an eventuality in which Natasha eats the fish while that fish is raw.
 \ex. Natasha ate the fish raw.\label{ex:Depictive}
 
@@ -71,7 +71,7 @@ $\lambda e [\textbf{eating}(e)\, \&\, \textbf{raw}(e)\, \&\, \textsc{Theme}(\tex
 
 One might object that this LF is incoherent, as eating is an event, while rawness is a state, and an eventuality cannot be both an event and a state.
 This objection, however, does not hold up under scrutiny.
-Suppose we take the externalist perspective, according to which the entities that natural language expressions are predicated of are mind-external and -independent entities, and the predicates and concepts of natural language correspond to natural kinds.
+Suppose we take the externalist perspective, according to which the entities that natural language expressions are predicated of are external to and independent of the mind, and the predicates and concepts of natural language correspond to natural kinds.
 From this perspective, eventualities are regions of space-time, some of which are events, while others are states.
 So, for instance to utter \cref{ex:EventDesc} truthfully is to refer to a particular region of space-time.
 \ex.\label{ex:EventDesc} The officer ticketed the car.
@@ -154,12 +154,12 @@ The VoiceP is unremarkable, so I assume its meaning is the complete but tenseles
 Prog, then, takes this description as an argument, and ascribes progressive aspect to it.
 The standard, though perhaps na\"ive analysis of progressive aspect (as proposed in \cite{klein1994time}) is that Prog takes a description of event $e$ as an argument, introduces a topic time $t$, and asserts that $t$ is included in the run-time of $e$.
 This predicts that ProgP encodes the predicate of times in \cref{ex:ProgPSEM1}
-\ex.\label{ex:ProgPSEM1} \textsc{SEM}(ProgP) =  $\lambda t \exists e [t \subseteq \textsc{time}(e)\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$ (first pass)
+\ex.\label{ex:ProgPSEM1} \textbf{First approximation:}\\\textsc{SEM}(ProgP) =  $\lambda t \exists e [t \subseteq \textsc{time}(e)\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
 
 However, since ProgP adjoins to VP and the resulting structure is interpreted as a conjunction, ProgP must be interpreted as a predicate of events.
 Therefore, I will modify the semantic analysis of Prog such that it introduces an event $e^{\prime}$ and asserts that $e^{\prime}$ is included in $e$.
 The final interpretation of the ProgP, is given in \cref{ex:ProgPSEM2} \parencite[cf.][]{bjorkman2018poster}.
-\ex.\label{ex:ProgPSEM2} \textsc{sem}(ProgP) =  $\lambda e^{\prime} \exists e [e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$ (second pass)
+\ex.\label{ex:ProgPSEM2} \textbf{Second approximation:}\\\textsc{sem}(ProgP) =  $\lambda e^{\prime} \exists e [e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
 
 This interpretation will properly compose with \cref{ex:VPSEM} to yield the interpretation of the host-adjunct structure in \cref{ex:VPProgPSEM}
 \ex.\label{ex:VPProgPSEM} \textsc{sem}($\langle$ProgP, VP$\rangle$) = $\lambda e^{\prime} \exists e [ \textbf{see}(e^{\prime})\,\&\,\textsc{theme}(\textbf{the\_dog})(e^{\prime})\,\&\,e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
@@ -180,7 +180,7 @@ Note that this does not mean that the unseen running event is not a running even
 That being said, I will now entertain two alternative analyses and discuss their flaws.
 
 Suppose, for instance, that the semantics of Prog is about time rather than eventualities.
-This can be attained without the compositionality issues discussed above if we hypothesise the denotation in \cref{ex:ProgTauDenote}.
+This can be attained without the compositionality issues discussed above if we hypothesize the denotation in \cref{ex:ProgTauDenote}.
 \ex.\label{ex:ProgTauDenote} \textsc{sem}(Prog) = $\lambda P_{\langle s,t\rangle} \lambda e^{\prime} \exists e [\tau(e^{\prime}) \subseteq \tau(e) \& P(e^{\prime})]$
 
 This denotation would predict that the sentence in \cref{ex:ACC-ing}, under the adjunct ACC-ing interpretation, would mean that there was an event $e1$ of us seeing the dog, and an event $e2$ of the dog running, and that the time of $e1$ is included in the time of $e2$.
@@ -206,10 +206,10 @@ To be more forceful, this hypothesized interpretation of Prog predicts that the 
 Since the coincidence between the perception event and the slandering/parodying event is strictly temporal, there is no reason to require that the two events occur in the same room, or even in the same hemisphere.
 So, suppose I were sitting at a caf\'e with some singer, while at the same time, ``Weird Al'' Yankovic was recording a parody of that singer in a studio across town.
 If Prog merely encodes temporal concidence, then \cref{ex:ParodiedPassive2} should be licit and true of this situation.
-These examples, however, are illicit meaning that the temporal coincidence hypothesis does not fare as well as my hypothesis.
+These examples, however, are illicit, and therefore the temporal coincidence hypothesis does not fare as well as my hypothesis.
 
 We could, of course, seek to stipulate that the ProgP event (\textit{e.g.}, the event of the dog running) is perceived, but I argue that such a move is untenable.
-Suppose hypothesize that the logical form in \cref{ex:AdHocLF} is final logical form of the VP in \cref{ex:ACC-ing}.
+Suppose that the logical form in \cref{ex:AdHocLF} is final logical form of the VP in \cref{ex:ACC-ing}.
 \ex.\label{ex:AdHocLF}
 $
 \begin{array}[t]{rcl}
@@ -223,7 +223,7 @@ It is either (\textit{i}) encoded in Prog, (\textit{ii}) encoded in the percepti
 I will discuss each of these below in turn, and show that they all fail empirically.
 
 First, consider the option of encoding a theme predicate in the Prog head.
-This obviously wouldn't do for the case in which the present participle is the main verb of the clause (\textit{e.g.}, \textit{The dog is running.}), so we need to hypothesize a new head which I will call Prog$_{\Theta}$, and which has the denotation in \cref{ex:ProgAdHoc}.
+This obviously wouldn't do for the case in which the present participle is the main verb of the clause (\textit{e.g.}, \textit{The dog is running.}), so we need to hypothesize a new head which I will call Prog$_{\Theta}$, with the denotation in \cref{ex:ProgAdHoc}.
 \ex.\label{ex:ProgAdHoc} $\textsc{sem}(\text{Prog}_{\Theta}) = \lambda P \lambda e \exists e^{\prime},e^{\prime\prime}[\textsc{theme}(e)(e^{\prime}) \,\&\, e^{\prime}\subseteq e^{\prime\prime} \,\&\, P(e^{\prime\prime})]$
 
 Now consider the adjunct ACC-ing interpretation of \cref{ex:ACC-ing} under this hypothesis.
@@ -251,13 +251,13 @@ We can see this in the case of the agent role in \cref{ex:DoubleAgent} and the b
 \ex.* \label{ex:DoubleAgent} Angela duped Phyllis by Pam.
 
 \ex.? \label{ex:DoubleBen} Toby baked Kevin a cake for Oscar.\footnote{
-	Note this sentence is acceptable if Kevin is the recipient and Oscar is the benificiary or vice-versa, but not if Kevin and Oscar have the same role.
+	This sentence is acceptable if Kevin is the recipient and Oscar is the beneficiary or vice-versa, but not if Kevin and Oscar have the same role.
 }
 
 We could stipulate that Prog$_{\Theta}$ encodes a secondary theme predicate \textsc{theme2}, but this would be entirely ad hoc, as this role would only be used for these direct perception reports.
 Note, of course, that this line of argumentation would apply to the other two possibilities investigated below.
-I could, therefore, cut this discussion short right here and declare the proposed analysis in \cref{ex:AdHocLF} irreparably flawed.
-I have other arguments against the analysis though, so I will present those below.
+I could, therefore, cut the discussion short and declare the analysis in \cref{ex:AdHocLF} irreparably flawed.
+There are other arguments against the analysis though, so I will present those below.
 
 Consider the option of encoding the secondary theme in the perception verb.
 Our new version of \textit{see}, then, is given in \cref{ex:SeeAdHoc}.
@@ -269,7 +269,7 @@ $
 \end{array}
 $
 
-The issue with this hypothesis is that it requires that the ACC-ing clause not be an adjunct.
+The issue with this hypothesis is that it requires the ACC-ing clause to be not an adjunct, but an argument.
 Note that the second argument of the denotation of \textit{see}$_{\Theta}$ is a predicate of events, which is satisfied by the ACC-ing clause.
 However, by hypothesis (see \cref{sec:modifications}), an expression can only be an argument of a verb if it is merged with, rather than adjoined to the VP.
 Therefore, this proposal requires the ACC-ing clause to be merged with the VP, rather than adjoined to it, as in \cref{fig:AdHocTree2}.
@@ -297,34 +297,34 @@ Therefore, this proposal requires the ACC-ing clause to be merged with the VP, r
 	\caption{The unlabelled structure of \cref{ex:ACC-ing} required by the \textit{see}$_{\Theta}$ proposal}
 	\label{fig:AdHocTree2}
 \end{figure}
-This structure, however, is untenable without significant additional stipulation for two reasons, which I discuss below.
+This structure, however, is untenable without significant additional stipulation for two reasons.
 First, it is unlabellable.
 Consider how we would label $\gamma$, which is a phrase-phrase structure.
-The labelling algorithm, would search $\gamma$ and find the least-embedded, still-visible, functional LIs.
+The labelling algorithm would search $\gamma$ and find the least-embedded, still-visible, functional LIs.
 In this case, $v_{\Theta}$ and Prog are equally embedded, and thus are returned by LA.
 This can result in an unambiguous label only if we make one of two additional stipulations.
 Either (\textit{i}) $v_{\Theta}$ and Prog agree for some feature, or (\textit{ii}) the ProgP $\zeta$ undergoes movement.
 Stipulation (\textit{i}) requires at least two additional stipulations: a stipulation as to the identity of the agreeing features, and a stipulation that agreement can occur at such a structural distance.
 I strongly suspect that these sub-stipulation will require stipulations of their own, and so on, but I stop here.
-Stipulation (\textit{ii}), requires us to stipulate a landing site for the movement operation; one that ensure the proper word order.
-This new landing site implies a new functional head, whose identity will likely be stipulated.
+Stipulation (\textit{ii}), requires us to stipulate a landing site for the movement operation; one that ensures the proper word order.
+This new landing site implies a new functional head, whose identity will also likely be stipulated.
 As with stipulation (\textit{i}), this stipulation likely begets more stipulations.\footnote{
 	A skeptical reader might point out that this is the very nature of scientific inquiry: Explaining one phenomenon invariably brings to light several phenomena in need of explanation.
 	This view might suggest that one person's stipulation is another's hypothesis.
-	I would argue, however, that these hypotheses do not raise new areas of inquiry, but rather rescue us from raising new areas of inquiry.
+	I would argue, however, that these hypotheses do not raise new areas of inquiry, but rather allow us to avoid raising new areas of inquiry.
 	Recall that the impetus for these stipulations was to avoid a vague unease with the semantic analysis in \cref{ex:VPProgPSEM} that followed naturally from the syntactic analysis assumed in this chapter.
 	Such an unease, I believe, does not justify this level of stipulation.
 }
-The level of stipulation required in order to label the structure in \cref{fig:AdHocTree2}, I believe, renders in untenable.
+The level of stipulation required in order to label the structure in \cref{fig:AdHocTree2}, I believe, renders it untenable.
 
 Even if we were to assume that the structure in \cref{fig:AdHocTree2}, or a structure derived from it, is labellable, there is another reason that this analysis cannot be maintained.
 Recall that in \cref{sec:ACCing} I showed that, when an ACC-ing clause is merged as an argument, its subject must remain in situ.
 This predicts, not only that ungrammatical sentences with two DP objects like \cref{ex:DoubleObj} should be grammatical, but also that \cref{ex:ACC-ing} should be ungrammatical.
 \ex.* We saw the dog the cat running.\label{ex:DoubleObj}
 
-In view of the issues with this proposed analysis, I will set it aside.
+In view of the problems with this proposed analysis, I will set it aside.
 
-Which brings us to our final possibility: encoding the \textsc{theme2} on a specialized functional head $\Theta$.
+This brings us to our final possibility: encoding the \textsc{theme2} on a specialized functional head $\Theta$.
 Under this analysis, \cref{ex:ACC-ing} would have the structure in \cref{fig:AdHocTree3}.
 \begin{figure}[h]
 	\centering
@@ -343,7 +343,7 @@ Under this analysis, \cref{ex:ACC-ing} would have the structure in \cref{fig:AdH
 \end{figure}
 
 Assuming $\Theta$ takes $v$P as an argument, and ProgP is adjoined to the resulting $\Theta$P, lets consider a possible meaning for $\Theta$ in \cref{ex:ThetaSEM1}
-\ex. \textsc{sem}$(\Theta) = \lambda P_{\langle s,t\rangle} \lambda e \exists e^{\prime}\left[ P(e)\,\&\,\textsc{theme2}(e)(e^{\prime}) \right]$\label{ex:ThetaSEM1} (First Pass)
+\ex. \textbf{First approximation:}\\ \textsc{sem}$(\Theta) = \lambda P_{\langle s,t\rangle} \lambda e \exists e^{\prime}\left[ P(e)\,\&\,\textsc{theme2}(e)(e^{\prime}) \right]$\label{ex:ThetaSEM1}
 
 This \textsc{sem} says that there is some event which is the secondary theme of the event described by the $v$P.
 Now, when this combines with the $v$P, it yields the predicate of events in \cref{ex:ThetaPSEM1}.
@@ -360,10 +360,10 @@ $
 
 This interpretation has two flaws.
 First, it asserts that the entire running event $e^{\prime}$ is the secondary theme of seeing.
-This is far too stron of an assertion; \cref{ex:ACC-ing} is compatible with only seeing a sliver of the running event.
+This is far too strong of an assertion; \cref{ex:ACC-ing} is compatible with only seeing a sliver of the running event.
 Second, it asserts that the seeing event $e$ is a subpart of the running event $e^{\prime}$, which is precisely the assertion we are trying to avoid.
 These issues can be avoided by swapping the variables $e$ and $e^{\prime}$ in our denotation of $\Theta$ as in \cref{ex:ThetaSEM2}.
-\ex. \textsc{sem}$(\Theta) = \lambda P_{\langle s,t\rangle} \lambda e^{\prime} \exists e\left[ P(e)\,\&\,\textsc{theme2}(e)(e^{\prime}) \right]$\label{ex:ThetaSEM2} (second Pass)
+\ex. \textbf{Second approximation:}\\ \textsc{sem}$(\Theta) = \lambda P_{\langle s,t\rangle} \lambda e^{\prime} \exists e\left[ P(e)\,\&\,\textsc{theme2}(e)(e^{\prime}) \right]$\label{ex:ThetaSEM2}
 
 The resulting denotation of the structure in \cref{fig:AdHocTree3} is given in \cref{ex:ThetaPSEM2}
 \ex.\label{ex:ThetaPSEM2} 
@@ -374,12 +374,12 @@ $
 \end{array}
 $
 
-This no longer has the flaws of the denoation in \cref{ex:ThetaPSEM12}, but it has introduced a new one.
+This no longer has the flaws of the denotation in \cref{ex:ThetaPSEM12}, but it has introduced a new one.
 The denotation in \cref{ex:ThetaPSEM2} is a predicate of events, but it no longer describes a seeing event, but a running event.
 So, if we continued the derivation of \cref{ex:ACC-ing}, and introduce the external argument \textit{we}, then that argument will be construed as the experiencer/agent of the running event, not the seeing event.
 
 The independent $\Theta$ head analysis, it seems, cannot save us, and therefore, the secondary theme analysis cannot save us.
 Since our attempts to avoid the analysis in \cref{ex:VPProgPSEM} have only made things worse, I see no alternative to adopting our first analysis, despite the sense of unease it may evoke.
-Note that we are only tied to the analysis in \cref{ex:VPProgPSEM} only insofar as we adopt the admittedly simplistic semantic analysis of progressive aspect that we do adopt.
-I leave that as a task for more interested readers.
+Note that we are tied to the analysis in \cref{ex:VPProgPSEM} only insofar as we adopt the admittedly simplistic semantic analysis of progressive aspect used here.
+I leave the task of exploring the consequences of more precise semantic analyses of progressive aspect to others.
 \end{document}

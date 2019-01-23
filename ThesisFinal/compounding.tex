@@ -164,9 +164,12 @@ In her analysis of BSC, which she refers to as \textit{primary compounds}, \text
 \begin{figure}[h]
 	\centering
 	\begin{forest}
-		nice empty nodes,sn edges,baseline
-		[$n$P
-			[{$n^\circ$}
+		nice empty nodes,sn edges,baseline,
+		[$n$P,
+			calign=fixed edge angles,
+			calign primary angle=-60,
+			calign secondary angle=80
+			[{$n^\circ$},name=n2
 				[$\sqrt{}$
 					[{$n^\circ$}
 						[$\sqrt{\textsc{bourbon}}$]
@@ -176,14 +179,19 @@ In her analysis of BSC, which she refers to as \textit{primary compounds}, \text
 				]
 				[{$n^\circ$}]
 			]
-			[$\sqrt{}$P
-				[$\sqrt{\textsc{bar}}$]
+			[$\sqrt{}$P,for tree={
+	    		calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+    [$\sqrt{\textsc{bar}}$,name=bar]
 				[$n$P
-					[$n^\circ$]
-					[$\sqrt{\textsc{bourboun}}$]
+					[$n^\circ$,name=n1]
+					[$\sqrt{\textsc{bourboun}}$,name=bourbon]
 				]
 			]
 		]
+		\draw[->] (bourbon)	to[out=south,in=south]		(n1);
+		\draw[->] (n1) 		to[out=south west,in=south]	(bar);
+		\draw[->] (bar) 	to[out=west, in=east]	(n2);
 	\end{forest}
 	\caption{Harley's (2009) analysis for \textit{bourbon bar}}
 	\label{fig:HarleyCpd}

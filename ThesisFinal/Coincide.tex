@@ -161,7 +161,7 @@ Therefore, I will modify the semantic analysis of Prog such that it introduces a
 The final interpretation of the ProgP, is given in \cref{ex:ProgPSEM2} \parencite[cf.][]{bjorkman2018poster}.
 \ex.\label{ex:ProgPSEM2} \textbf{Second approximation:}\\\textsc{sem}(ProgP) =  $\lambda e^{\prime} \exists e [e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
 
-This interpretation will properly compose with \cref{ex:VPSEM} to yield the interpretation of the host-adjunct structure in \cref{ex:VPProgPSEM}
+This interpretation will properly compose with \cref{ex:VPSEM} to yield the interpretation of the host-adjunct structure in \cref{ex:VPProgPSEM}.
 \ex.\label{ex:VPProgPSEM} \textsc{sem}($\langle$ProgP, VP$\rangle$) = $\lambda e^{\prime} \exists e [ \textbf{see}(e^{\prime})\,\&\,\textsc{theme}(\textbf{the\_dog})(e^{\prime})\,\&\,e^{\prime} \subseteq e\,\&\,\textbf{run}(e)\,\&\,\textsc{doer}(e)(\textbf{the\_dog})]$
 
 So, the event of seeing the dog is included in the event of the dog running, meaning that the seeing occurred in the same space-time region as the running and therefore we can infer that the running event was seen.
@@ -169,7 +169,26 @@ This denotation along with the very nature of seeing and running allows us to in
 
 One could argue that this analysis is implausible as it requires that the seeing event is a part of the seemingly independent running event.
 On its face, this seems to imply an interdependecy between the two events, and, while it seems reasonable to say that the perception event depends on the perceived event, it is far from obvious that the perceived event depends on the perception event.
-This line of argumentation, I believe, confuses the issue at hand.
+This line of argumentation, I believe, is not enough to rule out the logical form in \cref{ex:VPProgPSEM}.
+
+Consider, for instance, sentences of the form \textit{In the course of XP, S}, such as \cref{ex:ITCORunShops} and \cref{ex:ITCOInvestigationInterview}.
+\ex.\label{ex:ITCORunShops} In the course of her morning run today, Sadie saw three new coffee shops.
+
+\ex.\label{ex:ITCOInvestigationInterview} In the course of her investigation, Kima interviewed two hotel receptionists.
+
+Sentences of this form seem to entail that the event described by \textit{S} is a proper subpart of the event described by \textit{XP}.
+So seeing the new coffee shops was a part of the running event, as interviewing receptionists was part of the investigating event.
+Compare these to the infelicitous uses of this construction in \cref{ex:ITCORunMeet} and \cref{ex:ITCOInvestigationMarried}.
+\ex.\#? In the course of her morning run today, Sadie met her writing partner for coffee.\label{ex:ITCORunMeet}
+
+\ex.\# In the course of her investigation, Kima got married.\label{ex:ITCOInvestigationMarried}
+
+In both cases the would-be subevent is judged to be either incompatible with the would-be superevent, or not a natural subevent of the would-be superevent.
+In the case of \cref{ex:ITCORunMeet}, a morning run is a more-or-less uninterrupted event, and meeting someone for coffee would constitute an interruption.
+In the case of \cref{ex:ITCOInvestigationMarried}, even if the getting married event occurred while the investigation were ongoing, the sentence as given means that the marriage is somehow part of the investigation.
+For instance \cref{ex:ITCOInvestigationMarried} would be true if Kima got married as part of an undercover operation.
+Now consider \cref{ex:ITCORunSeen}.
+\ex.\label{ex:ITCORunSeen}
 
 Saying that the perception of an event is a sub-part of that event, does imply that the event is dependent on it being perceived, but it does so in a very weak way.
 It is perhaps a truism of set theory and mereology to say that two complex objects are identical only if they consist of the same parts.

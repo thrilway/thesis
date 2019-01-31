@@ -345,13 +345,14 @@ The main difference is that, in my analysis, the DP \textit{the metal} is an arg
 In Kratzer's analysis, The DP is solely an argument of the result adjective.
 Despite this difference, the VP and resP in my structures are still predicted to be predicates of eventualities.
 As such, the VP and resP can be combined by predicate modification.
+As a demonstration of this, see the typed LF for the proposed structure in \cref{fig:TypedLFSideward}, and the partial derivation of its denotation in \cref{ex:sidewardSemDeriv}.
 \begin{figure}[h]
 	\centering
 \begin{forest}
     nice empty nodes,sn edges,baseline,for tree={
     calign=fixed edge angles,
     calign primary angle=-30,calign secondary angle=70}
-    [VP$_{\langle s,t\rangle}$
+    [VP$^{\prime}_{\langle s,t\rangle}$
 	    [VP$_{\langle s,t\rangle}$
 		    [hammer$_{\langle e, st\rangle}$]
 		    [DP$_e$]
@@ -368,6 +369,15 @@ As such, the VP and resP can be combined by predicate modification.
 	\caption{The LF of a resultative with sideward movement}
 	\label{fig:TypedLFSideward}
 \end{figure}
+\ex. \label{ex:sidewardSemDeriv}
+\begin{enumerate} 
+	\item $\llbracket \text{VP}^{\prime}\rrbracket =$ \hfill (Predicate Modification)
+	\item $\lambda e_s [\llbracket \text{VP}\rrbracket(e) \& \llbracket \text{resP}\rrbracket(e)]$
+	\item $\lambda e_s [ \lambda e^{\prime}_{s}[ \textbf{hammer}(e^{\prime})\, \&\, \textsc{theme}(\textbf{the\_metal})(e^{\prime})](e)\, \&\, \llbracket \text{resP}\rrbracket(e)]$
+	\item $\lambda e_s [ \lambda e^{\prime}_{s}[ \textbf{hammer}(e^{\prime})\, \&\, \textsc{theme}(\textbf{the\_metal})(e^{\prime})](e)\, \&$\\
+		$\lambda e^{\prime\prime}_{s}[\exists s_s[\textsc{Cause}(s)(e^{\prime\prime}) \& \textbf{flat}(\textbf{the\_metal})(s)]](e)]$
+	\item $\lambda e_s [ \textbf{hammer}(e)\, \&\, \textsc{theme}(\textbf{the\_metal})(e)\, \&\, \exists s_s[\textsc{Cause}(s)(e) \& \textbf{flat}(\textbf{the\_metal})(s)]]$
+\end{enumerate}
 
 Thus, with these adaptations, Kratzer's analysis of resultatives can be made UTAH-compliant.
 In the remainder of this chapter, I will discuss my parametric analysis of resultatives.

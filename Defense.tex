@@ -2,7 +2,24 @@
 %     Created: Wed Apr 10 01:00 PM 2019 E
 % Last Change: Wed Apr 10 01:00 PM 2019 E
 %
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
 \documentclass[letterpaper,12pt]{article}
+
+\usepackage{linguex}
+
+\usepackage[
+	backend=biber,
+	style=authoryear,
+	citestyle=authoryear-comp,
+	language=british,
+	dashed=true
+]{biblatex}
+
+
+\addbibresource{Thesis.bib}
 \begin{document}
 \begin{itemize}
 	\item One of the main questions of linguistics: How much can languages vary?
@@ -17,7 +34,30 @@
 			\item Parameter theory
 			\item Lexical parameterization hypothesis
 			\item Only surface variation
-		\end{itemize}<++>
+		\end{itemize}
+	\item The resultative parameter provides an empirical way of deciding between these options.
+		\begin{itemize}
+			\item Languages vary with respect to the number of readings assigned to secondary predication structures like \ref{ex:ambiguish}.
+			\item English assigns depictive and resultative readings
+			\item French assigns only depictive readings.
+		\end{itemize}
+\end{itemize}
+\ex.\label{ex:ambiguish} The chef fried the fish dry.
+
+\begin{itemize}
+	\item *Resultative languages express resultatives periphrastically
+		\begin{itemize}
+			\item This option is also available to resultative languages.
+		\end{itemize}
+\end{itemize}
+\begin{itemize}
+	\item This points away from the only-surface-variation hypothesis.
+		\begin{itemize}
+			\item 
+		\end{itemize}
+\end{itemize}
+\begin{itemize}
+	\item \textcite{snyder2001nature} 
 \end{itemize}<++>
 \end{document}
 

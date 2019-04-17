@@ -1,3 +1,32 @@
+---
+bibliography: Thesis.bib
+author: Dan Milway
+date: 24 April 2019
+title:	Explaining the Resultative Parameter
+subtitle: Final Oral Examination
+documentclass: scrartcl
+#fontfamily: ebgaramond
+fontfamily: accanthis 
+geometry: 
+- margin=1in
+...
+
+# The problem
+
+Main Question
+
+:	Why are some languages but not all languages able to generate adjectival resultatives?
+
+(@AR) Jackie hammered the metal flat.
+
+Subquestion 1
+
+:	What properties must a grammar have to generate resultatives like (@AR)?
+
+Subquestion 2
+
+:	How can the answer to subquestion 1 be aquired from primary linguistic data?
+
 # Why Resultatives?
 - Two of the Main Questions of linguistics: 
 	* **How much can languages vary from one another?**
@@ -33,4 +62,73 @@
 - 3 is problematic for a number of reasons.
 	* See section 3.1.2.2
 - This leaves 2: LPH
+
+# The Lexical Parameterization Hypothesis
+
+(@LPH) **LPH**\
+All (syntactic) variation derives from variation in the lexicon.
+
+- This still leaves room for interpretation.
+	* **What can and cannot vary in the lexicon?**
+	* **How does lexical variation translate to (*e.g.*) the resultative parameter?**
+- The answer to the second depends on the answer to the first.
+- Three answers have been given to the first:
+	
+1. Lexicons vary in the presence/absence of certain heads.\
+	(see, Bo\v{s}ković's DP/NP parameter)
+2. The Bundling Hypothesis.\
+(see @folli2006licensing)
+3. Lexicons vary in the featural endowment of their heads.
+
+- 1 doesn't seem to be generally problematic, but not well equipped for the resultative parameter
+	* Ascribing the resultative parameter to the presence/absence of *res^0^* but it runs into issues:
+		- French, for example, has resultative deadjectival verbs (*aplattir*, *blanchir*, etc)
+		- It is rather implausible that it could be linked to compounding
+- 2 has more general problems
+	* It's not clear what "bundling" consists in.
+	* It doesn't seem learnable.
+	* The link between resultatives and compounding isn't clear.
+- 3 is promising
+	* It's learnable
+		- Languages plainly differ with respect to whether certain categories show inflectional morphology, and how "rich" that morphology is.
+	* variation in inflectional morphology has been linked to grammatical variation
+		- Rich subject agreement is linked to null-subjects
+	* Can it link resultatives and compounding?
+		- My thesis demonstrates that, given certain theoretical assumptions, yes it can.
+
+# How can featural endowments vary?
+
+- Lexical Items are bundles of phonetic, semantic, and formal features.
+- The variation we're interested in is in the formal features.
+- In principle we can expect variation along two "axes":
+	* the sort of features (*e.g.* Q, Case, $\varphi$)
+	* the "completeness" of the feature bundle.
+- The first sort of variation is not important here
+	* and might not really be available.
+- The second sort is vital for my thesis because it is operative in label theory [@chomsky2013problems].
+- The bundle of features of type F can be absent, incomplete, or complete on the lexical item H in language L.
+
+(@FeatureBundle) **The form of the feature bundle parameter**\
+For head H, and feature F, one of $\{H_{\emptyset,}, H_{F}, H_{\langle F, F\rangle}\}$ is in LEX
+
+- This is undoubtedly wrong, but it will do for my thesis.
+- The setting of (@FeatureBundle) affects the grammar according to label theory:
+	* H~F~ is too weak to label on its own.
+	* It needs to be strengthed by Agree in order to label a phrase.
+	* @chomsky2015problems uses this to differentiate between null subject languages and overt subject languages
+- The setting is also acquirable insofar as it is reflected in inflectional morphology.
+	* French Adjectives must be inflected, German adjectives are only inflected in attributive positions.
+	* **Note:** This is consistent with there being a default setting of the parameter that is only overridden in the face of evidence.
+ 
+### A Note on the strong-weak distinction
+
+- My use, following @chomsky2015problems, of the terms "strong" and "weak" with regards to LIs and their feature bundles is not to be confused with the "strong features" of @chomsky1995minimalist
+- In early minimalism, selectional features could be marked with the diacritic STRONG.
+	* STRONG features needed to be checked overtly
+- This theory collapsed for two related reasons:
+	* No corroborating evidence could be found
+	* The diacritc STRONG could not be grounded in either of the interfaces.
+- In label theory, the terms "strong" and "weak" are merely descriptive.
+	* LI's are too weak to label if they have an incomplete set of formal features
+- This theory has problems, no doubt, but it doesn't inherit the problems of the previous theories of feature strength.
 

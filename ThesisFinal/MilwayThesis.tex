@@ -94,7 +94,7 @@
 \Crefname{defn}{Definition}{Definitions}
 
 \usepackage{centernot}
-\usepackage{subfiles}
+%\usepackage{subfiles}
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
 \usepackage{xcolor}
@@ -175,7 +175,7 @@
 \begin{document}
 \begin{preliminary}
   \maketitle
-  \subfile{Abstract}
+  \input{Abstract}
 %  \subfile{acknowledgements}
   \tableofcontents
   \listoftables
@@ -183,7 +183,7 @@
   \listoftheorems[ignoreall,show={defn}]
 \end{preliminary}
 \chapter{Introduction}
-\subfile{intro}
+\input{intro}
 
 \part{Explaining Resultatives}\label{sec:part1}
 %\fcolorbox{black}{lightgray}{
@@ -212,37 +212,37 @@
 %  \end{minipage}
 %}
 \chapter{Non-standard Theoretical Assumptions}\label{sec:nonstandard}
-\subfile{NonStandard}
+\input{NonStandard}
 \chapter{Previous Literature}\label{sec:litreview}
 \epigraph{
   There's always a siren\\
   Singing you to shipwreck.\\
   Steer away from these rocks.
 }{``There, There''\\\textsc{Radiohead}}
-\subfile{LitReview}
+\input{LitReview}
 \chapter{The Structure of Resultatives}\label{sec:analysis}
 \epigraph{Die Welt ist eine Glocke, die einen Ri\ss{} hat: sie klappert, aber klingt nicht.}{\textsc{Johann Wolfgang von Goethe}}
-\subfile{MyAnalysis}
+\input{MyAnalysis}
 \chapter{Label Theory}\label{sec:labels}
 \epigraph{``A rose by any other name would smell as sweet.''\\
 ``Not if you called 'em stench blossoms.''}{``The Principal and the Pauper''\\\textit{The Simpsons}}
-\subfile{Labels}
+\input{Labels}
 %\section{The architecture of a label-theoretic grammar}
 %\subfile{agree}
 \chapter{Deriving the Resultative Parameter}\label{sec:deriving}
 \epigraph{All happy families are alike; every unhappy family is unhappy in its own way.}{\textit{Anna Karenina}\\\textsc{Leo Tolstoy}}
-\subfile{deriving}
+\input{deriving}
 
 \part{Dealing with the consequences}\label{sec:part2}
 \chapter{Small clauses in French-like languages}\label{sec:FreSC}
 \epigraph{All the pieces matter}{David Simon}
-\subfile{agree}
+\input{agree}
 \chapter{Movement from Specifier of resP}\label{sec:ACCing}
-\subfile{ACCing}
+\input{ACCing}
 \chapter{Coincidence}\label{sec:coincidence}
-\subfile{Coincide}
+\input{Coincide}
 \chapter{Conclusion}\label{sec:Conclusion}
-\subfile{conclusion}
+\input{conclusion}
 \printbibliography[heading=bibintoc]
 \end{document}
 

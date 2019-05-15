@@ -1,9 +1,3 @@
-% arara: pdflatex: {options: "-draftmode"}
-% arara: biber
-% arara: pdflatex: {options: "-draftmode"}
-% arara: pdflatex: {options: "-file-line-error-style"}
-\documentclass[MilwayThesis]{subfiles}
-\begin{document}
 In this chapter, I discuss a recent development in Chomsky's syntactic theory, which he refers to as \textit{label theory}.
 Specifically, I discuss the background and content of Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) proposal.
 Label theory will then be used in \cref{sec:deriving} to explain the resultative parameter.
@@ -103,6 +97,10 @@ This is in contrast to heads that bear full feature sets (\textit{e.g.} Italian 
 	In the theory presently under discussion, though, the use of the terms \textit{weak} and \textit{strong} are not technical terms but rather descriptive: 
 	LIs with incomplete sets of formal features are too weak to label a phrase and must be strengthened by Agree.
 	This theory, of course, is incomplete and certainly has problems, but it does not inherit the problems of the theory of strong features.
+}\footnote{
+	The proposal that incomplete feature sets cannot label while complete or null feature sets can label may seem odd at first, but it bears a similiarity to principles from other domains.
+	For instance, in metrical phonology, an odd number of syllables in a word leads to issues in footing.
+	Also, in quantum chemistry, electrons are organized into orbitals, which can each contain up to two electrons and are chemically stable only if they are empty or contain a pair of electrons; unpaired electrons lead to chemical instability.
 }
 
 At this point, I should note an issue that arises when giving label-based explanations of syntactic derivations.
@@ -163,4 +161,3 @@ In Part II I will propose answers to those questions, and consider the ramificat
 \section{Summary}
 In this chapter, I reviewed Chomsky's (\citeyear{chomsky2013problems,chomsky2015problems}) label theory, according to which labels are assigned algorithmically at the CI interface and are required for proper interpretation at that interface.
 In the next chapter, I will use label theory to demonstrate that the (un)availability of resultative can be derived from the (un)availability of bare stem compounding.
-\end{document}

@@ -5,12 +5,12 @@
 \documentclass[MilwayThesis]{subfiles}
 
 \begin{document}
-So far, I have clarified and developed my theoretical assumptions, and proposed a structural analysis of resultatives, shown in \cref{fig:ResStruct}, and an analysis of the resultative parameter, given in \cref{ex:ResParam}.
+So far, I have clarified and developed my theoretical assumptions and proposed a structural analysis of resultatives, shown in \cref{fig:ResStruct}, and an analysis of the resultative parameter, given in \cref{ex:ResParam}.
 \ex.\label{ex:ResParam} A language L allows resultatives only if the lexicon of L includes \textit{adj}$_{\emptyset}$.
 
 Although they share a justification in minimalism, the structural analysis and the parametric analysis are independent proposals, and as such their combination must be justified.
 That is, I have argued that each component is plausible on its own, but it is altogether possible that they are not consistent with each other, or they are not able to give the correct empirical results.
-In this chapter I argue that they are consistent with each other, and that, together, they can provide an explanation of the resultative parameter.
+In this chapter, I argue that they are consistent with each other, and that, together, they can provide an explanation of the resultative parameter.
 I do so by first showing that the structure in \autoref{fig:ResStruct} can be derived in a language with uninflected adjectives ($adj_\emptyset \in \textsc{lex}$), and then showing how such a derivation fails in a language without uninflected adjectives ($adj_\emptyset \centernot\in \textsc{lex}$).
 \begin{figure}[h]
 	\centering
@@ -48,7 +48,7 @@ I do so by first showing that the structure in \autoref{fig:ResStruct} can be de
 \end{figure}
 
 In the first section, I will give a derivation of the English resultative VP \textit{hammer the metal flat} and show that it converges at the CI interface (taking SM convergence for granted).
-In the second section, I will give two possible derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash, while avoiding that crash blocks the derivation.
+In the second section, I will give two possible derivations of the ungrammatical French resultative VP \textit{marteller le m\'etal plat}, and show that deriving that VP leads to a CI crash while avoiding that crash blocks the derivation.
 
 Before describing the derivations, I will reiterate and clarify my assumptions regarding the syntactic derivation.
 I adopt a slightly simplified version of the formal grammar developed by \textcite{collins2016formalization} which I will augment slightly based on new assumptions.
@@ -298,7 +298,7 @@ I represent it as Merge in order to maintain the simplicity of the formal gramma
 \label{fig:EngVP}
 \end{figure}
 When this is transferred, triggered, presumably, by the merging of the phase head Voice, it is labelled just as any transitive VP would be.
-The largest object $\kappa$ is a phrase-phrase structure with agreeing features, so it will be receive a $\langle\varphi,\varphi\rangle$ label.
+The largest object $\kappa$ is a phrase-phrase structure with agreeing features, so it will receive a $\langle\varphi,\varphi\rangle$ label.
 The remaining objects will receive head-labels, with the exception of the host-adjunct structure $\zeta$.
 
 As in previous theories of grammar, host-adjunct structures are problematic in label theory.
@@ -346,14 +346,14 @@ This matter will be addressed in \cref{sec:modifications}.
 	\label{fig:EngVPLabelled}
 \end{figure}
 
-In this section we have seen how a convergent resultative is derived in English.
+In this section, we have seen how a convergent resultative is derived in English.
 The next section, however, is truly where the rubber meets the road.
 There I show that the same grammar that generates resultatives in English will fail to generate them in French.
 As we will see, the crucial operation, the one which will be blocked in French, is the movement of DP from the adjectival Small Clause.
 
 \section{Two crashing derivations in French}\label{sec:Fre-deriv}
 By hypothesis, the only relevant difference between English and French is that the lexicon of French contains only inflected category heads (specifically $adj_\emptyset \centernot\in \textsc{lex}$ and $adj_\varphi \in \textsc{lex}$).
-In this section I will attempt to derive a resultative with an $adj_\varphi$ and show that such a derivation inevitably either crashes due to failure to label or simply does not derive a resultative.
+In this section, I will attempt to derive a resultative with an $adj_\varphi$ and show that such a derivation inevitably either crashes due to failure to label or simply does not derive a resultative.
 The first attempt will reproduce an English derivation and crash, while the second will avoid that crash but fail to move the object DP into the VP, and thus will be unable to derive the proper structure.
 
 \subsection{Crashing Derivation}\label{sec:crash}
@@ -552,7 +552,208 @@ If we cannot copy and remerge the DP, we will unable to continue the derivation.
 We can't merge a DP with a verb if that DP is inaccessible to Merge.
 Thus, our attempt to avert a crash has, in fact, doomed the derivation.
 \section{On Bare Stem Compounding}
-\subfile{compounding}
+So far, I have demonstrated that, given my theoretical assumptions, resultatives can be generated only if the result adjective is categorized by a featureless $adj_{\emptyset}$ head.
+I also proposed that a child acquires featureless categorizing heads if they encounter productive bare-stem compounding (BSC) in their PLD.
+In this section, I will propose an analysis of bare-stem compounding that is consistent with these proposals and my theoretical assumptions.
+
+If we restrict ourselves to endocentric bare-stem compounding like \textit{bourbon bar}, for instance, then our analysis must be consistent with the possibility of endocentricity.
+That is, a proper analysis of \textit{bourbon bar} must naturally explain why it describes a type of bar rather than a type of bourbon.
+Furthermore, an analysis of BSC must allow for the fact that a language's ability to generate these compounds depends on the properties of the categorizing heads in that language.
+
+I will discuss three possibilities below:
+	one in which a compound is formed by directly merging roots together,
+	a second in which two categorized roots ($\left\{ cat, \sqrt{\textsc{Root}} \right\}$, or \textit{stems}) are directly merged together,
+	and a third in which a stem merges with a root.
+As we shall see, only the third analysis can account for endocentricity and parametric variation without major stipulation.
+\subsection{Root-root compounding}
+The first analysis that I will consider is one in which roots merge directly with each other as in \cref{fig:RootRoot}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+    nice empty nodes,sn edges,baseline,
+		[$\beta$
+			[$n$]
+			[$\alpha$
+				[$\sqrt{\textsc{Bourbon}}$]
+				[$\sqrt{\textsc{Bar}}$]
+			]
+		]
+	]
+	\end{forest}
+	\caption{A root-root analysis of compounding}
+	\label{fig:RootRoot}
+\end{figure}
+Immediately, we can see that the symmetrical nature of merge (\textit{i.e.} the fact that merge creates an unordered set) renders endocentricity impossible; \textit{bourbon bar} would be indistinguishable from \textit{bar bourbon}.
+
+Setting this problem aside for the moment, could this analysis account for the parametric variation?
+That is, can we show that \cref{ex:FreRootRoot} crashes, while \cref{ex:EngRootRoot} converges?
+\ex.* $[_{\beta}\, n_{F}, [_{\alpha} \sqrt{\textsc{Bourbon}}, \sqrt{\textsc{Bar}}  ]  ]$ \label{ex:FreRootRoot}
+
+\ex. $[_{\beta}\, n_{\emptyset}, [_{\alpha} \sqrt{\textsc{Bourbon}}, \sqrt{\textsc{Bar}}  ]  ]$ \label{ex:EngRootRoot}
+
+Since $n$ is the least embedded atomic element in both \cref{ex:FreRootRoot,ex:EngRootRoot}, it would label both phrases if it were strong enough.
+The French $n_{F}$ in \cref{ex:FreRootRoot} will, of course, need to be strengthened by Agree, but compare the proposed compound structure with that of a simple noun in \cref{ex:FreNoun}.
+\ex. $[_{\alpha} n_{F}, \sqrt{\textsc{bar}}]$\label{ex:FreNoun}
+
+Note that in both the simple noun \cref{ex:FreNoun} and the compound noun \cref{ex:FreRootRoot}, the categorizing head $n_{F}$ is an immediate constituent of the phrase in question.
+Furthermore, in both cases, $n_{F}$ is the only possible labeller, as all of the other constituents are roots.
+It follows, then, that $\beta$ in \cref{ex:FreRootRoot} and $\alpha$ in \cref{ex:FreNoun} are indistinguishable with respect to labelling.
+Therefore, a root-root analysis of BSC gives us no principled way of ruling out compound nouns in French-like languages, without also ruling out simple nouns.
+
+Since this analysis lacks both necessary properties for compounds, I will set it aside.
+\subsection{Stem-stem compounding}
+In the second analysis, bare-stem compounds are created by merging two stems (\textit{i.e.}, \{$n$, $\sqrt{\textsc{root}}$\}).
+Like the root-root possibility, the stem-stem possibility is symmetrical, as we can see in \cref{fig:StemStem}
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+    sn edges,baseline,
+    [$\gamma$,tier=zero
+	    [$\alpha$,tier=one
+		    [$n$,tier=two]
+				[$\sqrt{\textsc{bourbon}}$,tier=two]
+			]
+			[$\beta$,tier=one
+				[$n$,tier=two]
+				[$\sqrt{\textsc{bar}}$,tier=two]
+			]
+		]
+	\end{forest}
+	\caption{A stem-stem analysis of compounding}
+	\label{fig:StemStem}
+\end{figure}
+As with the root-root option, the symmetry of this structure precludes endocentricity.
+Again setting this problem aside, let's consider how it fares with respect to parametric variation.
+
+If we consider the compound $\gamma$ as a whole, we can see that it is a phrase-phrase structure, and therefore labellable in only two situations:
+	either the constituent phrases has moved, or there is agreement between the ``heads'' of the two constituent phrases (the two $n$ heads in this case).
+The first is inapplicable since both members of the compound remain \textit{in situ}.
+As for the second, in the case of an English-type language, there is certainly no agreement between the two $n$ heads, as they have, by hypothesis, no features, which are required for Agree.
+A stem-stem analysis of compounds, therefore, seems to wrongly predict that English-type grammars do not generate bare-stem compounds; another strike against them.
+French-like languages, on the other hand, have feature-bearing $n$ heads which are in the ideal structural configuration to agree with each other, but it is unlikely that they would undergo agreement with each other due to the types of features that they have.
+The standard cases of agreement involve a featural asymmetry between the agreeing heads---an interpretable feature checks an uninterpretable feature; a valued feature values an unvalued feature---but in the structure in \cref{fig:StemStem}, the would-be agreeing heads are of the same type, and therefore have identical featural endowments.
+Since there is no featural asymmetry, it is likely that there can be no agreement between the two $n_{F}$ heads in French-type languages.
+If they cannot agree with each other, then, just as in the case of English-type languages, we would expect the structure in \cref{fig:StemStem} to be unlabellable.
+If they can agree with each other, then $\gamma$ in \cref{fig:StemStem} should be labelled $\langle F,F\rangle$, and therefore, the structure in \cref{fig:StemStem} should be a licit compound.
+So, the stem-stem analysis of compounds may wrongly predict that French-type grammars could generate bare-stem compounds.
+
+Since a stem-stem analysis accounts for neither endocentricity nor the parametric variation with respect to bare-stem compounding, we will set it aside and move on to the third possible analysis.
+\subsection{Root-stem compounding}
+The final possibility is that compounds are formed by merging a root with a stem, as in \cref{fig:RootStem}.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+    sn edges,baseline,
+    [$\beta$,tier=zero
+	    [$\sqrt{\textsc{bourbon}}$,tier=one]
+	    [$\alpha$,tier=one
+		    [$n$,tier=two]
+		    [$\sqrt{\textsc{bar}}$,tier=two]
+			]
+		]
+	\end{forest}
+	\caption{A root-stem analysis}
+	\label{fig:RootStem}
+\end{figure}
+We can immediately see that this is an asymmetric structure, and, as such, one that is in principle able to capture endocentricity.
+Under this view, \textit{bourbon bar} names a type of bar rather than a type of bourbon by virtue of the fact that the \textit{bar} root merges directly with the category-determining head, while \textit{bourbon} does so indirectly.
+Compare this with the case of a Saxon genitive, such as \textit{the president's men}, which names some men rather than the president.
+This endocentricity can be captured by the structure in \cref{fig:SaxonGenitive}, by virtue of the fact that \textit{men} is the complement, merging directly with the determiner \textit{-'s}, while \textit{the president} is its specifier.
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+    nice empty nodes,sn edges,baseline,
+		[DP
+			[DP[the president,roof]]
+			[
+				['s]
+				[$n$P[men,roof]]
+			]
+		]
+	\end{forest}
+	\caption{The Saxon genitive}
+	\label{fig:SaxonGenitive}
+\end{figure}
+
+Now, what about the parametric variation?
+Let's consider how the structure in \cref{fig:RootStem} would be labelled in the case of an English-type language.
+The least embedded atom in $\beta$ is the root \textsc{bourbon}, which is invisible for labelling.
+Therefore we must look for the next-least-embedded atom, which, assuming the root \textsc{bar} is invisible, would be $n_{\emptyset}$.
+So, the label of $\beta$ would be $n_{\emptyset}$, as it would be for $\alpha$ as well.
+
+Now consider the French-type language, where the featureless $n_{\emptyset}$ is replaced by $n_{F}$ with an incomplete feature set as in \cref{fig:RootStemFrench}.
+Recall that $n_{F}$ cannot label a phrase unless it is strengthened to $n_{\langle F,F\rangle}$ by Agree.
+So, the structure in \cref{fig:RootStemFrench}, is unlabellable on its own,
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+    nice empty nodes,sn edges,baseline,
+		[$\beta$
+			[$\sqrt{\textsc{bourbon}}$]
+			[$\alpha$
+				[$n_{F}$]
+				[$\sqrt{\textsc{bar}}$]
+			]
+		]
+	\end{forest}
+	\caption{A French-like Root-Stem structure}
+	\label{fig:RootStemFrench}
+\end{figure}
+Furthermore, the $n_{F}$ head is embedded beneath a root, making it a more remote target for agreement with some head to be merged later.
+If $n_{F}$ is too remote to be agreed with, then it will be too weak to label $\alpha$ or $\beta$, and therefore the structure in \cref{fig:RootStemFrench} would crash.
+This difficulty would not, however, emerge in the case of a simple noun (\textit{e.g.}, $\left\{ n_{F}, \sqrt{\textsc{bar}} \right\}$), because the categorizing head $n_{F}$ is not embedded, and therefore will be available for agreement with a higher head.
+
+A Root-Stem analysis of BSC, unlike the other two alternatives described above, can capture the fact that languages without featureless $cat_{\emptyset}$ heads cannot produce bare stem compounds.
+Since a Root-Stem analysis of BSC seems to be the only one that correctly accounts for both endocentricity and parametric variation, it is likely the correct analysis.\footnote{
+	It is not immediately obvious how this analysis would work for compounds formed by more complex stems such as \textit{attachment disorder}, or \textit{deionized water bottle}. 
+	In order to extend my analysis to these cases, though, we would need an explicit theory of morphological derivation.
+	Since such theorizing is outside the scope of this thesis, I will leave it for later research.
+}
+
+In her analysis of BSC, which she refers to as \textit{primary compounds}, \textcite{harley2009compounding} adopts what is essentially a Root-Stem structure, although her version, demonstrated in \cref{fig:HarleyCpd} differs from mine in a few interesting ways.
+
+\begin{figure}[h]
+	\centering
+	\begin{forest}
+		nice empty nodes,sn edges,baseline,
+		[$n$P,
+			calign=fixed edge angles,
+			calign primary angle=-60,
+			calign secondary angle=80
+			[{$n^\circ$},name=n2
+				[$\sqrt{}$
+					[{$n^\circ$}
+						[$\sqrt{\textsc{bourbon}}$]
+						[{$n^\circ$}]
+					]
+					[$\sqrt{\textsc{bar}}$]
+				]
+				[{$n^\circ$}]
+			]
+			[$\sqrt{}$P,for tree={
+	    		calign=fixed edge angles,
+	    calign primary angle=-30,calign secondary angle=70}
+    [$\sqrt{\textsc{bar}}$,name=bar]
+				[$n$P
+					[$n^\circ$,name=n1]
+					[$\sqrt{\textsc{bourbon}}$,name=bourbon]
+				]
+			]
+		]
+		\draw[->] (bourbon)	to[out=south,in=south]		(n1);
+		\draw[->] (n1) 		to[out=south west,in=south]	(bar);
+		\draw[->] (bar) 	to[out=west, in=east]	(n2);
+	\end{forest}
+	\caption{Harley's (2009) analysis for \textit{bourbon bar}}
+	\label{fig:HarleyCpd}
+\end{figure}
+
+Perhaps the biggest difference between Harley's analysis and mine is that the ``modifier'' (\textit{bourbon}) is merged below the ``head'' (\textit{bar}).
+Related to that difference, is that Harley assumes that the surface appearance of \textit{bourbon bar} is due to a series of head movement operations, which Harley refers to as \textit{incorporation}.
+Despite the similarities and differences between this analysis and mine, it would be difficult to compare the respective merits of the two, as they follow from two distinct sets of theoretical assumptions.
+Harley, for instance, assumes that roots can both project phrases and select complements, assumptions that are explicitly ruled out under Chomsky's (2013) label theory, which this thesis adopts.
+Comparing the two analyses, then, would require a deep comparison of the assumptions underlying them.
+Such a comparison is beyond the scope of this thesis so I will set Harley's analysis aside.
 \section{Summary}
 In this chapter, I have shown that resultatives are, in fact, derivable in a label-theoretic grammar, provided the resultative adjective is categorized by an uninflected head $adj_\emptyset$.
 I then demonstrated that the same derivation runs into difficulties if the resultative adjective is categorized by an inflected head $adj_\varphi$.

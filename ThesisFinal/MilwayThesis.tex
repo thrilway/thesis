@@ -51,6 +51,7 @@
 \usepackage{amsthm,thmtools}
 \usepackage{mathtools}
 
+
 \usepackage{nth}
 \usepackage{combelow}
 
@@ -73,7 +74,7 @@
 	\caption{#2 (repeated from page \pageref{#1})}
 	\addtocounter{figure}{-1}
 }
-\usepackage[final]{hyperref}
+\usepackage[final,hidelinks]{hyperref}
 \usepackage{linguex}
 \makeatletter
 \apptocmd{\gl@stop}{\nobreak}{}{}
@@ -147,6 +148,7 @@
 %  \posscitealias%
 %  \textcites
 
+\usepackage[multiple]{footmisc}
 
 \newcommand\quelle[1]{{%
   \unskip\nobreak\hfil\penalty50
@@ -176,7 +178,53 @@
 \begin{preliminary}
   \maketitle
   \input{Abstract}
-%  \subfile{acknowledgements}
+  \begin{acknowledgements}
+	  This document was a long time in the making, and it certainly couldn't have happened without a supervisor with the generosity and intellectual dexterity of Elizabeth Cowper.
+	  Elizabeth, who was already retired by the time I asked her to be my supervisor, never seemed to be fazed by supervising or advising on projects that were outside her wheelhouse, even though those projects were decidedly incompatible with each other.
+	  But, my history with her goes farther back than the start of my thesis work, to LIN331 where she introduced me to the minimalist program, and later, in that time between undergrad and the MA when she met with me just to talk about syntax.
+	  Between the course and those meetings, I'm quite certain I wouldn't be where I am without her.
+
+	  I am also indebted to Diane Massam and Michela Ippolito, who, with Elizabeth, formed my thesis committee. 
+	  My meetings with them helped me to ground my research and avoid tunnel-vision, and more generally helped keep me honest.
+	  I also want to thank the rest of my defense panel: Susana B\'{e}jar, Nick LaCara, and Norbert Hornstein, for making my defense lively and actually fun.
+
+	  Beyond my thesis committee I am indebted to the entire Linguistics Department at UofT.
+	  Thank you to the faculty in general and the syntax and semantics faculty in particular for creating a model of a collegial atmosphere to nurture research and researchers.
+	  Thank you to my fellow grad students, who were the best support network a young researcher could ask for.
+	  And last but certainly not least, thank you to the administrative staffers who made the department run: Mary Hsu, Jill Given-King, Jennifer McCallum, and Deem Waham.
+
+	  Research, of course, is only one aspect of graduate school; there's also teaching, TA-ing, and grading to fill our days.
+	  There are too many to mention by name here, but I want to thank all the people I TA-ed for, and with, and those people who TA-ed for me.
+	  I also must acknowledge my union, CUPE 3902, which tirelessly worked to protect and advocate for me and my fellow workers.
+	  I came into grad school skeptical of unions in general but that skepticism evaporated in 2015 when the collective bargaining process and ensuing four week strike revealed the true colours of both the union and the university administration.
+	  The union revealed itself to be supportive, open, and protective of all its members, while the administration revealed itself to be almost the opposite.
+	  It definitely stung to see the administrators of the university that I had spent the better part of a decade at (undergrad and grad school) outright lie about me and my fellow workers, and try to pit us against each other, undergrads, and faculty, but that sting was lessened by the sense of solidarity I felt on the picket lines with my fellow members of that university.
+	  The strike was a difficult time but it did remind me that, as is the case with any organization, the university is defined by its membership, not its administration.
+
+	  When I was dithering over whether or not to pursue a PhD, wondering if it was worth it, Derek Denis, then just a grad student, pointed out one of the great side-benefits of the PhD: real lasting friendships.
+	  Perhaps it's too early to say, but I think he was right, I've found a good number of people that I feel grateful to call friends.
+	  Not least of all, I'm grateful to have had so many wonderful cohort-mates: Becky Tollan, Clarissa Forbes, Tomohiro Yokoyama, Jess Denniss, Emily Blamire, Michelle Yuan, and Jada Fung.
+	  I'm grateful to have met them and to have shared the ups and downs of graduate school with them.
+	  Thank you also to the many other wonderful people I got to know as fellow grad students from Joanna Chociej, Sarah Clarke, Richard Compton, Ail\'is Cournane, Radu Craioveanu, Derek Denis, Liisa Duncan, Ross Godfrey, Yu-Leng Lin, Mercedeh Mohaghegh, Alex Motut, Kenji Oda, Will Oxford, Christopher Spahr, Eugenia Suh, and others, who were the towering senior grad students who helped me to figure things out as I got started, to Julien Carrier, Emily Clare, Julie Doner, Erin Hall, Shayna Gardiner, Ruth Maddeaux, Emilia Melara, Patrick Murphy, and Na-Young Ryu, who were junior grad students figuring things out alongside me, to all the soon-to-be senior grad students, some of whom I was lucky enough to befriend, all of whom I'm proud to have shared a department with.
+	  I hope that the line of graduate students continues on, being there for each other in rough times, celebrating achievements together, and just blowing off steam at pub night.
+
+	  Thank you to Dawn Whitwell for teaching me how to write jokes and giving me a creative outlet other than linguistics. Thank you to my friends Shawna Edward, Lisa Feingold, and Dan Reilly (aka ``The Bit Acknowledgers'').
+	  Thank you to the many people who put out the podcasts that informed me, made me laugh and generally helped me get through the PhD with my sanity:
+	  Scott Aukerman, Adam Scott, Paul F. Tompkins, Dave Shumka, Graham Clark, Sean Clements, Hayes Davenport, John Hodgman, Jesse Thorn, Greg Kot, Jim DeRogatis, Howard Kremer, Kulap Vilaysack, Tim Batt, Guy Montgomery, Mike Mitchell, Nick Wiger, Jimmy Pardo, Matt Belknap, Garon Cockrell, Eliot Hochberg, Leo Laporte, Jeff Jarvis, Stacey Higginbotham, Gina Trapani, Julia Prescott, Allie Goertz, Lauren Lapkus, Russ Roberts, Jeremy Scahill, Jessica St Clair, Lennon Parham, and Andy Daly.
+
+
+	  I'd like to thank my siblings and their families:
+	  my brother Tom, his wife Karen, and their children Declan, Rose, Violet, and Sadie;
+	  my brother Mike, his wife Brigid, and their children Imogen and Desmond;
+	  my sister Joan and her partner Jared;
+	  my brother Peter.
+
+
+	  I'd like to thank Zoe, who came into my life only recently, but whose love and support has made this milestone all the sweeter.
+
+	  Finally, Thank you to my parents Jim and Sheila.
+	  I wouldn't be where I am now, I wouldn't have achieved anything worthwhile, I wouldn't be the person I am today were it not for their love and support. 
+  \end{acknowledgements}
   \tableofcontents
   \listoftables
   \listoffigures
